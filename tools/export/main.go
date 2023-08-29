@@ -6,6 +6,8 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"path/filepath"
+	"regexp"
 	"strings"
 	"time"
 
@@ -75,12 +77,40 @@ func main() {
 		os.Exit(1)
 	}
 
+	args := fs.Args()
+	baseDir := "."
+	if len(args) > 0 {
+		baseDir = args[0]
+	}
+
 	db := CheckVal(newMySQL(*mysqlAddr, *mysqlDB, *mysqlUser, *mysqlPassword))
 
 	ctx := context.Background()
 	posts := CheckVal(getPosts(ctx, db))
+
 	for _, p := range posts {
-		fmt.Println(p.Title)
+		p.Content = strings.Replace(p.Content, "\r\n", "\n", -1)
+
+		if p.MarkupType == "rst" {
+			// Convert posts to markdown
+			convertMarkup(p)
+		}
+
+		filePath := filepath.Join(baseDir, p.Locale, "_posts", p.PubDate.Format("2006-01-02")+"-"+p.Slug+".md")
+		f := CheckVal(os.Create(filePath))
+
+		// Add FrontMatter
+		fmt.Fprint(f, "---\n")
+		fmt.Fprint(f, "layout: post\n")
+		fmt.Fprintf(f, "title: %q\n", p.Title)
+		fmt.Fprintf(f, "date: %s\n", p.PubDate.Format("2006-01-02 15:04:05 +0000"))
+		fmt.Fprintf(f, "permalink: /%s/%s\n", p.Locale, p.Slug)
+		fmt.Fprintf(f, "blog: %s\n", p.Locale)
+		fmt.Fprint(f, "---\n")
+		fmt.Fprint(f, "\n")
+
+		// Print the post content
+		fmt.Fprint(f, p.Content)
 	}
 }
 
@@ -118,7 +148,7 @@ func getPosts(ctx context.Context, db *sql.DB) ([]*BlogPost, error) {
 		create_date,
 		update_date
 	from blog_post
-    WHERE active = true;`
+    WHERE active = true and id =563;`
 
 	rows, err := tx.QueryContext(ctx, q)
 	if err != nil {
@@ -151,4 +181,73 @@ func getPosts(ctx context.Context, db *sql.DB) ([]*BlogPost, error) {
 	}
 
 	return posts, err
+}
+
+func convertMarkup(p *BlogPost) {
+	convertLinks(p)
+	convertNotes(p)
+	convertCodeblocks(p)
+}
+
+var rstLink = regexp.MustCompile("`" + `([^<]*)\s+<([^>]*)>` + "`_")
+
+func convertLinks(p *BlogPost) {
+	p.Content = rstLink.ReplaceAllString(p.Content, "[${1}](${2})")
+}
+
+func convertNotes(p *BlogPost) {
+	// TODO
+}
+
+var prefixRegex = regexp.MustCompile(`^\s*`)
+
+func convertCodeblocks(p *BlogPost) {
+	var inCodeBlock bool
+	var startingCodeBlock bool
+	var endingCodeBlock int
+	var lang string
+	var prefix string
+	var b strings.Builder
+	for _, line := range strings.Split(p.Content, "\n") {
+		if inCodeBlock {
+			if line != "" && startingCodeBlock {
+				prefix = prefixRegex.FindString(line)
+			}
+
+			if line != "" && !strings.HasPrefix(line, prefix) {
+				b.WriteString("```\n")
+				inCodeBlock = false
+				startingCodeBlock = false
+				prefix = ""
+				endingCodeBlock = 0
+			} else {
+				if line == "" {
+					if !startingCodeBlock {
+						endingCodeBlock++
+					}
+					continue
+				}
+				startingCodeBlock = false
+				for i := 0; i < endingCodeBlock; i++ {
+					b.WriteString("\n")
+				}
+				endingCodeBlock = 0
+				b.WriteString(strings.TrimPrefix(line, prefix) + "\n")
+				continue
+			}
+		}
+
+		if strings.HasPrefix(line, ".. code-block::") || strings.HasPrefix(line, ".. sourcecode::") {
+			lang = strings.TrimSpace(strings.TrimPrefix(strings.TrimPrefix(line, ".. code-block::"), ".. sourcecode::"))
+			inCodeBlock = true
+			startingCodeBlock = true
+			prefix = ""
+			b.WriteString("```" + lang + "\n")
+			continue
+		}
+
+		b.WriteString(line + "\n")
+	}
+
+	p.Content = b.String()
 }
