@@ -1,13 +1,14 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"database/sql"
 	"flag"
 	"fmt"
+	"io"
 	"os"
 	"path/filepath"
-	"regexp"
 	"strings"
 	"time"
 
@@ -93,7 +94,8 @@ func main() {
 
 		if p.MarkupType == "rst" {
 			// Convert posts to markdown
-			convertMarkup(p)
+			fmt.Println("lexing...")
+			p.Content = string(lex([]byte(p.Content)))
 		}
 
 		filePath := filepath.Join(baseDir, p.Locale, "_posts", p.PubDate.Format("2006-01-02")+"-"+p.Slug+".md")
@@ -148,7 +150,7 @@ func getPosts(ctx context.Context, db *sql.DB) ([]*BlogPost, error) {
 		create_date,
 		update_date
 	from blog_post
-    WHERE active = true and id =563;`
+    WHERE active = true and id = 563;`
 
 	rows, err := tx.QueryContext(ctx, q)
 	if err != nil {
@@ -183,71 +185,202 @@ func getPosts(ctx context.Context, db *sql.DB) ([]*BlogPost, error) {
 	return posts, err
 }
 
-func convertMarkup(p *BlogPost) {
-	convertLinks(p)
-	convertNotes(p)
-	convertCodeblocks(p)
+func lex(input []byte) []byte {
+	l := lexer{
+		input:  input,
+		output: make(chan byte),
+	}
+	go l.run()
+	var output []byte
+	for b := range l.output {
+		output = append(output, b)
+	}
+	return output
 }
 
-var rstLink = regexp.MustCompile("`" + `([^<]*)\s+<([^>]*)>` + "`_")
-
-func convertLinks(p *BlogPost) {
-	p.Content = rstLink.ReplaceAllString(p.Content, "[${1}](${2})")
+type lexer struct {
+	input  []byte
+	pos    int
+	output chan byte
 }
 
-func convertNotes(p *BlogPost) {
-	// TODO
+func (l *lexer) run() {
+	for state := stateText; state != nil; {
+		state = state(l)
+	}
+	close(l.output)
 }
 
-var prefixRegex = regexp.MustCompile(`^\s*`)
+func (l *lexer) next() (byte, error) {
+	if l.pos >= len(l.input) {
+		return 0, io.EOF
+	}
+	b := l.input[l.pos]
+	l.pos++
+	return b, nil
+}
 
-func convertCodeblocks(p *BlogPost) {
-	var inCodeBlock bool
-	var startingCodeBlock bool
-	var endingCodeBlock int
-	var lang string
-	var prefix string
-	var b strings.Builder
-	for _, line := range strings.Split(p.Content, "\n") {
-		if inCodeBlock {
-			if line != "" && startingCodeBlock {
-				prefix = prefixRegex.FindString(line)
-			}
+func (l *lexer) peek() (byte, error) {
+	if l.pos >= len(l.input) {
+		return 0, io.EOF
+	}
+	return l.input[l.pos], nil
+}
 
-			if line != "" && !strings.HasPrefix(line, prefix) {
-				b.WriteString("```\n")
-				inCodeBlock = false
-				startingCodeBlock = false
-				prefix = ""
-				endingCodeBlock = 0
-			} else {
-				if line == "" {
-					if !startingCodeBlock {
-						endingCodeBlock++
-					}
-					continue
-				}
-				startingCodeBlock = false
-				for i := 0; i < endingCodeBlock; i++ {
-					b.WriteString("\n")
-				}
-				endingCodeBlock = 0
-				b.WriteString(strings.TrimPrefix(line, prefix) + "\n")
-				continue
-			}
+func (l *lexer) emit(b []byte) {
+	for i := range b {
+		l.output <- b[i]
+	}
+}
+
+func (l *lexer) backup() {
+	if l.pos > 0 {
+		l.pos--
+	}
+}
+
+type stateFn func(*lexer) stateFn
+
+var (
+	codeBlock   = []byte(".. code-block::")
+	sourceBlock = []byte(".. sourcecode::")
+	noteBlock   = []byte(".. note::")
+)
+
+func stateText(l *lexer) stateFn {
+	for {
+		if l.pos+len(codeBlock) < len(l.input) && bytes.Compare(l.input[l.pos:l.pos+len(codeBlock)], codeBlock) == 0 {
+			l.pos += len(codeBlock)
+			return stateCodeBlock
 		}
 
-		if strings.HasPrefix(line, ".. code-block::") || strings.HasPrefix(line, ".. sourcecode::") {
-			lang = strings.TrimSpace(strings.TrimPrefix(strings.TrimPrefix(line, ".. code-block::"), ".. sourcecode::"))
-			inCodeBlock = true
-			startingCodeBlock = true
-			prefix = ""
-			b.WriteString("```" + lang + "\n")
+		if l.pos+len(sourceBlock) < len(l.input) && bytes.Compare(l.input[l.pos:l.pos+len(sourceBlock)], sourceBlock) == 0 {
+			l.pos += len(sourceBlock)
+			return stateCodeBlock
+		}
+
+		if l.pos+len(noteBlock) < len(l.input) && bytes.Compare(l.input[l.pos:l.pos+len(noteBlock)], noteBlock) == 0 {
+			l.pos += len(noteBlock)
+			return stateNoteBlock
+		}
+
+		b, err := l.next()
+		if err != nil {
+			return nil
+		}
+		l.emit([]byte{b})
+	}
+}
+
+func stateLink(l *lexer) stateFn {
+	// TODO: parse links
+	return stateText
+}
+
+func stateCodeBlock(l *lexer) stateFn {
+	// Read the language.
+	var lang []byte
+
+	// Read off the spaces between the code-block def and language.
+	for {
+		next, err := l.next()
+		if err != nil {
+			return nil
+		}
+		if next == byte(' ') {
+			continue
+		}
+		if next == byte('\n') {
+			break
+		}
+		lang = append(lang, next)
+		break
+	}
+
+	// Read off the rest of the language name.
+	for {
+		next, err := l.next()
+		if err != nil {
+			return nil
+		}
+		if next == byte('\n') {
+			break
+		}
+		lang = append(lang, next)
+	}
+
+	// Read off starting blank lines
+	var blockIndent int
+	for {
+		next, err := l.next()
+		if err != nil {
+			return nil
+		}
+		if next == byte('\n') {
+			// Discard any blank lines.
+			blockIndent = 0
+			continue
+		}
+		if next == byte(' ') || next == byte('\t') {
+			blockIndent++
 			continue
 		}
 
-		b.WriteString(line + "\n")
+		// Encountered a normal character.
+		l.backup()
+		break
 	}
 
-	p.Content = b.String()
+	l.emit([]byte("```"))
+	l.emit(lang)
+	l.emit([]byte("\n"))
+
+	defer l.emit([]byte("```\n\n"))
+
+	// Consume the rest of the code-block.
+	indent := blockIndent
+	var buf []byte
+	var lines [][]byte
+	for {
+		next, err := l.next()
+		if err != nil {
+			return nil
+		}
+		if next == byte('\n') {
+			lines = append(lines, buf)
+			if len(buf) != 0 {
+				for i := range lines {
+					l.emit(lines[i])
+					l.emit([]byte("\n"))
+				}
+				lines = nil
+			}
+			buf = nil
+			indent = 0
+			continue
+		}
+		if len(buf) == 0 {
+			if next == byte(' ') || next == byte('\t') {
+				if indent < blockIndent {
+					indent++
+					continue
+				}
+				buf = append(buf, next)
+				continue
+			} else if indent != blockIndent {
+				l.backup()
+				break
+			}
+		}
+
+		buf = append(buf, next)
+	}
+
+	return stateText
+}
+
+func stateNoteBlock(l *lexer) stateFn {
+	// TODO: handle note blocks
+	l.emit(noteBlock)
+	return stateText
 }
