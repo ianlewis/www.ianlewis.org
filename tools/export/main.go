@@ -380,7 +380,79 @@ func stateCodeBlock(l *lexer) stateFn {
 }
 
 func stateNoteBlock(l *lexer) stateFn {
-	// TODO: handle note blocks
-	l.emit(noteBlock)
+	// Read off the spaces between the note and line break.
+	for {
+		next, err := l.next()
+		if err != nil {
+			return nil
+		}
+		if next == byte('\n') {
+			break
+		}
+		continue
+	}
+
+	// Read off starting blank lines
+	var blockIndent int
+	for {
+		next, err := l.next()
+		if err != nil {
+			return nil
+		}
+		if next == byte('\n') {
+			// Discard any blank lines.
+			blockIndent = 0
+			continue
+		}
+		if next == byte(' ') || next == byte('\t') {
+			blockIndent++
+			continue
+		}
+
+		// Encountered a normal character.
+		l.backup()
+		break
+	}
+
+	// Consume the rest of the code-block.
+	indent := blockIndent
+	var buf []byte
+	var lines [][]byte
+	for {
+		next, err := l.next()
+		if err != nil {
+			return nil
+		}
+		if next == byte('\n') {
+			lines = append(lines, buf)
+			buf = nil
+			indent = 0
+			continue
+		}
+		if len(buf) == 0 {
+			if next == byte(' ') || next == byte('\t') {
+				if indent < blockIndent {
+					indent++
+					continue
+				}
+				buf = append(buf, next)
+				continue
+			} else if indent != blockIndent {
+				l.backup()
+				break
+			}
+		}
+
+		buf = append(buf, next)
+	}
+
+	for i := range lines {
+		if i != len(lines)-1 || len(lines[i]) > 0 {
+			l.emit([]byte("> "))
+			l.emit(lines[i])
+		}
+		l.emit([]byte("\n"))
+	}
+
 	return stateText
 }
