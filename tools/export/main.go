@@ -150,7 +150,7 @@ func getPosts(ctx context.Context, db *sql.DB) ([]*BlogPost, error) {
 		create_date,
 		update_date
 	from blog_post
-    WHERE active = true and id = 563;`
+    WHERE active = true;`
 
 	rows, err := tx.QueryContext(ctx, q)
 	if err != nil {
