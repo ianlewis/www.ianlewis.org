@@ -5,6 +5,14 @@ import (
 )
 
 func stateLinkText(l *lexer) stateFn {
+	// TODO: Do I need to implement other kinds of backtick markup?
+
+	// Ignore the first backtick.
+	_, err := l.next()
+	if err != nil {
+		return nil
+	}
+
 	for {
 		n, err := l.next()
 		if err != nil {
@@ -17,19 +25,22 @@ func stateLinkText(l *lexer) stateFn {
 			return stateText
 		}
 
-		if n == ']' {
+		if n == '<' {
+			// TODO: check if there is a prior space character.
+			l.backup()
 			i := l.thisLexeme(lexLinkText)
-			i.val = strings.Trim(i.val, "[]")
+			i.val = strings.Trim(i.val, "` ")
+			l.emitLexeme(i)
+			return stateLinkURL
+		}
+
+		if n == '`' {
+			l.backup()
+			i := l.thisLexeme(lexLinkText)
+			i.val = strings.Trim(i.val, "`")
 			l.emitLexeme(i)
 
-			r, err := l.peek()
-			if err != nil {
-				return nil
-			}
-			if r == '(' {
-				return stateLinkURL
-			}
-			return stateText
+			return stateLinkEnd
 		}
 	}
 }
@@ -47,11 +58,35 @@ func stateLinkURL(l *lexer) stateFn {
 			return stateText
 		}
 
-		if n == ')' {
+		if n == '>' {
 			i := l.thisLexeme(lexLinkURL)
-			i.val = strings.Trim(i.val, "()")
+			i.val = strings.Trim(i.val, "<>")
 			l.emitLexeme(i)
-			return stateText
+			return stateLinkEnd
 		}
 	}
+}
+
+func stateLinkEnd(l *lexer) stateFn {
+	r, err := l.next()
+	if err != nil {
+		return nil
+	}
+
+	if r != '`' {
+		l.emit(lexError)
+		return nil
+	}
+
+	r2, err := l.next()
+	if err != nil {
+		return nil
+	}
+	if r2 != '_' {
+		l.emit(lexError)
+		return nil
+	}
+
+	l.ignore()
+	return stateText
 }

@@ -24,6 +24,13 @@ func stateHeading(l *lexer) stateFn {
 		}
 
 		if n != r {
+			if r == '`' {
+				// Maybe this is a link?
+				l.backup()
+				l.backup()
+				l.emitNonEmpty(lexText)
+				return stateLinkText
+			}
 			l.emitNonEmpty(lexText)
 			return stateText
 		}

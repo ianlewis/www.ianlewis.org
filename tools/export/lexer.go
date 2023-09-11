@@ -51,12 +51,12 @@ func (i lexeme) String() string {
 	case lexEOF:
 		return "EOF"
 	case lexError:
-		return i.val
+		return fmt.Sprintf("ERROR:%s", i.val)
 	}
 	if len(i.val) > 10 {
-		return fmt.Sprintf("%.10q...", i.val)
+		return fmt.Sprintf("%v:%.10q...", i.typ, i.val)
 	}
-	return fmt.Sprintf("%q", i.val)
+	return fmt.Sprintf("%v:%q", i.typ, i.val)
 }
 
 func newLexer(input string) *lexer {

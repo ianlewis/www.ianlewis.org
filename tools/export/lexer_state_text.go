@@ -25,7 +25,7 @@ func stateText(l *lexer) stateFn {
 			return nil
 		}
 
-		if n == '[' {
+		if n == '`' {
 			l.backup()
 			l.emitNonEmpty(lexText)
 			return stateLinkText

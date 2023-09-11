@@ -63,8 +63,8 @@ var lexerTestCases = map[string]struct {
 			},
 		},
 	},
-	"link citation": {
-		input: "[some link]",
+	"link ref at beginning of line": {
+		input: "`some link`_",
 		expected: []lexeme{
 			{
 				typ:  lexLinkText,
@@ -78,8 +78,28 @@ var lexerTestCases = map[string]struct {
 			},
 		},
 	},
+	"link ref in text": {
+		input: "this is `some link`_",
+		expected: []lexeme{
+			{
+				typ:  lexText,
+				val:  "this is ",
+				opts: map[int]interface{}{},
+			},
+			{
+				typ:  lexLinkText,
+				val:  "some link",
+				opts: map[int]interface{}{},
+			},
+			{
+				typ:  lexEOF,
+				val:  "",
+				opts: map[int]interface{}{},
+			},
+		},
+	},
 	"link with URL": {
-		input: "[some link](http://www.google.com)",
+		input: "`some link <http://www.google.com>`_",
 		expected: []lexeme{
 			{
 				typ:  lexLinkText,
