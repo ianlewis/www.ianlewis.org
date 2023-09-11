@@ -27,7 +27,7 @@ func stateDots(l *lexer) stateFn {
 			return stateText
 		}
 
-		// TODO: implement footnotes && citations
+		// TODO: Support link reference definitions.
 		// TODO: Do I need to implement auto-numbered footnotes?
 		// https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#footnotes
 
