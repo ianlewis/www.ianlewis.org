@@ -22,6 +22,9 @@ const (
 
 	lexSectionAdornment // A heading underline bar
 
+	lexLinkText
+	lexLinkURL
+
 	lexComment // An rst comment
 
 	lexDirectiveName    // An rst directive name
@@ -30,7 +33,7 @@ const (
 	lexDirectiveOptVal  // An rst directive option value
 	lexDirectiveBody    // An rst directive body
 
-	lexText // plain text line
+	lexText // plain text
 )
 
 const (

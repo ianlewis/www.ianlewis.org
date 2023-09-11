@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -55,6 +54,41 @@ var lexerTestCases = map[string]struct {
 			{
 				typ:  lexSectionAdornment,
 				val:  "-----------",
+				opts: map[int]interface{}{},
+			},
+			{
+				typ:  lexEOF,
+				val:  "",
+				opts: map[int]interface{}{},
+			},
+		},
+	},
+	"link citation": {
+		input: "[some link]",
+		expected: []lexeme{
+			{
+				typ:  lexLinkText,
+				val:  "some link",
+				opts: map[int]interface{}{},
+			},
+			{
+				typ:  lexEOF,
+				val:  "",
+				opts: map[int]interface{}{},
+			},
+		},
+	},
+	"link with URL": {
+		input: "[some link](http://www.google.com)",
+		expected: []lexeme{
+			{
+				typ:  lexLinkText,
+				val:  "some link",
+				opts: map[int]interface{}{},
+			},
+			{
+				typ:  lexLinkURL,
+				val:  "http://www.google.com",
 				opts: map[int]interface{}{},
 			},
 			{
@@ -230,7 +264,6 @@ func equal(i1, i2 []lexeme) bool {
 	}
 	for k := range i1 {
 		if i1[k].typ != i2[k].typ {
-			fmt.Printf("typ: %d %d\n", i1[k].typ, i2[k].typ)
 			return false
 		}
 		if i1[k].val != i2[k].val {

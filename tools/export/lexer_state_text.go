@@ -19,11 +19,16 @@ func stateText(l *lexer) stateFn {
 	}
 
 	for {
-		// TODO: Handle links
 		n, err := l.next()
 		if err != nil {
 			l.emitNonEmpty(lexText)
 			return nil
+		}
+
+		if n == '[' {
+			l.backup()
+			l.emitNonEmpty(lexText)
+			return stateLinkText
 		}
 
 		if n == '\n' {
