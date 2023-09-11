@@ -13,6 +13,8 @@ func isHeadingPunc(r rune) bool {
 	return false
 }
 
+// TODO: ignore document titles (section adornment on top and bottom)
+
 func stateHeading(l *lexer) stateFn {
 	r, _ := l.next()
 

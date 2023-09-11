@@ -5,7 +5,7 @@ import (
 )
 
 func stateLinkText(l *lexer) stateFn {
-	// TODO: Do I need to implement other kinds of backtick markup?
+	// TODO: Support ``code`` markup.
 
 	// Ignore the first backtick.
 	_, err := l.next()
