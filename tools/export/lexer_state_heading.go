@@ -17,7 +17,6 @@ func stateHeading(l *lexer) stateFn {
 	r, _ := l.next()
 
 	for {
-		// TODO: Handle links
 		n, err := l.next()
 		if err != nil {
 			l.emitNonEmpty(lexSectionAdornment)
