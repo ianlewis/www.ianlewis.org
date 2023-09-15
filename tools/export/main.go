@@ -1,11 +1,14 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"database/sql"
 	"flag"
 	"fmt"
+	"io"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 	"time"
@@ -65,6 +68,30 @@ func mySQLDSN(mysqlAddr, mysqlDB, mysqlUser, mysqlPassword string, options map[s
 	return fmt.Sprintf("%s@tcp(%s)/%s?%s", user, mysqlAddr, mysqlDB, strings.Join(params, "&"))
 }
 
+func pandocConvert(content, from, to string) (string, error) {
+	cmd := exec.Command("pandoc", "-f", from, "-t", to, "-")
+	var out bytes.Buffer
+	cmd.Stdout = &out
+
+	stdin, err := cmd.StdinPipe()
+	if err != nil {
+		return "", err
+	}
+	defer stdin.Close()
+
+	if err := cmd.Start(); err != nil {
+		return "", err
+	}
+
+	io.WriteString(stdin, content)
+	stdin.Close()
+	if err := cmd.Wait(); err != nil {
+		return "", err
+	}
+
+	return out.String(), nil
+}
+
 func main() {
 	fs := flag.NewFlagSet("root", flag.ContinueOnError)
 	mysqlAddr := fs.String("mysql-addr", "127.0.0.1:3306", "The mysql server address.")
@@ -88,16 +115,22 @@ func main() {
 	posts := CheckVal(getPosts(ctx, db))
 
 	for _, p := range posts {
+		filePath := filepath.Join(baseDir, p.Locale, "_posts", p.PubDate.Format("2006-01-02")+"-"+p.Slug+".md")
+		fmt.Println(filePath)
+
+		// Replace windows newlines with unix newlines.
 		p.Content = strings.Replace(p.Content, "\r\n", "\n", -1)
 
 		if p.MarkupType == "rst" {
-			// Convert posts to markdown
-			fmt.Println("lexing...")
-			// TODO: use new lexer
-			// p.Content = string(lex([]byte(p.Content)))
+			// Replace sourcecode directives.
+			p.Content = strings.Replace(p.Content, ".. sourcecode::", ".. code-block::", -1)
+			content, err := pandocConvert(p.Content, "rst", "commonmark")
+			if err != nil {
+				panic(err)
+			}
+			p.Content = content
 		}
 
-		filePath := filepath.Join(baseDir, p.Locale, "_posts", p.PubDate.Format("2006-01-02")+"-"+p.Slug+".md")
 		f := CheckVal(os.Create(filePath))
 
 		// Add FrontMatter
