@@ -4,6 +4,7 @@ title: "IE, JSON, and the script tag"
 date: 2009-02-14 13:34:57 +0000
 permalink: /en/ie-json-and-the-lscriptg-tagl-scriptg
 blog: en
+render_with_liquid: false
 ---
 
 <p>My coworker recently introduced me to one of the most blatantly bad behaviors in web browser history. He introduced it thus:</p>

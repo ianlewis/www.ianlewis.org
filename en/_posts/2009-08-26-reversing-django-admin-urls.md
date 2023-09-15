@@ -4,6 +4,7 @@ title: "Custom Admin Views and Reversing Django Admin URLs"
 date: 2009-08-26 18:08:29 +0000
 permalink: /en/reversing-django-admin-urls
 blog: en
+render_with_liquid: false
 ---
 
 I recently used the new feature in Django 1.1 for [reversing django

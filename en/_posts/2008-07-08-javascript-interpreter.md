@@ -4,6 +4,7 @@ title: "Javascript Interpreter"
 date: 2008-07-08 19:45:46 +0000
 permalink: /en/javascript-interpreter
 blog: en
+render_with_liquid: false
 ---
 
 I wanted a convenient way to test out some javascript by running it in a

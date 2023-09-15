@@ -4,6 +4,7 @@ title: "Deploying Go Servers with Kubernetes on Container Engine"
 date: 2015-05-07 02:00:00 +0000
 permalink: /en/deploying-go-servers-kubernetes
 blog: en
+render_with_liquid: false
 ---
 
 > **UPDATE (2015/07/13)**: Now using the v1 API.

@@ -4,6 +4,7 @@ title: "DjangoGraphviz"
 date: 2008-11-08 11:40:03 +0000
 permalink: /jp/djangographviz
 blog: jp
+render_with_liquid: false
 ---
 
 <p>今日、<a href="http://www.djangoproject.com/" title="Django">Django</a>アプリケーションのモデルの構成を分かりやすく見たくて、モデル構成から<a href="http://ja.wikipedia.org/wiki/Graphviz">Graphviz</a> ドットファイルを生成できれば、いいなと思って、<a href="http://code.djangoproject.com/wiki/DjangoGraphviz">DjangoGraphviz</a>を見つけた。ただ、<a href="http://code.unicoders.org/django/trunk/utils/modelviz.py">ここ</a>からダウンロードして、こう実行する。</p>

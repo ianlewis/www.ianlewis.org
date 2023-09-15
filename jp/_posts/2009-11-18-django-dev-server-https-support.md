@@ -4,6 +4,7 @@ title: "DjangoのHTTPS対応開発サーバ"
 date: 2009-11-18 21:21:26 +0000
 permalink: /jp/django-dev-server-https-support
 blog: jp
+render_with_liquid: false
 ---
 
 Djangoの開発サーバはHTTPSを普段に対応してないので、HTTPS対応をどうやって開発すればいいんだろうと思ったら、調べてみた。秘密は開発サーバ、http用とhttps用を二つ立ち上げます。https開発サーバはstunnelでHTTPS対応します。stunnelは普通のソケットをSSL

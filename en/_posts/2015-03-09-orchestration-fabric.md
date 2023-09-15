@@ -4,6 +4,7 @@ title: "Orchestration with Fabric  #1"
 date: 2015-03-09 15:30:00 +0000
 permalink: /en/orchestration-fabric
 blog: en
+render_with_liquid: false
 ---
 
 When figuring out how I wanted to deploy my website I had a few things that I

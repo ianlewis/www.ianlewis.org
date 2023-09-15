@@ -4,6 +4,7 @@ title: "App Engine Pull Queues and kombu"
 date: 2013-11-05 02:00:00 +0000
 permalink: /en/app-engine-pull-queues-and-kombu
 blog: en
+render_with_liquid: false
 ---
 
 App Engine provides a [pull queue API](https://developers.google.com/appengine/docs/python/taskqueue/overview-pull)

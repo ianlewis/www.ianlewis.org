@@ -4,6 +4,7 @@ title: "What are Kubernetes Pods Anyway?"
 date: 2017-08-25 15:20:00 +0000
 permalink: /en/what-are-kubernetes-pods-anyway
 blog: en
+render_with_liquid: false
 ---
 
 Recently I saw a tweet from the awesome Amy Codes (I really hope that's her real name) about Kubernetes Pods:

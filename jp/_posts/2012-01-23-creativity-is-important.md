@@ -4,6 +4,7 @@ title: "クリエーティビティーは大事だ"
 date: 2012-01-23 13:00:00 +0000
 permalink: /jp/creativity-is-important
 blog: jp
+render_with_liquid: false
 ---
 
 <div class="note">

@@ -4,6 +4,7 @@ title: "Django's contrib.auth and django-newauth"
 date: 2012-03-25 12:06:56 +0000
 permalink: /en/djangos-contribauth-and-django-newauth
 blog: en
+render_with_liquid: false
 ---
 
 Recently there have been a lot of conversations on the Django mailing

@@ -4,6 +4,7 @@ title: "Wanted: Dictionary program for Windows/Linux"
 date: 2008-08-03 18:21:00 +0000
 permalink: /en/wanted-dictionary-program-for-windows-li
 blog: en
+render_with_liquid: false
 ---
 
 <p>I have wanted a good dictionary application that supports a number of dictionaries/dictionary formats for studying Japanese but I've been sort of frustrated that there is no single application that does what I would like. I have looked mostly at <a href="http://stardict.sourceforge.net/">stardict</a> and <a href="http://epwing.sourceforge.net/">epwing</a> because they are closest to the type of dictionary I want. Specifically I have the following requirements:</p>

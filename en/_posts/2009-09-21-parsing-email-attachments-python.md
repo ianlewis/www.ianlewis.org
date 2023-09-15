@@ -4,6 +4,7 @@ title: "Parsing email with attachments in python"
 date: 2009-09-21 11:33:31 +0000
 permalink: /en/parsing-email-attachments-python
 blog: en
+render_with_liquid: false
 ---
 
 Recently I needed to be able to parse out attachments and body from

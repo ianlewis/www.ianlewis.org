@@ -4,6 +4,7 @@ title: "Building Go Applications with Google Container Builder"
 date: 2017-07-14 10:15:00 +0000
 permalink: /en/building-go-applications-google-container-builder
 blog: en
+render_with_liquid: false
 ---
 
 <img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/764/container-builder-go.png">

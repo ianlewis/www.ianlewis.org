@@ -4,6 +4,7 @@ title: "Google Appengine 公認API エキスパートになりました！"
 date: 2010-11-23 12:06:39 +0000
 permalink: /jp/google-appengine-api-expert
 blog: jp
+render_with_liquid: false
 ---
 
 ![image](http://static.ianlewis.org/prod/img/python/python-powered.png)

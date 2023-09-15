@@ -4,6 +4,7 @@ title: "Google Developer Experts を卒業しました"
 date: 2014-06-16 13:00:00 +0000
 permalink: /jp/google-developer-experts
 blog: jp
+render_with_liquid: false
 ---
 
 先週の月曜日(6/9)に公開されて、皆さんは多分見逃している人が多いと思いますが、[私は

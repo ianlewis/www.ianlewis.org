@@ -4,6 +4,7 @@ title: "jQuery Multi-Pageslide"
 date: 2009-01-23 00:15:08 +0000
 permalink: /en/jquery-multi-pageslide-1
 blog: en
+render_with_liquid: false
 ---
 
 Earlier this week I came across the [jQuery Pageslide](http://halobrite.com/blog/jquery-pageslide/) plugin via

@@ -4,6 +4,7 @@ title: "Django Girls Workshop Tokyoのコーチをやりました"
 date: 2015-07-28 14:30:00 +0000
 permalink: /jp/django-girls-workshop-tokyo
 blog: jp
+render_with_liquid: false
 ---
 
 先週末に [Django Girls Workshop](https://djangogirls.org/tokyo/) のコーチとして参加しました。Django Girls は [Django](https://www.djangoproject.com/) ウェブフェレームワークの女性のための国際的なコミュニティ。東京の[PyLadies](http://pyladies-tokyo.connpass.com/) と [PyCon JP](https://www.pycon.jp/) との協力で開催されました。私は実は[コーチ](https://djangogirls.org/tokyo/#members)としても、PyCon JPの代表としても、[スポンサー](https://djangogirls.org/tokyo/#Sponsors)の３つの役割で参加しました。

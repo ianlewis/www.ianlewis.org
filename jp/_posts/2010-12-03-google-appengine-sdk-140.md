@@ -4,6 +4,7 @@ title: "Google Appengine SDK 1.4.0 がリリースされました！"
 date: 2010-12-03 09:16:18 +0000
 permalink: /jp/google-appengine-sdk-140
 blog: jp
+render_with_liquid: false
 ---
 
 [Google Appengine](http://code.google.com/appengine/) 1.4.0 がリリースされました！！

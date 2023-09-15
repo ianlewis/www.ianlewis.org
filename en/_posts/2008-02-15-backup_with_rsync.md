@@ -4,6 +4,7 @@ title: "Backup with rsync"
 date: 2008-02-15 14:18:00 +0000
 permalink: /en/backup_with_rsync
 blog: en
+render_with_liquid: false
 ---
 
 <p>I wanted to have a simple incremental backup system I could use on my machine to backup to an external drive so I came across <a href="http://benno.id.au/blog/2007/05/30/rsync-backup">this post</a> on <a href="http://benno.id.au/blog/">Benno's blog</a>. Basically it involves using rsync with the --link-dest option to compare files you are backing up against an previous backup and only create new copies when the files have been modified since the previous backup. The rsync command would look something like the following:</p>

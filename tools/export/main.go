@@ -140,6 +140,7 @@ func main() {
 		fmt.Fprintf(f, "date: %s\n", p.PubDate.Format("2006-01-02 15:04:05 +0000"))
 		fmt.Fprintf(f, "permalink: /%s/%s\n", p.Locale, p.Slug)
 		fmt.Fprintf(f, "blog: %s\n", p.Locale)
+		fmt.Fprint(f, "render_with_liquid: false\n")
 		fmt.Fprint(f, "---\n")
 		fmt.Fprint(f, "\n")
 

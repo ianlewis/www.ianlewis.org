@@ -4,6 +4,7 @@ title: "Google Cloud Platform HTTP Load Balancers Explained via the CLI"
 date: 2016-04-18 11:30:00 +0000
 permalink: /en/google-cloud-platform-http-load-balancers-explaine
 blog: en
+render_with_liquid: false
 ---
 
 The Google Cloud Platform Load Balancers are based off of technology that

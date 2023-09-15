@@ -4,6 +4,7 @@ title: "Google Appengine フレームワーク Tipfy の紹介"
 date: 2010-12-24 13:27:15 +0000
 permalink: /jp/google-appengine-framework-tipfy
 blog: jp
+render_with_liquid: false
 ---
 
 *(この記事は* [Python Web フレームワーク

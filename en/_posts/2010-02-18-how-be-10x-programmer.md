@@ -4,6 +4,7 @@ title: "How to be a 10x programmer"
 date: 2010-02-18 12:35:50 +0000
 permalink: /en/how-be-10x-programmer
 blog: en
+render_with_liquid: false
 ---
 
 I recently read a blog post that is a satirical look at how to gain a

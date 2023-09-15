@@ -4,6 +4,7 @@ title: "Kay 1.1 Released!"
 date: 2011-03-07 15:41:01 +0000
 permalink: /en/kay-11-released
 blog: en
+render_with_liquid: false
 ---
 
 The Kay team just just released Kay 1.1\! I want to thank Takashi

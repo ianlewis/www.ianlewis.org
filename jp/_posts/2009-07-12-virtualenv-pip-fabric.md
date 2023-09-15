@@ -4,6 +4,7 @@ title: "virtualenv, virtualenvwrapper, pip を使う方法"
 date: 2009-07-12 10:47:17 +0000
 permalink: /jp/virtualenv-pip-fabric
 blog: jp
+render_with_liquid: false
 ---
 
 あるプロジェクトの依存は特定なバージョンじゃないとダメな場合が結構多いと思いますけど、最近、pythonの仮想環境を簡単に作れるようになりました。virtualenv

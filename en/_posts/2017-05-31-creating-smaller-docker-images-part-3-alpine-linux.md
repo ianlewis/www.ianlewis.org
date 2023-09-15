@@ -4,6 +4,7 @@ title: "Creating Smaller Docker Images Part #3: Alpine Linux"
 date: 2017-05-31 16:25:00 +0000
 permalink: /en/creating-smaller-docker-images-part-3-alpine-linux
 blog: en
+render_with_liquid: false
 ---
 
 <img alt="alpine linux" title="alpine linux" class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/761/alpinelinux-logo.png">

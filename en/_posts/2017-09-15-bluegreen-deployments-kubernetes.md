@@ -4,6 +4,7 @@ title: "Blue/Green Deployments on Kubernetes"
 date: 2017-09-15 19:00:00 +0000
 permalink: /en/bluegreen-deployments-kubernetes
 blog: en
+render_with_liquid: false
 ---
 
 > For those that want to dive right in, I have put up a tutorial and some sample manifests on github. Check it out at [https://github.com/IanLewis/kubernetes-bluegreen-deployment-tutorial](https://github.com/IanLewis/kubernetes-bluegreen-deployment-tutorial)

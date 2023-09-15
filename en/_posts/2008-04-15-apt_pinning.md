@@ -4,6 +4,7 @@ title: "apt pinning"
 date: 2008-04-15 00:00:48 +0000
 permalink: /en/apt_pinning
 blog: en
+render_with_liquid: false
 ---
 
 <p>Many people who are new to <a href="http://www.debian.org/" title="Debian">Debian</a> might be thinking that <a href="http://www.debian.org/" title="Debian">Debian</a> stable releases are slow. You are right. Many do look at this and turn to <a href="http://www.ubuntu.com/" title="Ubuntu">Ubuntu</a> because of their relatively quick releases. It's true that <a href="http://www.ubuntu.com/" title="Ubuntu">Ubuntu</a> does release &quot;stable&quot; versions more often but I would encourage people to sit back down and give <a href="http://www.debian.org/" title="Debian">Debian</a> another try. Especially with the cool feature of <a href="http://www.debian.org/" title="Debian">Debian</a>'s packaging system, <a href="http://en.wikipedia.org/wiki/Advanced_Packaging_Tool">apt</a>, called <a href="http://wiki.debian.org/AptPinning">apt pinning</a>.</p>

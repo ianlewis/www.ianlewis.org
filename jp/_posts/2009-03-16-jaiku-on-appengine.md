@@ -4,6 +4,7 @@ title: "Jaikuを動かしてみた"
 date: 2009-03-16 00:30:34 +0000
 permalink: /jp/jaiku-on-appengine
 blog: jp
+render_with_liquid: false
 ---
 
 <p><a href="https://storage.googleapis.com/static.ianlewis.org/prod/img/516/jaiku.png"><img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/516/jaiku.png" /></a></p>

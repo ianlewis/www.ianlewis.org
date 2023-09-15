@@ -4,6 +4,7 @@ title: "jsonschema ヴァリデーター 0.1a"
 date: 2008-07-31 15:29:07 +0000
 permalink: /jp/jsonschema-0-1a
 blog: jp
+render_with_liquid: false
 ---
 
 <p>昨日、<a href="http://tinyurl.com/32qd4v" title="JSONSchema">JSONSchema</a>　ヴァリデーターを漸くリリースしました。<a href="http://en.wikipedia.org/wiki/XML" title="XML">XML</a> Schema と同じような<a href="http://tinyurl.com/32qd4v" title="JSONSchema">JSONSchema</a>は　JSON文書の構造が正しいかどうかを検証するための文書。さらに、jsonschema ヴァリデーターはその<a href="http://tinyurl.com/32qd4v" title="JSONSchema">JSONSchema</a>文書に従ってJSON文書が正しいかどうかを検証する<a href="http://www.python.org/" title="Python">Python</a>モジュール。<a href="http://groups.google.com/group/json-schema/web/json-schema-proposal---second-draft">JSON Schema Proposal Second Draft</a>を基にしています。</p>

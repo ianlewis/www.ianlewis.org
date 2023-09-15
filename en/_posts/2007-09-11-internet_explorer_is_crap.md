@@ -4,6 +4,7 @@ title: "Internet Explorer is CRAP!!"
 date: 2007-09-11 18:29:20 +0000
 permalink: /en/internet_explorer_is_crap
 blog: en
+render_with_liquid: false
 ---
 
 Basically the title says it all. Since I started doing web development I've lost count of the number of bugs that I've found in Internet Explorer but I want to highlight a couple that were especially annoying to me.

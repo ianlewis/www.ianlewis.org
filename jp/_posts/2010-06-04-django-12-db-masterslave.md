@@ -4,6 +4,7 @@ title: "Django 1.2 マルチ DB と master/slave レプリ"
 date: 2010-06-04 16:49:05 +0000
 permalink: /jp/django-12-db-masterslave
 blog: jp
+render_with_liquid: false
 ---
 
 Django 1.2 はマルチDB対応ができまして、master/slave

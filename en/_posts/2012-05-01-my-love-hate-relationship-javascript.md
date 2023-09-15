@@ -4,6 +4,7 @@ title: "My Love-Hate Relationship with JavaScript"
 date: 2012-05-01 09:01:09 +0000
 permalink: /en/my-love-hate-relationship-javascript
 blog: en
+render_with_liquid: false
 ---
 
 I have a love-hate relationship with JavaScript. Well, more hate and

@@ -4,6 +4,7 @@ title: "Javaに日本語のフォントのインストール"
 date: 2009-06-16 11:38:01 +0000
 permalink: /jp/java-japanese-fonts
 blog: jp
+render_with_liquid: false
 ---
 
 LinuxではJavaは標準に日本語フォントが大体インストールされてないので、手でインストールしないといけない。

@@ -4,6 +4,7 @@ title: "Mercurial revsets の紹介"
 date: 2012-12-03 13:00:00 +0000
 permalink: /jp/mercurial-revsets
 blog: jp
+render_with_liquid: false
 ---
 
 ![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/mercurial/mercurial_medium.png)

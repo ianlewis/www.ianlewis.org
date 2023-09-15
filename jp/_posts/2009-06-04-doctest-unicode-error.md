@@ -4,6 +4,7 @@ title: "Python 例外のひどい仕様"
 date: 2009-06-04 14:39:55 +0000
 permalink: /jp/doctest-unicode-error
 blog: jp
+render_with_liquid: false
 ---
 
 <p><a href="http://www.python.org/" title="Python">Python</a>の例外オブジェクトは苦手です。例外のメッセージが何でもasciiとして扱われることがひどい。</p>

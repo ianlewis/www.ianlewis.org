@@ -4,6 +4,7 @@ title: "Androidで日本語入力 simeji の最新版をインストールして
 date: 2009-06-07 21:34:26 +0000
 permalink: /jp/simeji-installed
 blog: jp
+render_with_liquid: false
 ---
 
 <p>最近参加してきた <a href="http://code.google.com/events/io/">Google I/O</a> でもらったAndroid 開発フォンはアメリカ型で日本語入力出来なかったので、Social IME <a href="http://www.adamrocker.com/blog/236/simeji_android_japanese_input.html">simeji</a>という入力メソッドをインストールしてみた。意外と簡単だった。Android Marketでsimejiが出てるけど、最新版ではなく、日本語キーボードがついてないバージョンです。インストールしたいのが<a href="http://www.adamrocker.com/blog/257/simeji-for-android-bell-input.html">これ</a>。</p>

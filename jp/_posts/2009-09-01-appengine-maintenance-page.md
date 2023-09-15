@@ -4,6 +4,7 @@ title: "Appengine maintenanceが行われる時にメンテナンスページを
 date: 2009-09-01 23:23:46 +0000
 permalink: /jp/appengine-maintenance-page
 blog: jp
+render_with_liquid: false
 ---
 
 Google

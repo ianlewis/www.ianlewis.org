@@ -4,6 +4,7 @@ title: "Decentralized groups and Stand Alone Complex"
 date: 2012-02-25 15:10:09 +0000
 permalink: /en/decentralized-groups-and-stand-alone-complex
 blog: en
+render_with_liquid: false
 ---
 
 The other day I watched the talk "The coming war on general computation"

@@ -4,6 +4,7 @@ title: "Google Developer Day 2008"
 date: 2008-06-11 12:20:24 +0000
 permalink: /jp/limg-src-http-code-google-com-intl-ja-ev-1
 blog: jp
+render_with_liquid: false
 ---
 
 <p><a rel="lightbox" href="/gallery2/d/10647-2/beforestart.jpg"><img src="/gallery2/d/10648-2/beforestart.jpg" alt="" width="150" height="113" /></a> <a rel="lightbox" href="/gallery2/d/10645-2/shachou.jpg"><img src="/gallery2/d/10646-2/shachou.jpg" alt="" width="150" height="113" /></a> <a rel="lightbox" href="/gallery2/d/10641-2/recruit.jpg"><img src="/gallery2/d/10642-2/recruit.jpg" alt="" width="150" height="113" /></a></p>

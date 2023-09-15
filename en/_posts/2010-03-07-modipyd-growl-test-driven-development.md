@@ -4,6 +4,7 @@ title: "Modipyd with Growl Notifications and Test Driven Development"
 date: 2010-03-07 15:54:09 +0000
 permalink: /en/modipyd-growl-test-driven-development
 blog: en
+render_with_liquid: false
 ---
 
 Recently at work my coworker [Shinya

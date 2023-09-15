@@ -4,6 +4,7 @@ title: "Creating Smaller Docker Images: Part #2"
 date: 2016-02-17 22:00:00 +0000
 permalink: /en/creating-smaller-docker-images-part2
 blog: en
+render_with_liquid: false
 ---
 
 This is the second post in a series on making smaller Docker images. In my [previous blog post](https://www.ianlewis.org/en/creating-smaller-docker-images) I talked about how to create smaller Docker images but there were limits to

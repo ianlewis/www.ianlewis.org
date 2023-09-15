@@ -4,6 +4,7 @@ title: "Django で Amazon SES を使う"
 date: 2013-04-01 13:00:00 +0000
 permalink: /jp/django-amazon-ses
 blog: jp
+render_with_liquid: false
 ---
 
 Amazon さんが、Amazon Web Services の下にメール送信サービス [Simple Email Service

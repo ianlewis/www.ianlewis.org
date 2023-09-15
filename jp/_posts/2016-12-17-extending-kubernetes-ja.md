@@ -4,6 +4,7 @@ title: "Kubernetesを拡張しよう"
 date: 2016-12-17 20:30:00 +0000
 permalink: /jp/extending-kubernetes-ja
 blog: jp
+render_with_liquid: false
 ---
 
 > この記事は [Kubernetes Advent Calendar 2016](http://qiita.com/advent-calendar/2016/kubernetes) の第17日目の記事。第１6目は[yuanying](https://twitter.com/yuanying)さんの「[Openstack で Kubernetes を使う](http://www.fraction.jp/log/archives/2016/12/16/openstack-kubernetes)」でした。

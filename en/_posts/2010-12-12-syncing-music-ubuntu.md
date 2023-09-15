@@ -4,6 +4,7 @@ title: "Syncing music on Ubuntu"
 date: 2010-12-12 12:33:57 +0000
 permalink: /en/syncing-music-ubuntu
 blog: en
+render_with_liquid: false
 ---
 
 I recently played around with and figured out how to get syncing working

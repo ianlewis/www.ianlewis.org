@@ -4,6 +4,7 @@ title: "Django admin inline forms"
 date: 2008-11-09 01:09:55 +0000
 permalink: /en/django-admin-inline-forms
 blog: en
+render_with_liquid: false
 ---
 
 <p>For my new project dlife (<strong>Update:</strong> Now <a href="http://bitbucket.org/IanLewis/django-lifestream/">django-lifestream</a>), I went about implementing a simple comments interface that would allow users to make comments on imported feed items. I wanted to support this in the admin in the typical manner such that when you click on an item in the admin, you can see all the comments and edit them from the item's page.</p>

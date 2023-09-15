@@ -4,6 +4,7 @@ title: "Kubernetes Health Checks in Django"
 date: 2017-05-15 16:07:14 +0000
 permalink: /en/kubernetes-health-checks-django
 blog: en
+render_with_liquid: false
 ---
 
 <img alt="Kubernetes + Django" title="Kubernetes + Django" class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/752/kube-django.png">

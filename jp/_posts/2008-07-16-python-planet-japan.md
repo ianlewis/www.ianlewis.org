@@ -4,6 +4,7 @@ title: "Python Planet Japan 登場！！"
 date: 2008-07-16 03:53:23 +0000
 permalink: /jp/python-planet-japan
 blog: jp
+render_with_liquid: false
 ---
 
 <p><img src="http://planetpythonjp.ianlewis.org/images/python-logo.gif" alt="Python" width="211" height="71" /></p>

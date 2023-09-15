@@ -4,6 +4,7 @@ title: "Container Runtimes Part 4: Kubernetes Container Runtimes & CRI"
 date: 2019-01-26 12:00:00 +0000
 permalink: /en/container-runtimes-part-4-kubernetes-container-run
 blog: en
+render_with_liquid: false
 ---
 
 _This is the fourth and last part in a four part series on container runtimes. It's been a while since [part 1](https://www.ianlewis.org/en/container-runtimes-part-1-introduction-container-r), but in that post I gave an overview of container runtimes and discussed the differences between low-level and high-level runtimes. In [part 2](https://www.ianlewis.org/en/container-runtimes-part-2-anatomy-low-level-contai) I went into detail on low-level container runtimes and built a simple low-level runtime. In [part 3](https://www.ianlewis.org/en/container-runtimes-part-3-high-level-runtimes) I went up the stack and wrote about high-level container runtimes._

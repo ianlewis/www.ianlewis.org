@@ -4,6 +4,7 @@ title: "Transactions on Appengine"
 date: 2009-03-19 01:44:52 +0000
 permalink: /en/transactions-on-appengine
 blog: en
+render_with_liquid: false
 ---
 
 <p>The way to store data on <a href="http://code.google.com/appengine/" title="Appengine">Appengine</a> is with <a href="http://www.google.com/" title="Google">Google</a>'s <a href="http://code.google.com/appengine/docs/python/datastore/">BigTable Datastore</a> which has support for transactions. However, the transactions are quite limited in that,</p>

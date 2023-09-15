@@ -4,6 +4,7 @@ title: "Noisebridge hackerspace new digs"
 date: 2009-10-25 12:36:48 +0000
 permalink: /en/noisebridge-hackerspace-new-digs
 blog: en
+render_with_liquid: false
 ---
 
 I recently saw that [Noisebridge](https://www.noisebridge.net/) hackerspace moved into a new space and it looks HUGE! If only I had more time to spend at [Tokyo Hackerspace](http://www.tokyohackerspace.org/) :(

@@ -4,6 +4,7 @@ title: "Field/column Queries in Django"
 date: 2009-02-04 23:24:38 +0000
 permalink: /en/f-ield-column-queries-in-django
 blog: en
+render_with_liquid: false
 ---
 
 <p>One of the neat things making it's way into <a href="http://www.djangoproject.com/" title="Django">Django</a> 1.1 is <a href="http://docs.djangoproject.com/en/dev/topics/db/queries/#filters-can-reference-fields-on-the-model">F object queries</a>. The F object is kind of like the Q object as it can be used it queries but it represents a database field on the right hand side of an equality/inequality.</p>

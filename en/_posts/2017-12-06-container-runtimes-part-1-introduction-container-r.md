@@ -4,6 +4,7 @@ title: "Container Runtimes Part 1: An Introduction to Container Runtimes"
 date: 2017-12-06 18:30:00 +0000
 permalink: /en/container-runtimes-part-1-introduction-container-r
 blog: en
+render_with_liquid: false
 ---
 
 One of the terms you hear a lot when dealing with containers is "container runtime". "Container runtime" can have different meanings to different people so it's no wonder that it's such a confusing and vaguely understood term, even within the container community. 

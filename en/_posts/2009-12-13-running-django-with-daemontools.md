@@ -4,6 +4,7 @@ title: "Running django with daemontools"
 date: 2009-12-13 21:38:59 +0000
 permalink: /en/running-django-with-daemontools
 blog: en
+render_with_liquid: false
 ---
 
 Running django fastcgi with daemontools is rather easy but getting it to

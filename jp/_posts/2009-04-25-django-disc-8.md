@@ -4,6 +4,7 @@ title: "Django 勉強会 Disc. 8 参加して来た"
 date: 2009-04-25 17:38:47 +0000
 permalink: /jp/django-disc-8
 blog: jp
+render_with_liquid: false
 ---
 
 。。というか、ハンズオンC [Django](http://www.djangoproject.com/) on

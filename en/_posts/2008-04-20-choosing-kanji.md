@@ -4,6 +4,7 @@ title: "Choosing Kanji"
 date: 2008-04-20 19:32:20 +0000
 permalink: /en/choosing-kanji
 blog: en
+render_with_liquid: false
 ---
 
 <p>One of the things that makes Japanese hard is the writing system. Written Japanese consists of essentially four alphabets, Kanji (borrowed chinese characters (1,000 needed for literacy, 2000 base characters, about 5,000, give or take a thousand, in active use)), Hiragana (Used for Japanese words (46 characters)), Katakana (Used for foreign words (46 characters)), and Roman characters (foreign words, English (26 lowercase, 26 uppercase)).</p><p>The number of alphabets confuses things a bit but you get used to it fairly quickly. The hardest issues tend to arise in learning and using kanji. There are literally thousands characters. Each character can have multiple ways of reading it in different contexts sometimes seemingly arbitrary, especially in names of products and people. Reading names in a general sense is nearly impossible for foreigners and Japanese alike. In fact whenever you have to write your name (like on forms and business cards), you usually need to indicate how it is read. 大 is not used much but is a notoriously hard to read first name because of the sheer number of readings. You can work around names somewhat easily since they are usually

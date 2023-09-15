@@ -4,6 +4,7 @@ title: "Ubuntu で日本語 106キーDvorak 配列を設定"
 date: 2010-08-06 11:06:55 +0000
 permalink: /jp/japanese-106-key-dvorak-keyboard-layout
 blog: jp
+render_with_liquid: false
 ---
 
 私はQwerty配列でキーボードで打つのがあまりよくなくて、Dvorakを使ったほうが効率高いんじゃないかと考えて、ずっと前から

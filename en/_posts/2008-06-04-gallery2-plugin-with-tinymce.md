@@ -4,6 +4,7 @@ title: "Gallery2 plugin with TinyMCE"
 date: 2008-06-04 18:18:21 +0000
 permalink: /en/gallery2-plugin-with-tinymce
 blog: en
+render_with_liquid: false
 ---
 
 <p>I made some changes to the <a href="http://manual.b2evolution.net/Plugins/tinymce_plugin">TinyMCE plugin</a> for <a href="http://www.b2evolution.net/" title="b2evolution">b2evolution</a> to support some callbacks which will allow other <a href="http://www.b2evolution.net/" title="b2evolution">b2evolution</a> plugins to register TinyMCE plugins automatically. This is especially useful for the <a href="http://manual.b2evolution.net/Plugins/gallery2_plugin">Gallery2 plugin</a> because it will allow me to add a button that allows users to add photos from Gallery2 to their blog posts to TinyMCE automatically when the Gallery2 plugin is installed.  Currently <a href="http://manual.b2evolution.net/Plugins/gallery2_plugin#Using_the_Gallery2_Plugin_with_the_TinyMCE_Plugin">it's a pain to get it to work</a> because the standard gallery2 image chooser button doesn't work with TinyMCE and installing it requires you to copy the g2image directory to another location.</p>

@@ -4,6 +4,7 @@ title: "Preemptible InstanceでGKEクラスターのオートスケーリング"
 date: 2017-12-25 15:30:00 +0000
 permalink: /jp/gke-preemptible-instance-autoscaling-ja
 blog: jp
+render_with_liquid: false
 ---
 
 > このポストは [Kubernetes Advent Calendar Day 25](https://qiita.com/advent-calendar/2017/kubernetes)の記事です。

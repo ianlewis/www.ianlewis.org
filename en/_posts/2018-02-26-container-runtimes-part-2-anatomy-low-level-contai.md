@@ -4,6 +4,7 @@ title: "Container Runtimes Part 2: Anatomy of a Low-Level Container Runtime"
 date: 2018-02-26 11:00:00 +0000
 permalink: /en/container-runtimes-part-2-anatomy-low-level-contai
 blog: en
+render_with_liquid: false
 ---
 
 This is the second in a four-part series on container runtimes. In [part 1](https://www.ianlewis.org/en/container-runtimes-part-1-introduction-container-r), I gave an overview of container runtimes and discussed the differences between low-level and high-level runtimes. In this post I will go into detail on low-level container runtimes.

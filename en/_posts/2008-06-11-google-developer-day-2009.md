@@ -4,6 +4,7 @@ title: "Google Developer Day 2008"
 date: 2008-06-11 22:04:08 +0000
 permalink: /en/google-developer-day-2009
 blog: en
+render_with_liquid: false
 ---
 
 <p>I went to <a href="http://www.google.com/" title="Google">Google</a> Developer Day 2008 in Yokohama Japan yesterday. The keynote speech was pretty much the exact same info as was given at the <a href="http://jp.youtube.com/watch?v=vk1HvP7NO5w">keynote</a> at <a href="http://code.google.com/events/io/">Google I/O</a> where <a href="http://www.google.com/" title="Google">Google</a> announced their direction, moving forward the web as a platform.</p>

@@ -4,6 +4,7 @@ title: "HTMLサニタイズするライブラリbleachを試してみた"
 date: 2014-06-23 13:00:00 +0000
 permalink: /jp/htmlbleach
 blog: jp
+render_with_liquid: false
 ---
 
 最近にHTMLををサニタイズしてくれる便利なライブラリ bleach を見つけた。HTMLを受け取ってウェブ上に表示したいんだけど、

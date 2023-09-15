@@ -4,6 +4,7 @@ title: "Werkzeug and reverse urls"
 date: 2009-03-14 11:57:52 +0000
 permalink: /en/werkzeug-and-reverse-urls
 blog: en
+render_with_liquid: false
 ---
 
 <p>I wanted to impove a <a href="http://code.google.com/appengine/">Google Appengine</a> application that a friend of mine created (<a href="http://twisted-mind.appspot.com/">ほぼ汎用イベント管理ツール</a>(jp)) and noticed that he was <a href="http://bitbucket.org/voluntas/twisted-mind/src/tip/views.py#cl-132">redirecting directly to urls</a>. He is using <a href="http://werkzeug.pocoo.org/">Werkzeug</a> to handle url routing so I wondered if there was a method for generating urls from a name like you can in <a href="http://www.djangoproject.com/">Django</a>.</p>

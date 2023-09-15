@@ -4,6 +4,7 @@ title: "Python でPassbookファイルを作成する"
 date: 2012-10-09 10:25:51 +0000
 permalink: /jp/python-passbook
 blog: jp
+render_with_liquid: false
 ---
 
 最近、iPhoneのiOS6でPassbookという機能が出ました。Passbookはイベントのチケットや、飛行機や船の搭乗券や、クーポンや、ポイントカードを管理出来る地味に便利なアプリ。

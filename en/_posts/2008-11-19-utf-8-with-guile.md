@@ -4,6 +4,7 @@ title: "UTF-8 with guile"
 date: 2008-11-19 23:03:47 +0000
 permalink: /en/utf-8-with-guile
 blog: en
+render_with_liquid: false
 ---
 
 <p>Getting UTF-8 to work with guile is a bit of a stretch as guile doesn't have any real encoding or UTF-8 support to speak of, but I was able to get at least some basic stuff working by using the <a href="http://www.gnu.org/software/guile-gnome/docs/glib/html/Unicode-Manipulation.html#Unicode-Manipulation">Unicode Manipulation</a> routines which are part of the <a href="http://www.gnu.org/software/guile-gnome/docs/glib/html/index.html">Guile-Glib</a> module.</p>

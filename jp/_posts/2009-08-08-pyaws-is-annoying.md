@@ -4,6 +4,7 @@ title: "pyawsの使いにくい部分"
 date: 2009-08-08 14:55:57 +0000
 permalink: /jp/pyaws-is-annoying
 blog: jp
+render_with_liquid: false
 ---
 
 AmazonのアフィリエイトAPIのpython クライアント pyaws は単純にpythonオブジェクトを持つ Bagクラスがある。

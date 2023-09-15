@@ -4,6 +4,7 @@ title: "Creating Smaller Docker Images"
 date: 2016-01-25 22:00:00 +0000
 permalink: /en/creating-smaller-docker-images
 blog: en
+render_with_liquid: false
 ---
 
 ![Docker](https://storage.googleapis.com/static.ianlewis.org/prod/img/docker/large_v-trans.png)

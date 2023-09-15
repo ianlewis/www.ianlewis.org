@@ -4,6 +4,7 @@ title: "MochiKit does makes java suck less"
 date: 2007-12-21 22:58:44 +0000
 permalink: /en/javascript_and_the_this_reference
 blog: en
+render_with_liquid: false
 ---
 
 So the last few days I've been playing around with

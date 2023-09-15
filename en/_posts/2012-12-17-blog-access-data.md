@@ -4,6 +4,7 @@ title: "Blog Access Data"
 date: 2012-12-17 14:00:00 +0000
 permalink: /en/blog-access-data
 blog: en
+render_with_liquid: false
 ---
 
 I'm the kind of guy that likes to be open about data and such I thought

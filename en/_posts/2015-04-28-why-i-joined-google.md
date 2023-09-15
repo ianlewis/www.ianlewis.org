@@ -4,6 +4,7 @@ title: "Why I Joined Google"
 date: 2015-04-28 02:30:00 +0000
 permalink: /en/why-i-joined-google
 blog: en
+render_with_liquid: false
 ---
 
 As some of you may or may not know, I joined Google as a Developer Advocate on

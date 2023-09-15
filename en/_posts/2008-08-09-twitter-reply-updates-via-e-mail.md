@@ -4,6 +4,7 @@ title: "Twitter reply updates via e-mail"
 date: 2008-08-09 19:10:52 +0000
 permalink: /en/twitter-reply-updates-via-e-mail
 blog: en
+render_with_liquid: false
 ---
 
 <p>I just set up <a href="http://www.plagger.org/" title="Plagger">Plagger</a> to send me e-mails to my cellphone and gmail when there are updates to my replies rss feed on twitter. This took way longer than anticipated because of how long it took to install and configure <a href="http://www.plagger.org/" title="Plagger">Plagger</a> properly.</p>

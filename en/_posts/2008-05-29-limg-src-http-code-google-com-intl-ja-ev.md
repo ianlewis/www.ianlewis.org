@@ -4,6 +4,7 @@ title: "Google Developer Day 2008"
 date: 2008-05-29 20:39:03 +0000
 permalink: /en/limg-src-http-code-google-com-intl-ja-ev
 blog: en
+render_with_liquid: false
 ---
 
 <p><a href="http://code.google.com/intl/ja/events/developerday/2008/home.html">Google Developer Day Japan 2008</a> is being held on June 10th at <a href="http://www.google.com/" title="Google">Google</a>'s offices in Shibuya and I've registered to attend this year. There were a number of sessions that people could take part in but I decided to register for a <a href="http://code.google.com/appengine/">Google appengine</a> hackathon. I'm pretty curious about appengine since I've been working at becoming more familiar with really newly evolving technologies and not necessarily ones that have been around a while. Newly evolving technologies is something I've always felt I've had to catch up on since starting programming in high school. Going to high school with folks like Bob Ippolito (<a href="http://www.mochikit.com">Mochikit</a>, <a href="http://undefined.org/python/#simplejson">simplejson</a>) and <a href="http://www.facebook.com/profile.php?id=5317298">Konrad Rokicki</a> who started coding stuff when they were in early middle school didn't help my self esteem.</p>

@@ -4,6 +4,7 @@ title: "Django Sitemap Framework"
 date: 2008-11-18 21:22:06 +0000
 permalink: /en/django-sitemap-framework
 blog: en
+render_with_liquid: false
 ---
 
 <p>Using the <a href="http://www.djangoproject.com/" title="Django">Django</a> <a href="http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/">sitemap framework</a> is so easy it's almost no work at all. Just make a sitemap object and add it to the sitemap in urls.py. The sitemap framework calls items() in your Sitemap to get the list of objects to put in the sitemap and then calls get_absolute_url() on each object.</p>

@@ -4,6 +4,7 @@ title: "Google Developer Day 2008"
 date: 2008-05-28 20:19:47 +0000
 permalink: /jp/google-developer-day-2008
 blog: jp
+render_with_liquid: false
 ---
 
 <p>あまり仕事に関係ないけど、僕の能力を広げるように、<a href="http://www.google.com/" title="Google">Google</a>サービスや、APIを勉強しようと思ってるので、一応、この間、<a href="http://code.google.com/intl/ja/events/developerday/2008/home.html">Google Developer Day 2008</a>に参加するように登録した。日本の<a href="http://www.google.com/" title="Google">Google</a>オフィスに行くことは三回目になる。</p>

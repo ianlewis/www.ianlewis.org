@@ -4,6 +4,7 @@ title: "Redmine で reStructuredText を使う方法"
 date: 2012-04-16 13:00:00 +0000
 permalink: /jp/redmine-restructuredtext
 blog: jp
+render_with_liquid: false
 ---
 
 我々BeProudのRedmineのWikiやチケットの説明文やチケットのコメント文にはReStructuredTextを使っている。RedmineのデフォルトのTextileはPythonが好きな弊社で使うのは以ての外。なので、ReSTを使うようにした。そして、生のReSTしか使わなければ、出来ることが少ないので、blockdiagや、コードの構文ハイライト（Pygments)

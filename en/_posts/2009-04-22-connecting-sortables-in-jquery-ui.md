@@ -4,6 +4,7 @@ title: "Connecting Sortables in jQuery UI"
 date: 2009-04-22 11:26:41 +0000
 permalink: /en/connecting-sortables-in-jquery-ui
 blog: en
+render_with_liquid: false
 ---
 
 [jQuery](http://jquery.com/) has a UI framework called

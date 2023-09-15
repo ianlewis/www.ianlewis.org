@@ -4,6 +4,7 @@ title: "Creating Smaller Docker Images Part #4: Static Binaries"
 date: 2017-07-11 16:25:00 +0000
 permalink: /en/creating-smaller-docker-images-static-binaries
 blog: en
+render_with_liquid: false
 ---
 
 This is the fourth post in a series on making smaller Docker images: static binaries. In the

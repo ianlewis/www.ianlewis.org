@@ -4,6 +4,7 @@ title: "Testing HTTPS with Django's Development Server"
 date: 2009-11-18 21:36:14 +0000
 permalink: /en/testing-https-djangos-development-server
 blog: en
+render_with_liquid: false
 ---
 
 Django's development server doesn't normally support HTTPS so it's hard

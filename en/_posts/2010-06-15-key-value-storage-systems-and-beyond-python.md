@@ -4,6 +4,7 @@ title: "Key Value Storage Systems ... and Beyond ... with Python"
 date: 2010-06-15 16:33:38 +0000
 permalink: /en/key-value-storage-systems-and-beyond-python
 blog: en
+render_with_liquid: false
 ---
 
 <p>Google docs wouldn't let me share the presentation publicly with people outside our company's domain and it gave me an error when I tried to download it as a Powerpoint file or PDF so I was forced to recreate my presentation locally. Anyway, I placed the slides to my talk at <a href="http://pycon.sit.rp.sg/">PyCon Asia</a> online please check it out on slideshare.</p>

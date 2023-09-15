@@ -4,6 +4,7 @@ title: "BPで働くのがどうか (How BeProud Works)"
 date: 2011-11-14 13:30:00 +0000
 permalink: /jp/bp-how-beproud-works
 blog: jp
+render_with_liquid: false
 ---
 
 最近、githubの人、Zach Holman さんはgithubの社内の環境について、いくつかのブログ記事を書いていて、話題になっていました。

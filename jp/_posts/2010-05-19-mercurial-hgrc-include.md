@@ -4,6 +4,7 @@ title: "mercurial .hgrc include"
 date: 2010-05-19 19:43:52 +0000
 permalink: /jp/mercurial-hgrc-include
 blog: jp
+render_with_liquid: false
 ---
 
 僕は [僕のシェル環境設定ファイル](http://bitbucket.org/IanLewis/my) をbitbucket で管理している。

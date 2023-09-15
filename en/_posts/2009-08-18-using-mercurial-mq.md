@@ -4,6 +4,7 @@ title: "Using Mercurial MQ"
 date: 2009-08-18 10:04:44 +0000
 permalink: /en/using-mercurial-mq
 blog: en
+render_with_liquid: false
 ---
 
 I recently started using mercurial's [mq

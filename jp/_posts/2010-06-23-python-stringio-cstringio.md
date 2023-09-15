@@ -4,6 +4,7 @@ title: "Python StringIO と cStringIO のもう一つの違い"
 date: 2010-06-23 16:50:30 +0000
 permalink: /jp/python-stringio-cstringio
 blog: jp
+render_with_liquid: false
 ---
 
 C で作られた cStringIO は ピュア Python で作られた StringIO

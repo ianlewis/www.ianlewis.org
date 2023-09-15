@@ -4,6 +4,7 @@ title: "Walled Gardens Suck"
 date: 2010-01-29 09:52:45 +0000
 permalink: /en/walled-gardens-suck
 blog: en
+render_with_liquid: false
 ---
 
 I recently read a couple posts on the openness of the iPad and the

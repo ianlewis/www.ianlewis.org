@@ -4,6 +4,7 @@ title: "JSON Schema Validator 0.1a for Python"
 date: 2008-07-31 01:01:32 +0000
 permalink: /en/json-schema-validator-0-1a-for-python
 blog: en
+render_with_liquid: false
 ---
 
 <p>I just released the first version for a project that I've been working on since the <a href="http://www.ianlewis.org/index.php/en/python-onsen">Python Onsen</a>. It's a validator for <a href="http://www.json.com/category/json-schema/">JSON Schema</a> written in <a href="http://www.python.org/" title="Python">Python</a>. It's based on the <a href="http://groups.google.com/group/json-schema/web/json-schema-proposal---second-draft">JSON Schema Proposal Second Draft</a>.</p>

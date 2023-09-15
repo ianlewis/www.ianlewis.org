@@ -4,6 +4,7 @@ title: "Kubernetesヘルスチェックの使い方"
 date: 2016-10-19 11:00:00 +0000
 permalink: /jp/kubernetes-health-check
 blog: jp
+render_with_liquid: false
 ---
 
 [comment]: # (I've seen a lot of questions about Kubernetes health checks recently and how they should be used. I'll do my best to explain them and the difference between the types of health checks and how each will affect your application.)

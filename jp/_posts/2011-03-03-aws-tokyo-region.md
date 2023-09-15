@@ -4,6 +4,7 @@ title: "AWS 東京地域きた～～～～～ ヽ(･∀･)ノ"
 date: 2011-03-03 09:53:02 +0000
 permalink: /jp/aws-tokyo-region
 blog: jp
+render_with_liquid: false
 ---
 
 ![image](http://static.ianlewis.org/prod/img/651/logo_aws.gif)

@@ -4,6 +4,7 @@ title: "Vimeo's 25 favorite videos of 2009"
 date: 2010-02-21 20:37:37 +0000
 permalink: /en/vimeos-25-favorite-videos-2009
 blog: en
+render_with_liquid: false
 ---
 
 <p>Vimeo came out with their 25 favorite videos of 2009. I felt pretty good that I had seen at least a couple of these. My favorite of the ones I could check out was the very cool video by <a href="http://www.nyleraps.com/">Nyle</a> called &quot;Let the Beat Build&quot;</p> 

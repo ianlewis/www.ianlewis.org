@@ -4,6 +4,7 @@ title: "Four Tips for Writing Better Go APIs"
 date: 2022-01-24 00:00:00 +0000
 permalink: /en/four-tips-for-writing-better-go-apis
 blog: en
+render_with_liquid: false
 ---
 
 Go is a really powerful programming language that allows you to write concurrent code that is still easy to understand. But designing APIs can be hard, even for seasoned Go programmers. When designing APIs for libraries and applications in Go it's important to keep in mind the strengths of the language to make your APIs easier to use and avoid pitfalls like goroutine leaks. With that in mind, here are a few common issues I see often with Go APIs and some tips for how to make them better.

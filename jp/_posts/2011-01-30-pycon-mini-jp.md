@@ -4,6 +4,7 @@ title: "PyCon Mini JP  「お前、誰よ」まとめ"
 date: 2011-01-30 20:24:44 +0000
 permalink: /jp/pycon-mini-jp
 blog: jp
+render_with_liquid: false
 ---
 
 昨日、 [PyCon Mini JP](https://sites.google.com/site/pyconminijp/) に[Sphinx](http://sphinx.pocoo.org/) 1.1 の [i18n 機能](http://sphinx-users.jp/doc11/intl.html)について発表しました。 Python コミュニティの偉い石本さんが 日本の Pythonコミュニティの歴史について、いいキーノートを発表してくれたけれども、いろなPython 開発者がみんな集まる PyCon みたいなイベントが珍しいので、最初は固くて、重たい気持ちを感じました。 [清水川さん](https://twitter.com/shimizukawa)や、[鈴木さん](https://twitter.com/takanory)がアイスブレークしようとしましたが、固い雰囲気が続いてしまった。

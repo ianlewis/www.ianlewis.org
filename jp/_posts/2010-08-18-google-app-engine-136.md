@@ -4,6 +4,7 @@ title: "Google App Engine 1.3.6"
 date: 2010-08-18 09:46:54 +0000
 permalink: /jp/google-app-engine-136
 blog: jp
+render_with_liquid: false
 ---
 
 今日、 [Appengine](http://code.google.com/appengine/) 1.3.6

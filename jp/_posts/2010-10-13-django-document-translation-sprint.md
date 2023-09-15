@@ -4,6 +4,7 @@ title: "Django ドキュメント翻訳スプリント"
 date: 2010-10-13 10:19:00 +0000
 permalink: /jp/django-document-translation-sprint
 blog: jp
+render_with_liquid: false
 ---
 
 Django の日本語ドキュメントの翻訳が 1.0～1.1 の間のままで、Django 1.3

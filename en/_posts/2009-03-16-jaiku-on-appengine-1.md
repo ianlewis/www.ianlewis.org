@@ -4,6 +4,7 @@ title: "Jaiku on Appengine"
 date: 2009-03-16 00:52:31 +0000
 permalink: /en/jaiku-on-appengine-1
 blog: en
+render_with_liquid: false
 ---
 
 <p><a href="https://storage.googleapis.com/static.ianlewis.org/prod/img/516/jaiku.png"><img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/516/jaiku.png" /></a></p>

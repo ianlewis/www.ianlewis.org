@@ -4,6 +4,7 @@ title: "Django サイトマップ フレームワーク"
 date: 2008-11-18 21:51:26 +0000
 permalink: /jp/django_sitemap_framework
 blog: jp
+render_with_liquid: false
 ---
 
 <p><a href="http://www.djangoproject.com/" title="Django">Django</a> <a href="http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/">sitemap framework</a>を使うのが簡単過ぎる。下記のようにサイトマップクラスを作って、urls.pyに登録するだけ。サイトマップに載るURLを取るのに、サイトマップフレームワークが自分が作ったクラスのitems()を呼び出して、アイテムのget_absolute_url()を順番に呼び出す感じ。</p>

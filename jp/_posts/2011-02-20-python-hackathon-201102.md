@@ -4,6 +4,7 @@ title: "Python Hackathon 2011.02"
 date: 2011-02-20 21:24:03 +0000
 permalink: /jp/python-hackathon-201102
 blog: jp
+render_with_liquid: false
 ---
 
 Python Hackathon 2011.02 に参加しに行ってきました。今回は、ちょっと遅く着いたが、楽しかった。

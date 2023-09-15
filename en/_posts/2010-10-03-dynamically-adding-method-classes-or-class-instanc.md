@@ -4,6 +4,7 @@ title: "Dynamically Adding a Method to Classes or Class Instances in Python"
 date: 2010-10-03 21:42:26 +0000
 permalink: /en/dynamically-adding-method-classes-or-class-instanc
 blog: en
+render_with_liquid: false
 ---
 
 In Python you sometimes want to dynamically add methods to classes or

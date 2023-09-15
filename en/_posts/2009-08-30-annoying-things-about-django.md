@@ -4,6 +4,7 @@ title: "Annoying things about Django"
 date: 2009-08-30 13:08:00 +0000
 permalink: /en/annoying-things-about-django
 blog: en
+render_with_liquid: false
 ---
 
 Since I've been using it for a while now I've gotten a good idea about

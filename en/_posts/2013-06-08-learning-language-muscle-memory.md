@@ -4,6 +4,7 @@ title: "Learning a Language as Muscle Memory"
 date: 2013-06-08 10:00:00 +0000
 permalink: /en/learning-language-muscle-memory
 blog: en
+render_with_liquid: false
 ---
 
 <img alt="https://storage.googleapis.com/static.ianlewis.org/prod/img/707/0-utrb8piu3ltmh9d7_big.jpeg" class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/707/0-utrb8piu3ltmh9d7_big.jpeg">

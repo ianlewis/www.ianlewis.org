@@ -4,6 +4,7 @@ title: "PYPI を使わないでデプロイする方法"
 date: 2011-04-21 09:37:34 +0000
 permalink: /jp/pypi-no-network
 blog: jp
+render_with_liquid: false
 ---
 
 pip、buildout などを使うとデプロイする時に Python ライブラリの依存関係はややこしいことがあります。

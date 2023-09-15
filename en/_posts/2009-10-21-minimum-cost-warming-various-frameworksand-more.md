@@ -4,6 +4,7 @@ title: "Minimum cost for warming-up various frameworks(and more)"
 date: 2009-10-21 13:16:31 +0000
 permalink: /en/minimum-cost-warming-various-frameworksand-more
 blog: en
+render_with_liquid: false
 ---
 
 My good friend [Takashi Matsuo](http://takashi-matsuo.blogspot.com/)

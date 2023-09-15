@@ -4,6 +4,7 @@ title: "Django"
 date: 2008-07-28 01:15:30 +0000
 permalink: /en/django_views
 blog: en
+render_with_liquid: false
 ---
 
 <p>I was thinking about using <a href="http://www.djangoproject.com/" title="Django">Django</a> for one of my projects on <a href="http://code.google.com/appengine/" title="Google App Engine">GAE</a> because it seems like a popular project and somewhat easy to use, but I'm not quite understanding yet why it's better to have helper functions rather than controller/handler classes like <a href="http://pylonshq.com/" title="Pylons">Pylons</a> or <a href="http://code.google.com/appengine/" title="Google App Engine">GAE</a>'s normal WSGI handling has. With handler classes my controller might look like:</p>

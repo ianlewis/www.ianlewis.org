@@ -4,6 +4,7 @@ title: "Python date range iterator"
 date: 2008-12-19 15:27:30 +0000
 permalink: /en/python-date-range-iterator
 blog: en
+render_with_liquid: false
 ---
 
 I couldn't find something that gave me quite what I wanted so I created

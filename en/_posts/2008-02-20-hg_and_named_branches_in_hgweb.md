@@ -4,6 +4,7 @@ title: "Mercurial and named branches and hgweb"
 date: 2008-02-20 12:19:59 +0000
 permalink: /en/hg_and_named_branches_in_hgweb
 blog: en
+render_with_liquid: false
 ---
 
 <p><a href="http://www.selenic.com/mercurial/" title="Mercurial">Mercurial</a> is a nice distributed SCM system written in python which I have been using at work and at on oss projects for a little while now. <a href="http://www.selenic.com/mercurial/" title="Mercurial">Mercurial</a> allows three types of branching, cloning, named branches, and local branches. Each of these has it's uses but I have only really used cloning and named branches in my own development.</p>

@@ -4,6 +4,7 @@ title: "New Django-based Homepage"
 date: 2009-06-07 00:06:01 +0000
 permalink: /en/new-django-homepage
 blog: en
+render_with_liquid: false
 ---
 
 I finally got around to finishing up my

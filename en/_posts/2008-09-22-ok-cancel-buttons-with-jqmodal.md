@@ -4,6 +4,7 @@ title: "Ok/Cancel buttons with jqModal"
 date: 2008-09-22 00:12:22 +0000
 permalink: /en/ok-cancel-buttons-with-jqmodal
 blog: en
+render_with_liquid: false
 ---
 
 <p>I recently quit using <a href="http://code.google.com/webtoolkit/" title="Google Web Toolkit">gwt</a> and started using <a href="http://jquery.com/" title="jQuery">jQuery</a> for a personal project of mine and I wanted to be able to show some modal dialog boxes using <a href="http://jquery.com/" title="jQuery">jQuery</a>. As it turns out there is an easy to use plugin that does exactly this called <a href="http://dev.iceburg.net/jquery/jqModal/">jqModal</a>. jqModal makes it simple to create modal dialogs by simply setting a css class on the tag you want to open the dialog and on the tag in the dialog that you want to close it.</p>

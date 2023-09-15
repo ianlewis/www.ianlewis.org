@@ -4,6 +4,7 @@ title: "プラグインなしで、require.js のテストの順番を保証す�
 date: 2014-08-14 11:00:00 +0000
 permalink: /jp/requirejs-test-order
 blog: jp
+render_with_liquid: false
 ---
 
 >     AMD の仕様では、「JSファイルのリストを順番通りに読み込み/実行する」

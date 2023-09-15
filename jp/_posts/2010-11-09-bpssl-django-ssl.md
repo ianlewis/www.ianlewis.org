@@ -4,6 +4,7 @@ title: "bpssl のDjango SSL対応アプリをリリースしました"
 date: 2010-11-09 11:09:23 +0000
 permalink: /jp/bpssl-django-ssl
 blog: jp
+render_with_liquid: false
 ---
 
 今日、 bpssl をリリースしました。bpsslは [BeProud](http://www.beproud.jp/) で欲使っている

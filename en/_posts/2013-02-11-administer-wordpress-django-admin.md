@@ -4,6 +4,7 @@ title: "Administer WordPress using Django's Admin"
 date: 2013-02-11 06:00:00 +0000
 permalink: /en/administer-wordpress-django-admin
 blog: en
+render_with_liquid: false
 ---
 
 I recently came across one feature of Django that seemed pretty useful

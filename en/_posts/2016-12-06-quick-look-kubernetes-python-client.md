@@ -4,6 +4,7 @@ title: "A Quick Look at the Kubernetes Python Client"
 date: 2016-12-06 23:30:00 +0000
 permalink: /en/quick-look-kubernetes-python-client
 blog: en
+render_with_liquid: false
 ---
 
 For those of you that don't know there is a new Python API client in the kubernetes-incubator project: [client-python](https://github.com/kubernetes-incubator/client-python). There has been some high quality Python clients like [pykube](https://github.com/kelproject/pykube), but client-python can serve as the official Python client.

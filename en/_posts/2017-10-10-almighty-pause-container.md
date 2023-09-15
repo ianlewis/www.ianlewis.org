@@ -4,6 +4,7 @@ title: "The Almighty Pause Container"
 date: 2017-10-10 11:40:00 +0000
 permalink: /en/almighty-pause-container
 blog: en
+render_with_liquid: false
 ---
 
 When checking out the nodes of your Kubernetes cluster, you may have noticed some containers called "pause" running when you do a `docker ps` on the node.

@@ -4,6 +4,7 @@ title: "How to Hide Inactive Branches by Default with Mercurial"
 date: 2009-11-26 16:53:44 +0000
 permalink: /en/how-hide-inactive-branches-default-mercurial
 blog: en
+render_with_liquid: false
 ---
 
 mercurial usually shows inactive branches when running "hg branches" but

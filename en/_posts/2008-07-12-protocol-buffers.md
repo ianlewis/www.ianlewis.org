@@ -4,6 +4,7 @@ title: "Protocol Buffers"
 date: 2008-07-12 20:22:09 +0000
 permalink: /en/protocol-buffers
 blog: en
+render_with_liquid: false
 ---
 
 <p>A few days ago <a href="http://code.google.com/p/protobuf/">Protocol Buffers</a> was released by <a href="http://www.google.com/" title="Google">Google</a> as an open source project. Protocol Buffers is a way to generate code for objects that can be serialized to and de-serialized from the protocol buffers binary format. An implementation of the protocol buffers compiler which reads a "<a href="http://code.google.com/apis/protocolbuffers/docs/proto.html">proto</a>" and can output <a href="http://java.sun.com" title="Java">Java</a>, <a href="http://www.python.org/" title="Python">Python</a>, and C++ code. Because the format is a binary format and the compiler can output in several languages, this would allow for fast message passing between applications that may or may not be implemented in the same language.</p>

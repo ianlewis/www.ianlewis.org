@@ -4,6 +4,7 @@ title: "Cron only decorator for appengine"
 date: 2010-10-19 10:54:14 +0000
 permalink: /en/cron-only-decorator-appengine
 blog: en
+render_with_liquid: false
 ---
 
 For a recent project I recently I have been using appengine's cron

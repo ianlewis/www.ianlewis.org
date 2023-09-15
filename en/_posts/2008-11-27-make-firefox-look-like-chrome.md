@@ -4,6 +4,7 @@ title: "Make Firefox look like Chrome"
 date: 2008-11-27 14:02:52 +0000
 permalink: /en/make-firefox-look-like-chrome
 blog: en
+render_with_liquid: false
 ---
 
 <p>Recently <a href="http://www.google.com/chrome/intl/en/features.html">Google Chrome</a> has been pretty popular with web folks and <a href="http://www.google.com/" title="Google">Google</a> fans. It's fast and has only a little "chrome" or window trimmings which makes the overall screen bigger when viewing webpages. However it lacks a lot of features that are present in <a href="http://www.getfirefox.com/" title="Firefox">Firefox</a> that I pretty much can't do without so today I set about making <a href="http://www.getfirefox.com/" title="Firefox">Firefox</a> have all the small interface improvements that make Chrome so nice. Fortunately you can do this with existing plugins.</p>

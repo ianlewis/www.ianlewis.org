@@ -4,6 +4,7 @@ title: "Jesse Schell’s mindblowing talk on the future of games"
 date: 2010-03-01 14:24:13 +0000
 permalink: /en/jesse-schells-mindblowing-talk-future-games
 blog: en
+render_with_liquid: false
 ---
 
 <p>A crazy video about the future of games and how games on facebook will lead to games being pervasive in society. The idea is that games will involve more augmented reality and be more social in the future.</p>

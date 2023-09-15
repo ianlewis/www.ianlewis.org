@@ -4,6 +4,7 @@ title: "cp interactive copy"
 date: 2007-11-24 18:50:40 +0000
 permalink: /en/cp_interactive_copy
 blog: en
+render_with_liquid: false
 ---
 
 Is it just me or has the behavior of cp in linux distributions changed recently? cp is non-interactive by default so a lot of people, myself included, set an alias to include the -i flag so that cp was interactive by default.

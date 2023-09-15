@@ -4,6 +4,7 @@ title: "New Sweetcron Homepage"
 date: 2008-09-03 22:02:39 +0000
 permalink: /en/new-sweetcron-homepage
 blog: en
+render_with_liquid: false
 ---
 
 <p><img title="Sweetcron" src="/system/application/views/themes/boxy_but_good/images/credits.gif" alt="Sweetcron" width="170" height="25" /></p>

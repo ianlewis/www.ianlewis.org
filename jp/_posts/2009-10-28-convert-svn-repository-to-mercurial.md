@@ -4,6 +4,7 @@ title: "svn リポジトリをmercurialに変換"
 date: 2009-10-28 09:52:43 +0000
 permalink: /jp/convert-svn-repository-to-mercurial
 blog: jp
+render_with_liquid: false
 ---
 
 最近、svn・gitのリポジトリをmercurialにして、bitbucketに載せるのが多い。難しいか面倒だろうと思う人がいるかもしれないけど、現実は

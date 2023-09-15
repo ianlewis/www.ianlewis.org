@@ -4,6 +4,7 @@ title: "arduino で音楽を流す HTTP サーバー"
 date: 2012-10-28 09:56:40 +0000
 permalink: /jp/arduino-http
 blog: jp
+render_with_liquid: false
 ---
 
 今週末の Python温泉で、最近買った、arduino を初めて触った。

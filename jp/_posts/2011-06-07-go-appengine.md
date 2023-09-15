@@ -4,6 +4,7 @@ title: "Go! Appengine"
 date: 2011-06-07 10:22:34 +0000
 permalink: /jp/go-appengine
 blog: jp
+render_with_liquid: false
 ---
 
 昨日、 [Go\! 言語](http://golang.org/) の trusted tester 権限を頂いたので、以前に作っていた

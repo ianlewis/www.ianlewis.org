@@ -4,6 +4,7 @@ title: "Data and instinct driven decision making"
 date: 2010-08-06 16:52:39 +0000
 permalink: /en/data-and-instinct-driven-decision-making
 blog: en
+render_with_liquid: false
 ---
 
 I just read a piece called [We Are All Talk Radio

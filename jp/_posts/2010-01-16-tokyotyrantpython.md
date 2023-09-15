@@ -4,6 +4,7 @@ title: "pytyrantはpython-tokyotyrantよりずっと速い"
 date: 2010-01-16 20:27:37 +0000
 permalink: /jp/tokyotyrantpython
 blog: jp
+render_with_liquid: false
 ---
 
 [夏のPython温泉](http://d.hatena.ne.jp/Voluntas/20090516/1242482537) で [Bob様](http://bob.pythonmac.org/) が作ってくれたピュアーパイソンクライアント [pytyrant](http://code.google.com/p/pytyrant/) は [酒徳さん](http://d.hatena.ne.jp/perezvon/) の [python-tokyotyrant](http://code.google.com/p/python-tokyotyrant/) より速いという話を 聞いたと [moriyoshiさん](http://d.hatena.ne.jp/moriyoshi/) に言った。それで、moriyoshiさんはprofileのテストを作ってくれたけど、結果として、pytyrantとpython-tokyotyrantはあまり変わらないのが出た。</p>

@@ -4,6 +4,7 @@ title: "Testing the new Photo Sphere Widget"
 date: 2013-05-03 17:40:59 +0000
 permalink: /en/testing-new-photo-sphere-widget
 blog: en
+render_with_liquid: false
 ---
 
 Testing out the new photo sphere widget. The widget below is a photo

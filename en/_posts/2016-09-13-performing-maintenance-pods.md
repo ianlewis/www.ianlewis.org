@@ -4,6 +4,7 @@ title: "Performing Maintenance on Pods"
 date: 2016-09-13 12:20:00 +0000
 permalink: /en/performing-maintenance-pods
 blog: en
+render_with_liquid: false
 ---
 
 Kubernetes includes a feature called [services](http://kubernetes.io/docs/user-guide/services/) which serve as a kind of load balancer for pods. When pods misbehave or otherwise stop working, sometimes you'll want to remove the pod from the service without killing the pod.

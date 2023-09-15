@@ -4,6 +4,7 @@ title: "An introduction to the Tipfy Framework for Appengine"
 date: 2010-12-29 10:31:34 +0000
 permalink: /en/introduction-tipfy-framework-appengine
 blog: en
+render_with_liquid: false
 ---
 
 *(This post is the English translation of the Dec. 24th edition of the*

@@ -4,6 +4,7 @@ title: "growltestrunner の pynotify 対応 / pynotify の使い方"
 date: 2010-02-09 16:33:48 +0000
 permalink: /jp/growltestrunner-pynotify-pynotify
 blog: jp
+render_with_liquid: false
 ---
 
 最近、会社の [AE35](http://twitter.com/ae35) さんが

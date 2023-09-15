@@ -4,6 +4,7 @@ title: "Writing Schema migrations for Appengine using the Mapper Class and the d
 date: 2009-12-27 13:59:03 +0000
 permalink: /en/writing-schema-migrations-appengine-using-mapper-c
 blog: en
+render_with_liquid: false
 ---
 
 One thing that many people using appengine know is that writing schema

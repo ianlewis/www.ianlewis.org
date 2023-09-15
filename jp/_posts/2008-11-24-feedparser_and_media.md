@@ -4,6 +4,7 @@ title: "feedparserで、media コンテンツを取る"
 date: 2008-11-24 21:12:30 +0000
 permalink: /jp/feedparser_and_media
 blog: jp
+render_with_liquid: false
 ---
 
 <p><a href="http://www.feedparser.org/">feedparser</a>で、どうやってビデオを取れるかをずっと悩みましたけど、今日少しだけ、進展した。問題の核心はyoutubeや、vimeoは <a href="http://search.yahoo.com/mrss/">Yahoo! RSS モジュール</a>を使って、RSS拡張ネームスペースにデータを入れている。この拡張データの処理はfeedparserが中途半端でやってる。見てみよう。</p>

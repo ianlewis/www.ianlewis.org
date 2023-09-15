@@ -4,6 +4,7 @@ title: "Kubernetes Python クライアントを使ってみる"
 date: 2016-12-02 12:00:00 +0000
 permalink: /jp/kubernetes-python
 blog: jp
+render_with_liquid: false
 ---
 
 > この記事は [pyspa Advent Calendar 2016](http://www.adventar.org/calendars/1435#list-2016-12-02) の第２日目の記事。第１目はakisuteさんの「[今年の話](http://akisute.com/2016/12/pyspa-advent-calendar-2016-1.html)」だった。

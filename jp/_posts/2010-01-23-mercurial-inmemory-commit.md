@@ -4,6 +4,7 @@ title: "mercurialで、インメモリで、勝手チェンジセットをコミ
 date: 2010-01-23 17:01:56 +0000
 permalink: /jp/mercurial-inmemory-commit
 blog: jp
+render_with_liquid: false
 ---
 
 <p>mercurial はpythonで書かれて、わかりやすいAPIを用意しているので、触りたいと思って、インメモリでコミットをしようとするとどうすればいいかというのを調べてみた。</p>

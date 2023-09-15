@@ -4,6 +4,7 @@ title: "Recent EC2 Problems"
 date: 2009-08-24 15:33:36 +0000
 permalink: /en/recent-ec2-problems
 blog: en
+render_with_liquid: false
 ---
 
 Over the weekend we had some some problems with EC2 in which some

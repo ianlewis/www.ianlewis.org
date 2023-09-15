@@ -4,6 +4,7 @@ title: "Google Appengine 1.3.8リリースされました！"
 date: 2010-10-15 19:44:31 +0000
 permalink: /jp/google-appengine-138
 blog: jp
+render_with_liquid: false
 ---
 
 Google Appengine 1.3.8 がリリースされました！

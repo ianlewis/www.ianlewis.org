@@ -4,6 +4,7 @@ title: "Google IO: Input/Output"
 date: 2012-03-29 21:33:30 +0000
 permalink: /en/google-io-inputoutput
 blog: en
+render_with_liquid: false
 ---
 
 This year's [Google IO page](https://developers.google.com/events/io/)

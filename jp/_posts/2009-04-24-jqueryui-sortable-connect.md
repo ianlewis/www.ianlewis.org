@@ -4,6 +4,7 @@ title: "jQueryUIのsortableウィジェット接続の仕方"
 date: 2009-04-24 13:10:48 +0000
 permalink: /jp/jqueryui-sortable-connect
 blog: jp
+render_with_liquid: false
 ---
 
 最近、[jQueryUI](http://jqueryui.com/)をバリバリ使ってて、[sortable](http://jqueryui.com/demos/sortable/)というウィジェットで簡単にできることがあまりにも面白い。

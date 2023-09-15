@@ -4,6 +4,7 @@ title: "Phantom QUnit Test Runner"
 date: 2012-12-26 15:00:00 +0000
 permalink: /en/phantom-qunit-test-runner
 blog: en
+render_with_liquid: false
 ---
 
 ![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/690/phantomjs+qunit.png)

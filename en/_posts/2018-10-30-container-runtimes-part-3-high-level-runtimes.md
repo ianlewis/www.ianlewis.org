@@ -4,6 +4,7 @@ title: "Container Runtimes Part 3: High-Level Runtimes"
 date: 2018-10-30 14:30:00 +0000
 permalink: /en/container-runtimes-part-3-high-level-runtimes
 blog: en
+render_with_liquid: false
 ---
 
 _This is the third part in a four-part series on container runtimes. It's been a while since [part 1](https://www.ianlewis.org/en/container-runtimes-part-1-introduction-container-r), but in that post I gave an overview of container runtimes and discussed the differences between low-level and high-level runtimes. In [part 2](https://www.ianlewis.org/en/container-runtimes-part-2-anatomy-low-level-contai) I went into detail on low-level container runtimes and built a simple low-level runtime._

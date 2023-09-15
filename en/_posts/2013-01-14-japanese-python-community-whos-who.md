@@ -4,6 +4,7 @@ title: "A Japanese Python Community Who's Who"
 date: 2013-01-14 10:00:00 +0000
 permalink: /en/japanese-python-community-whos-who
 blog: en
+render_with_liquid: false
 ---
 
 There is a small but growing Python community in Japan. Many people,

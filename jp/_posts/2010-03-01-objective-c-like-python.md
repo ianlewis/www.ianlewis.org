@@ -4,6 +4,7 @@ title: "何でObjective-Cが好きじゃなくなったの？"
 date: 2010-03-01 16:02:31 +0000
 permalink: /jp/objective-c-like-python
 blog: jp
+render_with_liquid: false
 ---
 
 今日、 Facebook iPhone アプリの作者 [Joe Hewitt](http://twitter.com/joehewitt)

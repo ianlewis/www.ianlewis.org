@@ -4,6 +4,7 @@ title: "Homepage Redesign"
 date: 2012-12-09 23:51:42 +0000
 permalink: /en/homepage-redesign
 blog: en
+render_with_liquid: false
 ---
 
 I recently redesigned my homepage to streamline it and give it a

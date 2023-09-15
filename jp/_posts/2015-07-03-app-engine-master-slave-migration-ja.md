@@ -4,6 +4,7 @@ title: "App EngineのMaster-Slaveデータストアを廃止する件"
 date: 2015-07-03 20:21:56 +0000
 permalink: /jp/app-engine-master-slave-migration-ja
 blog: jp
+render_with_liquid: false
 ---
 
 App Engineの一部のユーザーに最近は以下のようなメールが何件届いていると思います。こういうようなメールは英語で書かれいて、「英語を読むの面倒くせぇー、スルーしよう」ってメールを消す方が多いんじゃないかなと思うんだが、実は重要なお知らせです。

@@ -4,6 +4,7 @@ title: "javascript \"var\""
 date: 2009-05-13 15:38:30 +0000
 permalink: /jp/javascript-var
 blog: jp
+render_with_liquid: false
 ---
 
 <p>javascript で変数を定義する時に、var を付ける場合があります。var を付けないと、変数がグローバル名前空間に入ってしまう。</p>

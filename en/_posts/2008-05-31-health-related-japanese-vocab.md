@@ -4,6 +4,7 @@ title: "Health related Japanese Vocab"
 date: 2008-05-31 19:37:25 +0000
 permalink: /en/health-related-japanese-vocab
 blog: en
+render_with_liquid: false
 ---
 
 <p>Since I went to the doctor today I thought I would post some Japanese words that are relatively new to me. Some I learned today and some I had learned before but they all relate to illness or infirmity. Forgive the somewhat advanced and somewhat gross nature of some of the words but I hope they could be useful to someone looking to go to the Japanese Doctor.</p>

@@ -4,6 +4,7 @@ title: "モバイルサイトで Google Analytics"
 date: 2008-05-29 16:46:49 +0000
 permalink: /jp/google-analytics
 blog: jp
+render_with_liquid: false
 ---
 
 会社のモバイルサイトで、 [Google Analytics](http://www.google.com/analytics/ja-JP/)

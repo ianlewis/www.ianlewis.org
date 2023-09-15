@@ -4,6 +4,7 @@ title: "Tokyo Hackerspace"
 date: 2009-06-12 17:03:15 +0000
 permalink: /en/tokyohackerspace
 blog: en
+render_with_liquid: false
 ---
 
 <img alt="http://tokyohackerspace.googlegroups.com/web/hslogo.jpg?gda=lrpJgTwAAAAr1fkzGz16Q9NepM6i3AZKvUhMeHQNJoDQllpma_3XyBXBwF2IhAbToEmJoSVY1kj9Wm-ajmzVoAFUlE7c_fAt" src="http://tokyohackerspace.googlegroups.com/web/hslogo.jpg?gda=lrpJgTwAAAAr1fkzGz16Q9NepM6i3AZKvUhMeHQNJoDQllpma_3XyBXBwF2IhAbToEmJoSVY1kj9Wm-ajmzVoAFUlE7c_fAt"></img>

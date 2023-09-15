@@ -4,6 +4,7 @@ title: "明日からPython温泉"
 date: 2009-06-25 18:16:49 +0000
 permalink: /jp/python-onsen-tomorrow
 blog: jp
+render_with_liquid: false
 ---
 
 明日からPython温泉に参加しに行ってきます。課題は下記のとおり

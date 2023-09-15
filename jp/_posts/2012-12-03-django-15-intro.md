@@ -4,6 +4,7 @@ title: "Django 1.5 の紹介"
 date: 2012-12-03 10:00:00 +0000
 permalink: /jp/django-15-intro
 blog: jp
+render_with_liquid: false
 ---
 
 ![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/django/django-logo-positive_medium.png)

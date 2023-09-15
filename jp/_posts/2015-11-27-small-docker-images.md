@@ -4,6 +4,7 @@ title: "(より)小さいDockerイメージを作ろう"
 date: 2015-11-27 14:30:00 +0000
 permalink: /jp/small-docker-images
 blog: jp
+render_with_liquid: false
 ---
 
 最近、コンテナ技術が流行っていていろなツールを興味深く触っている。その中の一番人気のはみんな大好きなDocker。Dockerは docker

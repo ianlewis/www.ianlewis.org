@@ -4,6 +4,7 @@ title: "Windows Vista SuperFetch"
 date: 2009-06-29 00:11:25 +0000
 permalink: /en/superfetch
 blog: en
+render_with_liquid: false
 ---
 
 I don't use Windows Vista that often but when I do it would thrash at

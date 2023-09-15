@@ -4,6 +4,7 @@ title: "OpenSocial Hackathon @ デブサミ"
 date: 2009-02-14 13:30:03 +0000
 permalink: /jp/opensocial-devsummit
 blog: jp
+render_with_liquid: false
 ---
 
 <p>昨日、デブサミ版の<a href="http://www.opensocial.org/">OpenSocial</a>ハッカソンに参加してきた。結構コーディングができて効率な一日でした。</p>

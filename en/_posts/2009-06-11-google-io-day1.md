@@ -4,6 +4,7 @@ title: "Google I/O Day 1"
 date: 2009-06-11 21:59:04 +0000
 permalink: /en/google-io-day1
 blog: en
+render_with_liquid: false
 ---
 
 I'm about 2 weeks late getting around to writing about Google I/O and

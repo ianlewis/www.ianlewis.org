@@ -4,6 +4,7 @@ title: "New Year’s Python Meme 2014"
 date: 2014-01-01 15:30:00 +0000
 permalink: /en/new-years-python-meme-2014
 blog: en
+render_with_liquid: false
 ---
 
 Since [everyone](http://blog.hirokiky.org/2013/12/31/new_years_python_meme_2013.html) [else](http://pelican.aodag.jp/new-years-python-meme-2014.html) was doing it I thought I'd write one up too.

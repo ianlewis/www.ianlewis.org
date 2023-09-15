@@ -4,6 +4,7 @@ title: "Django 勉強会 Disc.7"
 date: 2009-01-16 21:34:38 +0000
 permalink: /jp/django-disc-7
 blog: jp
+render_with_liquid: false
 ---
 
 <p>昨日、<a href="http://accense.com/">アクセンス・テクノロジー</a>の東京本社に<a href="http://djangoproject.jp/etude/7/">Django 勉強会 Disc.7</a>に参加しに行ってきました。</p>

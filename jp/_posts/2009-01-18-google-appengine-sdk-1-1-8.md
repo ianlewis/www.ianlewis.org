@@ -4,6 +4,7 @@ title: "Google Appengine SDK 1.1.8がリリースされました"
 date: 2009-01-18 11:45:59 +0000
 permalink: /jp/google-appengine-sdk-1-1-8
 blog: jp
+render_with_liquid: false
 ---
 
 <p>Appengineの新しいリリース1.1.8が来た。色な面白いところがあるけど、仲居さん(id:<a href="http://d.hatena.ne.jp/Voluntas/">Voluntas</a>)の<a href="http://d.hatena.ne.jp/Voluntas/20090117/1232209649">ブログポスト</a>からピックアップする。</p>

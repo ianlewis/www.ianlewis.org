@@ -4,6 +4,7 @@ title: "QueryDict and update()"
 date: 2009-02-20 09:29:46 +0000
 permalink: /en/querydict-and-update
 blog: en
+render_with_liquid: false
 ---
 
 <p>Yesterday I ran into an interesting quirk with <a href="http://www.djangoproject.com/" title="Django">Django</a>'s QueryDict object and the normal dictionary update() method. Normally the update method will allow you to merge two dictionary or dictionary like objects but because the QueryDict internally holds it's values as lists you get some unexpected behavior.</p>

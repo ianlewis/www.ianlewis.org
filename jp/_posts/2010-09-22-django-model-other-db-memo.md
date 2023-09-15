@@ -4,6 +4,7 @@ title: "特定なDjangoモデルを別DBに保存するメモ"
 date: 2010-09-22 16:35:28 +0000
 permalink: /jp/django-model-other-db-memo
 blog: jp
+render_with_liquid: false
 ---
 
 今日、会社で特定なDjangoモデルを別のDBに保存するようなニーズがあって、Django マルチDBを使えるかなという話がありました。

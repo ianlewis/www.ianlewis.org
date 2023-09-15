@@ -4,6 +4,7 @@ title: "Testing Django Views Without Using the Test Client"
 date: 2015-07-21 16:00:00 +0000
 permalink: /en/testing-django-views-without-using-test-client
 blog: en
+render_with_liquid: false
 ---
 
 The normal way to test Django views is via the [test client](https://docs.djangoproject.com/en/1.8/topics/testing/tools/). The test client fakes being a wsgi server and actually makes an HTTP request through all of Django’s request routing machinery. There are a number of reasons why this isn’t an ideal approach.

@@ -4,6 +4,7 @@ title: "Googleのほとんどのサービスを支えるBigtableの誰でも使�
 date: 2015-12-20 16:00:00 +0000
 permalink: /jp/cloud-bigtable
 blog: jp
+render_with_liquid: false
 ---
 
 > これは [Google Cloud Platform Advent Calendar 2015](http://qiita.com/advent-calendar/2015/gcp)の19日目の記事です。

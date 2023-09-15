@@ -4,6 +4,7 @@ title: "Feedparser and Django"
 date: 2008-10-30 19:13:52 +0000
 permalink: /en/feedparser-and-django
 blog: en
+render_with_liquid: false
 ---
 
 <p>Over the weekend at <a href="http://www.python.org/" title="Python">Python</a> Onsen I worked on a lifestream web application using <a href="http://www.djangoproject.com/" title="Django">Django</a> and <a href="http://www.feedparser.org/">feedparser</a>. I was really impressed with how simple feedparser is to use and how easy it is to get unified results from atom or rss feeds. You simply import feedparser and call feedparser.parse to parse a feed from a url.</p>

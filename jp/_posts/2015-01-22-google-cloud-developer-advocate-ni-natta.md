@@ -4,6 +4,7 @@ title: "Google Cloud PlatformのDeveloper Advocate になりました！"
 date: 2015-01-22 13:00:00 +0000
 permalink: /jp/google-cloud-developer-advocate-ni-natta
 blog: jp
+render_with_liquid: false
 ---
 
 <img alt="Google Cloud Platform" title="Google Cloud Platform" class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/730/cloudplatform_horizontallockup_big.png" />

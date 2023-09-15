@@ -4,6 +4,7 @@ title: "How kubeadm Initializes Your Kubernetes Master"
 date: 2016-10-12 18:00:00 +0000
 permalink: /en/how-kubeadm-initializes-your-kubernetes-master
 blog: en
+render_with_liquid: false
 ---
 
 `kubeadm` is a new tool that is part of the Kubernetes distribution as of 1.4.0 which helps you to install and set up a Kubernetes cluster. One of the most frequent criticisms of Kubernetes is that it's hard to install. `kubeadm` really makes this easier so I suggest you give it a try.

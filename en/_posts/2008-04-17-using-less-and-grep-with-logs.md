@@ -4,6 +4,7 @@ title: "Using less and grep with logs"
 date: 2008-04-17 17:34:43 +0000
 permalink: /en/using-less-and-grep-with-logs
 blog: en
+render_with_liquid: false
 ---
 
 <p>Recently I&apos;ve been doing a decent amount of debugging a database conversion process and looking at log files on the Red Hat servers at work. This has meant looking at some rather big (10 or so megabytes) log files. Normally I just fire up vim when looking at text files but opening a text file in a text editor that is a number of megabytes is a no-no since pretty much any text editor will load the whole file.</p>
