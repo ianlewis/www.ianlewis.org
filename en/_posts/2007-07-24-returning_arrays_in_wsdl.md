@@ -28,20 +28,9 @@ Quote](http://www.webservicex.net/stockquote.asmx?WSDL) web service. Or
 the Google [SOAP web service
 definition](http://api.google.com/GoogleSearch.wsdl).
 
-<div class="note">
-
-<div class="title">
-
-Note
-
-</div>
-
-**Update:** The Google SOAP web service has been deprecated and removed.
-See the blog post on the Official Google Code Blog: [A well earned
-retirement for the SOAP Search
-API](http://googlecode.blogspot.jp/2009/08/well-earned-retirement-for-soap-search.html)
-
-</div>
+> **Update:** The Google SOAP web service has been deprecated and removed.
+> See the blog post on the Official Google Code Blog: [A well earned
+> retirement for the SOAP Search API](http://googlecode.blogspot.jp/2009/08/well-earned-retirement-for-soap-search.html)
 
 Though after reading all of those, while returning base types like int
 or string or even custom objects was easy to define, I had a hard time
