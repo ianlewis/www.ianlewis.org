@@ -66,9 +66,12 @@ prettier: ## Run prettier.
 	@set -e;\
 		prettier -w .
 
-
 ## Maintenance
 #####################################################################
+
+.PHONY: serve
+serve: ## Run jekyll test server.
+	bundle exec jekyll serve
 
 .PHONY: clean
 clean: ## Delete temporary files.
