@@ -43,6 +43,7 @@ render_with_liquid: false
 </ul>
 
 参加したみんなさん、お疲れ様でした！</li>
+
 <div class="sharethis">
         <script type="text/javascript" language="javascript">
           SHARETHIS.addEntry( {

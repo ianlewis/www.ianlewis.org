@@ -15,7 +15,6 @@ Google Kubernetes Engine (GKE)は標準にクラスターオートスケーラ�
 
 この記事ではこの２つの機能を組み合わせて安くて自動的にスケールするリソースの作成をやってみたい。一緒にやってみたい方はGCPの[$300無料トライアル](https://cloud.google.com/free/)を使うといいと思います。
 
-
 ## Preemptible Instances
 
 [Preemptible instance](https://cloud.google.com/compute/docs/instances/preemptible)はGCEの単価が安く一時的なVMを作成できる機能です。GCEゾーンのデータセンターの余裕キャパを買うような感じですので、 かなり安く提供できるけど、VMのアベイラビリティが普段より低い。
@@ -28,12 +27,9 @@ Preemptible Instanceの欠点はいくつかある。その一つはVMがいつ�
 
 欠点がありますが、たくさんのユースケースをローコストで満たせます。Preemptible instanceを`--preemptibleフラグで作れます：`
 
-
 ```
 gcloud compute instances create preemptible-instance --preemptible
 ```
-
-
 
 ## GKE Cluster Autoscaler
 
@@ -43,20 +39,15 @@ GKEはクラスターノードを動的にスケールする[cluster autoscaler]
 
 オートスケーラーを有効にするには`--enable-autoscalingをクラスター作成時に指定します。最大と最低のPod数を指定できます。このコマンドはオートスケーラーを有効にしたノードプールが含まれるクラスターを作ります：`
 
-
 ```
 gcloud container clusters create autoscaled-cluster --enable-autoscaling --min-nodes=1 --max-nodes=5
 ```
 
-
 オートスケーリングするノードプールをあとでも追加できます：
-
 
 ```
 gcloud container node-pools create autoscaled-pool --cluster=autoscaled-cluster --enable-autoscaling --min-nodes=1 --max-nodes=5
 ```
-
-
 
 ## Preemptibleノードプールのオートスケーリング
 
@@ -66,22 +57,17 @@ gcloud container node-pools create autoscaled-pool --cluster=autoscaled-cluster 
 
 GKEベータAPIを使うために、以下のコマンドを実行する：
 
-
 ```
 gcloud config set container/use_v1_api_client false
 ```
 
-
 Preemptibleインスタンスを確保できない場合があるので、一般的なユースケースとして、普通のノードプールを固定したインスタンス数で作って、そして、別のPreemptibleノードプールでオートスケーリングをする。まずは普通のノードプールを作成：
-
 
 ```
 gcloud container clusters create burstable-cluster --num-nodes 3
 ```
 
-
 次ぐにオートスケーリングするPreemptibleノードプールを作成：
-
 
 ```
 gcloud beta container node-pools create preemptible-pool \
@@ -90,11 +76,9 @@ gcloud beta container node-pools create preemptible-pool \
     --node-taints=pod=preemptible:PreferNoSchedule
 ```
 
-
 このノードプールは必要なリソースに対して、スケールするけど、低コストのPreemptibleインスタンスを使ってくれます。Preemptibleリソースは取れない場合があるので、[node taint](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) を設定して、こういう変動するようなリソース状況を耐えるアプリケーションだけが実行を許可する。
 
 どれで普通のノードプールとPreemptibleノードプール両方に動くようなDeploymentを作成できる：
-
 
 ```
 cat <<EOF | kubectl apply -f -
@@ -131,39 +115,31 @@ spec:
 EOF
 ```
 
-
 クラスターは最初にリソースが足りないので、`Pending`ステータスのPodをいくつか見れるはず。そのあとにノードが追加されることにつれて、`Running` ステータスに変わる。
-
 
 ```
 kubectl get pods -o wide
 ...
 ```
 
-
-
 ## まとめ
 
 上のコマンドを実行して、試してみた場合はいかのコマンドでリソースを削除できます。
-
 
 ```
 gcloud compute instances delete preemptible-instance
 gcloud container clusters delete autoscaled-cluster
 ```
 
-
-`gcloud container clusters delete burstable-cluster` 
+`gcloud container clusters delete burstable-cluster`
 
 GKEの高度な機能を組み合わせることで、低コストとアプリケーションアベイラビリティのバランスをとった構成が作れます。ベータ機能なのでクラスターを作れば、誰でもオートスケーラーとPreemtibleノードプールが利用できます。
 
 もっとKubernetes知りたい方は、以下のアイテムをどうぞ:
 
-
-
-*   GKEの [how-to guides](https://cloud.google.com/kubernetes-engine/docs/how-to/) を読む。
-*   [Google Cloud Platform Slack](https://gcp-slack.appspot.com/) (#kubernetes-engine チャンネルに参加してください。)
-*   [GCPUG Slack](https://docs.google.com/forms/d/e/1FAIpQLScYxAGwuosFFNvH-5yOj-_p-pAKdqZpmM2cgKh9Q8Zu6531Bw/viewform)に参加する (#gke_jaチャンネルに参加してください） 
-*   [Kubernetes Slack](http://slack.k8s.io/)に参加すfる (#gkeチャンネルに注目)
+- GKEの [how-to guides](https://cloud.google.com/kubernetes-engine/docs/how-to/) を読む。
+- [Google Cloud Platform Slack](https://gcp-slack.appspot.com/) (#kubernetes-engine チャンネルに参加してください。)
+- [GCPUG Slack](https://docs.google.com/forms/d/e/1FAIpQLScYxAGwuosFFNvH-5yOj-_p-pAKdqZpmM2cgKh9Q8Zu6531Bw/viewform)に参加する (#gke_jaチャンネルに参加してください）
+- [Kubernetes Slack](http://slack.k8s.io/)に参加すfる (#gkeチャンネルに注目)
 
 ではまた！

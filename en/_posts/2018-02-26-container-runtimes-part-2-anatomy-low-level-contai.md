@@ -15,10 +15,10 @@ As I explained in part 1, containers are implemented using [Linux namespaces](ht
 
 Be sure to check out the amazing talk ["Building a container from scratch in Go"](https://www.youtube.com/watch?v=Utf-A4rODH8) by Liz Rice. Her talk is a great introduction to how low-level container runtimes are implemented. Liz goes through many of these steps, but the most trivial runtime you can imagine that you could still call a "container runtime" might do something like the following:
 
-*   Create cgroup
-*   Run command(s) in cgroup
-*   [Unshare](http://man7.org/linux/man-pages/man2/unshare.2.html) to move to its own namespaces
-*   Clean up cgroup after command completes (namespaces are deleted automatically when not referenced by a running process)
+- Create cgroup
+- Run command(s) in cgroup
+- [Unshare](http://man7.org/linux/man-pages/man2/unshare.2.html) to move to its own namespaces
+- Clean up cgroup after command completes (namespaces are deleted automatically when not referenced by a running process)
 
 A robust low-level container runtime, however, would do a lot more, like allow for setting resource limits on the cgroup, setting up a root filesystem, and chrooting the container's process to the root file system.
 
@@ -97,7 +97,7 @@ $ mkdir rootfs
 $ docker export $(docker create busybox) | tar -xf - -C rootfs
 ```
 
-Next create a config.json file. 
+Next create a config.json file.
 
 ```shell
 $ runc spec
@@ -170,9 +170,9 @@ In the next post I'll move up the stack and talk about high-level container runt
 
 Until then, you can get more involved with the Kubernetes community via these channels:
 
-*   Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
-*   Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter
-*   Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
-*   Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
+- Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
+- Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter
+- Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
+- Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
 
 _> Thanks to [Craig Box](https://twitter.com/craigbox), Jack Wilbur, Philip Mallory, [David Gageot](https://twitter.com/dgageot), Jonathan MacMillan, and [Maya Kaczorowski](https://twitter.com/MayaKaczorowski) for reviewing drafts of this post._

@@ -38,7 +38,7 @@ spec:
         name: nginx
         version: "1.10"
     spec:
-      containers: 
+      containers:
         - name: nginx
           image: nginx:1.10
           ports:
@@ -54,21 +54,21 @@ $ kubectl apply -f blue.yaml
 
 Once we have a deployment we can provide a way to access the instances of the deployment by creating a [Service](https://kubernetes.io/docs/concepts/services-networking/service/). Services are decoupled from deployments so that means that you don't explicitly point a service at a deployment. What you do instead is specify a [label selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) which is used to list the pods that make up the service. When using deployments, this is typically set up so that it matches the pods for a deployment.
 
-In this case we have two labels, `name=nginx` and `version=1.10`. We will set these as the label selector for the  service below. Save this to `service.yaml`.
+In this case we have two labels, `name=nginx` and `version=1.10`. We will set these as the label selector for the service below. Save this to `service.yaml`.
 
 ```yaml
 apiVersion: v1
 kind: Service
-metadata: 
+metadata:
   name: nginx
-  labels: 
+  labels:
     name: nginx
 spec:
   ports:
     - name: http
       port: 80
       targetPort: 80
-  selector: 
+  selector:
     name: nginx
     version: "1.10"
   type: LoadBalancer
@@ -91,7 +91,7 @@ $ EXTERNAL_IP=$(kubectl get svc nginx -o jsonpath="{.status.loadBalancer.ingress
 $ curl -s http://$EXTERNAL_IP/version | grep nginx
 ```
 
-## Creating  Green Deployment
+## Creating Green Deployment
 
 For the "green" deployment we will deploy a new deployment in parallel wit the "blue" deployment. If the following is in `green.yaml`...
 
@@ -108,7 +108,7 @@ spec:
         name: nginx
         version: "1.11"
     spec:
-      containers: 
+      containers:
         - name: nginx
           image: nginx:1.11
           ports:
@@ -133,16 +133,16 @@ To cut over to the "green" deployment we will update the selector for the servic
 ```
 apiVersion: v1
 kind: Service
-metadata: 
+metadata:
   name: nginx
-  labels: 
+  labels:
     name: nginx
 spec:
   ports:
     - name: http
       port: 80
       targetPort: 80
-  selector: 
+  selector:
     name: nginx
     version: "1.11"
   type: LoadBalancer
@@ -197,4 +197,4 @@ kubectl patch svc $SERVICE -p "{\"spec\":{\"selector\": {\"name\": \"${SERVICE}\
 echo "Done."
 ```
 
-Hopefully Kubernetes will support blue/green deployments natively but until then you can get by with some automation like this. To connect with folks who care about how applications are deployed on Kubernetes check out the `#sig-apps` channel in the  [Kubernetes Slack](http://slack.kubernetes.io/).
+Hopefully Kubernetes will support blue/green deployments natively but until then you can get by with some automation like this. To connect with folks who care about how applications are deployed on Kubernetes check out the `#sig-apps` channel in the [Kubernetes Slack](http://slack.kubernetes.io/).

@@ -35,7 +35,7 @@ I did implement code highlighting support for blog posts using
 blog [oebfare](http://github.com/brosner/oebfare/tree/master).
 Highlighting is done something like the following:
 
-``` rst
+```rst
 .. code-block:: python
 
    some python source code here

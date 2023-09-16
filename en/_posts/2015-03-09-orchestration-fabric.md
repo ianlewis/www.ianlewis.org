@@ -15,7 +15,7 @@ about how I used Fabric to achieve that.
 Tools like [Vagrant](https://www.vagrantup.com/) can be used to create servers
 and provision them, but deploying an app using a provisioning tool like chef,
 puppet, or ansible is less than ideal. Vagrant also can only get you so
-far, when you need to set up disks and networking so it's not great and, 
+far, when you need to set up disks and networking so it's not great and,
 indeed, not intended for production use.
 
 [Terraform](https://www.terraform.io/) is another tool that does orchestration better,
@@ -172,7 +172,7 @@ And to stop it:
 ## What's next?
 
 Right now I'm not doing anything really interesting that I couldn't do with
-just vagrant.  Essentially It's just a complicated way of running `vagrant up`
+just vagrant. Essentially It's just a complicated way of running `vagrant up`
 or `vagrant halt`. The key is getting the ssh configuration information from
 vagrant that we can use later for other remote commands.
 

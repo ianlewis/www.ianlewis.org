@@ -11,14 +11,14 @@ merucurial の hg
 branchesっていうコマンドを打つと、inactiveブランチが普段に出てうるさいので、表示しないようにしてみた。これを
 .hgrc に追加した
 
-``` text
+```text
 [alias]
 branches = branches -a
 ```
 
 普通は、この表示になる
 
-``` text
+```text
 ian@laptop:~/src/prj$ hg branches
 default                     1662:1fa310d3052a
 hoge                        1661:62d737e7146e
@@ -28,7 +28,7 @@ hoge_closed                 670:1c3134ca4a95 (closed)
 
 修正後に、hg branchesを叩くと、綺麗にでる。
 
-``` text
+```text
 ian@laptop:~/src/prj$ hg branches
 default                     1662:1fa310d3052a
 hoge                        1661:62d737e7146e

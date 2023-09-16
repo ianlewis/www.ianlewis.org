@@ -38,7 +38,7 @@ the new socket API. I had a look at the `_remote_socket.py` file and
 from the docstrings and code it looked like it was a drop in replacement
 for the Python socket module.
 
-``` python
+```python
 """Socket Module.
 
 This file is intended to provide the equivalent of
@@ -54,7 +54,7 @@ In order to try it out I created a really simple app. This app just
 makes a simple socket connection to the www.google.com webserver and
 returns the result.
 
-``` python
+```python
 import webapp2
 import socket
 
@@ -83,7 +83,7 @@ requests as, or as part of, a module level global variable. This is
 probably not really recommended as it could create a lot of sockets if
 you have a lot of App Engine instances.
 
-``` python
+```python
 import webapp2
 import socket
 
@@ -103,13 +103,13 @@ application = webapp2.WSGIApplication([('/', MainPage)],
 
 It would be interesting if you could set the socket descriptor for each
 socket so that you can reuse the same socket across various App Engine
-instances. Not sure how that would really work in practice though. *See
-below about the underlying API to see what I mean.*
+instances. Not sure how that would really work in practice though. _See
+below about the underlying API to see what I mean._
 
 Sending and receiving from sockets isn't the only thing you can do with
 the Python socket module. Finally, you can do DNS lookups on App Engine.
 
-``` python
+```python
 import webapp2
 import socket
 
@@ -133,7 +133,7 @@ created a "CreateSocketRequest" RPC call is sent in the
 via that service and a "socket descriptor" is returned which is a unique
 identifier for the socket.
 
-``` python
+```python
 def _CreateSocket(self, address=None, bind_address=None,
                   address_hostname_hint=None):
   assert not self._created
@@ -162,7 +162,7 @@ sends the data to the socket API service which forwards it on the actual
 socket. Like the normal Python socket class it returns the number of
 bytes sent.
 
-``` python
+```python
 def sendto(self, data, *args):
   """sendto(data[, flags], address) -> count
 
@@ -197,13 +197,13 @@ duplex socket that you can read from directly. Your app sends a
 socket API must buffer the sockets remotely and return to you the
 contents of the buffer when you do a `recv()` call.
 
-``` python
+```python
 def recvfrom(self, buffersize, flags=0):
   """recvfrom(buffersize[, flags]) -> (data, address info)
 
   Like recv(buffersize, flags) but also return the sender's address info.
   """
-  # ... 
+  # ...
 
   request = remote_socket_service_pb.ReceiveRequest()
   request.set_socket_descriptor(self._socket_descriptor)

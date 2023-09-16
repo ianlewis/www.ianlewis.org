@@ -12,7 +12,7 @@ class instances (objects). In Python code, the most obvious way to
 accomplish this might be something like the following but it has one
 caveat,
 
-``` python
+```python
 class MyObj(object):
     def __init__(self, val):
         self.val = val
@@ -26,7 +26,7 @@ obj.method = new_method
 
 ... you can't use self. Let's try to actually call the method.
 
-``` python
+```python
 >>> obj.method(5)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -35,12 +35,12 @@ TypeError: new_method() takes exactly 2 arguments (1 given)
 
 Arg\!
 
-The new\_method() function is added to the class as a property which is
+The new_method() function is added to the class as a property which is
 a function that takes two arguments. So how do we add a method that can
 use self? The answer is that we use the `types` module's `MethodType`.
 
-``` python
->>> from types import MethodType 
+```python
+>>> from types import MethodType
 >>> obj.method = MethodType(new_method, obj, MyObj)
 >>> obj.method(5)
 8
@@ -49,7 +49,7 @@ use self? The answer is that we use the `types` module's `MethodType`.
 Ok, so now we can use self. The `MethodType` type actually binds the
 method to the instance and creates a "bound method".
 
-``` python
+```python
 >>> obj.method
 <bound method MyObj.new_method of <__main__.MyObj object at 0xb75c928c>>
 ```
@@ -58,7 +58,7 @@ Here, the method `method` is bound to the `obj` instance but is only
 available to that single instance. If we create another `MyObj` instance
 it won't have the new method. Let's create a new instance:
 
-``` python
+```python
 >>> obj2 = MyObj(2)
 >>> obj2.method(5)
 Traceback (most recent call last):
@@ -71,7 +71,7 @@ case where we want to add a new method to a class and have all new
 instances of that Class have the new method we will need to add an
 "unbound method" to the class.
 
-``` python
+```python
 >>> MyObj.method = MethodType(new_method, None, MyObj)
 >>> MyObj.method
 <unbound method MyObj.new_method>

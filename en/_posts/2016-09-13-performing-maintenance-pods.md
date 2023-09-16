@@ -41,8 +41,8 @@ In our service we will use these labels in our selector:
 ```yaml
 apiVersion: v1
 kind: Service
-metadata: 
-  labels: 
+metadata:
+  labels:
     name: nginx
   name: nginx
 spec:
@@ -50,7 +50,7 @@ spec:
     - name: http
       port: 80
       targetPort: 80
-  selector: 
+  selector:
     name: nginx
     enabled: "true"
 ```
@@ -133,7 +133,6 @@ $ kubectl exec nginx-1802606028-1posu -- killall -HUP nginx
 
 Or you could just start up a bash shell if bash is installed.
 
-
 ```console
 $ kubectl exec nginx-1802606028-1posu -ti -- bash -il
 ```
@@ -198,4 +197,4 @@ pod "nginx-1802606028-1posu" labeled
 
 This is great if your pod is part of a [PetSet](http://kubernetes.io/docs/user-guide/petset/) or restarting it is hard. But if we are using Deployments, and since the pod was acting flaky to begin with, and pods in a Deployment are by definition replaceable, we should probably just delete the pod. Even if we added it back to the Deployment, the Deployment would notice that it has one too many pods and delete one anyway.
 
-If you keep these things in mind, finding out why a particular pod was acting up in production can be a *relatively* smooth experience.
+If you keep these things in mind, finding out why a particular pod was acting up in production can be a _relatively_ smooth experience.

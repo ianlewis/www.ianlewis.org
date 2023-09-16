@@ -15,7 +15,7 @@ Appengineのメンテナンス時間がある時、datastoreが読み込み専�
 と言うAPIがあります。 メンテナンスがスケジュールされて、ある時間以内にメンテナンスを行うかをチェックします。僕は
 [django](http://djangoproject.jp/) を使ってるけど、capabilities API に特に依存がないですね。
 
-``` python
+```python
 from google.appengine.api.capabilities import CapabilitySet
 
 datastore_write = CapabilitySet('datastore_v3', capabilities=['write'])
@@ -26,7 +26,7 @@ if not datastore_write.will_remain_enabled_for(60):
 毎回毎回チェックするのが大変なので、僕が作ったコードシェアリングサイト、 [Smipple](http://www.smipple.net)
 、では、以下のユーティリティ関数とdecoratorを使っています。
 
-``` python
+```python
 from django.core.cache import cache
 
 from google.appengine.api.capabilities import CapabilitySet
@@ -54,9 +54,9 @@ def maintenance_check(view):
   return wrapped
 ```
 
-それで、POSTのviewで、maintenance\_checkデコレーターを付けて、maintenanceが起こる時に、maintenanceページにリダイレクトする処理をしています。
+それで、POSTのviewで、maintenance_checkデコレーターを付けて、maintenanceが起こる時に、maintenanceページにリダイレクトする処理をしています。
 
-``` python
+```python
 @login_required
 @maintenance_check
 def myview(request):

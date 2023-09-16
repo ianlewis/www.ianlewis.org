@@ -40,7 +40,7 @@ RbST のdocutils バージョンはデータをフォーマットする時に、
 
 ![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/673/redmine-rest.png)
 
-``` text
+```text
 $ gem install RbST
 ```
 
@@ -51,13 +51,13 @@ RbSTも日本語をレンダーする場合のバグがありますので、修�
 
 最後のほうに、データを print する行があって、それを修正します。
 
-``` python
+```python
 if __name__ == '__main__':
     try:
         output = main()
         if output:
             # ここを修正して、 print ではなくて、sys.stdout.write()にする
-            sys.stdout.write(output) 
+            sys.stdout.write(output)
     except Exception, e:
         sys.stdout.write('<strong style="color:red">Error Parsing ReSt: %r</strong>' % e)
 ```
@@ -65,7 +65,7 @@ if __name__ == '__main__':
 そして、redmine のインストールディレクトリに移動して、プラグインをインストール (Python と docutils
 もインストールしておいてください。
 
-``` text
+```text
 $ cd path/to/redmine
 $ script/plugin install git://github.com/alphabetum/redmine_restructuredtext_formatter.git
 ```
@@ -96,14 +96,14 @@ Textile 書かなくてもよくて、気持ちいいですね！
 
 RbSTのインストール先の gems ディレクトリに行って、rst2html.py を修正しよう
 
-``` text
+```text
 $ cd /path/to/ruby/gems/RbST-0.1.3/lib/rst2parts
 $ vim rst2html.py
 ```
 
 そして、下記のコードを加えましょう。 ( [moinmoin](http://moinmo.in/) からコピーした
 
-``` python
+```python
 from docutils.writers.html4css1 import Writer
 
 class WikiWriter(Writer):
@@ -140,7 +140,7 @@ class WikiWriter(Writer):
 
 レンダーする時に、WikiWriterを利用するように、main() 関数も修正しよう。
 
-``` python
+```python
 def main():
     #ここは修正して、writerの引数を追加
     return transform(writer=WikiWriter(), part='html_body')
@@ -173,20 +173,20 @@ Note
 
 標準のreSTじゃつまらないので、コードハイライトできるようにしょう。まずはライブラリをインストールするので、virtualenv を作ろう
 
-``` text
+```text
 $ cd /path/to/ruby/gems/RbST-0.1.3/lib/rst2parts
 $ virtualenv venv
 ```
 
 次はpygmentsをvirtualenvにインストールする
 
-``` text
+```text
 $ pip install pygments -E venv
 ```
 
 そして、rst2html.py で virtualenv を使うようにしよう。rst2html.py の上にこのコードを加えましょう
 
-``` python
+```python
 import site
 
 site.addsitedir(os.path.join(os.path.dirname(__file__), 'venv', 'lib', 'python2.7', 'site-packages'))
@@ -206,7 +206,7 @@ Python のバージョンによってパスが異なるので、ご注意を
 
 rst2html.pyを修正して、 code-blockディレクティブを追加する。
 
-``` python
+```python
 from docutils import nodes
 from docutils.parsers.rst import directives
 from pygments import highlight
@@ -235,7 +235,7 @@ directives.register_directive("code-block", pygments_directive)
 
 そうすると、Wiki で code-block ディレクティブを使うと
 
-``` text
+```text
 .. code-block:: python
 
     class PythonRocks(object):

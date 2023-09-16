@@ -26,12 +26,12 @@ When run on the console it looks something like this:
     ....
     ----------------------------------------------------------------------
     Ran 4 tests in 0.002s
-    
+
     OK
     ..........
     ----------------------------------------------------------------------
     Ran 10 tests in 0.001s
-    
+
     OK
 
 Here I edited a couple files and pyautotest ran the tests that are

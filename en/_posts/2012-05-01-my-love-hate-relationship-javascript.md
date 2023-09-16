@@ -31,7 +31,7 @@ usually means a expensive synchronous HTTP request via a script tag so
 you want to mitigate this as much as possible which adds a lot of
 complexity and convention to your code. It looks something like this:
 
-``` html
+```html
 <script type="text/javascript" src="/static/js/jquery.js"></script>
 <script type="text/javascript" src="/static/js/jqmodal.js"></script>
 <script type="text/javascript" src="/static/js/jquery.ui.custom.js"></script>
@@ -48,7 +48,7 @@ results of already loaded modules.
 
 A require.js module looks like this:
 
-``` javascript
+```javascript
 define('mymodule', ['jquery'], function(jQuery) {
     ...
     return MyModule;

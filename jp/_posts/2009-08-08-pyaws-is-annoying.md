@@ -9,9 +9,9 @@ render_with_liquid: false
 
 AmazonのアフィリエイトAPIのpython クライアント pyaws は単純にpythonオブジェクトを持つ Bagクラスがある。
 
-``` python
+```python
 # Wrapper class for ECS
-class Bag : 
+class Bag :
     """A generic container for the python objects"""
     def __repr__(self):
         return '<Bag instance: ' + self.__dict__.__repr__() + '>'
@@ -19,7 +19,7 @@ class Bag :
 
 でも、実はdictでいいかなって思ったの。オブジェクトだと simplejson.dumps出来ないから、嬉しくないな
 
-``` python
+```python
 >>> simplejson.dumps(books[0], indent=2)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>

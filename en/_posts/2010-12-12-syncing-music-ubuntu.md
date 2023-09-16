@@ -15,13 +15,13 @@ support you need. This should work for iPods as well.
 I am using rhythmbox so the following packages are required if using
 rhythmbox:
 
-  - rhythmbox
-  - rhythmbox-plugins - Without these pretty much nothing but playback
-    works.
-  - gstreamer0.10-plugins-good
-  - gstreamer0.10-plugins-ugly - for mp3 playback
-  - gstreamer0.10-plugins - for on the fly ogg -\> mp3 encoding (this is
-    good since iPod doesn't support vorbis)
+- rhythmbox
+- rhythmbox-plugins - Without these pretty much nothing but playback
+  works.
+- gstreamer0.10-plugins-good
+- gstreamer0.10-plugins-ugly - for mp3 playback
+- gstreamer0.10-plugins - for on the fly ogg -\> mp3 encoding (this is
+  good since iPod doesn't support vorbis)
 
 After installing these packages I could get rhythmbox to add my iphone
 to the menu on the left and I could drag files into it to sync. Ogg

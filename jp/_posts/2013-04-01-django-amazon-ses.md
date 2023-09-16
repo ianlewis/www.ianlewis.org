@@ -21,11 +21,11 @@ Django ではどう使えばいいかを説明したいなと思った。
 実は、SESをDjangoで使うのが簡単過ぎて、あまりネタにならないので、 Django の説明とSESのはまりどころの話をしょうと思っている。
 本来は この話は Djangoよりは、SESの話になるかも。
 
-# django\_ses
+# django_ses
 
 connpass は [django-ses](https://github.com/hmarr/django_ses/)
 を使っている。django-ses は Django の
-[EMAIL\_BACKEND](https://docs.djangoproject.com/en/1.5/ref/settings/#email-backend)
+[EMAIL_BACKEND](https://docs.djangoproject.com/en/1.5/ref/settings/#email-backend)
 設定で使えるメールバックエンドを提供している。内部では、
 [boto](http://docs.pythonboto.org/en/latest/) という AWS APIのための
 クライアントライブラリを使っている。
@@ -50,7 +50,7 @@ Note
 
 </div>
 
-``` python
+```python
 AWS_ACCESS_KEY_ID = '<access key>'
 AWS_SECRET_ACCESS_KEY = '<access secret>'
 EMAIL_BACKEND = 'django_ses.SESBackend'
@@ -69,10 +69,10 @@ SERVER_EMAIL = u"noreply <no-reply@example.com>"
 最初にアカウントをセットアップした時、SESは「sandbox」モードになっている。 sandbox
 モードは特に使い方は特殊ではないのですが、メール送信が大きく制限されている。
 
-  - メール送信は24時間で最大200件
-  - 速度は最大秒間1件
-  - 確認したメアドからしか送信できない (From ヘッダー)
-  - 確認したメアドにしか送れない (To ヘッダー)
+- メール送信は24時間で最大200件
+- 速度は最大秒間1件
+- 確認したメアドからしか送信できない (From ヘッダー)
+- 確認したメアドにしか送れない (To ヘッダー)
 
 SESを本格的に使う場合は [Production
 Access](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html)

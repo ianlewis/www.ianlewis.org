@@ -73,6 +73,6 @@ system and be happy right? App rejected.
 
 I'm sure I'd like to have something like an iPad in the future to read
 books and do basic kinds of tasks but I would never EVER consider it as
-a machine to program on. So, there needs to be one that I *can* program
+a machine to program on. So, there needs to be one that I _can_ program
 on and every computer trying to be like the iPad limits my choices and
 my access to that information.

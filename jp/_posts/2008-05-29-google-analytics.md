@@ -19,9 +19,9 @@ Analyticsにした。
 具体的に、Peter van der Graffっていう人の
 [ブログ](http://www.vdgraaf.info/google-analytics-without-javascript.html)
 から、PHPコードを写したけど、Peterさんの目的は僕の目的と違うらしい。彼は RSS
-とか、ファイルダウンロードのトラッキングをする前提で、コードを書きましたから、携帯機種や、セッションや、ユーザ変数を記載してなかった。なので、Peterさんのコードを以下のコードに書き直した。セッションを渡して、USER\_AGENTというHTTPヘーダを送る携帯の機種とかもちゃんと転送するようにした。
+とか、ファイルダウンロードのトラッキングをする前提で、コードを書きましたから、携帯機種や、セッションや、ユーザ変数を記載してなかった。なので、Peterさんのコードを以下のコードに書き直した。セッションを渡して、USER_AGENTというHTTPヘーダを送る携帯の機種とかもちゃんと転送するようにした。
 
-``` php
+```php
 $var_utmac=MOBILE_GOOGLE_ANALYTICS_CODE; //enter the new urchin code
 $var_utmhn=WEB_DOMAIN; //enter your domain
 $var_utmn=rand(1000000000,9999999999);//random request number

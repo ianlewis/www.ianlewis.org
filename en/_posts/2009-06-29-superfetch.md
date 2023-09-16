@@ -13,7 +13,7 @@ looked it up and it is aparently the "SuperFetch" service. Using the
 following steps to disabled it stops the thrashing on the hard drive
 almost immediately.
 
-  - Go to control panel \> administrative tools \> services.
-  - Right click on the "SuperFetch" service and click Properties.
-  - Set the service to disabled and hit Ok.
-  - Right click on the service again and click "Stop" to stop it.
+- Go to control panel \> administrative tools \> services.
+- Right click on the "SuperFetch" service and click Properties.
+- Set the service to disabled and hit Ok.
+- Right click on the service again and click "Stop" to stop it.

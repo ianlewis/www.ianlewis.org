@@ -7,10 +7,10 @@ blog: jp
 render_with_liquid: false
 ---
 
-*(この記事は* [Python Web フレームワーク
+_(この記事は_ [Python Web フレームワーク
 アドベントカレンダー2010](http://atnd.org/events/10465)
-*のために書いた 12/24 の記事です。 他の記事を読むには http://atnd.org/events/10465
-をご覧ください)*
+_のために書いた 12/24 の記事です。 他の記事を読むには http://atnd.org/events/10465
+をご覧ください)_
 
 私は普段、 [kay フレームワーク](http://code.google.com/p/kay-framework/) を使いますが、最近、
 [Tipfy](http://www.tipfy.org/) (<http://www.tipfy.org>)
@@ -27,7 +27,7 @@ Tipfy は [buildout](http://www.buildout.org/) という環境管理ツールの
 
 まずは、 [Tipfy の配布プロジェクトテンプレート](http://www.tipfy.org/tipfy.zip) をダウンロードします。
 
-``` text
+```text
 $ wget http://www.tipfy.org/tipfy.zip
 $ unzip tipfy.zip
 ```
@@ -35,17 +35,17 @@ $ unzip tipfy.zip
 次に、 buildout で環境を構築。buildout は Appengine SDK と依存ライブラリをすべて、
 [pypi](http://pypi.python.org/) から落としてくれます。
 
-``` text
+```text
 $ cd project
 $ python2.5 bootstrap.py --distribute
 $ ./bin/buildout
 ```
 
-それから、 dev\_appserverや、 appcfg のスクリプトファイルが `bin`
+それから、 dev_appserverや、 appcfg のスクリプトファイルが `bin`
 ディレクトリに入っています。開発サーバーを起動するには、
 `./bin/dev_appserver` を実行します。
 
-``` text
+```text
 $ ./bin/dev_appserver
 ```
 
@@ -53,7 +53,7 @@ $ ./bin/dev_appserver
 
 この時点でファイルディレクトリ構造が出来ているはず。
 
-``` text
+```text
 app/ - GAE アプリ
     apps/ - アプリケーションモジュール
         hello_world - デフォールト Hello World アプリケーション
@@ -68,7 +68,7 @@ app/ - GAE アプリ
     urls.py - アプリのURLルーティング
 eggs/ - buildout が作った開発用ライブラリファイル
 etc/ - 設定ファイル
-    develop-eggs - 開発用ライブラリ 
+    develop-eggs - 開発用ライブラリ
     downloads - ダウンロードキャッシュ
     parts - buildout の開発用ファイル
 bootstrap.py - buildout のブットストラップスクリプト
@@ -87,7 +87,7 @@ versions.cfg - バージョン管理ファイル (デフォールトは空)
 
 `apps_installed` はアプリケーションモジュールの設定です。アプリモジュールで定義した URLを自動で 登録します。
 
-``` python
+```python
 # Configurations for the 'tipfy' module.
 config['tipfy'] = {
     # Enable debugger. It will be loaded only in development.
@@ -110,7 +110,7 @@ URLルーティングは `urls.py` の `make_rules()` 関数で定義します�
 
 `app/apps/hello_world/urls.py` を見るとこんな感じです。
 
-``` python
+```python
 from tipfy import Rule
 
 def get_rules(app):
@@ -134,7 +134,7 @@ def get_rules(app):
 リクエストハンドラーでアプリケーションのロジックを実装します。 Tipfy は Jinja2
 のテンプレートレンダリングエンジンをデフォルトで使います。
 
-``` python
+```python
 from tipfy import RequestHandler, Response
 from tipfy.ext.jinja2 import render_response
 
@@ -150,10 +150,10 @@ class HelloWorldHandler(RequestHandler):
 追加するのではなく、アプリケーション用のベースハンドラーで使う機能のMixin
 を追加する。 例えば、 ミドルウエアの設定、セッション処理とかがベースハンドラーで設定することができます。
 
-``` python
+```python
 from tipfy import RequestHandler, Response
-from tipfy.ext.jinja2 import Jinja2Mixin 
-from tipfy.ext.session import SecureCookieMixin, SessionMixin 
+from tipfy.ext.jinja2 import Jinja2Mixin
+from tipfy.ext.session import SecureCookieMixin, SessionMixin
 
 class BaseHandler(RequestHandler, Jinja2Mixin, SecureCookieMixin, SessionMixin):
     middleware = ['tipfy.ext.session.SessionMiddleware']

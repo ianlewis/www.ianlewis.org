@@ -13,7 +13,7 @@ render_with_liquid: false
 
 ![Zach](https://storage.googleapis.com/static.ianlewis.org/prod/img/668/howgithubworks.png)\_
 
------
+---
 
 今回は [Hours are
 Bullshit](http://zachholman.com/posts/how-github-works-hours/) という記事

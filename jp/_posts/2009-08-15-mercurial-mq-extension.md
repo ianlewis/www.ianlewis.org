@@ -12,27 +12,27 @@ render_with_liquid: false
 
 mq は標準に入っているので、インストールしなくてもいいだが、エクステンションを.hgrcで有効しないと。
 
-``` text
+```text
 [extensions]
 mq =
 ```
 
 それで、コマンドを巡回する。パッチキューを初期化する。
 
-``` text
+```text
 hg qinit
 ```
 
 新しいパッチを作る。これは変更がない状態で実行しないといけないので、ちょっと面倒くさい。
 
-``` text
+```text
 hg qnew
 ```
 
 もし、qnewを忘れた場合、変更を置かないと。これは面倒くさい。もし、もっといい方法があれば、教えてください。たまに、windows のeol
 と unix の eol が両方 my.diff に入ってしまって、patch がちゃんと適用することが出来ない場合がある。ご注意
 
-``` text
+```text
 hg diff -U > my.diff
 hg revert --all
 hg qnew mypatch
@@ -41,7 +41,7 @@ patch -p1 < my.diff
 
 **Update:** -f で現在の変更を含めて新しいパッチを作れる。上の処理を下のコマンドで同じことができる。
 
-``` text
+```text
 hg qnew -f mypatch
 ```
 
@@ -49,13 +49,13 @@ hg qnew -f mypatch
 statusを実行すると何もでない。パッチの内容も hg view
 で見れる。
 
-``` text
+```text
 hg qrefresh
 ```
 
 コミットするときの、コミットメッセージは分かりにくいだが、 qrefresh で指定する。
 
-``` text
+```text
 hg qrefresh -e
 ```
 
@@ -63,36 +63,36 @@ hg qrefresh -e
 
 パッチを置かないといけない場合は、qpop を使う。
 
-``` text
+```text
 hg qpop mypatch
 ```
 
 もしくは、
 
-``` text
+```text
 hg qpop -a
 ```
 
 パッチをまた適用する qpush
 
-``` text
+```text
 hg qpush mypatch
 ```
 
 もしくは、
 
-``` text
+```text
 hg qpush -a
 ```
 
 パッチをリポジトリにコミットする場合は、qfinish
 
-``` text
+```text
 hg qfinish mypatch
 ```
 
 もしくは、全てをコミット
 
-``` text
+```text
 hg qfinish qbase:qtip
 ```

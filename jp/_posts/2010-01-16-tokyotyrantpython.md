@@ -23,7 +23,7 @@ class PyTyrantTest(object):
         for i in xrange(self.num_attr):
             d.put("attr_%s" % i, data)
         d.close()
-        
+
     def delete_all_stupid(self):
         d = Tyrant.open('127.0.0.1', 1978)
         for i in xrange(self.num_attr):
@@ -87,7 +87,7 @@ class PyTyrantTest(object):
         for i in xrange(self.start, self.stop):
             d.put("attr_%s" % i, data)
         d.close()
-        
+
     def delete_all_stupid(self):
         d = Tyrant.open('127.0.0.1', 1978)
         for i in xrange(self.start, self.stop):
@@ -120,7 +120,7 @@ class PyTokyoTyrantTest(object):
 
 class Client(threading.Thread):
     def __init__(self, suite, **kwarg):
-        self.suite = suite 
+        self.suite = suite
         self.kwarg = kwarg
         super(Client,self).__init__()
 
@@ -178,7 +178,6 @@ for x in range(3):
 
 これを実行するとpytyrantのほうがずっと速い.
 
-
 ```
 python-tokyotyrant
 ********************
@@ -189,7 +188,6 @@ Running 20 threads took 27.191 seconds
 Running 20 threads took 30.575 seconds
 Running 20 threads took 34.699 seconds
 ```
-
 
 ```pytyrant
 ********************

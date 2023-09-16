@@ -7,7 +7,7 @@ blog: en
 render_with_liquid: false
 ---
 
-One of the terms you hear a lot when dealing with containers is "container runtime". "Container runtime" can have different meanings to different people so it's no wonder that it's such a confusing and vaguely understood term, even within the container community. 
+One of the terms you hear a lot when dealing with containers is "container runtime". "Container runtime" can have different meanings to different people so it's no wonder that it's such a confusing and vaguely understood term, even within the container community.
 
 This post is the first in a series that will be in four parts:
 
@@ -24,19 +24,19 @@ Traditionally, a computer programmer might know "runtime" as either the lifecycl
 
 If you're not super familiar with containers, check out these links first and come back:
 
-*   [What even is a container: namespaces and cgroups](https://jvns.ca/blog/2016/10/10/what-even-is-a-container/)
-*   [Cgroups, namespaces, and beyond: what are containers made from?](https://www.youtube.com/watch?v=sK5i-N34im8)
+- [What even is a container: namespaces and cgroups](https://jvns.ca/blog/2016/10/10/what-even-is-a-container/)
+- [Cgroups, namespaces, and beyond: what are containers made from?](https://www.youtube.com/watch?v=sK5i-N34im8)
 
 ## Why are Container Runtimes so Confusing?
 
 Docker was released in 2013 and solved many of the problems that developers had running containers end-to-end. It had all these things:
 
-*   A container image format
-*   A method for building container images (Dockerfile/docker build)
-*   A way to manage container images (docker images, docker rm <image>, etc.)
-*   A way to manage instances of containers (docker ps, docker rm <container>, etc.)
-*   A way to share container images (docker push/pull)
-*   A way to run containers (docker run)
+- A container image format
+- A method for building container images (Dockerfile/docker build)
+- A way to manage container images (docker images, docker rm <image>, etc.)
+- A way to manage instances of containers (docker ps, docker rm <container>, etc.)
+- A way to share container images (docker push/pull)
+- A way to run containers (docker run)
 
 At the time, Docker was a monolithic system. However, none of these features were really dependent on each other. Each of these could be implemented in smaller and more focused tools that could be used together. Each of the tools could work together by using a common format, a container standard.
 
@@ -66,7 +66,6 @@ Typically, developers who want to run apps in containers will need more than jus
 
 Developers who implement low-level runtimes will say that higher level runtimes like containerd and cri-o are not actually container runtimes, as from their perspective they outsource the implementation of running a container to runc. But, from the user's perspective, they are a singular component that provides the ability to run containers. One implementation can be swapped out for another, so it still makes sense to call it a runtime from that perspective. Even though containerd and cri-o both use runc, they are very different projects that have very different feature support.
 
-
 ## 'Til Next Time
 
 I hope that helped explain container runtimes and why they are so hard to understand. Feel free to leave me comments below or [on Twitter](https://twitter.com/IanMLewis) and let me know what about container runtimes was hardest for you to understand.
@@ -77,9 +76,9 @@ In the next post I'll do a deep dive into low-level container runtimes. In that 
 
 Until then, you can get more involved with the Kubernetes community via these channels:
 
-*   Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
-*   Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter
-*   Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
-*   Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
+- Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
+- Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter
+- Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
+- Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
 
 > Thanks to [Sandeep Dinesh](https://twitter.com/SandeepDinesh), [Mark Mandel](https://twitter.com/neurotic), [Craig Box](https://twitter.com/craigbox), [Maya Kaczorowski](https://twitter.com/mayakaczorowski), and Joe Burnett for reviewing drafts of this post.

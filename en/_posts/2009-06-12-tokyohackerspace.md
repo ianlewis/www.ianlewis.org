@@ -8,6 +8,7 @@ render_with_liquid: false
 ---
 
 <img alt="http://tokyohackerspace.googlegroups.com/web/hslogo.jpg?gda=lrpJgTwAAAAr1fkzGz16Q9NepM6i3AZKvUhMeHQNJoDQllpma_3XyBXBwF2IhAbToEmJoSVY1kj9Wm-ajmzVoAFUlE7c_fAt" src="http://tokyohackerspace.googlegroups.com/web/hslogo.jpg?gda=lrpJgTwAAAAr1fkzGz16Q9NepM6i3AZKvUhMeHQNJoDQllpma_3XyBXBwF2IhAbToEmJoSVY1kj9Wm-ajmzVoAFUlE7c_fAt"></img>
+
 <p>Me and a number of people are starting a <a class="reference external" href="http://www.tokyohackerspace.com/">new hackerspace</a> in Tokyo. From the <a class="reference external" href="http://www.hackerspaces.org">http://www.hackerspaces.org</a> homepage:</p>
 
 Hackerspaces are community-operated physical places, where people can meet and work on their projects.

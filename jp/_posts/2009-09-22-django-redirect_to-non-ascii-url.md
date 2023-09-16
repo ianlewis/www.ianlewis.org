@@ -7,12 +7,12 @@ blog: jp
 render_with_liquid: false
 ---
 
-Django は一般的なリダイレクトするビューを django.views.generic.simple.redirect\_to
+Django は一般的なリダイレクトするビューを django.views.generic.simple.redirect_to
 に用意していますけど、unicodeのキーワードがあれば、動かないのが最近見つけた。
 
 Djangoプロジェクトのurls.pyでこういう風にURLの設定を書けます。
 
-``` python
+```python
 from django.conf.urls.defaults import *
 
 urlpatterns = patterns('django.views.generic.simple',
@@ -20,13 +20,13 @@ urlpatterns = patterns('django.views.generic.simple',
 )
 ```
 
-そうした場合、redirect\_to は
-tag\_nameに入ったデータをリダイレクト先にURLに入れてくれます。が、そのデータはasciiでない場合、redirect\_to
-の中にtag\_nameのデータに入れたURLを
-urlquoteに特に渡すなど、特に何もしないで、HttpResponseRedirectに渡す。redirect\_toはDjango
+そうした場合、redirect_to は
+tag_nameに入ったデータをリダイレクト先にURLに入れてくれます。が、そのデータはasciiでない場合、redirect_to
+の中にtag_nameのデータに入れたURLを
+urlquoteに特に渡すなど、特に何もしないで、HttpResponseRedirectに渡す。redirect_toはDjango
 1.1でこの通り
 
-``` python
+```python
 def redirect_to(request, url, permanent=True, **kwargs):
     """
     Redirect to a given URL.
@@ -53,7 +53,7 @@ def redirect_to(request, url, permanent=True, **kwargs):
 
 最終的に、この問題が起こる時に、このエラーが出る。
 
-``` text
+```text
 UnicodeEncodeError: 'ascii' codec can't encode characters in position 8-11: ordinal not in
   range(128), HTTP response headers must be in US-ASCII format
 ```

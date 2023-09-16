@@ -14,7 +14,7 @@ render_with_liquid: false
 
 `Monjudoh` というモデルを 'monjudoh' DBに保存するためのDBルータです。
 
-``` python
+```python
 from monjudoh.models import Monjudoh
 
 class MonjudohRouter(object):
@@ -43,7 +43,7 @@ class MonjudohRouter(object):
 
 設定は `settings.py` で
 
-``` python
+```python
 DATABASES = {
     'default': {
         'NAME': 'app_data',

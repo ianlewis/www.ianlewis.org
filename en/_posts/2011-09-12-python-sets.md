@@ -12,7 +12,7 @@ take the intersection of. I had figured that using a python set would be
 faster but I didn't realize that it would be faster than the simple list
 comprehension by this much.
 
-``` text
+```text
 ~$  python -m timeit -n 1000 "range1500=range(500, 1500);[x for x in range(1000) if x in range1500]"
 1000 loops, best of 3: 18.2 msec per loop
 
@@ -29,7 +29,7 @@ times which adds up.
 To find out what actually takes so much time lets first check the
 range() function.
 
-``` text
+```text
 ~$ python -m timeit -n 1000 "range(500, 1500)"
 1000 loops, best of 3: 12.9 usec per loop
 ```
@@ -39,7 +39,7 @@ milliseconds.
 
 Next lets try the `in` statement.
 
-``` text
+```text
 ~$ python -m timeit -n 1000 "1 in range(1000)"
 1000 loops, best of 3: 12.3 usec per loop
 ```
@@ -52,7 +52,7 @@ seconds unaccounted for.
 What we did was check this in the best case where it finds a match at
 the beginning of the list. What if it's at the end?
 
-``` text
+```text
 ~$ python -m timeit -n 1000 "1000 in range(1000)"
 1000 loops, best of 3: 35.2 usec per loop
 ```

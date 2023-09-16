@@ -26,7 +26,7 @@ Here you can see that the `default` namespace exists and is active. The status o
 You can create a new namespace a couple ways. The easiest way to create a namespace is to just specify the namespace when creating another kind of resource, such as a pod, replication controller, or service.
 
     $ kubectl create -f my-pod.yaml --namespace=my-namespace
-    
+
 This will create a new namespace called `my-namespace` if that namespace doesn't exist.
 
 If you are simply creating a namespace that you want to be able to show in the namespace list later, or if you want to attach other metadata like labels to it, then you can create it like you would any other resource. Create a `my-namespace.yaml` file and add these contents:
@@ -66,19 +66,18 @@ Here you can see that I have a few namespaces running. Next let’s list the ser
     ~$ kubectl get services --namespace=homepage-staging
     NAME          LABELS                    SELECTOR        IP(S)             PORT(S)
     homepage-v1   name=homepage,version=1   name=homepage   10.43.250.14      80/TCP
-                                                            104.185.824.125   
+                                                            104.185.824.125
     mysql         name=mysql                name=mysql      10.43.250.63      3306/TCP
-    
+
 When I check production:
 
     ~$ kubectl get services --namespace=homepage-prod
     NAME          LABELS                    SELECTOR        IP(S)             PORT(S)
     homepage-v1   name=homepage,version=1   name=homepage   10.43.241.145     80/TCP
-                                                            104.199.132.213   
+                                                            104.199.132.213
     mysql         name=mysql                name=mysql      10.43.245.77      3306/TCP
-    
-Notice that the IP addresses are different depending on which namespace I use even though the names of the services themselves are the same. This capability makes configuring your app extremely easy—since you only have to point your app at the service name—and has the potential to allow you to configure your app exactly the same in your staging or test environments as you do in production.
 
+Notice that the IP addresses are different depending on which namespace I use even though the names of the services themselves are the same. This capability makes configuring your app extremely easy—since you only have to point your app at the service name—and has the potential to allow you to configure your app exactly the same in your staging or test environments as you do in production.
 
 ## Caveats
 

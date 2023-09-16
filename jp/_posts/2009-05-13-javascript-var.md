@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "javascript \"var\""
+title: 'javascript "var"'
 date: 2009-05-13 15:38:30 +0000
 permalink: /jp/javascript-var
 blog: jp

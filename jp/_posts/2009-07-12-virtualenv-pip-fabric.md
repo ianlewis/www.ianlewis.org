@@ -14,14 +14,14 @@ virtualenvは環境を作ってくれるライブラリで、virtualenvwrapper�
 
 # まず、virtualenv と virtualenvwrapper をインストール.
 
-``` text
+```text
 easy_install virtualenv
 easy_install virtualenvwrapper
 ```
 
 これで、virtualenvwrapperのコマンドを使うには、bashスクリプトを設定しないといけない。以下の行を `.bashrc` に追加
 
-``` bash
+```bash
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper_bashrc
 ```
@@ -38,7 +38,7 @@ Note
 `virtualenvwrapper_bashrc` は `virtualenvwrapper.sh` にかわりました。 `PATH`
 には入るので、
 
-``` bash
+```bash
 export WORKON_HOME=$HOME/.virtualenvs
 source `which virtualenvwrapper.sh`
 ```
@@ -49,7 +49,7 @@ source `which virtualenvwrapper.sh`
 
 コンソールを再起動して終わり。仮想環境を作りましょう。
 
-``` text
+```text
 mkvirtualenv myproj
 ```
 
@@ -57,14 +57,14 @@ mkvirtualenv myproj
 これで、pythonのバージョンも確定し、仮想環境にインストールするライブラリのバージョンも確定になる。mkvirtualenvを実行すると、作った環境に入る。また、次に使う時は
 workon myproj を実行して、環境に入る。
 
-しかし、よく使われてるeasy\_install は virtualenv
+しかし、よく使われてるeasy_install は virtualenv
 と連携できなくて、どうしても、システムのpythonディレクトリにパッケージをインストールしてしまう。
 
 # pip が助かる
 
-easy\_install　が簡単すぎて、分けわかんないメッセージも出したりして、virtualenvと相性悪くて、何とかできませんか？って話があったきかっけ、pipが生まれた。pipをインストールすればvirtualenvにすいすいとパッケージをインストールできる。virtualenvを使っている間にインストールする。
+easy_install　が簡単すぎて、分けわかんないメッセージも出したりして、virtualenvと相性悪くて、何とかできませんか？って話があったきかっけ、pipが生まれた。pipをインストールすればvirtualenvにすいすいとパッケージをインストールできる。virtualenvを使っている間にインストールする。
 
-``` text
+```text
 wget http://pypi.python.org/packages/source/p/pip/pip-0.4.tar.gz
 tar xzf pip-0.4.tar.gz
 cd pip-0.4
@@ -79,9 +79,9 @@ Note
 
 </div>
 
-**Update**: pipはちゃんと、virtualenvに入ってくれるので、easy\_install でもインストールできる。
+**Update**: pipはちゃんと、virtualenvに入ってくれるので、easy_install でもインストールできる。
 
-``` text
+```text
 workon myproject
 easy_install pip
 ```
@@ -96,10 +96,10 @@ Note
 
 </div>
 
-**Update**: pip をグローバルにインストールしたい場合は、環境変数 PIP\_RESPECT\_VIRTUALENV
+**Update**: pip をグローバルにインストールしたい場合は、環境変数 PIP_RESPECT_VIRTUALENV
 を設定すると、今使っている virtualenv を pip も使ってくれる。
 
-``` text
+```text
 export PIP_RESPECT_VIRTUALENV=true
 ```
 
@@ -107,7 +107,7 @@ export PIP_RESPECT_VIRTUALENV=true
 
 pip -E でも、virtualenvの環境パスを指定できます。
 
-``` text
+```text
 pip -E /path/to/my/virtualenv install mymod
 ```
 

@@ -14,15 +14,15 @@ tunnelingをしてくれます。
 
 stunnel をインストールしてから、pemファイルを作ります。
 
-``` text
+```text
 openssl req -new -days 365 -nodes -out newreq.pem -keyout /etc/stunnel/stunnel.pem
 ```
 
 stunnel の設定ファイルを適当なところに保存します
-(これから、dev\_https)。acceptはhttpsサーバのポート。connectはhttps用の開発サーバのポートになります。
+(これから、dev_https)。acceptはhttpsサーバのポート。connectはhttps用の開発サーバのポートになります。
 
-``` text
-pid = 
+```text
+pid =
 
 [https]
 accept=8002
@@ -31,20 +31,20 @@ connect=8003
 
 stunnel に設定ファイルを指定してdaemonを立ち上げます
 
-``` text
+```text
 stunnel dev_http
 ```
 
-https用の開発サーバを立ち上げます。 HTTPS=on の環境変数を設定しておけば、 request.is\_secure()などは
+https用の開発サーバを立ち上げます。 HTTPS=on の環境変数を設定しておけば、 request.is_secure()などは
 Trueをちゃんと返す。
 
-``` text
+```text
 HTTPS=on python manage.py runserver 0.0.0.0:8003
 ```
 
 http用のサーバを立ち上げる
 
-``` text
+```text
 python manage.py runserver 0.0.0.0:8000
 ```
 

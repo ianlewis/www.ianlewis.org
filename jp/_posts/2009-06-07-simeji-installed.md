@@ -14,7 +14,7 @@ render_with_liquid: false
 				<param name="movie" value="http://www.adamrocker.com/blog/wp-content/uploads/2009/05/simeji_bell_input.swf" />
 				<param name="menu" value="false" />
 
-				<param name="scale" value="noscale" /><embed src="http://www.adamrocker.com/blog/wp-content/uploads/2009/05/simeji_bell_input.swf" enu="false" scale="noscale" allowFullScreen="true" width="326px" height="504px" name="99" align="" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed></object></p>
+    			<param name="scale" value="noscale" /><embed src="http://www.adamrocker.com/blog/wp-content/uploads/2009/05/simeji_bell_input.swf" enu="false" scale="noscale" allowFullScreen="true" width="326px" height="504px" name="99" align="" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></embed></object></p>
 
 <p><a href="http://www.android-unleashed.com/2008/11/howto-install-non-market-apk-apps-on.html">このブログ</a> によると、3rd partyをアプリをインストールするには SDK の toolsに入ってる adbアプリを使います。じゃ、まず、<a href="http://developer.android.com/sdk/1.5_r2/index.html">SDK 1.5</a> をインストールします。</p>
 

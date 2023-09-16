@@ -15,7 +15,7 @@ extension](http://mercurial.selenic.com/wiki/ConvertExtension). Convert
 is distributed with mercurial so if you have a recent version all you
 should have to do is put the following in your hgrc.
 
-``` text
+```text
 [extensions]
 hgext.convert=
 ```
@@ -26,7 +26,7 @@ the svn repository locally and then convert it to hg. First you need to
 use [svnsync](http://svn.collab.net/repos/svn/trunk/notes/svnsync.txt)
 to copy the repository.
 
-``` text
+```text
 $ svnadmin create foomirror
 $ echo '#!/bin/sh' > foomirror/hooks/pre-revprop-change   # make insecure dummy hook
 $ chmod +x foomirror/hooks/pre-revprop-change
@@ -44,7 +44,7 @@ Once the mirror is set up you can run hg convert on the local mirror.
 This turns out to be much faster than trying to convert the svn
 repository remotely.
 
-``` text
+```text
 $ hg convert foomirror   # convert directly from repo mirror to foomirror-hg
 ...
 ```

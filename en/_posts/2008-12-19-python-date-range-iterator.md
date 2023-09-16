@@ -11,7 +11,7 @@ I couldn't find something that gave me quite what I wanted so I created
 a simple [Python](http://www.python.org/) generator to give me the dates
 between two datetimes.
 
-``` python
+```python
 def datetimeIterator(from_date, to_date):
     from datetime import timedelta
     if from_date > to_date:
@@ -34,7 +34,7 @@ Note
 **Update**: It didn't take me long to realize that it wasn't as nice as
 it could have been.
 
-``` python
+```python
 from datetime import datetime,timedelta
 
 def datetimeIterator(from_date=datetime.now(), to_date=None):
@@ -56,7 +56,7 @@ Note
 
 **Another Update** based on the comments below:
 
-``` python
+```python
 from datetime import datetime,timedelta
 
 def datetimeIterator(from_date=None, to_date=None, delta=timedelta(minutes=1)):

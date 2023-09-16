@@ -89,7 +89,7 @@ Type ID:
 p12 ファイルのパスワードを使います。pem ファイルのパスワードを指定できます。pem
 ファイルのパスワードは後で使うので、覚えておいてください。
 
-``` text
+```text
 $ openssl pkcs12 -in cert.p12 -clcerts -nokeys -out certificate.pem
 ...
 $ openssl pkcs12 -in cert.p12 -nocerts -out key.pem
@@ -103,7 +103,7 @@ $ openssl pkcs12 -in cert.p12 -nocerts -out key.pem
 Passbook の signature ファイルを作成するために、M2Crypto というライブラリが必要です。virtualenv
 を作って、インストールします。
 
-``` text
+```text
 $ mkvirtualenv passbook-test
 ...
 (passbook-test)
@@ -117,10 +117,10 @@ $ pip install M2Crypto
 
 まずは、pass.json ファイルのデータを作成する。
 
-``` python
+```python
 passinfo = json.dumps({
      'description': 'Acme Airlines',
-     'formatVersion': 1, 
+     'formatVersion': 1,
      'organizationName': 'Acme Airlines',
      'passTypeIdentifier': 'pass.example.com.examplepass',
      'serialNumber': "123", # パスのユニークなID
@@ -155,7 +155,7 @@ passinfo = json.dumps({
 [PHP-PKPass](https://github.com/tschoffelen/PHP-PKPass/tree/master/images)
 の example の画像を使いました。
 
-``` python
+```python
 filepaths = [
     ('logo.png', os.path.join('img', 'logo.png')),
     ('icon.png', os.path.join('img', 'icon.png')),
@@ -170,7 +170,7 @@ for name, path in filepaths:
 
 次に、manifest.json を作成します。
 
-``` python
+```python
 manifest = {
     'pass.json': hashlib.sha1(passinfo).hexdigest(),
 }
@@ -183,7 +183,7 @@ manifest = json.dumps(manifest)
 次に、signature ファイルを作成する。ここに、
 AppleWWDRCA.pem、key.pem、certificate.pemのパスを指定します。そして、証明書のパスワードをここに指定します。
 
-``` python
+```python
 smime = SMIME.SMIME()
 #we need to attach wwdr cert as X509
 wwdrcert = X509.load_cert('AppleWWDRCA.pem')
@@ -193,7 +193,7 @@ smime.set_x509_stack(stack)
 
 # 公開鍵、証明書、パスワードを使います。
 smime.load_key('key.pem', 'certificate.pem', callback=lambda p: 'password')
-pk7 = smime.sign(SMIME.BIO.MemoryBuffer(manifest), flags=SMIME.PKCS7_DETACHED | SMIME.PKCS7_BINARY)                
+pk7 = smime.sign(SMIME.BIO.MemoryBuffer(manifest), flags=SMIME.PKCS7_DETACHED | SMIME.PKCS7_BINARY)
 
 der = SMIME.BIO.MemoryBuffer()
 pk7.write_der(der)
@@ -203,7 +203,7 @@ signature = der.getvalue()
 
 漸く最後に、zip ファイルを作成します。
 
-``` python
+```python
 zipfileobj = StringIO()
 zf = zipfile.ZipFile(zipfileobj, 'w')
 zf.writestr('signature', signature)
@@ -220,10 +220,10 @@ iPhone のブラウザに渡すときに、 'application/vnd.apple.pkpass'
 というコンテントタイプを指定しないといけない。僕は
 Django をよく使うので、この例を Django で書きますが、どのフレームワークでも、出来るはずです。
 
-``` python
+```python
 response = HttpResponse(
     content=zipfiledata,
-    content_type='application/vnd.apple.pkpass', 
+    content_type='application/vnd.apple.pkpass',
 )
 response['Pragma'] = 'no-cache'
 response['Content-Disposition'] = 'attachment; filename=pass.pkpass'

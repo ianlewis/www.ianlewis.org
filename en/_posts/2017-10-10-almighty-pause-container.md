@@ -22,7 +22,7 @@ c4e998ec4d5d        gcr.io/google_containers/pause-amd64:3.0    "/pause" ...
 508102acf1e7        gcr.io/google_containers/pause-amd64:3.0    "/pause" ...
 ```
 
-What are these "pause" containers and why are there so many of them? What's going on? 
+What are these "pause" containers and why are there so many of them? What's going on?
 
 <a href="https://twitter.com/IanMLewis/status/913554746115424256" target="_blank"><img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/767/pause_pod.png" alt="Sorry to be pedantic but it's not a pod. It's a container." title="Sorry to be pedantic but it's not a pod. It's a container." /></a>
 
@@ -36,18 +36,15 @@ In principle, anyone can configure Docker to control the level of sharing betwee
 
 In Kubernetes, the pause container serves as the "parent container" for all of the containers in your pod. The pause container has two core responsibilities. First, it serves as the basis of Linux namespace sharing in the pod. And second, with PID (process ID) namespace sharing enabled, it serves as PID 1 for each pod and reaps zombie processes.
 
-
 ## Sharing namespaces
 
 In Linux, when you run a new process, the process inherits its namespaces from the parent process. The way that you run a process in a new namespace is by "unsharing" the namespace with the parent process thus creating a new namespace. Here is an example using the `unshare` tool to run a shell in new PID, UTS, IPC, and mount namespaces.
-
 
 ```
 sudo unshare --pid --uts --ipc --mount -f chroot rootfs /bin/sh
 ```
 
-
-Once the process is running, you can add other processes to the process' namespace to form a pod. New processes can be added to an existing namespace using the `setns` system call. 
+Once the process is running, you can add other processes to the process' namespace to form a pod. New processes can be added to an existing namespace using the `setns` system call.
 
 Containers in a pod share namespaces among them. Docker lets you automate the process a bit so let's look at an example of how to create a pod from scratch by using the pause container and sharing namespaces. First we will need to start the pause container with Docker so that we can add our containers to the pod.
 
@@ -55,11 +52,9 @@ Containers in a pod share namespaces among them. Docker lets you automate the pr
 docker run -d --name pause -p 8080:80 gcr.io/google_containers/pause-amd64:3.0
 ```
 
-
-Then we can run the containers for our pod. First we will run nginx. This will set up nginx to proxy requests to its localhost on port 2368. 
+Then we can run the containers for our pod. First we will run nginx. This will set up nginx to proxy requests to its localhost on port 2368.
 
 > Note that we also mapped the host port 8080 to port 80 on the pause container rather than the nginx container because the pause container sets up the initial network namespace that nginx will be joining.
-
 
 ```
 $ cat <<EOF >> nginx.conf
@@ -81,7 +76,6 @@ $ docker run -d --name nginx -v `pwd`/nginx.conf:/etc/nginx/nginx.conf --net=con
 
 And then we will create another container for the [ghost](https://github.com/TryGhost/Ghost) blog application which serves as our application server.
 
-
 ```
 $ docker run -d --name ghost --net=container:pause --ipc=container:pause --pid=container:pause ghost
 ```
@@ -96,7 +90,7 @@ If you think all of this is complex, you're right; it is. And we haven't even go
 
 In Linux, processes in a PID namespace form a tree with each process having a parent process. Only one process at the root of the tree doesn't really have a parent. This is the "init" process, which has PID 1.
 
-Processes can start other processes using the `fork` and `exec` syscalls. When they do this, the new process' parent is the process that called the `fork` syscall. `fork` is used to start another copy of the running process and `exec` is used to replace the current process with a new one, keeping the same PID (in order to run a totally separate application you need to run the `fork` *and* `exec` syscalls. A process creates a new copy of itself as a child process with a new PID using `fork` and then when the child process runs it checks if it's the child process and runs `exec` to replace itself with the one you actually want to run. Most languages provide a way to do this via a single function). Each process has an entry in the OS process table. This records info about the process' state and exit code. When a child process has finished running, its process table entry remains until the parent process has retrieved its exit code using the `wait` syscall. This is called "reaping" zombie processes.
+Processes can start other processes using the `fork` and `exec` syscalls. When they do this, the new process' parent is the process that called the `fork` syscall. `fork` is used to start another copy of the running process and `exec` is used to replace the current process with a new one, keeping the same PID (in order to run a totally separate application you need to run the `fork` _and_ `exec` syscalls. A process creates a new copy of itself as a child process with a new PID using `fork` and then when the child process runs it checks if it's the child process and runs `exec` to replace itself with the one you actually want to run. Most languages provide a way to do this via a single function). Each process has an entry in the OS process table. This records info about the process' state and exit code. When a child process has finished running, its process table entry remains until the parent process has retrieved its exit code using the `wait` syscall. This is called "reaping" zombie processes.
 
 <img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/767/zombie.png" alt="Beware of zombies" title="Beware of zombies" style="max-height:400px" />
 
@@ -118,7 +112,6 @@ $ docker run -d --name ghost --net=container:nginx --ipc=container:nginx --pid=c
 In this case, nginx is assuming the role of PID 1 and ghost is added as a child process of nginx. This is mostly fine, but technically nginx is now responsible for any children that ghost orphans. If, for example, ghost forks itself or runs child processes using `exec`, and crashes before the child finishes, then those children will be adopted by nginx. However, nginx is not designed to be able to run as an init process and reap zombies. That means we could potentially have lots of them and they will last for the life of that container.
 
 In Kubernetes pods, containers are run in much the same way as above, but there is a special pause container that is created for each pod. This pause container runs a very simple process that performs no function but essentially sleeps forever (see the `pause()` call below). It's so simple that I can include the full source code as of this writing here:
-
 
 ```
 /*
@@ -183,10 +176,10 @@ If PID namespace sharing is not enabled then each container in a Kubernetes pod 
 
 Hopefully this post helped in illuminating a core part of Kubernetes. Let me know if this post was helpful in the comments below or on [Twitter](https://twitter.com/IanMLewis). If you are interested in Kubernetes and want to join us in the community, you can do that in a number of ways:
 
-*   Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
-*   Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter (While you're at it follow [me](https://twitter.com/IanMLewis) too!)
-*   Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
-*   Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
+- Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
+- Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter (While you're at it follow [me](https://twitter.com/IanMLewis) too!)
+- Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
+- Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
 
 Hope to see you soon!
 

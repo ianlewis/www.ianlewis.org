@@ -17,7 +17,7 @@ render_with_liquid: false
 This weekend I went to the Python Onsen (Japanese) organized by
 [Voluntas](http://www.twitter.com/voluntas). Python Onsen is an event
 where people who like or are interested in python get together at a
-Japanese [Ryokan](http://en.wikipedia.org/wiki/Ryokan_\(Japanese_inn\))
+Japanese [Ryokan](<http://en.wikipedia.org/wiki/Ryokan_(Japanese_inn)>)
 [Onsen](http://en.wikipedia.org/wiki/Onsen) and program/mingle/study
 together. The event started Friday but I had to work so I joined
 everyone yesterday. If you aren't familiar with the Ryokan experience

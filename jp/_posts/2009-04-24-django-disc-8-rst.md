@@ -42,9 +42,6 @@ ValueError: CJK Wordwrap can only handle one fragment per paragraph for now
 </module></pre>
 </blockquote>
 
-
-
-
 <p>なので、面倒くさいから、wordWrapを無効にした。</p>
 
 <blockquote>
@@ -69,11 +66,6 @@ ValueError: CJK Wordwrap can only handle one fragment per paragraph for now
 }
 </pre>
 </blockquote>
-
-
-
-
-
 
 <p><a href="http://bitbucket.org/tmatsuo/gae-handson/src/">bitbucket</a>に保存してる。
 <h4>PDF</h4>

@@ -81,7 +81,7 @@ readinessProbe:
 ```
 
 You will want to check that you can connect to all of your application's dependencies
-in your readiness probe. To use the example where we depend on a database and memcached, we will want 
+in your readiness probe. To use the example where we depend on a database and memcached, we will want
 to check that we are able to connect to both.
 
 Here's what that might look like. Here I check memcached and the database and
@@ -108,7 +108,7 @@ http.HandleFunc("/readiness", func(w http.ResponseWriter, r *http.Request) {
   if db == nil || err != nil {
     ok = false
     errMsg += "Database not ok.¥n"
-  } 
+  }
 
   if ok {
     w.Write([]byte("OK"))

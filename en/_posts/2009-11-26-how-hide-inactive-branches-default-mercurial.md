@@ -12,14 +12,14 @@ that's kind of annoying if you have lots of old inactive branches. So I
 recently set up my personal .hgrc to hide inactive branches by creating
 an alias.
 
-``` text
+```text
 [alias]
 branches = branches -a
 ```
 
 Normally you get this kind of output.
 
-``` text
+```text
 ian@laptop:~/src/prj$ hg branches
 default                     1662:1fa310d3052a
 hoge                        1661:62d737e7146e
@@ -29,7 +29,7 @@ hoge_closed                 670:1c3134ca4a95 (closed)
 
 But after setting up the alias inactive branches aren't shown.
 
-``` text
+```text
 ian@laptop:~/src/prj$ hg branches
 default                     1662:1fa310d3052a
 hoge                        1661:62d737e7146e

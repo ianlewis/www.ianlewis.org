@@ -28,23 +28,22 @@ update: function() {
     this.deferred.cancel();
     log('Previous deferred cancelled.');
   }
-  
+
   if (this.request) {
-    this.request.cancel(); 
+    this.request.cancel();
    log('Previous request cancelled.');
   }
-  
+
   log('updated');
   this.deferred = callLater(3.0, bind(this.deferredupdate, this));
 }
 ```
 
-
-In [this example](http://static.ianlewis.org/prod/demos/files/calllatertest.html) the callLater is  used to call
+In [this example](http://static.ianlewis.org/prod/demos/files/calllatertest.html) the callLater is used to call
 another function, deferredupdate, after 3 seconds. However, if the user enters
 data a second time before the three seconds are up then the deferred object
 will be cancelled and a new deferred object will be created. This has the
-effect of not calling the update function until a user is *really* done
+effect of not calling the update function until a user is _really_ done
 entering data.
 
 The request object is created in the deferredupdate function.
@@ -53,7 +52,7 @@ The request object is created in the deferredupdate function.
 deferredupdate: function() {
   log('Loading document');
   this.deferred = null;
-  
+
   this.request = loadJSONDoc('domains.json');
   this.request.addCallback(bind(this.pageupdate, this));
 }

@@ -13,7 +13,7 @@ extension](http://mercurial.selenic.com/wiki/ConvertExtension)
 のコマンドです。convert は標準にインストールされているはずなので、以下を .hgrc
 に追加すると、簡単に使えます。
 
-``` text
+```text
 [extensions]
 hgext.convert=
 ```
@@ -22,7 +22,7 @@ convert でリポジトリを変換するのが簡単ですけど、http で実�
 [svnsync](http://www.asahi-net.or.jp/~iu9m-tcym/svndoc/svn_svnsync.html)
 を使ってロカールに落とすほうが早い。
 
-``` text
+```text
 $ svnadmin create foomirror
 $ echo '#!/bin/sh' > foomirror/hooks/pre-revprop-change   # make insecure dummy hook
 $ chmod +x foomirror/hooks/pre-revprop-change
@@ -38,7 +38,7 @@ Copied properties for revision 2.
 
 ローカルのsvn リポジトリが出来上がったら、それに対して、hg convert を実行することができる。これはまさに早い。
 
-``` text
+```text
 $ hg convert foomirror   # convert directly from repo mirror to foomirror-hg
 ...
 ```

@@ -26,7 +26,7 @@ MarkerClusterer を利用した。
 データが終わるまで繰り返す処理もありますが、主なロジックはこんな感じです。AJAXでデータを取得して、MarkerCLusterer
 のオブジェクトインスタンスにマーカー追加する。検索APIは最大100件しか返さないので、
 
-``` javascript
+```javascript
 var map = new google.maps.Map(document.getElementById("map_canvas"), {
   center: new google.maps.LatLng(36.738884,139.614258),
   zoom: 5,
@@ -42,8 +42,8 @@ $.ajax({
   dataType: 'jsonp',
   jsonp: 'callback',
   data: {
-    'start': start, 
-    'count': count, 
+    'start': start,
+    'count': count,
   },
   success: function(data) {
     if (data.results_returned > 0) {
@@ -66,34 +66,49 @@ $.ajax({
 ![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/680/connpass_map_big.png)
 
 マーカーは
-create\_marker()という関数で作れれている。マーカーにクリックすれば、ツールチップが出るためのコードがいろいろあって、ここにまとめた。
+create_marker()という関数で作れれている。マーカーにクリックすれば、ツールチップが出るためのコードがいろいろあって、ここにまとめた。
 
-``` javascript
+```javascript
 var activeInfoWindow;
 
 function create_marker(event) {
   if (event.lat && event.lon) {
     var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(
-        event.lat,
-        event.lon
-      ),
-      title: event.title
+      position: new google.maps.LatLng(event.lat, event.lon),
+      title: event.title,
     });
     marker.infowindow = new google.maps.InfoWindow({
-        content: '<p><strong>' + event.title + '</strong></p>' +
-        '<p>' + event.catch + '</p>' +
-        '<p>参加者数: ' + (event.accepted + event.waiting) + (event.limit ? ('/' + event.limit) : '') + '</p>' +
-        '<p>場所: ' + event.place + ' (' + event.address + ')</p>' +
-        '<p>時間: ' + event.started_at + '</p>' +
-        '<p>URL: <a href="' + event.event_url + '" target="_blank">' + event.event_url + '</a></p>'
+      content:
+        "<p><strong>" +
+        event.title +
+        "</strong></p>" +
+        "<p>" +
+        event.catch +
+        "</p>" +
+        "<p>参加者数: " +
+        (event.accepted + event.waiting) +
+        (event.limit ? "/" + event.limit : "") +
+        "</p>" +
+        "<p>場所: " +
+        event.place +
+        " (" +
+        event.address +
+        ")</p>" +
+        "<p>時間: " +
+        event.started_at +
+        "</p>" +
+        '<p>URL: <a href="' +
+        event.event_url +
+        '" target="_blank">' +
+        event.event_url +
+        "</a></p>",
     });
-    google.maps.event.addListener(marker, 'click', function() {
-      if ( activeInfoWindow == this.infowindow ) {
-          return;
+    google.maps.event.addListener(marker, "click", function () {
+      if (activeInfoWindow == this.infowindow) {
+        return;
       }
-      if ( activeInfoWindow ) {
-          activeInfoWindow.close();
+      if (activeInfoWindow) {
+        activeInfoWindow.close();
       }
       this.infowindow.open(map, this);
       activeInfoWindow = this.infowindow;

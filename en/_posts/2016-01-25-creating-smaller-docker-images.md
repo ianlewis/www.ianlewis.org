@@ -13,7 +13,6 @@ Recently I've been working with containers a lot and the most popular technology
 
 For instance, here is a DockerFile for running a simple file server.
 
-
 ```docker
 FROM debian:jessie
 

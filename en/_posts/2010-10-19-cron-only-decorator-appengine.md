@@ -17,7 +17,7 @@ This decorator is for use with the [kay
 framework](http://code.google.com/p/kay-framework/) but it should be
 easy to port to your application.
 
-``` python
+```python
 def cron_only(func):
     from werkzeug import Response
     def inner(request, *args, **kwargs):

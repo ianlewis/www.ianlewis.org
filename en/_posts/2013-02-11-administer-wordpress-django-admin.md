@@ -61,7 +61,7 @@ which is the latest stable version as of this writing.
 First we'll install Django (As we should be doing with all Python
 projects, you'll want to be using virtualenv):
 
-    $ pip install Django 
+    $ pip install Django
 
 We'll also need to install the appropriate database driver library. For
 MySQL it's mysql-python:
@@ -78,7 +78,7 @@ Django can connect to your wordpress database. We will be putting the
 Django tables that we need in a separate database so you'll need to
 create that database separately.
 
-``` python
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -102,7 +102,7 @@ DATABASES = {
 Set up your `INSTALLED_APPS` to include the Django admin and our
 `wordpress` app that we'll create in a few moments:
 
-``` python
+```python
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,7 +122,7 @@ INSTALLED_APPS = (
 
 Next is `urls.py`. We only need the Django admin here:
 
-``` python
+```python
 from django.conf.urls import patterns, include, url
 
 # Django Admin
@@ -151,7 +151,7 @@ to create our Django models.
 You can now inspect the `wordpress/models.py` and take a look at the
 generated models. It will look something like the following:
 
-``` python
+```python
 # This is an auto-generated Django model module.
 # You'll have to do the following manually to clean this up:
 #     * Rearrange models' order
@@ -197,7 +197,7 @@ Next, we need to register the models with Django's admin. This is a bit
 of a pain as it requires some hand coding. Save this in
 `wordpress/admin.py`:
 
-``` python
+```python
 from django.contrib import admin
 from wordpress.models import (
     WpCommentmeta,
@@ -236,7 +236,7 @@ databases](https://docs.djangoproject.com/en/1.3/topics/db/multi-db/#an-example)
 
 Let's put this in `wordpress_admin/router.py`:
 
-``` python
+```python
 class WordPressRouter(object):
     """A router to control all database operations on models in
     the wordpress application"""
@@ -266,7 +266,7 @@ class WordPressRouter(object):
 
 Next we'll add the following to our `settings.py`:
 
-``` python
+```python
 DATABASE_ROUTERS = ('wordpress_admin.router.WordPressRouter',)
 ```
 
@@ -290,7 +290,7 @@ You'll notice that a couple models didn't validate. So we'll need to
 update them. The first `WpPosts` needs it's `id` field updated. Since
 it's the primary key we can just add the `primary_key` keyword to it:
 
-``` python
+```python
 class WpPosts(models.Model):
     id = models.BigIntegerField(db_column='ID', primary_key=True) # Field name made lowercase.
     # <snip>
@@ -300,7 +300,7 @@ The `WpTerms` model's `slug` field can't have a `unique=True` index with
 a field larger than 255 in Django. Since we aren't really doing that
 much with the field we can simply remove the `unique` keyword.
 
-``` python
+```python
 class WpTerms(models.Model):
     term_id = models.BigIntegerField(primary_key=True)
     name = models.CharField(max_length=600)

@@ -33,7 +33,7 @@ another thread to stop waiting.
 In order for various tests to use this functionality I created a base
 test class. It looks something like this:
 
-``` python
+```python
 #!/usr/bin/env python
 #:coding=utf-8:
 
@@ -53,7 +53,7 @@ class BaseTest(DjangoTestCase):
         logging.disable(logging.CRITICAL+1)
 
         self.cond = threading.Condition()
-        self.server = FeedParserTestServer(self.cond) 
+        self.server = FeedParserTestServer(self.cond)
         self.cond.acquire()
         self.server.start()
 
@@ -78,19 +78,19 @@ class BaseTest(DjangoTestCase):
 The server thread takes the condition object and starts the mock
 webserver.
 
-``` python
+```python
 class FeedParserTestServer(Thread):
     """HTTP Server that runs in a thread and handles a predetermined number of requests"""
     TIMEOUT=10
 
     def __init__(self, cond=None):
         Thread.__init__(self)
-        self.ready = False 
+        self.ready = False
         self.cond = cond
 
     def run(self):
         self.cond.acquire()
-        timeout=0 
+        timeout=0
         self.httpd = None
         while self.httpd is None:
             try:
@@ -99,13 +99,13 @@ class FeedParserTestServer(Thread):
                 import socket,errno,time
                 if isinstance(e, socket.error) and errno.errorcode[e.args[0]] == 'EADDRINUSE' and timeout < self.TIMEOUT:
                     timeout+=1
-                    time.sleep(1) 
+                    time.sleep(1)
                 else:
                     self.cond.notifyAll()
                     self.cond.release()
                     self.ready = True
                     raise e
-        self.ready = True 
+        self.ready = True
         if self.cond:
             self.cond.notifyAll()
             self.cond.release()
@@ -138,7 +138,7 @@ In order to stop the server in the tearDown() I used a stoppable HTTP
 server that implements the QUIT HTTP method that tells the server to
 stop.
 
-``` python
+```python
 class FeedParserTestRequestHandler(SimpleHTTPRequestHandler):
     # Some other stuff here ...
 
@@ -164,8 +164,8 @@ def stop_server(port):
     conn.getresponse()
 ```
 
-The do\_QUIT method is executed when the QUIT HTTP method is sent to the
-server. The stop\_server function makes a QUIT message to the server to
+The do_QUIT method is executed when the QUIT HTTP method is sent to the
+server. The stop_server function makes a QUIT message to the server to
 stop it.
 
 There you have it. This code seems to work in Linux but I'm not sure if

@@ -26,11 +26,11 @@ Flask は Python で当然ながら、WSGI に普通に対応していますの�
 
 `python-ldap` をインストールするには、 `OpenLDAP` のクライアントライブラリの ヘッダーファイルが必要です。
 
-``` text
+```text
 $ # OpenLDAP のクライアントライブラリをインストール
 $ apt-get install libldap2-dev libsasl2-dev ...
 $ mkvirtualenv ldapchangepw ... (ldapchangepw)
-$ pip install Flask wtforms python-ldap 
+$ pip install Flask wtforms python-ldap
 ... Successfully installed Flask Werkzeug ... wtforms python-ldap
 Cleaning up...
 ```
@@ -40,7 +40,7 @@ Cleaning up...
 
 まずは、Flask のアプリケーションインスタンスを用意します。
 
-``` python
+```python
 # (略
 from flask import Flask
 
@@ -51,7 +51,7 @@ LDAP_PORT=389
 
 app = Flask(__name__)
 
-# このモジュールからデフォールト設定を搭載する。 
+# このモジュールからデフォールト設定を搭載する。
 app.config.from_object(__name__)
 
 # FLASK_SETTINGSの環境変数にファイルパスを設定すると、
@@ -63,7 +63,7 @@ app.config.from_envvar('FLASK_SETTINGS', silent=True)
 を使います。g
 はリクエスト以外のリクエストデータを突っ込む場所と考えばいいです。リクエストが終われば、Flaskはこのオブジェクトを毎回クリアするので使うのが他のグローバルオブジェクトに突っ込むより割と安心です。
 
-``` python
+```python
 # (略
 import ldap from flask import g
 
@@ -87,7 +87,7 @@ def after_request(response):
 次はパスワード変更フォームを作ります。wtforms はここだけに使うので、このライブラリを使うのがどうかなと思いますが、
 やっぱりパスワード変更でセキュリティの面があるから予想外の入力バグを防ぐために導入しました。
 
-``` python
+```python
 # (略
 import wtforms
 from wtforms import validators
@@ -106,12 +106,12 @@ class PasswordChangeForm(wtforms.Form):
              message=u'パスワードと確認用パスワードは一致しません。')])
 ```
 
-次はパスワード変更ロジックを実装します。まずはフォームを表示する部分を実装します。 ここで Flask の render\_template
+次はパスワード変更ロジックを実装します。まずはフォームを表示する部分を実装します。 ここで Flask の render_template
 関数を使って Jinja2 テンプレートをレンダーします。
 
-``` python
+```python
 # (略
-from flask import render_template 
+from flask import render_template
 
 # ...
 
@@ -125,7 +125,7 @@ def index():
 
 次はフォームのPOSTデータを受け取って、検証してからLDAPのパスワード変更を行います。
 
-``` python
+```python
 # (略
 import ldap
 from flask import request, flash, g
@@ -155,7 +155,7 @@ if form.validate():
             field = [field]
         for item in field:
             if item == request.form['username']:
-                user_dn = dn 
+                user_dn = dn
                 break
     if user_dn:
         changed=False
@@ -175,7 +175,7 @@ if form.validate():
 
 合わせてこんな感じです。
 
-``` python
+```python
 # (略
 import ldap
 from flask import request, render_template, flash, g
@@ -209,7 +209,7 @@ def index():
                     field = [field]
                 for item in field:
                     if item == request.form['username']:
-                        user_dn = dn 
+                        user_dn = dn
                         break
             if user_dn:
                 changed=False
@@ -263,12 +263,12 @@ def index():
 
 最後に、パスワード変更はセキュリティ的に危ないことなので、しっかりログをとります。 後でプログラムで解析できるようにJSON形式で保存します。
 
-``` python
+```python
 #========= Logging ================
 
 class SafeJSONEncoder(simplejson.JSONEncoder):
     """
-    日付などをエンコードできる JSONEncoder 
+    日付などをエンコードできる JSONEncoder
     """
     def default(self, o):
         if isinstance(o, (datetime.datetime, datetime.date, datetime.time)):
@@ -316,7 +316,7 @@ if not app.debug:
             return response
 
     # エラーログをメールで管理者に飛ばす
-    if (app.config['SMTP_HOST'] and app.config['SMTP_PORT'] and 
+    if (app.config['SMTP_HOST'] and app.config['SMTP_PORT'] and
             app.config['SERVER_EMAIL'] and app.config['ADMIN_MAIL']):
         mail_handler = logging.SMTPHandler(
             "%s:%s" % (app.config['SMTP_HOST'], app.config['SMTP_PORT']),

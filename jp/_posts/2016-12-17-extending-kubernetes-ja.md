@@ -225,7 +225,7 @@ func addCronTab(c cronTab) error {
     if !strings.HasPrefix(c.Spec.Schedule, "@") {
         spec = "0 " + c.Spec.Schedule
     }
-    
+
     err := server.AddFunc(spec, func() {
         if err := runCronJob(c); err != nil {
             log.Printf("Error running cron job: %v", err)
@@ -335,7 +335,7 @@ spec:
       labels:
         name: cron-controller
     spec:
-      containers: 
+      containers:
         - name: cron
           image: my.registry.com/cron-controller:0.0.1
         # 認証するためにkubectl proxyを使う
@@ -355,8 +355,8 @@ $ kubectl create -f deploy.yaml
 deployment "cron-controller" created
 ```
 
-うまく行けば、CronTabのスケジュールに従って、`Job`が作成される 
- 
+うまく行けば、CronTabのスケジュールに従って、`Job`が作成される
+
 ```console
 $ kubectl logs cron-controller-3711479224-7z3t0
 2016/12/16 04:28:33 Watching for crontab objects...

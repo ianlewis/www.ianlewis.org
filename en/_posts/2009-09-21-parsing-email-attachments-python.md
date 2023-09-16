@@ -19,7 +19,7 @@ object or a StringIO object. Since it relies on the python StringIO
 module rather than the C one that portion should probably be rewritten.
 But it currently works as is so I'll post it for posterity.
 
-``` python
+```python
 #!/usr/local/bin/python
 # vim:fileencoding=utf8
 
@@ -84,8 +84,8 @@ def parse(content):
         subject = None
 
     attachments = []
-    body = None 
-    html = None 
+    body = None
+    html = None
     for part in msgobj.walk():
         attachment = parse_attachment(part)
         if attachment:

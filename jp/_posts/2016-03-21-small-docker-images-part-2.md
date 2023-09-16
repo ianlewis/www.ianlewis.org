@@ -31,7 +31,7 @@ Docker単体では、Dockerfileのコマンドとイメージレイヤーの作�
 
 ![Vise](https://storage.googleapis.com/static.ianlewis.org/prod/img/748/vise.jpg)
 
-*[Creative Commons Attribution](https://creativecommons.org/licenses/by/2.0/) by [Communications Mann](https://www.flickr.com/photos/spenceannaaug18/7069654045/in/photolist-bLHPQZ-aF3qHd-aEq79z-8yQzQt-5jDvQ8-aEYmdF-aEx66j-5EZwFg-dSBZFb-2Ypqdi-5Uw2gF-3b1dmA-3aVF7M-dZF1V5-a55maH-6tXnaY-qAJkzw-bEVr7X-e4dngq-2ystn-eA1PU6-aFMxwn-9YReBh-4jkvuR-efUaTT-dZEXQU-dZFrq5-f4AToE-ngJPnE-7Hc1gx-bDaK7t-dnGexK-d9J17o-kwCjdU-snrBcV-dg7aAX-tTDMUC-7NFwDp-iYLYD7-tTMWt6-cYuZob-64Tpi-ekJEBJ-dvB96q-7NFwRR-8H7DAm-8H7DzL-747sy4-bLjCEX-bxpW8E)*
+_[Creative Commons Attribution](https://creativecommons.org/licenses/by/2.0/) by [Communications Mann](https://www.flickr.com/photos/spenceannaaug18/7069654045/in/photolist-bLHPQZ-aF3qHd-aEq79z-8yQzQt-5jDvQ8-aEYmdF-aEx66j-5EZwFg-dSBZFb-2Ypqdi-5Uw2gF-3b1dmA-3aVF7M-dZF1V5-a55maH-6tXnaY-qAJkzw-bEVr7X-e4dngq-2ystn-eA1PU6-aFMxwn-9YReBh-4jkvuR-efUaTT-dZEXQU-dZFrq5-f4AToE-ngJPnE-7Hc1gx-bDaK7t-dnGexK-d9J17o-kwCjdU-snrBcV-dg7aAX-tTDMUC-7NFwDp-iYLYD7-tTMWt6-cYuZob-64Tpi-ekJEBJ-dvB96q-7NFwRR-8H7DAm-8H7DzL-747sy4-bLjCEX-bxpW8E)_
 
 docker-squashを使うと、イメージレイヤーを圧縮して、中間ステップでキャッシュされたデータを除外することができる。ちょっと使ってみよう
 
@@ -45,17 +45,16 @@ Docker Hubにある[python:2.7.11の標準イメージ](https://hub.docker.com/_
 ```console
 $ docker pull python:2.7.11
 2.7.11: Pulling from library/python
-7a01cc5f27b1: Pull complete 
-3842411e5c4c: Pull complete 
+7a01cc5f27b1: Pull complete
+3842411e5c4c: Pull complete
 ...
-127e6c8b9452: Pull complete 
-88690041a8a3: Pull complete 
+127e6c8b9452: Pull complete
+88690041a8a3: Pull complete
 Digest: sha256:590ee32a8cab49d2e7aaa92513e40a61abc46a81e5fdce678ea74e6d26e574b9
 Status: Downloaded newer image for python:2.7.11
 ```
 
 このイメージはたくさんのレイヤーがあって、容量は676MBくらいになっているのがすぐわかる。
-
 
 ```console
 $ docker images python:2.7.11
@@ -67,14 +66,12 @@ python              2.7.11              88690041a8a3        2 weeks ago
 
 Dockerのローカルリポジトリに入っているイメージを圧縮することができないのが少し面倒くさいけど、`docker save`コマンドでイメージファイルを簡単にエクスポートできる。以下でファイルをエクスポートして、圧縮したイメージを作成する。
 
-
 ```console
 $ docker save python:2.7.11 > python-2.7.11.tar
 $ sudo bin/docker-squash -i python-2.7.11.tar -o python-squashed-2.7.11.tar
 ```
 
 これで新しいファイルは75MBくらい小さくなっているのがわかる。
-
 
 ```console
 ~$ ls -lh python-*.tar
@@ -83,7 +80,6 @@ $ sudo bin/docker-squash -i python-2.7.11.tar -o python-squashed-2.7.11.tar
 ```
 
 `docker load`でファイルをインポートしたら、小さくなっているのがわかる。
-
 
 ```console
 $ cat python-squashed-2.7.11.tar | docker load

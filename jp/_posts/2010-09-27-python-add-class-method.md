@@ -9,7 +9,7 @@ render_with_liquid: false
 
 Pythonでは、あるクラスもしくは、クラスインスタンスに動的にメソッドを付けたいことがあります。Pythonコードでは、一般的に考えるとこういう風に書くって思いがちだけど、
 
-``` python
+```python
 class MyObj(object):
     def __init__(self, val):
         self.val = val
@@ -23,7 +23,7 @@ obj.method = new_method
 
 そうすると、self は使えないのです。実行結果を見てみます。
 
-``` python
+```python
 >>> obj.method(5)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -36,8 +36,8 @@ TypeError: new_method() takes exactly 2 arguments (1 given)
 は普通のプロバティとしてインスタンスに追加されるので、メソッドをインスタンスにバインドしないといけません。そういう時に、
 `types` モジュールの `MethodType` を使います。
 
-``` python
->>> from types import MethodType 
+```python
+>>> from types import MethodType
 >>> obj.method = MethodType(new_method, obj, MyObj)
 >>> obj.method(5)
 8
@@ -45,14 +45,14 @@ TypeError: new_method() takes exactly 2 arguments (1 given)
 
 それで `self` が使えます。 `MethodType` にインスタンスを渡すとバウンドメソッドになります。
 
-``` python
+```python
 >>> obj.method
 <bound method MyObj.new_method of <__main__.MyObj object at 0xb75c928c>>
 ```
 
 この場合は `method` は `obj` インスタンスにしか付いていない。別の `MyObj` インスタンスを作ってみよう。
 
-``` python
+```python
 >>> obj2 = MyObj(2)
 >>> obj2.method(5)
 Traceback (most recent call last):
@@ -62,7 +62,7 @@ AttributeError: 'MyObj' object has no attribute 'method
 
 新しいインスタンスを作っても、追加したメソッドが入っているようにしたい場合はクラスに付けないといけない。具体的なインスタンスにバインドしないので、アンバウンドメソッドを作る。
 
-``` python
+```python
 >>> MyObj.method = MethodType(new_method, None, MyObj)
 >>> MyObj.method
 <unbound method MyObj.new_method>

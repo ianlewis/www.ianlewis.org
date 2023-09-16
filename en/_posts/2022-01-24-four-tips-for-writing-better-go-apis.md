@@ -141,7 +141,6 @@ somepkg.InterfaceNeeded(i)
 
 Often you'll see an API return a channel to communicate with any created goroutines.
 
-
 ```golang
 func (o *myObj) Start() ->chan struct{} {
 	data := make(chan struct{})
@@ -197,4 +196,4 @@ As always, Dave Cheney's website is a goldmine for [resources on this](https://d
 
 Hopefully these tips are helpful to you when designing your next Go API. Let me know if you run across any other examples of good (or bad!) practices by sending me a message on [Twitter](https://twitter.com/IanMLewis).
 
-_Thanks to [Eno Compton](https://twitter.com/enocom_) for reviewing this post and offering lots of improvements._
+_Thanks to [Eno Compton](https://twitter.com/enocom_) for reviewing this post and offering lots of improvements.\_

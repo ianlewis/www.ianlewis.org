@@ -39,18 +39,18 @@ Here we are passing the current `user` object to
 many clients listening to the same channel designated by an arbitrary
 key.
 
-``` python
+```python
 from google.appengine.ext import webapp
 from google.appengine.api import channel
 from django.template.loader import render_to_string
 
 class MyHandler(BaseHandler):
     def get(self):
-        user = users.get_current_user()  
+        user = users.get_current_user()
 
         # Create the channel
         # We could pass a string to create_channel() if we wanted to.
-        id = channel.create_channel(user)  
+        id = channel.create_channel(user)
 
         return self.response.out.write(
             render_to_string(
@@ -62,33 +62,35 @@ class MyHandler(BaseHandler):
 
 On the client site we use javascript to connect to the channel.
 
-``` javascript
+```javascript
 var channel = new goog.appengine.Channel("{{ channel_id }}");
-var socket = channel.open();  
-socket.onopen = function() {  
-    window.setTimeout(function() {alert('Connected!')}, 100);  
-}
+var socket = channel.open();
+socket.onopen = function () {
+  window.setTimeout(function () {
+    alert("Connected!");
+  }, 100);
+};
 
 // Register a message handler
-socket.onmessage = function(evt) {
-     // Here we are getting text from the server
-     // But JSON data is recommended.
-     // var o = JSON.parse(evt.data);  
-     alert(evt.data);
-     // do something
-}
+socket.onmessage = function (evt) {
+  // Here we are getting text from the server
+  // But JSON data is recommended.
+  // var o = JSON.parse(evt.data);
+  alert(evt.data);
+  // do something
+};
 ```
 
 Last, we can send a message to the client using the `user` as the
 channel key.
 
-``` python
-from google.appengine.api import channel  
-from google.appengine.api import users  
+```python
+from google.appengine.api import channel
+from google.appengine.api import users
 
 class AjaxHandler(BaseHandler):
     def get(self):
-        user = users.get_current_user()  
+        user = users.get_current_user()
 
         # Send a message to the client.
         # Noone actually needs to be connected
@@ -151,9 +153,9 @@ In order to enable Warmup Requests, you need to add `warmup` to your
 `inbound_services` section of your `app.yaml` much like you would for
 mail or XMPP.
 
-``` yaml
+```yaml
 inbound_services:
-- warmup
+  - warmup
 ```
 
 The warmup request will be sent to `/_ah/warmup` so you can add a
@@ -162,14 +164,14 @@ use a catch all handler.
 
 Here we'll use our own handler.
 
-``` yaml
+```yaml
 - url: /_ah/warmup.*
   script: warmup.py
 ```
 
 Our `warmup.py` might look like this.
 
-``` python
+```python
 # Load some big modules that we need for our application here
 import mybigmodule
 import myothermodule
@@ -215,7 +217,7 @@ Namespaces are pretty trivial. Kinds are parent objects of their
 properties so you can get the properties for a particular kind by doing
 an ancestor query.
 
-``` python
+```python
 from google.appengine.ext.db.metadata import Namespace, Kind, Property
 
 for namespace in Namespace.all():
@@ -232,9 +234,9 @@ for kind in Kind.all():
 It looks like the download hasn't made it to the appengine download page
 yet but you can download it from the links at the google project page.
 
-  - Python:
-    [google\_appengine\_1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=google_appengine_1.4.0.zip)
-  - Java:
-    [appengine-java-sdk-1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=appengine-java-sdk-1.4.0.zip)
-  - Release Notes:
-    <http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes>
+- Python:
+  [google_appengine_1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=google_appengine_1.4.0.zip)
+- Java:
+  [appengine-java-sdk-1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=appengine-java-sdk-1.4.0.zip)
+- Release Notes:
+  <http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes>

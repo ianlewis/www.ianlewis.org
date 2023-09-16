@@ -11,7 +11,7 @@ render_with_liquid: false
 
 This is the third post in a series on making smaller Docker images. In the [first post](/en/creating-smaller-docker-images) I talked about how to create smaller images by writing better Dockerfiles. In the [second post](/en/creating-smaller-docker-images-part2) I talked about how to squash layers using docker-squash to make smaller images. These methods are great but they won't help us if we choose large base images to start with!
 
-Let's look at the example from the second post, the standard `python` image on Docker hub. If we look at the [Dockerfile](https://github.com/docker-library/python/blob/cd1f11aa745a05ddf6329678d5b12a097084681b/2.7/Dockerfile) for this image, as of this writing, it's based on a Debian jessie base image. 
+Let's look at the example from the second post, the standard `python` image on Docker hub. If we look at the [Dockerfile](https://github.com/docker-library/python/blob/cd1f11aa745a05ddf6329678d5b12a097084681b/2.7/Dockerfile) for this image, as of this writing, it's based on a Debian jessie base image.
 
 ```docker
 FROM buildpack-deps:jessie

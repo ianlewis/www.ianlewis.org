@@ -21,7 +21,6 @@ Here's a conceptual diagram to understand how the components fit together:
 
 To better understand high-level runtimes, it’s helpful to look at a few examples. Like low-level runtimes, each runtime implements different features.
 
-
 ## Docker
 
 Docker is one of the first open source container runtimes. It was developed by the platform-as-a-service company dotCloud, and was used to run their users' web applications in containers.
@@ -36,7 +35,6 @@ Docker originally implemented both high-level and low-level runtime features, bu
 
 `dockerd` provides features such as building images, and dockerd uses `docker-containerd` to provide features such as image management and running containers. For instance, Docker's build step is actually just some logic that interprets a Dockerfile, runs the necessary commands in a container using `containerd`, and saves the resulting container file system as an image.
 
-
 ## containerd
 
 [containerd](https://containerd.io/) is a high-level runtime that was split off from Docker. Like runc, which was broken off as the low-level runtime piece, containerd was broken off as the high-level runtime piece of Docker. `containerd` implements downloading images, managing them, and running containers from images. When it needs to run a container it unpacks the image into an OCI runtime bundle and shells out to `runc` to run it.
@@ -45,61 +43,47 @@ Containerd also provides an API and client application that can be used to inter
 
 `ctr` can be used to tell `containerd` to pull a container image:
 
-
 ```
 $ sudo ctr images pull docker.io/library/redis:latest
 ```
 
-
 List the images you have:
-
 
 ```
 $ sudo ctr images list
 ```
 
-
 Run a container based on an image:
-
 
 ```
 $ sudo ctr container create docker.io/library/redis:latest redis
 ```
 
-
 List the running containers:
-
 
 ```
 $ sudo ctr container list
 ```
 
-
 Stop the container:
-
 
 ```
 $ sudo ctr container delete redis
 ```
 
-
 These commands are similar to how a user interacts with Docker. However, in contrast with Docker, containerd is focused solely on running containers, so it does not provide a mechanism for building containers. Docker was focused on end-user and developer use cases, whereas containerd is focused on operational use cases, such as running containers on servers. Tasks such as building container images are left to other tools.
-
 
 # rkt
 
-In the previous post, I mentioned that `rkt` is a runtime that has both low-level and high-level features. For instance, much like Docker, rkt allows you to build container images, fetch and manage container images in a local repository, and run them all from a single command. `rkt` stops short of Docker's functionality, however, in that it doesn't provide a long-running daemon and remote API. 
+In the previous post, I mentioned that `rkt` is a runtime that has both low-level and high-level features. For instance, much like Docker, rkt allows you to build container images, fetch and manage container images in a local repository, and run them all from a single command. `rkt` stops short of Docker's functionality, however, in that it doesn't provide a long-running daemon and remote API.
 
 You can fetch remote images:
-
 
 ```
 $ sudo rkt fetch coreos.com/etcd:v3.3.10
 ```
 
-
 You can then list the images installed locally:
-
 
 ```
 $ sudo rkt image list
@@ -109,12 +93,10 @@ sha512-51ea8f513d06     coreos.com/oem-gce:1855.5.0             591MiB  2 minute
 sha512-2ba519594e47     coreos.com/etcd:v3.3.10                 69MiB   25 seconds ago  24 seconds ago
 ```
 
-
 And delete images:
 
-
 ```
-$ sudo rkt image rm coreos.com/etcd:v3.3.10                       
+$ sudo rkt image rm coreos.com/etcd:v3.3.10
 successfully removed aci for image: "sha512-2ba519594e4783330ae14e7691caabfb839b5f57c0384310a7ad5fa2966d85e3"
 rm: 1 image(s) successfully removed
 ```
@@ -129,10 +111,10 @@ In the next post I'll move up the stack and talk about runtimes from the perspec
 
 Until then, you can get more involved with the Kubernetes community via these channels:
 
-*   Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
-*   Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter
-*   Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
-*   Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
+- Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
+- Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter
+- Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
+- Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
 
 If you have any suggestions or ideas for blog posts, send them to me on Twitter at [@IanMLewis](https://twitter.com/IanMLewis) via either a reply or DM. Thanks!
 

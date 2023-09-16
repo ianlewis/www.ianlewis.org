@@ -12,7 +12,7 @@ C で作られた cStringIO は ピュア Python で作られた StringIO
 
 StringIO では、StringIO のコンストラクターに文字列を渡せば、その文字列に書き込みすることができる。
 
-``` python
+```python
 >>> from StringIO import StringIO
 >>> writer = StringIO('a')
 >>> writer.seek(1)
@@ -24,7 +24,7 @@ StringIO では、StringIO のコンストラクターに文字列を渡せば�
 だが、 cStringIO の場合、コンストラクターに文字列を渡せば、StringIO.StringI オブジェクトになって、write
 メソッドがそもそもないオブジェクトになります。
 
-``` python
+```python
 >>> from cStringIO import StringIO
 >>> writer = StringIO('a')
 >>> writer
@@ -39,7 +39,7 @@ AttributeError: 'cStringIO.StringI' object has no attribute 'write'
 
 解決するのはこう書けばいい。
 
-``` python
+```python
 >>> from cStringIO import StringIO
 >>> x = 'a' # 既存文字列
 >>> writer = StringIO()
@@ -52,7 +52,7 @@ AttributeError: 'cStringIO.StringI' object has no attribute 'write'
 私は具体的に、やろうとしていたのは、 Django の django.core.files.base の ContentFile
 を使おうとしていた。だが、どうしても、StringIOのコンストラクターに文字列を渡すので、書き込みには使い物にならなかった。
 
-``` python
+```python
 >>> from cStringIO import StringIO
 >>> from django.core.files.base import File, ContentFile
 >>> f = ContentFile(None)

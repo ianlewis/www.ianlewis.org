@@ -37,7 +37,7 @@ by daemon tools.
 Here's a simple example run script for lighttpd. The -D option here
 specifies that the server runs in the foreground.
 
-``` bash
+```bash
 #!/bin/sh
 exec /usr/sbin/lighttpd -D -f /etc/lighttpd/lighttpd.conf 2>&1
 ```
@@ -45,7 +45,7 @@ exec /usr/sbin/lighttpd -D -f /etc/lighttpd/lighttpd.conf 2>&1
 Available services normally reside in the /var/service directory. You
 put your services here. You might have a directory listing like this:
 
-``` text
+```text
 [root@admin:/var/service] ls -lh
 合計 28K
 drwxr-x--- 4 root root 4.0K  8月 24 14:45 lighttpd
@@ -60,7 +60,7 @@ services on the server. You enable services my symbolic linking them to
 the /service directory which is the standard location for daemontools
 services. Your /service directory might look like:
 
-``` text
+```text
 lrwxrwx--- 1 root root 21  3月 24 11:52 lighttpd -> /var/service/lighttpd
 lrwxrwx--- 1 root root 22  3月 24 11:50 memcached -> /var/service/memcached
 lrwxrwx--- 1 root root 19  3月 24 11:53 nagios -> /var/service/nagios
@@ -79,7 +79,7 @@ the other daemontools commands take the directory as their argument for
 which service you are talking about you you need to give it the
 directory where the service resides.
 
-``` text
+```text
 [root@admin:~] cd /var/service
 [root@admin:/service] svstat memcached
 memcached: up (pid 2226) 220460 seconds
@@ -91,7 +91,7 @@ failing every time. In that case daemontools will say it's up but each
 time you run the svstat command it will show a new pid and the uptime
 will have been reset.
 
-``` text
+```text
 [root@admin:~] cd /var/service
 [root@admin:/service] svstat memcached
 memcached: up (pid 1842) 1 seconds
@@ -107,7 +107,7 @@ readproctitle is a process that is part of daemontools that shows the
 last 400 bytes of error messages that are produced by the svscan
 process. You can check it by running a command like:
 
-``` text
+```text
 ps -Af | grep readproctitle
 ```
 
@@ -119,20 +119,20 @@ specified by the directory they live in.
 
 You can start a service using the -u option.
 
-``` text
+```text
 svc -u <service dir>
 ```
 
 You can then run svstat to make sure it's up.
 
-``` text
+```text
 $ svstat memcached/
 memcached/: up (pid 3499) 1 seconds
 ```
 
 You can stop a service using the -d option.
 
-``` text
+```text
 $ svc -d memcached/
 $ svstat memcached
 memcached/: down 3 seconds, normally up

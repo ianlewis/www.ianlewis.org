@@ -35,8 +35,8 @@ Atsuo is the owner of the [python.jp](http://python.jp/) domain name and
 one of the original moderators of the python.jp mailing list. He is a
 long time Python user and community leader.
 
-  - Twitter  
-    [@atsuoishimoto](https://twitter.com/atsuoishimoto)
+- Twitter  
+  [@atsuoishimoto](https://twitter.com/atsuoishimoto)
 
 # Atsushi Shibata
 
@@ -53,8 +53,8 @@ Atsushi Shibata is probably the most well known community leader in
 Japan. He wrote the wildly popular "Minna no Python" (Everyone's Python)
 and led in moderating the python.jp mailing list for many years.
 
-  - Twitter  
-    [@ats](http://twitter.com/ats)
+- Twitter  
+  [@ats](http://twitter.com/ats)
 
 # Ryosuke Nakai (Voluntas)
 
@@ -73,8 +73,8 @@ an weekend-long event where fellow Python enthusiasts travel to a
 Japanese Ryokan and spend the weekend coding and goofing off. PyFes is a
 day long event where members give tutorials and talks on Python.
 
-  - Twitter  
-    [@voluntas](http://twitter.com/voluntas)
+- Twitter  
+  [@voluntas](http://twitter.com/voluntas)
 
 # Manabu Terada (terapyon)
 
@@ -93,8 +93,8 @@ doing the nitty-gritty organizing of the conference. A job I do not
 envy. He also runs his own development/consulting company focusing on
 Plone and Python development.
 
-  - Twitter  
-    [@terapyon](http://twitter.com/terapyon)
+- Twitter  
+  [@terapyon](http://twitter.com/terapyon)
 
 # Takayuki Shimizukawa
 
@@ -111,8 +111,8 @@ Takayuki is a long time Python user and the leader of the Sphinx
 community in Japan. He has also been instrumental in organizing PyCon JP
 and in organizing the Python mini-hackathon event.
 
-  - Twitter  
-    [@shimizukawa](http://twitter.com/shimizukawa)
+- Twitter  
+  [@shimizukawa](http://twitter.com/shimizukawa)
 
 # Takanori Suzuki
 
@@ -130,8 +130,8 @@ is an indoor [bouldering](http://en.wikipedia.org/wiki/Bouldering) event
 for Python community members. Takanori is also highly involved with
 PyCon JP and the Python mini-hackathon events.
 
-  - Twitter  
-    [@takonory](http://twitter.com/takanory)
+- Twitter  
+  [@takonory](http://twitter.com/takanory)
 
 # Yoshiki Shibukawa
 
@@ -147,11 +147,11 @@ Yoshiki Shibukawa
 Yoshiki helped form the [Sphinx users group in
 Japan](http://sphinx-users.jp/) and has been active in the study meetup
 culture in Tokyo. He co-authored the translation of Tarek Zaide's
-*Expert Python Programming* with Takayuki Shimizukawa, Inada Naoki, and
+_Expert Python Programming_ with Takayuki Shimizukawa, Inada Naoki, and
 Tetsuya Morimoto.
 
-  - Twitter  
-    [@shibukawa](http://twitter.com/shibukawa)
+- Twitter  
+  [@shibukawa](http://twitter.com/shibukawa)
 
 # Makoto Tsuyuki
 
@@ -169,5 +169,5 @@ wrote one of the first (if not the first) Japanese [Django
 book](http://www.amazon.co.jp/Django%C3%97Python-LL%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AFBOOKS-%E9%9C%B2%E6%9C%A8-%E8%AA%A0/dp/477413760X)
 and has given numerous talks on Python and Django.
 
-  - Twitter  
-    [@everes](http://twitter.com/everes)
+- Twitter  
+  [@everes](http://twitter.com/everes)

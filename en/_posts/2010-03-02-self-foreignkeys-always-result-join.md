@@ -13,7 +13,7 @@ always result in a join in a filter.
 
 Take this normal foreign key reference.
 
-``` python
+```python
 class Customer(models.Models):
     user = models.ForeignKey(User)
 
@@ -24,7 +24,7 @@ class Customer(models.Models):
 
 Now lets look at a version of the customer model with a self reference.
 
-``` python
+```python
 class Customer(models.Models):
     user = models.ForeignKey(User)
     other_cust = models.ForeignKey('self')
@@ -37,7 +37,7 @@ class Customer(models.Models):
 Hmm, yuck. That little extra JOIN is going to kill performance if the
 table is big. Let's do it the right way.
 
-``` python
+```python
 >>> Customer.objects.extra(where=["other_cust_id IS NULL"])
 ('SELECT U0."id" FROM "accounts_customer" U0 WHERE other_cust_id IS NULL', ())
 ```

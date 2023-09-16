@@ -21,9 +21,9 @@ HTTP API を作った。
 GETパラメターで受け取って、arduino に流す。
 
 シリアルUSBはバイト通信なので、普通な整数でも通信が結構面倒くさいです。下のサーバーで struct モジュールで int
-データをバイナリに変換して、通信している (pack\_int).
+データをバイナリに変換して、通信している (pack_int).
 
-``` python
+```python
 #:coding=utf-8:
 
 import serial
@@ -84,12 +84,12 @@ arduino の方はこの感じ。ピエゾバザーを出力PIN 8 につながっ
 </div>
 
 arduino のコードは以下の通り。 arduino のIDEで入力するコードは基本的に c++。２つの整数の８バイト(4バイトずつ)
-を受け取る。arduino が呼び出している loop() で Serial.read() して、u\_tag の union
+を受け取る。arduino が呼び出している loop() で Serial.read() して、u_tag の union
 データの埋めこむ。
 
 8バイト読んだら、arduinoのtone()関数を呼び出して、音を鳴らす。読み込み中の間に、組み込まれている LEDをデバグの為、電気をつく。
 
-``` cpp
+```cpp
 // digital pin 2 has a pushbutton attached to it. Give it a name:
 int LED1 = 13;
 

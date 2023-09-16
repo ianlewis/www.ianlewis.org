@@ -53,15 +53,15 @@ content type and a integer field. It would be nicer if you could specify
 which kinds of models were possible as content type targets and provide
 a better widget for them.
 
-# send\_mail Uses the DEFAULT\_ENCODING Setting
+# send_mail Uses the DEFAULT_ENCODING Setting
 
 We have had to subclass the EmailMessage object with our own message
 format to get it to work with encodings other than the
-DEFAULT\_ENCODING. Email headers are also always encoded in utf8
-regardless of the DEFAULT\_ENCODING. This is especially annoying when
+DEFAULT_ENCODING. Email headers are also always encoded in utf8
+regardless of the DEFAULT_ENCODING. This is especially annoying when
 sending email to Japanese cellphones, which sometimes expect iso-2022-jp
-or ShiftJIS rather than whatever your DEFAULT\_ENCODING is. And changing
-the DEFAULT\_ENCODING just because you have to send some one off emails
+or ShiftJIS rather than whatever your DEFAULT_ENCODING is. And changing
+the DEFAULT_ENCODING just because you have to send some one off emails
 is out of the question.
 
 # Can't Filter an Admin List via a JOIN. eg. user\_\_group
@@ -69,7 +69,7 @@ is out of the question.
 It would be cool if you could filter an admin list via a join. Something
 like:
 
-``` python
+```python
 class MyAdmin(admin.ModelAdmin):
     list_display    = ('name','user')
     list_filter     = ('user__group',)

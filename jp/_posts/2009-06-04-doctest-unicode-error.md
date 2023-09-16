@@ -35,7 +35,8 @@ Traceback (most recent call last):
     self.buf += ''.join(self.buflist)
 UnicodeDecodeError: 'ascii' codec can't decode byte 0xe3 in position 24: ordinal not in range(128)
 
-----------------------------------------------------------------------
+---
+
 </pre>
 </blockquote>
 

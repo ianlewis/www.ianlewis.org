@@ -17,12 +17,12 @@ Python的で楽だったので、みんなに共有しようかなと思いま�
 
 Hello World 書きましょう
 
-``` python
+```python
 def hello():
     print("Hello world!")
 ```
 
-``` text
+```text
 $ fab hello
 Hello world!
 ```
@@ -34,7 +34,7 @@ Fabric
 サーバーでメンテ画面を出すようなコマンドです。
 各ロードバランサーで実行します。
 
-``` python
+```python
 from fabric.api import run, cd, abort, require, sudo, env
 from fabric.decorators import runs_once, roles
 from fabric.contrib.console import confirm
@@ -61,7 +61,7 @@ def start_maintenance():
 `env` という環境辞書があります。 これで、どの環境で実行するかを設定することができます。
 普段は環境を設定するコマンドを実装するのが多いです。
 
-``` python
+```python
 def production():
     """ 本番 """
     env.environment = "production"
@@ -79,7 +79,7 @@ def production():
 
 これで、以下のように `fab` を実行する。
 
-``` text
+```text
 $ fab production start_maintenance
 ```
 
@@ -87,7 +87,7 @@ $ fab production start_maintenance
 
 ホスト設定は `env.hosts` でグローバルで設定することができます。 `hosts` というデコレータでも設定することができます。
 
-``` python
+```python
 def production():
     """ 本番 """
     env.hosts = ["host1", "host2"]
@@ -101,7 +101,7 @@ def mycommand():
 
 ロール(役）という設定もあります。 ロールというのは、サーバーの種類毎で設定します。 hosts と同じようにデコレータを使えます。
 
-``` python
+```python
 def production():
     """ 本番 """
     env.roledefs.update({
@@ -118,7 +118,7 @@ def mycommand():
 
 上のコマンドで、 `_production_check()` と `pull()` というコードがありますけど、これはサブコマンドになります。
 
-``` python
+```python
 @runs_once
 def _production_check():
     if "prod" in env.environment:
@@ -162,7 +162,7 @@ Python 2.5 から入っている `with` 文を使って、あるディレクト�
 の設定ファイルのシンボリックリンクを置き換えています。 環境設定コマンドで設定した `lb_settings`
 などを使っています。
 
-``` python
+```python
 with cd("/etc/nginx/sites-enabled"):
     sudo("rm -f %(lb_settings)s" % env)
     sudo("ln -s ../sites-available/%(lb_maintenance_settings)s" % env)
@@ -171,8 +171,8 @@ with cd("/etc/nginx/sites-enabled"):
 
 Python 2.5 の場合、 future モジュールからインポートする必要があります。
 
-``` python
-from __future__ import with_statement 
+```python
+from __future__ import with_statement
 ```
 
 この with の書き方で、Python的でかなり好きです。

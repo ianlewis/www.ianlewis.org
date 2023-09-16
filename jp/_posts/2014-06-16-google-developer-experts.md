@@ -25,7 +25,7 @@ Google Developer Expert (旧Google Api Expert) を卒業しました](http://goo
 
 ![この頃からa2cと仲がいい](https://storage.googleapis.com/static.ianlewis.org/prod/img/719/a2c_big.jpg)
 
-*この頃からGoogle Appsのa2cと仲がいい*
+_この頃からGoogle Appsのa2cと仲がいい_
 
 # API Expert の制度の進化
 
@@ -75,7 +75,7 @@ Developer Experts Summit に参加してきて、非常に多くの開発者と�
 貴重な経験をさせたほうがよいかと思っていました。つまり、バタンタッチの時間です。
 
 私は業界からいなくなるわけではなく、開発も熱意で続くんですが、ちょっと違うところに
-フォーカスしていきます。なので、悪いことではなく、人が変わることで、Developer Expert 
+フォーカスしていきます。なので、悪いことではなく、人が変わることで、Developer Expert
 の皆様や、周囲の皆様が新鮮な気持ちで新しい体験ができるんじゃないかなと思います。
 
 Googleの皆さん、Developer Expert の皆さん、そしてたくさんできた友達の皆さん、
@@ -83,4 +83,4 @@ Googleの皆さん、Developer Expert の皆さん、そしてたくさんでき
 
 ![まだ仲がいい](https://storage.googleapis.com/static.ianlewis.org/prod/img/719/a2c_again_big.jpg)
 
-*まだ仲がいい*
+_まだ仲がいい_

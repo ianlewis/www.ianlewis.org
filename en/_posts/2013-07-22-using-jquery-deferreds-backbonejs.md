@@ -14,10 +14,10 @@ Let's look at an example. Say we have two models we want to save to the server s
 ```
 band = Band({name: "Yes"});
 song = Song({title: "Parallels"});
-    
+
 $.when(band.save(), song.save()).done(function() {
      alert("You know we've got the power!");
 });
 ```
 
-Of course, you can do lots of more powerful things with jQuery deferreds but the fact that Backbone.js allows you to do use them may not be immediately obvious. 
+Of course, you can do lots of more powerful things with jQuery deferreds but the fact that Backbone.js allows you to do use them may not be immediately obvious.

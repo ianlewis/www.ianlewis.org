@@ -25,9 +25,9 @@ render_with_liquid: false
 # 2\. 高速画像サービング
 
 Picasa のインフラーを使っていて、リサイズ、切れ抜きなどの自動変換した画像を高速でサーブできるようになった。Python の
-[get\_serving\_url](http://code.google.com/appengine/docs/python/images/functions.html)
+[get_serving_url](http://code.google.com/appengine/docs/python/images/functions.html)
 か、 Java の
-[getServingUrl](http://code.google.com/appengine/docs/java/javadoc/com/google/appengine/api/images/ImagesService.html#getServingUrl\(com.google.appengine.api.blobstore.BlobKey\))
+[getServingUrl](<http://code.google.com/appengine/docs/java/javadoc/com/google/appengine/api/images/ImagesService.html#getServingUrl(com.google.appengine.api.blobstore.BlobKey)>)
 を使うと画像のURLを取得できる。
 このURLを使うと別のインフラを使うので、アプリケーションのCPUクオータとダイナミックサービングロード、データストアアクセスクオータなどがかからないというのが特徴です。
 

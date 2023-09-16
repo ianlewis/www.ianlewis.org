@@ -19,8 +19,8 @@ around and resort them in a list. Options are passed in an object that you give
 to the sortable constructor/initializer. You can initialize a sortable like so:
 
 ```javascript
-$('#my-list').sortable({
-  axis: 'x'
+$("#my-list").sortable({
+  axis: "x",
 });
 ```
 
@@ -32,8 +32,8 @@ draggable items. This draggable can also be connected to a sortable object so
 you can drag an object onto a sortable widget.
 
 ```javascript
-$('#my-item').draggable({
-  connectToSortable: '#my-list'
+$("#my-item").draggable({
+  connectToSortable: "#my-list",
 });
 ```
 
@@ -41,8 +41,8 @@ jQueryUI also allows you to connect sortables to each other which creates the
 potential for some interesting user interfaces.
 
 ```javascript
-$('#my-list').sortable({
-  connectWith: '#my-other-list'
+$("#my-list").sortable({
+  connectWith: "#my-other-list",
 });
 ```
 
@@ -50,12 +50,12 @@ You can even connect the sortables together so you can drag items back and
 forth between the sortables:
 
 ```javascript
-$('#my-list').sortable({
-  connectWith: '#my-other-list'
+$("#my-list").sortable({
+  connectWith: "#my-other-list",
 });
 
-$('#my-other-list').sortable({
-  connectWith: '#my-list'
+$("#my-other-list").sortable({
+  connectWith: "#my-list",
 });
 ```
 

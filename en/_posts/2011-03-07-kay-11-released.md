@@ -11,11 +11,11 @@ The Kay team just just released Kay 1.1\! I want to thank Takashi
 Matsuo, Nickolas Daskalou, Tasuku Suenaga, and Yosuke Suzuki for their
 hard work on this release.
 
-*Kay is a web framework made specifically for Google App Engine. The
+_Kay is a web framework made specifically for Google App Engine. The
 basic design of Kay is based on the Django framework, such as
 middleware, settings, pluggable applications, etc. Kay uses Werkzeug as
 lower level framework, Jinja2 as template engine, and babel for handling
-language translations.*
+language translations._
 
 Kay 1.1 contains a number of new features and bug fixes. You can see the
 [Release Notes
@@ -26,19 +26,19 @@ here](http://code.google.com/p/kay-framework/downloads/list).
 We're excited about this release so I would like to introduce a few of
 Kay's new features.
 
-# cron\_only
+# cron_only
 
 Kay has a new utility decorator for securing cron views so they can only
 be run by the cron system on Appengine.
 
-``` python
+```python
 @cron_only
 def my_cron_view(request):
     # ...
     return response
 ```
 
-You can see the [documentation for the cron\_only decorator
+You can see the [documentation for the cron_only decorator
 here](http://kay-docs.shehas.net/decorators.html#kay.utils.decorators.cron_only).
 
 # Pagination API
@@ -46,7 +46,7 @@ here](http://kay-docs.shehas.net/decorators.html#kay.utils.decorators.cron_only)
 We added a new Pagination API which will allow developers to quickly and
 easily implement pagination in their views.
 
-``` python
+```python
 from kay.utils.paginator import Paginator, InvalidPage, EmptyPage
 from kay.utils import render_to_response
 
@@ -72,7 +72,7 @@ def listing(request):
 Page objects can be used in views to display information about the
 current page and item indexes.
 
-``` html+django
+```html+django
 {% for contact in contacts.object_list %}
 {# Each "contact" is a Contact model object. #}
 {{ contact.full_name|upper }}<br />
@@ -116,7 +116,7 @@ much like memcached, but provide a fast, persistent, and eventually
 consistent way of storing and getting settings. Live Settings can be
 changed programmatically:
 
-``` python
+```python
 from kay.ext.live_settings import live_settings
 
 value = live_settings.get("my.settings.key", "default_value")
@@ -126,11 +126,11 @@ live_settings.set("my.settings.key", "new-value")
 
 Or they can be managed via a custom Admin page:
 
------
+---
 
 ![image](http://static.ianlewis.org/prod/img/652/live_settings.png)
 
------
+---
 
 You can read the [Live Settings documentation
 here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.live_settings)
@@ -142,7 +142,7 @@ Kay 1.1 adds a new `AppStatsMiddleware` that allows you to easily enable
 You simply add the middleware to your `MIDDLEWARE_CLASSES` in order to
 enable Appstats.
 
-``` python
+```python
 MIDDLEWARE_CLASSES = (
     # ...
     'kay.ext.appstats.middleware.AppStatsMiddleware',
@@ -165,11 +165,11 @@ SDK](http://code.google.com/intl/en/appengine/articles/python/recording_exceptio
 but provides a convenient way of viewing the errors via a custom admin
 page and integrates with Kay's `ADMINS` and email related settings.
 
------
+---
 
 ![image](http://static.ianlewis.org/prod/img/652/ereporter.png)
 
------
+---
 
 You can read the [documentation for the EReporter extension
 here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.ereporter).

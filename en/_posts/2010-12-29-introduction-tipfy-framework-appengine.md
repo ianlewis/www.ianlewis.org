@@ -7,10 +7,10 @@ blog: en
 render_with_liquid: false
 ---
 
-*(This post is the English translation of the Dec. 24th edition of the*
+_(This post is the English translation of the Dec. 24th edition of the_
 [Python Web Framework Advent
-Calendar 2010](http://atnd.org/events/10465). *Other posts can be found
-at: http://atnd.org/events/10465 though they will be in Japanese)*
+Calendar 2010](http://atnd.org/events/10465). _Other posts can be found
+at: http://atnd.org/events/10465 though they will be in Japanese)_
 
 I usually use the [kay
 framework](http://code.google.com/p/kay-framework/) for Appengine
@@ -32,7 +32,7 @@ Page](http://www.tipfy.org/wiki/guide/installation/).
 First you need to download the [Tipfy "Do-it-yourself
 pack"](http://www.tipfy.org/tipfy.zip).
 
-``` text
+```text
 $ wget http://www.tipfy.org/tipfy.zip
 $ unzip tipfy.zip
 ```
@@ -41,7 +41,7 @@ Next, you will need to create the buildout environment. Buildout will
 download and install the Appengine SDK and everything you need to get
 started from [pypi](http://pypi.python.org/).
 
-``` text
+```text
 $ cd project
 $ python2.5 bootstrap.py --distribute
 $ ./bin/buildout
@@ -50,7 +50,7 @@ $ ./bin/buildout
 After that is over, you can run the development server by running the
 `dev_appserver` command found in the `bin` directory.
 
-``` text
+```text
 $ ./bin/dev_appserver
 ```
 
@@ -60,7 +60,7 @@ At this point, you can explore the directory structure of the Tipfy
 project. You can find out more about this in the [Tipfy
 Documentation](http://www.tipfy.org/wiki/guide/sitelayout/#default-site-structure).
 
-``` text
+```text
 app/ - GAE application
     apps/ - application modules
         hello_world - A default "Hello World" application
@@ -81,7 +81,7 @@ etc/ - Settings files requried for development
 bootstrap.py - buildout bootstrap script
 buildout.cfg - buildout settings file
 babel.cfg - translations settings file
-gaetools.cfg - Settings for the GAE SDK recipe (e.g. default settings for the dev_server) 
+gaetools.cfg - Settings for the GAE SDK recipe (e.g. default settings for the dev_server)
 versions.cfg - Third party library versions (empty by default)
 ```
 
@@ -101,7 +101,7 @@ Django in that each application can provide it's own handlers and URL
 routing rules. Tipfy also allows for applications to provide default
 configuration.
 
-``` python
+```python
 # Configurations for the 'tipfy' module.
 config['tipfy'] = {
     # Enable debugger. It will be loaded only in development.
@@ -130,7 +130,7 @@ routing](http://www.tipfy.org/docs/api/tipfy.html#url-routing)
 
 This is what the default `app/apps/hello_world/urls.py` looks like:
 
-``` python
+```python
 from tipfy import Rule
 
 def get_rules(app):
@@ -156,7 +156,7 @@ requests. These request handlers are very similar to the SDK's webapp
 framework. Tipfy uses [Jinja2](http://jinja.pocoo.org/) for templating
 by default.
 
-``` python
+```python
 from tipfy import RequestHandler, Response
 from tipfy.ext.jinja2 import render_response
 
@@ -181,10 +181,10 @@ you would use mixins only for specific request handlers.
 Here we will add support for session handling by adding the appropriate
 Mixins to our `BaseHandler` class:
 
-``` python
+```python
 from tipfy import RequestHandler, Response
-from tipfy.ext.jinja2 import Jinja2Mixin 
-from tipfy.ext.session import SecureCookieMixin, SessionMixin 
+from tipfy.ext.jinja2 import Jinja2Mixin
+from tipfy.ext.session import SecureCookieMixin, SessionMixin
 
 class BaseHandler(RequestHandler, Jinja2Mixin, SecureCookieMixin, SessionMixin):
     middleware = ['tipfy.ext.session.SessionMiddleware']

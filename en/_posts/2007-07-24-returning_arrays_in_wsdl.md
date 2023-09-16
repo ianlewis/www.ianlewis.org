@@ -52,28 +52,28 @@ I originally thought that returning a list of objects would simply
 involve returning more than one of the object. Like if I defined this in
 my types section:
 
-``` xml
+```xml
 <types>
   <xsd:complexType name='StaffList'>
-    <xsd:element 
-      minOccurs='0' 
+    <xsd:element
+      minOccurs='0'
       maxOccurs='unbounded'
-      name='staffname' 
+      name='staffname'
       type='Staff'/>
   </xsd:complexType>
   <xsd:complexType name='Staff'>
     <xsd:all>
-      <xsd:element 
-        minOccurs='0' 
-        maxOccurs='1' 
-        name='staffname' 
+      <xsd:element
+        minOccurs='0'
+        maxOccurs='1'
+        name='staffname'
         type='xsd:string'/>
-      <xsd:element 
-        minOccurs='0' 
-        maxOccurs='1' 
-        name='staffposition' 
+      <xsd:element
+        minOccurs='0'
+        maxOccurs='1'
+        name='staffposition'
         type='xsd:string'/>
-      <xsd:element 
+      <xsd:element
         minOccurs='0'
         maxOccurs='1'
         name='salary'
@@ -85,7 +85,7 @@ my types section:
 
 For reference this is my message definition:
 
-``` xml
+```xml
 <message name='GetStaffRequest'>
   <part name='sessionid' type='xsd:string'/>
   <part name='staffid' type='xsd:int'/>
@@ -102,7 +102,7 @@ returning as a <http://schemas.xmlsoap.org/soap/encoding/:Array>. Sounds
 hard but it is really just a matter of following the pattern below
 instead of what I did above.
 
-``` xml
+```xml
 <xsd:complexType name='StaffList'>
   <xsd:complexContent mixed='false'>
     <xsd:restriction base='soapenc:Array'>
@@ -112,17 +112,17 @@ instead of what I did above.
 </xsd:complexType>
 <xsd:complexType name='Staff'>
   <xsd:all>
-    <xsd:element 
-      minOccurs='0' 
-      maxOccurs='1' 
-      name='staffname' 
-      type='xsd:string'/>
-    <xsd:element 
+    <xsd:element
       minOccurs='0'
-      maxOccurs='1' 
-      name='staffposition' 
+      maxOccurs='1'
+      name='staffname'
       type='xsd:string'/>
-    <xsd:element 
+    <xsd:element
+      minOccurs='0'
+      maxOccurs='1'
+      name='staffposition'
+      type='xsd:string'/>
+    <xsd:element
       minOccurs='0'
       maxOccurs='1'
       name='salary'

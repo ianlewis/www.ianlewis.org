@@ -28,5 +28,5 @@ Check out a demo here: [Demo](http://static.ianlewis.org/prod/demos/files/multi-
 
 View the source:
 
-* [demo.html](http://static.ianlewis.org/prod/demos/files/view-source/view-source.html#multi-pageslide/demo.html)
-* [jquery.pageslide-0.2.js](http://static.ianlewis.org/prod/demos/files/view-source/view-source.html#multi-pageslide/jquery.pageslide-0.2.js)
+- [demo.html](http://static.ianlewis.org/prod/demos/files/view-source/view-source.html#multi-pageslide/demo.html)
+- [jquery.pageslide-0.2.js](http://static.ianlewis.org/prod/demos/files/view-source/view-source.html#multi-pageslide/jquery.pageslide-0.2.js)

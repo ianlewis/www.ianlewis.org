@@ -66,9 +66,9 @@ I am also testing as if a user was logged in so I attached the user to the reque
 ```python
 request = self.factory.get('/')
 response = MyView.as_view()(request)
-``` 
+```
 
-*Thanks to Matt Deacalion for the comment*
+_Thanks to Matt Deacalion for the comment_
 
 ## Clean, Stable Tests
 

@@ -18,7 +18,7 @@ render_with_liquid: false
 
 ちなみに、pynotify はこういう使い方
 
-``` python
+```python
 import pynotify
 pynotify.init("My App")
 n = pynotify.Notification("Title", "Message", "/path/to/my/icon.png")

@@ -32,7 +32,7 @@ Ubuntu では、 `/usr/share/X11/xkb/` に入っている `xkb`
 まずは、 `symbols/jp` でキーマップの定期をする。下のテキストを `symbols/jp` の一番したに追加する。定義は U.S.
 のキーボードマップを継承する。
 
-``` text
+```text
 // DvorakJP keyboard.
 // Copyright 2009-2010 Ian Lewis
 
@@ -91,7 +91,7 @@ partial xkb_symbols "dvorak" {
 次は `rules/evdev.xml` を修正する。Japan という layout を探して、そこに、 Dvorak
 \<variant\>タグを追加する。
 
-``` xml
+```xml
 <layout>
   <configItem>
     <name>jp</name>
@@ -132,7 +132,7 @@ partial xkb_symbols "dvorak" {
 最後に `symbols/evdev.lst` を修正する。 `jp: Kana` を検索して、dvorak キーマップを variant
 のリストに追加する。
 
-``` text
+```text
 ...
 us              it: US keyboard with Italian letters
 geo             it: Georgian

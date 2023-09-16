@@ -29,18 +29,18 @@ HTTPリクエスト。
 `channel.create_channel()` に渡す `user` は、ユーザーだけじゃなくて、 内部的に文字列にするので、
 `create_channel()` に渡すデータは単の文字列でも大丈夫です。
 
-``` python
+```python
 from google.appengine.ext import webapp
 from google.appengine.api import channel
 from django.template.loader import render_to_string
 
 class MyHandler(BaseHandler):
     def get(self):
-        user = users.get_current_user()  
+        user = users.get_current_user()
 
         # ユーザーのチャンネルを作る
         # create_channel に渡すデータは単の文字列でも大丈夫
-        id = channel.create_channel(user)  
+        id = channel.create_channel(user)
 
         return self.response.out.write(
             render_to_string(
@@ -52,31 +52,33 @@ class MyHandler(BaseHandler):
 
 クライアント側の Javascript はチャンネルに接続
 
-``` javascript
+```javascript
 var channel = new goog.appengine.Channel("{{ channel_id }}");
-var socket = channel.open();  
-socket.onopen = function() {  
-    window.setTimeout(function() {alert('Connected!')}, 100);  
-}
+var socket = channel.open();
+socket.onopen = function () {
+  window.setTimeout(function () {
+    alert("Connected!");
+  }, 100);
+};
 
 // メッセージのハンドラーを登録
-socket.onmessage = function(evt) {
-     // テキストを受けているけど、JSONがおすすめ 
-     // var o = JSON.parse(evt.data);  
-     alert(evt.data);
-     // do something
-}
+socket.onmessage = function (evt) {
+  // テキストを受けているけど、JSONがおすすめ
+  // var o = JSON.parse(evt.data);
+  alert(evt.data);
+  // do something
+};
 ```
 
 サーバーからクライアントにメッセージを送る
 
-``` python
-from google.appengine.api import channel  
-from google.appengine.api import users  
+```python
+from google.appengine.api import channel
+from google.appengine.api import users
 
 class AjaxHandler(BaseHandler):
     def get(self):
-        user = users.get_current_user()  
+        user = users.get_current_user()
 
         # メッセージをクライアントに渡す。
         # クライアントが接続している状態が不要
@@ -123,22 +125,22 @@ Note
 
 使うには、まずはメールみたいに、 `inbound_services` を `app.yaml` に設定します。
 
-``` yaml
+```yaml
 inbound_services:
-- warmup
+  - warmup
 ```
 
 スタートアップリクエストが `/_ah/warmup` のURLに来るので、スタートアップリクエストを受けとるURLを `app.yaml`
 に設定する。
 
-``` yaml
+```yaml
 - url: /_ah/warmup.*
   script: warmup.py
 ```
 
 `warmup.py` の中に、必要そうなモジュールをインポートする。
 
-``` python
+```python
 # ロードが重いモジュールを未然にロードする
 import mybigmodule
 import myothermodule
@@ -170,7 +172,7 @@ Appengine データストアのメタデータ、`Namespace`, `Kind`, `Property`
 `Kind` インスタンスが持っている `Property` の親になるので、ある `Kind` の `Property` を取得するには、
 `ancestor()` クエリができます。
 
-``` python
+```python
 from google.appengine.ext.db.metadata import Namespace, Kind, Property
 
 for namespace in Namespace.all():
@@ -188,9 +190,9 @@ for kind in Kind.all():
 ではまだ出てないみたいですが、code.google.com
 のプロジェクトの以下のURLからダウンロードできます。
 
-  - Python:
-    [google\_appengine\_1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=google_appengine_1.4.0.zip)
-  - Java:
-    [appengine-java-sdk-1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=appengine-java-sdk-1.4.0.zip)
-  - リリースノート:
-    <http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes>
+- Python:
+  [google_appengine_1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=google_appengine_1.4.0.zip)
+- Java:
+  [appengine-java-sdk-1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=appengine-java-sdk-1.4.0.zip)
+- リリースノート:
+  <http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes>

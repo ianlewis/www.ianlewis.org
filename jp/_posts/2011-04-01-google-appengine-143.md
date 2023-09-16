@@ -19,7 +19,7 @@ Tester リリースで出ていた Matcher API は 「Prospective Search
 API」という名前で開発者全員にリリースされています。
 まだ、Labs機能で、正式リリースではない様ですけど、 モジュール名が変わっています。
 
-``` python
+```python
 from google.appengine.api import prospective_search
 
 def add_tweet_alert(user, tweet_text):
@@ -59,7 +59,7 @@ Testbed はテストを実行できるために、 Appengine 環境を偽装す�
 Appengine本番にデプロイせずに、ローカル環境で、Memcached、 Datastore などの
 Appengineのサービスが テストの中に使えます。
 
-``` python
+```python
 import unittest
 from google.appengine.ext import testbed
 
@@ -92,7 +92,7 @@ class DemoTestCase(unittest.TestCase):
 
 デフォールト環境変数も設定できます。
 
-``` python
+```python
 class DemoTestCase(unittest.TestCase):
     def setUp(self):
         self.testbed.setup_env(app_id=application-id)
@@ -107,7 +107,7 @@ class DemoTestCase(unittest.TestCase):
 を使うことが出来ます。 簡単な例は以下のテストランナー。 `unittest2`
 が必要なので、まずそれをインストールする必要があります。
 
-``` python
+```python
 #!/usr/bin/python
 import optparse
 import sys
@@ -143,7 +143,7 @@ if __name__ == '__main__':
 それで、スクリプトを実行すれば、プロジェクトの `test*.py` でテストケースを探して来て、テストを実行することができます。
 モジュール、もしくは、テストクラスを指定することもできます。
 
-``` test
+```test
 $ python testrunner.py demo.tests.DemoTestCase
 ```
 
@@ -152,7 +152,7 @@ $ python testrunner.py demo.tests.DemoTestCase
 ファイルAPI で Appengine の Blobstore にファイル読み込み、書き込みができます。 レポートの生成、データインポートなど、
 ファイルシステムに必要なことに使えます。
 
-``` python
+```python
 from __future__ import with_statement
 from google.appengine.api import files
 
@@ -175,29 +175,29 @@ blob_key = files.blobstore.get_blob_key(file_name)
 Cron ジョブを実行するアプリケーションバージョンを指定することができるようになりました。 `cron.yaml` の `target`
 プロパティでバージョン名を指定します。
 
-``` yaml
+```yaml
 cron:
-- description: new daily summary job
-  url: /tasks/summary
-  schedule: every 24 hours
-  target: version-2
+  - description: new daily summary job
+    url: /tasks/summary
+    schedule: every 24 hours
+    target: version-2
 ```
 
 キューの定義でも、あるキューのタスクがどのバージョンで実行されるかを `queue.yaml` の `target` プロパティで指定できます。
 
-``` yaml
+```yaml
 queue:
-- name: my-queue
-  rate: 20/s
-  bucket_size: 40
-  max_concurrent_requests: 10
-  target: version-2
+  - name: my-queue
+    rate: 20/s
+    bucket_size: 40
+    max_concurrent_requests: 10
+    target: version-2
 ```
 
 ## まとめ
 
 このリリースも結構大きくて、いろいろ改善されています。 ファイルAPIを 早速触ってみたいところです。
 
-  - ダウンロード: <http://code.google.com/intl/en/appengine/downloads.html>
-  - リリースノート:
-    <http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes>
+- ダウンロード: <http://code.google.com/intl/en/appengine/downloads.html>
+- リリースノート:
+  <http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes>

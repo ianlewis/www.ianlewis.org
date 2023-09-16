@@ -21,7 +21,7 @@ JavaScript for speed.
 
 ## Underscore.js
 
-For partial html in the browser I have often used [Underscore.js templates](http://underscorejs.org/#template).  Underscore's templates are pretty
+For partial html in the browser I have often used [Underscore.js templates](http://underscorejs.org/#template). Underscore's templates are pretty
 simple and the logic is written in JavaScript so it's pretty fast.
 
 ```
@@ -32,7 +32,7 @@ simple and the logic is written in JavaScript so it's pretty fast.
       <body>
         <h1><%- title %></h1>
         <ul>
-          <% _.each(items, function(item) { %> 
+          <% _.each(items, function(item) { %>
             <li><%- item %></li>
           <% }); %>
         </ul>
@@ -47,7 +47,7 @@ language on the server side.
 ## Mustache
 
 [Mustache](http://mustache.github.io/) and the template languages like it are
-generally logicless or light on logic.  Mustache has partials which can be used
+generally logicless or light on logic. Mustache has partials which can be used
 to include sub-templates or other kinds of logic.
 
 ```
@@ -114,13 +114,11 @@ template harder to understand as you need to learn how to write html in jade
 templates along with how to write logic. Templates are also harder to write and
 understand for text other than html.
 
-Swig
------------------------------------------
+## Swig
 
 [Swig](http://paularmstrong.github.io/swig/) is a templating language
 inspired by Django templates. I immediately liked Swig since I've used Django
 and Jinja2 templates quite often as a Python developer.
-
 
 ```
     <h1>{{ pagename|title }}</h1>
@@ -140,7 +138,7 @@ deal breaker for server side templating.
 ## Nunjucks
 
 [Nunjucks](http://mozilla.github.io/nunjucks/) is a templating language
-written by some folks at Mozilla which is heavily inspired by Jinja2.  I
+written by some folks at Mozilla which is heavily inspired by Jinja2. I
 immediately liked Nunjucks since I've used Django and Jinja2 templates quite
 often as a Python developer.
 
@@ -162,13 +160,13 @@ often as a Python developer.
 
 Nunjucks also supports template inheritance so it's very easy to use as a
 server side template language. When [compared](https://github.com/mozilla/nunjucks/issues/179)
-[to](https://github.com/mozilla/nunjucks/issues/83) 
+[to](https://github.com/mozilla/nunjucks/issues/83)
 [swig](https://github.com/popomore/nunjucks-vs-swig), nunjucks seems to be faster,
 has better support for caching and pre-compiling, and looks like the API is a bit better.
 
 ##Conclusion
 
-JavaScript has *a lot* of templating languages. However, maybe because users
+JavaScript has _a lot_ of templating languages. However, maybe because users
 are often just rendering small bits of content in the browser, few support very
 many features and are often left wanting. For server side rendering of entire
 documents, template inheritance is pretty much a must in my mind and that

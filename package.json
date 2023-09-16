@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "lint": "markdownlint --dot .",
+    "format": "prettier -w ."
+  },
+  "devDependencies": {
+    "markdownlint-cli": "0.35.0"
+  },
+  "dependencies": {
+    "prettier": "^3.0.3"
+  }
+}

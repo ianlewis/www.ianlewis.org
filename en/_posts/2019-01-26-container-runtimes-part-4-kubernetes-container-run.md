@@ -19,11 +19,9 @@ In order to understand more about CRI it's worth taking a look at the overall Ku
 
 Here are some CRI runtimes that can be used with Kubernetes.
 
-
-### containerd 
+### containerd
 
 <code>[containerd](https://containerd.io/)</code> is a high-level runtime that I mentioned in Part 3. <code>containerd</code> is possibly the most popular CRI runtime currently. It implements CRI as a [plugin](https://github.com/containerd/cri) which is enabled by default. It listens on a unix socket by default so you can configure crictl to connect to containerd like this:
-
 
 ```shell
 cat <<EOF | sudo tee /etc/crictl.yaml
@@ -31,14 +29,11 @@ runtime-endpoint: unix:///run/containerd/containerd.sock
 EOF
 ```
 
-
 It is an interesting high-level runtime in that it supports multiple low-level runtimes via something called a "runtime handler" starting in version 1.2. The runtime handler is passed via a field in CRI and based on that runtime handler `containerd` runs an application called a shim to start the container. This can be used to run containers using low-level runtimes other than runc, like [gVisor](https://github.com/google/gvisor), [Kata Containers](https://katacontainers.io/), or [Nabla Containers](https://nabla-containers.github.io/). The runtime handler is exposed in the Kubernetes API using the [RuntimeClass object](https://kubernetes.io/docs/concepts/containers/runtime-class/) which is alpha in Kubernetes 1.12. There is more on containerd's shim concept [here](https://github.com/containerd/containerd/pull/2434).
-
 
 ### Docker
 
 Docker support for CRI was the first to be developed and was implemented as a shim between the `kubelet` and Docker. Docker has since broken out many of its features into `containerd` and now supports CRI through `containerd`. When modern versions of Docker are installed, `containerd` is installed along with it and CRI talks directly to `containerd`. For that reason, Docker itself isn't necessary to support CRI. So you can install containerd directly or via Docker depending on your use case.
-
 
 ### cri-o
 
@@ -46,21 +41,17 @@ cri-o is a lightweight CRI runtime made as a Kubernetes specific high-level runt
 
 cri-o's endpoint is at `/var/run/crio/crio.sock` by default so you can configure `crictl` like so.
 
-
 ```shell
 cat <<EOF | sudo tee /etc/crictl.yaml
 runtime-endpoint: unix:///var/run/crio/crio.sock
 EOF
 ```
 
-
-
 ## The CRI Specification
 
 CRI is a [protocol buffers](https://developers.google.com/protocol-buffers/) and [gRPC](https://grpc.io/) API. The specification is defined in a [protobuf file](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-api/pkg/apis/runtime/v1alpha2/api.proto) in the Kubernetes repository under the kubelet. CRI defines several remote procedure calls (RPCs) and message types. The RPCs are for operations like "pull image" (`ImageService.PullImage`), "create pod" (`RuntimeService.RunPodSandbox`), "create container" (`RuntimeService.CreateContainer`), "start container" (`RuntimeService.StartContainer`), "stop container" (`RuntimeService.StopContainer`), etc.
 
 For example, a typical interaction over CRI that starts a new Kubernetes Pod would look something like the following (in my own form of pseudo gRPC; each RPC would get a much bigger request object. I'm simplifying it for brevity). The `RunPodSandbox` and `CreateContainer` RPCs return IDs in their responses which are used in subsequent requests:
-
 
 ```text
 ImageService.PullImage({image: "image1"})
@@ -80,11 +71,9 @@ RuntimeService.StartContainer({id: id1})
 RuntimeService.StartContainer({id: id2})
 ```
 
-
 We can interact with a CRI runtime directly using the <code>[crictl](https://github.com/kubernetes-sigs/cri-tools)</code> tool. <code>crictl</code> lets us send gRPC messages to a CRI runtime directly from the command line. We can use this to debug and test out CRI implementations without starting up a full-blown <code>kubelet</code> or Kubernetes cluster. You can get it by downloading a <code>crictl</code> binary from the cri-tools [releases page](https://github.com/kubernetes-sigs/cri-tools/releases) on GitHub.
 
 You can configure `crictl` by creating a configuration file under `/etc/crictl.yaml`. Here you should specify the runtime's gRPC endpoint as either a Unix socket file (`unix:///path/to/file`) or a TCP endpoint (`tcp://<host>:<port>`). We will use `containerd` for this example:
-
 
 ```shell
 cat <<EOF | sudo tee /etc/crictl.yaml
@@ -92,25 +81,19 @@ runtime-endpoint: unix:///run/containerd/containerd.sock
 EOF
 ```
 
-
 Or you can specify the runtime endpoint on each command line execution:
-
 
 ```shell
 crictl --runtime-endpoint unix:///run/containerd/containerd.sock …
 ```
 
-
 Let's run a pod with a single container with `crictl`. First you would tell the runtime to pull the `nginx` image you need since you can't start a container without the image stored locally.
-
 
 ```shell
 sudo crictl pull nginx
 ```
 
-
 Next create a Pod creation request. You do this as a JSON file.
-
 
 ```shell
 cat <<EOF | tee sandbox.json
@@ -128,17 +111,13 @@ cat <<EOF | tee sandbox.json
 EOF
 ```
 
-
 And then create the pod sandbox. We will store the ID of the sandbox as `SANDBOX_ID`.
-
 
 ```shell
 SANDBOX_ID=$(sudo crictl runp --runtime runsc sandbox.json)
 ```
 
-
 Next we will create a container creation request in a JSON file.
-
 
 ```shell
 cat <<EOF | tee container.json
@@ -156,9 +135,7 @@ cat <<EOF | tee container.json
 EOF
 ```
 
-
 We can then create and start the container inside the Pod we created earlier.
-
 
 ```shell
 {
@@ -167,25 +144,19 @@ We can then create and start the container inside the Pod we created earlier.
 }
 ```
 
-
 You can inspect the running pod
-
 
 ```shell
 sudo crictl inspectp ${SANDBOX_ID}
 ```
 
-
 … and the running container:
-
 
 ```shell
 sudo crictl inspect ${CONTAINER_ID}
 ```
 
-
 Clean up by stopping and deleting the container:
-
 
 ```shell
 {
@@ -194,9 +165,7 @@ Clean up by stopping and deleting the container:
 }
 ```
 
-
 And then stop and delete the Pod:
-
 
 ```shell
 {
@@ -205,19 +174,15 @@ And then stop and delete the Pod:
 }
 ```
 
-
-
 ## Thanks for following the series!
 
 This is the last post in the Container Runtimes series but don't fear! There will be lots more container and Kubernetes posts in the future. Be sure to add [my RSS feed](https://www.ianlewis.org/feed/enfeed) or follow me on Twitter to get notified when the next blog post comes out.
 
 Until then, you can get more involved with the Kubernetes community via these channels:
 
-
-
-*   Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
-*   Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter
-*   Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
-*   Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
+- Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
+- Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter
+- Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
+- Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
 
 If you have any suggestions or ideas for blog posts, send them to me on Twitter at [@IanMLewis](https://twitter.com/IanMLewis) via either a reply or DM. Thanks!

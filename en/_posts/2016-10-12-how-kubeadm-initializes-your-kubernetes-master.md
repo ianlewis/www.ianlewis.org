@@ -152,15 +152,15 @@ How are we able to connect to the containers? If we look at each of the json fil
   ...
   "spec": {
     "containers": [
-      { 
+      {
         "name": "kube-apiserver",
         "image": "gcr.io/google_containers/kube-apiserver-amd64:v1.4.0",
         "volumeMounts": [
-          { 
+          {
             "name": "certs",
             "mountPath": "/etc/ssl/certs"
           },
-          { 
+          {
             "name": "pki",
             "readOnly": true,
             "mountPath": "/etc/kubernetes/"

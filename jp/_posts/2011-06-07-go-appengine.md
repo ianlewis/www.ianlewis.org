@@ -17,7 +17,7 @@ Appengine にデプロイしてみた。
 
 まずは、ログイン。 Google アカウントの認証を使っているのですが、こんな感じでできています。
 
-``` golang
+```golang
 c := appengine.NewContext(request)
 current_user := user.Current(c)
 if current_user == nil {
@@ -30,7 +30,7 @@ if current_user == nil {
 次はデータの読み込み。ここで Greeting エンティティのデータをクエリーで取得しています。 データを取得した後に GetAll()
 メソッドで greetings というスライス (配列ポインター) に突っ込んでいます。
 
-``` golang
+```golang
 greetings := &[]Greeting{}
 datastore.NewQuery("Greeting").
           Order("-Date").
@@ -42,7 +42,7 @@ datastore.NewQuery("Greeting").
 新しいデータを書き込むときに、 datastore.NewIncompleteKey() を使います。未確定キーオブジェクトで、
 datastore.Put() は新しいキーを取得するかどうかを判断するみたいです。
 
-``` golang
+```golang
 body := request.FormValue("body")
 if (len(body) > 0) {
     g := &Greeting{
@@ -58,32 +58,30 @@ if (len(body) > 0) {
 次は template パッケージの使いを紹介します。html テンプレートをレンダーしてくれるパッケージです。こんな感じで書けます。 if
 文の処理は section どいうタグで実現できます。 for は repeated section で実現できます。
 
-``` html
+```html
 <body>
   <div style="float:right">
-    {.section CurrentUser}
-    {CurrentUser} <a href="{LoginUrl}">Sign Out</a>
+    {.section CurrentUser} {CurrentUser} <a href="{LoginUrl}">Sign Out</a>
     {.or}
     <a href="{LoginUrl}">Sign In</a>
     {.end}
   </div>
 
-  <h1>Appengine Go! Guestbook <img src="/static/img/appengine-go.png"></h1>
+  <h1>Appengine Go! Guestbook <img src="/static/img/appengine-go.png" /></h1>
   <a href="https://bitbucket.org/IanLewis/golang_guestbook/">Source Code</a>
   <form action="/save" method="POST" style="margin-bottom: 50px">
     <div><textarea name="body" rows="10" cols="80"></textarea></div>
-    <div><input type="submit" value="Save"></div>
+    <div><input type="submit" value="Save" /></div>
   </form>
   {.repeated section Greetings}
   <div>
-    User: {AccountEmail|userName}<br/>
+    User: {AccountEmail|userName}<br />
     {Date|date}
     <p style="padding-left:10px">{Body|html}</p>
   </div>
   {.end}
 
-  <div style="text-align:center">
-  </div>
+  <div style="text-align:center"></div>
 </body>
 ```
 
@@ -94,7 +92,7 @@ if (len(body) > 0) {
 
 他のフォーマッターはこんな感じで登録できます。テンプレートを解析するときに、 FormatterMap オブジェクトを渡してあげます。
 
-``` golang
+```golang
 func userNameFormatter(wr io.Writer, formatter string, data ...interface{}) {
     for _, item := range data {
         s, _ := item.(string)
@@ -122,7 +120,7 @@ t, _ := template.ParseFile("templates/base.html", fm)
 とかより固い言語なので、stuct
 の変数型を全部定義しないといけません。面倒くさいからインラインでやっています。
 
-``` golang
+```golang
 w.Header().Set("Content-Type", "text/html")
 err := t.Execute(w, struct{
      CurrentUser *user.User

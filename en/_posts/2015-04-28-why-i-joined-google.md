@@ -47,7 +47,7 @@ Japan and talk about App Engine and Google's other cloud technology.
 So last year when a friend asked me if I would be interested in a position
 as a Developer Advocate for Google Cloud Platform, I jumped at the chance.
 
-## Why I Joined Google 
+## Why I Joined Google
 
 There are a lot of reasons to join a company like Google but here are mine.
 
@@ -87,7 +87,7 @@ For that reason, Google is a great company to work for. There is a strong
 engineering culture which values trying to find the best solutions to problems
 and to do things the "right" way. This is evident in the company\'s commitment
 to ethics and, as a general rule, the folks at Google are highly ethical.
-Things like security, and privacy of data are taken *very* seriously.
+Things like security, and privacy of data are taken _very_ seriously.
 
 ### International
 
@@ -112,6 +112,6 @@ I intend to work hard to make [Google Cloud Platform](http://cloud.google.com/)
 the best place to host your applications and data. It's hard to say what will
 happen but I'm excited about the future and really optimistic about
 technology. Many people have talked about the ability of technology to improve
-people's lives.  I think that new technologies like cloud, containers, mobile,
+people's lives. I think that new technologies like cloud, containers, mobile,
 and wearables, have huge potential to change people's lives exponentially
 more than computers have so far. The next few years will be exciting!

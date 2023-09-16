@@ -26,15 +26,15 @@ bpssl draws inspiration from the well known SSL Middleware snippets on
 <http://www.djangosnippets.org> . It roughly supports the features of
 the following snippets:
 
-  - <http://djangosnippets.org/snippets/880/>
-  - <http://djangosnippets.org/snippets/240/>
-  - <http://djangosnippets.org/snippets/1999/>
+- <http://djangosnippets.org/snippets/880/>
+- <http://djangosnippets.org/snippets/240/>
+- <http://djangosnippets.org/snippets/1999/>
 
 # For the lazy
 
-  - [Documentation](http://beproud.bitbucket.org/bpssl-1.0/en/)
-  - [Source Code](http://bitbucket.org/beproud/bpssl/) (Holy crap\!
-    there are tests\!)
+- [Documentation](http://beproud.bitbucket.org/bpssl-1.0/en/)
+- [Source Code](http://bitbucket.org/beproud/bpssl/) (Holy crap\!
+  there are tests\!)
 
 # Installation
 
@@ -42,15 +42,15 @@ First install the `bpssl` package using PIP:
 
     $ pip install bpssl
 
-or easy\_install:
+or easy_install:
 
     $ easy_install bpssl
 
 Next add `'beproud.django.ssl'` to your
-[INSTALLED\_APPS](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#installed-apps)
+[INSTALLED_APPS](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#installed-apps)
 in your `settings.py`.
 
-``` python
+```python
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -64,10 +64,10 @@ INSTALLED_APPS = (
 ```
 
 Next add `'beproud.django.ssl.middleware.SSLRedirectMiddleware'` to your
-[MIDDLEWARE\_CLASSES](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#setting-MIDDLEWARE_CLASSES)
+[MIDDLEWARE_CLASSES](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#setting-MIDDLEWARE_CLASSES)
 setting.
 
-``` python
+```python
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -81,11 +81,11 @@ MIDDLEWARE_CLASSES = (
 ```
 
 Finally add
-[SSL\_URLS](http://beproud.bitbucket.org/bpssl-1.0/en/settings.html#setting-ssl-urls)
-to your settings. SSL\_URLS is a list of regular expressions that match
+[SSL_URLS](http://beproud.bitbucket.org/bpssl-1.0/en/settings.html#setting-ssl-urls)
+to your settings. SSL_URLS is a list of regular expressions that match
 Urls.
 
-``` python
+```python
 SSL_URLS = (
     '^/login/',
     '^/purchase/'
@@ -95,7 +95,7 @@ SSL_URLS = (
 
 Or if you prefer:
 
-``` python
+```python
 # In the age of Firesheep, you can never be too careful.
 SSL_URLS = (
     '.*',
@@ -103,7 +103,7 @@ SSL_URLS = (
 ```
 
 There is also a
-[ssl\_view()](http://beproud.bitbucket.org/bpssl-1.0/en/usage.html#beproud.django.ssl.decorators.ssl_view)
+[ssl_view()](http://beproud.bitbucket.org/bpssl-1.0/en/usage.html#beproud.django.ssl.decorators.ssl_view)
 decorator which allows you to attach redirection logic to individual
 views.
 

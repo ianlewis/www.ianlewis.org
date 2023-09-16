@@ -28,7 +28,7 @@ class provided in the article. It's missing a couple imports, doesn't
 save data properly and throws errors when there is no data to be
 processed. I have provided an updated version of the Mapper class here.
 
-``` python
+```python
 from google.appengine.ext import db
 
 from google.appengine.ext import deferred
@@ -85,7 +85,7 @@ class Mapper(object):
         # Keep updating records until we run out of time.
         try:
             # Steps over the results, returning each entity and its index.
-            i = None 
+            i = None
             for i, entity in enumerate(q):
                 map_updates, map_deletes = self.map(entity)
                 self.to_put.extend(map_updates)
@@ -114,7 +114,7 @@ These objects are then saved in batch automatically by the Mapper class.
 Lets create a simple Mapper implementation to update the schema for a
 Model.
 
-``` python
+```python
 from google.appengine.ext import deferred
 
 from mapper import Mapper
@@ -143,5 +143,5 @@ This mapper migrates the data for of the MyModel type to using key names
 instead of numeric ids. Of course if any other objects referred to your
 MyModel objects you would need to alter those too but this demonstrates
 some of the things you can to with the Mapper class. Here you would just
-need to run the run\_migration() method and it would add the mapper to
+need to run the run_migration() method and it would add the mapper to
 the task queue to be run in the background.

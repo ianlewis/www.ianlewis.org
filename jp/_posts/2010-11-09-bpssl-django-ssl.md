@@ -26,10 +26,10 @@ HTTPSのほうのURLにリダイレクトしたいこともよくあります。
     $ easy_install bpssl
 
 次に、 `'beproud.django.ssl'` を `settings.py` の
-[INSTALLED\_APPS](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#installed-apps)
+[INSTALLED_APPS](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#installed-apps)
 に追加してください。
 
-``` python
+```python
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,10 +45,10 @@ INSTALLED_APPS = (
 それから、
 '[beproud.django.ssl.middleware.SSLRedirectMiddleware](http://beproud.bitbucket.org/bpssl-1.0/ja/usage.html#beproud.django.ssl.middleware.SSLRedirectMiddleware)'
 を
-[MIDDLEWARE\_CLASSES](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#setting-MIDDLEWARE_CLASSES)
+[MIDDLEWARE_CLASSES](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#setting-MIDDLEWARE_CLASSES)
 に追加してください。
 
-``` python
+```python
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -62,10 +62,10 @@ MIDDLEWARE_CLASSES = (
 ```
 
 次は
-[SSL\_URLS](http://beproud.bitbucket.org/bpssl-1.0/ja/settings.html#setting-ssl-urls)
+[SSL_URLS](http://beproud.bitbucket.org/bpssl-1.0/ja/settings.html#setting-ssl-urls)
 の正規表現んを設定する。
 
-``` python
+```python
 SSL_URLS = (
     '^/login/',
     '^/purchase/'
@@ -73,7 +73,7 @@ SSL_URLS = (
 )
 ```
 
-[ssl\_view()](http://beproud.bitbucket.org/bpssl-1.0/ja/usage.html#beproud.django.ssl.decorators.ssl_view)
+[ssl_view()](http://beproud.bitbucket.org/bpssl-1.0/ja/usage.html#beproud.django.ssl.decorators.ssl_view)
 というビューデコレータもありますので、ビューレベルでもSSL対応ができます。
 
 Django 側はこれで以上ですが、やっぱりウェブサーバーでの設定も必要ですが、それも簡単です。
@@ -81,9 +81,9 @@ Django 側はこれで以上ですが、やっぱりウェブサーバーでの�
 もともと、bpssl は <http://www.djangosnippets.org> に投稿したSSLミドルウエアから、
 インスピレーションを得た。以下のスニペットの機能にほぼ対応しています。
 
-  - <http://djangosnippets.org/snippets/880/>
-  - <http://djangosnippets.org/snippets/240/>
-  - <http://djangosnippets.org/snippets/1999/>
+- <http://djangosnippets.org/snippets/880/>
+- <http://djangosnippets.org/snippets/240/>
+- <http://djangosnippets.org/snippets/1999/>
 
 詳しくは [bpssl のドキュメント](http://beproud.bitbucket.org/bpssl-1.0/ja/) もしくは、
 [ソースコード](http://bitbucket.org/beproud/bpssl/) を見ててください！

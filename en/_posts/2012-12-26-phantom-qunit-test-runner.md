@@ -45,9 +45,9 @@ the URL or path to your QUnit HTML file and accepts a number of options:
 
     $ ./runner.py --help
     Usage: runner.py FILE_OR_URL [filter] [options]
-    
+
     Run QUnit tests.
-    
+
     Options:
       -h, --help        show this help message and exit
       --output=OUT      The test output format. [console, junit, tap] (Default:
@@ -65,40 +65,40 @@ Python test runner. Console output for a test run looks like the this:
 
     $ ./runner.py example/index.html
     Tests Started
-    
+
     mymodule
-    
+
          Equal Test
             ✓ ok() check (0.001s)
             ✓ equal() check (0.001s)
             ✓ Passed Test (0.001s)
          OK Test
             ✓ ok() check (0.001s)
-    
+
     othermodule
-    
+
          OK Test
             ✓ ok() check (0s)
-    
+
     ----------------------------------------------------------------------
     Ran 5 tests in 0.099 secs
-    
+
     OK
 
 A failed test run produces a failure report including tracebacks:
 
     $ ./runner.py example/index.html mymodule
     Tests Started
-    
+
     mymodule
-    
+
          Equal Test
             ✓ ok() check (0.001s)
             ✓ equal() check (0.001s)
             ☓ Failed Test (0.001s)
          OK Test
             ✓ ok() check (0s)
-    
+
     ======================================================================
     FAIL: Equal Test(mymodule)
     ----------------------------------------------------------------------
@@ -111,7 +111,7 @@ A failed test run produces a failure report including tracebacks:
         at file:///home/ian/src/phantomjs-qunit/example/qunit.js:383
     ----------------------------------------------------------------------
     Ran 4 tests in 0.023 secs
-    
+
     FAILED (failures=1)
 
 # Output Formats
@@ -153,15 +153,15 @@ You can apply filters to the input to determine which tests get run:
 
     $ ./runner.py example/index.html othermodule
     Tests Started
-    
+
     othermodule
-    
+
          OK Test
             ✓ ok() check (0s)
-    
+
     ----------------------------------------------------------------------
     Ran 1 tests in 0.024 secs
-    
+
     OK
 
 # QUnit Tests
@@ -173,13 +173,13 @@ runner.
 
 Your HTML may look as follows
 
-``` html
-<!DOCTYPE html>
+```html
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <title>QUnit Example</title>
-    <link rel="stylesheet" href="qunit.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="qunit.css" type="text/css" media="screen" />
     <script type="text/javascript" src="qunit.js"></script>
 
     <script type="text/javascript" src="mymodule.test.js"></script>

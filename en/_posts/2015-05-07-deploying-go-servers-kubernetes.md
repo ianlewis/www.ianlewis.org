@@ -85,7 +85,6 @@ spec:
             - containerPort: 8080
               hostPort: 8080
               protocol: TCP
-    
 ```
 
 Next we'll create a service for our app. Create an `outyet-service.yml` with
@@ -112,7 +111,6 @@ spec:
 
 Next we'll deploy our container engine cluster. We'll use the gcloud tool again. You may get
 warnings about installing the `alpha` components. Just say 'yes' to install them when asked.
-
 
     $ gcloud alpha container clusters create outyet
     $ gcloud config set container/cluster outyet

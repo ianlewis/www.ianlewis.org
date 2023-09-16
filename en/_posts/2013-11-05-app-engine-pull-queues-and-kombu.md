@@ -16,11 +16,11 @@ via a REST API. There isn't much in the way of APIs for actually polling the
 API, processing the task, and acknowledging to the API that the task is
 finished.
 
-I am a fan of Python and so I often use a task queue system called [Celery](http://www.celeryproject.org/).  This system or framework provides a full
+I am a fan of Python and so I often use a task queue system called [Celery](http://www.celeryproject.org/). This system or framework provides a full
 task queue worker that can use a number of messaging exchanges for getting the
 tasks. This is achieved using a library called [kombu](http://kombu.readthedocs.org/) which provides backends for a number of
-messaging systems.  So I sought to see if it was possible to use Celery as a
-background task worker for the pull queue API. 
+messaging systems. So I sought to see if it was possible to use Celery as a
+background task worker for the pull queue API.
 
 While I couldn't get full Celery support working because of limitations with
 the API, I did get a fully functioning kombu backend working which developers

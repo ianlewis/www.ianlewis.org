@@ -17,20 +17,20 @@ and allowing you to put away changes into the patch queue.
 mq is included in mercurial's distribution by default but you need to
 enable it in your .hgrc
 
-``` text
+```text
 [extensions]
 mq =
 ```
 
 Ok, so now I'll run through the most used commands.
 
-``` text
+```text
 hg qinit
 ```
 
 When you want to create a new patch you use the qnew command.
 
-``` text
+```text
 hg qnew
 ```
 
@@ -41,7 +41,7 @@ qnew spit out errors when I tried to create a new patch, I figured I
 would have do the following in order to get it back to a normal state
 and create my patch.
 
-``` text
+```text
 hg diff -U > my.diff
 hg revert --all
 hg qnew mypatch
@@ -52,7 +52,7 @@ But a friend informed me that the -f option to qnew does exactly what I
 needed. It takes your current changes and then rolls them into the new
 patch.
 
-``` text
+```text
 hg qnew -f mypatch
 ```
 
@@ -62,14 +62,14 @@ really committed.
 After you make some more changes you can update the patch by running
 qrefresh.
 
-``` text
+```text
 hg qrefresh
 ```
 
 You run qrefresh with the -e option to set the commit message that is
 used later when you actually commit to the repository.
 
-``` text
+```text
 hg qrefresh -e
 ```
 
@@ -79,13 +79,13 @@ retain the message.
 Here's the fun part. If you need to put the changes away you can unapply
 them off by running qpop with the name of your patch
 
-``` text
+```text
 hg qpop mypatch
 ```
 
 or qpop -a which unapplies all the patches.
 
-``` text
+```text
 hg qpop -a
 ```
 
@@ -93,13 +93,13 @@ This will bring you back to the normal repository version. You can then
 merge or fix a bug or do what you need to do. After you are done and you
 want to work on your changes again you can reapply them with qpush.
 
-``` text
+```text
 hg qpush mypatch
 ```
 
 or
 
-``` text
+```text
 hg qpush -a
 ```
 
@@ -111,7 +111,7 @@ patch.
 Once you are done with all your changes you can run qfinish to commit
 them to the regular repository.
 
-``` text
+```text
 hg qfinish mypatch
 ```
 
@@ -119,7 +119,7 @@ You can call it with a range also. MQ gives you qbase and qtip labels
 which are attached to the base patch and the tip patch. This effectively
 finishes all the patches.
 
-``` text
+```text
 hg qfinish qbase:qtip
 ```
 

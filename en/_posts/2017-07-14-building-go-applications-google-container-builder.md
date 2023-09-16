@@ -9,8 +9,7 @@ render_with_liquid: false
 
 <img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/764/container-builder-go.png">
 
-
-*Gopher image [Creative Commons Attribution 3.0 Unported (ja)](https://creativecommons.org/licenses/by/3.0/deed.ja) by [tenntenn](https://github.com/tenntenn/gopher-stickers)*
+_Gopher image [Creative Commons Attribution 3.0 Unported (ja)](https://creativecommons.org/licenses/by/3.0/deed.ja) by [tenntenn](https://github.com/tenntenn/gopher-stickers)_
 
 Recently I wrote on Twitter about how doing CI right requires you to properly separate your build and run steps for your container images.
 
@@ -37,19 +36,29 @@ There is a `gcr.io/cloud-builders/go` image that you can use to run the go compi
 
 ```yaml
 steps:
-- name: 'gcr.io/cloud-builders/go'
-  args: ['generate']
-  env: ['PROJECT_ROOT=github.com/IanLewis/testapp']
-- name: 'gcr.io/cloud-builders/go'
-  args: ['test', './...']
-  env: ['PROJECT_ROOT=github.com/IanLewis/testapp']
-- name: 'gcr.io/cloud-builders/go'
-  args: ['install', '-a', '-ldflags', "'-s'", '-installsuffix', 'cgo', 'github.com/IanLewis/testapp']
-  env: [
-    'PROJECT_ROOT=github.com/IanLewis/testapp',
-    'CGO_ENABLED=0',
-    'GOOS=linux'
-  ]
+  - name: "gcr.io/cloud-builders/go"
+    args: ["generate"]
+    env: ["PROJECT_ROOT=github.com/IanLewis/testapp"]
+  - name: "gcr.io/cloud-builders/go"
+    args: ["test", "./..."]
+    env: ["PROJECT_ROOT=github.com/IanLewis/testapp"]
+  - name: "gcr.io/cloud-builders/go"
+    args:
+      [
+        "install",
+        "-a",
+        "-ldflags",
+        "'-s'",
+        "-installsuffix",
+        "cgo",
+        "github.com/IanLewis/testapp",
+      ]
+    env:
+      [
+        "PROJECT_ROOT=github.com/IanLewis/testapp",
+        "CGO_ENABLED=0",
+        "GOOS=linux",
+      ]
 ```
 
 In the final step I build the Docker image.

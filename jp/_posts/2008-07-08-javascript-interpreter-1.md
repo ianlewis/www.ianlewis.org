@@ -25,8 +25,8 @@ function (jssource) {
 
 ```javascript
 test = "blah";
-schema={"type": "integer"};
-JSONSchema.validate(test,schema).valid
+schema = { type: "integer" };
+JSONSchema.validate(test, schema).valid;
 ```
 
 という風に入力しても、true　が出た。orz

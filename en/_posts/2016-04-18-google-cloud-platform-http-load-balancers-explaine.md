@@ -45,7 +45,6 @@ forwarding rules. The health check object doesn’t depend on anything else so w
 can create it first. Even though we create the object here, it only really
 becomes active after we attach it to a backend service.
 
-
 ```
 gcloud compute http-health-checks create my-healthcheck --host www.example.com --port 80 --request-path=/healthz
 ```
@@ -72,7 +71,6 @@ balancing mode. The prefered way to set the port is via named ports on the
 instance group. You can set a named port for port 80 called <code>http-port</code> using the following command. I’m assuming you already have an instance group
 called <code>my-instance-group</code> set up. You can find out more about creating managed instance groups [here](https://cloud.google.com/compute/docs/instance-groups/).
 
-
 ```
 gcloud compute instance-groups set-named-ports my-instance-group --named-ports
 http-port:80
@@ -84,6 +82,7 @@ Next you can create the backend service:
 gcloud compute backend-services create my-http-backend-service
 --http-health-checks my-healthcheck --port-name http-port --protocol HTTP
 ```
+
 Now that we have the health check attached to the backend service, it will
 connect to the instances specified by the backend service to do the health
 checks.
@@ -92,18 +91,17 @@ The UI shows backend-services in the “backend configuration” part of the UI.
 
 ![Backend Services](https://storage.googleapis.com/static.ianlewis.org/prod/img/750/backend-service.png)
 
-
 Next we have to create a Backend. A Backend specifies the instance group you
 want to send traffic to, and how the load should be balanced among the
 available instances. You can create more than one backend and a backend is
 generally created one per instance group. You can use this to do [cross-region load balancing for instance](https://cloud.google.com/compute/docs/load-balancing/http/cross-region-example).
-
 
 ```
 gcloud compute backend-services add-backend my-http-backend-service
 --instance-group my-instance-group --balancing-mode RATE
 --max-rate-per-instance 10
 ```
+
 This sets up a backend that sends traffic to my instance group and uses the
 request rate as a way to load balance. I am setting it so that each instance
 will get 10 requests per second maximum but you can also set this up to use CPU
@@ -123,7 +121,6 @@ the path matchers for the host rule that matches. When creating a url-maps
 object you specify the default backend service that is used when no host rules
 match.
 
-
 ```
 gcloud compute url-maps create my-url-map --default-service
 my-http-backend-service
@@ -135,7 +132,6 @@ multiple backends you can set the up based on host or url. A host rule can have
 multiple path matchers but the host rule must have at least one path matcher so
 we create the path matcher and host rule at the same time.
 
-
 ```
 gcloud compute url-maps add-path-matcher my-url-map --path-matcher-name
 my-www-path-matcher --new-hosts www.example.com --default-service my-http-backend-service
@@ -143,7 +139,6 @@ my-www-path-matcher --new-hosts www.example.com --default-service my-http-backen
 
 You can specify that requests with a different host go to a separate backend
 service as well.
-
 
 ```
 gcloud compute url-maps add-path-matcher my-url-map --path-matcher-name
@@ -203,7 +198,6 @@ your load balancer to the Target Proxy that will handle the requests. First we
 will need to create our IP address though. We will need a global, rather than
 regional, IP address for our HTTP load balancer.
 
-
 ```
 gcloud compute addresses create my-address --global
 ```
@@ -225,7 +219,6 @@ and then actually redirect users in your application.
 
 Notice that we put the same IP address in for the HTTP Forwarding Rule. This
 makes is so that we can listen on port 80 and on port 443 at our IP address.
-
 
 ```
 gcloud compute target-http-proxies create my-http-proxy --url-map my-url-map

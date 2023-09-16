@@ -17,7 +17,7 @@ to use Alpine Linux as a smaller base image.
 
 In this post I'll examine the ultimate when it comes to making smaller images: static binaries.
 What if your app didn't have any dependencies and didn't need anything at all
-except the app itself? This is what static binaries achieve. They include all the dependencies to running the application *statically compiled* within the binary itself. Let's take a step back and learn what that means.
+except the app itself? This is what static binaries achieve. They include all the dependencies to running the application _statically compiled_ within the binary itself. Let's take a step back and learn what that means.
 
 ## Dynamic Linking
 
@@ -26,7 +26,7 @@ Most applications are built using a process known as Dynamic Linking. Each appli
 Let's look at an example. If I create a simple C++ application and compile it as follows I will get a dynamically linked executable.
 
 ```console
-ianlewis@test:~$ cat hello.cpp 
+ianlewis@test:~$ cat hello.cpp
 #include <iostream>
 
 int main() {
@@ -68,7 +68,7 @@ When I run the application, the dynamic linker finds the libraries I need and li
 
 So what happens if we remove one of these libraries or move it to a location that the dynamic linker doesn't know about?
 
-*!! Moving library files around can really break your system so don't try this at home !!*
+_!! Moving library files around can really break your system so don't try this at home !!_
 
 ```console
 ianlewis@test:~$ sudo mv /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /usr/lib/x86_64-linux-gnu/libstdc++.so.6.bk
@@ -82,7 +82,7 @@ ianlewis@test:~$ ldd ./hello
 We can see now that the library is not found by the dynamic linker. What happens if we try to run it?
 
 ```console
-ianlewis@test:~$ ./hello 
+ianlewis@test:~$ ./hello
 ./hello: error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory
 ```
 
@@ -99,7 +99,7 @@ Let's try to run our hello application, compiled on Ubuntu, in something like Al
 ```console
 ianlewis@test:~$ g++ -o hello hello.cpp
 ianlewis@test:~$ cat << EOF > Dockerfile
-FROM alpine 
+FROM alpine
 COPY hello /hello
 ENTRYPOINT [ "/hello" ]
 EOF
@@ -107,7 +107,7 @@ ianlewis@test:~$ docker build -t hello .
 Sending build context to Docker daemon  29.18kB
 Step 1/3 : FROM alpine
 latest: Pulling from library/alpine
-88286f41530e: Pull complete 
+88286f41530e: Pull complete
 Digest: sha256:1072e499f3f655a032e88542330cf75b02e7bdf673278f701d7ba61629ee3ebe
 Status: Downloaded newer image for alpine:latest
  ---> 7328f6f8b418
@@ -132,17 +132,17 @@ With containers we want to make our images as small as possible, but managing de
 
 <img style="width: 75%;" class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/763/lightning.jpg" />
 
-*[Creative Commons Attribution](https://creativecommons.org/licenses/by/2.0/deed.en) by [John Fowler](https://commons.wikimedia.org/wiki/File:Lightning_(3762193048).jpg)*
+_[Creative Commons Attribution](https://creativecommons.org/licenses/by/2.0/deed.en) by [John Fowler](<https://commons.wikimedia.org/wiki/File:Lightning_(3762193048).jpg>)_
 
 Statically linking allows us to bundle all of the libraries our application relies on into a single binary. This will allow us to copy the application code and all of it's dependencies around in a single binary while still being runnable. Let's try it out.
 
 ```console
-ianlewis@test:~$ g++ -o hello -static hello.cpp 
+ianlewis@test:~$ g++ -o hello -static hello.cpp
 ianlewis@test:~$ ls -lh
 total 2.1M
 -rwxrwxr-x 1 ianlewis ianlewis 2.1M Jul  6 08:08 hello
 -rw-rw-r-- 1 ianlewis ianlewis   85 Jul  6 07:31 hello.cpp
-ianlewis@test:~$ ./hello 
+ianlewis@test:~$ ./hello
 Hello World!
 ianlewis@test:~$ ldd hello
         not a dynamic executable
@@ -159,7 +159,7 @@ ianlewis@test:~$ cat << EOF > Dockerfile
 ianlewis@test:~$ docker build -t hello .
 Sending build context to Docker daemon  2.202MB
 Step 1/3 : FROM scratch
- ---> 
+ --->
 Step 2/3 : COPY hello /hello
  ---> d3b2040b4df0
 Removing intermediate container 78e434104023
@@ -217,7 +217,7 @@ ianlewis@test:~/kubernetes$ make quick-release
 +++ [0711 06:34:19] Syncing sources to container
 +++ [0711 06:34:22] Running build command...
 ...
-ianlewis@test:~/kubernetes$ ldd _output/dockerized/bin/linux/amd64/kube-apiserver 
+ianlewis@test:~/kubernetes$ ldd _output/dockerized/bin/linux/amd64/kube-apiserver
         not a dynamic executable
 ```
 

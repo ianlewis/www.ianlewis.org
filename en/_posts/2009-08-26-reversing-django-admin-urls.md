@@ -20,7 +20,7 @@ view](http://bitbucket.org/IanLewis/django-lifestream/src/5c632eae0574/lifestrea
 which allows users to update the lifestream manually. The code looks
 like the following:
 
-``` python
+```python
 class ItemAdmin(admin.ModelAdmin):
     list_display    = ('title', 'date','published')
     exclude         = ['clean_content',]
@@ -57,13 +57,13 @@ class ItemAdmin(admin.ModelAdmin):
 admin.site.register(Item, ItemAdmin)
 ```
 
-The key parts are the get\_urls function and the admin\_update\_feeds
-view. The get\_urls method returns the urls for this admin to which we
+The key parts are the get_urls function and the admin_update_feeds
+view. The get_urls method returns the urls for this admin to which we
 are adding our custom view. The custom view does the updating of the
 lifestream feeds and returns the user to the Item model's changelist
 view. We get the url for that view by calling reverse with the pattern
 "\<namespace\>:\<app\>\_\<model\>\_changelist" which in our case is
-"admin:lifestream\_item\_changelist" since the django admin uses the
+"admin:lifestream_item_changelist" since the django admin uses the
 admin namespace.
 
 I created the button for updating the feeds by overriding the default
@@ -71,7 +71,7 @@ admin template with my own [subclassed
 template](http://bitbucket.org/IanLewis/django-lifestream/src/tip/lifestream/templates/admin/lifestream/item/change_list.html).
 The template like the following:
 
-``` html+django
+```html+django
 {% extends "admin/change_list.html" %}
 {% load adminmedia admin_list i18n %}
 
@@ -86,5 +86,5 @@ The template like the following:
 ```
 
 Here I'm getting the url for my custom admin view with the code {% url
-admin:admin\_update\_feeds %}, "admin\_update\_feeds" being the name I
-supplied in the get\_urls method above.
+admin:admin\_update\_feeds %}, "admin_update_feeds" being the name I
+supplied in the get_urls method above.

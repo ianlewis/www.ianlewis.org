@@ -16,7 +16,7 @@ Mixins are a really great concept but I often find that people use them
 incorrectly which can lead to some bugs. I often see Mixins used like
 the following:
 
-``` python
+```python
 class Mixin1(object):
     def test(self):
         print "Mixin1"
@@ -37,7 +37,7 @@ But if you do override methods or properties in your mixins this can
 lead to unexpected results because the priority of how methods are
 resolved is from left to right.
 
-``` python
+```python
 >>> obj = MyClass()
 >>> obj.test()
 Mixin1
@@ -45,7 +45,7 @@ Mixin1
 
 The correct way to use mixins is like in the reverse order:
 
-``` python
+```python
 class MyClass(Mixin2, Mixin1, BaseClass):
     pass
 ```
@@ -57,7 +57,7 @@ hierarchy (MyClass =\> Mixin2 =\> Mixin1 =\> BaseClass. If you define
 your classes this way you won't have to many conflicts and run into too
 many bugs.
 
-``` python
+```python
 >>> obj = MyClass()
 >>> obj.test()
 Mixin2

@@ -13,30 +13,30 @@ python の皆さんはみんな使っている ipython は virtualenv を使う�
 に入っているモジュールをインポートできないことが起こります。 ipython は特に
 virtualenv に対応していないわけです。 ipython をグローバルじゃなくて、virtualenv
 毎にインストールすると解決できるのですけど、 ipython
-を落とすのが重いし、PIP\_DOWNLOAD\_CACHE (
+を落とすのが重いし、PIP_DOWNLOAD_CACHE (
 [pipを使うべきだぞ](/jp/virtualenv-pip-fabric) )
 を使わない限り、絶対にイライラする。
 
 # ipython と virtualenv を使う方法第一
 
-ということで、第一方法は PIP\_DOWNLOAD\_CACHE を設定して、virtualenv
+ということで、第一方法は PIP_DOWNLOAD_CACHE を設定して、virtualenv
 を作る時に、virtualenvwrapper (
 [virtualenvwrapperも使うべきだぞ](/jp/virtualenv-pip-fabric) )
 のフックを使って ipython を自動的にインストールする。自分の virtualenv ディレクトリ
-(WORKON\_HOME) に `postmkvirtualenv`
+(WORKON_HOME) に `postmkvirtualenv`
 というスクリプトを入れると、環境を作った後に実行してくれます。それで、作るときに、毎回
 ipython 入れます。
 
-自分の .bashrc かどこかで、 PIP\_DOWNLOAD\_CACHE
+自分の .bashrc かどこかで、 PIP_DOWNLOAD_CACHE
 を設定する。これで、一回ダウンロードしたら、毎回ダウンロードしなくてもいい。
 
-``` text
+```text
 PIP_DOWNLOAD_CACHE=~/.pip_cache
 ```
 
-それから、$WORKON\_HOME/postmkvirtualenv にこう書きます。
+それから、$WORKON_HOME/postmkvirtualenv にこう書きます。
 
-``` text
+```text
 # virtualenv毎に pip をインストールする場合
 #easy_install pip
 
@@ -57,7 +57,7 @@ virtualenv を使うこともできます。 ユーザ設定は `~/.ipython/ipy_
 
 こう書きます。
 
-``` python
+```python
 # Most of your config files and extensions will probably start with this import
 import os
 
@@ -65,7 +65,7 @@ import IPython.ipapi
 ip = IPython.ipapi.get()
 
 # You probably want to uncomment this if you did %upgrade -nolegacy
-# import ipy_defaults    
+# import ipy_defaults
 
 def main():
     # Handy tab-completers for %cd, %run, import etc.
@@ -86,9 +86,9 @@ def main():
     import_all("os sys")
     execf('~/.ipython/virtualenv.py')
 
-# some config helper functions you can use 
+# some config helper functions you can use
 def import_all(modules):
-    """ Usage: import_all("os sys") """ 
+    """ Usage: import_all("os sys") """
     for m in modules.split():
         ip.ex("from %s import *" % m)
 
@@ -102,7 +102,7 @@ main()
 main() の中、 `virtualenv.py` という設定ファイルを呼び出す。 `virtualenv.py`
 というファイルはこう書きます。
 
-``` python
+```python
 import site
 from os import environ
 from os.path import join
@@ -123,13 +123,13 @@ del site, environ, join, version_info
 
 これで、ipython を実行するときに こうなるはず。
 
-``` text
+```text
 土  5月 08 10:22:57
 ian@macbook-ian:~$ workon django-hgwebproxy
 (django-hgwebproxy)土  5月 08 10:23:15
 ian@macbook-ian:~$ ipython
 VIRTUAL_ENV -> /home/ian/.virtualenvs/django-hgwebproxy/lib/python2.6/site-packages
-Python 2.6.4 (r264:75706, Dec  7 2009, 18:45:15) 
+Python 2.6.4 (r264:75706, Dec  7 2009, 18:45:15)
 Type "copyright", "credits" or "license" for more information.
 
 IPython 0.10 -- An enhanced Interactive Python.

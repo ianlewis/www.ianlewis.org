@@ -15,10 +15,10 @@ Google Appengine 1.3.8 がリリースされました！
 
 appstats や、データストアの管理画面、リモートAPIのハンドラーが簡単に設定できるようになりました。
 
-``` yaml
+```yaml
 builtins:
-    datastore_admin: on
-    appstats: on
+  datastore_admin: on
+  appstats: on
 ```
 
 # 管理画面の改善
@@ -34,13 +34,13 @@ builtins:
 
 # 雑多な改善
 
-  - 画像API の `execute_transforms()` 関数で、 JPEG画像の質を指定することができるようになりました。
-  - queue.yaml で、バケットサイズは最大件数は 100件 になりました。
-  - プレコンパイルはデフォールトに有効になりました。無効にしたい場合は、 `--no_precompilation`
-    オプションを指定すれば、無効にすることができます。
-  - zigzag merge-join クエリーの制限を外しました。 したがって "The built-in indices are not
-    efficient enough for this query and your data. Please add a
-    composite index for this query." というエラーが出る可能性が低くなりました。
+- 画像API の `execute_transforms()` 関数で、 JPEG画像の質を指定することができるようになりました。
+- queue.yaml で、バケットサイズは最大件数は 100件 になりました。
+- プレコンパイルはデフォールトに有効になりました。無効にしたい場合は、 `--no_precompilation`
+  オプションを指定すれば、無効にすることができます。
+- zigzag merge-join クエリーの制限を外しました。 したがって "The built-in indices are not
+  efficient enough for this query and your data. Please add a
+  composite index for this query." というエラーが出る可能性が低くなりました。
 
 リリースノートはこちら:
 <http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes>

@@ -8,7 +8,7 @@ render_with_liquid: false
 ---
 
 >     AMD の仕様では、「JSファイルのリストを順番通りに読み込み/実行する」
->     ということができない。実際何が困ったかというと、分割した mocha 
+>     ということができない。実際何が困ったかというと、分割した mocha
 >     テストケースを順番通りに実行できなくなったということ。結果は変わらなくても、
 >     順番通りに実行されないと結果が見辛いし、問題が起こった時に発見が難しい。
 
@@ -26,23 +26,22 @@ QUnitを使っています。
 各テストモジュールで返しています。コードで書いてみるとこんな感じ。
 
 ```javascript
-define(["jquery"], function($) {
-    return {
-        runTests: function() {
-    
-            module("test/module");
+define(["jquery"], function ($) {
+  return {
+    runTests: function () {
+      module("test/module");
 
-            test("Test 1", function() {
-                // Test Code here    
-            });
+      test("Test 1", function () {
+        // Test Code here
+      });
 
-            test("Test 2", function() {
-                // Test Code here    
-            });
+      test("Test 2", function () {
+        // Test Code here
+      });
 
-            // ...
-        }
-    };
+      // ...
+    },
+  };
 });
 ```
 
@@ -76,20 +75,20 @@ define(["jquery"], testmod(function($) {
 
 ```html
 <script>
-QUnit.config.autostart = false;
-QUnit.config.testTimeout = 30000; // 30 Seconds
+  QUnit.config.autostart = false;
+  QUnit.config.testTimeout = 30000; // 30 Seconds
 
-require([
+  require([
     // 順番保証
-    'testmod1',
-    'testmod2',
-], function() {
-    QUnit.start();    
+    "testmod1",
+    "testmod2",
+  ], function () {
+    QUnit.start();
 
     for (i = 0; i < arguments.length; i++) {
-        TestModule = arguments[i];
-        TestModule.runTests();
+      TestModule = arguments[i];
+      TestModule.runTests();
     }
-});
+  });
 </script>
 ```

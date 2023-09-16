@@ -17,7 +17,7 @@ html5lib を使っているから、閉じタグが入ってないような汚�
 例えば、 HTMLでは、以下のようなHTMLを見たことありませんか
 
 ```python
-<input name=submit type=submit value=検索> 
+<input name=submit type=submit value=検索>
 ```
 
 BeautifulSoup は Python 2.x だと HTMLParser ベースで、 HTMLParserがこういうHTMLが入っているとこけちゃいますので、僕のパーサーに以下のようなモンキーパッチをしていました。
@@ -35,14 +35,13 @@ BeautifulSoup は Python 2.x だと HTMLParser ベースで、 HTMLParserがこ�
             r'(\'[^\']*\'|"[^"]*"|[^">\s]*))?')
 ```
 
-HTMLサニタイズ
-------------------
+## HTMLサニタイズ
 
 まずは、簡単な例から始まります。
 
 ```
     >>> import bleach
-    >>> bleach.clean('<a href="http://example.com/"><span>hoge</div></a>') 
+    >>> bleach.clean('<a href="http://example.com/"><span>hoge</div></a>')
     u'<a href="http://example.com/">&lt;span&gt;hoge&lt;/div&gt;</a>'
 ```
 
@@ -53,14 +52,13 @@ HTMLサニタイズ
     ...     text=u'<input name=submit type=submit value=検索>',
     ...     tags=["input"],
     ...     attributes={"input": ["name", "type", "value"]},
-    ... ) 
+    ... )
     u'<input type="submit" name="submit" value="\u691c\u7d22">'
 ```
 
 次は上の例を見てみよう。これもいい感じでパースしてくれた。html5lib は結構優秀そう。
 
-CSSサニタイズ
------------------
+## CSSサニタイズ
 
 ものによっては、styleタグでCSSスタイルを許したいけど、全部を許すのが危険。たとえば、background-image だとか、
 positionだとかを許すと、表示するコンテンツの枠以外のところに影響する可能性がでてくる。ボタンをかくしたりとか、
@@ -69,7 +67,7 @@ positionだとかを許すと、表示するコンテンツの枠以外のとこ
 ```python
     >>> bleach.clean(
     ...     text=u'<span style="position: absolute;top:0;left:0;font-size:12px;">',
-    ...     tags=["span"], 
+    ...     tags=["span"],
     ...     attributes={"*": ["style"]},
     ...     styles=["font-size"]
     ... )
@@ -78,8 +76,7 @@ positionだとかを許すと、表示するコンテンツの枠以外のとこ
 
 このように危険なスタイルも消せます。
 
-まとめ
----------------
+## まとめ
 
 bleachは結構使えそうで、これから使う場面がある時に自分で書いたもののリプレースとして、
 使おうと思っている。

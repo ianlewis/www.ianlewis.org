@@ -17,7 +17,7 @@ I'll try to explain a bit what I mean. But first I want to take a look back at m
 
 It's been a whirlwind year traveling and getting used to Google's scale. Going
 from a 30 person company to a ~50,000 person company was challenging but I've
-learned a lot.  I visited a total of 9 countries: Malaysia, Indonesia, Korea,
+learned a lot. I visited a total of 9 countries: Malaysia, Indonesia, Korea,
 Taiwan, Singapore, Hong Kong, U.S.A., Canada, and, of course, Japan.
 I'm based in Tokyo and so I mostly covered countries in the
 Asia-Pacific region but I was fortunate to have the opportunity to give
@@ -96,7 +96,7 @@ really experience to meet local developers and eat great food :)
 
 ![Indonesian Food Rocks!](https://storage.googleapis.com/static.ianlewis.org/prod/img/747/IMG_20150820_115347.jpg)
 
-## Challenges 
+## Challenges
 
 So this brings me back to my other thought: that Google is the easiest and the
 hardest, the most fun and the least fun company I've worked for. This seems

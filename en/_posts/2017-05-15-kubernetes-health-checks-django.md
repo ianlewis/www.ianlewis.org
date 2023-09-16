@@ -9,7 +9,7 @@ render_with_liquid: false
 
 <img alt="Kubernetes + Django" title="Kubernetes + Django" class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/752/kube-django.png">
 
-In a previous post I wrote about [Kubernetes health checks](/en/using-kubernetes-health-checks). Since I'm a Python developer and a fan, I went about implementing it in Django. Health checks are a great way to help Kubernetes help your app to have high availability, and that includes Django apps. However, with Django it's not quite as simple as it sounds. 
+In a previous post I wrote about [Kubernetes health checks](/en/using-kubernetes-health-checks). Since I'm a Python developer and a fan, I went about implementing it in Django. Health checks are a great way to help Kubernetes help your app to have high availability, and that includes Django apps. However, with Django it's not quite as simple as it sounds.
 
 Health checks are a way for Kubernetes to ask your app if it's healthy. They assume that your app can start up without being ready, and so don't assume any ordering to the starting of apps. For that reason we need to be able to check for things like if the database or memcached have gone away and are no longer accessible to the app.
 

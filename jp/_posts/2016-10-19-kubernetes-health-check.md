@@ -7,17 +7,17 @@ blog: jp
 render_with_liquid: false
 ---
 
-[comment]: # (I've seen a lot of questions about Kubernetes health checks recently and how they should be used. I'll do my best to explain them and the difference between the types of health checks and how each will affect your application.)
+[comment]: # "I've seen a lot of questions about Kubernetes health checks recently and how they should be used. I'll do my best to explain them and the difference between the types of health checks and how each will affect your application."
 
 最近、Kubernetesのヘルスチェックについての質問をよく見ています。ここでヘルスチェックの種類の違いや、どう使うか説明してみます。
 
 ## Liveness Probe
 
-[comment]: # (Kubernetes health checks are divided into liveness and readiness probes. The purpose of liveness probes are to indicate that your application is running. Normally your app could just crash and Kubernetes will see that the app has terminated and restart it but the goal of liveness probes is to catch situations when an app has crashed or deadlocked without terminating. So a simple HTTP response should suffice here.)
+[comment]: # "Kubernetes health checks are divided into liveness and readiness probes. The purpose of liveness probes are to indicate that your application is running. Normally your app could just crash and Kubernetes will see that the app has terminated and restart it but the goal of liveness probes is to catch situations when an app has crashed or deadlocked without terminating. So a simple HTTP response should suffice here."
 
 Kubernetesのヘルスチェックは2種類があって、一つ目は`livenessProbe`と、2つ目は`readinessProbe`というやつです。`livenessProbe`の役目はアプリケーションが生きてるかどうかをチェックすること。普段、エラーが起きた時に、アプリがクラッシュで終了して、Kubernetesがそれを見て、再起動してくれるんですけど、`livenessProbe`はアプリが終了せずに動かなくなったり、デッドロックしたりする場合にもアプリを再起動して直すために存在する。アプリがちゃんと動いているだけをチェックしているので、単純にHTTPレスポンスを返せばいいはず。
 
-[comment]: # (As a simple example here is a health check I often use for my Go applications.)
+[comment]: # "As a simple example here is a health check I often use for my Go applications."
 
 簡単な例として、以下はGoアプリの`livenessProbe`の実装。
 
@@ -28,7 +28,7 @@ http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
 http.ListenAndServe(":8080", nil)
 ```
 
-[comment]: # (and in the deployment:)
+[comment]: # "and in the deployment:"
 
 `Deployment`のほうはこんな感じ
 
@@ -42,11 +42,11 @@ livenessProbe:
   timeoutSeconds: 1
 ```
 
-[comment]: # (This just tells Kubernetes that the application is up and running. The `initialDelaySeconds` tells Kubernetes to delay starting the health checks for this number of seconds after it sees the pod is started. If your application takes a while to start up, you can play with this setting to help it out. The `timeoutSeconds` tells Kubernetes how long it should wait for responses for the health check. For liveness probes, this shouldn't be very long but you do want to give your app enough time to respond even in cases where it's under load.)
+[comment]: # "This just tells Kubernetes that the application is up and running. The `initialDelaySeconds` tells Kubernetes to delay starting the health checks for this number of seconds after it sees the pod is started. If your application takes a while to start up, you can play with this setting to help it out. The `timeoutSeconds` tells Kubernetes how long it should wait for responses for the health check. For liveness probes, this shouldn't be very long but you do want to give your app enough time to respond even in cases where it's under load."
 
 この`livenessProbe`はアプリケーションが生きているだけをチェックします。`initialDelaySeconds`はアプリを起動してから、何秒後にヘルスチェックを始めるかを示している。例えば、起動するまで時間かかるようなアプリケーションだとこの設定を指定すると便利。`timeoutSeconds`はヘルスチェックのレスポンスを何秒待つかを示す。`livenessProbe`の場合はこれをできるだけ短くしたほうが早く検知するので復活が速い。でも、注意すべき点があって、負荷がかかっている状態でも適切なタイムアウトを設定しないと、一番忙しい時なのにアプリが再起動されてしまったり、パフォーマンスに影響がでる。なので、適切な`timeoutSeconds`を指定するのが大事。
 
-[comment]: # (If the app never starts up or responds with an HTTP error code then Kubernetes will restart the pod. You will want to do your best to not do anything too fancy in liveness probes since it could cause disruptions in your app if your liveness probes start failing.)
+[comment]: # "If the app never starts up or responds with an HTTP error code then Kubernetes will restart the pod. You will want to do your best to not do anything too fancy in liveness probes since it could cause disruptions in your app if your liveness probes start failing."
 
 アプリケーションの`livenessProbe`に接続できなかったり、HTTPエラーコードが返ってきた場合、Kubernetesはコンテナを素早く再起動しますし、アプリケーションの障害の可能性になるので、`livenessProbe`では複雑な処理などをしないほうが良い。
 
@@ -56,11 +56,11 @@ livenessProbe:
 
 `readinesProbe`は`livelinessProbe`と似ているものだけど、`readinessProbe`が失敗した結果が違います。`readinessProbe`はアプリケーションが生きているかどうかじゃなくて、トラフィックを受けられるかどうかを確認するためのヘルスチェック。`livelinessProbe`とは微妙に違います。例えば、アプリケーションがデータベースや、memcachedに依存している場合、この二つのサービスが動いていて、接続もできて、さらにアプリケーションも大丈夫な状態じゃないとトラフィックを受けられない。
 
-[comment]: # (If the readiness probe for your app fails, then that pod is removed from the endpoints that make up a service. This makes it so that pods that are not ready will not have traffic sent to them by Kubernetes' service discovery mechanism. This is really helpful for situations where a new pod for a service gets started; scale up events, rolling updates, etc. Readiness probes make sure that pods are not sent traffic in the time between when they start up, and and when they are ready to serve traffic.)
+[comment]: # "If the readiness probe for your app fails, then that pod is removed from the endpoints that make up a service. This makes it so that pods that are not ready will not have traffic sent to them by Kubernetes' service discovery mechanism. This is really helpful for situations where a new pod for a service gets started; scale up events, rolling updates, etc. Readiness probes make sure that pods are not sent traffic in the time between when they start up, and and when they are ready to serve traffic."
 
 `readinessProbe`が失敗した場合、そのパッドがサービスのエンドポイントから外される。そうすると、Kubernetesのサービスディスカバリー機能でトラフィックを受けられないポッドにトラフィックを転送しない。例えば、ローリングアップデートの時や、スケールアップした時、新しいポッドが機能されていたんだけど、まだトラフィック受けられないタイミングでリクエストが来たら、困るので、`readinessProbe`でそういうことを防ぐ。
 
-[comment]: # (The definition of a readiness probe is the same as liveness probes. Readiness probes are defined as part of a Deployment like so:)
+[comment]: # "The definition of a readiness probe is the same as liveness probes. Readiness probes are defined as part of a Deployment like so:"
 
 `readinessProbe`の書き方は`livenessProbe`と同じ。`Deployment`の中に書く:
 
@@ -74,11 +74,11 @@ readinessProbe:
   timeoutSeconds: 5
 ```
 
-[comment]: # (You will want to check that you can connect to all of your application's dependencies in your readiness probe. To use the example where we depend on a database, we will want to check that we are able to connect to both.)
+[comment]: # "You will want to check that you can connect to all of your application's dependencies in your readiness probe. To use the example where we depend on a database, we will want to check that we are able to connect to both."
 
 `readinesProbe`の実装では、アプリケーションの依存サービスに接続できるかどうかをチェックする。一つの例として、データベースとmemcachedに依存するアプリケーションの`readinessProbe`を実装する。
 
-[comment]: # (Here's what that might look like. Here I check memcached and the database and if one is not available I return a 503 response status.)
+[comment]: # "Here's what that might look like. Here I check memcached and the database and if one is not available I return a 503 response status."
 
 以下のハンドラーのような感じになります。ここでは memcachedへ書き込みができるかどうか、かつ、データベースへの接続ができるかどうかをチェックします。どっちかがダメな場合は503を返す。
 
@@ -103,7 +103,7 @@ http.HandleFunc("/readiness", func(w http.ResponseWriter, r *http.Request) {
   if db == nil || err != nil {
     ok = false
     errMsg += "Database not ok.¥n"
-  } 
+  }
 
   if ok {
     w.Write([]byte("OK"))

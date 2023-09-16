@@ -25,7 +25,7 @@ render_with_liquid: false
 
 ![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/obama_big.jpg)
 
------
+---
 
 ![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/487px-garyjohnsonphoto_-_modified_fb_thumb.jpg)
 

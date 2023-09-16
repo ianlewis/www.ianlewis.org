@@ -41,7 +41,7 @@ unsubscribe することもできます。
 参考:
 <http://code.google.com/p/google-app-engine-samples/wiki/AppEngineMatcherService#API_methods>
 
-``` python
+```python
 from google.appengine.api import matcher
 
 def add_tweet_alert(user, tweet_text):
@@ -60,14 +60,14 @@ def add_tweet_alert(user, tweet_text):
 
     # dict もしくは、 db.Entity オブジェクトで登録すると、スキーマが必須です。
     # topic はデータスキーマの名前という意味がします。
-    topic='Tweet' 
+    topic='Tweet'
 
     matcher.subscribe(dict, query, subscribe_name, schema=schema, topic=topic)
 
 def remove_tweet_alert(user, tweet_text):
     query = 'text:"%s"' % tweet_text
     subscribe_name = "%s:%s" % (user.user_id(), tweet_text)
-    topic='Tweet' 
+    topic='Tweet'
 
     matcher.unsubscribe(query, subscribe_name, topic=topic)
 ```
@@ -77,7 +77,7 @@ def remove_tweet_alert(user, tweet_text):
 次に、データを処理した時に、 Matcher API に渡して、マッチしてもらいます。 Matcher API の結果が非同期で来ますので、
 `matcher.match()` はタスクキューにタスクを入れたの同じ感じで使います。
 
-``` python
+```python
 from google.appengine.api import matcher
 
 def process_timeline(timeline):
@@ -99,10 +99,10 @@ def process_timeline(timeline):
 結果のデータがバッチでリクエストURLに来ますので、リストで処理する必要があります。
 検索結果の１ページが１リクエストで来るイメージだと考えられます。
 
-``` python
+```python
 #
 # app.yaml に以下のURLを追加
-# 
+#
 # - url: /_ah/matcher
 #   script: path/to/this/module.py
 
@@ -121,13 +121,13 @@ class MatcherHandler(webapp.RequestHandler):
         match_ids = self.request.get_all('id')
 
         # 結果の数 == len(match_ids)
-        results_count = self.request.get('results_count')    # 
+        results_count = self.request.get('results_count')    #
 
-        # 結果のオフセット。結果のページングみたいに、オフセットが来る 
+        # 結果のオフセット。結果のページングみたいに、オフセットが来る
         results_offset = self.request.get('results_offset')
 
         # マッチしたデータを取得する
-        document = matcher.get_document(self.request) 
+        document = matcher.get_document(self.request)
 
         for id in match_ids:
             user_id, text = id.split(":")

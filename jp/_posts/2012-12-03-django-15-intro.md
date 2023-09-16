@@ -58,14 +58,14 @@ Python 3 の本格的サポートは 1.5 以降ですし、 surgo さんもも�
 Django 1.5 から、 `AUTH_USER_MODEL` という設定が増えました。この設定をすると、指定したDjango
 アプリとモデル名を使ってユーザーモデルとして利用できます。
 
-``` python
+```python
 AUTH_USER_MODEL = 'myapp.MyUser'
 ```
 
 自分のユーザーモデルに指す `ForeignKey` をこういう風に作れます。 `settings.AUTH_USER_MODEL`
 はアプリ名とモデル名が入っている文字列だけなので、 `ForeignKey` の既存機能をそのまま使えます。
 
-``` python
+```python
 from django.conf import settings
 from django.db import models
 
@@ -83,10 +83,10 @@ class Article(models.Model)
 
     class MyUser(AbstractBaseUser):
         identifier = models.CharField(max_length=40, unique=True, db_index=True)
-    
+
         date_of_birth = models.DateField()
         height = models.FloatField()
-    
+
         USERNAME_FIELD = 'identifier'
         REQUIRED_FIELDS = ['date_of_birth', 'height']
 
@@ -103,7 +103,7 @@ Django 1.5 まで、 モデルの `save()` メソッドを呼び出した時に�
 1.5 からは、保存するフィールドを指定することができるようになった。 保存するフィールドを指定するのは `update_fields`
 という引数を渡します。
 
-``` python
+```python
 mymodel.save(update_fields=['name', 'date'])
 ```
 
@@ -112,7 +112,7 @@ mymodel.save(update_fields=['name', 'date'])
 Django 1.4以下は、あるモデルのインスタンスが同じIDだったのに、データベースから２回取ってきたりしました。Django 1.5
 からは、リレーションでアクセスしたモデルインスタンスは使ったモデルを使います。
 
-``` python
+```python
 >>> first_poll = Poll.objects.all()[0]
 >>> first_choice = first_poll.choice_set.all()[0]
 >>> first_choice.poll is first_poll
@@ -141,7 +141,7 @@ Django の Deprecation ポリシーに従って、deprecated バージョンは�
 future の書き方はまだ Django 1.5 でも動くので、多くのDjango
 バージョンに対応する必要がある場合は、こういう風に書くのがおすすめです。
 
-``` html+django
+```html+django
 {% load url from future %}
 {% url 'myapp:view-name' %}
 ```
@@ -159,7 +159,7 @@ future の書き方はまだ Django 1.5 でも動くので、多くのDjango
 
 他に互換性を持たない変更があるので、
 [リリースノート](https://docs.djangoproject.com/en/dev/releases/1.5-beta-1/#backwards-incompatible-changes-in-1-5)
-を読んでみて下さい。　
+を読んでみて下さい。
 
 # まとめ
 

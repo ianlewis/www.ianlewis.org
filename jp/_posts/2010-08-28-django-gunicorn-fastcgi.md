@@ -33,13 +33,13 @@ gunicorn は何かというと、python で作られた
 を使いましたので、以下のコマンドでテストサーバーの環境を作ります。
 mysql と nginx も必要なので、インストールしておいてください。
 
-``` text
+```text
 python bootstrap.py
 ./bin/buildout init -d
 ./bin/buildout
 ```
 
-プロジェクトディレクトリのなか、 fastcgi\_nginx.conf と gunicorn\_nginx.conf
+プロジェクトディレクトリのなか、 fastcgi_nginx.conf と gunicorn_nginx.conf
 ができるので、それぞれのテストをするときに、リンクを/etc/nginx/sites-enabled/
 においてください。アプリは同じポートを使っているので、両方のconf ファイルを同時に有効にすることができない。gunicorn
 を有効にするときに、まず、fastcgi のリンクを /etc/nginx/sites-enabled/
@@ -47,19 +47,19 @@ python bootstrap.py
 
 mysql の DB は以下のSQLで作れます。
 
-``` sql
+```sql
 CREATE DATABASE gunicorn_test CHARACTER SET utf8;
 ```
 
 DBを作った後に、syncdb コマンドを実行してください。管理者は特にいらないので、 'no' を入力して大丈夫です。
 
-``` text
+```text
 ./bin/syncdb
 ```
 
 同じポートを使いますし、同時に立ち上げることができないんですが、それぞれのアプリサーバーは以下のように立ち上げます。
 
-``` text
+```text
 ./bin/runfcgi                         (fcgi prefork)
 ./bin/runfcgi_threaded                (fastcgi threaded)
 ./bin/run_gunicorn -w <# of workers>  (gunicorn)
@@ -69,7 +69,7 @@ DBを作った後に、syncdb コマンドを実行してください。管理�
 
 クライアントは以下のように環境をつくれます。
 
-``` text
+```text
 cd testing/httpclient
 python bootstrap.py
 ./bin/buildout init -d
@@ -81,7 +81,7 @@ python bootstrap.py
 プロセスの処理を10秒の間に伸びます。1秒目は50プロセス、2秒目は50プロセス。。。と言うふうにテストを行います。つまり、1秒間のテスト数はプロセス数わり遅延時間
 (500 / 10 = 50)
 
-``` text
+```text
 ./bin/python run_test.py <host> <# processes> <wait time>
 ```
 
@@ -108,20 +108,20 @@ gunicorn は 5ワーカー(リクエストを処理するプロセス)を使っ�
 
 毎回テストを行う前にDBをクリアしました。
 
-``` text
+```text
 echo "delete from perftest_mymodel;" | mysql -u root gunicorn_test
 ```
 
 テストを行った時に、 1クライアント500プロセス、10秒間にしました。ようするに、
 2000ユーザーを同時にアプリをアクセスして、サーバーの処理できるリミットをテストしました。
 
-``` text
+```text
 ./bin/python runtest xxx.compute.internal 500 10
 ```
 
 # テストの成果
 
-``` text
+```text
 fastcgi (threaded)
 ---------------------------
 

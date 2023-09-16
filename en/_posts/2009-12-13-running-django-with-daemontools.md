@@ -25,7 +25,7 @@ process.
 
 # /service/myapp/run
 
-``` bash
+```bash
 #!/bin/bash
 
 BASEDIR="/home/www/"

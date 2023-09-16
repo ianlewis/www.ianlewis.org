@@ -17,7 +17,7 @@ Django 1.2 のマルチDB対応は
 に書き込んだ時に、データがスレーブDBまで流れるラグがあるので、DBに書き込んだデータがすぐDBから取れない場合がある
 (eventual consistency)。
 
-``` python
+```python
 obj = MyModel.objects.create(content="Hello World")
 obj.content = "Hello World!"
 obj.update()
@@ -28,7 +28,7 @@ obj2 = MyModel.objects.get(pk=obj.id)
 
 こういう場合に対応するには、 QuerySet の using メソッドを使わないとダメです。
 
-``` python
+```python
 obj = MyModel.objects.create(content="Hello World")
 obj.content = "Hello World!"
 obj.update()

@@ -9,7 +9,7 @@ render_with_liquid: false
 
 Python descriptors allow you to create properties on python objects
 that are the result of executing some code. One of the simplest ways of doing
-that is using the ``@property`` decorator. Here, accessing the `myprop` will
+that is using the `@property` decorator. Here, accessing the `myprop` will
 call the method and return the resulting `"data"`.
 
 ```python

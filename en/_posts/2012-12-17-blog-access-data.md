@@ -17,9 +17,9 @@ look at are what content people are looking at (particularly the
 language of the content), what the user's language is, and where they
 are accessing from and that's basically it:
 
-  - Content
-  - Language
-  - Location
+- Content
+- Language
+- Location
 
 # Content
 

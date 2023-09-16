@@ -20,7 +20,7 @@ setuidgidのコマンドになるので、プロセスの標準パイプを正�
 
 # /service/myapp/run
 
-``` bash
+```bash
 #!/bin/bash
 
 BASEDIR="/home/www/"

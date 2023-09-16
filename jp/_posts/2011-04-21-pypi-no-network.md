@@ -55,7 +55,7 @@ pip はバンドルを作成する機能があります。バンドルは `requi
     Django==1.3
     django-debug-toolbar==0.8.4
     South==0.7.3
-    ... 
+    ...
 
 # デプロイ
 
@@ -64,7 +64,7 @@ pip はバンドルを作成する機能があります。バンドルは `requi
 まずは、 バンドルを作成するコマンドを作る。 `runs_once()` デコレータで一回しか実行しないようにします。 `local()`
 メソッドでローカルコマンドを叩きます。
 
-``` python
+```python
 from fabric.decorators import runs_once
 from fabric.api import local
 
@@ -77,7 +77,7 @@ def create_bundle():
 
 次は、コード自体をアップするコマンドを作ります。下記は、 mercurial を ssh で push しています。
 
-``` python
+```python
 from fabric.api import sudo, cd, local
 
 def _hg_pull():
@@ -95,7 +95,7 @@ def push():
 
 次は依存関係の更新
 
-``` python
+```python
 import os
 from fabric.api import sudo, cd, put, local
 
@@ -110,7 +110,7 @@ def update_deps():
 
 mercurial の代わりに rsync を使う場合はこんな感じで、一発でできる。
 
-``` python
+```python
 from fabric.contrib.project import rsync_project
 
 RSYNC_EXCLUDE=[".hg"]
@@ -130,7 +130,7 @@ def push():
 
 最後は、deploy コマンドを作る
 
-``` python
+```python
 def deploy():
     push()
     update_deps()

@@ -9,9 +9,9 @@ render_with_liquid: false
 
 There are a number of next generation of languages that have come out and are
 becoming popular in recent years that are trying to use what has been learned
-from large development projects.  Some of the more popular languages aimed at
+from large development projects. Some of the more popular languages aimed at
 servers are [Go](http://golang.org), [Rust](http://www.rust-lang.org/) and
-[Haskell](http://www.haskell.org/).  Others like
+[Haskell](http://www.haskell.org/). Others like
 [TypeScript](http://www.typescriptlang.org/), and
 [Dart](https://www.dartlang.org/) are targeting the client side as well as
 server side applications.
@@ -36,7 +36,7 @@ traction with a large number of developers.
 ## Statically-Typed
 
 The first thing that all of these have in common is some form of [static type
-checking](http://en.wikipedia.org/wiki/Type_system#Static_type-checking).  The
+checking](http://en.wikipedia.org/wiki/Type_system#Static_type-checking). The
 only recently released major language that doesn't have compile-time checking
 is Dart which provides a runtime mode that adds assertions about a variable's
 type. In any case, all of them generally have type checking in mind.
@@ -57,7 +57,7 @@ that you can write perfectly correct software without type checking if you
 have a bit of discipline.
 
 That said, declaring types provides the dual benefit of allowing the compiler
-to optimize code easier, as well as checking the logic itself for errors.   Some
+to optimize code easier, as well as checking the logic itself for errors. Some
 new languages, like Go, can also do some interesting things, like type inference, to
 make it less cumbersome to declare types so I think it's safe to say typed
 languages will be a general trend in the future.
@@ -78,12 +78,13 @@ Languages that implement compiling to native code include Go, Rust, and
 Haskell.
 
 ## Cheap threads
------------------------
+
+---
 
 Having some kind of cheap way to create processes or threads is critical for
 writing concurrent programs. This could be in the form of green-threads, like
 in Go (goroutine)/Rust (task)/Haskell (threads) or "green-processes" erlang
-that don't require a full operating system thread/process.  It could be an
+that don't require a full operating system thread/process. It could be an
 event driven/callback system like Node.js, but the trend seems to be going
 towards green-threads as they can be more easily made to utilize multiple
 cores.
@@ -124,7 +125,8 @@ write compilers and parsers that give you good feedback about whether a
 function is actually correct or not or writes tests automatically for you.
 
 ## Corporate Stewardship
-----------------------------------
+
+---
 
 ![](https://storage.googleapis.com/static.ianlewis.org/prod/img/715/golang_small.jpg)
 
@@ -132,8 +134,8 @@ I noticed that a lot of new open source languages and programming environments
 have been started by and stewarded by corporations to solve their business
 needs. Go and Dart were created by folks at [Google](http://www.google.com/).
 Rust was created by an independent developer working at Mozilla but is
-currently stewarded by [Mozilla](http://www.mozilla.com/).  TypeScript was
-created by people at [Microsoft](http://www.microsoft.com/).  Erlang isn't new
+currently stewarded by [Mozilla](http://www.mozilla.com/). TypeScript was
+created by people at [Microsoft](http://www.microsoft.com/). Erlang isn't new
 but fits this pattern as it was created at [Ericsson](http://www.ericsson.com/)
 as a language for telephony applications.
 
@@ -152,6 +154,6 @@ will continue to be a trend in the future.
 ## Conclusion
 
 So that's it. Just a few patterns I noticed in programming languages and
-environments. What do you think?  I'm sure I missed something so if there is
+environments. What do you think? I'm sure I missed something so if there is
 something on your mind just leave a comment below or get in touch on Twitter →
 [@IanMLewis](https://twitter.com/IanMLewis)

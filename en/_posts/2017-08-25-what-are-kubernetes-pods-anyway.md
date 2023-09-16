@@ -35,7 +35,7 @@ There are lots of resources on learning more about namespaces and cgroups that a
 - [What even is a container: namespaces and cgroups](https://jvns.ca/blog/2016/10/10/what-even-is-a-container/)
 - [Cgroups, namespaces, and beyond: what are containers made from?](https://www.youtube.com/watch?v=sK5i-N34im8)
 
-The thing I wanted to point out here was that cgroups and each namespace type are *separate features*. Some subset of the namespaces listed above could be used or not used at all. You could use only cgroups or some other combination of the two (well, you're still using namespaces and cgroups just the root ones but whatever). Namespaces and cgroups also work on *groups* of processes. You have have multiple processes running with a single namespace. That way they can see and interact with each other. Or you could run them in a single cgroup. That way the processes together will be limited to a specific amount of CPU and RAM.
+The thing I wanted to point out here was that cgroups and each namespace type are _separate features_. Some subset of the namespaces listed above could be used or not used at all. You could use only cgroups or some other combination of the two (well, you're still using namespaces and cgroups just the root ones but whatever). Namespaces and cgroups also work on _groups_ of processes. You have have multiple processes running with a single namespace. That way they can see and interact with each other. Or you could run them in a single cgroup. That way the processes together will be limited to a specific amount of CPU and RAM.
 
 ## Combinations of Combinations
 
@@ -46,6 +46,7 @@ When you run a container with Docker normally, Docker creates namespaces and cgr
 The containers are essentially stand alone silos, with the exception that they might have a volume or port mapped to the host so they can communicate out.
 
 However, with some extra command line arguments, you can combine Docker containers using a single namespace. First let's create a single container for nginx.
+
 ```console
 $ cat <<EOF >> nginx.conf
 > error_log stderr;
@@ -65,6 +66,7 @@ $ docker run -d --name nginx -v `pwd`/nginx.conf:/etc/nginx/nginx.conf -p 8080:8
 ```
 
 Next we'll run a container with [ghost](https://github.com/TryGhost/Ghost) running in it. But this time we'll add some extra arguments to have it join our nginx container's namespaces.
+
 ```console
 $ docker run -d --name ghost --net=container:nginx --ipc=container:nginx --pid=container:nginx ghost
 ```

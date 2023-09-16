@@ -12,10 +12,10 @@ Masuda](http://twitter.com/whosaysni) which allows you to render data to
 a pdf using [trml2pdf](http://pypi.python.org/pypi/trml2pdf).
 
 [template2pdf](http://code.google.com/p/template2pdf/) provides a
-generic view called direct\_to\_pdf which will render a rml template
+generic view called direct_to_pdf which will render a rml template
 directly to pdf.
 
-``` python
+```python
 # coding: utf-8
 
 from django.http import HttpResponse

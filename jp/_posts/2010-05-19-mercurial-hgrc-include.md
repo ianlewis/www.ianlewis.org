@@ -15,7 +15,7 @@ mercurial の hgrc はそういうのができなかった。
 からできるらしい](http://stackoverflow.com/questions/1867237/load-multiple-hgrc-files-ie-some-with-machine-specific-settings)
 です。下のコードを hgrc に入れると include ができる。超便利
 
-``` text
+```text
 %include .hgrc.local
 ```
 

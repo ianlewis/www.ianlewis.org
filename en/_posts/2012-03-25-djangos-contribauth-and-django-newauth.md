@@ -54,7 +54,7 @@ The detailed explanation:
     logged into the site itself. To their (perhaps non-technical minds)
     the admin was a completely separate system and users and logins were
     fundamentally different and managed separately. The fact that normal
-    users couldn't log into the admin without an is\_staff flag set to
+    users couldn't log into the admin without an is_staff flag set to
     true was lost on them. Being in Japan it may be perhaps a cultural
     problem but the fact that Django mandates that behaviour made it
     very difficult for us to use contrib.auth
@@ -67,7 +67,7 @@ The detailed explanation:
     modifiable with auth.User. etc. We wanted a solution where the
     fields on the user model were not set in stone and could be decided
     by the developer. No working around the existing fields on
-    auth.User. No get\_profile() on every damn request because one field
+    auth.User. No get_profile() on every damn request because one field
     on the profile was needed every request.
 3.  **Permissions are included with contrib auth but are pretty much
     useless to us**: We never used them in a project and they pretty

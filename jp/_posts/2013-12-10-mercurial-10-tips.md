@@ -25,7 +25,7 @@ bf5b22ba1b0243dcab398620b5c1c5ea5b7fef36: fuga
 
 ## author の解析
 
-テンプレートはいいところは unix のパイプコマンドでいろなことができるところです。例えば、コミットの ``author`` の解析:
+テンプレートはいいところは unix のパイプコマンドでいろなことができるところです。例えば、コミットの `author` の解析:
 
 ```
 $ hg log --template="{author}" | sort | uniq -c | sort -r
@@ -84,7 +84,7 @@ Initial
 
 こんな感じになります:
 
-```    
+```
 $ (echo '<?xml version="1.0" encoding="UTF-8" ?>\n<log>' && hg log --template="`cat my_template.xml`" && echo "</log>")
 <?xml version="1.0" encoding="UTF-8" ?>
 <log>
