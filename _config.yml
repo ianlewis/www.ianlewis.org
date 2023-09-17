@@ -41,7 +41,7 @@ plugins:
 # Theme
 plainwhite:
   name: Ian Lewis
-  tagline: Engineer
+  tagline: Engineer in Tokyo
   # TODO: Update to use better portfolio image.
   portfolio_image: assets/portfolio.jpg
 
