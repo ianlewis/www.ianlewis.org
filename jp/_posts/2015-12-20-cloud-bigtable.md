@@ -10,7 +10,7 @@ render_with_liquid: false
 
 > これは [Google Cloud Platform Advent Calendar 2015](http://qiita.com/advent-calendar/2015/gcp)の19日目の記事です。
 
-<img alt="Cloud Bigtable" title="Cloud Bigtable" class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/746/bigtable.png">
+<img alt="Cloud Bigtable" title="Cloud Bigtable" class="align-center" src="/assets/images/746/bigtable.png">
 
 そろそろ僕がGoogleに入って1年になります。ほんとにあっという間に2015年が終わった感じです。「Developer Advocate」という肩書のエバンジェリストのような、エバンジェリストじゃないような仕事をしています。
 僕の仕事の一つが、今年の5月にbetaとして公開した「[Cloud Bigtable](https://cloud.google.com/bigtable/)」のリリース支援です。Cloud Bigtable というのは、Googleの有名な大規模分散データベースの「Bigtable」をGoogleの開発者以外でも使えるようにしたサービス。このBigtableはGoogleのサービス、検索、Maps、Gmailなど、ほとんどのサービスを支えています。
@@ -29,11 +29,11 @@ Googleでは（当然のことながら）検索結果をものすごい速い�
 
 そしてコストパフォマンスも高い。書き込みスループットで考えると MB/s per $ はHBaseやCassandraの倍以上です。
 
-[![Cloud Bigtable Performance](https://storage.googleapis.com/static.ianlewis.org/prod/img/746/big%20table%205-6%20-%20GCP.png)](https://storage.googleapis.com/static.ianlewis.org/prod/img/746/big%20table%205-6%20-%20GCP.png)
+[![Cloud Bigtable Performance](/assets/images/746/big%20table%205-6%20-%20GCP.png)](https://storage.googleapis.com/static.ianlewis.org/prod/img/746/big%20table%205-6%20-%20GCP.png)
 
 ちなみに、以下のグラフはリアルタイムのパフォーマンスです。僕が作ったデモアプリで作成しています。上のグラフはリクエスト数、下のグラフはレイテンシー（黒い線がp50 、青い線がp99）です。1.5万 QPS (query per second)の状態で、レイテンシーのp99が大体10ms以内 なのがわかります。
 
-[![Cloud Bigtable Demo](https://storage.googleapis.com/static.ianlewis.org/prod/img/746/demo.png)](https://storage.googleapis.com/static.ianlewis.org/prod/img/746/demo.png)
+[![Cloud Bigtable Demo](/assets/images/746/demo.png)](https://storage.googleapis.com/static.ianlewis.org/prod/img/746/demo.png)
 
 ## Bigtableの設計
 
@@ -42,11 +42,11 @@ BigtableはNoSQLの概念を人気にさせたと言われています。でもN
 BigtableはいわゆるKey/Valueデータベースですが、単純なKey/Valueデータベースにはないいくつか特殊な機能を持っています。
 まずは、一つのキーに複数の値を持つ機能があります。これはRDBMSと同じようなコラムとして表現されるけど、RDBMSと違ってテーブルスキーマがなく、rowデータに含まれているコラムがrowごとに変わってもよいのです。図にすると、
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/746/rows.png)
+![](/assets/images/746/rows.png)
 
 rowもキーによってソートされているので、rowキーを指定してスキャンができます。しかしそれぞれのコラムに入っているデータでのクエリーやスキャンができません。RDBMS的に言うとprimary key indexがあるけど、secondary indexがない、ということですね。
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/746/scan.png)
+![](/assets/images/746/scan.png)
 
 row間のトランザクションはないけど、一つのrowに含まれているコラムに対して、書き込みの整合性はあります。
 

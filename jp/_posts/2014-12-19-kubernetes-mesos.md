@@ -30,7 +30,7 @@ k8s は Docker コンテナーのクラスターを管理してくれるもの�
 管理してくれます。そのコンテナーに動かしているものをどうやってアクセスするかをサービス(Service)という定義で
 設定します。それぞれのサーバーとコンテナーとネットワークなどの面倒をしてくれる。
 
-![Kubernetes](https://storage.googleapis.com/static.ianlewis.org/prod/img/727/k8s_big.png)
+![Kubernetes](/assets/images/727/k8s_big.png)
 
 その上に、クラスターを管理するために API を用意してる。そのAPIを使って、コンテナーを追加したら、
 減らしたりすることができます。コンテナーを追加したり、減らしたりすると k8s のスケジューラーで

@@ -21,51 +21,51 @@ render_with_liquid: false
 [Wikipedia](http://en.wikipedia.org/wiki/United_States_third_party_and_independent_presidential_candidates,_2012)
 で見れます。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/romney_big.jpg)
+![image](/assets/images/683/romney_big.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/obama_big.jpg)
+![image](/assets/images/683/obama_big.jpg)
 
 ---
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/487px-garyjohnsonphoto_-_modified_fb_thumb.jpg)
+![image](/assets/images/683/487px-garyjohnsonphoto_-_modified_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/444px-jill_stein_2012_fb_thumb.jpg)
+![image](/assets/images/683/444px-jill_stein_2012_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-stephen_durham_campaign_portrait_fb_thumb.jpg)
+![image](/assets/images/683/100px-stephen_durham_campaign_portrait_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-robert_david_steele_fb_thumb.jpg)
+![image](/assets/images/683/100px-robert_david_steele_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-robert_burck_fb_thumb.jpg)
+![image](/assets/images/683/100px-robert_burck_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-rep_virgil_goode_fb_thumb.jpg)
+![image](/assets/images/683/100px-rep_virgil_goode_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-randy_blythe_fb_thumb.jpg)
+![image](/assets/images/683/100px-randy_blythe_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-randall_terry_2_fb_thumb.jpg)
+![image](/assets/images/683/100px-randall_terry_2_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-r._lee_wrights_august_2012_fb_thumb.jpg)
+![image](/assets/images/683/100px-r._lee_wrights_august_2012_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-r.j._harris_fb_thumb.jpg)
+![image](/assets/images/683/100px-r.j._harris_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-peta_lindsay_fb_thumb.jpg)
+![image](/assets/images/683/100px-peta_lindsay_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-pastor_terry_jones_before_the_march_fb_thumb.jpg)
+![image](/assets/images/683/100px-pastor_terry_jones_before_the_march_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-kotlikoff_fb_thumb.jpg)
+![image](/assets/images/683/100px-kotlikoff_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-jimhedges_fb_thumb.jpg)
+![image](/assets/images/683/100px-jimhedges_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-jerry_white_addresses_a_meeting_fb_thumb.jpg)
+![image](/assets/images/683/100px-jerry_white_addresses_a_meeting_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-dcastle08_fb_thumb.jpg)
+![image](/assets/images/683/100px-dcastle08_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-carl_e._person_town_attorney_general_attire_fb_thumb.jpg)
+![image](/assets/images/683/100px-carl_e._person_town_attorney_general_attire_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-buddy_roemer_by_gage_skidmore_fb_thumb.jpg)
+![image](/assets/images/683/100px-buddy_roemer_by_gage_skidmore_fb_thumb.jpg)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-andre_barnett_fb_thumb.png)
+![image](/assets/images/683/100px-andre_barnett_fb_thumb.png)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/100px-a_photo_of_michealene_risley_fb_thumb.png)
+![image](/assets/images/683/100px-a_photo_of_michealene_risley_fb_thumb.png)
 
 独自と第三者の候補者は数多いのですが、投票用紙に載る候補は州がそれぞれ決まるので、二大政党以外はすべての州の投票用紙に乗れないので、選出する可能性はほぼゼロです。大統領選挙に出馬するのがほぼ講義の方向性や、ある問題をアメリカの国民に知らせる為と考えれば良い。
 
@@ -80,7 +80,7 @@ Elections](https://www.google.com/elections/ed/us/results)
 などの選挙情報まとめサイトが、赤い州と青い州を表示しているのが、ロムニーさんとオバマさんがそれぞれ
 Electoral College の投票を引き取った表になるわけです。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/google_politics_big.png)
+![image](/assets/images/683/google_politics_big.png)
 
 そして、アメリカは、州によってどの政党が勝つのが大体決まっている場合があります。決まってない、どの候補者が勝ってももおかしくない州は Swing
 State と言います。Swing State 以外は決まっているので、ほぼ Swing State で選挙が決まる。
@@ -111,8 +111,8 @@ House](http://elections.nytimes.com/2012/results/president/scenarios)
 
 <div class="lightbox" data-align="center">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/683/paths_big.png>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/683/paths.png>
+</assets/images/683/paths_big.png>
+</assets/images/683/paths.png>
 
 </div>
 
@@ -125,8 +125,8 @@ Florida と Ohio はマストです。オバマさんは負けたらいたいん
 
 <div class="lightbox" data-align="center">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/683/paths2_big.png>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/683/paths2.png>
+</assets/images/683/paths2_big.png>
+</assets/images/683/paths2.png>
 
 </div>
 
@@ -157,17 +157,17 @@ Dead?](http://techcrunch.com/2012/11/07/pundit-forecasts-all-wrong-silver-perfec
 Suffrage](http://www.buzzfeed.com/buzzfeedpolitics/what-the-2012-election-would-have-looked-like-with)
 ですと、1850年のアメリカだと今年の選挙はこういう結果になったでしょう。1850年では、白人の男性しか投票できなかった。女性や、少数民族の重要性を伝えるビジュアライゼーション。男性だけの場合とか、白人(男女)だけだとか、いろな地図が見れるので、是非見てみてください。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/sufferage_big.jpg)
+![image](/assets/images/683/sufferage_big.jpg)
 
 普通の地図だと、アメリカの面積がみれるだけで、ある場所の人口が見えない。郡(County)の地図を見ると、非常に赤い。これだけじゃ、選挙の結果がちゃんと見えるかされてない。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/countymaprb512_big.png)
+![image](/assets/images/683/countymaprb512_big.png)
 
 それで、 Michigan大学の Mark Newman教授が、 [Maps of the 2012 US presidential
 election results](http://www-personal.umich.edu/~mejn/election/2012/)
 という地図編を作りました。青と赤の間の色で選挙の結果を表して、そして、人口が多い場所を大きくして、少ないところを小さくするようなビジュアライゼーションを作りました。これで、オバマさんに投票した人たちは、都市圏に集中していて、ロムニーさんに投票した人たちは、あまり集中する場所がなく、田舎に幅広く拡散されているという全体的な状況がわかる。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/683/countycartpurple512_big.png)
+![image](/assets/images/683/countycartpurple512_big.png)
 
 他に州単位とか、人口ではなく、Electoral College の投票を使った地図とかもあるので、是非見てみてください。
 

@@ -28,9 +28,9 @@ about half and half. Really it's about 44% English and 43% Japanese. The
 rest is a long tail of other URLs. But you can see that the content is
 accessed roughly equally.
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/688/content_table_big.png)
+![image](/assets/images/688/content_table_big.png)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/688/content_pie_big.png)
+![image](/assets/images/688/content_pie_big.png)
 
 I was really surprised how very close to equal the English and Japanese
 content accesses were. This also surprised me since I tend to update my
@@ -55,7 +55,7 @@ German etc. by and large read the English content. Those users make up
 the difference between the English and Japanese users in terms of
 access.
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/688/language_chart.png)
+![image](/assets/images/688/language_chart.png)
 
 # Location
 
@@ -65,7 +65,7 @@ about 13% from the U.S. The rest is a huge long tail of countries from
 India, to Spain, to Kenya, to Latvia almost exclusively looking at
 English content.
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/688/location_pie_big.png)
+![image](/assets/images/688/location_pie_big.png)
 
 # Conclusion
 

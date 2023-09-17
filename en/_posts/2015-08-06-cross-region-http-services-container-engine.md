@@ -153,7 +153,7 @@ NAME              REGION IP_ADDRESS      IP_PROTOCOL TARGET
 http-content-rule        107.178.219.122  TCP         http-lb-proxy
 ```
 
-![Nginx](https://storage.googleapis.com/static.ianlewis.org/prod/img/741/nginx.png)
+![Nginx](/assets/images/741/nginx.png)
 
 You can then verify that your requests are going to the appropriate backend by
 viewing the logs for the nginx container.

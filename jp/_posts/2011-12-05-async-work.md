@@ -51,11 +51,11 @@ From
 
 そして、受信側がメッセージを解釈した後、必要なアクションをしたり、情報を集中したりしてから、返信をします。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/669/communicationflow.png)
+![image](/assets/images/669/communicationflow.png)
 
 # Be Asynchronous
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/669/asynccommunicationflow.png)
+![image](/assets/images/669/asynccommunicationflow.png)
 
 Asynchronous は「非同期」という意味。仕事の非同期なやり方ってそもそも何か？ まずは、「同期」コミュニケーションを説明します。
 同期コミュニケーションの場合は、メッセージの発信側は仕事を進めるには、受信側の返信を待たなくてはいけない。なぜなら、返信に仕事に必要が情報が含まれます。同期コミュニケーションの問題は受信側が返信できるまでに時間かかったり、受信側の作業が遅かったりしますので、発信側の待つ時間が多いです。この待つ時間は無駄です。そして、発信側や、受信側はこの時間は無駄と何となく分かっているので、受信側が早く返信をするために、受信側に圧力をかけて、適当な返信が出てくるのが多くて、さらにコミュニケーションが発生してしまったり、仕事の質が下がったりするのも無駄になります。
@@ -76,7 +76,7 @@ Asynchronous は「非同期」という意味。仕事の非同期なやり方�
 
 # Meetings are f\*\*king toxic
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/669/meeting.jpg)
+![image](/assets/images/669/meeting.jpg)
 
 Zach さんが書いていただいた内容はもともと [37signals](http://37signals.com/) という会社の
 [ブログ](http://gettingreal.37signals.com/) の [Meetings Are

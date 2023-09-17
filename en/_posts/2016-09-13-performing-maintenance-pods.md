@@ -14,7 +14,7 @@ Kubernetes includes a feature called [services](http://kubernetes.io/docs/user-g
 
 Each service has a list of endpoints for the service which correspond to the pods for that service. This list of endpoints is updated automatically with the IPs and ports for the pods based on a label selector defined on the service. This allows the service to be loosely coupled to the pods themselves. You can see the selector pattern used in many other kubernetes components like [Deployments](http://kubernetes.io/docs/user-guide/deployments/) and [ReplicaSets](http://kubernetes.io/docs/user-guide/replicasets/).
 
-[<img alt="Service Endpoints" title="Service Endpoints" class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/753/endpoints.png">](https://storage.googleapis.com/static.ianlewis.org/prod/img/753/endpoints.png)
+[<img alt="Service Endpoints" title="Service Endpoints" class="align-center" src="/assets/images/753/endpoints.png">](https://storage.googleapis.com/static.ianlewis.org/prod/img/753/endpoints.png)
 
 Because the list of endpoints is updated automatically based on the label selector, we take take misbehaving pods off of the endpoints for debugging and maintenance by updating the labels on the pod so that it doesn't match the selector. In order for us to update a service selector so that pods can be removed from it we will need to have a selector that can be easily updated. In order to do that we'll add a label that we can toggle to take any of our pods out of service.
 

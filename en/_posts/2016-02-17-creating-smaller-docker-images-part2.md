@@ -35,7 +35,7 @@ larger than needed. In order to reduce the number of layers and their sizes
 down you can squash the layers much like you would squash git commits. There is
 a really cool tool that will do this for you called [docker-squash](https://github.com/jwilder/docker-squash). You can read more about it in the [author’s original blog post](http://jasonwilder.com/blog/2014/08/19/squashing-docker-images/).
 
-![Vise](https://storage.googleapis.com/static.ianlewis.org/prod/img/748/vise.jpg)
+![Vise](/assets/images/748/vise.jpg)
 
 _[Creative Commons Attribution](https://creativecommons.org/licenses/by/2.0/) by [Communications Mann](https://www.flickr.com/photos/spenceannaaug18/7069654045/in/photolist-bLHPQZ-aF3qHd-aEq79z-8yQzQt-5jDvQ8-aEYmdF-aEx66j-5EZwFg-dSBZFb-2Ypqdi-5Uw2gF-3b1dmA-3aVF7M-dZF1V5-a55maH-6tXnaY-qAJkzw-bEVr7X-e4dngq-2ystn-eA1PU6-aFMxwn-9YReBh-4jkvuR-efUaTT-dZEXQU-dZFrq5-f4AToE-ngJPnE-7Hc1gx-bDaK7t-dnGexK-d9J17o-kwCjdU-snrBcV-dg7aAX-tTDMUC-7NFwDp-iYLYD7-tTMWt6-cYuZob-64Tpi-ekJEBJ-dvB96q-7NFwRR-8H7DAm-8H7DzL-747sy4-bLjCEX-bxpW8E)_
 

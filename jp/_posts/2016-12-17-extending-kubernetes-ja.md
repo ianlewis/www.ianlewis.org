@@ -16,23 +16,23 @@ Kubernetesは`Deployment`, `Secret`, `ConfigMap`, `Ingress`など、いろいろ
 
 Kubernetesをどうやって拡張するかを説明する前に、そもそもKubernetesのアーキテクチャを説明しなくちゃいけない。KubernetesのマスターにAPIサーバーはもちろんあるんですが、APIサーバーは基本的にKubernetesのオブジェクトデータのCRUDオペレーションくらいしかやっていない。例えば、`Deployment`の動きの実装はAPIサーバーには入っていない。ノードが落ちたら、そこに入っていたポッドを別のサーバーに移動したり、ローリングアップデートの動きなどはDeploymentコントローラーで実装されていて、コントローラーマネジャー(kube-controller-manager)というデーモンに入っている。コントローラーマネジャーは何かというと管理に便利だったため、Kubernetesの標準オブジェクト(`Deployment`, `ReplicaSet`, `DaemonSet`, `StatefulSet`など)の複数のコントローラーが合わせて入っているデーモン。
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/759/kube-controller-manager.png)
+![](/assets/images/759/kube-controller-manager.png)
 
 コントローラーは何かと言いますと、コントロールループで、クラスタのあるべき状態（APIサーバー・etcdに入っているデータ)とクラスタの実際の状態を常に比較して、クラスタのあるべき状態をクラスタに実現させるデーモン。ユーザーがAPIサーバーにあるべき状態を保存したあとに動作するものなので、必然的に非同期のアーキテクチャになる。
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/759/control-loop.jpg)
+![](/assets/images/759/control-loop.jpg)
 
 APIサーバーにオブジェクトの追加、変更、削除を監視できるWatch APIがある。コントローラーマネジャーのコントローラーたちは、APIサーバーのWatch APIを使って、該当のオブジェクトを監視して、他のオブジェクトを作ったり、更新したりする。例えば、`Deployment`コントローラーは`Deployment`が新しく作られたら、その`Deployment`に紐づく`ReplicaSet`を作くったり、`Deployment`の`replicas`が更新されたら、紐づく`ReplicaSet`の`replicas`を更新したりします。
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/759/controller.png)
+![](/assets/images/759/controller.png)
 
 このコントローラーを組み合わせることもできます。例えば、`ReplicaSet`のコントローラーがさらにあります。`Deployment`コントローラーが`ReplicaSet`を更新したりするけど、`ReplicaSet`の`replicas`に従って、Podを作成したり、監視するのが`ReplicaSet`コントローラーの役目です。
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/759/deployment.png)
+![](/assets/images/759/deployment.png)
 
 Kubernetesオブジェクトではなくて、`Ingress`や`Service`のように外部APIを使う場合もあるだろう。`type=LoadBalancer`の`Service`を作ったら、クラウドプロバイダーの`Service`コントローラーが勝手にロードバランサーを作ってくれることもできます。
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/759/cloud.png)
+![](/assets/images/759/cloud.png)
 
 ## Kubernetes を拡張する
 

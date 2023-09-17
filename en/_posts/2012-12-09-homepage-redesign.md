@@ -13,7 +13,7 @@ different look and feel. Here's what the old site looked like since I
 converted it to [Django](https://www.djangoproject.com/) back [3 or so
 years ago](http://www.ianlewis.org/en/new-django-homepage):
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/689/old_homepage_big.png)
+![image](/assets/images/689/old_homepage_big.png)
 
 # No More Lifestream
 
@@ -55,7 +55,7 @@ them the choice of which they wanted to read. English or Japanese if
 they could read it. I added this idea to the original site's top page
 and I carried it over to the new design which looks like this:
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/689/new-top_big.png)
+![image](/assets/images/689/new-top_big.png)
 
 # Bootstrap
 
@@ -71,7 +71,7 @@ using media queries so, in general, the content is laid out well on
 mobile devices. I haven't had a lot of mobile access on the site, but I
 did want to make it more readable for those that do.
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/689/2012-12-09_23.34.47_small.png)
+![image](/assets/images/689/2012-12-09_23.34.47_small.png)
 
 # Onward
 

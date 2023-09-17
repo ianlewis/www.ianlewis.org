@@ -20,28 +20,28 @@ ae35 の表情は想像してみるとあまり感心してないように見え
 
 <div class="lightbox" data-align="left">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/686/ae351_thumbnail.jpg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/686/ae351.jpg>
+</assets/images/686/ae351_thumbnail.jpg>
+</assets/images/686/ae351.jpg>
 
 </div>
 
 <div class="lightbox" data-align="left">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/686/ae352_thumbnail.jpg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/686/ae352.jpg>
+</assets/images/686/ae352_thumbnail.jpg>
+</assets/images/686/ae352.jpg>
 
 </div>
 
 <div class="lightbox" data-align="left">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/686/ae353_thumbnail.jpg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/686/ae353.jpg>
+</assets/images/686/ae353_thumbnail.jpg>
+</assets/images/686/ae353.jpg>
 
 </div>
 
 # McKayla is Not Impressed
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/686/mckayla_medium.jpg)
+![image](/assets/images/686/mckayla_medium.jpg)
 
 その時に、McKayla Maroneyさんの「 [McKayla is Not
 Impressed](http://knowyourmeme.com/memes/mckayla-is-not-impressed)
@@ -59,15 +59,15 @@ photoshopして、本当にすごいことに感心しない McKayla さんの�
 
 <div class="lightbox" data-align="left">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/686/ae35-not-impressed_small.jpg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/686/ae35-not-impressed.jpg>
+</assets/images/686/ae35-not-impressed_small.jpg>
+</assets/images/686/ae35-not-impressed.jpg>
 
 </div>
 
 <div class="lightbox" data-align="left">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/686/ian-beat_small.jpg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/686/ian-beat.jpg>
+</assets/images/686/ian-beat_small.jpg>
+</assets/images/686/ian-beat.jpg>
 
 </div>
 
@@ -83,6 +83,6 @@ photoshopして、本当にすごいことに感心しない McKayla さんの�
 
 新しい meme が生まれた。。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/686/meme.png)
+![image](/assets/images/686/meme.png)
 
 <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -131,7 +131,7 @@ With containers we want to make our images as small as possible, but managing de
 
 ## Static Binaries
 
-<img style="width: 75%;" class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/763/lightning.jpg" />
+<img style="width: 75%;" class="align-center" src="/assets/images/763/lightning.jpg" />
 
 _[Creative Commons Attribution](https://creativecommons.org/licenses/by/2.0/deed.en) by [John Fowler](<https://commons.wikimedia.org/wiki/File:Lightning_(3762193048).jpg>)\_
 

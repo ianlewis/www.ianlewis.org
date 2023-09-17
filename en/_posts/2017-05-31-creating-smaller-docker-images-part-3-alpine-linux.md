@@ -8,7 +8,7 @@ tags: docker smaller-docker-images-series
 render_with_liquid: false
 ---
 
-<img alt="alpine linux" title="alpine linux" class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/761/alpinelinux-logo.png">
+<img alt="alpine linux" title="alpine linux" class="align-center" src="/assets/images/761/alpinelinux-logo.png">
 
 This is the third post in a series on making smaller Docker images. In the [first post](/en/creating-smaller-docker-images) I talked about how to create smaller images by writing better Dockerfiles. In the [second post](/en/creating-smaller-docker-images-part2) I talked about how to squash layers using docker-squash to make smaller images. These methods are great but they won't help us if we choose large base images to start with!
 

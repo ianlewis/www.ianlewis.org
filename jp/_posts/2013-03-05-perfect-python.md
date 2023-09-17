@@ -8,7 +8,7 @@ tags: python パーパイ
 render_with_liquid: false
 ---
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/698/2013-02-27_23.08.01_medium.jpg)
+![image](/assets/images/698/2013-02-27_23.08.01_medium.jpg)
 
 僕が執筆に参加していた「 [パーフェクトPython](http://gihyo.jp/book/2013/978-4-7741-5539-5)
 」は本日から発売されます！

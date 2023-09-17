@@ -30,7 +30,7 @@ RUN ...
 
 Docker単体では、Dockerfileのコマンドとイメージレイヤーの作成を切り離すことができない設計になっている。普段、この設計は大丈夫だけど、必要より大きなイメージができてしまう場合がある。レイヤーの数を減らすのとレイヤーの大きさを小さくするには、Dockerイメージのレイヤーを[gitのコミットと同じように圧縮する](http://www.backlog.jp/git-guide/stepup/stepup7_5.html)かっこいいツール[docker-squash](https://github.com/jwilder/docker-squash)がある。
 
-![Vise](https://storage.googleapis.com/static.ianlewis.org/prod/img/748/vise.jpg)
+![Vise](/assets/images/748/vise.jpg)
 
 _[Creative Commons Attribution](https://creativecommons.org/licenses/by/2.0/) by [Communications Mann](https://www.flickr.com/photos/spenceannaaug18/7069654045/in/photolist-bLHPQZ-aF3qHd-aEq79z-8yQzQt-5jDvQ8-aEYmdF-aEx66j-5EZwFg-dSBZFb-2Ypqdi-5Uw2gF-3b1dmA-3aVF7M-dZF1V5-a55maH-6tXnaY-qAJkzw-bEVr7X-e4dngq-2ystn-eA1PU6-aFMxwn-9YReBh-4jkvuR-efUaTT-dZEXQU-dZFrq5-f4AToE-ngJPnE-7Hc1gx-bDaK7t-dnGexK-d9J17o-kwCjdU-snrBcV-dg7aAX-tTDMUC-7NFwDp-iYLYD7-tTMWt6-cYuZob-64Tpi-ekJEBJ-dvB96q-7NFwRR-8H7DAm-8H7DzL-747sy4-bLjCEX-bxpW8E)_
 
@@ -95,7 +95,7 @@ python-squashed     latest              18d8ebf067fd        11 days ago
 
 上でDockerがイメージのVirtual Sizeを表示している。イメージの大きさは、「仮想サイズ」として表示しているのは Dockerがイメージレイヤーを再利用するので、このサイズは単に全てのレイヤーのサイズを合わせた数字になる。実際に利用される容量はそれより小さい場合がある。例えば、`debian:jessie`を継承するイメージが複数あると、`debian:jessie`の分は再利用される。[`git merge --squash`](http://www.backlog.jp/git-guide/stepup/stepup7_7.html)と同じように`docker-squash`はレイヤーを圧縮するとまったく新しいレイヤーが作成する。でも、へたにやってしまうと以前に再利用された分は再利用できなくなって、全体的に利用されるサイズが大きくなる。
 
-![Docker Images](https://storage.googleapis.com/static.ianlewis.org/prod/img/749/images.svg)
+![Docker Images](/assets/images/749/images.svg)
 
 `docker-squash`はこの問題を軽減するのに、あるレイヤーIDから圧縮して、そのレイヤーの親レイヤーを再利用する。デフォルトでは最初のFROMレイヤーから圧縮する。そのデフォルトだと、`debian:jessie`など、よく継承されるイメージを再利用できて、そのレイヤーの内容は毎回ダウンロードしなくてもいいけど、`-from`オプションを指定すると、指定したレイヤーIDから圧縮することができる。そうすると、例えば、社内用のベースイメージを再利用できる。
 

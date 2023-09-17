@@ -19,7 +19,7 @@ This post is the first in a series that will be in four parts:
 
 This post will explain what container runtimes are and why there is so much confusion. I will then dive into different types of container runtimes, what they do, and how they are different from each other.
 
-<img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/768/notsure.png" alt="Not sure if this refers to Kubernetes container runtime, low-level container runtime, or movie runtime" class="align-center" />
+<img src="/assets/images/768/notsure.png" alt="Not sure if this refers to Kubernetes container runtime, low-level container runtime, or movie runtime" class="align-center" />
 
 Traditionally, a computer programmer might know "runtime" as either the lifecycle phase when a program is running, or the specific implementation of a language that supports its execution. An example might be the Java HotSpot runtime. This latter meaning is the closest to "container runtime". A container runtime is responsible for all the parts of running a container that isn't actually running the program itself. As we will see throughout this series, runtimes implement varying levels of features, but running a container is actually all that's required to call something a container runtime.
 
@@ -57,7 +57,7 @@ When folks think of container runtimes, a list of examples might come to mind; r
 
 With that in mind you can see that the container runtime space is fairly complicated. Each runtime covers different parts of this low-level to high-level spectrum. Here is a very subjective diagram:
 
-<img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/768/runtimes.png" class="align-center" />
+<img src="/assets/images/768/runtimes.png" class="align-center" />
 
 So for practical purposes, actual container runtimes that focus on just running containers are usually referred to as "low-level container runtimes". Runtimes that support more high-level features, like image management and gRPC/Web APIs, are usually referred to as "high-level container tools", "high-level container runtimes" or usually just "container runtimes". I'll refer to them as "high-level container runtimes". It's important to note that low-level runtimes and high-level runtimes are fundamentally different things that solve different problems.
 

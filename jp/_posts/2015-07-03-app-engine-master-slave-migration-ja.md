@@ -10,7 +10,7 @@ render_with_liquid: false
 
 App Engineの一部のユーザーに最近は以下のようなメールが何件届いていると思います。こういうようなメールは英語で書かれいて、「英語を読むの面倒くせぇー、スルーしよう」ってメールを消す方が多いんじゃないかなと思うんだが、実は重要なお知らせです。
 
-![Master-Slave Datastore Email](https://storage.googleapis.com/static.ianlewis.org/prod/img/736/master-slave-datastore-email.png)
+![Master-Slave Datastore Email](/assets/images/736/master-slave-datastore-email.png)
 
 このお知らせは、 **「Master-Slave Datastoreが廃止され、High Replication Datastoreに移行しなければ、あなたのアプリは7月６日（月）に無効になるよ」** というお知らせ。(正確に言えば、６日PSTなので、日本からいうと７日の朝頃)
 

@@ -20,14 +20,14 @@ Python コミュニティの中により楽しくなるのであれば、何で�
 
 ##「お前、誰よ」写真まとめ
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/649/dsc_0076.jpg)
+![](/assets/images/649/dsc_0076.jpg)
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/649/dsc_0097.jpg)
+![](/assets/images/649/dsc_0097.jpg)
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/649/dsc_0099.jpg)
+![](/assets/images/649/dsc_0099.jpg)
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/649/dsc_0104.jpg)
+![](/assets/images/649/dsc_0104.jpg)
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/649/dsc_0071-1.jpg)
+![](/assets/images/649/dsc_0071-1.jpg)
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/649/dsc_0093-1.jpg)
+![](/assets/images/649/dsc_0093-1.jpg)

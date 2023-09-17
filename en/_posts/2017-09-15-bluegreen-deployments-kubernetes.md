@@ -14,7 +14,7 @@ Kubernetes has a really awesome built-in feature called [Deployments](https://gi
 
 However, there are many legacy applications out there that don't work well with rolling updates. Some applications simply need to deploy a new version and cut over to it right away. For this, we need to perform a [blue/green deployment](https://martinfowler.com/bliki/BlueGreenDeployment.html). With blue/green deployments a new copy of the application (green) is deployed alongside the existing version (blue). Then the ingress/router to the app is updated to switch to the new version (green). You then need to wait for the old (blue) version to finish the requests sent to it, but for the most part traffic to the app changes to the new version all at once.
 
-<img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/765/bg.gif" />
+<img class="align-center" src="/assets/images/765/bg.gif" />
 
 Kubernetes doesn't have support for blue/green deployments built in. Currently the best way to do it is create a new deployment and then update the service for the application to point to the new deployment. Let's look at what that means.
 
@@ -22,7 +22,7 @@ Kubernetes doesn't have support for blue/green deployments built in. Currently t
 
 A Kubernetes deployment specifies a group of instances of an application. Behind the scenes it creates a replicaset which is responsible for keeping the specified number of instances up and running.
 
-<img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/765/deployments.png" width="80%" />
+<img class="align-center" src="/assets/images/765/deployments.png" width="80%" />
 
 We can create our "blue" deployment by saving the following yaml to a file `blue.yaml`.
 
@@ -83,7 +83,7 @@ $ kubectl apply -f service.yaml
 
 Now we have something that looks like this.
 
-<img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/765/blue.png" />
+<img class="align-center" src="/assets/images/765/blue.png" />
 
 You can test that the service is accessible and get the version.
 
@@ -125,7 +125,7 @@ $ kubectl apply -f green.yaml
 
 Now I have two deployments but the service is still pointing to the "blue" one.
 
-<img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/765/bg_progress.png" />
+<img class="align-center" src="/assets/images/765/bg_progress.png" />
 
 ## Updating the App
 
@@ -157,7 +157,7 @@ $ kubectl apply -f service.yaml
 
 Now we have something that looks like this.
 
-<img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/765/green.png" />
+<img class="align-center" src="/assets/images/765/green.png" />
 
 Updating the selector for the service is applied immediately and so you should see that the new version of nginx is serving traffic.
 

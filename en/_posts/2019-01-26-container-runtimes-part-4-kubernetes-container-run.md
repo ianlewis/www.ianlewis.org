@@ -14,7 +14,7 @@ Kubernetes runtimes are high-level container runtimes that support the [Containe
 
 In order to understand more about CRI it's worth taking a look at the overall Kubernetes architecture. The kubelet is an agent that sits on each worker node in the Kubernetes cluster. The kubelet is responsible for managing the container workloads for its node. When it comes to actually run the workload, the kubelet uses CRI to communicate with the container runtime running on that same node. In this way CRI is simply an abstraction layer or API that allows you to switch out container runtime implementations instead of having them built into the kubelet.
 
-<img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/772/CRI.png" alt="Kubernetes architecture diagram" class="align-center" />
+<img src="/assets/images/772/CRI.png" alt="Kubernetes architecture diagram" class="align-center" />
 
 ## Examples of CRI Runtimes
 

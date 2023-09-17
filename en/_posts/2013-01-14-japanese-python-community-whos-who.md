@@ -25,8 +25,8 @@ by providing a kind of who's who of Japanese Python community members.
 
 <div class="lightbox" data-align="left" alt="Atsuo with Armin Ronacher at PyCon JP 2012">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/ishimoto_small.jpg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/ishimoto_big.jpg>
+</assets/images/691/ishimoto_small.jpg>
+</assets/images/691/ishimoto_big.jpg>
 
 Atsuo with Armin Ronacher at PyCon JP 2012
 
@@ -43,8 +43,8 @@ long time Python user and community leader.
 
 <div class="lightbox" data-align="left" alt="Atsushi with his newborn baby.">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/shibata_thumbnail.jpg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/shibata_big.jpg>
+</assets/images/691/shibata_thumbnail.jpg>
+</assets/images/691/shibata_big.jpg>
 
 Atsushi with his newborn baby.
 
@@ -61,8 +61,8 @@ and led in moderating the python.jp mailing list for many years.
 
 <div class="lightbox" data-align="left" alt="Ryosuke giving away goods at PySpa">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/voluntas_thumbnail.jpg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/voluntas_big.jpg>
+</assets/images/691/voluntas_thumbnail.jpg>
+</assets/images/691/voluntas_big.jpg>
 
 Ryosuke giving away goods at PySpa
 
@@ -81,8 +81,8 @@ day long event where members give tutorials and talks on Python.
 
 <div class="lightbox" data-align="left" alt="Manabu with Tarek Zaide at PyCon JP 2011">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/pycon-japan_thumbnail.jpeg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/pycon-japan_big.jpeg>
+</assets/images/691/pycon-japan_thumbnail.jpeg>
+</assets/images/691/pycon-japan_big.jpeg>
 
 Manabu with Tarek Zaide at PyCon JP 2011
 
@@ -101,8 +101,8 @@ Plone and Python development.
 
 <div class="lightbox" data-align="left" alt="Takayuki Shimizukawa">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/shimizukawa_thumbnail.jpg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/shimizukawa_big.jpg>
+</assets/images/691/shimizukawa_thumbnail.jpg>
+</assets/images/691/shimizukawa_big.jpg>
 
 Takayuki Shimizukawa
 
@@ -119,8 +119,8 @@ and in organizing the Python mini-hackathon event.
 
 <div class="lightbox" data-align="left" alt="Takanori Suzuki">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/takanory_thumbnail.jpg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/takanory_big.jpg>
+</assets/images/691/takanory_thumbnail.jpg>
+</assets/images/691/takanory_big.jpg>
 
 Takanori Suzuki
 
@@ -138,8 +138,8 @@ PyCon JP and the Python mini-hackathon events.
 
 <div class="lightbox" data-align="left" alt="Yoshiki Shibukawa">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/shibukawa_thumbnail.jpg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/shibukawa_big.jpg>
+</assets/images/691/shibukawa_thumbnail.jpg>
+</assets/images/691/shibukawa_big.jpg>
 
 Yoshiki Shibukawa
 
@@ -158,8 +158,8 @@ Tetsuya Morimoto.
 
 <div class="lightbox" data-align="Left" alt="Makoto Tsuyuki at PyCon JP 2012">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/tsuyuki_thumbnail.jpg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/691/tsuyuki_big.jpg>
+</assets/images/691/tsuyuki_thumbnail.jpg>
+</assets/images/691/tsuyuki_big.jpg>
 
 Makoto Tsuyuki at PyCon JP 2012
 

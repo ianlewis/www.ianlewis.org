@@ -79,8 +79,8 @@ arduino の方はこの感じ。ピエゾバザーを出力PIN 8 につながっ
 
 <div class="lightbox">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/682/2012-10-28_09.41.22_small.jpg>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/682/2012-10-28_09.41.22_big.jpg>
+</assets/images/682/2012-10-28_09.41.22_small.jpg>
+</assets/images/682/2012-10-28_09.41.22_big.jpg>
 
 </div>
 

@@ -8,7 +8,7 @@ tags: python riak
 render_with_liquid: false
 ---
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/699/riak_big.png)
+![image](/assets/images/699/riak_big.png)
 
 Riak は [Basho](http://basho.com/) が作っているキーべリューストレージ (KVS) システム。 せっかく
 [Riak Meetup Tokyo](http://connpass.com/event/1823/) に参加しているっていうことを

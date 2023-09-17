@@ -325,11 +325,11 @@ You'll need to login to view the admin. One thing to note is that for
 the Django admin we authenticate with the Django user we created when
 running syncdb for the first time and not WordPress' users.
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/697/wp_admin_big.png)
+![image](/assets/images/697/wp_admin_big.png)
 
 Here's what editing a post looks like:
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/697/wp_posts_big.png)
+![image](/assets/images/697/wp_posts_big.png)
 
 # Conclusion
 

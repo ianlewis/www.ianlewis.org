@@ -8,7 +8,7 @@ tags: python django kubernetes
 render_with_liquid: false
 ---
 
-<img alt="Kubernetes + Django" title="Kubernetes + Django" class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/752/kube-django.png">
+<img alt="Kubernetes + Django" title="Kubernetes + Django" class="align-center" src="/assets/images/752/kube-django.png">
 
 In a previous post I wrote about [Kubernetes health checks](/en/using-kubernetes-health-checks). Since I'm a Python developer and a fan, I went about implementing it in Django. Health checks are a great way to help Kubernetes help your app to have high availability, and that includes Django apps. However, with Django it's not quite as simple as it sounds.
 

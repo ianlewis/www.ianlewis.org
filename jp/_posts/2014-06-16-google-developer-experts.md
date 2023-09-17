@@ -24,7 +24,7 @@ Google Developer Expert (旧Google Api Expert) を卒業しました](http://goo
 どんどん機能が爆発的に増えた。 Javaが一番ユーザーが多いんですが、まだPython版が機能追加が速くて
 うれしかったです。
 
-![この頃からa2cと仲がいい](https://storage.googleapis.com/static.ianlewis.org/prod/img/719/a2c_big.jpg)
+![この頃からa2cと仲がいい](/assets/images/719/a2c_big.jpg)
 
 _この頃からGoogle Appsのa2cと仲がいい_
 
@@ -45,14 +45,14 @@ Deveoper Expertやっていた頃、Google I/O に参加させて頂きました
 ワイワイ勉強しながら、カンファレンスに参加するのが毎年の大きな楽しみでした。毎年、クラウドの Expertたちが
 I/O を充実して、貴重な経験になりました。
 
-![日本のExpert に皆さん](https://storage.googleapis.com/static.ianlewis.org/prod/img/719/beanbags_big.jpg)
+![日本のExpert に皆さん](/assets/images/719/beanbags_big.jpg)
 
 Google I/O の後にいつも報告会をやります。その会では、地方に会場を開け、それぞれの会場をHangoutsライブ配信でつないで、
 みんなで報告会をやってとても面白い会でした。去年の２０１３年のGoogle I/Oでは、私は四国の松山に行ってきました。
 その始めての四国は、四国Google Developer Groupの皆さんが私のことを歓迎してくれて、非常にうれしかったです。特に
 リーダーの大島さんとtamさんがとても親切でした。非常に貴重な経験でした。
 
-![Google IO 報告会](https://storage.googleapis.com/static.ianlewis.org/prod/img/719/googleio_report.gif)
+![Google IO 報告会](/assets/images/719/googleio_report.gif)
 
 # Developer Expert Summit
 
@@ -61,11 +61,11 @@ Developer Experts Summit に参加してきて、非常に多くの開発者と�
 日本だけでなく、世界中に開発している人たちの話すのが非常に面白くて勉強になります。そして、
 普段ネットでしか会ってない人たちと直接コミュニケーションとるのが私にとっては、とてもよかった。
 
-![世界中のExpert に皆さん](https://storage.googleapis.com/static.ianlewis.org/prod/img/719/world_developers_big.jpg)
+![世界中のExpert に皆さん](/assets/images/719/world_developers_big.jpg)
 
 けど、やっぱり、日本のGDEとして、活躍しているから、日本代表として
 
-![はっぴ](https://storage.googleapis.com/static.ianlewis.org/prod/img/719/happi_big.jpg)
+![はっぴ](/assets/images/719/happi_big.jpg)
 
 # 卒業
 
@@ -82,6 +82,6 @@ Developer Experts Summit に参加してきて、非常に多くの開発者と�
 Googleの皆さん、Developer Expert の皆さん、そしてたくさんできた友達の皆さん、
 お世話になりました！ ありがとうございました！
 
-![まだ仲がいい](https://storage.googleapis.com/static.ianlewis.org/prod/img/719/a2c_again_big.jpg)
+![まだ仲がいい](/assets/images/719/a2c_again_big.jpg)
 
 _まだ仲がいい_

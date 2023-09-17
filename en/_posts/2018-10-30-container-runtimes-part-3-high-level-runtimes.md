@@ -16,7 +16,7 @@ High-level runtimes can also provide features that sound low-level, but are used
 
 Here's a conceptual diagram to understand how the components fit together:
 
-<img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/771/runtime-architecture.png" alt="Runtime architecture diagram" class="align-center" />
+<img src="/assets/images/771/runtime-architecture.png" alt="Runtime architecture diagram" class="align-center" />
 
 # Examples of High-Level Runtimes
 
@@ -32,7 +32,7 @@ It was the first popular runtime to incorporate all of the features needed durin
 
 Docker originally implemented both high-level and low-level runtime features, but those pieces have since been broken out into separate projects as runc and containerd. Docker now consists of the `dockerd` daemon, and the `docker-containerd` daemon along with `docker-runc`. `docker-containerd` and `docker-runc` are just Docker packaged versions of vanilla `containerd` and `runc`.
 
-<img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/771/docker.png" alt="Docker architecture diagram" class="align-center" />
+<img src="/assets/images/771/docker.png" alt="Docker architecture diagram" class="align-center" />
 
 `dockerd` provides features such as building images, and dockerd uses `docker-containerd` to provide features such as image management and running containers. For instance, Docker's build step is actually just some logic that interprets a Dockerfile, runs the necessary commands in a container using `containerd`, and saves the resulting container file system as an image.
 

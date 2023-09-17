@@ -38,7 +38,7 @@ time giving a talk at a such a large conference. It was a really great
 experience to give a talk at such an amazing venue with so many talented
 developers.
 
-![Google I/O](https://storage.googleapis.com/static.ianlewis.org/prod/img/747/IMG_20150529_221021.jpg)
+![Google I/O](/assets/images/747/IMG_20150529_221021.jpg)
 
 I was really nervous giving a talk in a place like Google I/O but it was a
 really great experience and I hope I have a chance to do it again someday.
@@ -74,11 +74,11 @@ work together with a team that accepted the challenge to make the demo work in
 such a short time frame. It was really inspiring. Here is a couple of my teammates
 soldering up adapters on the morning of the event.
 
-![Soldering Audio Cables](https://storage.googleapis.com/static.ianlewis.org/prod/img/747/IMG_20150618_100045.jpg)
+![Soldering Audio Cables](/assets/images/747/IMG_20150618_100045.jpg)
 
 And here's one of the finished products :) Totally geeky right?
 
-![The Finished Product](https://storage.googleapis.com/static.ianlewis.org/prod/img/747/IMG_20150618_104122.jpg)
+![The Finished Product](/assets/images/747/IMG_20150618_104122.jpg)
 
 Getting the demo working after being in such dire straits gave me and my
 teammates a real sense of accomplishment. Next time I hope we'll be able to
@@ -89,13 +89,13 @@ avoid the problem in the first place :)
 I also gave talks at lots of industry conferences in APAC. I spoke at Tech
 Planet in Seoul, Gave a keynote at iTHome DevOps in Taipei.
 
-![Me Speaking at Tech Planet](https://storage.googleapis.com/static.ianlewis.org/prod/img/747/KGB_0586.JPG)
+![Me Speaking at Tech Planet](/assets/images/747/KGB_0586.JPG)
 
 I traveled the most to Seoul and Taipei, about 3 times each. But I also had the
 pleasure to travel to Malaysia, and Indonesia for the first time. It was a
 really experience to meet local developers and eat great food :)
 
-![Indonesian Food Rocks!](https://storage.googleapis.com/static.ianlewis.org/prod/img/747/IMG_20150820_115347.jpg)
+![Indonesian Food Rocks!](/assets/images/747/IMG_20150820_115347.jpg)
 
 ## Challenges
 

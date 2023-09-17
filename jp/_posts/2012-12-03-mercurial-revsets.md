@@ -64,7 +64,7 @@ revsets はリビジョンのセットをセレクトするものなので、 `h
 
 上のようなコマンドで作りますと以下の様なグラフ構造になります。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/687/tree1_medium.png)
+![image](/assets/images/687/tree1_medium.png)
 
 実は `1:3` は以下のようなリビジョンのセットになります。0 が共通なので、含まれてないです。
 

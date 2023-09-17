@@ -154,7 +154,7 @@ Finally we can create a firewall rule to allow access to our nodes:
 
 Now we can view the app at `http://<IP Address>/`
 
-![Is Go 1.4 out yet? Yes!](https://storage.googleapis.com/static.ianlewis.org/prod/img/734/golang1.4_large.png)
+![Is Go 1.4 out yet? Yes!](/assets/images/734/golang1.4_large.png)
 
 ## Upgrading the App
 
@@ -208,7 +208,7 @@ the update period as 10 seconds per replica.
 
 After that runs we can refresh our app again to see if Go 1.5 is out yet :)
 
-![Is Go 1.5 out yet? No :(](https://storage.googleapis.com/static.ianlewis.org/prod/img/734/golang1.5_large.png)
+![Is Go 1.5 out yet? No :(](/assets/images/734/golang1.5_large.png)
 
 ## Cleanup
 

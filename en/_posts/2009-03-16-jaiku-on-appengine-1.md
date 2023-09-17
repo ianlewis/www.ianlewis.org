@@ -8,7 +8,7 @@ tags: appengine
 render_with_liquid: false
 ---
 
-<p><a href="https://storage.googleapis.com/static.ianlewis.org/prod/img/516/jaiku.png"><img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/516/jaiku.png" /></a></p>
+<p><a href="/assets/images/516/jaiku.png"><img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/516/jaiku.png" /></a></p>
 
 <p>Yesterday <a href="http://www.google.com/">Google</a>'s <a href="http://www.twitter.com/">Twitter</a>-like service, <a href="http://www.jaiku.com/">Jaiku</a> was released as <a href="http://code.google.com/p/jaikuengine/">open source</a> running on <a href="http://code.google.com/appengine/">Google Appengine</a> so I decided to take it for a spin. It has a lot of neat parts like XMPP and google contacts integration, but what I'm interested in most is how it implements it's publisher/subscriber model.</p>
 

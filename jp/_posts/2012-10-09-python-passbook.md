@@ -33,15 +33,15 @@ Pass Type ID を要求する。まずは、 iOS Dev Center にログインする
 
 <div class="lightbox">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/681/provisioning_portal_thumbnail.png>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/681/provisioning_portal_big.png>
+</assets/images/681/provisioning_portal_thumbnail.png>
+</assets/images/681/provisioning_portal_big.png>
 
 </div>
 
 <div class="lightbox">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/681/pass_type_ids_thumbnail.png>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/681/pass_type_ids_big.png>
+</assets/images/681/pass_type_ids_thumbnail.png>
+</assets/images/681/pass_type_ids_big.png>
 
 </div>
 
@@ -49,8 +49,8 @@ Pass Type IDs画面で、「New Pass Type ID」ボタンをクリックしてく
 
 <div class="lightbox">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/681/new_pass_type_small.png>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/681/new_pass_type_big.png>
+</assets/images/681/new_pass_type_small.png>
+</assets/images/681/new_pass_type_big.png>
 
 </div>
 
@@ -62,8 +62,8 @@ pass.\<ドメイン名\>.\<パス名\>
 
 <div class="lightbox">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/681/install_cert_small.png>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/681/install_cert_big.png>
+</assets/images/681/install_cert_small.png>
+</assets/images/681/install_cert_big.png>
 
 </div>
 
@@ -77,8 +77,8 @@ Type ID:
 
 <div class="lightbox">
 
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/681/export_cert_small.png>
-<https://storage.googleapis.com/static.ianlewis.org/prod/img/681/export_cert_big.png>
+</assets/images/681/export_cert_small.png>
+</assets/images/681/export_cert_big.png>
 
 </div>
 
@@ -232,4 +232,4 @@ response['Content-Disposition'] = 'attachment; filename=pass.pkpass'
 
 これで、zipファイルがダウンロードできて、iPhone で見れるはず。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/681/passbook_big.png)
+![image](/assets/images/681/passbook_big.png)

@@ -42,7 +42,7 @@ The thing I wanted to point out here was that cgroups and each namespace type ar
 
 When you run a container with Docker normally, Docker creates namespaces and cgroups for each container so they map one to one. This is how developers normally think of containers.
 
-<img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/766/containers.png">
+<img class="align-center" src="/assets/images/766/containers.png">
 
 The containers are essentially stand alone silos, with the exception that they might have a volume or port mapped to the host so they can communicate out.
 
@@ -74,27 +74,27 @@ $ docker run -d --name ghost --net=container:nginx --ipc=container:nginx --pid=c
 
 Now our nginx container can proxy requests directly on localhost to our ghost container. If you access `http://localhost:8080/` you should be able to see ghost running through an nginx proxy. These commands create a set of containers running in a single set of namespaces. These namespaces allow the Docker containers to discover and communicate with each other.
 
-<img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/766/ghost_.png">
+<img class="align-center" src="/assets/images/766/ghost_.png">
 
 ## Pods are Containers (sort of)
 
 Now that we've seen that you can combine namespaces and cgroups with multiple processes, we can see that that's exactly what Kubernetes Pods are. Pods allow you to specify the containers that you want to run and Kubernetes automates setting up the namespaces and cgroups in the right way. It's a little more complicated than that, because Kubernetes doesn't use Docker networking (it uses [CNI](https://github.com/containernetworking/cni)) but you get the idea.
 
-<img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/766/pods.png">
+<img class="align-center" src="/assets/images/766/pods.png">
 
 Once we have our containers set up this way, each process "feels" like it's running on the same machine. They can talk to each other on localhost, they can use shared volumes. They can even use IPC or send each other signals like HUP or TERM (With shared PID namespaces in Kubernetes 1.7, Docker >=1.13).
 
 Let's imagine now you want to run nginx and [confd](https://github.com/kelseyhightower/confd) have confd update the nginx config and restart nginx whenever you add/remove app servers. Let's say you have an etcd server that holds the IP addresses of your backend app servers. When that list changes confd can get a notification and write out a new nginx config and send a HUP signal to nginx to have nginx reload it's config.
 
-<img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/766/nginx.png">
+<img class="align-center" src="/assets/images/766/nginx.png">
 
 With Docker the way you would do this is put both nginx and confd in a single container. Because Docker only has one entrypoint you need to keep both processes running with something like supervisord. This is not ideal because you need to run supervisord for every copy of nginx that you run. More importantly, Docker only "knows" about supervisord because that's the entrypoint. It doesn't have visibility into each process which means you and other tools can't get that info via the Docker API. Nginx might be crashing hard but Docker would have no idea.
 
-<img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/766/supervisord.png">
+<img class="align-center" src="/assets/images/766/supervisord.png">
 
 With pods Kubernetes manages each process and thus has insight into its state. That way it can provide info about that state to users via the API and can also provide services like restarting it when it crashes or automated logging.
 
-<img class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/766/kubernetes.png">
+<img class="align-center" src="/assets/images/766/kubernetes.png">
 
 ## Pods are Containers as an API
 

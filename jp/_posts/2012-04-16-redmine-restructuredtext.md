@@ -39,7 +39,7 @@ Note
 RbST のdocutils バージョンはデータをフォーマットする時に、Python プロセスを実行して、そのプログラムの標準入力に ReST
 コンテンツを送信して、標準出力でHTMLコンテンツを受け取ると言う形になっている。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/673/redmine-rest.png)
+![image](/assets/images/673/redmine-rest.png)
 
 ```text
 $ gem install RbST
@@ -77,17 +77,17 @@ $ script/plugin install git://github.com/alphabetum/redmine_restructuredtext_for
 を選択できます。該当の設定は「ッテキスト書式」と書いています。ReSTをレンダーする度に、外部
 Python プロセスをたたくので、次のチェックボックスで、レンダーを出力をキャシューするように設定しておいてください。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/673/settings.png)
+![image](/assets/images/673/settings.png)
 
 設定画面でせっていし後にWikiやチケットにreSTを書けばちゃんと表示されます。
 
 reSTでWiki 書きましょう
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/673/rest-input.png)
+![image](/assets/images/673/rest-input.png)
 
 ちゃんと表示されます。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/673/html-rest.png)
+![image](/assets/images/673/html-rest.png)
 
 Textile 書かなくてもよくて、気持ちいいですね！
 
@@ -247,7 +247,7 @@ directives.register_directive("code-block", pygments_directive)
 
 ハイライトされたコードが書けます
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/673/highlight.png)
+![image](/assets/images/673/highlight.png)
 
 # まとめ
 

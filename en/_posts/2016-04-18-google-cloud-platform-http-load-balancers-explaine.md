@@ -19,7 +19,7 @@ Console. You can create one in the Networks section of the console and create a
 load balancer. Once you’ve started creating an HTTP Load Balancer, you get a
 page something like this:
 
-![Load Balancer UI](https://storage.googleapis.com/static.ianlewis.org/prod/img/750/load-balancer.png)
+![Load Balancer UI](/assets/images/750/load-balancer.png)
 
 Each of the sections is nicely laid out and allow you to create the load
 balancer all at once. But there are many objects being created under the covers
@@ -31,7 +31,7 @@ the diagram there to be a bit too simplistic when I wanted to set up the load
 balancer via the CLI. I needed to know a bit more about all the parts so I came
 up with this diagram.
 
-![Load Balancer Objects Diagram](https://storage.googleapis.com/static.ianlewis.org/prod/img/750/gcp-lb-objects2.png)
+![Load Balancer Objects Diagram](/assets/images/750/gcp-lb-objects2.png)
 
 Let’s go step by step through how to create the load balancer via the CLI. As
 we do that, I’ll try to point out what each of the objects we are creating
@@ -60,7 +60,7 @@ Health checks are used in more than one place so they live under the Compute
 Engine part of the Cloud Console UI. The health checks listed here are the what
 correspond to <code>http-health-checks</code> and <code>https-health-checks</code> in the CLI.
 
-![Health Checks](https://storage.googleapis.com/static.ianlewis.org/prod/img/750/health-check.png)
+![Health Checks](/assets/images/750/health-check.png)
 
 ## Backend Services
 
@@ -90,7 +90,7 @@ checks.
 
 The UI shows backend-services in the “backend configuration” part of the UI.
 
-![Backend Services](https://storage.googleapis.com/static.ianlewis.org/prod/img/750/backend-service.png)
+![Backend Services](/assets/images/750/backend-service.png)
 
 Next we have to create a Backend. A Backend specifies the instance group you
 want to send traffic to, and how the load should be balanced among the
@@ -111,7 +111,7 @@ utilization based on your needs.
 In the UI, backends are part of the backend service form. You can add any
 number of backends to the backend service just like can in the CLI.
 
-![Backends](https://storage.googleapis.com/static.ianlewis.org/prod/img/750/backends.png)
+![Backends](/assets/images/750/backends.png)
 
 ## Url Maps
 
@@ -160,7 +160,7 @@ my-path-matcher --new-hosts www.example.com --path-rules=”/api=my-api-backend-
 In the UI the URL maps, host rules, and path matchers are specified in the
 “Host and path rules” section.
 
-![Host & Path Rules](https://storage.googleapis.com/static.ianlewis.org/prod/img/750/host-path-rules.png)
+![Host & Path Rules](/assets/images/750/host-path-rules.png)
 
 The first row contains the default service which is used when a request doesn’t
 match a host rule/path matcher combination. The other rows contain the host
@@ -230,7 +230,7 @@ gcloud compute forwarding-rules create my-http-forwarding-rule --global
 Now that you’ve created a forwarding rule, it will show up in the “Load
 balancing” section of the developers console.
 
-![Forwarding Rules](https://storage.googleapis.com/static.ianlewis.org/prod/img/750/forwarding-rule.png)
+![Forwarding Rules](/assets/images/750/forwarding-rule.png)
 
 ## The Advanced View
 
@@ -238,7 +238,7 @@ There is also an “Advanced View” that allows you to view the objects in a
 format that is much closer to the CLI counterparts. There are tabs for each of
 the major objects as well as a couple for the network load balancers.
 
-![Advanced View](https://storage.googleapis.com/static.ianlewis.org/prod/img/750/advanced-view.png)
+![Advanced View](/assets/images/750/advanced-view.png)
 
 The objects that make up the HTTP(S) Load Balancer and the commands that you
 need to run to set it up on GCP are not totally obvious given how you create a

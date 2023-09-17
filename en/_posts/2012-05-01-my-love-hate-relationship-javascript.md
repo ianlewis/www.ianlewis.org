@@ -14,7 +14,7 @@ simply makes it hard for me to write good code. As a little background,
 the JavaScript I write is almost exclusively meant to run in the
 browser. I don't do node.js or rhino (I'll get to that later).
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/677/javascript_the_evil_parts_small.png)
+![image](/assets/images/677/javascript_the_evil_parts_small.png)
 
 # Writing Modular Code Sucks
 
@@ -132,7 +132,7 @@ like x being 0 to cause a x == undefined check to pass.
 
 # I just want to break free
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/677/break_free_medium.jpg)
+![image](/assets/images/677/break_free_medium.jpg)
 
 In the end, I feel like I just want to program JavaScript just like any
 other language. The fact that it gets loaded and run by a browser over
@@ -158,7 +158,7 @@ tools should include support for minimizing (or perhaps bytecode
 compiling) JavaScript so that whitespace, comments, and number of
 modules don't affect download and load speed.
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/677/html5_thumbnail.png)
+![image](/assets/images/677/html5_thumbnail.png)
 
 No wonder native apps for the iPhone are eating the lunch of HTML5 apps.
 HTML5 are slow, have a crappy development environment and require you to

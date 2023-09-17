@@ -12,7 +12,7 @@ render_with_liquid: false
 
 今回のワークショップでは Python 初めての方や、プログラミング初めての方もいたし、仕事でウェブアプリを作っている女性もいて、レベルがそれぞれだったんですが、グループで別れてみんなそれぞれのペースで進められたので、とても良かったと思います。ワークショップで使った [資料](http://djangogirlsjapan.gitbooks.io/workshop_tutorialjp/content) は Django のブログを作るような内容でとてもわかりやすかったし、多くのチームが最後まで進められて、とても有効な時間だったと思います。
 
-![Django Girls Workshop集合写真](https://storage.googleapis.com/static.ianlewis.org/prod/img/740/django-girls-tokyo.jpg)
+![Django Girls Workshop集合写真](/assets/images/740/django-girls-tokyo.jpg)
 
 大抵のIT勉強会は技術マニアが多くて、女性には参加しづらい。男性エンジニアは残念ながら、女性を無意識に排除する偏見を持っています。そして、これは私自身の偏見かもしれませんが、女性はもしかして男性と精神的なニーズが違っていて、主なIT勉強会は "by 男性 for 男性" なので女性に合わないんじゃないかなと思っています。なので、女性向けのイベントは非常に大事なんじゃないかなと思っていて、これからも応援したいと思っています。
 

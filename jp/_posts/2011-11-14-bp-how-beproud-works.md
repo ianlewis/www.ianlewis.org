@@ -12,7 +12,7 @@ render_with_liquid: false
 僕もいろいろ気になっている ので、 僕が働いているBeProud をgithubと比べながら、僕の考え方を説明したい。Zach
 さんの記事は3つに分かれているので、僕も3つに分ける。
 
-![Zach](https://storage.googleapis.com/static.ianlewis.org/prod/img/668/howgithubworks.png)\_
+![Zach](/assets/images/668/howgithubworks.png)\_
 
 ---
 
@@ -46,7 +46,7 @@ Zachさんが書いてくれた通り、製造業では、時間を加えれば�
 Zach さんは、10時に起き、家でチャットログを見て、サポートチケットをクリアしてから、バスで出勤しているらしい。
 そして、昼ご飯食べた後、13時から 18時～21時くらいまで仕事をするらしい。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/668/versus_big.jpg)
+![image](/assets/images/668/versus_big.jpg)
 
 `いやいや、そんな喧嘩的な話じゃないけど。。。 しかも、確か映画を見ると、右のほうが死んでしまったような気が。。。`
 
@@ -58,7 +58,7 @@ BPのコアビジネスも異なるし、みんなの通勤時間がバラバラ
 
 <http://www.theregister.co.uk/2011/09/20/pjs_every_day/> (英語)
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/668/workathome.png)
+![image](/assets/images/668/workathome.png)
 
 私自身ももっと家で仕事したいのですが、やっぱりオフィスで働いたほうが効率がよく、速い。
 

@@ -8,7 +8,7 @@ tags: google gcp
 render_with_liquid: false
 ---
 
-<img alt="Google Cloud Platform" title="Google Cloud Platform" class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/730/cloudplatform_horizontallockup_big.png" />
+<img alt="Google Cloud Platform" title="Google Cloud Platform" class="align-center" src="/assets/images/730/cloudplatform_horizontallockup_big.png" />
 
 Googleの新入社員として、 [Google Cloud Platform](https://cloud.google.com/) チームで働くことになりました。
 

@@ -64,7 +64,7 @@ $.ajax({
 
 表示はこんな感じになります。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/680/connpass_map_big.png)
+![image](/assets/images/680/connpass_map_big.png)
 
 マーカーは
 create_marker()という関数で作れれている。マーカーにクリックすれば、ツールチップが出るためのコードがいろいろあって、ここにまとめた。
@@ -124,6 +124,6 @@ function create_marker(event) {
 
 ツールチップはこんな感じです。
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/680/connpass_map_tooltip_big.png)
+![image](/assets/images/680/connpass_map_tooltip_big.png)
 
 こういうのはわりと簡単に出来るので、これからもっと作ってみたいなと思っている。

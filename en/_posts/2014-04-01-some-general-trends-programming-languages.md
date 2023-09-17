@@ -18,9 +18,9 @@ servers are [Go](http://golang.org), [Rust](http://www.rust-lang.org/) and
 server side applications.
 
 <div>
-<img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/715/gopher_thumbnail.jpg" />
-<img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/715/rust-logo-128x128-blk-v2_thumbnail.png" />
-<img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/715/haskell-logo_thumbnail.png" />
+<img src="/assets/images/715/gopher_thumbnail.jpg" />
+<img src="/assets/images/715/rust-logo-128x128-blk-v2_thumbnail.png" />
+<img src="/assets/images/715/haskell-logo_thumbnail.png" />
 </div>
 
 There are some common threads in these new languages here that I don't really
@@ -42,7 +42,7 @@ only recently released major language that doesn't have compile-time checking
 is Dart which provides a runtime mode that adds assertions about a variable's
 type. In any case, all of them generally have type checking in mind.
 
-![Statically Typed Duck](https://storage.googleapis.com/static.ianlewis.org/prod/img/715/ducktyping_small.jpeg)
+![Statically Typed Duck](/assets/images/715/ducktyping_small.jpeg)
 
 *http://geek-and-poke.com/*
 
@@ -90,7 +90,7 @@ event driven/callback system like Node.js, but the trend seems to be going
 towards green-threads as they can be more easily made to utilize multiple
 cores.
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/715/cheap_threads_small.jpg)
+![](/assets/images/715/cheap_threads_small.jpg)
 
 The other thing that these cheap threads have in common is that they don't rely
 on locking to achieve parallelism. Each language exposes a way to communicate
@@ -129,7 +129,7 @@ function is actually correct or not or writes tests automatically for you.
 
 ---
 
-![](https://storage.googleapis.com/static.ianlewis.org/prod/img/715/golang_small.jpg)
+![](/assets/images/715/golang_small.jpg)
 
 I noticed that a lot of new open source languages and programming environments
 have been started by and stewarded by corporations to solve their business

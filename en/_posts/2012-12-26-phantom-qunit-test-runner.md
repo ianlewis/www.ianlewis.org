@@ -8,7 +8,7 @@ tags: javascript phantomjs qunit
 render_with_liquid: false
 ---
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/690/phantomjs+qunit.png)
+![image](/assets/images/690/phantomjs+qunit.png)
 
 I have been using [PhantomJS](http://phantomjs.org/) and
 [QUnit](http://qunitjs.com/) for a while now to run JavaScript automated
