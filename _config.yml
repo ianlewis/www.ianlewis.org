@@ -20,6 +20,7 @@
 
 # TODO: Add CSS for pagination.
 # TODO: Atom feeds for each language.
+# TODO: Set html lang for different languages.
 
 title: Ian Lewis
 email: ianmlewis@gmail.com
@@ -64,9 +65,6 @@ pagination:
   title: ":title - page :num"
   sort_field: date
   sort_reverse: true
-  trail:
-    before: 2
-    after: 2
 
 # Exclude from processing.
 # The following items will not be processed, by default.
