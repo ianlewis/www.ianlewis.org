@@ -19,9 +19,9 @@
 # in the templates via {{ site.myvariable }}.
 
 # TODO: Add pagination; See https://jekyllrb.com/docs/pagination/
-# TODO: Add post list by tags page.
-# TODO: Add excerpts to blog post list page.
+# TODO: Add excerpts to blog post list pages.
 # TODO: Verify atom feed urls.
+# TODO: Add different section links (English posts, Japanese posts, About, Projects, etc.)
 
 title: Ian Lewis
 email: ianmlewis@gmail.com
