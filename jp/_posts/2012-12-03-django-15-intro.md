@@ -8,7 +8,7 @@ tags: python django
 render_with_liquid: false
 ---
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/django/django-logo-positive_medium.png)
+![image](/assets/images/django/django-logo-positive_medium.png)
 
 <div class="note">
 
