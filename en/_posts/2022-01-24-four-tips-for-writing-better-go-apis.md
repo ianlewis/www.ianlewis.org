@@ -18,12 +18,12 @@ Many APIs allow users to pass a timeout parameter so that the API doesn't block 
 
 ```golang
 func DoSomething(stream chan struct{}, timeout time.Duration) bool {
-	select {
-	case <-stream:
-		return true
-	case <-time.After(timeout):
-		return false
-	}
+  select {
+  case <-stream:
+    return true
+  case <-time.After(timeout):
+    return false
+  }
 }
 ```
 
@@ -31,12 +31,12 @@ Instead of a timeout parameter, add a context to your method or API whenever it 
 
 ```golang
 func DoSomething(ctx context.Context, stream chan struct{}) error {
-	select {
-	case <-stream:
-		return nil
-	case <-ctx.Done():
-		return ctx.Err()
-	}
+  select {
+  case <-stream:
+    return nil
+  case <-ctx.Done():
+    return ctx.Err()
+  }
 }
 
 ctx, cancel := context.WithTimeout(context.Background(), 60*time.Second)
@@ -52,22 +52,22 @@ Let's look at an example where we use a `Context`. Contexts will allow the calle
 
 ```golang
 func (l *Launchpad) Listen() <-chan Hit {
-	ch := make(chan Hit)
-	go func(pad *Launchpad, ch chan Hit) {
-		for {
-			// sleep for a while before the new polling tick,
-			// otherwise operation is too intensive and blocking
-			time.Sleep(10 * time.Millisecond)
-			hits, err := pad.Read()
-			if err != nil {
-				continue
-			}
-			for i := range hits {
-				ch <- hits[i]
-			}
-		}
-	}(l, ch)
-	return ch
+  ch := make(chan Hit)
+  go func(pad *Launchpad, ch chan Hit) {
+    for {
+      // sleep for a while before the new polling tick,
+      // otherwise operation is too intensive and blocking
+      time.Sleep(10 * time.Millisecond)
+      hits, err := pad.Read()
+      if err != nil {
+        continue
+      }
+      for i := range hits {
+        ch <- hits[i]
+      }
+    }
+  }(l, ch)
+  return ch
 }
 ```
 
@@ -77,26 +77,26 @@ Here's a simple way we could make it better with a `Context` to allow the caller
 
 ```golang
 func (l *Launchpad) Listen(ctx context.Context) <-chan Hit {
-	ch := make(chan Hit)
-	go func(pad *Launchpad, ch chan Hit) {
-		for {
-			// Stop the goroutine if the context has been canceled or timed out.
-			select{
-			case <-ctx.Done():
-				return
-			case <-l.done:
-				return
-			default:
-			}
-			// ...
-		}
-	}(l, ch)
-	return ch
+  ch := make(chan Hit)
+  go func(pad *Launchpad, ch chan Hit) {
+    for {
+      // Stop the goroutine if the context has been canceled or timed out.
+      select{
+      case <-ctx.Done():
+        return
+      case <-l.done:
+        return
+      default:
+      }
+      // ...
+    }
+  }(l, ch)
+  return ch
 }
 
 func (l *Launchpad) Close() {
-	// ...
-	l.done <- struct{}{}
+  // ...
+  l.done <- struct{}{}
 }
 ```
 
@@ -110,7 +110,7 @@ import "github.com/user/somepkg"
 type impl struct { /* … */ }
 
 func New() somepkg.Interface {
-	return &impl{}
+  return &impl{}
 }
 ```
 
@@ -118,15 +118,15 @@ However, in this scenario there may be extra options or functions on your concre
 
 ```golang
 func New(c *Config) *Impl {
-	return &Impl{c}
+  return &Impl{c}
 }
 
 func (i *Impl) Config() *Config {
-	return i.c
+  return i.c
 }
 
 func SomeFunc(i Impl) {
-	/* ... */
+  /* ... */
 }
 ```
 
@@ -144,14 +144,14 @@ Often you'll see an API return a channel to communicate with any created gorouti
 
 ```golang
 func (o *myObj) Start() ->chan struct{} {
-	data := make(chan struct{})
-	go func() {
-		for {
-			d := <-data
-			// do something with d
-		}
-	}()
-	return data
+  data := make(chan struct{})
+  go func() {
+    for {
+      d := <-data
+      // do something with d
+    }
+  }()
+  return data
 }
 ```
 
@@ -159,14 +159,14 @@ However, this means that if the caller already has a channel that accepts that k
 
 ```golang
 func StartObj(o &myObj, ch chan struct{}) {
-	otherCh := o.Start()
-	go func() {
-		for {
-			d := <-ch
-			otherCh <- d
-			// NOTE: lifecycle management abbreviated.
-		}
-	}()
+  otherCh := o.Start()
+  go func() {
+    for {
+      d := <-ch
+      otherCh <- d
+      // NOTE: lifecycle management abbreviated.
+    }
+  }()
 }
 ```
 
@@ -175,11 +175,11 @@ Instead, it's often a better idea to accept a channel from the caller and use th
 ```golang
 func (o *myObj) Start(data <-chan struct{}) {
     go func() {
-		for {
-			d := <-data
-			// do something with d
-		}
-	}()
+    for {
+      d := <-data
+      // do something with d
+    }
+  }()
 }
 ```
 
@@ -187,7 +187,7 @@ That way, connecting up different goroutines with channels becomes much easier.
 
 ```golang
 func StartObj(o &myObj, ch chan struct{}) {
-	o.Start(ch)
+  o.Start(ch)
 }
 ```
 
@@ -197,4 +197,4 @@ As always, Dave Cheney's website is a goldmine for [resources on this](https://d
 
 Hopefully these tips are helpful to you when designing your next Go API. Let me know if you run across any other examples of good (or bad!) practices by sending me a message on [Twitter](https://twitter.com/IanMLewis).
 
-_Thanks to [Eno Compton](https://twitter.com/enocom_) for reviewing this post and offering lots of improvements.\_
+_Thanks to Eno Compton for reviewing this post and offering lots of improvements._
