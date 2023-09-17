@@ -19,9 +19,8 @@
 # in the templates via {{ site.myvariable }}.
 
 # TODO: Add pagination; See https://jekyllrb.com/docs/pagination/
-# TODO: Add excerpts to blog post list pages.
 # TODO: Verify atom feed urls.
-# TODO: Add different section links (English posts, Japanese posts, About, Projects, etc.)
+# TODO: Add projects page.
 
 title: Ian Lewis
 email: ianmlewis@gmail.com
@@ -48,6 +47,14 @@ plainwhite:
   social_links:
     twitter: IanMLewis
     github: ianlewis
+
+  navigation:
+    - title: English Posts
+      url: /en
+    - title: Japanese Posts
+      url: /jp
+    - title: About Me
+      url: /en/about
 
 # Exclude from processing.
 # The following items will not be processed, by default.

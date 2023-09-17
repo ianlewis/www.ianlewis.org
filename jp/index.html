@@ -1,12 +1,11 @@
 ---
 layout: default
+title: 日本語ブログ
 ---
 
 {%- if page.title -%}
 <h1 class="page-heading">{{ page.title }}</h1>
 {%- endif -%}
-
-{{ content }}
 
 {%- if site.posts.size > 0 -%}
 <ul class="posts">
@@ -24,6 +23,7 @@ layout: default
   </li>
 
   {%- for post in site.posts -%}
+  {% if post.blog == 'jp' %}
   <li>
     {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
     <a class="post-link" href="{{ post.url | relative_url }}">
@@ -50,6 +50,7 @@ layout: default
       {% endif %}
     </div>
   </li>
+  {%- endif -%}
   {%- endfor -%}
 </ul>
 

@@ -42,9 +42,11 @@ layout: default
       {%- endif -%}
     </div>
     <div class="post">
-      {%- if site.show_excerpts -%}
-      {{ post.excerpt }}
-      {%- endif -%}
+      {%- if post.blog == "jp" -%}
+      {{ post.content | strip_html | truncate:150 }}
+      {% else %}
+      {{ post.content | strip_html | truncate:250 }}
+      {% endif %}
     </div>
   </li>
   {%- endif -%}
