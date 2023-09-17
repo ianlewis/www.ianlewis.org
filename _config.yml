@@ -21,6 +21,7 @@
 # TODO: Add pagination; See https://jekyllrb.com/docs/pagination/
 # TODO: Verify atom feed urls.
 # TODO: Add projects page.
+# TODO: Convert image URLS from static.ianlewis.org.
 
 title: Ian Lewis
 email: ianmlewis@gmail.com
