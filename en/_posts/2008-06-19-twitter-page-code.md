@@ -7,7 +7,7 @@ blog: en
 render_with_liquid: false
 ---
 
-<p><img src="http://static.ianlewis.org/prod/img/gallery/twitter.png" alt="Twitter" /></p>
+<p><img src="/assets/images/gallery/twitter.png" alt="Twitter" /></p>
 <p>I took a look at <a href="http://www.twitter.com/" title="Twitter">Twitter</a>'s code as an example of a site that gets lots of traffic and noticed a couple things.</p>
 <ol>
 <li>They use <a href="http://www.amazon.com/gp/browse.html?node=16427261">Amazon S3</a> to store images</li>

@@ -10,8 +10,8 @@ render_with_liquid: false
 
 <div class="lightbox" data-align="left">
 
-<http://static.ianlewis.org/prod/img/gallery/dcf_0207_thumbnail.jpg>
-<http://static.ianlewis.org/prod/img/gallery/dcf_0207_thumbnail.jpg>
+</assets/images/gallery/dcf_0207_thumbnail.jpg>
+</assets/images/gallery/dcf_0207_thumbnail.jpg>
 
 </div>
 
@@ -28,8 +28,8 @@ proportions).
 
 <div class="lightbox" data-align="right">
 
-<http://static.ianlewis.org/prod/img/gallery/dcf_0206_thumbnail.jpg>
-<http://static.ianlewis.org/prod/img/gallery/dcf_0206_big.jpg>
+</assets/images/gallery/dcf_0206_thumbnail.jpg>
+</assets/images/gallery/dcf_0206_big.jpg>
 
 </div>
 
@@ -49,8 +49,8 @@ in [Java](http://java.sun.com/) a real pain.
 
 <div class="lightbox" data-align="left">
 
-<http://static.ianlewis.org/prod/img/gallery/dcf_0208_thumbnail.jpg>
-<http://static.ianlewis.org/prod/img/gallery/dcf_0208_big.jpg>
+</assets/images/gallery/dcf_0208_thumbnail.jpg>
+</assets/images/gallery/dcf_0208_big.jpg>
 
 </div>
 

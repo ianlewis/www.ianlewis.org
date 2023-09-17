@@ -18,8 +18,8 @@ Pollsというアプリを動かすまで出来た人がほとんどで、すご
 
 <div class="lightbox" data-align="left">
 
-<http://static.ianlewis.org/prod/img/gallery/dcf_0307_thumbnail.jpg>
-<http://static.ianlewis.org/prod/img/gallery/dcf_0307_big.jpg>
+</assets/images/gallery/dcf_0307_thumbnail.jpg>
+</assets/images/gallery/dcf_0307_big.jpg>
 
 Django 勉強会 Disc. 8
 
@@ -27,8 +27,8 @@ Django 勉強会 Disc. 8
 
 <div class="lightbox" data-align="left">
 
-<http://static.ianlewis.org/prod/img/gallery/dcf_0308_thumbnail.jpg>
-<http://static.ianlewis.org/prod/img/gallery/dcf_0308_big.jpg>
+</assets/images/gallery/dcf_0308_thumbnail.jpg>
+</assets/images/gallery/dcf_0308_big.jpg>
 
 Hands-on C (GAE)
 
