@@ -8,7 +8,7 @@ tags: python google appengine
 render_with_liquid: false
 ---
 
-![image](http://static.ianlewis.org/prod/img/python/python-powered.png)
+![image](/assets/images/python/python-powered.png)
 
 ![image](/assets/images/appengine/appengine_lowres.png)
 

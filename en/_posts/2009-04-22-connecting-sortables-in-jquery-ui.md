@@ -60,4 +60,4 @@ $("#my-other-list").sortable({
 });
 ```
 
-You can check out a demo that connects two sortables together here: [DEMO >>](http://static.ianlewis.org/prod/demos/files/sortables/index.html)
+You can check out a demo that connects two sortables together here: [DEMO >>](/assets/demos/files/sortables/index.html)

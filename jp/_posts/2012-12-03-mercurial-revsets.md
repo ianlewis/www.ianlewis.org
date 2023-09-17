@@ -8,7 +8,7 @@ tags: mercurial source-control
 render_with_liquid: false
 ---
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/mercurial/mercurial_medium.png)
+![image](/assets/images/mercurial/mercurial_medium.png)
 
 <div class="note">
 

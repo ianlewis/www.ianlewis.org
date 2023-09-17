@@ -20,7 +20,7 @@ function (jssource) {
 }
 ```
 
-僕の修正したバージョンは[こちら](http://static.ianlewis.org/prod/demos/files/interpreter/index.html)
+僕の修正したバージョンは[こちら](/assets/demos/files/interpreter/index.html)
 
 結局、json schema validatorを試してみたら、うまく動かなかった。
 

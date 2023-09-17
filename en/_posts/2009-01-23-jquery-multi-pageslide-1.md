@@ -25,9 +25,9 @@ I made it so that only one pageslide can be open at a time. Clicking on a
 pageslide link while a pageslide is already open will do nothing. I also
 included a way to close the currently open pageslide from javascript.
 
-Check out a demo here: [Demo](http://static.ianlewis.org/prod/demos/files/multi-pageslide/demo.html)
+Check out a demo here: [Demo](/assets/demos/files/multi-pageslide/demo.html)
 
 View the source:
 
-- [demo.html](http://static.ianlewis.org/prod/demos/files/view-source/view-source.html#multi-pageslide/demo.html)
-- [jquery.pageslide-0.2.js](http://static.ianlewis.org/prod/demos/files/view-source/view-source.html#multi-pageslide/jquery.pageslide-0.2.js)
+- [demo.html](/assets/demos/files/view-source/view-source.html#multi-pageslide/demo.html)
+- [jquery.pageslide-0.2.js](/assets/demos/files/view-source/view-source.html#multi-pageslide/jquery.pageslide-0.2.js)

@@ -15,7 +15,7 @@ interpreter for playing around with [Mochikit](http://mochikit.com/)
 but I wanted something a bit more generic that would allow me to import any
 kind of javascript and play with it. It turns out this is really easy so I
 added one simple function to the
-[interpreter.js](http://static.ianlewis.org/prod/demos/files/view-source/view-source.html#interpreter/interpreter.js)
+[interpreter.js](/assets/demos/files/view-source/view-source.html#interpreter/interpreter.js)
 file called importjs.
 
 You just call importjs like so:
@@ -36,4 +36,4 @@ function (jssource) {
 }
 ```
 
-Check out the slightly modified interpreter [here](http://static.ianlewis.org/prod/demos/files/interpreter/index.html)
+Check out the slightly modified interpreter [here](/assets/demos/files/interpreter/index.html)

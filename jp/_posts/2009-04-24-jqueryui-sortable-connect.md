@@ -46,4 +46,4 @@ $("#my-other-list").sortable({
 });
 ```
 
-<a href="http://static.ianlewis.org/prod/demos/files/sortables/index.html" target="_blank">DEMO &gt;&gt;</a>
+<a href="/assets/demos/files/sortables/index.html" target="_blank">DEMO &gt;&gt;</a>

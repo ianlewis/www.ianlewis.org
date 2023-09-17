@@ -8,7 +8,7 @@ tags: docker smaller-docker-images-series
 render_with_liquid: false
 ---
 
-![Docker](https://storage.googleapis.com/static.ianlewis.org/prod/img/docker/large_v-trans.png)
+![Docker](/assets/images/docker/large_v-trans.png)
 
 Recently I've been working with containers a lot and the most popular technology out there is, of course, Docker. On top of allowing you to easily run containers using the `docker run` command, Docker provides a method to build container images and a format for the resulting image. By writing a `Dockerfile` and executing the `docker build` command you can easily create images that can be run anywhere (within some constraints) Docker is installed.
 

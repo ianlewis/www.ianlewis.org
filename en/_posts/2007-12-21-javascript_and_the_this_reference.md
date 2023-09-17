@@ -40,7 +40,7 @@ update: function() {
 }
 ```
 
-In [this example](http://static.ianlewis.org/prod/demos/files/calllatertest.html) the callLater is used to call
+In [this example](/assets/demos/files/calllatertest.html) the callLater is used to call
 another function, deferredupdate, after 3 seconds. However, if the user enters
 data a second time before the three seconds are up then the deferred object
 will be cancelled and a new deferred object will be created. This has the

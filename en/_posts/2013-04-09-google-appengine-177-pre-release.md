@@ -21,7 +21,7 @@ here: <https://developers.google.com/appengine/downloads>
 
 </div>
 
-![image](https://storage.googleapis.com/static.ianlewis.org/prod/img/appengine/appengine_lowres_small.png)
+![image](/assets/images/appengine/appengine_lowres_small.png)
 
 The [App Engine 1.7.7 pre-release SDKs were
 released](https://groups.google.com/forum/?fromgroups=#!topic/google-appengine/nnHmLdXMgKs)
