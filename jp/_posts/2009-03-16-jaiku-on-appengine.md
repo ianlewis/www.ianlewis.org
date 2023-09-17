@@ -8,7 +8,7 @@ tags: appengine
 render_with_liquid: false
 ---
 
-<p><a href="/assets/images/516/jaiku.png"><img src="https://storage.googleapis.com/static.ianlewis.org/prod/img/516/jaiku.png" /></a></p>
+<p><a href="/assets/images/516/jaiku.png"><img src="/assets/images/516/jaiku.png" /></a></p>
 
 <p>昨日、<a href="http://www.google.co.jp/">Google</a>の<a href="http://www.twitter.com/">Twitter</a>ライクなサービス、<a href="http://www.jaiku.com/">Jaiku</a>が<a href="http://code.google.com/p/jaikuengine/">オープンソース</a>になって、<a href="http://code.google.com/intl/ja/appengine/">Google Appengine</a>に移動することに</p>
 

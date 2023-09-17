@@ -29,11 +29,11 @@ Googleでは（当然のことながら）検索結果をものすごい速い�
 
 そしてコストパフォマンスも高い。書き込みスループットで考えると MB/s per $ はHBaseやCassandraの倍以上です。
 
-[![Cloud Bigtable Performance](/assets/images/746/big%20table%205-6%20-%20GCP.png)](https://storage.googleapis.com/static.ianlewis.org/prod/img/746/big%20table%205-6%20-%20GCP.png)
+[![Cloud Bigtable Performance](/assets/images/746/big%20table%205-6%20-%20GCP.png)](/assets/images/746/big%20table%205-6%20-%20GCP.png)
 
 ちなみに、以下のグラフはリアルタイムのパフォーマンスです。僕が作ったデモアプリで作成しています。上のグラフはリクエスト数、下のグラフはレイテンシー（黒い線がp50 、青い線がp99）です。1.5万 QPS (query per second)の状態で、レイテンシーのp99が大体10ms以内 なのがわかります。
 
-[![Cloud Bigtable Demo](/assets/images/746/demo.png)](https://storage.googleapis.com/static.ianlewis.org/prod/img/746/demo.png)
+[![Cloud Bigtable Demo](/assets/images/746/demo.png)](/assets/images/746/demo.png)
 
 ## Bigtableの設計
 
