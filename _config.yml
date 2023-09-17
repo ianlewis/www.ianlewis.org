@@ -19,7 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 # TODO: Add CSS for pagination.
-# TODO: Verify atom feed urls.
+# TODO: Atom feeds for each language.
 
 title: Ian Lewis
 email: ianmlewis@gmail.com
