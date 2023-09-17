@@ -61,7 +61,7 @@ plainwhite:
   social_links:
     twitter: IanMLewis
     github: ianlewis
+# TODO: Add pagination; See https://jekyllrb.com/docs/pagination/
 # TODO: Add post list by tags page.
 # TODO: Add excerpts to blog post list page.
 # TODO: Verify atom feed urls.
-# TODO: Fix _emphasis_ rendering.
