@@ -64,7 +64,8 @@ format: prettier ## Run all formatters.
 .PHONY: prettier
 prettier: ## Run prettier.
 	@set -e;\
-		prettier -w .
+		prettier -w '**/*.md'; \
+		prettier -w '**/*.yml'
 
 ## Maintenance
 #####################################################################

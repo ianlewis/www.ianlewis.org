@@ -133,7 +133,7 @@ With containers we want to make our images as small as possible, but managing de
 
 <img style="width: 75%;" class="align-center" src="https://storage.googleapis.com/static.ianlewis.org/prod/img/763/lightning.jpg" />
 
-_[Creative Commons Attribution](https://creativecommons.org/licenses/by/2.0/deed.en) by [John Fowler](<https://commons.wikimedia.org/wiki/File:Lightning_(3762193048).jpg>)_
+_[Creative Commons Attribution](https://creativecommons.org/licenses/by/2.0/deed.en) by [John Fowler](<https://commons.wikimedia.org/wiki/File:Lightning_(3762193048).jpg>)\_
 
 Statically linking allows us to bundle all of the libraries our application relies on into a single binary. This will allow us to copy the application code and all of it's dependencies around in a single binary while still being runnable. Let's try it out.
 
