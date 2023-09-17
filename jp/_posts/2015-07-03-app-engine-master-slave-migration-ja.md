@@ -4,6 +4,7 @@ title: "App EngineのMaster-Slaveデータストアを廃止する件"
 date: 2015-07-03 20:21:56 +0000
 permalink: /jp/app-engine-master-slave-migration-ja
 blog: jp
+tags: appengine
 render_with_liquid: false
 ---
 

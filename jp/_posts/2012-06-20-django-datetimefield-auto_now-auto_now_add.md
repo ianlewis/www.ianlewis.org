@@ -4,6 +4,7 @@ title: "Djangoの DateTimeField の auto_now と auto_now_add"
 date: 2012-06-20 16:46:12 +0000
 permalink: /jp/django-datetimefield-auto_now-auto_now_add
 blog: jp
+tags: python django
 render_with_liquid: false
 ---
 

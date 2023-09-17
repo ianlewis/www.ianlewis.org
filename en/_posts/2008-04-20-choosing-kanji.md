@@ -4,6 +4,7 @@ title: "Choosing Kanji"
 date: 2008-04-20 19:32:20 +0000
 permalink: /en/choosing-kanji
 blog: en
+tags: japanese kanji
 render_with_liquid: false
 ---
 

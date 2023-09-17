@@ -4,6 +4,7 @@ title: "Deploying Go Servers with Kubernetes on Container Engine"
 date: 2015-05-07 02:00:00 +0000
 permalink: /en/deploying-go-servers-kubernetes
 blog: en
+tags: golang kubernetes docker google-container-engine
 render_with_liquid: false
 ---
 

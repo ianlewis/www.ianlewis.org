@@ -4,6 +4,7 @@ title: "特定なDjangoモデルを別DBに保存するメモ"
 date: 2010-09-22 16:35:28 +0000
 permalink: /jp/django-model-other-db-memo
 blog: jp
+tags: python django
 render_with_liquid: false
 ---
 

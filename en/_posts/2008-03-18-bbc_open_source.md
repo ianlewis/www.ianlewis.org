@@ -4,6 +4,7 @@ title: "BBC Open Source"
 date: 2008-03-18 12:09:20 +0000
 permalink: /en/bbc_open_source
 blog: en
+tags: media open source google
 render_with_liquid: false
 ---
 

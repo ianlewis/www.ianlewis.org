@@ -4,6 +4,7 @@ title: "Djangoを主に使っているgumi がGREEから数億円の調達に成
 date: 2010-10-15 09:03:23 +0000
 permalink: /jp/djangogumi-gree
 blog: jp
+tags: django gumi
 render_with_liquid: false
 ---
 

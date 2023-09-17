@@ -4,6 +4,7 @@ title: "Django 勉強会 Disc.7"
 date: 2009-01-16 21:34:38 +0000
 permalink: /jp/django-disc-7
 blog: jp
+tags: django 勉強会 オクセンス
 render_with_liquid: false
 ---
 

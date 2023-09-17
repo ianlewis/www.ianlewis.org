@@ -4,6 +4,7 @@ title: "Jesse Schell’s mindblowing talk on the future of games"
 date: 2010-03-01 14:24:13 +0000
 permalink: /en/jesse-schells-mindblowing-talk-future-games
 blog: en
+tags: games
 render_with_liquid: false
 ---
 

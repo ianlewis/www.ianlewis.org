@@ -4,6 +4,7 @@ title: "hg email and gmail"
 date: 2008-02-19 00:41:16 +0000
 permalink: /en/hg_email_and_gmail
 blog: en
+tags: mercurial
 render_with_liquid: false
 ---
 

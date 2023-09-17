@@ -4,6 +4,7 @@ title: "Django サイトマップ フレームワーク"
 date: 2008-11-18 21:51:26 +0000
 permalink: /jp/django_sitemap_framework
 blog: jp
+tags: python google django sitemap
 render_with_liquid: false
 ---
 

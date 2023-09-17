@@ -4,6 +4,7 @@ title: "Mercurial MQ"
 date: 2009-08-15 13:32:03 +0000
 permalink: /jp/mercurial-mq-extension
 blog: jp
+tags: mercurial hg mq patch
 render_with_liquid: false
 ---
 

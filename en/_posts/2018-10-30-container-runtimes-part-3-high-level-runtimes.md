@@ -4,6 +4,7 @@ title: "Container Runtimes Part 3: High-Level Runtimes"
 date: 2018-10-30 14:30:00 +0000
 permalink: /en/container-runtimes-part-3-high-level-runtimes
 blog: en
+tags: containers container-runtime-series
 render_with_liquid: false
 ---
 

@@ -4,6 +4,7 @@ title: "Shady Harvard Puzzle Facebook App Disassembled"
 date: 2010-04-26 22:32:33 +0000
 permalink: /en/shady-harvard-puzzle-facebook-app-disassembled
 blog: en
+tags: javascript
 render_with_liquid: false
 ---
 

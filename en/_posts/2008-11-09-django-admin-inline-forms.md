@@ -4,6 +4,7 @@ title: "Django admin inline forms"
 date: 2008-11-09 01:09:55 +0000
 permalink: /en/django-admin-inline-forms
 blog: en
+tags: python django model
 render_with_liquid: false
 ---
 

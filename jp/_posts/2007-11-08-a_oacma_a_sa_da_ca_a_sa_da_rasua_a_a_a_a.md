@@ -4,6 +4,7 @@ title: "携帯プログラミングの注意すること"
 date: 2007-11-08 19:16:06 +0000
 permalink: /jp/a_oacma_a_sa_da_ca_a_sa_da_rasua_a_a_a_a
 blog: jp
+tags: 日本 モバイル ソフトウエア開発
 render_with_liquid: false
 ---
 

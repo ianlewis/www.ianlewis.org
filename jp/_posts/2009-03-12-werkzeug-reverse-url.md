@@ -4,6 +4,7 @@ title: "Werkzeugのreverse URL処理"
 date: 2009-03-12 17:57:47 +0000
 permalink: /jp/werkzeug-reverse-url
 blog: jp
+tags: python django werkzeug
 render_with_liquid: false
 ---
 

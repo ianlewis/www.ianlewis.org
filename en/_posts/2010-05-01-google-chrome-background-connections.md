@@ -4,6 +4,7 @@ title: "Google Chrome Background Connections"
 date: 2010-05-01 11:21:30 +0000
 permalink: /en/google-chrome-background-connections
 blog: en
+tags: google
 render_with_liquid: false
 ---
 

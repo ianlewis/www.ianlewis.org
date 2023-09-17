@@ -4,6 +4,7 @@ title: "初出勤日"
 date: 2008-11-04 21:57:55 +0000
 permalink: /jp/first_day_work
 blog: jp
+tags: python django
 render_with_liquid: false
 ---
 

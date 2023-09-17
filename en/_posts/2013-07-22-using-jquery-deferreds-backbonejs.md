@@ -4,6 +4,7 @@ title: "Using jQuery deferreds with Backbone.js"
 date: 2013-07-22 15:00:00 +0000
 permalink: /en/using-jquery-deferreds-backbonejs
 blog: en
+tags: javascript
 render_with_liquid: false
 ---
 

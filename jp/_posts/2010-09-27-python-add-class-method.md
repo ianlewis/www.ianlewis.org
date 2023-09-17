@@ -4,6 +4,7 @@ title: "Pythonでメソッドをクラスまたはインスタンスに動的に
 date: 2010-09-27 09:58:02 +0000
 permalink: /jp/python-add-class-method
 blog: jp
+tags: python
 render_with_liquid: false
 ---
 

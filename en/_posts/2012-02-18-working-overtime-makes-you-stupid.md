@@ -4,6 +4,7 @@ title: "Working overtime makes you stupid?"
 date: 2012-02-18 12:39:54 +0000
 permalink: /en/working-overtime-makes-you-stupid
 blog: en
+tags: work sleep
 render_with_liquid: false
 ---
 

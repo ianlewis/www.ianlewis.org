@@ -4,6 +4,7 @@ title: "Noisebridge hackerspace new digs"
 date: 2009-10-25 12:36:48 +0000
 permalink: /en/noisebridge-hackerspace-new-digs
 blog: en
+tags: noisebridge
 render_with_liquid: false
 ---
 

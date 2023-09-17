@@ -4,6 +4,7 @@ title: "プラグインなしで、require.js のテストの順番を保証す�
 date: 2014-08-14 11:00:00 +0000
 permalink: /jp/requirejs-test-order
 blog: jp
+tags: javascript require.js qunit
 render_with_liquid: false
 ---
 

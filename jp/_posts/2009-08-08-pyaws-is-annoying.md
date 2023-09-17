@@ -4,6 +4,7 @@ title: "pyawsの使いにくい部分"
 date: 2009-08-08 14:55:57 +0000
 permalink: /jp/pyaws-is-annoying
 blog: jp
+tags: python aws
 render_with_liquid: false
 ---
 

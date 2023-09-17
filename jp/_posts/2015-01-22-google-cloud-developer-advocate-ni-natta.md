@@ -4,6 +4,7 @@ title: "Google Cloud PlatformのDeveloper Advocate になりました！"
 date: 2015-01-22 13:00:00 +0000
 permalink: /jp/google-cloud-developer-advocate-ni-natta
 blog: jp
+tags: google gcp
 render_with_liquid: false
 ---
 

@@ -4,6 +4,7 @@ title: "Django and nginx settings"
 date: 2009-07-03 17:00:13 +0000
 permalink: /en/django-nginx
 blog: en
+tags: django nginx path_info script_name
 render_with_liquid: false
 ---
 

@@ -4,6 +4,7 @@ title: "Smipple embeddable snippets"
 date: 2009-10-25 02:45:50 +0000
 permalink: /en/smipple-embeddable-snippets
 blog: en
+tags: javascript smipple snippet
 render_with_liquid: false
 ---
 

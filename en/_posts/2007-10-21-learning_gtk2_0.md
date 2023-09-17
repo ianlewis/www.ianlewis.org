@@ -4,6 +4,7 @@ title: "Learning GTK2.0"
 date: 2007-10-21 13:25:24 +0000
 permalink: /en/learning_gtk2_0
 blog: en
+tags: projects mercurial gtk2 gtkmm gorbital
 render_with_liquid: false
 ---
 

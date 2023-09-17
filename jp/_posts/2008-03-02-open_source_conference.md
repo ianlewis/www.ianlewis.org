@@ -4,6 +4,7 @@ title: "オープンソースカンファレンス"
 date: 2008-03-02 02:04:59 +0000
 permalink: /jp/open_source_conference
 blog: jp
+tags: イベント ソフトウエア開発
 render_with_liquid: false
 ---
 

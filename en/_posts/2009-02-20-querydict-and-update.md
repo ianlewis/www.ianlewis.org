@@ -4,6 +4,7 @@ title: "QueryDict and update()"
 date: 2009-02-20 09:29:46 +0000
 permalink: /en/querydict-and-update
 blog: en
+tags: python django
 render_with_liquid: false
 ---
 

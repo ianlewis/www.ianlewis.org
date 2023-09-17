@@ -4,6 +4,7 @@ title: "Fabric デプロイツールのPythonicな書き方"
 date: 2010-09-08 11:41:40 +0000
 permalink: /jp/fabric-pythonic
 blog: jp
+tags: python nginx デプロイ
 render_with_liquid: false
 ---
 

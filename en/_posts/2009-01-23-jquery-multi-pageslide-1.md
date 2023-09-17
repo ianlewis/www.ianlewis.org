@@ -4,6 +4,7 @@ title: "jQuery Multi-Pageslide"
 date: 2009-01-23 00:15:08 +0000
 permalink: /en/jquery-multi-pageslide-1
 blog: en
+tags: javascript jquery
 render_with_liquid: false
 ---
 

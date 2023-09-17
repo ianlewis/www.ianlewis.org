@@ -4,6 +4,7 @@ title: "Python Planet Japan 登場！！"
 date: 2008-07-16 03:53:23 +0000
 permalink: /jp/python-planet-japan
 blog: jp
+tags: japan python planet
 render_with_liquid: false
 ---
 

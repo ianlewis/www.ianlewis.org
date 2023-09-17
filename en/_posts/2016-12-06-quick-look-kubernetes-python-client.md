@@ -4,6 +4,7 @@ title: "A Quick Look at the Kubernetes Python Client"
 date: 2016-12-06 23:30:00 +0000
 permalink: /en/quick-look-kubernetes-python-client
 blog: en
+tags: python kubernetes
 render_with_liquid: false
 ---
 

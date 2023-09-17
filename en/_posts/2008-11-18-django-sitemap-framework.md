@@ -4,6 +4,7 @@ title: "Django Sitemap Framework"
 date: 2008-11-18 21:22:06 +0000
 permalink: /en/django-sitemap-framework
 blog: en
+tags: python django sitemap
 render_with_liquid: false
 ---
 

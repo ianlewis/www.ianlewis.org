@@ -4,6 +4,7 @@ title: "Annoying things about Django"
 date: 2009-08-30 13:08:00 +0000
 permalink: /en/annoying-things-about-django
 blog: en
+tags: django models
 render_with_liquid: false
 ---
 

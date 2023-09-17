@@ -4,6 +4,7 @@ title: "Jaikuを動かしてみた"
 date: 2009-03-16 00:30:34 +0000
 permalink: /jp/jaiku-on-appengine
 blog: jp
+tags: appengine
 render_with_liquid: false
 ---
 

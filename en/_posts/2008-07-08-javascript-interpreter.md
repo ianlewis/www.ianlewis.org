@@ -4,6 +4,7 @@ title: "Javascript Interpreter"
 date: 2008-07-08 19:45:46 +0000
 permalink: /en/javascript-interpreter
 blog: en
+tags: javascript mochikit
 render_with_liquid: false
 ---
 

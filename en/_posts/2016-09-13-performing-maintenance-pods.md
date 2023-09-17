@@ -4,6 +4,7 @@ title: "Performing Maintenance on Pods"
 date: 2016-09-13 12:20:00 +0000
 permalink: /en/performing-maintenance-pods
 blog: en
+tags: kubernetes
 render_with_liquid: false
 ---
 

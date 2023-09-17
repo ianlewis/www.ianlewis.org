@@ -4,6 +4,7 @@ title: "Homepage Redesign"
 date: 2012-12-09 23:51:42 +0000
 permalink: /en/homepage-redesign
 blog: en
+tags: homepage css redesign
 render_with_liquid: false
 ---
 

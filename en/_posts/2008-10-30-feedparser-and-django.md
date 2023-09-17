@@ -4,6 +4,7 @@ title: "Feedparser and Django"
 date: 2008-10-30 19:13:52 +0000
 permalink: /en/feedparser-and-django
 blog: en
+tags: python
 render_with_liquid: false
 ---
 

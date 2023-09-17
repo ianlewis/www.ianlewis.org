@@ -4,6 +4,7 @@ title: "Google Appengine Hackathon 第2回"
 date: 2008-12-13 23:47:35 +0000
 permalink: /jp/google_appengine_hackathon-2
 blog: jp
+tags: python google モバイル appengine 絵文字
 render_with_liquid: false
 ---
 

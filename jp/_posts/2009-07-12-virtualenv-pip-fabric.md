@@ -4,6 +4,7 @@ title: "virtualenv, virtualenvwrapper, pip を使う方法"
 date: 2009-07-12 10:47:17 +0000
 permalink: /jp/virtualenv-pip-fabric
 blog: jp
+tags: python pip virtualenv virtualenvwrapper 仮想化
 render_with_liquid: false
 ---
 

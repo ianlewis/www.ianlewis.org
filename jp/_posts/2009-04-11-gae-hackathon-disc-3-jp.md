@@ -4,6 +4,7 @@ title: "GAE Hackathon Disc. 3 全文検索"
 date: 2009-04-11 20:46:13 +0000
 permalink: /jp/gae-hackathon-disc-3-jp
 blog: jp
+tags: python google appengine 全文検索 text search
 render_with_liquid: false
 ---
 

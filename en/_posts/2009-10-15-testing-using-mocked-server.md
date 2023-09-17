@@ -4,6 +4,7 @@ title: "Testing using a mocked HTTP server"
 date: 2009-10-15 09:50:18 +0000
 permalink: /en/testing-using-mocked-server
 blog: en
+tags: django mock testing
 render_with_liquid: false
 ---
 

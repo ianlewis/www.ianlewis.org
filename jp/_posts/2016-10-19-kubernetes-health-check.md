@@ -4,6 +4,7 @@ title: "Kubernetesヘルスチェックの使い方"
 date: 2016-10-19 11:00:00 +0000
 permalink: /jp/kubernetes-health-check
 blog: jp
+tags: kubernetes
 render_with_liquid: false
 ---
 

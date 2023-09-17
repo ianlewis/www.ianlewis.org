@@ -4,6 +4,7 @@ title: "Python 例外のひどい仕様"
 date: 2009-06-04 14:39:55 +0000
 permalink: /jp/doctest-unicode-error
 blog: jp
+tags: python django 例外 unicode test
 render_with_liquid: false
 ---
 

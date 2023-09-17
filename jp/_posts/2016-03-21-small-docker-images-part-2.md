@@ -4,6 +4,7 @@ title: "小さいDockerイメージを作ろう Part #2"
 date: 2016-03-21 16:00:00 +0000
 permalink: /jp/small-docker-images-part-2
 blog: jp
+tags: docker
 render_with_liquid: false
 ---
 

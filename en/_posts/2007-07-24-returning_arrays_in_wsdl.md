@@ -4,6 +4,7 @@ title: "Returning Arrays in WSDL"
 date: 2007-07-24 18:41:28 +0000
 permalink: /en/returning_arrays_in_wsdl
 blog: en
+tags: xml wsdl soap
 render_with_liquid: false
 ---
 
@@ -28,9 +29,9 @@ Quote](http://www.webservicex.net/stockquote.asmx?WSDL) web service. Or
 the Google [SOAP web service
 definition](http://api.google.com/GoogleSearch.wsdl).
 
-> **Update:** The Google SOAP web service has been deprecated and removed.
-> See the blog post on the Official Google Code Blog: [A well earned
-> retirement for the SOAP Search API](http://googlecode.blogspot.jp/2009/08/well-earned-retirement-for-soap-search.html)
+> **Update:** The Google SOAP web service has been deprecated and removed. See
+> the blog post on the Official Google Code Blog:
+> [A well earned retirement for the SOAP Search API](http://googlecode.blogspot.jp/2009/08/well-earned-retirement-for-soap-search.html)
 
 Though after reading all of those, while returning base types like int
 or string or even custom objects was easy to define, I had a hard time

@@ -4,6 +4,7 @@ title: "Wanted: Dictionary program for Windows/Linux"
 date: 2008-08-03 18:21:00 +0000
 permalink: /en/wanted-dictionary-program-for-windows-li
 blog: en
+tags: projects c++ c stardict
 render_with_liquid: false
 ---
 

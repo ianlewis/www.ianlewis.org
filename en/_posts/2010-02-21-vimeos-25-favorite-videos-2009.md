@@ -4,6 +4,7 @@ title: "Vimeo's 25 favorite videos of 2009"
 date: 2010-02-21 20:37:37 +0000
 permalink: /en/vimeos-25-favorite-videos-2009
 blog: en
+tags: movie vimeo
 render_with_liquid: false
 ---
 

@@ -4,6 +4,7 @@ title: "Jaiku on Appengine"
 date: 2009-03-16 00:52:31 +0000
 permalink: /en/jaiku-on-appengine-1
 blog: en
+tags: appengine
 render_with_liquid: false
 ---
 

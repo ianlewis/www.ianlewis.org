@@ -4,6 +4,7 @@ title: "How kubeadm Initializes Your Kubernetes Master"
 date: 2016-10-12 18:00:00 +0000
 permalink: /en/how-kubeadm-initializes-your-kubernetes-master
 blog: en
+tags: kubernetes
 render_with_liquid: false
 ---
 

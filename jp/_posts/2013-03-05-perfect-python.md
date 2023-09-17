@@ -4,6 +4,7 @@ title: "パーフェクトPythonは本日から発開始!!"
 date: 2013-03-05 14:30:00 +0000
 permalink: /jp/perfect-python
 blog: jp
+tags: python パーパイ
 render_with_liquid: false
 ---
 

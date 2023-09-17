@@ -4,6 +4,7 @@ title: "mercurial .hgrc include"
 date: 2010-05-19 19:43:52 +0000
 permalink: /jp/mercurial-hgrc-include
 blog: jp
+tags: python mercurial
 render_with_liquid: false
 ---
 

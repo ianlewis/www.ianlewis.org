@@ -4,6 +4,7 @@ title: "Mercurialログ情報出力の５個のtips"
 date: 2013-12-10 13:30:00 +0000
 permalink: /jp/mercurial-10-tips
 blog: jp
+tags: mercurial source-control
 render_with_liquid: false
 ---
 

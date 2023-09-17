@@ -4,6 +4,7 @@ title: "PyCon Mini JP  「お前、誰よ」まとめ"
 date: 2011-01-30 20:24:44 +0000
 permalink: /jp/pycon-mini-jp
 blog: jp
+tags: python pycon sphinx
 render_with_liquid: false
 ---
 

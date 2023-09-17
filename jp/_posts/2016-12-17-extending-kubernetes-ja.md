@@ -4,6 +4,7 @@ title: "Kubernetesを拡張しよう"
 date: 2016-12-17 20:30:00 +0000
 permalink: /jp/extending-kubernetes-ja
 blog: jp
+tags: kubernetes
 render_with_liquid: false
 ---
 

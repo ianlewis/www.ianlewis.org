@@ -4,6 +4,7 @@ title: "IE, JSON, and the script tag"
 date: 2009-02-14 13:34:57 +0000
 permalink: /en/ie-json-and-the-lscriptg-tagl-scriptg
 blog: en
+tags: javascript json ie xss
 render_with_liquid: false
 ---
 

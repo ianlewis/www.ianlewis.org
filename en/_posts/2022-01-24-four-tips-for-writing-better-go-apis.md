@@ -4,6 +4,7 @@ title: "Four Tips for Writing Better Go APIs"
 date: 2022-01-24 00:00:00 +0000
 permalink: /en/four-tips-for-writing-better-go-apis
 blog: en
+tags: golang
 render_with_liquid: false
 ---
 

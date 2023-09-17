@@ -4,6 +4,7 @@ title: "Django アプリサーバ、gunicorn と fastcgi の比較"
 date: 2010-08-28 13:34:39 +0000
 permalink: /jp/django-gunicorn-fastcgi
 blog: jp
+tags: python django
 render_with_liquid: false
 ---
 

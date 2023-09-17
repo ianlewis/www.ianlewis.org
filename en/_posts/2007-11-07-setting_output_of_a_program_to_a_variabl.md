@@ -4,6 +4,7 @@ title: "Setting output of a program to a variable in Windows Batch"
 date: 2007-11-07 18:03:39 +0000
 permalink: /en/setting_output_of_a_program_to_a_variabl
 blog: en
+tags: mercurial
 render_with_liquid: false
 ---
 

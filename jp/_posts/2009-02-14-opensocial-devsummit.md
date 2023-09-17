@@ -4,6 +4,7 @@ title: "OpenSocial Hackathon @ デブサミ"
 date: 2009-02-14 13:30:03 +0000
 permalink: /jp/opensocial-devsummit
 blog: jp
+tags: python google appengine opensocial デブサミ
 render_with_liquid: false
 ---
 

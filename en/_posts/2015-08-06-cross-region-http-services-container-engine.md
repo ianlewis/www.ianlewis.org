@@ -4,6 +4,7 @@ title: "Cross-Region HTTP Services on Container Engine"
 date: 2015-08-06 02:00:00 +0000
 permalink: /en/cross-region-http-services-container-engine
 blog: en
+tags: kubernetes google-container-engine
 render_with_liquid: false
 ---
 

@@ -140,6 +140,9 @@ func main() {
 		fmt.Fprintf(f, "date: %s\n", p.PubDate.Format("2006-01-02 15:04:05 +0000"))
 		fmt.Fprintf(f, "permalink: /%s/%s\n", p.Locale, p.Slug)
 		fmt.Fprintf(f, "blog: %s\n", p.Locale)
+		if len(p.Tags) > 0 {
+			fmt.Fprintf(f, "tags: %s\n", strings.Join(p.Tags, " "))
+		}
 		fmt.Fprint(f, "render_with_liquid: false\n")
 		fmt.Fprint(f, "---\n")
 		fmt.Fprint(f, "\n")
@@ -182,13 +185,16 @@ func getPosts(ctx context.Context, db *sql.DB) ([]*BlogPost, error) {
 		pub_date,
 		create_date,
 		update_date
-	from blog_post
-    WHERE active = true;`
+	FROM
+		blog_post
+    WHERE
+		active = true;`
 
 	rows, err := tx.QueryContext(ctx, q)
 	if err != nil {
 		return nil, err
 	}
+	defer rows.Close()
 
 	var posts []*BlogPost
 	for rows.Next() {
@@ -212,8 +218,60 @@ func getPosts(ctx context.Context, db *sql.DB) ([]*BlogPost, error) {
 		); err != nil {
 			return nil, err
 		}
+
 		posts = append(posts, &p)
 	}
 
+	rows.Close()
+
+	for _, p := range posts {
+		tags, err := getTags(ctx, tx, p.ID)
+		if err != nil {
+			return nil, fmt.Errorf("gettings tags for %d: %w", p.ID, err)
+		}
+		p.Tags = tags
+	}
+
 	return posts, err
+}
+
+func getTags(ctx context.Context, tx *sql.Tx, id int64) ([]string, error) {
+	q := `SELECT 
+		blog_tag.name
+	FROM
+		blog_post
+	INNER JOIN
+ 		blog_post_tags
+	ON
+		blog_post_tags.post_id = blog_post.id
+	INNER JOIN
+		blog_tag
+	ON
+		blog_post_tags.tag_id = blog_tag.id
+	WHERE
+			blog_post.active = true
+		AND
+			blog_post.id = ?`
+
+	rows, err := tx.QueryContext(ctx, q, id)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var tags []string
+	for rows.Next() {
+		select {
+		case <-ctx.Done():
+			return nil, ctx.Err()
+		default:
+		}
+		var tag string
+		if err := rows.Scan(&tag); err != nil {
+			return nil, err
+		}
+		tags = append(tags, tag)
+	}
+
+	return tags, nil
 }

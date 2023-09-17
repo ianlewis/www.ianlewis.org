@@ -4,6 +4,7 @@ title: "bpssl - The Django SSL Support Application"
 date: 2010-11-15 18:31:13 +0000
 permalink: /en/bpssl-django-ssl-support-application
 blog: en
+tags: python django ssl
 render_with_liquid: false
 ---
 

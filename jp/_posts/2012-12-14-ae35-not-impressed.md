@@ -4,6 +4,7 @@ title: "AE35 IS NOT IMPRESSED"
 date: 2012-12-14 10:23:42 +0000
 permalink: /jp/ae35-not-impressed
 blog: jp
+tags: python appengine meme
 render_with_liquid: false
 ---
 

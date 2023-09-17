@@ -4,6 +4,7 @@ title: "Container Runtimes Part 1: An Introduction to Container Runtimes"
 date: 2017-12-06 18:30:00 +0000
 permalink: /en/container-runtimes-part-1-introduction-container-r
 blog: en
+tags: containers container-runtime-series
 render_with_liquid: false
 ---
 

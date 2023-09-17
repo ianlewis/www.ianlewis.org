@@ -4,6 +4,7 @@ title: "Kubernetes Python クライアントを使ってみる"
 date: 2016-12-02 12:00:00 +0000
 permalink: /jp/kubernetes-python
 blog: jp
+tags: python kubernetes
 render_with_liquid: false
 ---
 

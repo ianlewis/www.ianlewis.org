@@ -4,6 +4,7 @@ title: "Javaに日本語のフォントのインストール"
 date: 2009-06-16 11:38:01 +0000
 permalink: /jp/java-japanese-fonts
 blog: jp
+tags: 日本語 java フォント
 render_with_liquid: false
 ---
 

@@ -4,6 +4,7 @@ title: "Tokyo Hackerspace Meeting"
 date: 2009-06-17 10:54:16 +0000
 permalink: /en/tokyohackerspace-meeting
 blog: en
+tags: tokyo
 render_with_liquid: false
 ---
 

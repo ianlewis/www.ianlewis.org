@@ -4,6 +4,7 @@ title: "Python Onsen"
 date: 2008-06-29 10:36:21 +0000
 permalink: /en/python-onsen
 blog: en
+tags: python appengine python onsen google web toolkit json schema
 render_with_liquid: false
 ---
 

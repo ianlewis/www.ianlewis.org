@@ -4,6 +4,7 @@ title: "Linux Hater's Blog"
 date: 2008-06-15 00:20:27 +0000
 permalink: /en/linux-hater-s-blog
 blog: en
+tags: linux miguel de icaza
 render_with_liquid: false
 ---
 

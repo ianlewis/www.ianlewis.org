@@ -4,6 +4,7 @@ title: "Kubernetes + Mesos の組み合わせ"
 date: 2014-12-19 17:15:00 +0000
 permalink: /jp/kubernetes-mesos
 blog: jp
+tags: gcp kubernetes mesos
 render_with_liquid: false
 ---
 

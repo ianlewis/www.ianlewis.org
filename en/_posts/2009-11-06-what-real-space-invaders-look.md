@@ -4,6 +4,7 @@ title: "What real space invaders look like."
 date: 2009-11-06 16:35:16 +0000
 permalink: /en/what-real-space-invaders-look
 blog: en
+tags: space
 render_with_liquid: false
 ---
 

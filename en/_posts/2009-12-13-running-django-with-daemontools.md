@@ -4,6 +4,7 @@ title: "Running django with daemontools"
 date: 2009-12-13 21:38:59 +0000
 permalink: /en/running-django-with-daemontools
 blog: en
+tags: django
 render_with_liquid: false
 ---
 

@@ -4,6 +4,7 @@ title: "Go! Appengine"
 date: 2011-06-07 10:22:34 +0000
 permalink: /jp/go-appengine
 blog: jp
+tags: appengine golang
 render_with_liquid: false
 ---
 

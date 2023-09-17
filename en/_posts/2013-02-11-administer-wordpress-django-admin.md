@@ -4,6 +4,7 @@ title: "Administer WordPress using Django's Admin"
 date: 2013-02-11 06:00:00 +0000
 permalink: /en/administer-wordpress-django-admin
 blog: en
+tags: python wordpress django
 render_with_liquid: false
 ---
 

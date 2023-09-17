@@ -4,6 +4,7 @@ title: "働くのをやめた人たち"
 date: 2010-01-17 18:59:27 +0000
 permalink: /jp/hataraku-no-wo-yameta-hitotachi
 blog: jp
+tags: 仕事 ニート
 render_with_liquid: false
 ---
 

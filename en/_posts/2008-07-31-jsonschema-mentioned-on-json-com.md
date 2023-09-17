@@ -4,6 +4,7 @@ title: "jsonschema mentioned on json.com"
 date: 2008-07-31 14:47:10 +0000
 permalink: /en/jsonschema-mentioned-on-json-com
 blog: en
+tags: projects python json jsonschema
 render_with_liquid: false
 ---
 

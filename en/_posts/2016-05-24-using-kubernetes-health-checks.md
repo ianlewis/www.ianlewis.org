@@ -4,6 +4,7 @@ title: "Using Kubernetes Health Checks"
 date: 2016-05-24 17:50:00 +0000
 permalink: /en/using-kubernetes-health-checks
 blog: en
+tags: kubernetes
 render_with_liquid: false
 ---
 

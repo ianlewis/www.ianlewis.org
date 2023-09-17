@@ -4,6 +4,7 @@ title: "connpass のイベントマップのマッシュアップを作って見
 date: 2012-07-17 13:00:00 +0000
 permalink: /jp/connpass-map
 blog: jp
+tags: javascript connpass google-maps
 render_with_liquid: false
 ---
 

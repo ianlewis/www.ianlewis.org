@@ -4,6 +4,7 @@ title: "Ok/Cancel buttons with jqModal"
 date: 2008-09-22 00:12:22 +0000
 permalink: /en/ok-cancel-buttons-with-jqmodal
 blog: en
+tags: javascript jquery
 render_with_liquid: false
 ---
 

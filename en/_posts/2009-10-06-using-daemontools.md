@@ -4,6 +4,7 @@ title: "Using Daemontools"
 date: 2009-10-06 11:15:29 +0000
 permalink: /en/using-daemontools
 blog: en
+tags: monitoring system admin
 render_with_liquid: false
 ---
 

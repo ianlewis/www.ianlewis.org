@@ -4,6 +4,7 @@ title: "Redis init.d script"
 date: 2010-03-20 11:10:03 +0000
 permalink: /en/redis-initd-script
 blog: en
+tags: ubuntu debian redis
 render_with_liquid: false
 ---
 

@@ -4,6 +4,7 @@ title: "Backup with rsync"
 date: 2008-02-15 14:18:00 +0000
 permalink: /en/backup_with_rsync
 blog: en
+tags: windows linux rsync
 render_with_liquid: false
 ---
 

@@ -4,6 +4,7 @@ title: "Using Kubernetes Namespaces to Manage Environments"
 date: 2015-07-15 16:00:00 +0000
 permalink: /en/using-kubernetes-namespaces-manage-environments
 blog: en
+tags: kubernetes
 render_with_liquid: false
 ---
 

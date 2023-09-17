@@ -4,6 +4,7 @@ title: "DjangoGraphviz"
 date: 2008-11-08 11:40:03 +0000
 permalink: /jp/djangographviz
 blog: jp
+tags: python django graphviz model
 render_with_liquid: false
 ---
 

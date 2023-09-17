@@ -4,6 +4,7 @@ title: "ウェブホスティング移動"
 date: 2008-10-13 13:02:10 +0000
 permalink: /jp/hosting_move
 blog: jp
+tags: python pylons django webfaction ホスティング
 render_with_liquid: false
 ---
 

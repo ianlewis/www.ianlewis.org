@@ -4,6 +4,7 @@ title: "Key Value Storage Systems ... and Beyond ... with Python"
 date: 2010-06-15 16:33:38 +0000
 permalink: /en/key-value-storage-systems-and-beyond-python
 blog: en
+tags: python pyconsg
 render_with_liquid: false
 ---
 

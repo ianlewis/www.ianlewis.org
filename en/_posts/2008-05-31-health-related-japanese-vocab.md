@@ -4,6 +4,7 @@ title: "Health related Japanese Vocab"
 date: 2008-05-31 19:37:25 +0000
 permalink: /en/health-related-japanese-vocab
 blog: en
+tags: japanese vocabulary
 render_with_liquid: false
 ---
 

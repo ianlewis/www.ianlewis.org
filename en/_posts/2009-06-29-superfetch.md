@@ -4,6 +4,7 @@ title: "Windows Vista SuperFetch"
 date: 2009-06-29 00:11:25 +0000
 permalink: /en/superfetch
 blog: en
+tags: windows superfetch thrashing vista
 render_with_liquid: false
 ---
 

@@ -4,6 +4,7 @@ title: "Pickling Objects with Cached Properties"
 date: 2014-12-12 12:00:00 +0000
 permalink: /en/pickling-objects-cached-properties
 blog: en
+tags: python
 render_with_liquid: false
 ---
 
