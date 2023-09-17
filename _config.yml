@@ -18,9 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-# TODO: Add pagination; See https://jekyllrb.com/docs/pagination/
+# TODO: Add CSS for pagination.
 # TODO: Verify atom feed urls.
-# TODO: Add projects page.
 # TODO: Convert image URLS from static.ianlewis.org.
 
 title: Ian Lewis
@@ -55,6 +54,7 @@ plainwhite:
       url: /en
     - title: Japanese Posts
       url: /jp
+    # TODO: Add projects page.
     - title: About Me
       url: /en/about
 
