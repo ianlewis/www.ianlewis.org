@@ -10,7 +10,7 @@ render_with_liquid: false
 
 ![image](http://static.ianlewis.org/prod/img/python/python-powered.png)
 
-![image](http://static.ianlewis.org/prod/img/appengine/appengine_lowres.png)
+![image](/assets/images/appengine/appengine_lowres.png)
 
 昨日のAPIエキスパート月例会で、私は [Google Appengine 公認API
 エキスパート](http://sites.google.com/site/devreljp/Home/api-expert)

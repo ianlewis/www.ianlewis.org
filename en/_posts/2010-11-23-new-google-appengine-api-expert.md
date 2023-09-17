@@ -10,7 +10,7 @@ render_with_liquid: false
 
 ![image](/assets/images/643/python-powered-w-200x80.png)
 
-![image](http://static.ianlewis.org/prod/img/appengine/appengine_lowres_thumbnail.png)
+![image](/assets/images/appengine/appengine_lowres_thumbnail.png)
 
 Yesterday I became the new [Google Appengine API
 Expert](http://sites.google.com/site/devreljp/Home/api-expert) (Python)
