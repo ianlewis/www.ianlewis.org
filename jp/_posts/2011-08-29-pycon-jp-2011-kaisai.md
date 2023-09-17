@@ -8,7 +8,7 @@ tags: python pyconjp
 render_with_liquid: false
 ---
 
-![PyconJP](http://static.ianlewis.org/prod/img/661/logo_small.png)\_
+![PyconJP](/assets/images/661/logo_small.png)\_
 
 スタッフとして、楽しい楽しいPyconJP に参加しました。 今回、約200人の Python プログラマーを集めることを成功しました。 本当に
 Python に興味がある方がいっぱい来てくれて、楽しくて、素晴らしいイベントができました！ 嬉しかったです。
@@ -22,8 +22,8 @@ PyconJP 2011 で始めて感じていました。海外の方もいらっしゃ�
 
 <div class="lightbox">
 
-<http://static.ianlewis.org/prod/img/662/audience_medium.jpg>
-<http://static.ianlewis.org/prod/img/662/audience.jpg>
+</assets/images/662/audience_medium.jpg>
+</assets/images/662/audience.jpg>
 
 </div>
 

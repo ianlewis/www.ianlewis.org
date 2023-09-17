@@ -8,7 +8,7 @@ tags: django gumi
 render_with_liquid: false
 ---
 
-![image](http://static.ianlewis.org/prod/img/633/gumi.gif)
+![image](/assets/images/633/gumi.gif)
 
 僕の会社BeProud のもう一つの主に Django を使っている会社は [gumi](http://gu3.co.jp/). グミはもともと
 [酒徳さん](http://twitter.com/perezvon) が作った Django サイトで、明らかに有名になってきた。昨日、

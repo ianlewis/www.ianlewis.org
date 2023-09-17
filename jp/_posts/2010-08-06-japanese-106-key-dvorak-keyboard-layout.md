@@ -15,7 +15,7 @@ a s d f のキーを打つと、a o e u が入力されます。
 
 U.S. Dvorak配列のイメージです。
 
-![image](http://static.ianlewis.org/prod/img/621/us_dvorak.png)
+![image](/assets/images/621/us_dvorak.png)
 
 アメリカにいたら、よくある U.S. Dvorak
 配列を使っていたんですが、日本に来てから、日本語用のキーポードが普段になっていたので、キーの配置が若干違うのが問題でした。漢字変換用のキーなども普段にキーポードに入っています。日本語キーポードで動くDvorak
@@ -151,4 +151,4 @@ kazrus          kz: Kazakh with Russian
 や、Xキーマップの設定が再読み込みするはず。それで、メニューから選ぶ、「システム」=\>
 「設定」=\> 「キーボード」 =\> 「追加」 で、日本語Dvorak キーボード配列を選択できる。
 
-![image](http://static.ianlewis.org/prod/img/621/jp160_dvorak.jpg)
+![image](/assets/images/621/jp160_dvorak.jpg)

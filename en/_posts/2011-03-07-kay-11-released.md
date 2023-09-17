@@ -129,7 +129,7 @@ Or they can be managed via a custom Admin page:
 
 ---
 
-![image](http://static.ianlewis.org/prod/img/652/live_settings.png)
+![image](/assets/images/652/live_settings.png)
 
 ---
 
@@ -168,7 +168,7 @@ page and integrates with Kay's `ADMINS` and email related settings.
 
 ---
 
-![image](http://static.ianlewis.org/prod/img/652/ereporter.png)
+![image](/assets/images/652/ereporter.png)
 
 ---
 

@@ -8,7 +8,7 @@ tags: python django
 render_with_liquid: false
 ---
 
-![image](http://static.ianlewis.org/prod/img/624/large_gunicorn_big.png)
+![image](/assets/images/624/large_gunicorn_big.png)
 
 # 概要
 

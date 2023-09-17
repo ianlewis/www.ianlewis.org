@@ -8,7 +8,7 @@ tags: ec2 aws s3
 render_with_liquid: false
 ---
 
-![image](http://static.ianlewis.org/prod/img/651/logo_aws.gif)
+![image](/assets/images/651/logo_aws.gif)
 
 ようやく！ [AWS
 が東京に来ました！](http://aws.typepad.com/aws/2011/03/now-open-aws-region-in-tokyo.html)
