@@ -52,6 +52,16 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+plainwhite:
+  name: Ian Lewis
+  tagline: Engineer
+  # TODO: Update to use better portfolio image.
+  portfolio_image: assets/portfolio.jpg
+
+  social_links:
+    twitter: IanMLewis
+    github: ianlewis
 # TODO: Add post list by tags page.
-# TODO: Set sidebar config.
+# TODO: Add excerpts to blog post list page.
 # TODO: Verify atom feed urls.
+# TODO: Fix _emphasis_ rendering.
