@@ -29,7 +29,7 @@ twitter_username: IanMLewis
 github_username: ianlewis
 
 # Build settings
-theme: minima
+theme: plainwhite
 plugins:
   - jekyll-feed
 # Exclude from processing.
