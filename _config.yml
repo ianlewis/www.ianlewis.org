@@ -49,9 +49,9 @@ plainwhite:
     github: ianlewis
 
   navigation:
-    - title: English Posts
+    - title: English Blog
       url: /en
-    - title: Japanese Posts
+    - title: 日本語ブログ
       url: /jp
     # TODO: Add projects page.
     - title: About Me
