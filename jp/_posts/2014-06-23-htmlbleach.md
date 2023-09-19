@@ -24,37 +24,37 @@ html5lib を使っているから、閉じタグが入ってないような汚�
 BeautifulSoup は Python 2.x だと HTMLParser ベースで、 HTMLParserがこういうHTMLが入っているとこけちゃいますので、僕のパーサーに以下のようなモンキーパッチをしていました。
 
 ```python
-    import HTMLParser
-    try:
-        _p = HTMLParser.HTMLParser()
-        _p.feed(u"<input name=submit type=submit value=検索>")
-        _p.close()
-    except HTMLParser.HTMLParseError:
-        # Only patch HTMLParser if it's needed.
-        HTMLParser.attrfind = re.compile(
-            r'\s*([a-zA-Z_][-.:a-zA-Z_0-9]*)(\s*=\s*'
-            r'(\'[^\']*\'|"[^"]*"|[^">\s]*))?')
+import HTMLParser
+try:
+    _p = HTMLParser.HTMLParser()
+    _p.feed(u"<input name=submit type=submit value=検索>")
+    _p.close()
+except HTMLParser.HTMLParseError:
+    # Only patch HTMLParser if it's needed.
+    HTMLParser.attrfind = re.compile(
+        r'\s*([a-zA-Z_][-.:a-zA-Z_0-9]*)(\s*=\s*'
+        r'(\'[^\']*\'|"[^"]*"|[^">\s]*))?')
 ```
 
 ## HTMLサニタイズ
 
 まずは、簡単な例から始まります。
 
-```
-    >>> import bleach
-    >>> bleach.clean('<a href="http://example.com/"><span>hoge</div></a>')
-    u'<a href="http://example.com/">&lt;span&gt;hoge&lt;/div&gt;</a>'
+```python
+>>> import bleach
+>>> bleach.clean('<a href="http://example.com/"><span>hoge</div></a>')
+u'<a href="http://example.com/">&lt;span&gt;hoge&lt;/div&gt;</a>'
 ```
 
 デフォルトで span と div を許さないので、エスケープするけど、 `a`タグはそのままスルーしてくれたね。
 
 ```python
-    >>> bleach.clean(
-    ...     text=u'<input name=submit type=submit value=検索>',
-    ...     tags=["input"],
-    ...     attributes={"input": ["name", "type", "value"]},
-    ... )
-    u'<input type="submit" name="submit" value="\u691c\u7d22">'
+>>> bleach.clean(
+...     text=u'<input name=submit type=submit value=検索>',
+...     tags=["input"],
+...     attributes={"input": ["name", "type", "value"]},
+... )
+u'<input type="submit" name="submit" value="\u691c\u7d22">'
 ```
 
 次は上の例を見てみよう。これもいい感じでパースしてくれた。html5lib は結構優秀そう。
@@ -66,13 +66,13 @@ positionだとかを許すと、表示するコンテンツの枠以外のとこ
 画像を全画面に出しちゃったりするとか
 
 ```python
-    >>> bleach.clean(
-    ...     text=u'<span style="position: absolute;top:0;left:0;font-size:12px;">',
-    ...     tags=["span"],
-    ...     attributes={"*": ["style"]},
-    ...     styles=["font-size"]
-    ... )
-    u'<span style="font-size: 12px;"></span>'
+>>> bleach.clean(
+...     text=u'<span style="position: absolute;top:0;left:0;font-size:12px;">',
+...     tags=["span"],
+...     attributes={"*": ["style"]},
+...     styles=["font-size"]
+... )
+u'<span style="font-size: 12px;"></span>'
 ```
 
 このように危険なスタイルも消せます。
