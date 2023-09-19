@@ -16,23 +16,23 @@ Kubernetesは`Deployment`, `Secret`, `ConfigMap`, `Ingress`など、いろいろ
 
 Kubernetesをどうやって拡張するかを説明する前に、そもそもKubernetesのアーキテクチャを説明しなくちゃいけない。KubernetesのマスターにAPIサーバーはもちろんあるんですが、APIサーバーは基本的にKubernetesのオブジェクトデータのCRUDオペレーションくらいしかやっていない。例えば、`Deployment`の動きの実装はAPIサーバーには入っていない。ノードが落ちたら、そこに入っていたポッドを別のサーバーに移動したり、ローリングアップデートの動きなどはDeploymentコントローラーで実装されていて、コントローラーマネジャー(kube-controller-manager)というデーモンに入っている。コントローラーマネジャーは何かというと管理に便利だったため、Kubernetesの標準オブジェクト(`Deployment`, `ReplicaSet`, `DaemonSet`, `StatefulSet`など)の複数のコントローラーが合わせて入っているデーモン。
 
-![](/assets/images/759/kube-controller-manager.png)
+![kube-controller-manager](/assets/images/759/kube-controller-manager.png)
 
 コントローラーは何かと言いますと、コントロールループで、クラスタのあるべき状態（APIサーバー・etcdに入っているデータ)とクラスタの実際の状態を常に比較して、クラスタのあるべき状態をクラスタに実現させるデーモン。ユーザーがAPIサーバーにあるべき状態を保存したあとに動作するものなので、必然的に非同期のアーキテクチャになる。
 
-![](/assets/images/759/control-loop.jpg)
+![control-loop diagram](/assets/images/759/control-loop.jpg)
 
 APIサーバーにオブジェクトの追加、変更、削除を監視できるWatch APIがある。コントローラーマネジャーのコントローラーたちは、APIサーバーのWatch APIを使って、該当のオブジェクトを監視して、他のオブジェクトを作ったり、更新したりする。例えば、`Deployment`コントローラーは`Deployment`が新しく作られたら、その`Deployment`に紐づく`ReplicaSet`を作くったり、`Deployment`の`replicas`が更新されたら、紐づく`ReplicaSet`の`replicas`を更新したりします。
 
-![](/assets/images/759/controller.png)
+![controller diagram](/assets/images/759/controller.png)
 
 このコントローラーを組み合わせることもできます。例えば、`ReplicaSet`のコントローラーがさらにあります。`Deployment`コントローラーが`ReplicaSet`を更新したりするけど、`ReplicaSet`の`replicas`に従って、Podを作成したり、監視するのが`ReplicaSet`コントローラーの役目です。
 
-![](/assets/images/759/deployment.png)
+![deployment diagram](/assets/images/759/deployment.png)
 
 Kubernetesオブジェクトではなくて、`Ingress`や`Service`のように外部APIを使う場合もあるだろう。`type=LoadBalancer`の`Service`を作ったら、クラウドプロバイダーの`Service`コントローラーが勝手にロードバランサーを作ってくれることもできます。
 
-![](/assets/images/759/cloud.png)
+![cloud diagram](/assets/images/759/cloud.png)
 
 ## Kubernetes を拡張する
 
@@ -54,15 +54,15 @@ versions:
 
 この`CronTab`を`resource.yaml`に保存して、`kubectl`で作成する。`CronTab`のオブジェクト名は`cron-tab.alpha.ianlewis.org`の最初の部分`cron-tab`をCamel Caseにした名称になる。
 
-```console
+```shell
 $ kubectl create -f resource.yaml
 thirdpartyresource "cron-tab.alpha.ianlewis.org" created
 ```
 
 こうするとAPIサーバーで`/apis/alpha.ianlewis.org/v1/namespaces/<namespace>/crontabs/`というURLエンドポイントが使えるようになります。このURLを使うと`CronTab`オブジェクトを作ることができますが、簡単な操作は`kubectl`を使えます。
 
-```console
-$ kubectl get crontab
+```shell
+kubectl get crontab
 ```
 
 `CronTab`オブジェクトを作ってみましょう。`ThirdPartyResource`のオブジェクトはKubernetesオブジェクトの標準フィールド`apiVersion`, `kind`, `metadata`が必要ですが、それ以外のフィールドはすべて任意JSONデータ。`CronTab`は`spec`というフィールドに[`Job`オブジェクトの`spec`](http://kubernetes.io/docs/user-guide/jobs/#writing-a-job-spec)と同じデータを入れます。以下のYamlを`backup.yaml`に保存します。
@@ -83,7 +83,7 @@ spec:
 
 `backup`の`CronTab`を作成する
 
-```console
+```shell
 $ kubectl create -f backup.yaml
 crontab "backup" created
 ```
@@ -351,14 +351,14 @@ spec:
 
 これでクラスタにデプロイして、Cronサーバーを動かす。
 
-```console
+```shell
 $ kubectl create -f deploy.yaml
 deployment "cron-controller" created
 ```
 
 うまく行けば、CronTabのスケジュールに従って、`Job`が作成される
 
-```console
+```shell
 $ kubectl logs cron-controller-3711479224-7z3t0
 2016/12/16 04:28:33 Watching for crontab objects...
 2016/12/16 04:28:48 Added crontab: backup
@@ -367,7 +367,7 @@ $ kubectl logs cron-controller-3711479224-7z3t0
 
 それで`Job`オブジェクトが見れるはず。
 
-```console
+```shell
 $ kubectl get jobs
 NAME                    DESIRED   SUCCESSFUL   AGE
 backup-8dasy            1         1            5m
