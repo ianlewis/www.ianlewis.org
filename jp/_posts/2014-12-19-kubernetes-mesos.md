@@ -53,30 +53,30 @@ k8sのホステッド版、Google Container Engineの機能です。ホステッ
 
 Mesos の会社 MesosphereはMesosのでもイメージを作ってくれたので、以下の ~~VagrantFile`` でとりあえず Mesos を動かせると思います。
 
-```
-    # -*- mode: ruby -*-
-    # vi: set ft=ruby :
+```ruby
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
-    VAGRANTFILE_API_VERSION = "2"
+VAGRANTFILE_API_VERSION = "2"
 
-    Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-      config.vm.box = "km-demo"
-      config.vm.box_url = "http://downloads.mesosphere.io/demo/km-demo.box"
+  config.vm.box = "km-demo"
+  config.vm.box_url = "http://downloads.mesosphere.io/demo/km-demo.box"
 
-      config.vm.synced_folder ".", "/vagrant", :disabled => true
-      config.vm.synced_folder "./", "/home/vagrant/hostfiles"
+  config.vm.synced_folder ".", "/vagrant", :disabled => true
+  config.vm.synced_folder "./", "/home/vagrant/hostfiles"
 
-      config.ssh.forward_agent = true
+  config.ssh.forward_agent = true
 
-      config.vm.provider :virtualbox do |vb|
-        vb.customize ["modifyvm", :id, "--ioapic", "on"]
-        vb.customize ["modifyvm", :id, "--cpus", "1"]
-        vb.customize ["modifyvm", :id, "--memory", "512"]
-      end
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--ioapic", "on"]
+    vb.customize ["modifyvm", :id, "--cpus", "1"]
+    vb.customize ["modifyvm", :id, "--memory", "512"]
+  end
 
-      config.vm.provision "shell", path: "provision.sh"
-    end
+  config.vm.provision "shell", path: "provision.sh"
+end
 ```
 
 そして、k8sとMesosを連動して動かせるのかなって調べてみたら、Mesosphereが作り中の
@@ -89,82 +89,82 @@ Mesos の会社 MesosphereはMesosのでもイメージを作ってくれたの�
 
 まずは、buildしてみましょう。まずは、上のVagrantFileで起動したVMで Go をインストールする必要がある。
 
-```
-    $ mkdir -p /usr/local/opt/gopath
-    $ curl -L https://storage.googleapis.com/golang/go1.4.linux-amd64.tar.gz | tar xvz
-    ...
-    $ export GOROOT=/usr/local/opt/go
-    $ export GOPATH=/usr/local/opt/gopath
-    $ export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
-    $ cat <<EOF > /etc/profile.d/gopath.sh
-    > export GOROOT=$GOROOT
-    > export GOPATH=$GOPATH
-    > export PATH=\$GOROOT/bin:\$GOPATH/bin:\$PATH
-    > EOF
+```shell
+$ mkdir -p /usr/local/opt/gopath
+$ curl -L https://storage.googleapis.com/golang/go1.4.linux-amd64.tar.gz | tar xvz
+...
+$ export GOROOT=/usr/local/opt/go
+$ export GOPATH=/usr/local/opt/gopath
+$ export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+$ cat <<EOF > /etc/profile.d/gopath.sh
+> export GOROOT=$GOROOT
+> export GOPATH=$GOPATH
+> export PATH=\$GOROOT/bin:\$GOPATH/bin:\$PATH
+> EOF
 ```
 
 次は kubernetes-mesos をビルドする
 
-```
-    $ go get github.com/tools/godep
-    $ cd $GOPATH
-    $ mkdir -p src/github.com/mesosphere/kubernetes-mesos
-    $ git clone https://github.com/mesosphere/kubernetes-mesos.git src/github.com/mesosphere/kubernetes-mesos
-    ...
-    $ cd src/github.com/mesosphere/kubernetes-mesos
-    $ godep restore
-    $ go install github.com/GoogleCloudPlatform/kubernetes/cmd/{proxy,kubecfg}
-    $ go install github.com/mesosphere/kubernetes-mesos/kubernetes-{mesos,executor}
-    $ go install github.com/mesosphere/kubernetes-mesos/controller-manager
+```shell
+$ go get github.com/tools/godep
+$ cd $GOPATH
+$ mkdir -p src/github.com/mesosphere/kubernetes-mesos
+$ git clone https://github.com/mesosphere/kubernetes-mesos.git src/github.com/mesosphere/kubernetes-mesos
+...
+$ cd src/github.com/mesosphere/kubernetes-mesos
+$ godep restore
+$ go install github.com/GoogleCloudPlatform/kubernetes/cmd/{proxy,kubecfg}
+$ go install github.com/mesosphere/kubernetes-mesos/kubernetes-{mesos,executor}
+$ go install github.com/mesosphere/kubernetes-mesos/controller-manager
 ```
 
 そうすると、kubernetes-mesosサービスを起動できる
 
-```
-    $ export servicehost=127.0.0.1
-    $ export KUBERNETES_MASTER=http://${servicehost}:8888
-    $ nohup kubernetes-mesos \
-    >   -address=${servicehost} \
-    >   -mesos_master=${servicehost}:5050 \
-    >   -etcd_servers=http://${servicehost}:4001 \
-    >   -executor_path=$(pwd)/bin/kubernetes-executor \
-    >   -proxy_path=$(pwd)/bin/proxy -v=2  2>&1 >> /var/log/kubernetes-mesos.log &
+```shell
+$ export servicehost=127.0.0.1
+$ export KUBERNETES_MASTER=http://${servicehost}:8888
+$ nohup kubernetes-mesos \
+>   -address=${servicehost} \
+>   -mesos_master=${servicehost}:5050 \
+>   -etcd_servers=http://${servicehost}:4001 \
+>   -executor_path=$(pwd)/bin/kubernetes-executor \
+>   -proxy_path=$(pwd)/bin/proxy -v=2  2>&1 >> /var/log/kubernetes-mesos.log &
 ```
 
-```
-    $ nohup controller-manager \
-    >   -master=${KUBERNETES_MASTER#http://*} \
-    >   -v=2 2>&1 >> /var/log/controller-manager.log &
+```shell
+$ nohup controller-manager \
+>   -master=${KUBERNETES_MASTER#http://*} \
+>   -v=2 2>&1 >> /var/log/controller-manager.log &
 ```
 
 サービスが起動できたら、 `kubectl` で Pod を起動できるはずだが、なぜかステータスが Waiting になっている。
 
-```
-    $ sudo kubecfg -c /usr/local/opt/gopath/src/github.com/mesosphere/kubernetes-mesos/examples/pod-nginx.json create pods
-    ID                  Image(s)            Host                Labels                 Status
-    ----------          ----------          ----------          ----------             ----------
-    nginx-id-01         dockerfile/nginx    <unassigned>        cluster=gce,name=foo   Waiting
+```shell
+$ sudo kubecfg -c /usr/local/opt/gopath/src/github.com/mesosphere/kubernetes-mesos/examples/pod-nginx.json create pods
+ID                  Image(s)            Host                Labels                 Status
+----------          ----------          ----------          ----------             ----------
+nginx-id-01         dockerfile/nginx    <unassigned>        cluster=gce,name=foo   Waiting
 ```
 
 ログを見てみると、Mesosから適切なホストはないように書いている:
 
-```
-    $ sudo less +GF /var/log/kubernetes-mesos.log
-    ...
-    I1219 07:57:23.312624 22873 scheduler.go:473] About to try and schedule pod nginx-id-01
-    I1219 07:57:23.312654 22873 scheduler.go:435] Try to schedule pod nginx-id-01
-    I1219 07:57:23.312669 22873 scheduler.go:810] failed to find a fit for pod: nginx-id-01
-    I1219 07:57:23.312680 22873 scheduler.go:479] Error scheduling nginx-id-01: No suitable offers for pod/task; retrying
-    ...
+```shell
+$ sudo less +GF /var/log/kubernetes-mesos.log
+...
+I1219 07:57:23.312624 22873 scheduler.go:473] About to try and schedule pod nginx-id-01
+I1219 07:57:23.312654 22873 scheduler.go:435] Try to schedule pod nginx-id-01
+I1219 07:57:23.312669 22873 scheduler.go:810] failed to find a fit for pod: nginx-id-01
+I1219 07:57:23.312680 22873 scheduler.go:479] Error scheduling nginx-id-01: No suitable offers for pod/task; retrying
+...
 ```
 
 Mesosのログを見てみると以下のログが大量に出ている:
 
-```
-    $ sudo less +G /var/log/mesos/mesos-master.WARNING
-    ...
-    W1219 08:00:04.636499  1297 master.cpp:751] Dropping 'mesos.internal.RegisterFrameworkMessage' message since not elected yet
-    ...
+```shell
+$ sudo less +G /var/log/mesos/mesos-master.WARNING
+...
+W1219 08:00:04.636499  1297 master.cpp:751] Dropping 'mesos.internal.RegisterFrameworkMessage' message since not elected yet
+...
 ```
 
 Mesosのマスターは当選されてないような感じなのか？よくわからんorz (MesosphereのサンプルVMの問題なのかな？)
