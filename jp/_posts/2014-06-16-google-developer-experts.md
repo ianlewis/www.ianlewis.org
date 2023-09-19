@@ -26,8 +26,6 @@ Google Developer Expert (旧Google Api Expert) を卒業しました](http://goo
 
 ![この頃からa2cと仲がいい](/assets/images/719/a2c_big.jpg)
 
-_この頃からGoogle Appsのa2cと仲がいい_
-
 # API Expert の制度の進化
 
 API Expert という制度が大昔 (２００７年頃)の開発者のGoogleファンたちの Api Guru というものの真似として、
@@ -83,5 +81,3 @@ Googleの皆さん、Developer Expert の皆さん、そしてたくさんでき
 お世話になりました！ ありがとうございました！
 
 ![まだ仲がいい](/assets/images/719/a2c_again_big.jpg)
-
-_まだ仲がいい_
