@@ -19,17 +19,7 @@ Redmine はテキストフォマッターを入れ換えるように作られて
 
 # インストール
 
-<div class="note">
-
-<div class="title">
-
-Note
-
-</div>
-
-ここには説明しないんですけど、Redmine を先にインストールする必要があります。
-
-</div>
+> ここには説明しないんですけど、Redmine を先にインストールする必要があります。
 
 まずは、Redmine reStructuredText Formatter プラグインを入れる。その為、RbST
 ライブラリをインストールする必要がある。
@@ -42,7 +32,7 @@ RbST のdocutils バージョンはデータをフォーマットする時に、
 ![image](/assets/images/673/redmine-rest.png)
 
 ```text
-$ gem install RbST
+gem install RbST
 ```
 
 RbSTも日本語をレンダーする場合のバグがありますので、修正する必要があります。 (興味ある人は僕の
@@ -67,8 +57,8 @@ if __name__ == '__main__':
 もインストールしておいてください。
 
 ```text
-$ cd path/to/redmine
-$ script/plugin install git://github.com/alphabetum/redmine_restructuredtext_formatter.git
+cd path/to/redmine
+script/plugin install git://github.com/alphabetum/redmine_restructuredtext_formatter.git
 ```
 
 そうしたら、Redmine を起動・再起動します。
@@ -98,8 +88,8 @@ Textile 書かなくてもよくて、気持ちいいですね！
 RbSTのインストール先の gems ディレクトリに行って、rst2html.py を修正しよう
 
 ```text
-$ cd /path/to/ruby/gems/RbST-0.1.3/lib/rst2parts
-$ vim rst2html.py
+cd /path/to/ruby/gems/RbST-0.1.3/lib/rst2parts
+vim rst2html.py
 ```
 
 そして、下記のコードを加えましょう。 ( [moinmoin](http://moinmo.in/) からコピーした
@@ -149,40 +139,32 @@ def main():
 
 それで、Wiki でこういうように他のWiki ページへのリンクを作ることができる。
 
-    * これは「リンク」というページの `リンク`_ です。
-    * リンクのテキストが異なる場合は、`こう書く <リンク>`_
+```rst
+* これは「リンク」というページの `リンク`_ です。
+* リンクのテキストが異なる場合は、`こう書く <リンク>`_
+```
 
 それ以外のリンクの使い方は [はやわかり
 reStructuredText](http://www.planewave.org/translations/rst/quickref.html#hyperlink-targets)
 を参考にしてください。
 
-<div class="note">
-
-<div class="title">
-
-Note
-
-</div>
-
-外部 Python
-プログラムを叩いてるだけなのでredmineのパスなどがレンダーする時にわかる用がないので相対パスを吐き出すようにしているだけ。従って、プレビューする時などパスが違うのでレンダーするリンクがおかしくなる。それだけは我慢してください
-(´･ω･\`)
-
-</div>
+> 外部 Python プログラムを叩いてるだけなのでredmineのパスなどがレンダーする時にわかる用がないので
+> 相対パスを吐き出すようにしているだけ。従って、プレビューする時などパスが違うのでレンダーするリンクが
+> おかしくなる。それだけは我慢してください (´･ω･\`)
 
 # コードブロック
 
 標準のreSTじゃつまらないので、コードハイライトできるようにしょう。まずはライブラリをインストールするので、virtualenv を作ろう
 
 ```text
-$ cd /path/to/ruby/gems/RbST-0.1.3/lib/rst2parts
-$ virtualenv venv
+cd /path/to/ruby/gems/RbST-0.1.3/lib/rst2parts
+virtualenv venv
 ```
 
 次はpygmentsをvirtualenvにインストールする
 
 ```text
-$ pip install pygments -E venv
+pip install pygments -E venv
 ```
 
 そして、rst2html.py で virtualenv を使うようにしよう。rst2html.py の上にこのコードを加えましょう
@@ -193,17 +175,7 @@ import site
 site.addsitedir(os.path.join(os.path.dirname(__file__), 'venv', 'lib', 'python2.7', 'site-packages'))
 ```
 
-<div class="note">
-
-<div class="title">
-
-Note
-
-</div>
-
-Python のバージョンによってパスが異なるので、ご注意を
-
-</div>
+> Python のバージョンによってパスが異なるので、ご注意を
 
 rst2html.pyを修正して、 code-blockディレクティブを追加する。
 
@@ -236,7 +208,7 @@ directives.register_directive("code-block", pygments_directive)
 
 そうすると、Wiki で code-block ディレクティブを使うと
 
-```text
+```rst
 .. code-block:: python
 
     class PythonRocks(object):
