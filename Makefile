@@ -89,8 +89,12 @@ prettier-check: node_modules/.installed ## Run prettier.
 ## Maintenance
 #####################################################################
 
+.PHONY: build
+build: ## Build the site with Jekyll
+	bundle exec jekyll build
+
 .PHONY: serve
-serve: ## Run jekyll test server.
+serve: ## Run Jekyll test server.
 	bundle exec jekyll serve
 
 .PHONY: clean

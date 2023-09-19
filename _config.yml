@@ -76,7 +76,13 @@ pagination:
 exclude:
   - .sass-cache/
   - .jekyll-cache/
-  - gemfiles/
+  - README.md
+  - Makefile
+  - LICENSE
   - Gemfile
   - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - gemfiles/
   - node_modules/
+  - tools/
