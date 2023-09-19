@@ -38,7 +38,17 @@ node_modules/.installed: package.json package-lock.json
 #####################################################################
 
 .PHONY: lint
-lint: markdownlint ## Run all linters.
+lint: actionlint markdownlint ## Run all linters.
+
+.PHONY: actionlint
+actionlint: ## Runs the actionlint linter.
+	@# NOTE: We need to ignore config files used in tests.
+	@set -e;\
+		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
+			actionlint -format '{{range $$err := .}}::error file={{$$err.Filepath}},line={{$$err.Line}},col={{$$err.Column}}::{{$$err.Message}}%0A```%0A{{replace $$err.Snippet "\\n" "%0A"}}%0A```\n{{end}}' -ignore 'SC2016:' $${files}; \
+		else \
+			actionlint $${files}; \
+		fi
 
 .PHONY: markdownlint
 markdownlint: node_modules/.installed ## Runs the markdownlint linter.
@@ -66,6 +76,15 @@ prettier: node_modules/.installed ## Run prettier.
 	@set -e;\
 		./node_modules/.bin/prettier -w '**/*.md'; \
 		./node_modules/.bin/prettier -w '**/*.yml'
+
+.PHONY: format-check
+format-check: prettier-check ## Check all files are formatted.
+
+.PHONY: prettier-check
+prettier-check: node_modules/.installed ## Run prettier.
+	@set -e;\
+		./node_modules/.bin/prettier --check '**/*.md'; \
+		./node_modules/.bin/prettier --check '**/*.yml'
 
 ## Maintenance
 #####################################################################
