@@ -8,44 +8,20 @@ tags: work beproud
 render_with_liquid: false
 ---
 
-<div class="note">
-
-<div class="title">
-
-Note
-
-</div>
-
-この記事は BeProud ではどう仕事しているかの3部構成シリーズの2部目。github のZach Holman さんが書いて頂いた 「
-[How Github Works](http://zachholman.com/posts/how-github-works/) 」シリーズの
-BeProud版。１部目は「 [Hours are
-Bullshit](http://zachholman.com/posts/how-github-works-hours/) 」の解説の「
-[BPで働くのがどうか (How BeProud Works)](/jp/bp-how-beproud-works) 」でした。今回は「 [Be
-Asynchronous](http://zachholman.com/posts/how-github-works-asynchronous/)
-」という話の解説。
-
-</div>
+> この記事は BeProud ではどう仕事しているかの3部構成シリーズの2部目。github のZach Holman さんが書いて頂いた 「
+> [How Github Works](http://zachholman.com/posts/how-github-works/) 」シリーズの
+> BeProud版。１部目は「 [Hours are Bullshit](http://zachholman.com/posts/how-github-works-hours/) 」の解説の「
+> [BPで働くのがどうか (How BeProud Works)](/jp/bp-how-beproud-works) 」でした。今回は
+> 「 [Be Asynchronous](http://zachholman.com/posts/how-github-works-asynchronous/) 」という話の解説。
 
 # Communication
 
-<div class="note">
-
-<div class="title">
-
-Note
-
-</div>
-
-"コミュニケーション（英:
-Communication、交流）とは、複数の人間や動物などが、感情、意思、情報などを、受け取りあうこと、あるいは伝えあうこと。"
-
-"コミュニケーションの定義は多種多様であるが、広義には、記号などの何らかの因子の移動を伴う、
-ある分けられる事象間の相互作用の過程を意味している。"
-
-From
-[Wikipedia](http://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3)
-
-</div>
+> "コミュニケーション（英: Communication、交流）とは、複数の人間や動物などが、感情、意思、情報などを、受け取りあうこと、あるいは伝えあうこと。"
+>
+> "コミュニケーションの定義は多種多様であるが、広義には、記号などの何らかの因子の移動を伴う、
+> ある分けられる事象間の相互作用の過程を意味している。"
+>
+> From [Wikipedia](http://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3)
 
 片道のコミュニケーションのプロセスでは、情報のソースからメッセージを受信側に発信しようとします。メッセージを発信する前に受信側が分かるような記号に変換します（普段の会話の場合は自然言語に変換します）。変換後に、記号を発信して、受信側はメッセージを受け取って、記号の解釈を行えます。
 
@@ -87,9 +63,9 @@ Toxic](http://gettingreal.37signals.com/ch07_Meetings_Are_Toxic.php)
 
 もし、どうしてもミーティングをやらないといけない場合は、下記のことを勧めます。 話が進まないミーティングをすぐ止める
 
-1.  時間を厳しく制限する
-2.  なるべく短くする (30分がおすすめ）
-3.  抽象的な話をやめ、具体的な話をする
+1. 時間を厳しく制限する
+2. なるべく短くする (30分がおすすめ）
+3. 抽象的な話をやめ、具体的な話をする
 
 # まとめ
 
