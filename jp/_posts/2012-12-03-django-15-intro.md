@@ -72,14 +72,16 @@ class Article(models.Model)
 `REQUIRED_FIELDS` は Django の 既存 `createsuperuser`
 などのコマンドなど、新しいユーザー作成の為です。
 
-    class MyUser(AbstractBaseUser):
-        identifier = models.CharField(max_length=40, unique=True, db_index=True)
+```python
+class MyUser(AbstractBaseUser):
+    identifier = models.CharField(max_length=40, unique=True, db_index=True)
 
-        date_of_birth = models.DateField()
-        height = models.FloatField()
+    date_of_birth = models.DateField()
+    height = models.FloatField()
 
-        USERNAME_FIELD = 'identifier'
-        REQUIRED_FIELDS = ['date_of_birth', 'height']
+    USERNAME_FIELD = 'identifier'
+    REQUIRED_FIELDS = ['date_of_birth', 'height']
+```
 
 もっと詳しくは [Customizing the User
 model](https://docs.djangoproject.com/en/dev/topics/auth/#customizing-the-user-model)
