@@ -27,7 +27,9 @@ Source Code Reading](http://connpass.com/series/218/) で 発表した Riak
 Riak をPythonから使う為のクライアントライブラリが用意されています。 実際はオープンソースで、Github でソースコード見れます。
 PyPi にも上がっていて、 pip で簡単にインストールできます:
 
-    $ pip install riak
+```shell
+pip install riak
+```
 
 その後は、簡単に `riak` モジュールをインポートできます。
 
