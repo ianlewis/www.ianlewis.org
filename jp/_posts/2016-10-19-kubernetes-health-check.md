@@ -24,7 +24,7 @@ Kubernetesのヘルスチェックは2種類があって、一つ目は`liveness
 
 ```go
 http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("OK"))
+  w.Write([]byte("OK"))
 }
 http.ListenAndServe(":8080", nil)
 ```
@@ -118,6 +118,6 @@ http.ListenAndServe(":8080", nil)
 
 ## より安定性のあるアプリケーション
 
-[comment]: # (Liveness and Readiness probes really help with the stability of applications. They help to make sure that traffic only goes to instances that are ready for it, as well as self heal when apps become unresponsive. They are a better solution to what my colleage Kelsey Hightower called [12 Fractured Apps](https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c). With proper health checks in place you can deploy your applications in any order without having to worry about dependencies or complicated entrypoint scripts. And applications will start serving traffic when they are ready so auto-scaling and rolling updates work smoothly.)
+[comment]: # "(Liveness and Readiness probes really help with the stability of applications. They help to make sure that traffic only goes to instances that are ready for it, as well as self heal when apps become unresponsive. They are a better solution to what my colleage Kelsey Hightower called [12 Fractured Apps](https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c). With proper health checks in place you can deploy your applications in any order without having to worry about dependencies or complicated entrypoint scripts. And applications will start serving traffic when they are ready so auto-scaling and rolling updates work smoothly.)"
 
 `livenessProbe`と`readinessProbe`はどっちもアプリケーションの安定性に助かる機能。トラフィックを受けられるコンテナだけにトラフィックを転送しないようにしてくれるし、クラッシュしたコンテナや、固まったコンテナを再起動してくれるし、非常に便利。そして、私の同僚のKelsey Hightowerが解説した [12 Fractured Apps](https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c)の解決策でもある。ヘルスチェックがあれば、依存するサービスの起動を待ったりする複雑なEntrypointスクリプトはいらない。トラフィックを受けられる時だけ受けるし、ローリングアップデートやスケールアップがスムーズに動きます。

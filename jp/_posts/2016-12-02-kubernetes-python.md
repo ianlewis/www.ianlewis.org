@@ -20,14 +20,14 @@ render_with_liquid: false
 
 簡単な例ですが、`nginx`をデプロイしてみる。KubernetesのAPIを簡単に使えるために`kubectl`というCLIがあります。
 
-```console
+```shell
 $ kubectl run nginx --image=nginx:1.10 --replicas=5
 deployment "nginx" created
 ```
 
 こうするとnginxのをデプロイするために[Deployment](http://kubernetes.io/docs/user-guide/deployments/)を作ります。これでKubernetesクラスタの中で`nginx:1.10`をDocker Hubからダウンロードして、nginxのコンテナを５台起動する。以下のコマンドで確認できる。
 
-```console
+```shell
 $ kubectl get deployments
 NAME      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 nginx     5         5         5            5           54s
@@ -44,7 +44,7 @@ nginx-527866857-w12s7   1/1       Running            0          54s
 
 外からアクセスしたい時は[Service](http://kubernetes.io/docs/user-guide/services/)を作れば、クラスタの外からアクセスすることができる。GCPやAWSを使っている場合は、クラウドのAPIと連動してロードバランサを作ってくれます。
 
-```console
+```shell
 $ kubectl expose deployment nginx --type=LoadBalancer --port=80
 service "nginx" exposed
 
@@ -65,8 +65,8 @@ KubernetesはREST APIを提供しているので、基本的にどの言語で�
 
 インストールはいつもどおり`pip`を使う
 
-```console
-$ pip install kubernetes
+```shell
+pip install kubernetes
 ```
 
 そうしたら、わりと簡単にAPIを使える。以下のアプリはdefault名前空間のポッドの名前、ステータス、IPアドレスを表示する。
@@ -89,13 +89,13 @@ for pod in pod_list.items:
 
 実行すると
 
-```console
+```shell
 $ python list_pods.py
-nginx-2048367498-2000v	Running	10.236.2.16
-nginx-2048367498-a4otw	Running	10.236.0.15
-nginx-2048367498-eblzn	Running	10.236.1.20
-nginx-2048367498-tqy6j	Running	10.236.2.17
-nginx-2048367498-zwkfg	Running	10.236.0.16
+nginx-2048367498-2000v  Running 10.236.2.16
+nginx-2048367498-a4otw  Running 10.236.0.15
+nginx-2048367498-eblzn  Running 10.236.1.20
+nginx-2048367498-tqy6j  Running 10.236.2.17
+nginx-2048367498-zwkfg  Running 10.236.0.16
 ```
 
 このクライアントはKubernetesの[swaggerスペック](http://kubernetes.io/kubernetes/third_party/swagger-ui/)から生成しているっぽいので、基本的に[APIの全部のエンドポイント](https://github.com/kubernetes-incubator/client-python/tree/master/kubernetes#documentation-for-api-endpoints)に対応している。
@@ -116,7 +116,7 @@ for event in stream:
     print("Event: %s %s" % (event['type'], event['object'].metadata.name))
 ```
 
-```console
+```shell
 $ python watch_pods.py
 Event: ADDED nginx-2048367498-zwkfg
 Event: ADDED nginx-2048367498-2000v
