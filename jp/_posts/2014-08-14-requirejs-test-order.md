@@ -8,7 +8,7 @@ tags: javascript require.js qunit
 render_with_liquid: false
 ---
 
-> ```
+> ```text
 > AMD の仕様では、「JSファイルのリストを順番通りに読み込み/実行する」
 > ということができない。実際何が困ったかというと、分割した mocha
 > テストケースを順番通りに実行できなくなったということ。結果は変わらなくても、
