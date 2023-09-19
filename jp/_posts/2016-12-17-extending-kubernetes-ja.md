@@ -267,17 +267,17 @@ func removeCronTab(c cronTab) {
 type labels *map[string]string
 
 type selector struct {
-	MatchLabels labels `json:"matchLabels,omitempty"`
+  MatchLabels labels `json:"matchLabels,omitempty"`
 }
 
 type jobTemplate struct {
-	ObjectMeta      objectMeta       `json:"metadata"`
-	JobTemplateSpec json.RawMessage `json:"spec,omitempty"`
+  ObjectMeta      objectMeta       `json:"metadata"`
+  JobTemplateSpec json.RawMessage `json:"spec,omitempty"`
 }
 
 type jobSpec struct {
-	Selector *selector    `json:"selector,omitempty"`
-	Template *jobTemplate `json:"template,omitempty"`
+  Selector *selector    `json:"selector,omitempty"`
+  Template *jobTemplate `json:"template,omitempty"`
 }
 
 func runCronJob(c cronTab) error {
