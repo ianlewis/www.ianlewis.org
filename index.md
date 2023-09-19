@@ -13,8 +13,7 @@ redirect_from:
 
 I am an engineer based in Tokyo, Japan since 2006. I am fluent in Japanese
 passing
-[JLPT](https://en.wikipedia.org/wiki/Japanese-Language_Proficiency_Test) N1 in
-2009.
+[JLPT](https://en.wikipedia.org/wiki/Japanese-Language_Proficiency_Test) N1 in 2009.
 
 My current interests are in Container Native Security, Supply Chain Security,
 Containers, and [Kubernetes](https://kubernetes.io/). I am currently working as

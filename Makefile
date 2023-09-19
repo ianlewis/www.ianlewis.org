@@ -55,17 +55,17 @@ markdownlint: node_modules/.installed ## Runs the markdownlint linter.
 			done <<< "$$(./node_modules/.bin/markdownlint --dot --json . 2>&1 | jq -c '.[]')"; \
 			exit "$${exit_code}"; \
 		else \
-			npm run lint; \
+			./node_modules/.bin/markdownlint --dot .; \
 		fi
 
 .PHONY: format
 format: prettier ## Run all formatters.
 
 .PHONY: prettier
-prettier: ## Run prettier.
+prettier: node_modules/.installed ## Run prettier.
 	@set -e;\
-		prettier -w '**/*.md'; \
-		prettier -w '**/*.yml'
+		./node_modules/.bin/prettier -w '**/*.md'; \
+		./node_modules/.bin/prettier -w '**/*.yml'
 
 ## Maintenance
 #####################################################################
