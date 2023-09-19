@@ -10,19 +10,9 @@ render_with_liquid: false
 
 ![image](/assets/images/mercurial/mercurial_medium.png)
 
-<div class="note">
-
-<div class="title">
-
-Note
-
-</div>
-
-この記事は [Mercurial Advent Calendar 2012](http://connpass.com/event/1431/)
-の第３目の記事。昨日の記事は id:@terapyon の「Bitbucket関連」。明日は @cointoss1973
-さんが、「パッチ管理リポジトリ入門～MQ(パッチ)もMercurialで管理できるよ～」という記事を書いてくれる予定です。
-
-</div>
+> この記事は [Mercurial Advent Calendar 2012](http://connpass.com/event/1431/)
+> の第３目の記事。昨日の記事は id:@terapyon の「Bitbucket関連」。明日は @cointoss1973
+> さんが、「パッチ管理リポジトリ入門～MQ(パッチ)もMercurialで管理できるよ～」という記事を書いてくれる予定です。
 
 # revsets って何？
 
