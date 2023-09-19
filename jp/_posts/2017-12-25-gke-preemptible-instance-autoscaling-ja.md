@@ -81,7 +81,7 @@ gcloud config set container/use_v1_api_client false
 
 Preemptibleインスタンスを確保できない場合があるので、一般的なユースケースとして、普通のノードプールを固定したインスタンス数で作って、そして、別のPreemptibleノードプールでオートスケーリングをする。まずは普通のノードプールを作成：
 
-```
+```shell
 gcloud container clusters create burstable-cluster --num-nodes 3
 ```
 
