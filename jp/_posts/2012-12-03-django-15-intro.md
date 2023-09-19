@@ -10,21 +10,11 @@ render_with_liquid: false
 
 ![image](/assets/images/django/django-logo-positive_medium.png)
 
-<div class="note">
-
-<div class="title">
-
-Note
-
-</div>
-
-この記事は [2012
-Pythonアドベントカレンダー(Webフレームワーク)](http://connpass.com/event/1439/)
-の第３目の記事。昨日の記事は id:shomah4a の「 [2012 Python アドベントカレンダー (Web フレームワーク ) 二日目
-WSGI でなんか作ってみる](http://d.hatena.ne.jp/shomah4a/20121202) 」。明日は surgo
-さんが、 Django 1.5 以降と Python 3 あたりの記事を書いてくれます。
-
-</div>
+> この記事は [2012
+> Pythonアドベントカレンダー(Webフレームワーク)](http://connpass.com/event/1439/)
+> の第３目の記事。昨日の記事は id:shomah4a の「 [2012 Python アドベントカレンダー (Web フレームワーク ) 二日目
+> WSGI でなんか作ってみる](http://d.hatena.ne.jp/shomah4a/20121202) 」。明日は surgo
+> さんが、 Django 1.5 以降と Python 3 あたりの記事を書いてくれます。
 
 １０月２５日に [Django 1.5 alpha 1
 がリリースされて](https://www.djangoproject.com/weblog/2012/oct/25/15-alpha-1/)
