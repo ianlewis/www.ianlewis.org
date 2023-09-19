@@ -12,23 +12,33 @@ render_with_liquid: false
 
 Google Compute Engine (GCE)ではPreemptible Instanceを作ることができます。Preemptible Instanceを使うと変動するようなワークロードにかなりコストを削減できます。
 
-Google Kubernetes Engine (GKE)は標準にクラスターオートスケーラーがついています。クラスターオートスケーラーを有効にするとクラスターの要求されているワークロードに対してクラスターを自動的にスケールできます。GKEクラスターのノードはGCEのVMになっているので[preemptible instanceのノードプール](https://cloud.google.com/kubernetes-engine/docs/concepts/preemptible-vm)の作成にサポートしています。
+Google Kubernetes Engine (GKE)は標準にクラスターオートスケーラーがついています。
+クラスターオートスケーラーを有効にするとクラスターの要求されているワークロードに
+対してクラスターを自動的にスケールできます。GKEクラスターのノードはGCEのVMに
+なっているので
+[preemptible instanceのノードプール](https://cloud.google.com/kubernetes-engine/docs/concepts/preemptible-vm)の
+作成にサポートしています。
 
-この記事ではこの２つの機能を組み合わせて安くて自動的にスケールするリソースの作成をやってみたい。一緒にやってみたい方はGCPの[$300無料トライアル](https://cloud.google.com/free/)を使うといいと思います。
+この記事ではこの２つの機能を組み合わせて安くて自動的にスケールするリソースの作成をやってみたい。
+一緒にやってみたい方はGCPの[$300無料トライアル](https://cloud.google.com/free/)を使うといいと思います。
 
 ## Preemptible Instances
 
-[Preemptible instance](https://cloud.google.com/compute/docs/instances/preemptible)はGCEの単価が安く一時的なVMを作成できる機能です。GCEゾーンのデータセンターの余裕キャパを買うような感じですので、 かなり安く提供できるけど、VMのアベイラビリティが普段より低い。
+[Preemptible instance](https://cloud.google.com/compute/docs/instances/preemptible)はGCEの単価が
+安く一時的なVMを作成できる機能です。GCEゾーンのデータセンターの余裕キャパを買うような感じですので、
+かなり安く提供できるけど、VMのアベイラビリティが普段より低い。
 
 例えば、普通のn1-standard-1のインスタンスは東京リージョンですと$0.0610ですが、 Preemptibleですと$0.01325で、1/4以下の値段。
 
-Preemptible Instanceの欠点はいくつかある。その一つはVMがいつでも停止される可能性があることです。GCEのシステム状況によってACPI G2 Soft OffメッセージをVMに送ってきます。そのあと、VMに動いているアプリケーションが安全に停止する時間があります。
+Preemptible Instanceの欠点はいくつかある。その一つはVMがいつでも停止される可能性があることです。GCEのシステム状況によって
+ACPI G2 Soft OffメッセージをVMに送ってきます。そのあと、VMに動いているアプリケーションが安全に停止する時間があります。
 
-もう一つの欠点は、Preemptible VMが最大24時間で停止される。そして、新しいインスタンスを作るには必要なリソースを確保できない可能性は普通のインスタンスより低い。VMを作れないゔ可能性は低いけれど、たまに作れない時がある。
+もう一つの欠点は、Preemptible VMが最大24時間で停止される。そして、新しいインスタンスを作るには必要なリソースを確保できない
+可能性は普通のインスタンスより低い。VMを作れないゔ可能性は低いけれど、たまに作れない時がある。
 
 欠点がありますが、たくさんのユースケースをローコストで満たせます。Preemptible instanceを`--preemptibleフラグで作れます：`
 
-```
+```shell
 gcloud compute instances create preemptible-instance --preemptible
 ```
 
@@ -40,14 +50,21 @@ GKEはクラスターノードを動的にスケールする[cluster autoscaler]
 
 オートスケーラーを有効にするには`--enable-autoscalingをクラスター作成時に指定します。最大と最低のPod数を指定できます。このコマンドはオートスケーラーを有効にしたノードプールが含まれるクラスターを作ります：`
 
-```
-gcloud container clusters create autoscaled-cluster --enable-autoscaling --min-nodes=1 --max-nodes=5
+```shell
+gcloud container clusters create autoscaled-cluster \
+  --enable-autoscaling \
+  --min-nodes=1 \
+  --max-nodes=5
 ```
 
 オートスケーリングするノードプールをあとでも追加できます：
 
-```
-gcloud container node-pools create autoscaled-pool --cluster=autoscaled-cluster --enable-autoscaling --min-nodes=1 --max-nodes=5
+```shell
+gcloud container node-pools create autoscaled-pool \
+  --cluster=autoscaled-cluster \
+  --enable-autoscaling \
+  --min-nodes=1 \
+  --max-nodes=5
 ```
 
 ## Preemptibleノードプールのオートスケーリング
@@ -58,7 +75,7 @@ gcloud container node-pools create autoscaled-pool --cluster=autoscaled-cluster 
 
 GKEベータAPIを使うために、以下のコマンドを実行する：
 
-```
+```shell
 gcloud config set container/use_v1_api_client false
 ```
 
@@ -70,10 +87,14 @@ gcloud container clusters create burstable-cluster --num-nodes 3
 
 次ぐにオートスケーリングするPreemptibleノードプールを作成：
 
-```
+```shell
 gcloud beta container node-pools create preemptible-pool \
-    --cluster burstable-cluster --preemptible --num-nodes 0 \
-    --enable-autoscaling --min-nodes 0 --max-nodes 5 \
+    --cluster burstable-cluster \
+    --preemptible \
+    --num-nodes 0 \
+    --enable-autoscaling \
+    --min-nodes 0 \
+    --max-nodes 5 \
     --node-taints=pod=preemptible:PreferNoSchedule
 ```
 
@@ -81,7 +102,7 @@ gcloud beta container node-pools create preemptible-pool \
 
 どれで普通のノードプールとPreemptibleノードプール両方に動くようなDeploymentを作成できる：
 
-```
+```shell
 cat <<EOF | kubectl apply -f -
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -118,21 +139,19 @@ EOF
 
 クラスターは最初にリソースが足りないので、`Pending`ステータスのPodをいくつか見れるはず。そのあとにノードが追加されることにつれて、`Running` ステータスに変わる。
 
-```
+```shell
 kubectl get pods -o wide
-...
 ```
 
 ## まとめ
 
 上のコマンドを実行して、試してみた場合はいかのコマンドでリソースを削除できます。
 
-```
+```shell
 gcloud compute instances delete preemptible-instance
 gcloud container clusters delete autoscaled-cluster
+gcloud container clusters delete burstable-cluster
 ```
-
-`gcloud container clusters delete burstable-cluster`
 
 GKEの高度な機能を組み合わせることで、低コストとアプリケーションアベイラビリティのバランスをとった構成が作れます。ベータ機能なのでクラスターを作れば、誰でもオートスケーラーとPreemtibleノードプールが利用できます。
 
