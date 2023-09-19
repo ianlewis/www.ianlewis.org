@@ -43,7 +43,7 @@ Docker Hubにある[python:2.7.11の標準イメージ](https://hub.docker.com/_
 
 まずはローカルPCにpullする。
 
-```console
+```shell
 $ docker pull python:2.7.11
 2.7.11: Pulling from library/python
 7a01cc5f27b1: Pull complete
@@ -57,7 +57,7 @@ Status: Downloaded newer image for python:2.7.11
 
 このイメージはたくさんのレイヤーがあって、容量は676MBくらいになっているのがすぐわかる。
 
-```console
+```shell
 $ docker images python:2.7.11
 REPOSITORY          TAG                 IMAGE ID            CREATED
 VIRTUAL SIZE
@@ -67,14 +67,14 @@ python              2.7.11              88690041a8a3        2 weeks ago
 
 Dockerのローカルリポジトリに入っているイメージを圧縮することができないのが少し面倒くさいけど、`docker save`コマンドでイメージファイルを簡単にエクスポートできる。以下でファイルをエクスポートして、圧縮したイメージを作成する。
 
-```console
-$ docker save python:2.7.11 > python-2.7.11.tar
-$ sudo bin/docker-squash -i python-2.7.11.tar -o python-squashed-2.7.11.tar
+```shell
+docker save python:2.7.11 > python-2.7.11.tar
+sudo bin/docker-squash -i python-2.7.11.tar -o python-squashed-2.7.11.tar
 ```
 
 これで新しいファイルは75MBくらい小さくなっているのがわかる。
 
-```console
+```shell
 ~$ ls -lh python-*.tar
 -rw-rw-r-- 1 ian  ian  666M Feb 15 16:32 python-2.7.11.tar
 -rw-r--r-- 1 root root 590M Feb 15 16:33 python-squashed-2.7.11.tar
@@ -82,7 +82,7 @@ $ sudo bin/docker-squash -i python-2.7.11.tar -o python-squashed-2.7.11.tar
 
 `docker load`でファイルをインポートしたら、小さくなっているのがわかる。
 
-```console
+```shell
 $ cat python-squashed-2.7.11.tar | docker load
 $ docker images python-squashed
 REPOSITORY          TAG                 IMAGE ID            CREATED
@@ -99,8 +99,8 @@ python-squashed     latest              18d8ebf067fd        11 days ago
 
 `docker-squash`はこの問題を軽減するのに、あるレイヤーIDから圧縮して、そのレイヤーの親レイヤーを再利用する。デフォルトでは最初のFROMレイヤーから圧縮する。そのデフォルトだと、`debian:jessie`など、よく継承されるイメージを再利用できて、そのレイヤーの内容は毎回ダウンロードしなくてもいいけど、`-from`オプションを指定すると、指定したレイヤーIDから圧縮することができる。そうすると、例えば、社内用のベースイメージを再利用できる。
 
-```console
-$ docker-squash -from 18d8ebf067fd -i ... -o ...
+```shell
+docker-squash -from 18d8ebf067fd -i ... -o ...
 ```
 
 Docker Squashは万能ではないけど、Docker利用者のツールの一つとしてかなり便利だと思います。[使ってみて](https://github.com/jwilder/docker-squash)、もし何かコメントや意見があれば、下にコメントや[Twitter](https://twitter.com/IanMLewis)で教えてください。これからの記事で、Dockerイメージを小さくするまた別の方法の話を書いてみますので、ぜひ期待してください。
