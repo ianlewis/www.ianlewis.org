@@ -13,7 +13,7 @@ runでコンテナの実行環境を簡単に作ってくれる上、docker buil
 
 例えば、
 
-```docker
+```dockerfile
 FROM debian:jessie
 
 RUN apt-get update
@@ -31,7 +31,7 @@ CMD [ "python", "-m", "SimpleHTTPServer", "8000" ]
 
 これは非常にシンプルなDockerイメージなんですが、実際にビルドして、イメージのサイズを見てみると：
 
-```
+```text
 VIRTUAL SIZE
 167.4 MB
 ```
@@ -44,7 +44,7 @@ VIRTUAL SIZE
 
 じゃ、例えばredisのイメージを作る場合はこうするのが一番わかりやすくて概念的にいいんだが
 
-```docker
+```dockerfile
 FROM debian:jessie
 
 RUN apt-get update
@@ -73,7 +73,7 @@ Dockerは RUNコマンドを実行するたびに、イメージの「レイヤ�
 
 以下、は[実際のredisのDockerfile](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/3.0/Dockerfile) ([Docker BSD LICENSE](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/LICENSE))からとったスニペット
 
-```docker
+```dockerfile
 ENV REDIS_VERSION 3.0.5
 ENV REDIS_DOWNLOAD_URL http://download.redis.io/releases/redis-3.0.5.tar.gz
 ENV REDIS_DOWNLOAD_SHA1 ad3ee178c42bfcfd310c72bbddffbbe35db9b4a6
