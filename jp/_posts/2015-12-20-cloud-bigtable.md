@@ -42,11 +42,11 @@ BigtableはNoSQLの概念を人気にさせたと言われています。でもN
 BigtableはいわゆるKey/Valueデータベースですが、単純なKey/Valueデータベースにはないいくつか特殊な機能を持っています。
 まずは、一つのキーに複数の値を持つ機能があります。これはRDBMSと同じようなコラムとして表現されるけど、RDBMSと違ってテーブルスキーマがなく、rowデータに含まれているコラムがrowごとに変わってもよいのです。図にすると、
 
-![](/assets/images/746/rows.png)
+![BigTable rows](/assets/images/746/rows.png)
 
 rowもキーによってソートされているので、rowキーを指定してスキャンができます。しかしそれぞれのコラムに入っているデータでのクエリーやスキャンができません。RDBMS的に言うとprimary key indexがあるけど、secondary indexがない、ということですね。
 
-![](/assets/images/746/scan.png)
+![BigTable scan](/assets/images/746/scan.png)
 
 row間のトランザクションはないけど、一つのrowに含まれているコラムに対して、書き込みの整合性はあります。
 
