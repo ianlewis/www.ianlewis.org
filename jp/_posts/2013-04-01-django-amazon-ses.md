@@ -129,50 +129,57 @@ SES はメール受信の機能がないですが、自分のサーバーで pos
 アクセスが来ているが見れます。SMTPサーバーにそのメアドが登録されてないと
 以下のエラーメッセージでメール送信が拒否される場合があります。これは実際に connpass で起こった問題です。
 
-    BotoServerError: BotoServerError: 400 Bad Request
-    <ErrorResponse xmlns="http://ses.amazonaws.com/doc/2010-12-01/">
-      <Error>
-        <Type>Sender</Type>
-        <Code>MessageRejected</Code>
-        <Message>Address blacklisted.</Message>
-      </Error>
-      <RequestId>hogehoge</RequestId>
-    </ErrorResponse>
+```text
+BotoServerError: BotoServerError: 400 Bad Request
+<ErrorResponse xmlns="http://ses.amazonaws.com/doc/2010-12-01/">
+  <Error>
+    <Type>Sender</Type>
+    <Code>MessageRejected</Code>
+    <Message>Address blacklisted.</Message>
+  </Error>
+  <RequestId>hogehoge</RequestId>
+</ErrorResponse>
+```
 
 メールサーバーは具体的に何を返せばいいのか？ まず、以下の感じだと そのメールアドレスが登録されていないことが確認できる。
 
-    TODO
-    $ telnet localhost 25
-    Trying 127.0.0.1...
-    Connected to localhost.
-    Escape character is '^]'.
-    220 connpass.com ESMTP Postfix (Debian/GNU)
-    helo hi
-    250 connpass.com
-    mail from: <hoge@example.com>
-    250 2.1.0 Ok
-    rcpt to: <no-reply@connpass.com>
-    550 5.1.1 <no-reply@connpass.com>: Recipient address rejected: User unknown in local recipient table
+```shell
+$ telnet localhost 25
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+220 connpass.com ESMTP Postfix (Debian/GNU)
+helo hi
+250 connpass.com
+mail from: <hoge@example.com>
+250 2.1.0 Ok
+rcpt to: <no-reply@connpass.com>
+550 5.1.1 <no-reply@connpass.com>: Recipient address rejected: User unknown in local recipient table
+```
 
 登録されている場合、以下の感じになります。
 
-    $ telnet localhost 25
-    Trying 127.0.0.1...
-    Connected to localhost.
-    Escape character is '^]'.
-    220 connpass.com ESMTP Postfix (Debian/GNU)
-    helo hi
-    250 connpass.com
-    mail from: <hoge@example.com>
-    250 2.1.0 Ok
-    rcpt to: <no-reply@connpass.com>
-    250 2.1.5 Ok
+```shell
+$ telnet localhost 25
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+220 connpass.com ESMTP Postfix (Debian/GNU)
+helo hi
+250 connpass.com
+mail from: <hoge@example.com>
+250 2.1.0 Ok
+rcpt to: <no-reply@connpass.com>
+250 2.1.5 Ok
+```
 
 no-reply のユーザーだと、以下コマンドを実行すると、メアドを登録することができます。 こうすると、 no-reply
 に来るメールはすべて無視します。
 
-    # sudo echo "no-reply: /dev/null" >> /etc/aliases
-    # sudo newaliases
+```shell
+# sudo echo "no-reply: /dev/null" >> /etc/aliases
+# sudo newaliases
+```
 
 # まとめ
 
