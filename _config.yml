@@ -36,6 +36,7 @@ theme: plainwhite
 plugins:
   - jekyll-feed
   - jekyll-paginate-v2
+  - jekyll-redirect-from
 
 # Theme
 plainwhite:

@@ -36,4 +36,5 @@ group :jekyll_plugins do
   # Jekyll theme.
   gem "plainwhite"
   gem "jekyll-paginate-v2"
+  gem 'jekyll-redirect-from'
 end
