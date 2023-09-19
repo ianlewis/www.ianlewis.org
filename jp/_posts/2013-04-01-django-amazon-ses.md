@@ -33,7 +33,9 @@ connpass は [django-ses](https://github.com/hmarr/django_ses/)
 
 インストールはうつもの `pip` で簡単:
 
-    $ pip install boto django-ses
+```shell
+pip install boto django-ses
+```
 
 そして、Django の `settings..py`
 で4つの設定を加える。以下の適当な値が入っているので、自分のAWSアカウントの該当の設定を入れてください。
@@ -93,14 +95,13 @@ Access](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-
 何かの自前で作ったスクリプトで適当なメールを送っちゃいけない。本番でリリース時に
 メールのが内容が急にかわったり、そもそもスパムっぽいメールを送ってしまったりすると APIから怪しく見れて、メールを拒否するかもしれない。
 
-以下は [Amazon
-のドキュメント](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/increase-sending-limits.html)
+以下は [Amazonのドキュメント](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/increase-sending-limits.html)
 に書いているクオータが上がるための勧め。
 
-1.  **Send high-quality content** (質のいい内容を送る。スパムをそもそも送らない)
-2.  **Send real production content** (本番と同じような内容を送る)
-3.  **Send near your current quota** (クオータに近い量を送る)
-4.  **Have low bounce and complaint rates** (bounce と complaint率を低くする)
+1. **Send high-quality content** (質のいい内容を送る。スパムをそもそも送らない)
+2. **Send real production content** (本番と同じような内容を送る)
+3. **Send near your current quota** (クオータに近い量を送る)
+4. **Have low bounce and complaint rates** (bounce と complaint率を低くする)
 
 1 と 2 と 4 は常にやればいいことだね。そうしないと、メール送信が拒否される場合があります。
 
