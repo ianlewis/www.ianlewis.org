@@ -48,6 +48,8 @@ plainwhite:
   social_links:
     twitter: IanMLewis
     github: ianlewis
+    mastodon: https://hachyderm.io/@ianlewis
+    email: ianmlewis@gmail.com
 
   navigation:
     - title: English Blog
