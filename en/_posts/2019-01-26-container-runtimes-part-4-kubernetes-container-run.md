@@ -129,14 +129,14 @@ ImageService.PullImage({image: "image1"})
 ImageService.PullImage({image: "image2"})
 podID = RuntimeService.RunPodSandbox({name: "mypod"})
 id1 = RuntimeService.CreateContainer({
-	pod: podID,
-	name: "container1",
-	image: "image1",
+  pod: podID,
+  name: "container1",
+  image: "image1",
 })
 id2 = RuntimeService.CreateContainer({
-	pod: podID,
-	name: "container2",
-	image: "image2",
+  pod: podID,
+  name: "container2",
+  image: "image2",
 })
 RuntimeService.StartContainer({id: id1})
 RuntimeService.StartContainer({id: id2})
@@ -258,7 +258,7 @@ And then stop and delete the Pod:
 }
 ```
 
-## Thanks for following the series!
+## Thanks for following the series
 
 This is the last post in the Container Runtimes series but don't fear! There
 will be lots more container and Kubernetes posts in the future. Be sure to add
@@ -270,8 +270,8 @@ channels:
 
 - Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
 - Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter
-- Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
-- Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
+- Join the Kubernetes [Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
+- Contribute to the Kubernetes project on [GitHub](https://github.com/kubernetes/kubernetes)
 
 If you have any suggestions or ideas for blog posts, send them to me on Twitter
 at [@IanMLewis](https://twitter.com/IanMLewis) via either a reply or DM.
