@@ -26,7 +26,9 @@ balancer all at once. But there are many objects being created under the covers
 here, many of which only vaguely map to the UI. It can be a bit daunting to set
 up via the the Google Cloud CLI.
 
-The [HTTP Load Balancer documentation](https://cloud.google.com/compute/docs/load-balancing/http/) has some good info and diagrams that help understand how it works. But I found
+The
+[HTTP Load Balancer documentation](https://cloud.google.com/compute/docs/load-balancing/http/)
+has some good info and diagrams that help understand how it works. But I found
 the diagram there to be a bit too simplistic when I wanted to set up the load
 balancer via the CLI. I needed to know a bit more about all the parts so I came
 up with this diagram.
@@ -46,19 +48,24 @@ forwarding rules. The health check object doesn’t depend on anything else so w
 can create it first. Even though we create the object here, it only really
 becomes active after we attach it to a backend service.
 
-```
-gcloud compute http-health-checks create my-healthcheck --host www.example.com --port 80 --request-path=/healthz
+```shell
+gcloud compute http-health-checks create my-healthcheck \
+  --host www.example.com \
+  --port 80 \
+  --request-path=/healthz
 ```
 
-Here we create a health check that will connect to our app via port 80 at the <code>/healthz</code> URL. Note that creating the health check only tells further configuration the
-port and path to check but doesn’t actually send the health checks. The host
-parameter isn’t actually used as the host to connect to but only to set the <code>Host</code> header. Some apps check this header so we want them to be able to return a
-successful status. The instances to health check are specified later by the
-backend service.
+Here we create a health check that will connect to our app via port 80 at the
+`/healthz` URL. Note that creating the health check only tells further
+configuration the port and path to check but doesn’t actually send the health
+checks. The host parameter isn’t actually used as the host to connect to but
+only to set the `Host` header. Some apps check this header so we want them to
+be able to return a successful status. The instances to health check are
+specified later by the backend service.
 
 Health checks are used in more than one place so they live under the Compute
 Engine part of the Cloud Console UI. The health checks listed here are the what
-correspond to <code>http-health-checks</code> and <code>https-health-checks</code> in the CLI.
+correspond to `http-health-checks` and `https-health-checks` in the CLI.
 
 ![Health Checks](/assets/images/750/health-check.png)
 
@@ -69,19 +76,23 @@ backend VMs that actually serve the requests. The Backend Service contains a
 number of Backends. Each Backend is essentially a link to an instance group but
 has some other options attached like which port numbers to use and load
 balancing mode. The prefered way to set the port is via named ports on the
-instance group. You can set a named port for port 80 called <code>http-port</code> using the following command. I’m assuming you already have an instance group
-called <code>my-instance-group</code> set up. You can find out more about creating managed instance groups [here](https://cloud.google.com/compute/docs/instance-groups/).
+instance group. You can set a named port for port 80 called `http-port` using
+the following command. I’m assuming you already have an instance group called
+`my-instance-group` set up. You can find out more about creating managed
+instance groups [here](https://cloud.google.com/compute/docs/instance-groups/).
 
-```
-gcloud compute instance-groups set-named-ports my-instance-group --named-ports
-http-port:80
+```shell
+gcloud compute instance-groups set-named-ports my-instance-group \
+  --named-ports http-port:80
 ```
 
 Next you can create the backend service:
 
-```
-gcloud compute backend-services create my-http-backend-service
---http-health-checks my-healthcheck --port-name http-port --protocol HTTP
+```shell
+gcloud compute backend-services create my-http-backend-service \
+  --http-health-checks my-healthcheck \
+  --port-name http-port \
+  --protocol HTTP
 ```
 
 Now that we have the health check attached to the backend service, it will
@@ -95,12 +106,14 @@ The UI shows backend-services in the “backend configuration” part of the UI.
 Next we have to create a Backend. A Backend specifies the instance group you
 want to send traffic to, and how the load should be balanced among the
 available instances. You can create more than one backend and a backend is
-generally created one per instance group. You can use this to do [cross-region load balancing for instance](https://cloud.google.com/compute/docs/load-balancing/http/cross-region-example).
+generally created one per instance group. You can use this to do
+[cross-region load balancing for instance](https://cloud.google.com/compute/docs/load-balancing/http/cross-region-example).
 
-```
-gcloud compute backend-services add-backend my-http-backend-service
---instance-group my-instance-group --balancing-mode RATE
---max-rate-per-instance 10
+```shell
+gcloud compute backend-services add-backend my-http-backend-service \
+  --instance-group my-instance-group \
+  --balancing-mode RATE \
+  --max-rate-per-instance 10
 ```
 
 This sets up a backend that sends traffic to my instance group and uses the
@@ -122,9 +135,9 @@ the path matchers for the host rule that matches. When creating a url-maps
 object you specify the default backend service that is used when no host rules
 match.
 
-```
-gcloud compute url-maps create my-url-map --default-service
-my-http-backend-service
+```shell
+gcloud compute url-maps create my-url-map \
+  --default-service my-http-backend-service
 ```
 
 If you have only one backend service then this one command is usually enough
@@ -133,28 +146,33 @@ multiple backends you can set the up based on host or url. A host rule can have
 multiple path matchers but the host rule must have at least one path matcher so
 we create the path matcher and host rule at the same time.
 
-```
-gcloud compute url-maps add-path-matcher my-url-map --path-matcher-name
-my-www-path-matcher --new-hosts www.example.com --default-service my-http-backend-service
+```shell
+gcloud compute url-maps add-path-matcher my-url-map \
+  --path-matcher-name my-www-path-matcher \
+  --new-hosts www.example.com \
+  --default-service my-http-backend-service
 ```
 
 You can specify that requests with a different host go to a separate backend
 service as well.
 
-```
-gcloud compute url-maps add-path-matcher my-url-map --path-matcher-name
-my-api-path-matcher --new-hosts api.example.com --default-service
-my-api-backend-service
+```shell
+gcloud compute url-maps add-path-matcher my-url-map \
+  --path-matcher-name my-api-path-matcher \
+  --new-hosts api.example.com \
+  --default-service my-api-backend-service
 ```
 
 Like the url-maps itself you specify a default service if the host rule matches
 but no path rules match. You can also specify different backend services be
 used based on the path.
 
-```
-gcloud compute url-maps add-path-matcher my-url-map --path-matcher-name
-my-path-matcher --new-hosts www.example.com --path-rules=”/api=my-api-backend-service,/other=my-other-backend-service”
---default-service my-http-backend-service
+```shell
+gcloud compute url-maps add-path-matcher my-url-map \
+  --path-matcher-name my-path-matcher \
+  --new-hosts www.example.com \
+  --path-rules=”/api=my-api-backend-service,/other=my-other-backend-service” \
+  --default-service my-http-backend-service
 ```
 
 In the UI the URL maps, host rules, and path matchers are specified in the
@@ -175,16 +193,18 @@ Target Proxies terminate the connection to the user so you specify the SSL
 certificate to use when you are using HTTPS. SSL certificates are created like
 so:
 
-```
-gcloud compute ssl-certificates create my-cert --certificate /path/to/cert.pm
---private-key /path/to/key.pm
+```shell
+gcloud compute ssl-certificates create my-cert \
+  --certificate /path/to/cert.pm \
+  --private-key /path/to/key.pm
 ```
 
 You can then use the certificate to create the HTTPS proxy.
 
-```
-gcloud compute target-https-proxies create my-https-proxy --url-map my-url-map
---ssl-certificate my-ssl-certificate
+```shell
+gcloud compute target-https-proxies create my-https-proxy \
+  --url-map my-url-map \
+  --ssl-certificate my-ssl-certificate
 ```
 
 You still need to create one but at this point I felt that Target Proxies made
@@ -199,32 +219,43 @@ your load balancer to the Target Proxy that will handle the requests. First we
 will need to create our IP address though. We will need a global, rather than
 regional, IP address for our HTTP load balancer.
 
-```
+```shell
 gcloud compute addresses create my-address --global
 ```
 
 Then we can create our forwarding rule. Notice that we will need to put in the
 actual IP address that we just created rather than the IP address name. Not
-also that you can only put a single port as the <code>--port-range</code> option and that we need to add the <code>--global</code> option.
+also that you can only put a single port as the `--port-range` option and that
+we need to add the `--global` option.
 
-```
-gcloud compute forwarding-rules create my-https-forwarding-rule --global
---address 123.123.123.123 --ip-protocol TCP --port-range 443
---target-https-proxy my-https-proxy
+```shell
+gcloud compute forwarding-rules create my-https-forwarding-rule \
+  --global \
+  --address 123.123.123.123 \
+  --ip-protocol TCP \
+  --port-range 443 \
+  --target-https-proxy my-https-proxy
 ```
 
-Many applications will want to redirect users that access [http://www.example.com/](http://www.example.com/) to [https://www.example.com/](https://www.example.com/). This is a pretty common use case that is not supported by the load balancer.
-You need to create a totally separate Target HTTP Proxy and Forwarding Rule for
-HTTP. You essentially need to have two load balancers to handle the traffic,
-and then actually redirect users in your application.
+Many applications will want to redirect users that access
+[http://www.example.com/](http://www.example.com/) to
+[https://www.example.com/](https://www.example.com/). This is a pretty common
+use case that is not supported by the load balancer. You need to create a
+totally separate Target HTTP Proxy and Forwarding Rule for HTTP. You
+essentially need to have two load balancers to handle the traffic, and then
+actually redirect users in your application.
 
 Notice that we put the same IP address in for the HTTP Forwarding Rule. This
 makes is so that we can listen on port 80 and on port 443 at our IP address.
 
-```
-gcloud compute target-http-proxies create my-http-proxy --url-map my-url-map
-gcloud compute forwarding-rules create my-http-forwarding-rule --global
---address 123.123.123.123 --port-range 80 --target-http-proxy my-http-proxy
+```shell
+gcloud compute target-http-proxies create my-http-proxy \
+  --url-map my-url-map
+gcloud compute forwarding-rules create my-http-forwarding-rule \
+  --global \
+  --address 123.123.123.123 \
+  --port-range 80 \
+  --target-http-proxy my-http-proxy
 ```
 
 Now that you’ve created a forwarding rule, it will show up in the “Load
@@ -243,4 +274,9 @@ the major objects as well as a couple for the network load balancers.
 The objects that make up the HTTP(S) Load Balancer and the commands that you
 need to run to set it up on GCP are not totally obvious given how you create a
 in the UI. But hopefully this post has shed some light on how they map
-together. Be sure to also check out the [HTTP Load Balancer documentation](https://cloud.google.com/compute/docs/load-balancing/http/) it has lots more info and guides like how to do some more complex setups like [cross-region load balancing](https://cloud.google.com/compute/docs/load-balancing/http/cross-region-example) and [content based load balancing](https://cloud.google.com/compute/docs/load-balancing/http/content-based-example).
+together. Be sure to also check out the
+[HTTP Load Balancer documentation](https://cloud.google.com/compute/docs/load-balancing/http/)
+it has lots more info and guides like how to do some more complex setups like
+[cross-region load balancing](https://cloud.google.com/compute/docs/load-balancing/http/cross-region-example)
+and
+[content based load balancing](https://cloud.google.com/compute/docs/load-balancing/http/content-based-example).
