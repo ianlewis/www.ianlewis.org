@@ -143,13 +143,12 @@ RuntimeService.StartContainer({id: id2})
 ```
 
 We can interact with a CRI runtime directly using the
-[`crictl`](https://github.com/kubernetes-sigs/cri-tools) tool.
-'crictl` lets us send gRPC messages to a CRI runtime directly from
-the command line. We can use this to debug and test out CRI implementations
-without starting up a full-blown <code>kubelet</code> or Kubernetes cluster.
-You can get it by downloading a <code>crictl</code> binary from the cri-tools
-[releases page](https://github.com/kubernetes-sigs/cri-tools/releases) on
-GitHub.
+[`crictl`](https://github.com/kubernetes-sigs/cri-tools) tool. 'crictl`lets us
+send gRPC messages to a CRI runtime directly from the command line. We can use
+this to debug and test out CRI implementations without starting up a
+full-blown`kubelet`or Kubernetes cluster.  You can get it by downloading
+a`crictl` binary from the cri-tools [releases
+page](https://github.com/kubernetes-sigs/cri-tools/releases) on GitHub.
 
 You can configure `crictl` by creating a configuration file under
 `/etc/crictl.yaml`. Here you should specify the runtime's gRPC endpoint as
