@@ -5,8 +5,8 @@
 title: Ian Lewis
 email: ianmlewis@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Ian Lewis is a web developer living in Tokyo Japan. His current interests are
-  in Go, Python, Kubernetes, and security.
+  Ian Lewis am an engineer based in Tokyo, Japan. His current interests are
+  in Container Native Security, Supply Chain Security, Containers, and Kubernetes.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.ianlewis.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: IanMLewis
