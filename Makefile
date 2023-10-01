@@ -99,4 +99,4 @@ serve: ## Run Jekyll test server.
 
 .PHONY: clean
 clean: ## Delete temporary files.
-	rm -rf vendor node_modules
+	rm -rf vendor node_modules _site
