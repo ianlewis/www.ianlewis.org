@@ -31,11 +31,15 @@ pip はバンドルを作成する機能があります。バンドルは `requi
 
 バンドルを作成するのが簡単:
 
-    $ pip bundle -r requirements.txt mybundle.pybundle
+```shell
+pip bundle -r requirements.txt mybundle.pybundle
+```
 
 インストールも簡単:
 
-    $ pip install mybundle.pybundle
+```shell
+pip install mybundle.pybundle
+```
 
 もちろん、 [virtualenv](/jp/virtualenv-pip-fabric) と組み合わせて使えます。
 
@@ -43,20 +47,22 @@ pip はバンドルを作成する機能があります。バンドルは `requi
 
 バンドルは単の zip ファイル:
 
-    $ unzip mybundle.pybundle
-    ...
-    $ ls
-    build/  pip-manifest.txt  mybundle.pybundle  src/
-    $ cat pip-manifest.txt
-    # This is a pip bundle file, that contains many source packages
-    # that can be installed as a group.  You can install this like:
-    #     pip this_file.zip
-    # The rest of the file contains a list of all the packages included:
-    # These packages were installed to satisfy the above requirements:
-    Django==1.3
-    django-debug-toolbar==0.8.4
-    South==0.7.3
-    ...
+```shell
+$ unzip mybundle.pybundle
+...
+$ ls
+build/  pip-manifest.txt  mybundle.pybundle  src/
+$ cat pip-manifest.txt
+# This is a pip bundle file, that contains many source packages
+# that can be installed as a group.  You can install this like:
+#     pip this_file.zip
+# The rest of the file contains a list of all the packages included:
+# These packages were installed to satisfy the above requirements:
+Django==1.3
+django-debug-toolbar==0.8.4
+South==0.7.3
+...
+```
 
 # デプロイ
 

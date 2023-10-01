@@ -23,9 +23,6 @@ MD007:
 # MD013/line-length - Line length
 MD013: false
 
-# TODO(#17): Fix commands-show-output
-MD014: false
-
 # TODO(#17): Fix no-missing-space-atx
 MD018: false
 

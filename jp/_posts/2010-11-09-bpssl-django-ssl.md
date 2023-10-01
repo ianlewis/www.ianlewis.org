@@ -20,11 +20,15 @@ HTTPSのほうのURLにリダイレクトしたいこともよくあります。
 
 まずは、ポッケージを PIP でインストールします:
 
-    $ pip install bpssl
+```shell
+pip install bpssl
+```
 
 もしくは `easy_install` で:
 
-    $ easy_install bpssl
+```shell
+easy_install bpssl
+```
 
 次に、 `'beproud.django.ssl'` を `settings.py` の
 [INSTALLED_APPS](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#installed-apps)

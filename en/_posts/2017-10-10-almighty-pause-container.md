@@ -10,7 +10,7 @@ render_with_liquid: false
 
 When checking out the nodes of your Kubernetes cluster, you may have noticed some containers called "pause" running when you do a `docker ps` on the node.
 
-```
+```shell
 $ docker ps
 CONTAINER ID        IMAGE                                       COMMAND ...
 ...
@@ -41,7 +41,7 @@ In Kubernetes, the pause container serves as the "parent container" for all of t
 
 In Linux, when you run a new process, the process inherits its namespaces from the parent process. The way that you run a process in a new namespace is by "unsharing" the namespace with the parent process thus creating a new namespace. Here is an example using the `unshare` tool to run a shell in new PID, UTS, IPC, and mount namespaces.
 
-```
+```shell
 sudo unshare --pid --uts --ipc --mount -f chroot rootfs /bin/sh
 ```
 
@@ -49,7 +49,7 @@ Once the process is running, you can add other processes to the process' namespa
 
 Containers in a pod share namespaces among them. Docker lets you automate the process a bit so let's look at an example of how to create a pod from scratch by using the pause container and sharing namespaces. First we will need to start the pause container with Docker so that we can add our containers to the pod.
 
-```
+```shell
 docker run -d --name pause -p 8080:80 gcr.io/google_containers/pause-amd64:3.0
 ```
 
@@ -57,7 +57,7 @@ Then we can run the containers for our pod. First we will run nginx. This will s
 
 > Note that we also mapped the host port 8080 to port 80 on the pause container rather than the nginx container because the pause container sets up the initial network namespace that nginx will be joining.
 
-```
+```shell
 $ cat <<EOF >> nginx.conf
 > error_log stderr;
 > events { worker_connections  1024; }
@@ -77,8 +77,8 @@ $ docker run -d --name nginx -v `pwd`/nginx.conf:/etc/nginx/nginx.conf --net=con
 
 And then we will create another container for the [ghost](https://github.com/TryGhost/Ghost) blog application which serves as our application server.
 
-```
-$ docker run -d --name ghost --net=container:pause --ipc=container:pause --pid=container:pause ghost
+```shell
+docker run -d --name ghost --net=container:pause --ipc=container:pause --pid=container:pause ghost
 ```
 
 In both cases we specify the pause container as the container whose namespaces we want to join. This will effectively create our pod. If you access `http://localhost:8080/` you should be able to see ghost running through an nginx proxy because the network namespace is shared among the pause, nginx, and ghost containers.
@@ -105,16 +105,16 @@ In containers, one process must be the init process for each PID namespace. With
 
 In the post on Kubernetes pods, I ran nginx in a container, and added ghost to the PID namespace of the nginx container.
 
-```
-$ docker run -d --name nginx -v `pwd`/nginx.conf:/etc/nginx/nginx.conf -p 8080:80 nginx
-$ docker run -d --name ghost --net=container:nginx --ipc=container:nginx --pid=container:nginx ghost
+```shell
+docker run -d --name nginx -v `pwd`/nginx.conf:/etc/nginx/nginx.conf -p 8080:80 nginx
+docker run -d --name ghost --net=container:nginx --ipc=container:nginx --pid=container:nginx ghost
 ```
 
 In this case, nginx is assuming the role of PID 1 and ghost is added as a child process of nginx. This is mostly fine, but technically nginx is now responsible for any children that ghost orphans. If, for example, ghost forks itself or runs child processes using `exec`, and crashes before the child finishes, then those children will be adopted by nginx. However, nginx is not designed to be able to run as an init process and reap zombies. That means we could potentially have lots of them and they will last for the life of that container.
 
 In Kubernetes pods, containers are run in much the same way as above, but there is a special pause container that is created for each pod. This pause container runs a very simple process that performs no function but essentially sleeps forever (see the `pause()` call below). It's so simple that I can include the full source code as of this writing here:
 
-```
+```c
 /*
 Copyright 2016 The Kubernetes Authors.
 Licensed under the Apache License, Version 2.0 (the "License");
