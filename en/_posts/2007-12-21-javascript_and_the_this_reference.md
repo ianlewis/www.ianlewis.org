@@ -23,7 +23,7 @@ the server and client. It's easy in MochiKit. Just use the
 [callLater](http://www.mochikit.com/doc/html/MochiKit/Async.html#fn-calllater)
 function.
 
-```
+```javascript
 update: function() {
   if (this.deferred) {
     this.deferred.cancel();
@@ -49,7 +49,7 @@ entering data.
 
 The request object is created in the deferredupdate function.
 
-```
+```javascript
 deferredupdate: function() {
   log('Loading document');
   this.deferred = null;

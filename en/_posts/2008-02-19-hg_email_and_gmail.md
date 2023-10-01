@@ -8,4 +8,51 @@ tags: mercurial
 render_with_liquid: false
 ---
 
-<p>I just set up my e-mail settings with <a href="http://www.selenic.com/mercurial/" title="Mercurial">Mercurial</a> so that I can e-mail patches via my <a href="http://www.google.com/mail/" title="Gmail">Gmail</a> account. I have <a href="http://www.debian.org/">Debian</a> installed on my machine which has <a href="http://www.exim.org/">exim</a> installed by default so it was pretty easy to set up. I'm not terribly versed at setting up mailing agents so I basically followed <a href="http://wiki.debian.org/GmailAndExim4">these instructions</a> on the <a href="http://wiki.debian.org/">Debian Wiki</a>. After getting that set up it's easy to set up <a href="http://www.selenic.com/mercurial/" title="Mercurial">Mercurial</a> to use exim4 since it's a drop in replacement for <a href="http://www.sendmail.org/">sendmail</a>.</p><p>To set up <a href="http://www.selenic.com/mercurial/" title="Mercurial">Mercurial</a> to use exim I followed the <a href="http://www.selenic.com/mercurial/wiki/index.cgi/.hgrc?highlight=%28email%29">instructions</a> on the <a href="http://www.selenic.com/mercurial/" title="Mercurial">Mercurial</a> Wiki:</p><pre><strong>email</strong>::<br />...<br />method;;<br />    Optional.  Method to use to send <strong>email</strong> messages.  If value is<br />    &quot;smtp&quot; (default), use SMTP (see section &quot;[smtp]&quot; for<br />    configuration).  Otherwise, use as name of program to run that<br />    acts like sendmail (takes &quot;-f&quot; option for sender, list of<br />    recipients on command line, message on stdin).  Normally, setting<br />    this to &quot;sendmail&quot; or &quot;/usr/sbin/sendmail&quot; is enough to use<br />    sendmail to send messages.<br /><br />  <strong>Email</strong> example:<br /><br />    [<strong>email</strong>]<br />    from = Joseph User &lt;joe.user@example.com&gt;<br />    method = /usr/sbin/sendmail</pre><p>So here is my very simple ~/.hgrc file:</p><pre>[ui]<br />username = Ian Lewis &lt;IxxMLxxxx@gmail.com&gt;<br />[email]<br />from = Ian Lewis &lt;IxxMLxxxx@gmail.com&gt;<br />method = /usr/sbin/exim4<br /></pre><p>Simple. Now I just enable POP for my gmail and I can use hg email and it will go through my gmail account. Now only if the <a href="http://www.selenic.com/mercurial/" title="Mercurial">Mercurial</a> guys would fix <a href="http://www.selenic.com/mercurial/bts/issue814">this issue</a> so I can send the patch email with the correct encoding. </p>
+I just set up my e-mail settings with
+[Mercurial](http://www.selenic.com/mercurial/) so that I can e-mail patches via
+my [Gmail](http://www.google.com/mail/) account. I have
+[Debian](http://www.debian.org/) installed on my machine which has
+[exim](http://www.exim.org/) installed by default so it was pretty easy to set
+up. I'm not terribly versed at setting up mailing agents so I basically
+followed [these instructions](http://wiki.debian.org/GmailAndExim4) on the
+[Debian Wiki](http://wiki.debian.org/). After getting that set up it's easy to
+set up Mercurial to use exim4 since it's a drop in replacement for
+[sendmail](http://www.sendmail.org/).
+
+To set up Mercurial to use exim I followed the
+[instructions](http://www.selenic.com/mercurial/wiki/index.cgi/.hgrc?highlight=%28email%29)
+on the Mercurial Wiki:
+
+```text
+email::
+...
+method;;
+    Optional.  Method to use to send email messages.  If value is
+    "smtp" (default), use SMTP (see section "[smtp]" for
+    configuration).  Otherwise, use as name of program to run that
+    acts like sendmail (takes "-f" option for sender, list of
+    recipients on command line, message on stdin).  Normally, setting
+    this to "sendmail" or "/usr/sbin/sendmail" is enough to use
+    sendmail to send messages.
+
+  Email example:
+
+    [email]
+    from = Joseph User <joe.user@example.com>
+    method = /usr/sbin/sendmail
+```
+
+So here is my very simple ~/.hgrc file:
+
+```ini
+[ui]
+username = Ian Lewis <IanMLewis@gmail.com>
+[email]
+from = Ian Lewis <IanMLewis@gmail.com>
+method = /usr/sbin/exim4
+```
+
+Simple. Now I just enable POP for my gmail and I can use hg email and it will
+go through my gmail account. Now only if the Mercurial guys would fix
+[this issue](http://www.selenic.com/mercurial/bts/issue814) so I can send the
+patch email with the correct encoding.

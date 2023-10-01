@@ -8,20 +8,60 @@ tags: projects gallery2 plugin gallery2
 render_with_liquid: false
 ---
 
-<p>I made some changes to the <a href="http://manual.b2evolution.net/Plugins/tinymce_plugin">TinyMCE plugin</a> for <a href="http://www.b2evolution.net/" title="b2evolution">b2evolution</a> to support some callbacks which will allow other <a href="http://www.b2evolution.net/" title="b2evolution">b2evolution</a> plugins to register TinyMCE plugins automatically. This is especially useful for the <a href="http://manual.b2evolution.net/Plugins/gallery2_plugin">Gallery2 plugin</a> because it will allow me to add a button that allows users to add photos from Gallery2 to their blog posts to TinyMCE automatically when the Gallery2 plugin is installed.  Currently <a href="http://manual.b2evolution.net/Plugins/gallery2_plugin#Using_the_Gallery2_Plugin_with_the_TinyMCE_Plugin">it's a pain to get it to work</a> because the standard gallery2 image chooser button doesn't work with TinyMCE and installing it requires you to copy the g2image directory to another location.</p>
+I made some changes to the [TinyMCE
+plugin](http://manual.b2evolution.net/Plugins/tinymce_plugin) for
+[b2evolution](http://www.b2evolution.net/) to support some callbacks which will
+allow other b2evolution plugins to register TinyMCE plugins automatically. This
+is especially useful for the
+[Gallery2 plugin](http://manual.b2evolution.net/Plugins/gallery2_plugin) because
+it will allow me to add a button that allows users to add photos from Gallery2
+to their blog posts to TinyMCE automatically when the Gallery2 plugin is
+installed. Currently
+[it's a pain to get it to work](http://manual.b2evolution.net/Plugins/gallery2_plugin#Using_the_Gallery2_Plugin_with_the_TinyMCE_Plugin)
+because the standard gallery2 image chooser button doesn't work with TinyMCE
+and installing it requires you to copy the g2image directory to another
+location.
 
-<p>Fortunately these sorts of callbacks are implemented in the <a href="http://www.b2evolution.net/" title="b2evolution">b2evolution</a> <a href="http://doc.b2evolution.net/v-2-4/plugins/Plugin.html">Plugin API</a> already. I just needed to specify that the TinyMCE plugin has some extra callbacks and then fire the associated events at the right time. The code is a bit awkward but it serves it's purpose.</p>
+Fortunately these sorts of callbacks are implemented in the
+[b2evolution Plugin API](http://doc.b2evolution.net/v-2-4/plugins/Plugin.html)
+already. I just needed to specify that the TinyMCE plugin has some extra
+callbacks and then fire the associated events at the right time. The code is a
+bit awkward but it serves it's purpose.
 
-<p>The first part is specifying the extra events.</p>
+The first part is specifying the extra events.
 
-<div class="codeblock amc_php amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #000000; font-weight: bold;">function</span> GetExtraEvents<span style="color: #66cc66;">&#40;</span><span style="color: #66cc66;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td><span style="color: #66cc66;">&#123;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td>&nbsp; &nbsp; <span style="color: #b1b100;">return</span> <a href="http://www.php.net/array"><span style="color: #000066;">array</span></a><span style="color: #66cc66;">&#40;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">&quot;tinymce_before_init&quot;</span> <span style="color: #66cc66;">=&gt;</span> <span style="color: #ff0000;">&quot;Event that is called before tinymce is initialized&quot;</span><span style="color: #66cc66;">,</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">&quot;tinymce_extend_plugins&quot;</span> <span style="color: #66cc66;">=&gt;</span> <span style="color: #ff0000;">&quot;Event called to allow other plugins to extend the plugin list&quot;</span><span style="color: #66cc66;">,</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: #ff0000;">&quot;tinymce_extend_buttons&quot;</span> <span style="color: #66cc66;">=&gt;</span> <span style="color: #ff0000;">&quot;Event called to allow other plugins to extend the button list&quot;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td><span style="color: #66cc66;">&#125;</span></td></tr></table></div>
+```php
+function GetExtraEvents()
+{
+  return array(
+    "tinymce_before_init" => "Event that is called before tinymce is initialized",
+    "tinymce_extend_plugins" => "Event called to allow other plugins to extend the plugin list",
+    "tinymce_extend_buttons" => "Event called to allow other plugins to extend the button list"
+  );
+}
+```
 
-<p>Then I fire the events like so. The &apos;tinymce_extend_plugins&apos; and &apos;tinymce_extend_buttons&apos; events allow other plugins to modify the plugins list and buttons list via a special &quot;get_trigger_event&quot; call.</p>
+Then I fire the events like so. The `tinymce_extend_plugins` and
+`tinymce_extend_buttons` events allow other plugins to modify the plugins list
+and buttons list via a special `get_trigger_event` call.
 
-<div class="codeblock amc_php amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: blue;">$tmce_plugins_array</span> <span style="color: #66cc66;">=</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>&nbsp; &nbsp; <span style="color: blue;">$Plugins</span><span style="color: #66cc66;">-&gt;</span><span style="color: #006600;">get_trigger_event</span><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;tinymce_extend_plugins&quot;</span><span style="color: #66cc66;">,</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; <a href="http://www.php.net/array"><span style="color: #000066;">array</span></a><span style="color: #66cc66;">&#40;</span><span style="color: #ff0000;">&quot;tinymce_plugins&quot;</span> <span style="color: #66cc66;">=&gt;</span> <span style="color: blue;">$tmce_plugins_array</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">,</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff0000;">&quot;tinymce_plugins&quot;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">;</span></td></tr></table></div>
+```php
+$tmce_plugins_array =
+  $Plugins->get_trigger_event("tinymce_extend_plugins",
+    array("tinymce_plugins" => $tmce_plugins_array),
+      "tinymce_plugins");
+```
 
-<p>The plugins list is modified on the Gallery2 plugin side by adding an implementation of the event hook. In this case the &apos;tinymce_plugins&apos; key in the $params array is a reference that can be modified and passed back to the TinyMCE plugin.</p>
+The plugins list is modified on the Gallery2 plugin side by adding an
+implementation of the event hook. In this case the `tinymce_plugins` key in the
+$params array is a reference that can be modified and passed back to the
+TinyMCE plugin.
 
-<div class="codeblock amc_php amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #000000; font-weight: bold;">function</span> tinymce_extend_plugins<span style="color: #66cc66;">&#40;</span> <span style="color: #66cc66;">&amp;</span><span style="color: blue;">$params</span> <span style="color: #66cc66;">&#41;</span> <span style="color: #66cc66;">&#123;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>&nbsp; &nbsp; <a href="http://www.php.net/array_push"><span style="color: #000066;">array_push</span></a><span style="color: #66cc66;">&#40;</span><span style="color: blue;">$params</span><span style="color: #66cc66;">&#91;</span><span style="color: #ff0000;">&quot;tinymce_plugins&quot;</span><span style="color: #66cc66;">&#93;</span><span style="color: #66cc66;">,</span> <span style="color: #ff0000;">&quot;-g2image&quot;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><span style="color: #66cc66;">&#125;</span></td></tr></table></div>
+```php
+function tinymce_extend_plugins( &$params ) {
+  array_push($params["tinymce_plugins"], "-g2image");
+}
+```
 
-<p>You can view the changes made in the checked in code <a href="http://evocms-plugins.svn.sourceforge.net/viewvc/evocms-plugins?view=rev&amp;revision=714">here</a>.</p>
+You can view the changes made in the checked in code
+[here](http://evocms-plugins.svn.sourceforge.net/viewvc/evocms-plugins?view=rev&revision=714).

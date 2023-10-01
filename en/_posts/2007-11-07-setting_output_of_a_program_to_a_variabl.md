@@ -10,7 +10,7 @@ render_with_liquid: false
 
 I recently had to do this to get [TortoiseMerge](http://tortoisesvn.tigris.org/TortoiseMerge.html) working with [Mercurial](http://www.selenic.com/mercurial/) within [Cygwin](http://www.cygwin.com/). It turned out to be pretty easy and I couldn't believe that a [lot](http://www.infionline.net/~wtnewton/batch/batchfaq.html#9) [of](http://www.student.northpark.edu/pemente/sed/bat_env.htm#sed) [people](http://www.tomshardware.com/forum/230090-45-windows-batch-file-output-program-variable) were saying that you had to route the output to a temporary file and then read it back into your program or some such garbage. Anyway, behold!!
 
-```doscon
+```bat
 for /f &quot;tokens=1&quot; %%A in (
     '"cygpath -w %1"' ) do set TMergePath1=%%A
 ```

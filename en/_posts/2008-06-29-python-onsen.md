@@ -8,12 +8,7 @@ tags: python appengine python onsen google web toolkit json schema
 render_with_liquid: false
 ---
 
-<div class="lightbox" data-align="left">
-
-</assets/images/gallery/dcf_0207_thumbnail.jpg>
-</assets/images/gallery/dcf_0207_thumbnail.jpg>
-
-</div>
+![Table of Japanese food](/assets/images/gallery/dcf_0207_big.jpg)
 
 This weekend I went to the Python Onsen (Japanese) organized by
 [Voluntas](http://www.twitter.com/voluntas). Python Onsen is an event
@@ -26,12 +21,7 @@ check out the Ryokan link. Essentially you have a traditional style room
 and traditional meals are served twice a day (with generous
 proportions).
 
-<div class="lightbox" data-align="right">
-
-</assets/images/gallery/dcf_0206_thumbnail.jpg>
-</assets/images/gallery/dcf_0206_big.jpg>
-
-</div>
+![People in a Japanese room on computers](/assets/images/gallery/dcf_0206_big.jpg)
 
 In between meals there was a lot of programming and talk about
 programming. I was received pretty well considering that I was the only
@@ -47,12 +37,7 @@ error checking and security) as well as making the interface easier to
 deal with. Currently the typing of the JSON data makes dealing with it
 in [Java](http://java.sun.com/) a real pain.
 
-<div class="lightbox" data-align="left">
-
-</assets/images/gallery/dcf_0208_thumbnail.jpg>
-</assets/images/gallery/dcf_0208_big.jpg>
-
-</div>
+![Japanese mountains](/assets/images/gallery/dcf_0208_big.jpg)
 
 We realized this could be done with a schema, kind of like [XML
 Schema](http://en.wikipedia.org/wiki/XML_Schema). Something that could
