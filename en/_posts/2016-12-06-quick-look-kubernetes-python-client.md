@@ -48,11 +48,11 @@ If we execute the program, we get something like this:
 
 ```console
 $ python list_pods.py
-nginx-2048367498-2000v	Running	10.236.2.16
-nginx-2048367498-a4otw	Running	10.236.0.15
-nginx-2048367498-eblzn	Running	10.236.1.20
-nginx-2048367498-tqy6j	Running	10.236.2.17
-nginx-2048367498-zwkfg	Running	10.236.0.16
+nginx-2048367498-2000v  Running 10.236.2.16
+nginx-2048367498-a4otw  Running 10.236.0.15
+nginx-2048367498-eblzn  Running 10.236.1.20
+nginx-2048367498-tqy6j  Running 10.236.2.17
+nginx-2048367498-zwkfg  Running 10.236.0.16
 ```
 
 You can also make use of the watch API also, which is quite nice. This makes it easy to create controllers in Python.

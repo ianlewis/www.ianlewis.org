@@ -25,7 +25,7 @@ As a simple example here is a health check I often use for my Go applications.
 
 ```go
 http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("OK"))
+  w.Write([]byte("OK"))
 }
 http.ListenAndServe(":8080", nil)
 ```

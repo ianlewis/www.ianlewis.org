@@ -79,18 +79,18 @@ ENV REDIS_DOWNLOAD_SHA1 ad3ee178c42bfcfd310c72bbddffbbe35db9b4a6
 
 # for redis-sentinel see: http://redis.io/topics/sentinel
 RUN buildDeps='gcc libc6-dev make' \
-	&& set -x \
-	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends \
-	&& rm -rf /var/lib/apt/lists/* \
-	&& mkdir -p /usr/src/redis \
-	&& curl -sSL "$REDIS_DOWNLOAD_URL" -o redis.tar.gz \
-	&& echo "$REDIS_DOWNLOAD_SHA1 *redis.tar.gz" | sha1sum -c - \
-	&& tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1 \
-	&& rm redis.tar.gz \
-	&& make -C /usr/src/redis \
-	&& make -C /usr/src/redis install \
-	&& rm -r /usr/src/redis \
-	&& apt-get purge -y --auto-remove $buildDeps
+  && set -x \
+  && apt-get update && apt-get install -y $buildDeps --no-install-recommends \
+  && rm -rf /var/lib/apt/lists/* \
+  && mkdir -p /usr/src/redis \
+  && curl -sSL "$REDIS_DOWNLOAD_URL" -o redis.tar.gz \
+  && echo "$REDIS_DOWNLOAD_SHA1 *redis.tar.gz" | sha1sum -c - \
+  && tar -xzf redis.tar.gz -C /usr/src/redis --strip-components=1 \
+  && rm redis.tar.gz \
+  && make -C /usr/src/redis \
+  && make -C /usr/src/redis install \
+  && rm -r /usr/src/redis \
+  && apt-get purge -y --auto-remove $buildDeps
 ```
 
 You can see here that it installs all the build dependencies, downloads the Redis source code, builds Redis, and then deletes all the build tools & clears the apt cache all in one RUN command. This ensures that Docker will create an image layer only after all the unnecessary bits have been deleted.

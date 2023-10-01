@@ -44,7 +44,7 @@ Macの場合は特に何も必要がない。
 * daemon not running. starting it now *
 * daemon started successfully *
 List of devices attached
-HT95DLV00094	device
+HT95DLV00094  device
 ```
 
 おお、繋げてるね。それで、USBをマウントしないでください。マインド中の時にアプリをインストールできないみたいわけです。
@@ -58,7 +58,7 @@ HT95DLV00094	device
 ```shell
 # ./adb install /home/ian/tmp/simeji/Simeji2.4.1.apk
 1002 KB/s (212793 bytes in 0.207s)
-	pkg: /data/local/tmp/Simeji2.4.1.apk
+  pkg: /data/local/tmp/Simeji2.4.1.apk
 Success
 ```
 
