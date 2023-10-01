@@ -25,7 +25,7 @@ ENV PATH /usr/local/bin:$PATH
 
 The `buildpack-deps:jessie` image includes a full Debian jessie distribution install and is quite large.
 
-```console
+```shell
 ~$ docker images buildpack-deps:jessie
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 buildpack-deps      jessie              3b84923989a0        3 weeks ago         614 MB
@@ -37,7 +37,7 @@ We can see here that it's 614MB to start. Even squashing it isn't going to help 
 
 Alpine Linux is a distribution of Linux that is built to be very small for the base install. But even though it's small it still has a nice package repository with lots of packages. It also has a tool much like `apt-get` or `yum` to easily install those packages.
 
-```console
+```shell
 ~$ docker images alpine:3.6
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 alpine              3.6                 a41a7446062d        5 days ago          3.966 MB
@@ -45,7 +45,7 @@ alpine              3.6                 a41a7446062d        5 days ago          
 
 It's only 3.96 MB. That's a huge difference from the 600+ Debian jessie image. Many standard Docker images conveniently have an Alpine Linux version. Usually it has an `-alpine` suffix. Let's look at our python example.
 
-```console
+```shell
 ~$ docker images python:2.7.13-alpine
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 python              2.7.13-alpine       3dd614730c9c        4 days ago          72.02 MB

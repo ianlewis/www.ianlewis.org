@@ -54,7 +54,7 @@ layers. Let’s see how much space we can save by squashing it.
 
 First I’m going to pull it down to my local machine.
 
-```console
+```shell
 $ docker pull python:2.7.11
 2.7.11: Pulling from library/python
 7a01cc5f27b1: Pull complete
@@ -68,7 +68,7 @@ Status: Downloaded newer image for python:2.7.11
 
 Right away, can see the image has a good number of layers and is about 676MB.
 
-```console
+```shell
 $ docker images python:2.7.11
 REPOSITORY          TAG                 IMAGE ID            CREATED
 VIRTUAL SIZE
@@ -80,14 +80,14 @@ It’s a little annoying that docker-squash doesn’t let you squash images that
 are in your local repository. Instead it requires that the image be exported as
 a file. I’m going to go ahead and do that and create a new squashed image.
 
-```console
+```shell
 $ docker save python:2.7.11 > python-2.7.11.tar
 $ sudo bin/docker-squash -i python-2.7.11.tar -o python-squashed-2.7.11.tar
 ```
 
 Now we can see right away that the new file is smaller by about 75MB.
 
-```console
+```shell
 ~$ ls -lh python-*.tar
 -rw-rw-r-- 1 ian  ian  666M Feb 15 16:32 python-2.7.11.tar
 -rw-r--r-- 1 root root 590M Feb 15 16:33 python-squashed-2.7.11.tar
@@ -96,7 +96,7 @@ Now we can see right away that the new file is smaller by about 75MB.
 Sure enough after we load it back into our local repository, docker reports
 that it’s much smaller:
 
-```console
+```shell
 $ cat python-squashed-2.7.11.tar | docker load
 $ docker images python-squashed
 REPOSITORY          TAG                 IMAGE ID            CREATED
@@ -120,7 +120,7 @@ unnecessary data but still leave the layer from the first base image. By
 specifying this argument you can decide which base image you want to use so
 that it doesn’t have to be downloaded each time.
 
-```console
+```shell
 $ docker-squash -from 18d8ebf067fd -i ... -o ...
 ```
 
