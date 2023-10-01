@@ -13,9 +13,8 @@ twitter_username: IanMLewis
 github_username: ianlewis
 
 # Build settings
-theme: plainwhite
 plugins:
-  - jekyll-feed
+  - jekyll-seo-tag
   - jekyll-paginate-v2
   - jekyll-redirect-from
 
@@ -25,6 +24,15 @@ plainwhite:
   tagline: Engineer in Tokyo
   # TODO(#3): Update to use better portfolio image.
   portfolio_image: assets/portfolio.jpg
+  sitemap: true
+  search: false
+  dark_mode: false
+  html_lang: "en"
+  # TODO: What is condensed_mobile?
+  # condensed_mobile:
+  #   #- home
+  #   - page
+  #   - post
 
   social_links:
     twitter: IanMLewis
