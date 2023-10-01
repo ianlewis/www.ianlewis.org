@@ -20,9 +20,6 @@ MD004:
 MD007:
   indent: 2
 
-# TODO(#17): Fix MD009/no-trailing-spaces
-MD009: false
-
 # TODO(#17): Fix MD010/no-hard-tabs
 MD010: false
 

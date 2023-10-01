@@ -8,18 +8,62 @@ tags: python google appengine transaction
 render_with_liquid: false
 ---
 
-<p>The way to store data on <a href="http://code.google.com/appengine/" title="Appengine">Appengine</a> is with <a href="http://www.google.com/" title="Google">Google</a>'s <a href="http://code.google.com/appengine/docs/python/datastore/">BigTable Datastore</a> which has support for transactions. However, the transactions are quite limited in that,</p>
+The way to store data on [Appengine](http://code.google.com/appengine/) is with
+[Google](http://www.google.com/)'s
+[BigTable Datastore](http://code.google.com/appengine/docs/python/datastore/)
+which has support for transactions. However, the transactions are quite limited
+in that,
 
-<ol>
-  <li>You can only execute callables inside transactions. Which means you basically call run_in_transaction() on a function. This can sometimes be a pain but can generally be worked around with decorators and the like.
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">def</span> my_update_function<span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>&nbsp; <span style="color: #808080; font-style: italic;"># Some update code here</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td>&nbsp; ent.<span style="color: black;">put</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>run_in_transaction<span style="color: black;">&#40;</span>my_update_function<span style="color: black;">&#41;</span></td></tr></table></div>
-</li>
-<li>You can only update entities in the same entity group. This means all entities must be in the same ancestor tree. This can make updating entities with various relationships hard or impossible to do in a general way in a transaction.</li> 
-<li>You cannot do filters in a transaction. This means you cannot do any kind of select, <em>period</em>. This means you cannot do the following:
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">class</span> ModelA<span style="color: black;">&#40;</span>db.<span style="color: black;">Model</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>&nbsp; <span style="color: #ff7700;font-weight:bold;">pass</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td><span style="color: #ff7700;font-weight:bold;">class</span> ModelB<span style="color: black;">&#40;</span>db.<span style="color: black;">Model</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; modela = ReferenceProperty<span style="color: black;">&#40;</span>ModelA<span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td><span style="color: #ff7700;font-weight:bold;">def</span> update_func<span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>&nbsp; <span style="color: #808080; font-style: italic;"># Sorry this won't work</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"></div></td><td>&nbsp; modelas = ModelA.<span style="color: black;">all</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc1"></div></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc1"></div></div></td><td>&nbsp; <span style="color: #808080; font-style: italic;"># This is the only thing that works</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"><div class="amc1"></div></div></td><td>&nbsp; modela = ModelA.<span style="color: black;">get_by_id</span><span style="color: black;">&#40;</span><span style="color: #ff4500;">123</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"><div class="amc1"></div></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"><div class="amc1"></div></div></td><td>&nbsp; <span style="color: #808080; font-style: italic;"># Jeez, you can't do this either!</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"><div class="amc1"></div></div></td><td>&nbsp; modelb = ModelB.<span style="color: #008000;">filter</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">'modela ='</span>, modela<span style="color: black;">&#41;</span></td></tr></table></div>
+1. You can only execute callables inside transactions. Which means you
+   basically call `run_in_transaction()` on a function. This can sometimes be a
+   pain but can generally be worked around with decorators and the like.
 
-You can only do gets based on the key of an entity. Which means if you have a relationship like the one above you need to be able to derive the key to ModelB given the key for ModelA. And since you cannot chose numeric keys with which to save entities (numeric keys are always assigned), you will need to assign <a href="http://code.google.com/appengine/docs/python/datastore/keysandentitygroups.html#Kinds_Names_and_IDs">key names</a> for both entities.</li>
+   ```python
+   def my_update_function():
+     # Some update code here
+     ent.put()
 
-</ol>
+   run_in_transaction(my_update_function)
+   ```
 
-<p>All this makes transactions a bit of a pain in <a href="http://code.google.com/appengine/" title="Appengine">Appengine</a> but workable if you put a bit of effort into it. In the end you'll want to use key names for most every entity that matters as current backup solutions for <a href="http://code.google.com/appengine/" title="Appengine">Appengine</a> rely on key names to maintain the keys of entities when backing up and restoring. It wouldn't be to fun if all the urls for an entity that had numeric ids changed after restoring the data from a backup.</p>
+2. You can only update entities in the same entity group. This means all
+   entities must be in the same ancestor tree. This can make updating entities
+   with various relationships hard or impossible to do in a general way in a
+   transaction.
+
+3. You cannot do filters in a transaction. This means you cannot do any kind of
+   select, _period_. This means you cannot do the following:
+
+   ```python
+   class ModelA(db.Model):
+     pass
+
+   class ModelB(db.Model):
+     modela = ReferenceProperty(ModelA)
+
+   def update_func():
+     # Sorry this won't work
+     modelas = ModelA.all()
+
+     # This is the only thing that works
+     modela = ModelA.get_by_id(123)
+
+     # Jeez, you can't do this either!
+     modelb = ModelB.filter('modela =', modela)
+   ```
+
+   You can only do gets based on the key of an entity. Which means if you have
+   a relationship like the one above you need to be able to derive the key to
+   ModelB given the key for ModelA. And since you cannot chose numeric keys with
+   which to save entities (numeric keys are always assigned), you will need to
+   assign
+   [key names](http://code.google.com/appengine/docs/python/datastore/keysandentitygroups.html#Kinds_Names_and_IDs)
+   for both entities.
+
+All this makes transactions a bit of a pain in
+[Appengine](http://code.google.com/appengine/) but workable if you put a bit of
+effort into it. In the end you'll want to use key names for most every entity
+that matters as current backup solutions for Appengine rely on key names to
+maintain the keys of entities when backing up and restoring. It wouldn't be to
+fun if all the urls for an entity that had numeric ids changed after restoring
+the data from a backup.
