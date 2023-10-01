@@ -23,11 +23,3 @@ You can only do gets based on the key of an entity. Which means if you have a re
 </ol>
 
 <p>All this makes transactions a bit of a pain in <a href="http://code.google.com/appengine/" title="Appengine">Appengine</a> but workable if you put a bit of effort into it. In the end you'll want to use key names for most every entity that matters as current backup solutions for <a href="http://code.google.com/appengine/" title="Appengine">Appengine</a> rely on key names to maintain the keys of entities when backing up and restoring. It wouldn't be to fun if all the urls for an entity that had numeric ids changed after restoring the data from a backup.</p>
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'Transactions on Appengine',
-              url   : 'http://www.ianlewis.org/en/transactions-on-appengine'}, 
-            { button: true }
-          ) ;
-        </script></div>

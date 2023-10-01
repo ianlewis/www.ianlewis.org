@@ -22,11 +22,3 @@ render_with_liquid: false
 <p>Stardict on the other hand supports most of the things I want but doesn't support epwing or any way of converting the dictionaries from epwing to stardict format. There are a number of tools to read epwing dictionaries so I think this could be done, but I don't think stardict dictionaries currently support images or media like epwing dictionaries support so converting epwing dictionaries would lose that data. Stardict also has a  number of strange plugins and a net dictionary protocol which seems strange. I'm not sure if the server side code is open either.</p>
 <p>I've been looking ot the code for each of the dictionaries and it seems like while epwing's code is simpler and easier to read, stardict supports most of the features I want already so it would be better to explore how to add the features I want to add. Development on both projects is pretty much halted so I should be able to add features at my own pace without stepping on current development.</p>
 <p>I'm not looking forward to spending a lot of time on it but my frustration with dictionaries has reached a bit of a boiling point.</p>
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'Wanted: Dictionary program for Windows/Linux',
-              url   : 'http://www.ianlewis.org/en/wanted-dictionary-program-for-windows-li'}, 
-            { button: true }
-          ) ;
-        </script></div>

@@ -44,12 +44,3 @@ render_with_liquid: false
 </ul>
 
 参加したみんなさん、お疲れ様でした！</li>
-
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'Django 勉強会 Disc.7',
-              url   : 'http://www.ianlewis.org/jp/django-disc-7'}, 
-            { button: true }
-          ) ;
-        </script></div>

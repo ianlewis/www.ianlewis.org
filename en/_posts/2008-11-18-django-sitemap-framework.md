@@ -21,11 +21,3 @@ render_with_liquid: false
 <div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> mysite.<span style="color: black;">blog</span>.<span style="color: black;">sitemap</span> <span style="color: #ff7700;font-weight:bold;">import</span> BlogSitemap<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>...<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><span style="color: black;">sitemaps</span> = <span style="color: black;">&#123;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; &nbsp; <span style="color: #483d8b;">&quot;blog&quot;</span>: BlogSitemap<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td><span style="color: black;">&#125;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td><span style="color: black;">&#40;</span>r<span style="color: #483d8b;">'^sitemap.xml$'</span>, <span style="color: #483d8b;">'django.contrib.sitemaps.views.sitemap'</span>, <span style="color: black;">&#123;</span><span style="color: #483d8b;">'sitemaps'</span>: sitemaps<span style="color: black;">&#125;</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>...</td></tr></table></div>
 
 <p>You can even generate <a href="http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/#creating-a-sitemap-index">sitemap indexes</a> and it will pagenate the indexes on <a href="http://www.google.com/" title="Google">Google</a>'s limit of 50,000 urls so that you don't have a problem with it crawling your indexes.</p>
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'Django Sitemap Framework',
-              url   : 'http://www.ianlewis.org/en/django-sitemap-framework'}, 
-            { button: true }
-          ) ;
-        </script></div>

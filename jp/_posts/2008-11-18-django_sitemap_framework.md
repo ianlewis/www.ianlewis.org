@@ -25,11 +25,3 @@ render_with_liquid: false
 <p>後、サイトのコンテンツが変更された時、<a href="http://www.google.com/" title="Google">Google</a>が新しいコンテンツをインデクスするために ping_googleというmanage.pyコマンドが用意してある。</p>
 <span class="codespan">python manage.py ping_google</span>
 <p>でも、<a href="http://d.hatena.ne.jp/mstn/20080425">他の検索エンジンが同じようなサービスがある</a>のに、ping_googleしかないので、上記のようなコマンドをいくつも作っていた。</p>
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'Django サイトマップ フレームワーク',
-              url   : 'http://www.ianlewis.org/jp/django_sitemap_framework'}, 
-            { button: true }
-          ) ;
-        </script></div>

@@ -15,11 +15,3 @@ render_with_liquid: false
 <p>今、<a href="http://twitter.com/tmatsuo">id:tmatsuo</a>とAppengineでコードシェーリングサービス、Smippleを作ってる。SmippleはOpensocialや、FacebookのSocialデータを使って、勉強しながら、うまくコードや、技術を共有できるサービスです。今の段階ではSocialの部分はあまりできてないせいか、僕たちの発表の仕方が悪いせいか、あまり受けられなかったみたいけど、これから頑張ってマーケティングをしていきたいと思ってる。</p>
 
 <p><a href="http://twitter.com/tmatsuo">id:tmatsuo</a>も俺よりなぜかアメリカ人に人気があって、日本版OpenSocialギャラリーアプリをAppengineで載せる話があったみたい。僕もそれにハマるかもしれないので、ぜひ期待してください。</p>
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'OpenSocial Hackathon @ デブサミ',
-              url   : 'http://www.ianlewis.org/jp/opensocial-devsummit'}, 
-            { button: true }
-          ) ;
-        </script></div>

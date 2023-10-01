@@ -13,11 +13,3 @@ render_with_liquid: false
 <p>では、<a href="http://planetpythonjp.ianlewis.org/">Planet Python Japan</a><a href="http://planetpythonjp.ianlewis.org/"></a>を登場します。</p>
 <p><a href="http://www.python.org/" title="Python">Python</a>が好きな皆様へ、<a href="http://www.python.org/" title="Python">Python</a> Planet Japanのメンバー募集中です。<a href="http://www.python.org/" title="Python">Python</a>テーマなんですということで、ウェブ系や、IT系のボスとでも、おっけですけど、<a href="http://www.python.org/" title="Python">Python</a>に関するポストを作るようにしましょう。応募の方は RSSフィードのURLを頂ければいいと思います。</p>
 <p>よろしくです。</p>
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'Python Planet Japan 登場！！',
-              url   : 'http://www.ianlewis.org/jp/python-planet-japan'}, 
-            { button: true }
-          ) ;
-        </script></div>

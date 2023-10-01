@@ -37,11 +37,3 @@ render_with_liquid: false
 </td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; host: localhost:26<br />
 </td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; username: &lt;local mail user&gt;<br />
 </td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; password: &lt;local mail password&gt;</td></tr></table></div>
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'Twitter reply updates via e-mail',
-              url   : 'http://www.ianlewis.org/en/twitter-reply-updates-via-e-mail'}, 
-            { button: true }
-          ) ;
-        </script></div>
