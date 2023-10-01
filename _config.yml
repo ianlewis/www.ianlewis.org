@@ -28,11 +28,10 @@ plainwhite:
   search: false
   dark_mode: false
   html_lang: "en"
-  # TODO: What is condensed_mobile?
-  # condensed_mobile:
-  #   #- home
-  #   - page
-  #   - post
+  condensed_mobile:
+    - page
+    - post
+    - post_list
 
   social_links:
     twitter: IanMLewis

@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 # title: Ian Lewis
 
-layout: page
+layout: home
 permalink: /
 redirect_from:
   - /en/about/
