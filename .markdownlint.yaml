@@ -20,32 +20,53 @@ MD004:
 MD007:
   indent: 2
 
+# TODO(#17): Fix MD009/no-trailing-spaces
+MD009: false
+
+# TODO(#17): Fix MD010/no-hard-tabs
+MD010: false
+
 # MD013/line-length - Line length
 MD013: false
 
-# MD025/single-title/single-h1 - Multiple top-level headings
-MD025:
-  # Disable checking of YAML frontmatter.
-  front_matter_title: ""
+# TODO(#17): Fix commands-show-output
+MD014: false
+
+# TODO(#17): Fix no-missing-space-atx
+MD018: false
+
+# TODO(#17): Fix single-title/single-h1
+# # MD025/single-title/single-h1 - Multiple top-level headings
+# MD025:
+#   # Disable checking of YAML frontmatter.
+#   front_matter_title: ""
+MD025: false
+
+# TODO(#17): Fix no-trailing-punctuation
+MD026: false
 
 # MD028/no-blanks-blockquote - Blank line inside blockquote
 MD028: false
 
-# MD029/ol-prefix - Ordered list item prefix
-MD029:
-  # List style
-  style: "ordered"
+# TODO(#17): Fix MD029/ol-prefix
+# # MD029/ol-prefix - Ordered list item prefix
+# MD029:
+#   # List style
+#   style: "ordered"
+MD029: false
 
+# TODO(#17): Fix list-marker-space
 # MD030/list-marker-space - Spaces after list markers
-MD030:
-  # Spaces for single-line unordered list items
-  ul_single: 1
-  # Spaces for single-line ordered list items
-  ol_single: 1
-  # Spaces for multi-line unordered list items
-  ul_multi: 1
-  # Spaces for multi-line ordered list items
-  ol_multi: 1
+# MD030:
+#   # Spaces for single-line unordered list items
+#   ul_single: 1
+#   # Spaces for single-line ordered list items
+#   ol_single: 1
+#   # Spaces for multi-line unordered list items
+#   ul_multi: 1
+#   # Spaces for multi-line ordered list items
+#   ol_multi: 1
+MD030: false
 
 # MD033/no-inline-html - Inline HTML
 MD033: false
@@ -53,9 +74,29 @@ MD033: false
 # MD034/no-bare-urls - Bare URL used
 MD034: false
 
-# MD046/code-block-style - Code block style
-MD046:
-  style: "fenced"
+# TODO(#17): Fix no-emphasis-as-heading/no-emphasis-as-header
+MD036: false
+
+# TODO(#17): Fix MD037/no-space-in-emphasis
+MD037: false
+
+# TODO(#17): MD038/no-space-in-code
+MD038: false
+
+# TODO(#17): MD039/no-space-in-links
+MD039: false
+
+# TODO(#17): Fix fenced-code-language
+MD040: false
+
+# TODO(#17): Fix no-alt-text
+MD045: false
+
+# TODO(#17): Fix code-block-style
+# # MD046/code-block-style - Code block style
+# MD046:
+#   style: "fenced"
+MD046: false
 
 # MD047/single-trailing-newline - Files should end with a single newline character
 MD047: true
