@@ -98,7 +98,11 @@ gcloud beta container node-pools create preemptible-pool \
     --node-taints=pod=preemptible:PreferNoSchedule
 ```
 
-このノードプールは必要なリソースに対して、スケールするけど、低コストのPreemptibleインスタンスを使ってくれます。Preemptibleリソースは取れない場合があるので、[node taint](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/) を設定して、こういう変動するようなリソース状況を耐えるアプリケーションだけが実行を許可する。
+このノードプールは必要なリソースに対して、スケールするけど、低コストの
+Preemptibleインスタンスを使ってくれます。Preemptibleリソースは取れない場合が
+あるので、
+[node taint](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/)
+を設定して、こういう変動するようなリソース状況を耐えるアプリケーションだけが実行を許可する。
 
 どれで普通のノードプールとPreemptibleノードプール両方に動くようなDeploymentを作成できる：
 
@@ -137,7 +141,8 @@ spec:
 EOF
 ```
 
-クラスターは最初にリソースが足りないので、`Pending`ステータスのPodをいくつか見れるはず。そのあとにノードが追加されることにつれて、`Running` ステータスに変わる。
+クラスターは最初にリソースが足りないので、`Pending`ステータスのPodをいくつか見れるはず。
+そのあとにノードが追加されることにつれて、`Running` ステータスに変わる。
 
 ```shell
 kubectl get pods -o wide
@@ -158,8 +163,10 @@ GKEの高度な機能を組み合わせることで、低コストとアプリ�
 もっとKubernetes知りたい方は、以下のアイテムをどうぞ:
 
 - GKEの [how-to guides](https://cloud.google.com/kubernetes-engine/docs/how-to/) を読む。
-- [Google Cloud Platform Slack](https://gcp-slack.appspot.com/) (#kubernetes-engine チャンネルに参加してください。)
-- [GCPUG Slack](https://docs.google.com/forms/d/e/1FAIpQLScYxAGwuosFFNvH-5yOj-_p-pAKdqZpmM2cgKh9Q8Zu6531Bw/viewform)に参加する (#gke_jaチャンネルに参加してください）
+- [Google Cloud Platform Slack](https://gcp-slack.appspot.com/)
+  (#kubernetes-engine チャンネルに参加してください。)
+- [GCPUG Slack](https://docs.google.com/forms/d/e/1FAIpQLScYxAGwuosFFNvH-5yOj-_p-pAKdqZpmM2cgKh9Q8Zu6531Bw/viewform)
+  に参加する (#gke_jaチャンネルに参加してください）
 - [Kubernetes Slack](http://slack.k8s.io/)に参加すfる (#gkeチャンネルに注目)
 
 ではまた！

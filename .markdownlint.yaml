@@ -20,9 +20,6 @@ MD004:
 MD007:
   indent: 2
 
-# MD013/line-length - Line length
-MD013: false
-
 # TODO(#17): Fix commands-show-output
 MD014: false
 
