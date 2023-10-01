@@ -8,11 +8,14 @@ tags: erlang
 render_with_liquid: false
 ---
 
-<div>
-<object id="viddler_4b93caa4" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="437" height="347">
-<param name="movie" value="http://www.viddler.com/simple/4b93caa4/" />
-<param name="allowScriptAccess" value="always" />
-<param name="allowFullScreen" value="true" /><embed type="application/x-shockwave-flash" width="437" height="347" src="http://www.viddler.com/simple/4b93caa4/" allowscriptaccess="always" allowfullscreen="true" name="viddler_4b93caa4"></embed>
-</object>
-</div>
-<p>Just watched this video of <a href="http://bob.pythonmac.org/">Bob</a> giving a presentation at <a href="http://c4.rentzsch.com/1/">C4[1]</a> about <a href="http://www.erlang.org/">erlang</a>. It's about a year old and Bob had been using erlang for almost a year at that point. Bob always seems to have his hands in things just before they become super popular. Erlang seems to be one of those things. <a href="http://www.json.org/">JSON</a> was another. He's even the guy that <a href="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/">coined the term jsonp</a> before that was really popular. Anyway, highly informative. I might give erlang a try a little later on.</p>
+> _Update (2023-10-02): The video is no longer available._
+
+I just watched this video of [Bob](http://bob.pythonmac.org/) giving a
+presentation at [C4[1]](http://c4.rentzsch.com/1/) about
+[erlang](http://www.erlang.org/). It's about a year old and Bob had been using
+erlang for almost a year at that point. Bob always seems to have his hands in
+things just before they become super popular. Erlang seems to be one of those
+things. [JSON](http://www.json.org/) was another. He's even the guy that
+[coined the term jsonp](http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/)
+before that was really popular. Anyway, highly informative. I might give
+erlang a try a little later on.
