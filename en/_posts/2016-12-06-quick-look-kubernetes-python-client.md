@@ -20,7 +20,7 @@ Kubernetes provides a JSON REST API so you can control a Kubernetes cluster from
 
 Installation is done in the standard, straitforward way:
 
-```console
+```shell
 $ pip install kubernetes
 ```
 
@@ -46,7 +46,7 @@ for pod in pod_list.items:
 
 If we execute the program, we get something like this:
 
-```console
+```shell
 $ python list_pods.py
 nginx-2048367498-2000v	Running	10.236.2.16
 nginx-2048367498-a4otw	Running	10.236.0.15
@@ -71,7 +71,7 @@ for event in stream:
     print("Event: %s %s" % (event['type'], event['object'].metadata.name))
 ```
 
-```console
+```shell
 $ python watch_pods.py
 Event: ADDED nginx-2048367498-zwkfg
 Event: ADDED nginx-2048367498-2000v

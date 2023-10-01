@@ -48,7 +48,7 @@ The containers are essentially stand alone silos, with the exception that they m
 
 However, with some extra command line arguments, you can combine Docker containers using a single namespace. First let's create a single container for nginx.
 
-```console
+```shell
 $ cat <<EOF >> nginx.conf
 > error_log stderr;
 > events { worker_connections  1024; }
@@ -68,7 +68,7 @@ $ docker run -d --name nginx -v `pwd`/nginx.conf:/etc/nginx/nginx.conf -p 8080:8
 
 Next we'll run a container with [ghost](https://github.com/TryGhost/Ghost) running in it. But this time we'll add some extra arguments to have it join our nginx container's namespaces.
 
-```console
+```shell
 $ docker run -d --name ghost --net=container:nginx --ipc=container:nginx --pid=container:nginx ghost
 ```
 

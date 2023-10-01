@@ -58,7 +58,7 @@ spec:
 
 After we create our deployment and service we would have some pods running.
 
-```console
+```shell
 $ kubectl get pods nginx
 NAME                     READY     STATUS    RESTARTS   AGE
 nginx-1802606028-1posu   1/1       Running   0          27s
@@ -68,7 +68,7 @@ nginx-1802606028-yjoty   1/1       Running   0          27s
 
 We can list the pod endpoints here too.
 
-```console
+```shell
 $ kubectl get endpoints nginx
 NAME      ENDPOINTS                   AGE
 nginx     10.40.3.6:80,10.40.3.7:80   22m
@@ -76,21 +76,21 @@ nginx     10.40.3.6:80,10.40.3.7:80   22m
 
 Let's take the pod `nginx-1802606028-1posu` out for maintenance. First let's note it's pod IP.
 
-```console
+```shell
 $ kubectl get pods -o jsonpath='{.items[?(@.metadata.name=="nginx-1802606028-1posu")].status.podIP}'
 10.40.3.7
 ```
 
 Now, to put the pod under maintenance we can change the `enabled` label to something other than `"true"`. We need to pass the `--overwrite` flag to update an existing label.
 
-```console
+```shell
 $ kubectl label pod nginx-1802606028-1posu enabled=false --overwrite
 pod "nginx-1802606028-1posu" labeled
 ```
 
 If we check the endpoints again we would notice that we still have two endpoints. This is because the deployment has recognized based on it's own selector that it should start another pod.
 
-```console
+```shell
 $ kubectl get pods --show-labels
 NAME                     READY     STATUS    RESTARTS   AGE       LABELS
 nginx-1802606028-1posu   1/1       Running   0          5m        enabled=false,name=nginx,pod-template-hash=1802606028
@@ -100,7 +100,7 @@ nginx-1802606028-yjoty   1/1       Running   0          5m        enabled=true,n
 
 We can notice here that our pod under maintenance is no longer in the endpoints.
 
-```console
+```shell
 $ kubectl get endpoints
 NAME      ENDPOINTS                   AGE
 nginx     10.40.3.6:80,10.40.3.8:80   25m
@@ -116,7 +116,7 @@ How you perform maintenance on your pod will be highly application specific so I
 
 You can attach to an running pod in order to send it data on stdin and get debugging info on stdout. This is great if your process allows you to send it commands on stdin to get info on it's internal state. Some containers however, don't create a TTY. You will be able to see stdout but this is very close to just using `kubectl logs`.
 
-```console
+```shell
 $ kubectl attach nginx-1802606028-1posu -it
 Unable to use a TTY - container nginx did not allocate one
 127.0.0.1 - - [13/Sep/2016:02:51:06 +0000] "GET / HTTP/1.1" 200 612 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.101 Safari/537.36" "-"
@@ -128,13 +128,13 @@ Unable to use a TTY - container nginx did not allocate one
 
 `kubectl exec` allows you to execute a command in a container. You can use this to do any number of things, but perhaps you might use it to send a signal to a process in the container.
 
-```console
+```shell
 $ kubectl exec nginx-1802606028-1posu -- killall -HUP nginx
 ```
 
 Or you could just start up a bash shell if bash is installed.
 
-```console
+```shell
 $ kubectl exec nginx-1802606028-1posu -ti -- bash -il
 ```
 
@@ -142,7 +142,7 @@ $ kubectl exec nginx-1802606028-1posu -ti -- bash -il
 
 Another useful feature is port forwarding. We can use this to forward a local port to our pod so we can send it requests and see how it responds.
 
-```console
+```shell
 $ kubectl port-forward nginx-1802606028-1posu 8000:80
 Forwarding from 127.0.0.1:8000 -> 80
 Forwarding from [::1]:8000 -> 80
@@ -150,7 +150,7 @@ Forwarding from [::1]:8000 -> 80
 
 After that we can send it requests from another terminal.
 
-```console
+```shell
 $ curl http://localhost:8000/
 <!DOCTYPE html>
 <html>
@@ -191,7 +191,7 @@ Because Services and Deployments often both use label selectors it is possible t
 
 After we are done maintenance on our pod we may want to put it back into the service. You can do this by updating the label again to match the service selector.
 
-```console
+```shell
 $ kubectl label pod nginx-1802606028-1posu enabled=true --overwrite
 pod "nginx-1802606028-1posu" labeled
 ```

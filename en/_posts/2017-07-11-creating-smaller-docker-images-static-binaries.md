@@ -26,7 +26,7 @@ Most applications are built using a process known as Dynamic Linking. Each appli
 
 Let's look at an example. If I create a simple C++ application and compile it as follows I will get a dynamically linked executable.
 
-```console
+```shell
 ianlewis@test:~$ cat hello.cpp
 #include <iostream>
 
@@ -41,7 +41,7 @@ $ ls -lh hello
 
 `g++` is actually doing two steps. It is compiling my application and linking it. Compiling just creates an normal C++ object file. The linking step is adding the dependencies needed to run the application. Thankfully most build tools do this for us. The compile and link steps can be broken out as follows.
 
-```console
+```shell
 ianlewis@test:~$ g++ -c hello.cpp -o hello.o
 ianlewis@test:~$ g++ -o hello hello.o
 ianlewis@test:~$ ls -lh
@@ -53,7 +53,7 @@ total 20K
 
 We can see that it is a dynamically liked by running the `ldd` command on it on Linux systems. If you are on Mac OS you can get the same info by running `otool -L`. This shows the dependencies for my binary.
 
-```console
+```shell
 ianlewis@test:~$ ldd hello
         linux-vdso.so.1 =>  (0x00007ffc0075c000)
         libstdc++.so.6 => /usr/lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f88c92d0000)
@@ -71,7 +71,7 @@ So what happens if we remove one of these libraries or move it to a location tha
 
 _!! Moving library files around can really break your system so don't try this at home !!_
 
-```console
+```shell
 ianlewis@test:~$ sudo mv /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /usr/lib/x86_64-linux-gnu/libstdc++.so.6.bk
 ianlewis@test:~$ ldd ./hello
         linux-vdso.so.1 =>  (0x00007ffd511c6000)
@@ -82,7 +82,7 @@ ianlewis@test:~$ ldd ./hello
 
 We can see now that the library is not found by the dynamic linker. What happens if we try to run it?
 
-```console
+```shell
 ianlewis@test:~$ ./hello
 ./hello: error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory
 ```
@@ -97,7 +97,7 @@ This is why most Dockerfiles you'll see build the application inside the same co
 
 Let's try to run our hello application, compiled on Ubuntu, in something like Alpine Linux.
 
-```console
+```shell
 ianlewis@test:~$ g++ -o hello hello.cpp
 ianlewis@test:~$ cat << EOF > Dockerfile
 FROM alpine
@@ -137,7 +137,7 @@ _[Creative Commons Attribution](https://creativecommons.org/licenses/by/2.0/deed
 
 Statically linking allows us to bundle all of the libraries our application relies on into a single binary. This will allow us to copy the application code and all of it's dependencies around in a single binary while still being runnable. Let's try it out.
 
-```console
+```shell
 ianlewis@test:~$ g++ -o hello -static hello.cpp
 ianlewis@test:~$ ls -lh
 total 2.1M
@@ -151,7 +151,7 @@ ianlewis@test:~$ ldd hello
 
 Awesome. This means we have a binary executable that we can just copy inside of any container image (even a scratch image) and it will just work!
 
-```console
+```shell
 ianlewis@test:~$ cat << EOF > Dockerfile
 > FROM scratch
 > COPY hello /hello
@@ -180,7 +180,7 @@ As was said earlier, the application now contains all of it's dependencies so it
 
 Total size of images for static binaries written in compiled languages can be much smaller than apps written in a language like Python or Java that require a VM to run. In the previous post we looked at the base Python image based on Alpine Linux for deploying Python apps.
 
-```console
+```shell
 ianlewis@test:~$ docker images python:2.7.13-alpine
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 python              2.7.13-alpine       3dd614730c9c        4 days ago          72.02 MB
@@ -188,7 +188,7 @@ python              2.7.13-alpine       3dd614730c9c        4 days ago          
 
 This is 72MB for just the base python image. Our application code will only add to that. If we include only our static binary our image can be much smaller. Our image only need be as big as our binary file.
 
-```console
+```shell
 ianlewis@test:~$ ls -lh hello
 -rwxrwxr-x 1 ianlewis ianlewis 2.1M Jul  6 08:41 hello
 ianlewis@test:~$ docker images hello
@@ -206,7 +206,7 @@ I couldn't write a post on writing statically linked applications without mentio
 
 Go makes it really easy to compile statically linked binaries as part of its tooling. It isn't a stretch to say that Go was created this way because Google deploys statically linked binaries in containers as part of it's production systems, and Go was specifically written to make it easy to do that; even for large applications like Kubernetes.
 
-```console
+```shell
 ianlewis@test:~$ git clone https://github.com/kubernetes/kubernetes
 Cloning into 'kubernetes'...
 ...

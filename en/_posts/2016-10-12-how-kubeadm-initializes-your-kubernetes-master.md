@@ -26,7 +26,7 @@ One way to make sure the control plane components are always running is to use s
 
 Fortunately, Kubernetes has a component called the Kubelet which manages containers running on a single host. It uses the API server but it doesn't depend on it so we can actually use the Kubelet to manage the control plane components. This is exactly what `kubeadm` sets us up to do. Let's look at what happens when we run `kubeadm`.
 
-```console
+```shell
 # kubeadm init
 <master/tokens> generated token: "d97591.135ba38594a02df1"
 <master/pki> created keys and certificates in "/etc/kubernetes/pki"
@@ -51,7 +51,7 @@ kubeadm join --token d97591.135ba38594a02df1 10.240.0.2
 
 We can see that `kubeadm` created the necessary certificates for the API, started the control plane components, and installed the essential addons. `kubeadm` doesn't mention anything about the Kubelet but we can verify that it's running:
 
-```console
+```shell
 # ps aux | grep /usr/bin/kubelet | grep -v grep
 root      4147  4.4  2.1 473372 82456 ?        Ssl  05:18   1:08 /usr/bin/kubelet --kubeconfig=/etc/kubernetes/kubelet.conf --require-kubeconfig=true --pod-manifest-path=/etc/kubernetes/manifests --allow-privileged=true --network-plugin=cni --cni-conf-dir=/etc/cni/net.d --cni-bin-dir=/opt/cni/bin --cluster-dns=100.64.0.10 --cluster-domain=cluster.local --v=4
 ```
@@ -64,7 +64,7 @@ We have a process architecture something like the following. It's important to n
 
 So now we have our Kubelet running our control plane components and it is connected to the API server just like any other Kubelet node. We can verify that:
 
-```console
+```shell
 # kubectl get nodes
 NAME         STATUS    AGE
 k8s-master   Ready     2h
@@ -72,7 +72,7 @@ k8s-master   Ready     2h
 
 One thing about the Kubelet running on the master is different though. There is a special annotation on our node telling Kubernetes not to schedule containers on our master node.
 
-```console
+```shell
 # kubectl get nodes -o json | jq '.items[] | select(.metadata.name=="k8s-master") | .metadata.annotations'
 {
   "scheduler.alpha.kubernetes.io/taints": "[{\"key\":\"dedicated\",\"value\":\"master\",\"effect\":\"NoSchedule\"}]",
@@ -86,7 +86,7 @@ The interesting bits are the `scheduler.alpha.kubernetes.io/taints` key which co
 
 We can see that `kubeadm` created a `/etc/kubernetes/` directory so let's check out what's there.
 
-```console
+```shell
 # ls -lh /etc/kubernetes/
 total 32K
 -rw------- 1 root root 9.0K Oct 12 05:18 admin.conf
@@ -97,7 +97,7 @@ drwx------ 2 root root 4.0K Oct 12 05:18 pki
 
 The `admin.conf` and `kubelet.conf` are yaml files that mostly contain certs used for authentication with the API. The `pki` directory contains the certificate authority certs, API server certs, and tokens.
 
-```console
+```shell
 # ls -lh /etc/kubernetes/pki
 total 36K
 -rw------- 1 root root 1.7K Oct 12 05:18 apiserver-key.pem
@@ -113,7 +113,7 @@ total 36K
 
 The `manifests` directory is where things get interesting. In the manifests directory we have a number of json files for our control plane components.
 
-```console
+```shell
 # ls -lh /etc/kubernetes/manifests/
 total 16K
 -rw------- 1 root root 1.8K Oct 12 05:18 etcd.json
@@ -124,7 +124,7 @@ total 16K
 
 If you noticed earlier the Kubelet was passed the `--pod-manifest-path=/etc/kubernetes/manifests` flag which tells it to monitor the files in the `/etc/kubernetes/manifests` directory and makes sure the components defined therein are always running. We can see that they are running my checking with the local Docker to list the running containers.
 
-```console
+```shell
 # docker ps --format="table {{.ID}}\t{{.Image}}"
 CONTAINER ID        IMAGE
 dbaf645c0dd4        gcr.io/google_containers/pause-amd64:3.0
@@ -178,7 +178,7 @@ How are we able to connect to the containers? If we look at each of the json fil
 
 So we can connect to the API server's insecure local port.
 
-```console
+```shell
 # curl http://127.0.0.1:8080/version
 {
   "major": "1",
@@ -195,7 +195,7 @@ So we can connect to the API server's insecure local port.
 
 The API server also binds a secure port 443 which requires a client cert and authentication. Be careful to use the public IP for your master here.
 
-```console
+```shell
 # curl --cacert /etc/kubernetes/pki/ca.pem https://10.240.0.2/version
 Unauthorized
 ```

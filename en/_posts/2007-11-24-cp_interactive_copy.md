@@ -18,6 +18,6 @@ But I used to enjoy the fact that if I set this alias it would prompt me when ov
 
 **Update:** You can bypass an alias by putting quotes around the command like so,
 
-```console
+```shell
 $ "cp" source destination
 ```
