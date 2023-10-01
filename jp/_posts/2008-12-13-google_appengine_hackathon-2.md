@@ -13,11 +13,3 @@ render_with_liquid: false
 <p><a href="http://frmmkr.appspot.com/">http://frmmkr.appspot.com/</a></p>
 
 <p><a href="http://www.google.com/" title="Google">Google</a> Appengine Hackathonに参加した皆さん、お疲れ様でした</p>
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'Google Appengine Hackathon 第2回',
-              url   : 'http://www.ianlewis.org/jp/google_appengine_hackathon-2'}, 
-            { button: true }
-          ) ;
-        </script></div>

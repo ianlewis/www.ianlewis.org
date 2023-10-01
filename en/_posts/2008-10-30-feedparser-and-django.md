@@ -23,11 +23,3 @@ feeds.py
 <div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #808080; font-style: italic;"># Change the date to UTC and remove timezone info since MySQL doesn't</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td><span style="color: #808080; font-style: italic;"># support it</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td>date_published = <span style="color: black;">&#40;</span>date_published - date_published.<span style="color: black;">utcoffset</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span><span style="color: black;">&#41;</span>.<span style="color: black;">replace</span><span style="color: black;">&#40;</span>tzinfo=<span style="color: #008000;">None</span><span style="color: black;">&#41;</span></td></tr></table></div>
 
 <p>I'm not sure this works in all situations yet so I might go with something like <a href="http://intertwingly.net/blog/2007/09/02/Dealing-With-Dates">how another commenter solved the problem</a> by converting feedparsers parsed date to a utc timestamp before converting to a datetime object. I think either way would work but which is cleaner and less prone to breakage, I'm not sure.</p>
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'Feedparser and Django',
-              url   : 'http://www.ianlewis.org/en/feedparser-and-django'}, 
-            { button: true }
-          ) ;
-        </script></div>

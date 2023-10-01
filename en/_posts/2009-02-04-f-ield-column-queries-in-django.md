@@ -35,11 +35,3 @@ render_with_liquid: false
 <p>But the reason the F() object was created was to allow using the value of one column in another column during an update. This allows you do do things like add 1 to the pingbacks for every entry in one go without selecting the whole batch and updating the field.</p>
 
 <div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td>Entry.<span style="color: black;">objects</span>.<span style="color: black;">all</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span>.<span style="color: black;">update</span><span style="color: black;">&#40;</span>n_pingbacks=F<span style="color: black;">&#40;</span><span style="color: #483d8b;">'n_pingbacks'</span><span style="color: black;">&#41;</span> + <span style="color: #ff4500;">1</span><span style="color: black;">&#41;</span></td></tr></table></div></p>
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'Field/column Queries in Django',
-              url   : 'http://www.ianlewis.org/en/f-ield-column-queries-in-django'}, 
-            { button: true }
-          ) ;
-        </script></div>

@@ -16,11 +16,3 @@ render_with_liquid: false
 </object>
 </div>
 <p>Just watched this video of <a href="http://bob.pythonmac.org/">Bob</a> giving a presentation at <a href="http://c4.rentzsch.com/1/">C4[1]</a> about <a href="http://www.erlang.org/">erlang</a>. It's about a year old and Bob had been using erlang for almost a year at that point. Bob always seems to have his hands in things just before they become super popular. Erlang seems to be one of those things. <a href="http://www.json.org/">JSON</a> was another. He's even the guy that <a href="http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/">coined the term jsonp</a> before that was really popular. Anyway, highly informative. I might give erlang a try a little later on.</p>
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'Bob&#039;s Talk on Erlang',
-              url   : 'http://www.ianlewis.org/en/bob-s-talk-on-erlang'}, 
-            { button: true }
-          ) ;
-        </script></div>

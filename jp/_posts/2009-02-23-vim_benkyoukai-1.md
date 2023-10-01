@@ -76,11 +76,3 @@ A&lt;/text&gt;&lt;ESC&gt;<br />
 <li>qbuf.vimを使い、.vimrcで設定すると、&quot;;;&quot;だけでバッファーリストを開ける<br />
 <div class="codeblock amc_vim amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td>let g:qb_hotkey = &quot;;;&quot;</td></tr></table></div>
 </li></ul>
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'BPStudy: VIM勉強会',
-              url   : 'http://www.ianlewis.org/jp/vim_benkyoukai-1'}, 
-            { button: true }
-          ) ;
-        </script></div>

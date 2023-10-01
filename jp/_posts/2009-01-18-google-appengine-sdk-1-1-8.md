@@ -36,11 +36,3 @@ ImportError: No module named antlr3
 <p>が出てきた。理由はappengine_djangoを使ってること。appengine_djangoはgoogle_appengine/lib/antlr3のモジュールをインポートしてなかったので、エラーが出てきた。appengine_djangoのSVNの最新版を使えば、解決する。</p>
 
 <p>何で、antlr3が必要になったというと、実際コード見ると、google_appengine/google/appengine/cronで、groc.py, GrocLexer.py, GrocParser.pyがある。grocというcronみたいなサービスがもうすぐ出るかもしれないね。GrocLexer.pyとGrocParser.pyはantlr3を使ってcronの時間設定文字列を解析するパーサーだという。面白い。</p>
-<div class="sharethis">
-        <script type="text/javascript" language="javascript">
-          SHARETHIS.addEntry( {
-            title : 'Google Appengine SDK 1.1.8がリリースされました',
-              url   : 'http://www.ianlewis.org/jp/google-appengine-sdk-1-1-8'}, 
-            { button: true }
-          ) ;
-        </script></div>
