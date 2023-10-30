@@ -59,11 +59,7 @@ Cloud Spin is a demo where about 20 smartphones take a video of you, and pull ou
 a frame from each phone. These frames are then stitched together into a video that
 looks like Matrix bullet time. Here's a great example created by my teammates :)
 
-<div style="text-align:center;margin:1em">
-  <video name="media" class="animated-gif" loop="" src="https://pbs.twimg.com/tweet_video/CYfITpjUsAAra9B.mp4" autoplay style="padding:10px;border:1px solid #CCC;box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.075)">
-  <source type="video/mp4" src="https://pbs.twimg.com/tweet_video/CYfITpjUsAAra9B.mp4">
-  </video>
-</div>
+> Update (2023/10/30): The video is no longer available.
 
 The demo requires that a sound be sent from an tablet control app into each
 phone at the same time. One of the components that allows this was missing so
