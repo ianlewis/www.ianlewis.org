@@ -9,7 +9,7 @@ render_with_liquid: false
 ---
 
 最近、会社の [AE35](http://twitter.com/ae35) さんが
-[growltestrunner](bitbucket.org/ae35/growltestrunner/) を作っていて、
+[growltestrunner](https://bitbucket.org/ae35/growltestrunner/) を作っていて、
 [modipyd](http://www.metareal.org/p/modipyd/ja/)
 を使って、ファイルを更新したタイミングで自動テストを自動的に実行してくれて、growlで通知するように素敵な環境を設定した。
 
