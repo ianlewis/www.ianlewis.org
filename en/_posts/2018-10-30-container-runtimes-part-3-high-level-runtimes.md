@@ -44,32 +44,32 @@ Containerd also provides an API and client application that can be used to inter
 
 `ctr` can be used to tell `containerd` to pull a container image:
 
-```
-$ sudo ctr images pull docker.io/library/redis:latest
+```shell
+sudo ctr images pull docker.io/library/redis:latest
 ```
 
 List the images you have:
 
-```
-$ sudo ctr images list
+```shell
+sudo ctr images list
 ```
 
 Run a container based on an image:
 
-```
-$ sudo ctr container create docker.io/library/redis:latest redis
+```shell
+sudo ctr container create docker.io/library/redis:latest redis
 ```
 
 List the running containers:
 
-```
-$ sudo ctr container list
+```shell
+sudo ctr container list
 ```
 
 Stop the container:
 
-```
-$ sudo ctr container delete redis
+```shell
+sudo ctr container delete redis
 ```
 
 These commands are similar to how a user interacts with Docker. However, in contrast with Docker, containerd is focused solely on running containers, so it does not provide a mechanism for building containers. Docker was focused on end-user and developer use cases, whereas containerd is focused on operational use cases, such as running containers on servers. Tasks such as building container images are left to other tools.
@@ -80,13 +80,13 @@ In the previous post, I mentioned that `rkt` is a runtime that has both low-leve
 
 You can fetch remote images:
 
-```
-$ sudo rkt fetch coreos.com/etcd:v3.3.10
+```shell
+sudo rkt fetch coreos.com/etcd:v3.3.10
 ```
 
 You can then list the images installed locally:
 
-```
+```shell
 $ sudo rkt image list
 ID                      NAME                                    SIZE    IMPORT TIME     LAST USED
 sha512-07738c36c639     coreos.com/rkt/stage1-fly:1.30.0        44MiB   2 minutes ago   2 minutes ago
@@ -96,7 +96,7 @@ sha512-2ba519594e47     coreos.com/etcd:v3.3.10                 69MiB   25 secon
 
 And delete images:
 
-```
+```shell
 $ sudo rkt image rm coreos.com/etcd:v3.3.10
 successfully removed aci for image: "sha512-2ba519594e4783330ae14e7691caabfb839b5f57c0384310a7ad5fa2966d85e3"
 rm: 1 image(s) successfully removed

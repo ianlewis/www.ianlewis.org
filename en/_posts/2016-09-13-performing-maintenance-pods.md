@@ -129,13 +129,13 @@ Unable to use a TTY - container nginx did not allocate one
 `kubectl exec` allows you to execute a command in a container. You can use this to do any number of things, but perhaps you might use it to send a signal to a process in the container.
 
 ```shell
-$ kubectl exec nginx-1802606028-1posu -- killall -HUP nginx
+kubectl exec nginx-1802606028-1posu -- killall -HUP nginx
 ```
 
 Or you could just start up a bash shell if bash is installed.
 
 ```shell
-$ kubectl exec nginx-1802606028-1posu -ti -- bash -il
+kubectl exec nginx-1802606028-1posu -ti -- bash -il
 ```
 
 ### kubectl port-forward

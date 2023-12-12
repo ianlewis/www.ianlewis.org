@@ -81,8 +81,8 @@ are in your local repository. Instead it requires that the image be exported as
 a file. I’m going to go ahead and do that and create a new squashed image.
 
 ```shell
-$ docker save python:2.7.11 > python-2.7.11.tar
-$ sudo bin/docker-squash -i python-2.7.11.tar -o python-squashed-2.7.11.tar
+docker save python:2.7.11 > python-2.7.11.tar
+sudo bin/docker-squash -i python-2.7.11.tar -o python-squashed-2.7.11.tar
 ```
 
 Now we can see right away that the new file is smaller by about 75MB.
@@ -121,7 +121,7 @@ specifying this argument you can decide which base image you want to use so
 that it doesn’t have to be downloaded each time.
 
 ```shell
-$ docker-squash -from 18d8ebf067fd -i ... -o ...
+docker-squash -from 18d8ebf067fd -i ... -o ...
 ```
 
 Docker-squash isn’t a panacea but it does add one more tool to your toolbox for

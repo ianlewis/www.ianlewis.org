@@ -30,18 +30,18 @@ Let's walk through running a simple ad hoc runtime to set up a container. We can
 First let's set up a root filesystem for our container. We'll use the busybox Docker container as our base. Here we create a temporary directory and extract busybox into it. Most of these commands need to be run as root.
 
 ```shell
-$ CID=$(docker create busybox)
-$ ROOTFS=$(mktemp -d)
-$ docker export $CID | tar -xf - -C $ROOTFS
+CID=$(docker create busybox)
+ROOTFS=$(mktemp -d)
+docker export $CID | tar -xf - -C $ROOTFS
 ```
 
 Now let's create our cgroup and set restrictions on the memory and CPU. Memory limits are set in bytes. Here we are setting the limit to 100MB.
 
 ```shell
-$ UUID=$(uuidgen)
-$ cgcreate -g cpu,memory:$UUID
-$ cgset -r memory.limit_in_bytes=100000000 $UUID
-$ cgset -r cpu.shares=512 $UUID
+UUID=$(uuidgen)
+cgcreate -g cpu,memory:$UUID
+cgset -r memory.limit_in_bytes=100000000 $UUID
+cgset -r cpu.shares=512 $UUID
 ```
 
 CPU usage can be restricted in one of two ways. Here we set our CPU limit using CPU "shares". Shares are an amount of CPU time relative to other processes running at the same time. Containers running by themselves can use the whole CPU, but if other containers are running, they can use a proportional amount of CPU to their CPU shares.
@@ -51,8 +51,8 @@ CPU limits based on CPU cores are a bit more complicated. They let you set hard 
 For instance, if we wanted to limit our container to two cores we could specify a period of one second and a quota of two seconds (one second is 1,000,000 microseconds) and this would effectively allow our process to use two cores during a one-second period. [This article](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/resource_management_guide/sec-cpu) explains this concept in depth.
 
 ```shell
-$ cgset -r cpu.cfs_period_us=1000000 $UUID
-$ cgset -r cpu.cfs_quota_us=2000000 $UUID
+cgset -r cpu.cfs_period_us=1000000 $UUID
+cgset -r cpu.cfs_quota_us=2000000 $UUID
 ```
 
 Next we can execute a command in the container. This will execute the command within the cgroup we created, unshare the specified namespaces, set the hostname, and chroot to our filesystem.
@@ -69,8 +69,8 @@ Hello from in a container
 Finally, after our command has completed, we can clean up by deleting the cgroup and temporary directory that we created.
 
 ```shell
-$ cgdelete -r -g cpu,memory:$UUID
-$ rm -r $ROOTFS
+cgdelete -r -g cpu,memory:$UUID
+rm -r $ROOTFS
 ```
 
 To further demonstrate how this works, I wrote a simple runtime in bash called [execc](https://github.com/ianlewis/execc). It supports mount, user, pid, ipc, uts, and network namespaces; setting memory limits; setting CPU limits by number of cores; mounting the proc file system; and running the container in its own root file system.
@@ -94,14 +94,14 @@ Internally, runc runs containers similarly to how I described it above, but runc
 First create the root filesystem. Here we'll use busybox again.
 
 ```shell
-$ mkdir rootfs
-$ docker export $(docker create busybox) | tar -xf - -C rootfs
+mkdir rootfs
+docker export $(docker create busybox) | tar -xf - -C rootfs
 ```
 
 Next create a config.json file.
 
 ```shell
-$ runc spec
+runc spec
 ```
 
 This command creates a template config.json for our container. It should look something like this:

@@ -49,8 +49,8 @@ spec:
 
 You can then create the deployment using the kubectl command.
 
-```
-$ kubectl apply -f blue.yaml
+```shell
+kubectl apply -f blue.yaml
 ```
 
 Once we have a deployment we can provide a way to access the instances of the deployment by creating a [Service](https://kubernetes.io/docs/concepts/services-networking/service/). Services are decoupled from deployments so that means that you don't explicitly point a service at a deployment. What you do instead is specify a [label selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) which is used to list the pods that make up the service. When using deployments, this is typically set up so that it matches the pods for a deployment.
@@ -77,8 +77,8 @@ spec:
 
 Creating the service will create a load balancer that is accessible outside the cluster.
 
-```
-$ kubectl apply -f service.yaml
+```shell
+kubectl apply -f service.yaml
 ```
 
 Now we have something that looks like this.
@@ -87,9 +87,9 @@ Now we have something that looks like this.
 
 You can test that the service is accessible and get the version.
 
-```
-$ EXTERNAL_IP=$(kubectl get svc nginx -o jsonpath="{.status.loadBalancer.ingress[*].ip}")
-$ curl -s http://$EXTERNAL_IP/version | grep nginx
+```shell
+EXTERNAL_IP=$(kubectl get svc nginx -o jsonpath="{.status.loadBalancer.ingress[*].ip}")
+curl -s http://$EXTERNAL_IP/version | grep nginx
 ```
 
 ## Creating Green Deployment
@@ -119,8 +119,8 @@ spec:
 
 ... I can create the new deployment like so.
 
-```
-$ kubectl apply -f green.yaml
+```shell
+kubectl apply -f green.yaml
 ```
 
 Now I have two deployments but the service is still pointing to the "blue" one.
@@ -131,7 +131,7 @@ Now I have two deployments but the service is still pointing to the "blue" one.
 
 To cut over to the "green" deployment we will update the selector for the service. Edit the `service.yaml` and change the selector version to "1.11". That will make it so that it matches the pods on the "green" deployment.
 
-```
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -151,8 +151,8 @@ spec:
 
 This apply will update the existing `nginx` service in place.
 
-```
-$ kubectl apply -f service.yaml
+```shell
+kubectl apply -f service.yaml
 ```
 
 Now we have something that looks like this.
@@ -161,9 +161,9 @@ Now we have something that looks like this.
 
 Updating the selector for the service is applied immediately and so you should see that the new version of nginx is serving traffic.
 
-```
-$ EXTERNAL_IP=$(kubectl get svc nginx -o jsonpath="{.status.loadBalancer.ingress[*].ip}")
-$ curl -s http://$EXTERNAL_IP/version | grep nginx
+```shell
+EXTERNAL_IP=$(kubectl get svc nginx -o jsonpath="{.status.loadBalancer.ingress[*].ip}")
+curl -s http://$EXTERNAL_IP/version | grep nginx
 ```
 
 ## Automating

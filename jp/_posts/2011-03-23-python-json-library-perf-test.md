@@ -29,9 +29,9 @@ render_with_liquid: false
 
 buildout を使って、環境を作ります
 
-```text
-$ python bootstrap.py --distribute
-$ ./bin/bootstrap
+```shell
+python bootstrap.py --distribute
+./bin/bootstrap
 ```
 
 # テストを実行
@@ -49,7 +49,7 @@ $ ./bin/bootstrap
 
 ローカルの MacBook Pro に動かしました。
 
-```text
+```shell
 $ ./bin/run_test -c 2 -i 500
 Running 10 loops with 500 iterations with 2 processes
 Python 2.6.5 (r265:79063, Apr 16 2010, 13:09:56)

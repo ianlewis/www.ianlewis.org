@@ -28,26 +28,26 @@ Tipfy は [buildout](http://www.buildout.org/) という環境管理ツールの
 
 まずは、 [Tipfy の配布プロジェクトテンプレート](http://www.tipfy.org/tipfy.zip) をダウンロードします。
 
-```text
-$ wget http://www.tipfy.org/tipfy.zip
-$ unzip tipfy.zip
+```shell
+wget http://www.tipfy.org/tipfy.zip
+unzip tipfy.zip
 ```
 
 次に、 buildout で環境を構築。buildout は Appengine SDK と依存ライブラリをすべて、
 [pypi](http://pypi.python.org/) から落としてくれます。
 
-```text
-$ cd project
-$ python2.5 bootstrap.py --distribute
-$ ./bin/buildout
+```shell
+cd project
+python2.5 bootstrap.py --distribute
+./bin/buildout
 ```
 
 それから、 dev_appserverや、 appcfg のスクリプトファイルが `bin`
 ディレクトリに入っています。開発サーバーを起動するには、
 `./bin/dev_appserver` を実行します。
 
-```text
-$ ./bin/dev_appserver
+```shell
+./bin/dev_appserver
 ```
 
 # ディレクトリ構造

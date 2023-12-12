@@ -21,7 +21,7 @@ Kubernetes provides a JSON REST API so you can control a Kubernetes cluster from
 Installation is done in the standard, straitforward way:
 
 ```shell
-$ pip install kubernetes
+pip install kubernetes
 ```
 
 After that we can easily import and use the client. There are some simple examples on the project's github page and this one is similar but it illustrates how to use the client. Here I use the `list_namespaced_pod()` method to get all the pods in the `default` namespace and list their name, phase, and pod IP. This is pretty straitforward, and after I get the list object I can iterate over the `items` field to get the list of pods.

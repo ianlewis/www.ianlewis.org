@@ -16,9 +16,11 @@ Kubernetes includes a cool feature called [namespaces](https://github.com/Google
 
 Using a namespace is optional in Kubernetes because by default Kubernetes uses the "default" namespace. If you've just created a cluster, you can check that the default namespace exists using this command:
 
-    $ kubectl get namespaces
-    NAME      LABELS    STATUS
-    default   <none>    Active
+```shell
+$ kubectl get namespaces
+NAME      LABELS    STATUS
+default   <none>    Active
+```
 
 Here you can see that the `default` namespace exists and is active. The status of the namespace is used later when turning down and deleting the namespace.
 
@@ -26,13 +28,15 @@ Here you can see that the `default` namespace exists and is active. The status o
 
 You can create a new namespace a couple ways. The easiest way to create a namespace is to just specify the namespace when creating another kind of resource, such as a pod, replication controller, or service.
 
-    $ kubectl create -f my-pod.yaml --namespace=my-namespace
+```shell
+kubectl create -f my-pod.yaml --namespace=my-namespace
+```
 
 This will create a new namespace called `my-namespace` if that namespace doesn't exist.
 
 If you are simply creating a namespace that you want to be able to show in the namespace list later, or if you want to attach other metadata like labels to it, then you can create it like you would any other resource. Create a `my-namespace.yaml` file and add these contents:
 
-```
+```yaml
 kind: Namespace
 apiVersion: v1
 metadata:
@@ -43,7 +47,9 @@ metadata:
 
 Then you can run this command to create it:
 
-    $ kubectl create -f my-namespace.yaml
+```shell
+kubectl create -f my-namespace.yaml
+```
 
 ## Service Names
 
@@ -55,28 +61,34 @@ This works because each of the resources in the cluster will by default only "se
 
 As of this writing, I'm running this website in a Container Engine cluster. I have my production and staging environment as well as some one-off apps running in the same cluster. I can show you a bit of what I mean by running some commands:
 
-    ~$ kubectl get namespaces
-    NAME                    LABELS    STATUS
-    default                 <none>    Active
-    homepage-prod           <none>    Active
-    homepage-staging        <none>    Active
-    twilio-forwarder-prod   <none>    Active
+```shell
+$ kubectl get namespaces
+NAME                    LABELS    STATUS
+default                 <none>    Active
+homepage-prod           <none>    Active
+homepage-staging        <none>    Active
+twilio-forwarder-prod   <none>    Active
+```
 
 Here you can see that I have a few namespaces running. Next let’s list the services in staging (IP addresses have been changed to protect the innocent):
 
-    ~$ kubectl get services --namespace=homepage-staging
-    NAME          LABELS                    SELECTOR        IP(S)             PORT(S)
-    homepage-v1   name=homepage,version=1   name=homepage   10.43.250.14      80/TCP
-                                                            104.185.824.125
-    mysql         name=mysql                name=mysql      10.43.250.63      3306/TCP
+```shell
+$ kubectl get services --namespace=homepage-staging
+NAME          LABELS                    SELECTOR        IP(S)             PORT(S)
+homepage-v1   name=homepage,version=1   name=homepage   10.43.250.14      80/TCP
+                                                        104.185.824.125
+mysql         name=mysql                name=mysql      10.43.250.63      3306/TCP
+```
 
 When I check production:
 
-    ~$ kubectl get services --namespace=homepage-prod
-    NAME          LABELS                    SELECTOR        IP(S)             PORT(S)
-    homepage-v1   name=homepage,version=1   name=homepage   10.43.241.145     80/TCP
-                                                            104.199.132.213
-    mysql         name=mysql                name=mysql      10.43.245.77      3306/TCP
+```shell
+$ kubectl get services --namespace=homepage-prod
+NAME          LABELS                    SELECTOR        IP(S)             PORT(S)
+homepage-v1   name=homepage,version=1   name=homepage   10.43.241.145     80/TCP
+                                                        104.199.132.213
+mysql         name=mysql                name=mysql      10.43.245.77      3306/TCP
+```
 
 Notice that the IP addresses are different depending on which namespace I use even though the names of the services themselves are the same. This capability makes configuring your app extremely easy—since you only have to point your app at the service name—and has the potential to allow you to configure your app exactly the same in your staging or test environments as you do in production.
 
