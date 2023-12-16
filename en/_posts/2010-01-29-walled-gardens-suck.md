@@ -4,7 +4,7 @@ title: "Walled Gardens Suck"
 date: 2010-01-29 09:52:45 +0000
 permalink: /en/walled-gardens-suck
 blog: en
-tags: openness walled garden
+tags: openness walled-garden
 render_with_liquid: false
 ---
 
