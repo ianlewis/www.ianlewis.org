@@ -4,7 +4,7 @@ title: "Internet Explorer is CRAP!!"
 date: 2007-09-11 18:29:20 +0000
 permalink: /en/internet_explorer_is_crap
 blog: en
-tags: programming internet explorer
+tags: programming internet-explorer
 render_with_liquid: false
 ---
 

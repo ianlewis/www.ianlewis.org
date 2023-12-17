@@ -4,7 +4,7 @@ title: "Connecting Sortables in jQuery UI"
 date: 2009-04-22 11:26:41 +0000
 permalink: /en/connecting-sortables-in-jquery-ui
 blog: en
-tags: jquery sortable jquery ui
+tags: jquery sortable jquery-ui
 render_with_liquid: false
 ---
 

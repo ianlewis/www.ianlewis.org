@@ -4,7 +4,7 @@ title: "Google Cloud Platform HTTP Load Balancers Explained via the CLI"
 date: 2016-04-18 11:30:00 +0000
 permalink: /en/google-cloud-platform-http-load-balancers-explaine
 blog: en
-tags: google cloud platform
+tags: google-cloud-platform
 render_with_liquid: false
 ---
 
