@@ -9,7 +9,8 @@ render_with_liquid: false
 ---
 
 僕が作った appengine アプリ <http://ae35notimpressed.ian-test-hr.appspot.com/>
-はもう見ているかもしれませんが、何で作ったか、どういう意味なのかがわからない人が多くて、ちょっとブログで説明しようかなと思って、書いてみた。
+(**Update: 落としました**)はもう見ているかもしれませんが、何で作ったか、
+どういう意味なのかがわからない人が多くて、ちょっとブログで説明しようかなと思って、書いてみた。
 
 # PyFesから始まる
 
@@ -18,26 +19,11 @@ render_with_liquid: false
 と２人で発表しました。発表している時に、Python界のカメラマンがいっぱい写真をとりました。偶然なことではありますが
 ae35 の表情は想像してみるとあまり感心してないように見える写真がいくつかとられた。
 
-<div class="lightbox" data-align="left">
+[![](/assets/images/686/ae351_thumbnail.jpg)](/assets/images/686/ae351.jpg)
 
-</assets/images/686/ae351_thumbnail.jpg>
-</assets/images/686/ae351.jpg>
+[![](/assets/images/686/ae352_thumbnail.jpg)](/assets/images/686/ae352.jpg)
 
-</div>
-
-<div class="lightbox" data-align="left">
-
-</assets/images/686/ae352_thumbnail.jpg>
-</assets/images/686/ae352.jpg>
-
-</div>
-
-<div class="lightbox" data-align="left">
-
-</assets/images/686/ae353_thumbnail.jpg>
-</assets/images/686/ae353.jpg>
-
-</div>
+[![](/assets/images/686/ae353_thumbnail.jpg)](/assets/images/686/ae353.jpg)
 
 # McKayla is Not Impressed
 
@@ -57,19 +43,9 @@ photoshopして、本当にすごいことに感心しない McKayla さんの�
 
 その後、僕は以下のの2つの画像を作って、Twitterで投稿した。AE35はエレクトロのDJなので、一つは俺が作っている音楽に不関心のような意味を出そうとした。
 
-<div class="lightbox" data-align="left">
+[![](/assets/images/686/ae35-not-impressed_small.jpg)](/assets/images/686/ae35-not-impressed.jpg)
 
-</assets/images/686/ae35-not-impressed_small.jpg>
-</assets/images/686/ae35-not-impressed.jpg>
-
-</div>
-
-<div class="lightbox" data-align="left">
-
-</assets/images/686/ian-beat_small.jpg>
-</assets/images/686/ian-beat.jpg>
-
-</div>
+[![](/assets/images/686/ian-beat_small.jpg)](/assets/images/686/ian-beat.jpg)
 
 # Moriyoshi がやってきた
 
@@ -84,5 +60,3 @@ photoshopして、本当にすごいことに感心しない McKayla さんの�
 新しい meme が生まれた。。
 
 ![image](/assets/images/686/meme.png)
-
-<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
