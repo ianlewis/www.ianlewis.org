@@ -5,8 +5,6 @@
 
 layout: home
 permalink: /
-redirect_from:
-  - /en/about/
 ---
 
 # Hi, I'm Ian
