@@ -80,5 +80,3 @@ command = "bundle exec jekyll build"
   from = "/jp/tag/machine%20learning/"
   to = "/jp/tag/machine-learning/"
   status = 301
-
-
