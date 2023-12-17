@@ -12,8 +12,8 @@ command = "bundle exec jekyll build"
   status = 301
 
 [[redirects]]
-  from = "/en/tag/cloud%20bigtable/"
-  to = "/en/tag/cloud-bigtable/"
+  from = "/jp/tag/cloud%20bigtable/"
+  to = "/jp/tag/cloud-bigtable/"
   status = 301
 
 [[redirects]]
@@ -32,6 +32,11 @@ command = "bundle exec jekyll build"
   status = 301
 
 [[redirects]]
+  from = "/jp/tag/google%20cloud%20platform/"
+  to = "/jp/tag/google-cloud-platform/"
+  status = 301
+
+[[redirects]]
   from = "/en/tag/internet%20explorer/"
   to = "/en/tag/internet-explorer/"
   status = 301
@@ -42,8 +47,8 @@ command = "bundle exec jekyll build"
   status = 301
 
 [[redirects]]
-  from = "/en/tag/machine%20learning/"
-  to = "/en/tag/machine-learning/"
+  from = "/jp/tag/machine%20learning/"
+  to = "/jp/tag/machine-learning/"
   status = 301
 
 [[redirects]]
