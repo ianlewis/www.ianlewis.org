@@ -20,12 +20,7 @@ PyconJP 2011 で始めて感じていました。海外の方もいらっしゃ�
 もっと大きい規模で、もっと国際的、もっと日本人エンジニアの素晴らしさを
 世界に見せるようなイベントができればいいなと思っています。
 
-<div class="lightbox">
-
-</assets/images/662/audience_medium.jpg>
-</assets/images/662/audience.jpg>
-
-</div>
+[![](/assets/images/662/audience_medium.jpg)](/assets/images/662/audience.jpg)
 
 僕はスタッフとして、努めていましたが、全然偉い人ではありません。 僕はスタッフの偉い人たちのお陰で、皆さんが集まるチャンスができました。
 役に立つイベントは発表者のお陰です。そして、楽しいイベントができたのは 参加者の皆さんのお陰だと思っています。
@@ -37,20 +32,12 @@ PyconJP 2011 で始めて感じていました。海外の方もいらっしゃ�
 ([@takonory](https://twitter.com/takanory)) の力のお陰でした。 Python
 コミュニティのためにすごく頑張ってくれて、 素晴らしい方々です。
 
-最後にですが、僕はスタッフとして、そして、発表者として、参加しました。僕の発表は 英語トラックの「Asynchronous Python
-Programming」という発表をさせて 頂きました。自分で見ると下手くそうに見えて辛いのですが、以下の動画は UStream
+最後にですが、僕はスタッフとして、そして、発表者として、参加しました。僕の発表は
+英語トラックの「Asynchronous Python Programming」という発表をさせて
+頂きました。自分で見ると下手くそうに見えて辛いのですが、以下の動画は UStream
 でとられたものです。
 
-<div style="text-align:center">
-  <object width="481" height="296" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
-    <param name="flashvars" value="vid=16896043&amp;autoplay=false&amp;locale=ja_JP"/>
-    <param name="allowfullscreen" value="true"/>
-    <param name="allowscriptaccess" value="always"/>
-    <param name="src" value="http://www.ustream.tv/flash/viewer.swf"/>
-    <embed flashvars="vid=16896043&amp;autoplay=false&amp;locale=ja_JP" width="480" height="296" allowfullscreen="true" allowscriptaccess="always" src="http://www.ustream.tv/flash/viewer.swf" type="application/x-shockwave-flash"></embed>
-  </object>
-  <br /><a href="http://www.ustream.tv/" style="padding: 2px 0px 4px; width: 400px; background: #ffffff; display: block; color: #000000; font-weight: normal; font-size: 10px; text-decoration: underline; text-align: center;" target="_blank">Video streaming by Ustream</a>
-</div>
+> Update (2023/10/30): ustreamはサービスとして終了しました。
 
 私の発表のスライトはこちら:
 <http://ianlewis.bitbucket.org/pyconjp_2011_slides/template/index.html>

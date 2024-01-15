@@ -22,7 +22,7 @@ layout: default
   </li>
 
   {%- for post in site.posts -%}
-  {%- if post.tags contains page.tag -%}
+  {%- if post.tags contains page.tag and post.categories contains page.category -%}
   <li>
     {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
     <a class="post-link" href="{{ post.url | relative_url }}">

@@ -1,7 +1,5 @@
 # Jekyll site settings
 
-# TODO(#2): Atom feeds for each language.
-
 title: Ian Lewis
 email: ianmlewis@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -16,7 +14,6 @@ github_username: ianlewis
 plugins:
   - jekyll-seo-tag
   - jekyll-paginate-v2
-  - jekyll-redirect-from
 
 # Theme
 plainwhite:
