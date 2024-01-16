@@ -39,6 +39,10 @@ During this time I was a [Google Developer
 Expert](https://developers.google.com/experts/) specializing in the Python
 language version of [App Engine](https://cloud.google.com/appengine/).
 
+I wrote _[Perfect Python](https://amzn.asia/d/bAWDVkk)_ with other Japanese
+Python community members, and have written articles for [Nikkei Linux
+Magazine](https://info.nikkeibp.co.jp/media/LIN/).
+
 ## Contact
 
 You can contact me via my email at [ianmlewis@gmail.com](mailto:ianmlewis@gmail.com).
