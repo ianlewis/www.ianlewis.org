@@ -33,26 +33,26 @@ Page](http://www.tipfy.org/wiki/guide/installation/).
 First you need to download the [Tipfy "Do-it-yourself
 pack"](http://www.tipfy.org/tipfy.zip).
 
-```text
-$ wget http://www.tipfy.org/tipfy.zip
-$ unzip tipfy.zip
+```shell
+wget http://www.tipfy.org/tipfy.zip
+unzip tipfy.zip
 ```
 
 Next, you will need to create the buildout environment. Buildout will
 download and install the Appengine SDK and everything you need to get
 started from [pypi](http://pypi.python.org/).
 
-```text
-$ cd project
-$ python2.5 bootstrap.py --distribute
-$ ./bin/buildout
+```shell
+cd project
+python2.5 bootstrap.py --distribute
+./bin/buildout
 ```
 
 After that is over, you can run the development server by running the
 `dev_appserver` command found in the `bin` directory.
 
-```text
-$ ./bin/dev_appserver
+```shell
+./bin/dev_appserver
 ```
 
 # Directory Structure
