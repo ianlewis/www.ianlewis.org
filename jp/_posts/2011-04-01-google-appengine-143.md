@@ -144,8 +144,8 @@ if __name__ == '__main__':
 それで、スクリプトを実行すれば、プロジェクトの `test*.py` でテストケースを探して来て、テストを実行することができます。
 モジュール、もしくは、テストクラスを指定することもできます。
 
-```test
-$ python testrunner.py demo.tests.DemoTestCase
+```shell
+python testrunner.py demo.tests.DemoTestCase
 ```
 
 ## ファイルAPI

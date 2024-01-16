@@ -41,11 +41,15 @@ the following snippets:
 
 First install the `bpssl` package using PIP:
 
-    $ pip install bpssl
+```shell
+pip install bpssl
+```
 
 or easy_install:
 
-    $ easy_install bpssl
+```shell
+easy_install bpssl
+```
 
 Next add `'beproud.django.ssl'` to your
 [INSTALLED_APPS](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#installed-apps)

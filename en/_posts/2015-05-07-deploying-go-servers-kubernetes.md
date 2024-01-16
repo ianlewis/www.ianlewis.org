@@ -38,19 +38,25 @@ Make note of the project id.
 Set up your gcloud tool with the right config. Replace `<project-id>` below
 with your project id. Replace `<zone>` with the zone of your choosing:
 
-    $ gcloud config set project <project-id>
-    $ gcloud config set compute/zone <zone>
+```shell
+gcloud config set project <project-id>
+gcloud config set compute/zone <zone>
+```
 
 Once you have that done you will need to tag the
 image using docker.
 
-    $ docker tag outyet gcr.io/<project-id>/outyet:v1
+```shell
+docker tag outyet gcr.io/<project-id>/outyet:v1
+```
 
 This will set the repository and tag it with the version 'v1'. Next push the
 image to the registry. You may get warnings about installing the `preview`
 components. Just say 'yes' to install them when asked.
 
-    $ gcloud preview docker push gcr.io/<project-id>/outyet:v1
+```shell
+gcloud preview docker push gcr.io/<project-id>/outyet:v1
+```
 
 ## Kubernetes Configuration
 
@@ -113,19 +119,25 @@ spec:
 Next we'll deploy our container engine cluster. We'll use the gcloud tool again. You may get
 warnings about installing the `alpha` components. Just say 'yes' to install them when asked.
 
-    $ gcloud alpha container clusters create outyet
-    $ gcloud config set container/cluster outyet
+```shell
+gcloud alpha container clusters create outyet
+gcloud config set container/cluster outyet
+```
 
 ## Create the Replication Controller
 
 After the cluster is created we can deploy the app. First we will create the replication controllers:
 
-    $ gcloud alpha container kubectl create -f outyet-rc.yml
+```shell
+gcloud alpha container kubectl create -f outyet-rc.yml
+```
 
 It will take a few minutes for the pods to come up. You can see if the pods are
 ready using the following command:
 
-    $ gcloud alpha container kubectl get pods
+```shell
+gcloud alpha container kubectl get pods
+```
 
 The pods will say their state is `Pending` at first but will change to
 `Running` when they are ready.
@@ -134,23 +146,31 @@ The pods will say their state is `Pending` at first but will change to
 
 Create the service with the following command.
 
-    $ gcloud alpha container kubectl create -f outyet-service.yml
+```shell
+gcloud alpha container kubectl create -f outyet-service.yml
+```
 
 After the service is created we can see that it is created by viewing the
 output of this command:
 
-    $ gcloud alpha container kubectl get services
+```shell
+gcloud alpha container kubectl get services
+```
 
 The service uses the `LoadBalancer` feature of Container Engine to set up a
 network loadbalancer to our service. We can get the external IP of the service
 using the following command:
 
-    $ gcloud compute forwarding-rules list
+```shell
+gcloud compute forwarding-rules list
+```
 
 This will show the IP address of our service. Make note of the IP address.
 Finally we can create a firewall rule to allow access to our nodes:
 
-    $ gcloud compute firewall-rules create outyet-http --allow tcp:80 --target-tags k8s-outyet-node
+```shell
+gcloud compute firewall-rules create outyet-http --allow tcp:80 --target-tags k8s-outyet-node
+```
 
 Now we can view the app at `http://<IP Address>/`
 
@@ -161,15 +181,19 @@ Now we can view the app at `http://<IP Address>/`
 Go 1.4 is already out yet so app isn't really exciting. Let's update it so it
 checks for Go 1.5. Lets override the CMD for the Dockerfile so it looks like this:
 
-    FROM golang:onbuild
-    CMD ["go-wrapper", "run", "-version=1.5"]
-    EXPOSE 8080
+```dockerfile
+FROM golang:onbuild
+CMD ["go-wrapper", "run", "-version=1.5"]
+EXPOSE 8080
+```
 
 Next we will build, tag and push the updated docker image:
 
-    $ docker build -t outyet .
-    $ docker tag outyet gcr.io/<project-id>/outyet:v2
-    $ gcloud preview docker push gcr.io/<project-id>/outyet:v2
+```shell
+docker build -t outyet .
+docker tag outyet gcr.io/<project-id>/outyet:v2
+gcloud preview docker push gcr.io/<project-id>/outyet:v2
+```
 
 Next lets update all the places it says v1 in our outyet-rc.yml and change it to v2.
 
@@ -201,7 +225,9 @@ spec:
 Next do a rolling update of our replication controller `outyet-v1` to our new
 `outyet-v2`:
 
-    $ gcloud alpha container kubectl rollingupdate outyet-v1 -f outyet-rc.yml --update-period=10s
+```shell
+gcloud alpha container kubectl rollingupdate outyet-v1 -f outyet-rc.yml --update-period=10s
+```
 
 This should take about 30 seconds to run as we have 3 replicas and we've set
 the update period as 10 seconds per replica.
@@ -214,7 +240,9 @@ After that runs we can refresh our app again to see if Go 1.5 is out yet :)
 
 Make sure you delete your cluster so you don't get charged too much money :)
 
-    $ gcloud alpha container clusters delete outyet
+```shell
+gcloud alpha container clusters delete outyet
+```
 
 ## Conclusion
 

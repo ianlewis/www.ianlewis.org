@@ -62,16 +62,22 @@ which is the latest stable version as of this writing.
 First we'll install Django (As we should be doing with all Python
 projects, you'll want to be using virtualenv):
 
-    $ pip install Django
+```shell
+pip install Django
+```
 
 We'll also need to install the appropriate database driver library. For
 MySQL it's mysql-python:
 
-    $ pip install mysql-python
+```shell
+pip install mysql-python
+```
 
 After that we'll start a project using `django-admin.py`:
 
-    $ django-admin.py startproject wordpress_admin
+```shell
+django-admin.py startproject wordpress_admin
+```
 
 Next, let's edit the `settings.py`. We'll need to add settings for how
 to connect to the database. You'll need to set this correctly so that
@@ -142,12 +148,16 @@ urlpatterns = patterns('',
 Next we'll create a `wordpress` application to hold our Django models.
 Let's do that now:
 
-    $ python manage.py startapp wordpress
+```shell
+python manage.py startapp wordpress
+```
 
 Now, here's the fun part. We're going to use the real WordPress database
 to create our Django models.
 
-    $ python manage.py inspectdb --database=wordpress > wordpress/models.py
+```shell
+python manage.py inspectdb --database=wordpress > wordpress/models.py
+```
 
 You can now inspect the `wordpress/models.py` and take a look at the
 generated models. It will look something like the following:
@@ -276,16 +286,20 @@ DATABASE_ROUTERS = ('wordpress_admin.router.WordPressRouter',)
 We'll need to create a database on the Django side of things so we'll do
 something like this:
 
-    $ echo "CREATE DATABASE wordpress_admin CHARACTER SET utf8;" | mysql -u root
+```shell
+echo "CREATE DATABASE wordpress_admin CHARACTER SET utf8;" | mysql -u root
+```
 
 Replace the appropriate mysql options with those for your database.
 
 Next we'll run `syncdb`:
 
-    $ python manage.py syncdb
-    Error: One or more models did not validate:
-    wordpress.wpposts: "id": You can't use "id" as a field name, because each model automatically gets an "id" field if none of the fields have primary_key=True. You need to either remove/rename your "id" field or add primary_key=True to a field.
-    wordpress.wpterms: "slug": CharField cannot have a "max_length" greater than 255 when using "unique=True".
+```shell
+$ python manage.py syncdb
+Error: One or more models did not validate:
+wordpress.wpposts: "id": You can't use "id" as a field name, because each model automatically gets an "id" field if none of the fields have primary_key=True. You need to either remove/rename your "id" field or add primary_key=True to a field.
+wordpress.wpterms: "slug": CharField cannot have a "max_length" greater than 255 when using "unique=True".
+```
 
 You'll notice that a couple models didn't validate. So we'll need to
 update them. The first `WpPosts` needs it's `id` field updated. Since
@@ -312,14 +326,18 @@ class WpTerms(models.Model):
 Now we'll run `syncdb` again and this time it should create our Django
 tables for us:
 
-    $ python manage.py syncdb
+```shell
+python manage.py syncdb
+```
 
 # Start the Server
 
 Now we can start the server and view our admin at
 <http://localhost:8000/admin/>:
 
-    $ python manage.py runserver
+```shell
+python manage.py runserver
+```
 
 You'll need to login to view the admin. One thing to note is that for
 the Django admin we authenticate with the Django user we created when

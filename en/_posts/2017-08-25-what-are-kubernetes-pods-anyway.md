@@ -69,7 +69,7 @@ $ docker run -d --name nginx -v `pwd`/nginx.conf:/etc/nginx/nginx.conf -p 8080:8
 Next we'll run a container with [ghost](https://github.com/TryGhost/Ghost) running in it. But this time we'll add some extra arguments to have it join our nginx container's namespaces.
 
 ```shell
-$ docker run -d --name ghost --net=container:nginx --ipc=container:nginx --pid=container:nginx ghost
+docker run -d --name ghost --net=container:nginx --ipc=container:nginx --pid=container:nginx ghost
 ```
 
 Now our nginx container can proxy requests directly on localhost to our ghost container. If you access `http://localhost:8080/` you should be able to see ghost running through an nginx proxy. These commands create a set of containers running in a single set of namespaces. These namespaces allow the Docker containers to discover and communicate with each other.

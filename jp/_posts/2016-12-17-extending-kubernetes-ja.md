@@ -8,7 +8,11 @@ tags: kubernetes
 render_with_liquid: false
 ---
 
-> この記事は [Kubernetes Advent Calendar 2016](http://qiita.com/advent-calendar/2016/kubernetes) の第17日目の記事。第１6目は[yuanying](https://twitter.com/yuanying)さんの「[Openstack で Kubernetes を使う](http://www.fraction.jp/log/archives/2016/12/16/openstack-kubernetes)」でした。
+> この記事は
+> [Kubernetes Advent Calendar 2016](http://qiita.com/advent-calendar/2016/kubernetes)の第17日目の記事。
+> 第１6目は[yuanying](https://twitter.com/yuanying)さんの
+> 「[Openstack で Kubernetes を使う](http://www.fraction.jp/log/archives/2016/12/16/openstack-kubernetes)」
+> でした。
 
 Kubernetesは`Deployment`, `Secret`, `ConfigMap`, `Ingress`など、いろいろ機能があります。それぞれの機能はあることを自動化しているようなものです。 例えば、`Deployment`はアプリケーションのデプロイ・更新を自動化するもの。Ingressはロードバランサーの作成・管理を自動化しているようなもの。その機能は便利ですが、ある程度Kubernetesに取り込んだら、自分で拡張したくなる場合がが多くなる。例えば、[証明書の更新・管理](https://github.com/kelseyhightower/kube-cert-manager)の自動化だとか、[etcdクラスターの管理](https://coreos.com/blog/introducing-the-etcd-operator.html)の自動化だとか。
 

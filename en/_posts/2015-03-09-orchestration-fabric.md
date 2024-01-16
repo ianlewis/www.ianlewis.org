@@ -164,11 +164,15 @@ def destroy(force=False):
 
 Now that I have those commands written I can run something like the following to start the instance:
 
-    $ fab local up
+```shell
+fab local up
+```
 
 And to stop it:
 
-    $ fab local halt
+```shell
+fab local halt
+```
 
 ## What's next?
 

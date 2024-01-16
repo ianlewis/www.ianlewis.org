@@ -45,7 +45,9 @@ Some setup is required because you need to authenticate with the task queue
 API. You can do that with a tool provided in the distribution. This will create
 a credentials file that will be used to authenticate the API.
 
-    $ pullqueue_authenticate client_secrets.json credentials
+```shell
+pullqueue_authenticate client_secrets.json credentials
+```
 
 ## Inserting Tasks
 

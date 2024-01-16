@@ -80,8 +80,8 @@ def production():
 
 これで、以下のように `fab` を実行する。
 
-```text
-$ fab production start_maintenance
+```shell
+fab production start_maintenance
 ```
 
 # ホスト
