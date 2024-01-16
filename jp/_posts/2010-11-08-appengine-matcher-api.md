@@ -39,8 +39,11 @@ db.Modelからクエリーを作る場合は、Modelクラスから
 
 unsubscribe することもできます。
 
-参考:
-<http://code.google.com/p/google-app-engine-samples/wiki/AppEngineMatcherService#API_methods>
+<!-- textlint-disable spelling -->
+
+参考: <http://code.google.com/p/google-app-engine-samples/wiki/AppEngineMatcherService#API_methods>
+
+<!-- textlint-disable enable -->
 
 ```python
 from google.appengine.api import matcher
@@ -160,4 +163,8 @@ Matcher APIはまだ本番 Appengine にリリースしていないのですが�
 に入っていますので、ローカルで試すことができます。 後、
 Trusted Tester の権限を 得られると、本番で試すことができます。 以下のリンクで申請することができます。
 
+<!-- textlint-disable spelling -->
+
 <https://spreadsheets.google.com/a/google.com/viewform?hl=en&formkey=dG5XNnlVWXJYWG1yS0ExV2RmTW5EZEE6MQ#gid=0>
+
+<!-- textlint-enable spelling -->

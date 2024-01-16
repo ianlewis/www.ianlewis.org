@@ -191,9 +191,6 @@ for kind in Kind.all():
 ではまだ出てないみたいですが、code.google.com
 のプロジェクトの以下のURLからダウンロードできます。
 
-- Python:
-  [google_appengine_1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=google_appengine_1.4.0.zip)
-- Java:
-  [appengine-java-sdk-1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=appengine-java-sdk-1.4.0.zip)
-- リリースノート:
-  <http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes>
+- Python: [google_appengine_1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=google_appengine_1.4.0.zip)
+- Java: [appengine-java-sdk-1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=appengine-java-sdk-1.4.0.zip)
+- リリースノート: <http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes>
