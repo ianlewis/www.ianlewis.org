@@ -1,0 +1,26 @@
+{
+	"plugin": [{
+			"id": "@textlint/textlint-plugin-text",
+			"options": {}
+		},
+		{
+			"id": "@textlint/textlint-plugin-markdown",
+			"options": {}
+		}
+	],
+	"filters": {
+		"comments": true
+	},
+	"rules": {
+		"no-todo": true,
+		"alex": {
+			"allow": []
+		},
+		"spelling": {
+			"language": "en",
+			"skipPatterns": ["JavaScript"],
+			"wordDefinitionRegexp": "/[\\w']+/g",
+			"suggestCorrections": true
+		}
+	}
+}

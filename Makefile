@@ -68,6 +68,26 @@ markdownlint: node_modules/.installed ## Runs the markdownlint linter.
 			./node_modules/.bin/markdownlint --dot .; \
 		fi
 
+.PHONY: textlint
+textlint: node_modules/.installed ## Runs the textlint linter.
+	@set -e;\
+		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
+			exit_code=0; \
+			while IFS="" read -r p && [ -n "$$p" ]; do \
+				filePath=$$(echo "$$p" | jq -c -r '.filePath // empty'); \
+				file=$$(realpath --relative-to="." "$${filePath}"); \
+				while IFS="" read -r m && [ -n "$$m" ]; do \
+					line=$$(echo "$$m" | jq -c -r '.loc.start.line'); \
+					endline=$$(echo "$$m" | jq -c -r '.loc.end.line'); \
+					message=$$(echo "$$m" | jq -c -r '.message'); \
+					echo "::error file=$${file},line=$${line},endLine=$${endline}::$${message}"; \
+				done <<<"$$(echo "$$p" | jq -c -r '.messages[] // empty')"; \
+			done <<< "$$(./node_modules/.bin/textlint --format json "**/.md" 2>&1 | jq -c '.[]')"; \
+			exit "$${exit_code}"; \
+		else \
+			./node_modules/.bin/textlint "**/*.md"; \
+		fi
+
 .PHONY: format
 format: prettier ## Run all formatters.
 
