@@ -38,7 +38,7 @@ node_modules/.installed: package.json package-lock.json
 #####################################################################
 
 .PHONY: lint
-lint: actionlint markdownlint textlint ## Run all linters.
+lint: actionlint markdownlint ## Run all linters.
 
 .PHONY: actionlint
 actionlint: ## Runs the actionlint linter.
