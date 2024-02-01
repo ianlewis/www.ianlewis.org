@@ -32,10 +32,14 @@ API Expert という制度が大昔 (２００７年頃)の開発者のGoogleフ
 日本から発生しましたプログラムです。Guru のプログラムは非常に中等半端な感じで Google さんがやっていた
 (ごめんなさい >< )が、真面目な日本人がAPI Expertをちゃんと作ったのが素晴らしいと思います。
 
+<!-- textlint-disable alex -->
+
 その後、日本から世界へAPI Expertの制度広げたいという希望があって、Israel にExpert制度が始まった
 (２０１１年末頃かな)。 そして、1年間(くらいかな)経ってから、世界からExpertの人たちの募集が始まった
 (２０１２年末頃)。 この頃から、「Api Expert」と呼ばれなくなって、「Developer Expert」となった。
 現在では、日本だけでなく、 [世界中にたくさんの Developer Expert がいます](https://developers.google.com/experts/)
+
+<!-- textlint-enable alex -->
 
 # Google I/O
 

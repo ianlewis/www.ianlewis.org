@@ -50,7 +50,11 @@ Asynchronous は「非同期」という意味。仕事の非同期なやり方�
 
 チャットを使うと、同僚にメッセージを書けば、お昼を食べに行っても、戻る時に、チャットのログを見れば、仕事をそのまま進められる。
 
+<!-- textlint-disable alex -->
+
 # Meetings are f\*\*king toxic
+
+<!-- textlint-enable alex -->
 
 ![image](/assets/images/669/meeting.jpg)
 

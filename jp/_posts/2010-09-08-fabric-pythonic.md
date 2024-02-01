@@ -8,6 +8,8 @@ tags: python nginx デプロイ
 render_with_liquid: false
 ---
 
+<!-- textlint-disable alex -->
+
 Pythonで作られたデプロイ・自動化ツール [Fabric](http://www.fabfile.org/)
 があります。デプロイスクリプトなどをPythonで書くことができます。最近、
 Fabric で結構複雑なこともしたかったんですけど、 Fabric のAPIが結構
@@ -177,3 +179,5 @@ from __future__ import with_statement
 ```
 
 この with の書き方で、Python的でかなり好きです。
+
+<!-- textlint-enable alex -->

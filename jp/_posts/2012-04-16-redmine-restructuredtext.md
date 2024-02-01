@@ -8,7 +8,9 @@ tags: python redmine restructuredtext ruby
 render_with_liquid: false
 ---
 
-我々BeProudのRedmineのWikiやチケットの説明文やチケットのコメント文にはReStructuredTextを使っている。RedmineのデフォルトのTextileはPythonが好きな弊社で使うのは以ての外。なので、ReSTを使うようにした。そして、生のReSTしか使わなければ、出来ることが少ないので、blockdiagや、コードの構文ハイライト（Pygments)
+我々BeProudのRedmineのWikiやチケットの説明文やチケットのコメント文にはReStructuredTextを使っている。
+RedmineのデフォルトのTextileはPythonが好きな弊社で使うのは以ての外。なので、ReSTを使うようにした。
+そして、生のReSTしか使わなければ、出来ることが少ないので、blockdiagや、コードの構文ハイライト（Pygments)
 を使っている。
 
 Redmine はテキストフォマッターを入れ換えるように作られている。プラグインを入れるとWiki
@@ -31,14 +33,17 @@ RbST のdocutils バージョンはデータをフォーマットする時に、
 
 ![image](/assets/images/673/redmine-rest.png)
 
-```text
+```shell
 gem install RbST
 ```
 
 RbSTも日本語をレンダーする場合のバグがありますので、修正する必要があります。 (興味ある人は僕の
 [github](https://github.com/IanLewis/rbst) を見ててください)
 
-> $ cd /path/to/ruby/gems/RbST-0.1.3/lib/rst2parts $ vim rst2html.py
+````shell
+cd /path/to/ruby/gems/RbST-0.1.3/lib/rst2parts
+vim rst2html.py
+```
 
 最後のほうに、データを print する行があって、それを修正します。
 
@@ -51,12 +56,12 @@ if __name__ == '__main__':
             sys.stdout.write(output)
     except Exception, e:
         sys.stdout.write('<strong style="color:red">Error Parsing ReSt: %r</strong>' % e)
-```
+````
 
 そして、redmine のインストールディレクトリに移動して、プラグインをインストール (Python と docutils
 もインストールしておいてください。
 
-```text
+```shell
 cd path/to/redmine
 script/plugin install git://github.com/alphabetum/redmine_restructuredtext_formatter.git
 ```
@@ -87,7 +92,7 @@ Textile 書かなくてもよくて、気持ちいいですね！
 
 RbSTのインストール先の gems ディレクトリに行って、rst2html.py を修正しよう
 
-```text
+```shell
 cd /path/to/ruby/gems/RbST-0.1.3/lib/rst2parts
 vim rst2html.py
 ```
@@ -156,14 +161,14 @@ reStructuredText](http://www.planewave.org/translations/rst/quickref.html#hyperl
 
 標準のreSTじゃつまらないので、コードハイライトできるようにしょう。まずはライブラリをインストールするので、virtualenv を作ろう
 
-```text
+```shell
 cd /path/to/ruby/gems/RbST-0.1.3/lib/rst2parts
 virtualenv venv
 ```
 
 次はpygmentsをvirtualenvにインストールする
 
-```text
+```shell
 pip install pygments -E venv
 ```
 
