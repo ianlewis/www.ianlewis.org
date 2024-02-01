@@ -8,8 +8,6 @@ tags: security slsa
 render_with_liquid: false
 ---
 
-## Code Signing is not Enough
-
 Code signing is often used as a method for ensuring that software artifacts
 like binaries, drivers, and software packages haven’t been modified by a third
 party before they are used. Many folks may be familiar with packages that were
