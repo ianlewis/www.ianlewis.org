@@ -115,7 +115,7 @@ build: ## Build the site with Jekyll
 
 .PHONY: serve
 serve: ## Run Jekyll test server.
-	bundle exec jekyll serve
+	bundle exec jekyll serve --future --drafts
 
 .PHONY: clean
 clean: ## Delete temporary files.
