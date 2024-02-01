@@ -43,7 +43,7 @@ unsubscribe することもできます。
 
 参考: <http://code.google.com/p/google-app-engine-samples/wiki/AppEngineMatcherService#API_methods>
 
-<!-- textlint-disable enable -->
+<!-- textlint-enable spelling -->
 
 ```python
 from google.appengine.api import matcher
