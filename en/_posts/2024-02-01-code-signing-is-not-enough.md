@@ -201,7 +201,7 @@ heart.
 [Dan Lorenc](https://twitter.com/lorenc_dan) at
 [Chainguard](https://www.chainguard.dev/) said it best:
 
-![Bingo! Signatures are empty attestations, or even Implicit Attestations where the subject and predicate are defined out of band by the context of how the signature was generated. Explicit is better than implicit in security!](/assets/images/2024-02-01-code-signing-is-not-enough/6dGDemchbsY5Yj9.png "image_tooltip")
+[![Bingo! Signatures are empty attestations, or even Implicit Attestations where the subject and predicate are defined out of band by the context of how the signature was generated. Explicit is better than implicit in security!](/assets/images/2024-02-01-code-signing-is-not-enough/6dGDemchbsY5Yj9.png "image_tooltip")](https://twitter.com/lorenc_dan/status/1720818749102575710)
 
 Learn more about the SLSA framework and supply chain security for open source
 at [slsa.dev](https://slsa.dev). Also check out the
