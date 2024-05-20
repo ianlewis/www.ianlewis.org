@@ -38,7 +38,7 @@ node_modules/.installed: package.json package-lock.json
 #####################################################################
 
 .PHONY: lint
-lint: actionlint markdownlint ## Run all linters.
+lint: actionlint markdownlint yamllint ## Run all linters.
 
 .PHONY: actionlint
 actionlint: ## Runs the actionlint linter.
@@ -67,6 +67,15 @@ markdownlint: node_modules/.installed ## Runs the markdownlint linter.
 		else \
 			./node_modules/.bin/markdownlint --dot .; \
 		fi
+
+.PHONY: yamllint
+yamllint: ## Runs the yamllint linter.
+	@set -euo pipefail;\
+		extraargs=""; \
+		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
+			extraargs="-f github"; \
+		fi; \
+		yamllint --strict -c .yamllint.yaml . $$extraargs
 
 .PHONY: textlint
 textlint: node_modules/.installed ## Runs the textlint linter.
