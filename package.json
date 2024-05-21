@@ -7,10 +7,10 @@
     "node": ">=20.13.0",
     "dictionary-en": "^4.0.0",
     "markdownlint-cli": "0.40.0",
-    "prettier": "^3.0.3",
-    "textlint": "^13.4.1",
+    "prettier": "^3.2.5",
+    "textlint": "^14.0.4",
     "textlint-filter-rule-comments": "^1.2.2",
-    "textlint-rule-alex": "^4.0.0",
+    "textlint-rule-alex": "^5.0.0",
     "textlint-rule-no-todo": "^2.0.1",
     "textlint-rule-spelling": "^0.3.0"
   }
