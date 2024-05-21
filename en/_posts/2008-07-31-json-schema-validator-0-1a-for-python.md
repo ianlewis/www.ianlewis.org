@@ -8,21 +8,79 @@ tags: projects python json jsonschema
 render_with_liquid: false
 ---
 
-<p>I just released the first version for a project that I've been working on since the <a href="http://www.ianlewis.org/index.php/en/python-onsen">Python Onsen</a>. It's a validator for <a href="http://www.json.com/category/json-schema/">JSON Schema</a> written in <a href="http://www.python.org/" title="Python">Python</a>. It's based on the <a href="http://groups.google.com/group/json-schema/web/json-schema-proposal---second-draft">JSON Schema Proposal Second Draft</a>.</p>
+I just released the first version for a project that I've been working on since
+the [Python Onsen](http://www.ianlewis.org/index.php/en/python-onsen). It's a
+validator for [JSON Schema](http://www.json.com/category/json-schema/) written
+in Python. It's based on the [JSON Schema Proposal Second
+Draft](http://groups.google.com/group/json-schema/web/json-schema-proposal---second-draft).</p>
 
-<p>The source can be downloaded here: <a href="http://jsonschema.googlecode.com/files/jsonschema-0.1a.tar.gz">jsonschema-0.1a.tar.gz</a>
-<br />The source is on <a href="https://bitbucket.org/IanLewis/jsonschema/">Bitbucket</a>
+The source tarball is [jsonschema-0.1a.tar.gz](http://jsonschema.googlecode.com/files/jsonschema-0.1a.tar.gz). The source itself is on [Bitbucket](https://bitbucket.org/IanLewis/jsonschema/).
 
-<p>JSON Schema's purpose is to allow validation of JSON documents much like <a href="http://en.wikipedia.org/wiki/XML" title="XML">XML</a> Schema, DTD. You can use it to define what kind of data should be present in the document as well as the structure of the data. You might have some JSON for a contact like so:</p>
+JSON Schema's purpose is to allow validation of JSON documents much like XML
+Schema, DTD. You can use it to define what kind of data should be present in the
+document as well as the structure of the data. You might have some JSON for a
+contact like so:
 
-<div class="codeblock amc_javascript amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #66cc66;">&#123;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>&nbsp; <span style="color: #3366CC;">&quot;name&quot;</span>: <span style="color: #3366CC;">&quot;Ian Lewis&quot;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td>&nbsp; <span style="color: #3366CC;">&quot;email&quot;</span>: <span style="color: #3366CC;">&quot;IanLewis@xyz.com&quot;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; <span style="color: #3366CC;">&quot;address&quot;</span>: <span style="color: #3366CC;">&quot;123 Main St.&quot;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; <span style="color: #3366CC;">&quot;phone&quot;</span>: <span style="color: #3366CC;">&quot;080-1942-9494&quot;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td><span style="color: #66cc66;">&#125;</span></td></tr></table></div>
+```json
+{
+  "name": "Ian Lewis",
+  "email": "IanLewis@xyz.com",
+  "address": "123 Main St.",
+  "phone": "080-1942-9494"
+}
+```
 
-<p>And you could describe this in JSON Schema with the following:</p>
+And you could describe this in JSON Schema with the following:
 
-<div class="codeblock amc_javascript amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #66cc66;">&#123;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span>:<span style="color: #3366CC;">&quot;object&quot;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td>&nbsp; <span style="color: #3366CC;">&quot;properties&quot;</span>:<span style="color: #66cc66;">&#123;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; &nbsp; <span style="color: #3366CC;">&quot;name&quot;</span>: <span style="color: #66cc66;">&#123;</span><span style="color: #3366CC;">&quot;type&quot;</span>:<span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #66cc66;">&#125;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; &nbsp; <span style="color: #3366CC;">&quot;age&quot;</span>: <span style="color: #66cc66;">&#123;</span><span style="color: #3366CC;">&quot;type&quot;</span>:<span style="color: #3366CC;">&quot;int&quot;</span>, <span style="color: #3366CC;">&quot;optional&quot;</span>:<span style="color: #003366; font-weight: bold;">True</span><span style="color: #66cc66;">&#125;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td>&nbsp; &nbsp; <span style="color: #3366CC;">&quot;email&quot;</span>: <span style="color: #66cc66;">&#123;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;type&quot;</span>:<span style="color: #3366CC;">&quot;string&quot;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>&nbsp; &nbsp; &nbsp; <span style="color: #3366CC;">&quot;pattern&quot;</span>:<span style="color: #3366CC;">&quot;^[A-Za-z0-9][A-Za-z0-9<span style="color: #000099; font-weight: bold;">\.</span>]*@([A-Za-z0-9]+<span style="color: #000099; font-weight: bold;">\.</span>)+[A-Za-z0-9]+$&quot;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"></div></td><td>&nbsp; &nbsp; <span style="color: #66cc66;">&#125;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; <span style="color: #3366CC;">&quot;address&quot;</span>: <span style="color: #66cc66;">&#123;</span><span style="color: #3366CC;">&quot;type&quot;</span>:<span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #66cc66;">&#125;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; <span style="color: #3366CC;">&quot;phone&quot;</span>: <span style="color: #66cc66;">&#123;</span><span style="color: #3366CC;">&quot;type&quot;</span>:<span style="color: #3366CC;">&quot;string&quot;</span><span style="color: #66cc66;">&#125;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"><div class="amc1"></div></div></td><td>&nbsp; <span style="color: #66cc66;">&#125;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"><div class="amc1"></div></div></td><td><span style="color: #66cc66;">&#125;</span></td></tr></table></div>
+```json
+{
+  "type":"object",
+  "properties":{
+    "name": {"type":"string"},
+    "age": {"type":"int", "optional":True},
+    "email": {
+      "type":"string",
+      "pattern":"^[A-Za-z0-9][A-Za-z0-9\.]*@([A-Za-z0-9]+\.)+[A-Za-z0-9]+$"
+    },
+    "address": {"type":"string"},
+    "phone": {"type":"string"}
+  }
+}
+```
 
-<p>This can be validated with something like the following <a href="http://www.python.org/" title="Python">Python</a> code:</p>
+This can be validated with something like the following Python code:
 
-<div class="codeblock amc_python amc_long"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">import</span> jsonschema, simplejson<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td>data = <span style="color: #483d8b;">&quot;&quot;</span><span style="color: #483d8b;">&quot;{<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; &quot;</span>name<span style="color: #483d8b;">&quot;: &quot;</span>Ian Lewis<span style="color: #483d8b;">&quot;,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; &quot;</span><span style="color: #dc143c;">email</span><span style="color: #483d8b;">&quot;: &quot;</span>IanLewis@xyz.<span style="color: black;">com</span><span style="color: #483d8b;">&quot;,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td>&nbsp; &quot;</span>address<span style="color: #483d8b;">&quot;: &quot;</span><span style="color: #ff4500;">123</span> Main St.<span style="color: #483d8b;">&quot;,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>&nbsp; &quot;</span>phone<span style="color: #483d8b;">&quot;: &quot;</span><span style="color: #ff4500;">080</span><span style="color: #ff4500;">-1942</span><span style="color: #ff4500;">-9494</span><span style="color: #483d8b;">&quot;<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>}&quot;</span><span style="color: #483d8b;">&quot;&quot;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc1"></div></div></td><td>schema = <span style="color: #483d8b;">&quot;&quot;</span><span style="color: #483d8b;">&quot;{<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc1"></div></div></td><td>&nbsp; &quot;</span><span style="color: #008000;">type</span><span style="color: #483d8b;">&quot;:&quot;</span><span style="color: #008000;">object</span><span style="color: #483d8b;">&quot;,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"><div class="amc1"></div></div></td><td>&nbsp; &quot;</span>properties<span style="color: #483d8b;">&quot;:{<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &quot;</span>name<span style="color: #483d8b;">&quot;: {&quot;</span><span style="color: #008000;">type</span><span style="color: #483d8b;">&quot;:&quot;</span><span style="color: #dc143c;">string</span><span style="color: #483d8b;">&quot;},<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &quot;</span>age<span style="color: #483d8b;">&quot;: {&quot;</span><span style="color: #008000;">type</span><span style="color: #483d8b;">&quot;:&quot;</span><span style="color: #008000;">int</span><span style="color: #483d8b;">&quot;, &quot;</span>optional<span style="color: #483d8b;">&quot;:True},<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &quot;</span><span style="color: #dc143c;">email</span><span style="color: #483d8b;">&quot;: {<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &nbsp; &quot;</span><span style="color: #008000;">type</span><span style="color: #483d8b;">&quot;:&quot;</span><span style="color: #dc143c;">string</span><span style="color: #483d8b;">&quot;,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &nbsp; &quot;</span>pattern<span style="color: #483d8b;">&quot;:&quot;</span>^<span style="color: black;">&#91;</span>A-Za-z0<span style="color: #ff4500;">-9</span><span style="color: black;">&#93;</span><span style="color: black;">&#91;</span>A-Za-z0<span style="color: #ff4500;">-9</span>\.<span style="color: black;">&#93;</span><span style="color: #66cc66;">*</span>@<span style="color: black;">&#40;</span><span style="color: black;">&#91;</span>A-Za-z0<span style="color: #ff4500;">-9</span><span style="color: black;">&#93;</span>+\.<span style="color: black;">&#41;</span>+<span style="color: black;">&#91;</span>A-Za-z0<span style="color: #ff4500;">-9</span><span style="color: black;">&#93;</span>+$<span style="color: #483d8b;">&quot;<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; },<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &quot;</span>address<span style="color: #483d8b;">&quot;: {&quot;</span><span style="color: #008000;">type</span><span style="color: #483d8b;">&quot;:&quot;</span><span style="color: #dc143c;">string</span><span style="color: #483d8b;">&quot;},<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &quot;</span>phone<span style="color: #483d8b;">&quot;: {&quot;</span><span style="color: #008000;">type</span><span style="color: #483d8b;">&quot;:&quot;</span><span style="color: #dc143c;">string</span><span style="color: #483d8b;">&quot;}<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc2"></div></div></td><td>&nbsp; }<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"><div class="amc2"></div></div></td><td>}&quot;</span><span style="color: #483d8b;">&quot;&quot;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"><div class="amc2"></div></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"><div class="amc2"></div></div></td><td>x = simplejson.<span style="color: black;">loads</span><span style="color: black;">&#40;</span>data<span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"><div class="amc2"></div></div></td><td>s = simplesjson.<span style="color: black;">loads</span><span style="color: black;">&#40;</span>schema<span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"><div class="amc2"></div></div></td><td>jsonschema.<span style="color: black;">validate</span><span style="color: black;">&#40;</span>x,s<span style="color: black;">&#41;</span></td></tr></table></div>
+```python
+import jsonschema, simplejson
 
-<p>It can be easily extended to include support for new properties or to override the default validation for standard properties so I think it could be used for a wide range of applications. I plan to use it for a Form Maker application (<a href="http://www.ianlewis.org/hg/formmaker-appengine/">code</a>) on <a href="http://code.google.com/appengine/" title="Google App Engine">GAE</a>. Let me know what you think!</p></p>
+data = """{
+  "name": "Ian Lewis",
+  "email": "IanLewis@xyz.com",
+  "address": "123 Main St.",
+  "phone": "080-1942-9494"
+}"""
+
+schema = """{
+  "type":"object",
+  "properties":{
+    "name": {"type":"string"},
+    "age": {"type":"int", "optional":True},
+    "email": {
+      "type":"string",
+      "pattern":"^[A-Za-z0-9][A-Za-z0-9\.]*@([A-Za-z0-9]+\.)+[A-Za-z0-9]+$"
+    },
+    "address": {"type":"string"},
+    "phone": {"type":"string"}
+  }
+}"""
+
+x = simplejson.loads(data)
+s = simplesjson.loads(schema)
+jsonschema.validate(x,s)
+```
+
+It can be easily extended to include support for new properties or to override
+the default validation for standard properties so I think it could be used for a
+wide range of applications. I plan to use it for a Form Maker application
+([code](http://www.ianlewis.org/hg/formmaker-appengine/)) on
+[GAE](http://code.google.com/appengine/). Let me know what you think!
