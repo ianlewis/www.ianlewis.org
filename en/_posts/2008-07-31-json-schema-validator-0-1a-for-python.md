@@ -14,6 +14,8 @@ validator for [JSON Schema](http://www.json.com/category/json-schema/) written
 in Python. It's based on the [JSON Schema Proposal Second
 Draft](http://groups.google.com/group/json-schema/web/json-schema-proposal---second-draft).</p>
 
+<!-- TODO(#67): Fix 404s -->
+
 The source tarball is [jsonschema-0.1a.tar.gz](http://jsonschema.googlecode.com/files/jsonschema-0.1a.tar.gz). The source itself is on [Bitbucket](https://bitbucket.org/IanLewis/jsonschema/).
 
 JSON Schema's purpose is to allow validation of JSON documents much like XML
