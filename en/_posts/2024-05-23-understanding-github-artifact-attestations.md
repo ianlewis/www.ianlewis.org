@@ -43,24 +43,26 @@ additional information that will be important later.
    provider. This OIDC token contains [information about the
    build](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect#understanding-the-oidc-token)
    in the token claims.
-
 2. The OIDC token is sent to a [Sigstore
-   Fulcio](https://github.com/sigstore/fulcio) server (either the public instance
-   or GitHub’s private one). [Fulcio can recognize and validate GitHub’s OIDC
+   Fulcio](https://github.com/sigstore/fulcio) server (either the public
+   instance or GitHub’s private one). [Fulcio can recognize and validate GitHub’s
+   OIDC
    tokens](https://docs.sigstore.dev/certificate_authority/oidc-in-fulcio/#github)
    and, after verifying its signature, issues a certificate in exchange for the
    OIDC token. This certificate includes much of the information from the OIDC
    token [mapped into its OID extension
    fields](https://github.com/sigstore/fulcio/blob/main/docs/oid-info.md#mapping-oidc-token-claims-to-fulcio-oids)
    as claims.
-
-3. SLSA Provenance is generated and the resulting JSON is signed with the
-   returned certificate’s private key. This private key is then discarded.
-   The provenance is recorded in GitHub’s attestation store.
+3. A SLSA attestation
+   [predicate](https://github.com/in-toto/attestation/blob/main/spec/v1/predicate.md)
+   is generated and the provenance statement is signed with the returned
+   certificate’s private key. The resulting signature is combined with the
+   provenance to create a full attestation bundle and this bundle is recorded in
+   GitHub’s attestation store.
 
 I'm leaving out some details but this is the general flow for attestation. So
-as a result we have some provenance in JSON format and a Sigstore certificate
-with some OID claims set.
+as a result we have an attestation bundle in JSON format and a Sigstore
+certificate with some OID claims set.
 
 After we have an artifact and attestation, as a user, we need to be able to
 verify it before we use it. Verification works something like the following.
@@ -78,7 +80,7 @@ for GitHub’s official CLI tool.
    against the signing certificate’s OID claims.
 
 Notice that nowhere here did we actually use the contents of the SLSA
-provenance for verification. We’ll discuss why this is below.
+predicate for verification. We’ll discuss why this is below.
 
 ## A Good User Experience
 
@@ -118,17 +120,17 @@ However, as we’ll see, this kind of attack is mostly mitigated by using Sigsto
 
 ## SLSA Build L2+?
 
-By using Sigstore’s Fulcio the certificate used to sign the provenance contains
-much of the provenance information in its OID claims. These claims are signed
-by part of Fulcio instance’s certificate chain and thus cannot be modified by
-the user-defined build steps unless the Sigstore instance or GitHub’s OIDC
-provider are compromised.
+By using Sigstore’s Fulcio, the certificate used to sign the provenance
+contains much of the SLSA predicate's information in its OID claims. These
+claims are signed by part of Fulcio instance’s certificate chain and thus
+cannot be modified by the user-defined build steps unless the Sigstore instance
+or GitHub’s OIDC provider are compromised.
 
-So while the SLSA provenance itself might be modified the certificate OID
+So while the SLSA predicate itself might be modified the certificate OID
 claims cannot. So GitHub can check the OID claims against the expected values
 in order to verify them even though the user-defined build steps had access to
-the signing key. So this is why verification doesn’t rely on the provenance
-itself and instead relies on the certificate’s OID claims for verification.
+the signing key. So this is why verification doesn’t rely on the predicate
+and instead relies on the certificate’s OID claims for verification.
 
 Some folks have colloquially referred to this combination of Sigstore and SLSA
 Build L2 as SLSA Build L2+ since it provides some of the benefits of SLSA Build
@@ -139,8 +141,8 @@ L3 without actually fulfilling all of the requirements of L3.
 However, this comes with a caveat. This means that if the user-defined build
 steps could have access to the signing keys then **only** the information in
 the certificate’s OID claims are trustworthy. No information that isn’t
-included in these claims can be included in the provenance because it can’t be
-verified later.
+included in these claims can be included in the SLSA predicate because it can’t
+be verified later.
 
 Crucially this includes values like the GitHub Actions workflow
 [`inputs`](https://docs.github.com/en/actions/learn-github-actions/contexts#inputs-context)
