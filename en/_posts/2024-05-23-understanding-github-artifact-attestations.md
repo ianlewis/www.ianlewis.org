@@ -196,11 +196,11 @@ minimum, would roughly need to do the following things:
 Trust in GitHub’s Artifact Attestations trust really lies in the Sigstore
 certificate and its OID claims. The signed SLSA provenance is really only nice
 to have. GitHub ensures that the JSON printed by the `gh` client’s `--format
-json` option is trustworthy simply by omitting any values from the SLSA
-provenance JSON that are not included in the certificate’s OID claims. This
-means that the certificate itself effectively functions as the provenance. This
-is fine, SLSA doesn’t even mandate that provenance be in SLSA format, but it’s
-an important point to understand.
+json` option is trustworthy simply by forbidding values in the SLSA provenance
+JSON that are different from the certificate’s OID claims. This means that the
+certificate itself effectively functions as the provenance. This is fine, SLSA
+doesn’t even mandate that provenance be in SLSA format, but it’s an important
+point to understand.
 
 As an aside, it’s interesting to note that GitHub’s [npm package
 provenance](https://github.blog/2023-04-19-introducing-npm-package-provenance/),
