@@ -170,7 +170,7 @@ but it focuses on SLSA Build L2(+) and L3 is left as an exercise for the
 reader. So what would it take to achieve SLSA Build L3 with GitHub Artifact
 Attestations?
 
-The solution is fairly somewhat so I will just summarize the requirements here
+The solution is somewhat complex so I will just summarize the requirements here
 and leave the details for a later blog post. In order to achieve L3 you, at a
 minimum, would roughly need to do the following things:
 
