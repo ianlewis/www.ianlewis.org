@@ -37,8 +37,8 @@ about how GitHub Artifact Attestations work and their relation to SLSA levels.
 Generating attestations is done using the
 [`attest-build-provenance`](https://github.com/actions/attest-build-provenance)
 GitHub action. Github’s blog post does a good job of explaining how it works so
-I won’t rehash it fully here. I’ll just summarize the flow and highlight some
-additional information that will be important later.
+I won’t rehash it fully here. Instead, I’ll summarize the flow and highlight
+some additional information that will be important later.
 
 1. `attest-build-provenance` requests an OIDC token from the GitHub OIDC
    provider. This OIDC token contains [information about the
@@ -184,15 +184,19 @@ for GitHub’s official CLI tool.
 3. The expected values for the owner or repo given by the user are matched
    against the signing certificate’s OID claims.
 
-Notice that nowhere here did we actually use the contents of the SLSA
-predicate for verification. We’ll discuss why this is below.
+Notice that nowhere here did we actually use the contents of the SLSA predicate
+for verification. I think this is an oversight but we’ll discuss why that might
+have been omitted below.
+
+Next, let's discuss some of the trade-offs of this architecture.
+
+<!-- TODO: PR on the gh CLI repo? -->
 
 ## A Good User Experience
 
-By providing a GitHub Action, GitHub gives users the maximum amount of
-flexibility when integrating this into their GitHub Actions workflows. It’s
-really easy to add a job step to your workflow and pass it a path to your
-artifact file.
+By providing a GitHub Action, GitHub gives users flexibility when integrating
+this into their GitHub Actions workflows. It’s simple to add a job step to
+your workflow and pass it a path to your artifact file.
 
 ```
 - name: Attest Build Provenance
