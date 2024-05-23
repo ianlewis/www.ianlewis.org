@@ -166,8 +166,8 @@ additional information that will be important later.
    ```
 
 I'm leaving out some details but this is the general flow for attestation. So
-as a result we have an attestation bundle in JSON format and a Sigstore
-certificate with some OID claims set.
+as a result we have both an attestation bundle in JSON format **and** a
+Sigstore certificate with some OID claims set.
 
 After we have an artifact and attestation, as a user, we need to be able to
 verify it before we use it. Verification works something like the following.
