@@ -27,9 +27,10 @@ that artifact attestations achieve [SLSA v1.0 Build Level 2 and not
 L3](https://docs.github.com/en/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds#about-slsa-levels-for-artifact-attestations)?
 How could you achieve L3 with artifact attestations?
 
-I’ll do my best to answer some of these questions here. But first we need to
-understand a bit about how GitHub Artifact Attestations work and their relation
-to SLSA levels.
+I’ll do my best to answer some of these questions here, detail why I think
+there's still room for improvement, and how we could build more secure
+solutions for users of GitHub Actions. But first we need to understand a bit
+about how GitHub Artifact Attestations work and their relation to SLSA levels.
 
 ## Architecture
 
@@ -43,6 +44,31 @@ additional information that will be important later.
    provider. This OIDC token contains [information about the
    build](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect#understanding-the-oidc-token)
    in the token claims.
+
+   Here's what a typical OIDC token's fields look like:
+
+   ```json
+   {
+     "aud": "https://github.com/octo-org",
+     "iss": "https://token.actions.githubusercontent.com",
+     "job_workflow_ref": "octo-org/octo-automation/.github/workflows/oidc.yml@refs/heads/main",
+     "runner_environment": "github-hosted"
+     "repository": "octo-org/octo-repo",
+     "sha": "example-sha",
+     "ref": "refs/heads/main",
+     "repository_id": "74",
+     "repository_owner": "octo-org",
+     "repository_owner_id": "65",
+     "workflow": "example-workflow",
+     "event_name": "workflow_dispatch",
+     "run_id": "example-run-id",
+     "run_number": "10",
+     "run_attempt": "2",
+     "repository_visibility": "private",
+     // ...
+   }
+   ```
+
 2. The OIDC token is sent to a [Sigstore
    Fulcio](https://github.com/sigstore/fulcio) server (either the public
    instance or GitHub’s private one). [Fulcio can recognize and validate GitHub’s
@@ -52,13 +78,92 @@ additional information that will be important later.
    OIDC token. This certificate includes much of the information from the OIDC
    token [mapped into its OID extension
    fields](https://github.com/sigstore/fulcio/blob/main/docs/oid-info.md#mapping-oidc-token-claims-to-fulcio-oids)
-   as claims.
+   as OID claims.
+
+   ```shell
+   $ openssl x509 -in certificate.crt -text -noout
+   ...
+   X509v3 extensions:                                                                                                                                                                                 [37/636]
+       X509v3 Key Usage: critical
+           Digital Signature
+       X509v3 Extended Key Usage:
+           Code Signing
+       X509v3 Subject Key Identifier:
+           40:16:4D:A9:02:0E:97:E7:40:BA:A1:72:87:1A:1B:D0:FF:A4:30:FF
+       X509v3 Authority Key Identifier:
+           DF:D3:E9:CF:56:24:11:96:F9:A8:D8:E9:28:55:A2:C6:2E:18:64:3F
+       X509v3 Subject Alternative Name: critical
+           URI:https://github.com/ianlewis/gha-artifact-attestations-test/.github/workflows/artifact-attestations.basic.yml@refs/heads/main
+       1.3.6.1.4.1.57264.1.1:
+           https://token.actions.githubusercontent.com
+       1.3.6.1.4.1.57264.1.2:
+           push
+       1.3.6.1.4.1.57264.1.3:
+           9e68bb76632788dc01c6596298fb015f46b7fe0f
+       1.3.6.1.4.1.57264.1.4:
+           Test Artifact Attestations
+       1.3.6.1.4.1.57264.1.5:
+           ianlewis/gha-artifact-attestations-test
+       1.3.6.1.4.1.57264.1.6:
+           refs/heads/main
+       1.3.6.1.4.1.57264.1.8:
+           .+https://token.actions.githubusercontent.com
+       1.3.6.1.4.1.57264.1.9:
+           .|https://github.com/ianlewis/gha-artifact-attestations-test/.github/workflows/artifact-attestations.basic.yml@refs/heads/main
+       1.3.6.1.4.1.57264.1.10:
+           .(9e68bb76632788dc01c6596298fb015f46b7fe0f
+       1.3.6.1.4.1.57264.1.11:
+   github-hosted   .
+       1.3.6.1.4.1.57264.1.12:
+           .:https://github.com/ianlewis/gha-artifact-attestations-test
+   ```
+
 3. A SLSA attestation
    [predicate](https://github.com/in-toto/attestation/blob/main/spec/v1/predicate.md)
    is generated and the provenance statement is signed with the returned
    certificate’s private key. The resulting signature is combined with the
    provenance to create a full attestation bundle and this bundle is recorded in
    GitHub’s attestation store.
+
+   The SLSA predicate looks something like this:
+
+   ```json
+   {
+     "buildDefinition": {
+       "buildType": "https://slsa-framework.github.io/github-actions-buildtypes/workflow/v1",
+       "externalParameters": {
+         "workflow": {
+           "ref": "refs/heads/main",
+           "repository": "https://github.com/ianlewis/gha-artifact-attestations-test",
+           "path": ".github/workflows/artifact-attestations.basic.yml"
+         }
+       },
+       "internalParameters": {
+         "github": {
+           "event_name": "push",
+           "repository_id": "803607921",
+           "repository_owner_id": "49289"
+         }
+       },
+       "resolvedDependencies": [
+         {
+           "uri": "git+https://github.com/ianlewis/gha-artifact-attestations-test@refs/heads/main",
+           "digest": {
+             "gitCommit": "9e68bb76632788dc01c6596298fb015f46b7fe0f"
+           }
+         }
+       ]
+     },
+     "runDetails": {
+       "builder": {
+         "id": "https://github.com/actions/runner/github-hosted"
+       },
+       "metadata": {
+         "invocationId": "https://github.com/ianlewis/gha-artifact-attestations-test/actions/runs/9171197474/attempts/1"
+       }
+     }
+   }
+   ```
 
 I'm leaving out some details but this is the general flow for attestation. So
 as a result we have an attestation bundle in JSON format and a Sigstore
