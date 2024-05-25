@@ -41,9 +41,10 @@ plainwhite:
       url: /en
     - title: 日本語ブログ
       url: /jp
-    # TODO(#4): Add projects page.
     - title: About Me
       url: /
+    - title: Projects
+      url: /projects
 
   analytics_id: "G-1C2E36DTVT"
 
