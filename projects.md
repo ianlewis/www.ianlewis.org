@@ -1,13 +1,8 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-# title: Ian Lewis
-
+title: Projects
 layout: page
 permalink: /projects
 ---
-
-# Projects
 
 These are some of my current and past projects.
 
