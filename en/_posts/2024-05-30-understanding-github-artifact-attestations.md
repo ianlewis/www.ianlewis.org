@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Understanding GitHub Artifact Attestations"
-date: 2024-05-23 00:00:00 +0000
+date: 2024-05-30 00:00:00 +0000
 permalink: /en/understanding-github-artifact-attestations
 blog: en
 tags: security slsa
