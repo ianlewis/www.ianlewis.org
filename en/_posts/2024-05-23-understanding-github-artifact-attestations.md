@@ -286,7 +286,7 @@ This uses the fact that code in reusable workflows are isolated from the main
 workflow because they run on jobs executed on [separate virtual
 machines](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#the-components-of-github-actions).
 
-However, this comes with the downside that it is not as user friendly as a
+However, this comes with the downside that it is not quite as user friendly as a
 simple GitHub Action. Passing data, especially files, between jobs is more
 complicated and we are sometimes forced to expose that complexity to the user.
 Given that there are significant security improvements, I think it’s worth it.
