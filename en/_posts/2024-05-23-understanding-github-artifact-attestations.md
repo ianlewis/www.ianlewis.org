@@ -46,9 +46,9 @@ some additional information that will be important later.
 
    Here's what a typical OIDC token's fields look like:
 
-   ```
+   ```json
    {
-      "aud": "https://github.com/octo-org",
+     "aud": "https://github.com/octo-org",
      "iss": "https://token.actions.githubusercontent.com",
      "job_workflow_ref": "octo-org/octo-automation/.github/workflows/oidc.yml@refs/heads/main",
      "runner_environment": "github-hosted",
@@ -63,7 +63,7 @@ some additional information that will be important later.
      "run_id": "example-run-id",
      "run_number": "10",
      "run_attempt": "2",
-     "repository_visibility": "private",
+     "repository_visibility": "private"
      // ...
    }
    ```
@@ -79,7 +79,7 @@ some additional information that will be important later.
    fields](https://github.com/sigstore/fulcio/blob/main/docs/oid-info.md#mapping-oidc-token-claims-to-fulcio-oids)
    as OID claims.
 
-   ```
+   ```shell
    $ openssl x509 -in certificate.crt -text -noout
    ...
    X509v3 extensions:
@@ -127,7 +127,7 @@ some additional information that will be important later.
 
    The SLSA predicate looks something like this:
 
-   ```
+   ```json
    {
      "buildDefinition": {
        "buildType": "https://slsa-framework.github.io/github-actions-buildtypes/workflow/v1",
