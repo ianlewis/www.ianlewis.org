@@ -120,7 +120,7 @@ some additional information that will be important later.
 
 3. A SLSA
    [predicate](https://github.com/in-toto/attestation/blob/main/spec/v1/predicate.md)
-   nis generated and the provenance statement is signed with the returned
+   is generated and the provenance statement is signed with the returned
    ncertificate’s private key. The resulting signature is combined with the
    nprovenance to create a full attestation bundle and this bundle is recorded
    in GitHub’s attestation store.
