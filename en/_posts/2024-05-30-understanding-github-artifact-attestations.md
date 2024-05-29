@@ -166,7 +166,7 @@ some additional information that will be important later.
    ```
 
 I'm leaving out some details but this is the general flow for attestation. So as
-a result we have _both_ an attestation bundle in JSON format \_and \_this
+a result we have _both_ an attestation bundle in JSON format *and* this
 includes the Sigstore certificate with some OID claims set.
 
 After we have an artifact and attestation, as a user, we need to be able to
