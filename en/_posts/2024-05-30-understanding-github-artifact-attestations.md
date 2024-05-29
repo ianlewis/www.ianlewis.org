@@ -236,8 +236,8 @@ GitHub’s OIDC provider are compromised.
 
 So while the SLSA predicate itself might be modified the certificate OID claims
 cannot. So GitHub can check the OID claims against the expected values to verify
-them even though the user-defined build steps had access to the signing key. So
-this is why verification doesn’t rely on the predicate and instead relies on the
+them even though the user-defined build steps had access to the signing key.
+This is why verification doesn’t rely on the predicate and instead relies on the
 certificate’s OID claims for verification.
 
 Some folks have colloquially referred to this combination of Sigstore and SLSA
