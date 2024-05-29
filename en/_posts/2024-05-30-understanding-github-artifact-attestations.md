@@ -224,7 +224,7 @@ nefarious purposes. Normally an attacker, by compromising the build, might be
 able to use this key material to make up their own provenance for a malicious
 artifact and sign it with the key.
 
-However, as we’ll see, this kind of attack is mostly mitigated by using Sigstore.
+However, as we’ll see, this kind of attack is somewhat mitigated by using Sigstore.
 
 ### SLSA Build L2+?
 
