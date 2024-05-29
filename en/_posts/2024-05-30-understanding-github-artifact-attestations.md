@@ -234,7 +234,7 @@ signed by part of Fulcio instance’s certificate chain and thus cannot be
 modified by the user-defined build steps unless the Sigstore instance or
 GitHub’s OIDC provider are compromised.
 
-So while the SLSA predicate itself might be modified the certificate OID claims
+While the SLSA predicate itself might be modified the certificate OID claims
 cannot. So GitHub can check the OID claims against the expected values to verify
 them even though the user-defined build steps had access to the signing key.
 This is why verification doesn’t rely on the predicate and instead relies on the
