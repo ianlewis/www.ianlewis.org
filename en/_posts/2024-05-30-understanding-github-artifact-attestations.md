@@ -37,7 +37,7 @@ GitHub action. Github’s blog post does a good job of explaining how it works s
 I won’t rehash it fully here. Instead, I’ll summarize the flow and highlight
 some additional information that will be important later.
 
-![Architecture Diagram](/assets/images/2024-05-23-understanding-github-artifact-attestations/sigstore.png "Architecture Diagram")
+![Architecture Diagram](/assets/images/2024-05-30-understanding-github-artifact-attestations/sigstore.png "Architecture Diagram")
 
 1. `attest-build-provenance` requests an OIDC token from the GitHub OIDC
    provider. This OIDC token contains [information about the
@@ -166,7 +166,7 @@ some additional information that will be important later.
    ```
 
 I'm leaving out some details but this is the general flow for attestation. So as
-a result we have *both* an attestation bundle in JSON format *and* this
+a result we have _both_ an attestation bundle in JSON format _and_ this
 includes the Sigstore certificate with some OID claims set.
 
 After we have an artifact and attestation, as a user, we need to be able to
