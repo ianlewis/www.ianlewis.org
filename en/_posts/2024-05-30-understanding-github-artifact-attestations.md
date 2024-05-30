@@ -184,9 +184,9 @@ for GitHub’s official CLI tool.
 3. The expected values for the owner or repo given by the user are matched
    against the signing certificate’s OID claims.
 
-Notice that nowhere here did we actually use the contents of the SLSA predicate
-for verification. I think this is an oversight but we’ll discuss why that might
-have been omitted below.
+Notice that nowhere here is it actually necessary use the contents of the SLSA
+predicate for verification. It isn't really necessary if you are treat the
+certificate itself as the provenance.
 
 Next, let's discuss some of the trade-offs of this architecture.
 
