@@ -210,10 +210,11 @@ software.
 
 ### Why SLSA Build L2 and not L3?
 
-If this is a fairly secure solution, why is this SLSA Build L2 and not L3? The
-main reason is that, by itself, the `attest-build-provenance` action doesn’t
-meet this requirement for [SLSA Build
-L3](https://slsa.dev/spec/v1.0/levels#build-l3-hardened-builds):
+One downside of the `attest-build-provenance` action is that it only meets the
+requirements of SLSA Build L2 when used on its own.
+
+The main reason is that, by itself, it doesn’t meet this requirement for [SLSA
+Build L3](https://slsa.dev/spec/v1.0/levels#build-l3-hardened-builds):
 
 _> prevent secret material used to sign the provenance from being accessible to the user-defined build steps._
 
