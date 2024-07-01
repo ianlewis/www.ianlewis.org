@@ -4,7 +4,7 @@
     "format": "prettier -w ."
   },
   "devDependencies": {
-    "node": ">=20.13.0",
+    "node": ">=22.3.0",
     "dictionary-en": "^4.0.0",
     "markdownlint-cli": "0.40.0",
     "prettier": "^3.2.5",
