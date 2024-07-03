@@ -6,7 +6,7 @@ layout: default
 <h1 class="page-heading">{{ page.title }}</h1>
 {%- endif -%}
 
-{%- if site.posts.size > 0 -%}
+{%- if paginator.posts.size > 0 -%}
 <ul class="posts">
   <li class="posts-labelgroup" id="posts-labelgroup">
     <h1 id="posts-label">posts</h1>
@@ -21,7 +21,7 @@ layout: default
     {% endif %}
   </li>
 
-  {%- for post in site.posts -%}
+  {%- for post in paginator.posts -%}
   {%- if post.tags contains page.tag and post.categories contains page.category -%}
   <li>
     {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
@@ -52,6 +52,22 @@ layout: default
   {%- endif -%}
   {%- endfor -%}
 </ul>
+
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+  {% if paginator.previous_page %}
+  <li class="previous">
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+  </li>
+  {% endif %}
+
+  {% if paginator.next_page %}
+  <li class="next">
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+  </li>
+  {% endif %}
+</ul>
+{% endif %}
 
 <!-- <p class="feed-subscribe"><svg class="svg-icon orange">
     <use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use>
