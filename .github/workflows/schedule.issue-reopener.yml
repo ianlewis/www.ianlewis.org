@@ -27,4 +27,4 @@ jobs:
     steps:
       - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Issue Reopener
-        uses: ianlewis/todo-issue-reopener@9adf81abbaeceed8d6c90c106cc2a965797963cf # v1.3.0
+        uses: ianlewis/todo-issue-reopener@1a99cfd93fb95eb4f212a1ebaf3e9ef8ba4c46f8 # v1.4.0
