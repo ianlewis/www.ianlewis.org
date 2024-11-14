@@ -25,7 +25,7 @@ JavaScript for speed.
 For partial html in the browser I have often used [Underscore.js templates](http://underscorejs.org/#template). Underscore's templates are pretty
 simple and the logic is written in JavaScript so it's pretty fast.
 
-```
+```html
     <html lang="en">
       <head>
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -51,7 +51,7 @@ language on the server side.
 generally logicless or light on logic. Mustache has partials which can be used
 to include sub-templates or other kinds of logic.
 
-```
+```html
     <html lang="en">
       <head>
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -77,7 +77,7 @@ partials which are pretty awkward. They also aren't very easy to reuse.
 Express framework. Jade is much like haml templates in that you don't write
 html but tag names in a short format.
 
-```
+```text
     html(lang="en")
       head
         link(rel="stylesheet", type="text/css", href="style.css")
@@ -91,7 +91,7 @@ html but tag names in a short format.
 Jade supports template inheritance so reusing logic is easier and that makes it
 easier to use as a server side templating language.
 
-```
+```text
     html(lang="en")
       head
         link(rel="stylesheet", type="text/css", href="style.css")
@@ -100,7 +100,7 @@ easier to use as a server side templating language.
         block content
 ```
 
-```
+```text
     extends ./layout.jade
 
     block content
@@ -121,7 +121,7 @@ understand for text other than html.
 inspired by Django templates. I immediately liked Swig since I've used Django
 and Jinja2 templates quite often as a Python developer.
 
-```
+```jinja
     <h1>{{ pagename|title }}</h1>
     <ul>
     {% for author in authors %}
@@ -143,7 +143,7 @@ written by some folks at Mozilla which is heavily inspired by Jinja2. I
 immediately liked Nunjucks since I've used Django and Jinja2 templates quite
 often as a Python developer.
 
-```
+```jinja
     {% extends "base.html" %}
 
     {% block header %}
@@ -165,7 +165,7 @@ server side template language. When [compared](https://github.com/mozilla/nunjuc
 [swig](https://github.com/popomore/nunjucks-vs-swig), nunjucks seems to be faster,
 has better support for caching and pre-compiling, and looks like the API is a bit better.
 
-##Conclusion
+## Conclusion
 
 JavaScript has _a lot_ of templating languages. However, maybe because users
 are often just rendering small bits of content in the browser, few support very

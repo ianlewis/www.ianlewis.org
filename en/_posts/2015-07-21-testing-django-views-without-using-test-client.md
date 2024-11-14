@@ -69,7 +69,7 @@ request = self.factory.get('/')
 response = MyView.as_view()(request)
 ```
 
-_Thanks to Matt Deacalion for the comment_
+> _Thanks to Matt Deacalion for the comment_
 
 ## Clean, Stable Tests
 

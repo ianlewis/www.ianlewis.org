@@ -197,7 +197,7 @@ providing a GitHub Action, GitHub gives users flexibility when integrating this
 into their GitHub Actions workflows. All it takes is to add a job step to your
 workflow and pass it a path to your artifact file.
 
-```
+```yaml
 - name: Attest Build Provenance
   uses: actions/attest-build-provenance@897ed5eab6ed058a474202017ada7f40bfa52940 # v1.0.0
   with:

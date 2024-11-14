@@ -37,7 +37,9 @@ available for use under the MIT License.
 
 You can install the package directly from github:
 
-    pip install -e git+git://github.com/IanLewis/kombu-appengine-pullqueue.git#egg=kombu-appengine-pullqueue
+```shell
+pip install -e git+git://github.com/IanLewis/kombu-appengine-pullqueue.git#egg=kombu-appengine-pullqueue
+```
 
 ## Setup
 
@@ -54,7 +56,7 @@ pullqueue_authenticate client_secrets.json credentials
 After you do that you can insert tasks the normal way on App Engine via the App
 Engine SDK:
 
-```
+```python
 import json
 from google.appengine.api import taskqueue
 
@@ -66,7 +68,7 @@ q.add([taskqueue.Task(payload=payload_str, method='PULL')])
 Or you can use kombu to add tasks. Here I'll assume you are on App Engine and
 are storing your credentials on a datastore entity:
 
-```
+```python
 from kombu import Connection
 from oauth2client.appengine import StorageByKeyName
 
@@ -94,7 +96,7 @@ are running outside of App Engine so credentials are loaded from a file.
 We use the `SimpleQueue` class which is part of kombu. It provides a very
 simple queue interface that is much like the standard python `Queue` class.
 
-```
+```python
 import logging
 from kombu import Connection
 from oauth2client.file import Storage
@@ -136,7 +138,7 @@ We can expand upon the example above and create a worker that spawns a number
 of processes to run tasks in parallel. We'll use the same worker function from
 above. We just create a number of processes that call the worker function.
 
-```
+```python
 import multiprocessing
 
 from oauth2client.file import Storage

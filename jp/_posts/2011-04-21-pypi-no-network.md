@@ -43,7 +43,7 @@ pip install mybundle.pybundle
 
 もちろん、 [virtualenv](/jp/virtualenv-pip-fabric) と組み合わせて使えます。
 
-**ファイルの拡張子は pybundle じゃないと install コマンドがバンドルを認識してくれないので、ご注意**
+**注意：** ファイルの拡張子は pybundle じゃないと install コマンドがバンドルを認識してくれない
 
 バンドルは単の zip ファイル:
 

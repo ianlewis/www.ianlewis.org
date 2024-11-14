@@ -10,7 +10,7 @@ render_with_liquid: false
 
 [夏のPython温泉](http://d.hatena.ne.jp/Voluntas/20090516/1242482537) で [Bob様](http://bob.pythonmac.org/) が作ってくれたピュアーパイソンクライアント [pytyrant](http://code.google.com/p/pytyrant/) は [酒徳さん](http://d.hatena.ne.jp/perezvon/) の [python-tokyotyrant](http://code.google.com/p/python-tokyotyrant/) より速いという話を 聞いたと [moriyoshiさん](http://d.hatena.ne.jp/moriyoshi/) に言った。それで、moriyoshiさんはprofileのテストを作ってくれたけど、結果として、pytyrantとpython-tokyotyrantはあまり変わらないのが出た。</p>
 
-```
+```python
 # http://www.smipple.net/snippet/moriyoshi/Benchmark%20code%20for%20pytyrant%20and%20python-tokyotyrant
 
 from cProfile import run
@@ -73,7 +73,7 @@ run('doit(PyTokyoTyrantTest, size=100, num_attr=50000)')
 
 でも、このコードは一つのスレッドでテストしている。複数のクライアントが同時に接続している場合はどうかと思って、今日テストを作ってみた。
 
-```
+```python
 # http://www.smipple.net/snippet/IanLewis/Multi-client%20benchmark%20for%20python-tokyotyrant%20and%20pytyrant
 
 import tokyotyrant
@@ -179,7 +179,7 @@ for x in range(3):
 
 これを実行するとpytyrantのほうがずっと速い.
 
-```
+```text
 python-tokyotyrant
 ********************
 Running 20 threads took 6.755 seconds
@@ -190,7 +190,7 @@ Running 20 threads took 30.575 seconds
 Running 20 threads took 34.699 seconds
 ```
 
-```pytyrant
+```text
 ********************
 Running 20 threads took 1.748 seconds
 Running 20 threads took 1.736 seconds

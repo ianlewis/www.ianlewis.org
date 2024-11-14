@@ -53,9 +53,9 @@ run, fabric from vagrant but I did it the other way around so it's a bit like
 the tail wagging the dog but it got the job done. This also allowed me to piggyback
 on Vagrant's SSH setup of the VM and use that when running Ansible.
 
-I created a simple Vagrantfile:
+I created a simple `Vagrantfile`:
 
-```
+```ruby
 # -*- mode: ruby -*-
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -69,7 +69,7 @@ And then I created a Fabric task to set up the environment. Here I create a
 temporary file that holds the ssh client configuration and I set it to
 `env.ssh_config_path` so that Fabric will use it when running remote commands.
 
-```
+```python
 import tempfile
 from fabric.api import task, env, settings
 
@@ -118,7 +118,7 @@ Now I create some tasks to start, stop, and delete VMs. After creating
 an instance I call the `_config_ssh()` function again so that the VM's
 configuration get's added to the SSH config.
 
-```
+```python
 from fabric.api import task, local
 from fabric.decorators import runs_once
 from fabric.colors import green
