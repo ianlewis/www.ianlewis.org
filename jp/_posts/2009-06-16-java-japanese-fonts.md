@@ -12,5 +12,7 @@ LinuxではJavaは標準に日本語フォントが大体インストールさ�
 
 Ubuntuでは、このようにFontインストールが済む:
 
-    mkdir -p <jvm>/jre/lib/fonts/fallback
-    cp /usr/share/fonts/truetype/vlgothic/*.ttf <jvm>/jre/lib/fonts/fallback
+```shell
+mkdir -p <jvm>/jre/lib/fonts/fallback
+cp /usr/share/fonts/truetype/vlgothic/*.ttf <jvm>/jre/lib/fonts/fallback
+```

@@ -99,7 +99,7 @@ Processes can start other processes using the `fork` and `exec` syscalls. When t
 
 Zombie processes are processes that have stopped running but their process table entry still exists because the parent process hasn't retrieved it via the `wait` syscall. Technically each process that terminates is a zombie for a very short period of time but they could live for longer.
 
-Longer lived zombie processes occur when parent processes don't call the `wait` syscall after the child process has finished. One situation where this occurs is when the parent process is poorly written and simply omits the `wait` call or when the parent process dies before the child and the new parent process does not call `wait` on it. When a process' parent dies before the child, the OS assigns the child process to the "init" process or PID 1. i.e. The init process "adopts" the child process and becomes its parent. This means that now when the child process exits the new parent (init) must call `wait `to get its exit code or its process table entry remains forever and it becomes a zombie.
+Longer lived zombie processes occur when parent processes don't call the `wait` syscall after the child process has finished. One situation where this occurs is when the parent process is poorly written and simply omits the `wait` call or when the parent process dies before the child and the new parent process does not call `wait` on it. When a process' parent dies before the child, the OS assigns the child process to the "init" process or PID 1. i.e. The init process "adopts" the child process and becomes its parent. This means that now when the child process exits the new parent (init) must call `wait` to get its exit code or its process table entry remains forever and it becomes a zombie.
 
 In containers, one process must be the init process for each PID namespace. With Docker, each container usually has its own PID namespace and the ENTRYPOINT process is the init process. However, as I noted in my [previous post](https://www.ianlewis.org/en/what-are-kubernetes-pods-anyway) on Kubernetes pods, a container can be made to run in another container's namespace. In this case, one container must assume the role of the init process, while others are added to the namespace as children of the init process.
 
@@ -179,8 +179,8 @@ Hopefully this post helped in illuminating a core part of Kubernetes. Let me kno
 
 - Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
 - Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter (While you're at it follow [me](https://twitter.com/IanMLewis) too!)
-- Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
-- Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
+- Join the Kubernetes [Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
+- Contribute to the Kubernetes project on [GitHub](https://github.com/kubernetes/kubernetes)
 
 Hope to see you soon!
 

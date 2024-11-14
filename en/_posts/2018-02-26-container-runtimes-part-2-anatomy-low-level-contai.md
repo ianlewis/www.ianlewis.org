@@ -161,7 +161,11 @@ acbuild write hello-0.0.1-linux-amd64.aci
 acbuild end
 ```
 
+<!-- markdownlint-disable no-trailing-punctuation -->
+
 ## Adiós!
+
+<!-- markdownlint-enable no-trailing-punctuation -->
 
 I hope this helped you get an idea of what low-level container runtimes are. While most users of containers will use higher-level runtimes, it's good to know how containers are working underneath the covers for troubleshooting issues and debugging.
 
@@ -173,7 +177,7 @@ Until then, you can get more involved with the Kubernetes community via these ch
 
 - Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
 - Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter
-- Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
-- Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
+- Join the Kubernetes [Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
+- Contribute to the Kubernetes project on [GitHub](https://github.com/kubernetes/kubernetes)
 
 _> Thanks to [Craig Box](https://twitter.com/craigbox), Jack Wilbur, Philip Mallory, [David Gageot](https://twitter.com/dgageot), Jonathan MacMillan, and [Maya Kaczorowski](https://twitter.com/MayaKaczorowski) for reviewing drafts of this post._

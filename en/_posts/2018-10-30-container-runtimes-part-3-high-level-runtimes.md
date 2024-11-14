@@ -114,8 +114,8 @@ Until then, you can get more involved with the Kubernetes community via these ch
 
 - Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
 - Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter
-- Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
-- Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
+- Join the Kubernetes [Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
+- Contribute to the Kubernetes project on [GitHub](https://github.com/kubernetes/kubernetes)
 
 If you have any suggestions or ideas for blog posts, send them to me on Twitter at [@IanMLewis](https://twitter.com/IanMLewis) via either a reply or DM. Thanks!
 

@@ -174,9 +174,9 @@ class HelloWorldHandler(BaseHandler):
 ディレクトリに入っています。 メール受信ハンドラーとか、 i18n とかのサポートモジュールが入っています。
 英語ドキュメントしかないのですが、以下のドキュメント に拡張の使い方について書いています。
 
-1.  [標準拡張のドキュメント](http://www.tipfy.org/wiki/extensions/#extension-pages)
-2.  [拡張をプロジェクトに追加](http://www.tipfy.org/wiki/guide/extensions/#adding-or-removing-extensions)
-3.  [拡張を作る方法](http://www.tipfy.org/wiki/guide/extensions/create/#creating-extensions)
+1. [標準拡張のドキュメント](http://www.tipfy.org/wiki/extensions/#extension-pages)
+2. [拡張をプロジェクトに追加](http://www.tipfy.org/wiki/guide/extensions/#adding-or-removing-extensions)
+3. [拡張を作る方法](http://www.tipfy.org/wiki/guide/extensions/create/#creating-extensions)
 
 # まとめ
 

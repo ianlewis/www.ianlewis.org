@@ -27,7 +27,7 @@ Container Builder runs build steps in the order you specify but those build step
 
 Kicking off a build from a simple Dockerfile is easy. This gcloud command will build your Dockerfile and store it with the GCR image name you specify.
 
-```
+```shell
 gcloud container builds submit --tag gcr.io/[PROJECT-ID]/[IMAGE] .
 ```
 
@@ -80,7 +80,7 @@ CMD ["/testapp"]
 
 You can submit a build with a cloudbuild.yaml like so:
 
-```
+```shell
 gcloud container builds submit --config cloudbuild.yaml
 ```
 

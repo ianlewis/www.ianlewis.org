@@ -18,7 +18,7 @@ Python コミュニティの中により楽しくなるのであれば、何で�
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/rgsX3l0ePS28Da" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/IanMLewis/sphinx-11-i18n" title="Sphinx 1.1 i18n 機能紹介" target="_blank">Sphinx 1.1 i18n 機能紹介</a> </strong> from <strong><a href="https://www.slideshare.net/IanMLewis" target="_blank">Ian Lewis</a></strong> </div>
 
-##「お前、誰よ」写真まとめ
+## 「お前、誰よ」写真まとめ
 
 ![](/assets/images/649/dsc_0076.jpg)
 

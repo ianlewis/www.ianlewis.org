@@ -12,10 +12,10 @@ One of the terms you hear a lot when dealing with containers is "container runti
 
 This post is the first in a series that will be in four parts:
 
-1.  Part 1: Intro to Container Runtimes: why are they so confusing?
-1.  Part 2: Deep Dive into Low-Level Runtimes
-1.  Part 3: Deep Dive into High-Level Runtimes
-1.  Part 4: Kubernetes Runtimes and the CRI
+1. Part 1: Intro to Container Runtimes: why are they so confusing?
+2. Part 2: Deep Dive into Low-Level Runtimes
+3. Part 3: Deep Dive into High-Level Runtimes
+4. Part 4: Kubernetes Runtimes and the CRI
 
 This post will explain what container runtimes are and why there is so much confusion. I will then dive into different types of container runtimes, what they do, and how they are different from each other.
 
@@ -45,9 +45,9 @@ Because of that, Docker, Google, CoreOS, and other vendors created the [Open Con
 
 It was initially confusing what Docker had contributed to OCI. What they contributed was a standard way to "run" containers but nothing more. They didn't include the image format or registry push/pull formats. When you run a Docker container, these are the steps Docker actually goes through:
 
-1.  Download the image
-1.  Unpack the image into a "bundle". This flattens the layers into a single filesystem.
-1.  Run the container from the bundle
+1. Download the image
+2. Unpack the image into a "bundle". This flattens the layers into a single filesystem.
+3. Run the container from the bundle
 
 What Docker standardized was only #3. Until that was clarified, everyone had thought of a container runtime as supporting all of the features Docker supported. Eventually, Docker folks clarified that the [original spec](https://github.com/opencontainers/runtime-spec/commit/77d44b10d5df53ee63f0768cd0a29ef49bad56b6#diff-b84a8d65d8ed53f4794cd2db7e8ea731R45) stated that only the "running the container" part that made up the runtime. This is a disconnect that continues even today, and makes "container runtimes" such a confusing topic. I'll hopefully show that neither side is totally wrong and I'll use the term pretty broadly in this blog post.
 
@@ -79,7 +79,7 @@ Until then, you can get more involved with the Kubernetes community via these ch
 
 - Post and answer questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
 - Follow [@Kubernetesio](https://twitter.com/kubernetesio) on Twitter
-- Join the Kubernetes[ Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
-- Contribute to the Kubernetes project on[ GitHub](https://github.com/kubernetes/kubernetes)
+- Join the Kubernetes [Slack](http://slack.k8s.io/) and chat with us. (I'm ianlewis so say Hi!)
+- Contribute to the Kubernetes project on [GitHub](https://github.com/kubernetes/kubernetes)
 
 > Thanks to [Sandeep Dinesh](https://twitter.com/SandeepDinesh), [Mark Mandel](https://twitter.com/neurotic), [Craig Box](https://twitter.com/craigbox), [Maya Kaczorowski](https://twitter.com/mayakaczorowski), and Joe Burnett for reviewing drafts of this post.

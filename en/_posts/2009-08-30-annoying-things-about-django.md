@@ -45,7 +45,7 @@ per application basis. But isn't there something that could be done? I'm
 forced by other folks to basically reimplement the auth module for every
 project because there is only one users table.
 
-# GenericForeignKeys Look Awful in the Admin.
+# GenericForeignKeys Look Awful in the Admin
 
 Generic foreign keys actually consist of two fields, a link to the
 content type and the actual key. But these look like crap in the admin
@@ -89,7 +89,7 @@ hidden field in the form. This mostly works but is a crappy workaround
 and potential security problem if you have people using the admin who
 aren't fully trusted.
 
-# Applications Don't Have Their Own Settings.
+# Applications Don't Have Their Own Settings
 
 This means that other applications can't easily add settings (types
 etc.) to other applications. This results in situations like

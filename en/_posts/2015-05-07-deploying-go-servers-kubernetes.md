@@ -8,8 +8,6 @@ tags: golang kubernetes docker google-container-engine
 render_with_liquid: false
 ---
 
-> **UPDATE (2015/07/13)**: Now using the v1 API.
-
 > Cross posted on [medium](https://medium.com/@IanMLewis/deploying-go-servers-with-kubernetes-on-container-engine-3fee717a7e2a)
 
 I was trying to get a Go app running on Container Engine and couldn't quite
@@ -59,6 +57,8 @@ gcloud preview docker push gcr.io/<project-id>/outyet:v1
 ```
 
 ## Kubernetes Configuration
+
+> **UPDATE (2015/07/13)**: Now using the v1 API.
 
 We will create a [replication
 controller](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/replication-controller.md)

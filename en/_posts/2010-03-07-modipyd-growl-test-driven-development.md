@@ -23,17 +23,19 @@ and tools.
 
 When run on the console it looks something like this:
 
-    ian@macbook-ian:~/src/mylib$ pyautotest
-    ....
-    ----------------------------------------------------------------------
-    Ran 4 tests in 0.002s
+```shell
+ian@macbook-ian:~/src/mylib$ pyautotest
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
 
-    OK
-    ..........
-    ----------------------------------------------------------------------
-    Ran 10 tests in 0.001s
+OK
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
 
-    OK
+OK
+```
 
 Here I edited a couple files and pyautotest ran the tests that are
 dependent on those files.
@@ -52,20 +54,28 @@ development tool. Every time you save a file you get a notification if
 you did something dumb and broke a dependent test. Just install
 growltestrunner:
 
-    hg clone https://bitbucket.org/ae35/growltestrunner/
-    cd growltestrunner
-    python setup.py install
+```shell
+hg clone https://bitbucket.org/ae35/growltestrunner/
+cd growltestrunner
+python setup.py install
+```
 
 ... and invoke pyautotest in your project directory like below
 
 For growl:
 
-    pyautotest -r growltestrunner.GrowlTestRunner
+```shell
+pyautotest -r growltestrunner.GrowlTestRunner
+```
 
 For pynotify:
 
-    pyautotest -r growltestrunner.PynotifyTestRunner
+```shell
+pyautotest -r growltestrunner.PynotifyTestRunner
+```
 
 For Snarl:
 
-    pyautotest -r growltestrunner.SnarlTestRunner
+```shell
+pyautotest -r growltestrunner.SnarlTestRunner
+```

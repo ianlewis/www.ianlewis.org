@@ -32,7 +32,7 @@ CMD [ "python", "-m", "SimpleHTTPServer", "8000" ]
 
 This is a really simple docker file but if you actually build it and look at the size you'll notice it's pretty big?
 
-```
+```text
 VIRTUAL SIZE
 167.4 MB
 ```

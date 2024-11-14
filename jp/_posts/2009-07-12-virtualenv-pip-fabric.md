@@ -13,7 +13,7 @@ render_with_liquid: false
 
 virtualenvは環境を作ってくれるライブラリで、virtualenvwrapperはその作った環境を簡単に管理してくれるツールになります。
 
-# まず、virtualenv と virtualenvwrapper をインストール.
+# まず、virtualenv と virtualenvwrapper をインストール
 
 ```text
 easy_install virtualenv

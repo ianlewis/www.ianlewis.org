@@ -211,12 +211,9 @@ directory.
 
 You can find out more by reading these pages in the Tipfy documentation:
 
-1.  [Extension
-    pages](http://www.tipfy.org/wiki/extensions/#extension-pages)
-2.  [Adding Or Removing
-    Extensions](http://www.tipfy.org/wiki/guide/extensions/#adding-or-removing-extensions)
-3.  [Creating
-    Extensions](http://www.tipfy.org/wiki/guide/extensions/create/#creating-extensions)
+1. [Extension pages](http://www.tipfy.org/wiki/extensions/#extension-pages)
+2. [Adding Or Removing Extensions](http://www.tipfy.org/wiki/guide/extensions/#adding-or-removing-extensions)
+3. [Creating Extensions](http://www.tipfy.org/wiki/guide/extensions/create/#creating-extensions)
 
 # Conclusion
 
