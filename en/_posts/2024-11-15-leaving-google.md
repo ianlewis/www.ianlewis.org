@@ -40,10 +40,9 @@ found [PyCon JP](https://www.pycon.jp/) to run the Python conferences in Japan,
 and organized several IT meetups. So when I was asked if I would be interested
 in joining a new Cloud DevRel team, working in DevRel seemed like a good fit.
 
-
 ## Joining Google
 
-Joining Google was both magical and terrifying at the same time. I had never
+Working at Google was both magical and terrifying at the same time. I had never
 worked at a company bigger than ~600 people and Google had about 40k employees
 at the time. Google was basically my dream job.
 
@@ -61,7 +60,6 @@ first year I held events and gave presentations in
 visited two Google data centers in Washington State and Taiwan, and attended
 the very first KubeCon.
 
-
 ![Coffee with Googlers](/assets/images/2024-11-15-leaving-google/coffee-with-googlers.jpg "Coffee with Googlers")
 ![Me and Kaz](/assets/images/2024-11-15-leaving-google/ian-and-kaz.jpg "Me and Kaz")
 ![Eating out after KubeCon 2015](/assets/images/2024-11-15-leaving-google/kubecon-2015.jpg "Eating out after KubeCon 2015")
@@ -78,7 +76,6 @@ Some of the highlights for me were working on the
 [gVisor](https://gvisor.dev/), and building
 [SLSA provenance generators](https://github.com/slsa-framework/slsa-github-generator)
 for GitHub Actions.
-
 
 ## Challenges
 
