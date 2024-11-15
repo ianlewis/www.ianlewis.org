@@ -14,7 +14,7 @@ passing
 [JLPT](https://en.wikipedia.org/wiki/Japanese-Language_Proficiency_Test) N1 in 2013.
 
 My current interests are in Container Native Security, Supply Chain Security,
-Containers, and [Kubernetes](https://kubernetes.io/). I am currently working as
+Containers, and [Kubernetes](https://kubernetes.io/). I previously worked as
 a Developer Advocate for [Google Cloud Platform](https://cloud.google.com/).
 The opinions stated here are my own, not necessarily those of my company.
 

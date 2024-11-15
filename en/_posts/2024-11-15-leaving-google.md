@@ -110,11 +110,12 @@ powerless and stagnant. COVID only amplified these problems.
 ## Focusing on my Passions
 
 So after much soul searching, I decided to leave Google behind and take some
-time off before pursuing my passions as a software engineer. I’m starting by
-taking it easy, working on some open source projects, and visiting with friends
-and family over the next few months. I’ll be staying in the Tokyo area so I
-won’t be far from all of my local friends.
+time off before going back to my roots and pursuing my passions as a software
+engineer. I’m starting by taking it easy, working on some open source projects,
+and visiting with friends and family over the next few months. I’ll be staying
+in the Tokyo area so I won’t be far from all of my local friends.
 
-Thanks to all the folks I worked with along the way!
+Thanks to all the folks I worked with along the way! I feel most grateful for
+your support.
 
 [^1]: API Experts eventually became the [Google Developer Experts (GDE)](https://developers.google.com/community/experts) program.
