@@ -63,7 +63,7 @@ the very first KubeCon.
 ![Coffee with Googlers](/assets/images/2024-11-15-leaving-google/coffee-with-googlers.jpg "Coffee with Googlers")
 ![Me and Kaz](/assets/images/2024-11-15-leaving-google/ian-and-kaz.jpg "Me and Kaz")
 ![Eating out after KubeCon 2015](/assets/images/2024-11-15-leaving-google/kubecon-2015.jpg "Eating out after KubeCon 2015")
-![Me and Monotaro at PyCon JP 2015](/assets/images/2024-11-15-leaving-google/kubecon-2015.jpg "Me and Monotaro at PyCon JP 2015")
+![Me and Monotaro at PyCon JP 2015](/assets/images/2024-11-15-leaving-google/monotaro.jpg "Me and Monotaro at PyCon JP 2015")
 
 Over time I focused on many different products. I started out working on
 [Cloud Bigtable](https://cloud.google.com/bigtable?hl=en) and supporting
