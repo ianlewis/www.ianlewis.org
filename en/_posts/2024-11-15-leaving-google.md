@@ -14,11 +14,11 @@ other challenges.
 
 ## Before Google
 
-Joining Google in January 2015 seemed like a natural fit at the time. My first
-exposure to Google Cloud came in the summer of 2008 when I attended Google
-Developer Day. Google App Engine for Python was just released and it felt
-pretty special. It supported Python only, which was unusual at the time and
-this was a boon for the Python community in Japan.
+Joining Google in January 2015 seemed like a natural career progression. My
+first exposure to Google Cloud came in the summer of 2008 when I attended
+Google Developer Day. Google App Engine for Python was just released and it
+felt pretty special. It supported Python only, which was unusual at the time
+and this was a boon for the Python community in Japan.
 
 I attended a workshop to develop an application on App Engine and there I met
 many people who would be long lasting friends.
@@ -35,10 +35,11 @@ Relations ahead of me. Other friends like
 [Yoshi Yamaguchi](https://twitter.com/ymotongpoo) and
 [Brian Dorsey](https://twitter.com/briandorsey) also joined Google.
 
-I had been doing a lot in various developer communities in Tokyo. I helped
+I had also been doing a lot in various developer communities in Tokyo. I helped
 found [PyCon JP](https://www.pycon.jp/) to run the Python conferences in Japan,
-and organized several IT meetups. So when I was asked if I would be interested
-in joining a new Cloud DevRel team, working in DevRel seemed like a good fit.
+and was organizing several IT meetups. So when I was asked if I would be
+interested in joining a new Cloud DevRel team, working in DevRel seemed like a
+good fit.
 
 ## Joining Google
 
@@ -65,10 +66,10 @@ the [very first KubeCon](https://ti.to/kubecon/kubecon-2015) ([sched](https://ku
 ![Eating out after KubeCon 2015](/assets/images/2024-11-15-leaving-google/kubecon-2015.jpg "Eating out after KubeCon 2015"){:style="width: 50%"}
 ![Me and Monotaro at PyCon JP 2015](/assets/images/2024-11-15-leaving-google/monotaro.jpg "Me and Monotaro at PyCon JP 2015"){:style="width: 30%"}
 
-Over time I focused on many different products. I started out working on
-[Cloud Bigtable](https://cloud.google.com/bigtable?hl=en) and supporting
-customers in China and Taiwan. I moved on to focus on areas like Kubernetes,
-Cloud Native Security, and supply chain security.
+Over time I focused on many different products. I started out working on [Cloud
+Bigtable](https://cloud.google.com/bigtable?hl=en) and supporting customers in
+China and Taiwan. After that, I moved on to focus on areas like Kubernetes,
+Cloud Native Security, and Software Supply Chain Security.
 
 Some of the highlights for me were working on the
 [Open Source release](https://www.youtube.com/watch?v=TJJT8wc0T_c) of
@@ -80,13 +81,14 @@ for GitHub Actions.
 
 As cool as many of the projects were at Google, it didn’t take long before I
 felt limited by my role in DevRel. DevRel leadership's vision did not match my
-own vision of Developer Advocates as community leaders, developer experience
-advocates, and project contributors. I resolved to forge my own path by working
-on projects like gVisor and SLSA, and had some success. gVisor as an open
-source project has supported
-[several other companies](https://gvisor.dev/users/) in addition to Google’s
-first party [GKE Sandbox](https://cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods).
+own vision of Developer Advocates as community leaders, advocates for end-user
+developer experience, and project contributors. I resolved to forge my own path
+by working on projects like gVisor and SLSA, and had some success.
 
+gVisor as an open source project has supported
+[several other companies](https://gvisor.dev/users/) in addition to Google’s
+first party
+[GKE Sandbox](https://cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods).
 For example, Cloudflare uses gVisor in their
 [Cloudflare Pages](https://blog.cloudflare.com/cloudflare-pages-build-improvements/)
 product and their upcoming
