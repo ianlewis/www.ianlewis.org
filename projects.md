@@ -6,7 +6,7 @@ permalink: /projects
 
 These are some of my current and past projects.
 
-## Current Projects
+## Past Projects
 
 ---
 
@@ -22,8 +22,6 @@ L3](https://slsa.dev/spec/v1.0/levels#build-l3) at
 [slsa-framework/slsa-github-generator](https://github.com/slsa-framework/slsa-github-generator)
 and SLSA provenance verification at
 [slsa-framework/slsa-verifier](https://github.com/slsa-framework/slsa-verifier).
-
-## Past Projects
 
 ---
 
