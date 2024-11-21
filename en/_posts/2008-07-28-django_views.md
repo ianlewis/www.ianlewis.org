@@ -8,14 +8,49 @@ tags: python pylons appengine django web applications
 render_with_liquid: false
 ---
 
-<p>I was thinking about using <a href="http://www.djangoproject.com/" title="Django">Django</a> for one of my projects on <a href="http://code.google.com/appengine/" title="Google App Engine">GAE</a> because it seems like a popular project and somewhat easy to use, but I'm not quite understanding yet why it's better to have helper functions rather than controller/handler classes like <a href="http://pylonshq.com/" title="Pylons">Pylons</a> or <a href="http://code.google.com/appengine/" title="Google App Engine">GAE</a>'s normal WSGI handling has. With handler classes my controller might look like:</p>
+I was thinking about using [Django](http://www.djangoproject.com) for one of my
+projects on [GAE](http://code.google.com/appengine/) because it seems like a
+popular project and somewhat easy to use, but I'm not quite understanding yet
+why it's better to have helper functions rather than controller/handler classes
+like [Pylons](http://pylonshq.com/) or
+[GAE](http://code.google.com/appengine/)'s normal WSGI handling has. With
+handler classes my controller might look like:
 
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> google.<span style="color: black;">appengine</span>.<span style="color: black;">ext</span>.<span style="color: black;">webapp</span> <span style="color: #ff7700;font-weight:bold;">import</span> RequestHandler<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><span style="color: #ff7700;font-weight:bold;">class</span> MainHandler<span style="color: black;">&#40;</span>webapp.<span style="color: black;">RequestHandler</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; <span style="color: #ff7700;font-weight:bold;">def</span> get<span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; &nbsp; <span style="color: #808080; font-style: italic;"># Read data from BigTable here</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td>&nbsp; &nbsp; <span style="color: #008000;">self</span>.<span style="color: black;">response</span>.<span style="color: black;">out</span>.<span style="color: black;">write</span><span style="color: black;">&#40;</span>outputhtml<span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>&nbsp; <span style="color: #ff7700;font-weight:bold;">def</span> post<span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"></div></td><td>&nbsp; &nbsp; <span style="color: #808080; font-style: italic;"># Write data to BigTable here</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc1"></div></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; <span style="color: #808080; font-style: italic;">#redirect back to the url</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; <span style="color: #008000;">self</span>.<span style="color: black;">redirect</span><span style="color: black;">&#40;</span><span style="color: #008000;">self</span>.<span style="color: black;">request</span>.<span style="color: black;">url</span><span style="color: black;">&#41;</span></td></tr></table></div>
+from google.appengine.ext.webapp import RequestHandler
 
-<p>Whereas the django helper function might look like</p>
+```python
+class MainHandler(webapp.RequestHandler):
+  def get(self):
+    # Read data from BigTable here
+    self.response.out.write(outputhtml)
 
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> django.<span style="color: black;">http</span> <span style="color: #ff7700;font-weight:bold;">import</span> HttpResponse, HttpResponseRedirect<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><span style="color: #ff7700;font-weight:bold;">def</span> mainview<span style="color: black;">&#40;</span>request<span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> request.<span style="color: black;">method</span> == <span style="color: #483d8b;">'POST'</span>:<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; &nbsp; <span style="color: #808080; font-style: italic;"># Write to BigTable Here</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td>&nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> HttpResponse<span style="color: black;">&#40;</span>outputhtml<span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>&nbsp; <span style="color: #ff7700;font-weight:bold;">elif</span> request.<span style="color: black;">method</span> == <span style="color: #483d8b;">'GET'</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>&nbsp; &nbsp; <span style="color: #808080; font-style: italic;"># Read from BigTable Here</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"></div></td><td>&nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> HTTPResponseRedirect<span style="color: black;">&#40;</span>request.<span style="color: black;">url</span><span style="color: black;">&#41;</span></td></tr></table></div>
+  def post(self):
+    # Write data to BigTable here
 
-<p>While the <a href="http://www.djangoproject.com/" title="Django">Django</a> method might have the potential to have be a bit less verbose it feels like it would be harder to do things correctly, like factor code etc. I also don't really like the conditional checks to see what kind of HTTP method was used. So either I would need to split GETs and POSTs to separate urls or just live with the conditional checks.</p>
+    #redirect back to the url
+    self.redirect(self.request.url)
+```
 
-<p>Personally I feel better with the <a href="http://pylonshq.com/" title="Pylons">Pylons</a>-ish controller/handler approach. Anyone have an opinion?</p>
+Whereas the django helper function might look like:
+
+```python
+from django.http import HttpResponse, HttpResponseRedirect
+
+def mainview(request):
+  if request.method == 'POST':
+    # Write to BigTable Here
+    return HttpResponse(outputhtml)
+  elif request.method == 'GET':
+    # Read from BigTable Here
+    return HTTPResponseRedirect(request.url)
+```
+
+While the [Django](http://www.djangoproject.com/) method might have the
+potential to have be a bit less verbose it feels like it would be harder to do
+things correctly, like factor code etc. I also don't really like the
+conditional checks to see what kind of HTTP method was used. So either I would
+need to split GETs and POSTs to separate urls or just live with the conditional
+checks.
+
+Personally I feel better with the [Pylons](http://pylonshq.com/)-ish
+controller/handler approach. Anyone have an opinion?
