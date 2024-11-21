@@ -16,9 +16,9 @@ like [Pylons](http://pylonshq.com/) or
 [GAE](http://code.google.com/appengine/)'s normal WSGI handling has. With
 handler classes my controller might look like:
 
+```python
 from google.appengine.ext.webapp import RequestHandler
 
-```python
 class MainHandler(webapp.RequestHandler):
   def get(self):
     # Read data from BigTable here
