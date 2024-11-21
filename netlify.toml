@@ -12,6 +12,11 @@ command = "bundle exec jekyll build"
   status = 301
 
 [[redirects]]
+  from = "/index.php/*"
+  to = "/:splat"
+  status = 301
+
+[[redirects]]
   from = "/en/tag/gallery2%20plugin/"
   to = "/en/tag/gallery2-plugin/"
   status = 301
