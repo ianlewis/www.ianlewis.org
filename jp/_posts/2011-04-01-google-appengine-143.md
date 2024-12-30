@@ -199,5 +199,5 @@ queue:
 
 このリリースも結構大きくて、いろいろ改善されています。 ファイルAPIを 早速触ってみたいところです。
 
-- ダウンロード: <http://code.google.com/intl/en/appengine/downloads.html>
-- リリースノート: <http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes>
+- [ダウンロード](http://code.google.com/intl/en/appengine/downloads.html)
+- [リリースノート](http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes)
