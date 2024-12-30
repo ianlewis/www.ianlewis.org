@@ -16,20 +16,7 @@ Pollsというアプリを動かすまで出来た人がほとんどで、すご
 
 みなさんお疲れ様でした！
 
-<div class="lightbox" data-align="left">
-
-</assets/images/gallery/dcf_0307_thumbnail.jpg>
-</assets/images/gallery/dcf_0307_big.jpg>
-
-Django 勉強会 Disc. 8
-
-</div>
-
-<div class="lightbox" data-align="left">
-
-</assets/images/gallery/dcf_0308_thumbnail.jpg>
-</assets/images/gallery/dcf_0308_big.jpg>
-
-Hands-on C (GAE)
-
+<div>
+<a href="/assets/images/gallery/dcf_0307_big.jpg"><img title="Django 勉強会 Disc. 8" src="/assets/images/gallery/dcf_0307_thumbnail.jpg" /></a>
+<a href="/assets/images/gallery/dcf_0308_big.jpg"><img title="Hands-on C (GAE)" src="/assets/images/gallery/dcf_0308_thumbnail.jpg" /></a>
 </div>

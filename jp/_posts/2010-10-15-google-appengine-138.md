@@ -43,7 +43,5 @@ builtins:
   efficient enough for this query and your data. Please add a
   composite index for this query." というエラーが出る可能性が低くなりました。
 
-リリースノートはこちら:
-<http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes>
-
-ダウンロードはこちら: <http://code.google.com/intl/ja/appengine/downloads.html>
+- [ダウンロード](http://code.google.com/intl/ja/appengine/downloads.html)
+- [リリースノート](http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes)

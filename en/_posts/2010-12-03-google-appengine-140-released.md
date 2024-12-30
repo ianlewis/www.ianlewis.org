@@ -239,5 +239,4 @@ yet but you can download it from the links at the google project page.
   [google_appengine_1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=google_appengine_1.4.0.zip)
 - Java:
   [appengine-java-sdk-1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=appengine-java-sdk-1.4.0.zip)
-- Release Notes:
-  <http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes>
+- [Release Notes](http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes)
