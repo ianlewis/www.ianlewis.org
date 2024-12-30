@@ -8,6 +8,8 @@ tags: javascript mochikit
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 [JSON schema proposal](http://www.json.org/json-schema-proposal/)の実装した典型的javascript validatorを試してみとうと思って、[Python](http://www.python.org/)のインタラクティブシェルみたいなjavascriptインタラクティブ　インタープリターを使いたいとさらに思って、以前に使ってた[Bob](http://bob.pythonmac.org/)さんの[Mochikit](http://mochikit.com)インタープリターをまた取り出した。
 
 このインタープリターは Mochikitのいじりにすごくよかったけど、一般的なjavascriptをいろいろ試してみたいから、一般urlからインポートできるように、簡単な関数を作った。importjs(url)でどこからでも、javascriptをインポートして、インタラクティブシェルで直接触るようになった。コードは以下のよう
@@ -31,3 +33,5 @@ JSONSchema.validate(test, schema).valid;
 ```
 
 という風に入力しても、true　が出た。orz
+
+<!-- textlint-enable rousseau -->

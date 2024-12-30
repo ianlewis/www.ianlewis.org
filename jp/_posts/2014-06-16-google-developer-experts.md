@@ -8,6 +8,8 @@ tags: google appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 先週の月曜日(6/9)に公開されて、皆さんは多分見逃している人が多いと思いますが、[私は
 Google Developer Expert (旧Google Api Expert) を卒業しました](http://googledevjp.blogspot.jp/2014/06/google-api-expert-5.html)。私が3年半くらいやっていて、
 とても楽しかったです。Google IO に行ったり、地方のプログラマーと接したり、いろな貴重な経験を
@@ -85,3 +87,5 @@ Googleの皆さん、Developer Expert の皆さん、そしてたくさんでき
 お世話になりました！ ありがとうございました！
 
 ![まだ仲がいい](/assets/images/719/a2c_again_big.jpg)
+
+<!-- textlint-enable rousseau -->

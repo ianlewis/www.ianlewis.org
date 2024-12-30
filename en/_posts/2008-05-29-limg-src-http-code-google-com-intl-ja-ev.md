@@ -8,6 +8,8 @@ tags: python google javascript appengine google developer day 2008
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 [Google Developer Day Japan
 2008](http://code.google.com/intl/ja/events/developerday/2008/home.html) is
 being held on June 10th at Google's offices in Shibuya and I've registered to
@@ -97,3 +99,5 @@ $(document).ready(function() {
   });
 });
 ```
+
+<!-- textlint-enable rousseau -->

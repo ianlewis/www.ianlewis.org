@@ -8,6 +8,8 @@ tags: python iphone objective-c
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 今日、 Facebook iPhone アプリの作者 [Joe Hewitt](http://twitter.com/joehewitt)
 の発言がtwitterに流れた。
 
@@ -23,3 +25,5 @@ mind?](http://twitter.com/markhammonds/status/9813216986) (何で気変わった
 [joehewitt](http://twitter.com/joehewitt): @
 [markhammonds](http://twitter.com/markhammonds)
 [Python](http://twitter.com/joehewitt/status/9813387966)
+
+<!-- textlint-enable rousseau -->

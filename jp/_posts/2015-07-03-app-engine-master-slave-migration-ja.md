@@ -8,6 +8,8 @@ tags: appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 App Engineの一部のユーザーに最近は以下のようなメールが何件届いていると思います。こういうようなメールは英語で書かれいて、「英語を読むの面倒くせぇー、スルーしよう」ってメールを消す方が多いんじゃないかなと思うんだが、実は重要なお知らせです。
 
 ![Master-Slave Datastore Email](/assets/images/736/master-slave-datastore-email.png)
@@ -35,3 +37,5 @@ App Engineが最初にリリースされた時(2008年頃の夏頃)に、デー�
 もし、質問があったら、[@IanMLewis](https://twitter.com/IanMLewis)に連絡してください
 
 **Update:** [FAQ](http://qiita.com/IanMLewis/items/ffab882797df24757fa3)も作ってみたので、ご参考にしてください。
+
+<!-- textlint-enable rousseau -->

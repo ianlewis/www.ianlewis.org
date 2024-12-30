@@ -8,6 +8,8 @@ tags: tokyo
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Yesterday I attended the second [Tokyo
 Hackerspace](http://www.tokyohackerspace.com/) meeting. It was the first
 time I attended such the meetings which are being held weekly now. I
@@ -26,3 +28,5 @@ He also wrote [about the boards
 themselves](http://freaklabs.org/index.php/Blog/Misc/Dev-Boards-for-Tokyo-Hackerspace.html).
 
 ![image](http://farm4.static.flickr.com/3586/3631563925_08c1624968.jpg)
+
+<!-- textlint-enable rousseau -->

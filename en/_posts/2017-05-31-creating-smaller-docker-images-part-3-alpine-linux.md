@@ -8,6 +8,8 @@ tags: docker smaller-docker-images-series
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <img alt="alpine linux" title="alpine linux" class="align-center" src="/assets/images/761/alpinelinux-logo.png">
 
 This is the third post in a series on making smaller Docker images. In the [first post](/en/creating-smaller-docker-images) I talked about how to create smaller images by writing better Dockerfiles. In the [second post](/en/creating-smaller-docker-images-part2) I talked about how to squash layers using docker-squash to make smaller images. These methods are great but they won't help us if we choose large base images to start with!
@@ -70,3 +72,5 @@ CMD ['/myrepo/myapp']
 ```
 
 You can view the available packages for Alpine at [https://pkgs.alpinelinux.org/](https://pkgs.alpinelinux.org/)
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: kubernetes docker
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Recently I saw a tweet from the awesome Amy Codes (I really hope that's her real name) about Kubernetes Pods:
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">You know why containers in a pod are always scheduled together? It&#39;s cuz they&#39;re nested containers.<br><br>Mind. Blown.</p>&mdash; Amy Codes (@TheAmyCode) <a href="https://twitter.com/TheAmyCode/status/899462049184350208">August 21, 2017</a></blockquote>
@@ -107,3 +109,5 @@ You can also think of other types of abstractions you could use. Service meshes 
 You can also use multiple sidecars. There's nothing stopping you from using both the confd sidecar and istio sidecar at the same time. Applications can be combined in this way to build much more complex and reliable systems while keeping each individual app relatively simple.
 
 Hopefully that's given you a good idea of what Pods are and why they will be an essential part of deploying containers in the future. If you are interested in learning more about Kubernetes check out the [Kubernetes Slack](http://slack.kubernetes.io/). That's where the best Kubernetes developers get together to discuss all things Kubernetes. Check out the #kubernetes-users channel for general discussion on all things Kubernetes.
+
+<!-- textlint-enable rousseau -->

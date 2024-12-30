@@ -8,6 +8,8 @@ tags: tokyo
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Reiko and her dog Lala came over and we had a pretty relaxing weekend.
 On Saturday we went to Kita no maru park which is very close to the
 Emporer's palace in Tokyo. I like Kita no Maru because it's fairly open
@@ -39,3 +41,5 @@ crackers.
 Reiko also made meatball soup from iwashi. Iwashi are a type of Sardine
 called [South American
 Pilchard](http://en.wikipedia.org/wiki/Sardinops_sagax) in English.
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: docker smaller-docker-images-series
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 This is the second post in a series on making smaller Docker images. In my [previous blog post](https://www.ianlewis.org/en/creating-smaller-docker-images) I talked about how to create smaller Docker images but there were limits to
 how small we could make the images. I outlined a way in which you can make the
 layers you add to your Docker image smaller, but there may be times where it
@@ -127,3 +129,5 @@ docker-squash -from 18d8ebf067fd -i ... -o ...
 Docker-squash isn’t a panacea but it does add one more tool to your toolbox for
 managing Docker image sizes. [Give it a try](https://github.com/jwilder/docker-squash) and let me know what you think in the comments below or by pinging [me on Twitter](https://twitter.com/IanMLewis). In the next couple of blog posts I’ll talk about some more tools and ways to
 lower the size of Docker images.
+
+<!-- textlint-enable rousseau -->

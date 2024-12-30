@@ -8,6 +8,8 @@ tags: python google appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 ![image](/assets/images/643/python-powered-w-200x80.png)
 
 ![image](/assets/images/appengine/appengine_lowres_thumbnail.png)
@@ -39,3 +41,5 @@ list](http://groups.google.com/group/google-app-engine-japan).
 I hope to let people in the 'States and elsewhere know about what's
 going on in Japan and introduce them to Japan and it's developers. Hope
 to talk to you soon\!
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: homepage css redesign
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I recently redesigned my homepage to streamline it and give it a
 different look and feel. Here's what the old site looked like since I
 converted it to [Django](https://www.djangoproject.com/) back [3 or so
@@ -83,3 +85,5 @@ use [Hyde](http://hyde.github.com/) or
 site generator but I think I can hold off on that for a while at least.
 Now that I don't have to worry so much about the speed of the site I'd
 like to spend more time making content.
+
+<!-- textlint-enable rousseau -->

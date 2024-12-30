@@ -8,6 +8,8 @@ tags: django nginx path_info script_name
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 One problem I keep encountering with setting up fastcgi with Django is
 that the default nginx fastcgi parameters cause django to load the top
 url no matter what url you try to go to. This is because the default
@@ -22,3 +24,5 @@ fastcgi_param QUERY_STRING $query_string;
 fastcgi_param CONTENT_TYPE $content_type;
 fastcgi_param CONTENT_LENGTH $content_length;
 ```
+
+<!-- textlint-enable rousseau -->

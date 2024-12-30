@@ -8,6 +8,8 @@ tags: mercurial hg
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 mercurial usually shows inactive branches when running "hg branches" but
 that's kind of annoying if you have lots of old inactive branches. So I
 recently set up my personal .hgrc to hide inactive branches by creating
@@ -40,3 +42,5 @@ This way though there isn't a good way to show all branches if you have
 set up an alias so you might want to give the alias a different name
 like "abranches" for "active branches" so that you can show all branches
 by using "hg branches".
+
+<!-- textlint-enable rousseau -->

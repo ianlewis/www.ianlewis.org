@@ -8,6 +8,8 @@ tags: python django
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Django の Model の DateTimeField に auto_nowと auto_now_add
 というキーワード引数があります。この引数はデフォールトで False になっていますが、
 True にすると、 モデルのインスタンスを保存するタイミングで更新されます。
@@ -79,3 +81,5 @@ class MyModel(models.Model):
             self.updated_at = datetime.now()
         super(MyModel, self).save(*args, **kwargs)
 ```
+
+<!-- textlint-enable rousseau -->

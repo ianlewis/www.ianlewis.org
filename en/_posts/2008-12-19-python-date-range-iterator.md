@@ -8,6 +8,8 @@ tags: python timedelta
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I couldn't find something that gave me quite what I wanted so I created
 a simple [Python](http://www.python.org/) generator to give me the dates
 between two datetimes.
@@ -69,3 +71,5 @@ def datetimeIterator(from_date=None, to_date=None, delta=timedelta(minutes=1)):
 ```
 
 </div>
+
+<!-- textlint-enable rousseau -->

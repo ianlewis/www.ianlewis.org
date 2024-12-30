@@ -8,6 +8,8 @@ tags: django stunnel server
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Django's development server doesn't normally support HTTPS so it's hard
 to test applications with HTTPS without deploying the application to a
 real web server that supports HTTPS. The secret is to use two
@@ -59,3 +61,5 @@ python manage.py runserver 8000
 
 So now you can connect to <http://localhost:8000> and
 <https://localhost:8002> to test your application using https.
+
+<!-- textlint-enable rousseau -->

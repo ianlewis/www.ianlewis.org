@@ -8,6 +8,8 @@ tags: python appengine django
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p>Appengineの新しいリリース1.1.8が来た。色な面白いところがあるけど、仲居さん(id:<a href="http://d.hatena.ne.jp/Voluntas/">Voluntas</a>)の<a href="http://d.hatena.ne.jp/Voluntas/20090117/1232209649">ブログポスト</a>からピックアップする。</p>
 
 <blockquote>
@@ -36,3 +38,5 @@ ImportError: No module named antlr3
 <p>が出てきた。理由はappengine_djangoを使ってること。appengine_djangoはgoogle_appengine/lib/antlr3のモジュールをインポートしてなかったので、エラーが出てきた。appengine_djangoのSVNの最新版を使えば、解決する。</p>
 
 <p>何で、antlr3が必要になったというと、実際コード見ると、google_appengine/google/appengine/cronで、groc.py, GrocLexer.py, GrocParser.pyがある。grocというcronみたいなサービスがもうすぐ出るかもしれないね。GrocLexer.pyとGrocParser.pyはantlr3を使ってcronの時間設定文字列を解析するパーサーだという。面白い。</p>
+
+<!-- textlint-enable rousseau -->

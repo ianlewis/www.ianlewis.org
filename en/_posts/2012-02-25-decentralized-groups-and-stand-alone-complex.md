@@ -8,6 +8,8 @@ tags: occupy stand-alone-complex
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 The other day I watched the talk "The coming war on general computation"
 by [Boing Boing](http://boingboing.net/) editor [Cory
 Doctorow](http://boingboing.net/about#cory).
@@ -61,3 +63,5 @@ purpose or cause change in social structure.
 The idea may be slightly different from Anonymous or Occupy movements
 but the disorganized, and decentralized nature of the groups makes for
 an interesting parallel.
+
+<!-- textlint-enable rousseau -->

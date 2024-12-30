@@ -8,6 +8,8 @@ tags: iphone mp3 ogg vorbis
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I recently played around with and figured out how to get syncing working
 with my iPhone 3GS and Ubuntu Lucid. Syncing is supported out of the box
 so not hard, but you do have to know what packages to install to get the
@@ -28,3 +30,5 @@ After installing these packages I could get rhythmbox to add my iphone
 to the menu on the left and I could drag files into it to sync. Ogg
 files were converted to mp3 automatically (though with some quality
 loss).
+
+<!-- textlint-enable rousseau -->

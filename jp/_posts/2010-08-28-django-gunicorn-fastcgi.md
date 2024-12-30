@@ -8,6 +8,8 @@ tags: python django
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 ![image](/assets/images/624/large_gunicorn_big.png)
 
 # 概要
@@ -167,3 +169,5 @@ prefork よりさらに半分くらいになりました。要するに、gunico
 を使うのが良さそうに見えます。
 
 もし、誰かがこのテストを使ったら、他のハードウエア、環境などでは、どういう結果がでるかを聞きたいと思っています。もしくは、テストについてのコメントがあれば、ぜひ宜しくお願いします。
+
+<!-- textlint-enable rousseau -->

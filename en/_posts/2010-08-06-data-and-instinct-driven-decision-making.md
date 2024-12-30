@@ -8,6 +8,8 @@ tags: rationality
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I just read a piece called [We Are All Talk Radio
 Hosts](http://www.wired.com/wiredscience/2010/08/we-are-all-talk-radio-hosts/)
 which mentions some studies saying that the more we humans think about
@@ -37,3 +39,5 @@ scientific theory to avoid the problem of introducing personal bias.
 It's time everyone, from marketing people to web programmers used a bit
 more science to solve problems instead of asking people things (i.e.
 stop sending me those fucking surveys)
+
+<!-- textlint-enable rousseau -->

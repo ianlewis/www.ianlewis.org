@@ -8,6 +8,8 @@ tags: python twisted
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Python Hackathon 2011.02 に参加しに行ってきました。今回は、ちょっと遅く着いたが、楽しかった。
 
 やったことはほとんどプレゼンの準備でした。発表したのは、[Twisted](http://twistedmatrix.com/)で作られたロングポーリングチャットサーバの作り方についてでした。
@@ -65,3 +67,5 @@ application = service.Application("simplechat")
 server_obj = internet.TCPServer(8080, site)
 server_obj.setServiceParent(application)
 ```
+
+<!-- textlint-enable rousseau -->

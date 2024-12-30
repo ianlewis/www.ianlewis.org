@@ -8,6 +8,8 @@ tags: google gcp
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <img alt="Google Cloud Platform" title="Google Cloud Platform" class="align-center" src="/assets/images/730/cloudplatform_horizontallockup_big.png" />
 
 Googleの新入社員として、 [Google Cloud Platform](https://cloud.google.com/) チームで働くことになりました。
@@ -17,3 +19,5 @@ Developer Advocateとして、僕は、以前、 [GDE](https://www.ianlewis.org/
 ということで、日本ではGoogle CloudのDeveloper Advocateはなんと[２人になりました](http://d.hatena.ne.jp/kazunori_279/20141201/1417388593)！ 今までは、クラウドを利用する開発者のアドヴォケートが１人か０人だったが、これで一気に２人になったことで、それなりの責任を持ちながら、日本、そしてAPACの開発者をサポートすることを強く思っています。これからも、GDEにも関わると思いますし、GDG、GCPUGなど、コミュニティの支援を[kazさん](http://d.hatena.ne.jp/kazunori_279/)と共に頑張っていきます！
 
 これからもよろしくお願いいたします！
+
+<!-- textlint-enable rousseau -->

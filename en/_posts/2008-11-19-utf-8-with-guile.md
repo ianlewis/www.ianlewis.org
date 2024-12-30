@@ -8,6 +8,8 @@ tags: scheme guile utf8
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p>Getting UTF-8 to work with guile is a bit of a stretch as guile doesn't have any real encoding or UTF-8 support to speak of, but I was able to get at least some basic stuff working by using the <a href="http://www.gnu.org/software/guile-gnome/docs/glib/html/Unicode-Manipulation.html#Unicode-Manipulation">Unicode Manipulation</a> routines which are part of the <a href="http://www.gnu.org/software/guile-gnome/docs/glib/html/index.html">Guile-Glib</a> module.</p>
 
 <p>This requires that you have your LD_LIBRARY_PATH and GUILE_LOAD_PATH set properly so that it can load the glib libraries. This didn't work for me out of the box with guile, but <a href="http://www.ubuntu.com/" title="Ubuntu">Ubuntu</a>'s guile-gnome0-glib package provides a script called guile-gnome-0 for setting these values for you and running guile. If you just run guile as is...</p>
@@ -44,3 +46,5 @@ guile<span style="color: #66cc66;">&gt;</span> <span style="color: #66cc66;">&#4
 guile<span style="color: #66cc66;">&gt;</span> <span style="color: #66cc66;">&#40;</span>g<span style="color: #66cc66;">-</span>unichar<span style="color: #66cc66;">-</span>validate <span style="color: #66cc66;">&#40;</span>g<span style="color: #66cc66;">-</span>utf8<span style="color: #66cc66;">-</span>get<span style="color: #66cc66;">-</span>char <span style="color: #ff0000;">&quot;手&quot;</span><span style="color: #66cc66;">&#41;</span><span style="color: #66cc66;">&#41;</span><br />
 #t</span>
 </blockquote>
+
+<!-- textlint-enable rousseau -->

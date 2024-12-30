@@ -8,6 +8,8 @@ tags: django 勉強会 オクセンス
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p>昨日、<a href="http://accense.com/">アクセンス・テクノロジー</a>の東京本社に<a href="http://djangoproject.jp/etude/7/">Django 勉強会 Disc.7</a>に参加しに行ってきました。</p>
 
 <h3>GeoDjango</h3>
@@ -44,3 +46,5 @@ render_with_liquid: false
 </ul>
 
 参加したみんなさん、お疲れ様でした！</li>
+
+<!-- textlint-enable rousseau -->

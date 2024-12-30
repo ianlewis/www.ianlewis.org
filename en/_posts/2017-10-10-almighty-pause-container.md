@@ -8,6 +8,8 @@ tags: kubernetes docker
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 When checking out the nodes of your Kubernetes cluster, you may have noticed some containers called "pause" running when you do a `docker ps` on the node.
 
 ```shell
@@ -185,3 +187,5 @@ Hopefully this post helped in illuminating a core part of Kubernetes. Let me kno
 Hope to see you soon!
 
 > I'd like to thank [Eric Tune](https://twitter.com/erictune4), [Ahmet Alp Balkan](https://twitter.com/ahmetb), [Craig Box](https://twitter.com/craigbox), [Mete Atamel](https://twitter.com/meteatamel), [Nikhil Jindal](https://twitter.com/nikhiljindal181), and Jack Wilber for reviewing this post.
+
+<!-- textlint-enable rousseau -->

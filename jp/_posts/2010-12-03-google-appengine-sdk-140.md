@@ -8,6 +8,8 @@ tags: python google appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 [Google Appengine](http://code.google.com/appengine/) 1.4.0 がリリースされました！！
 このリリースはかなりでかい！！ チャンネルAPI, "Always On"
 (リザーブインスタンス)、タスクキューの正式リリース、スタートアップリクエスト、バックグラウンド処理の改善などなど、
@@ -194,3 +196,5 @@ for kind in Kind.all():
 - Python: [google_appengine_1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=google_appengine_1.4.0.zip)
 - Java: [appengine-java-sdk-1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=appengine-java-sdk-1.4.0.zip)
 - [リリースノート](http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes)
+
+<!-- textlint-enable rousseau -->

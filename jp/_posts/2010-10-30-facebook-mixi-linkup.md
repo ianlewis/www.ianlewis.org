@@ -8,7 +8,11 @@ tags: mixi
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 先ほど、Facebook にログインしたんだけど、このメッセージが出てきました。 自動的に、Facebook のつぶやきをMixi
 に自動的に投稿できるみたいだね。
 
 ![image](http://farm5.static.flickr.com/4052/5128607674_501ecf7d18.jpg)
+
+<!-- textlint-enable rousseau -->

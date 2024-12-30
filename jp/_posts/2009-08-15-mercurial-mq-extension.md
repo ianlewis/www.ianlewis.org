@@ -8,6 +8,8 @@ tags: mercurial hg mq patch
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 最近 mercurial の mq
 エクステンションを試しに使ってる。mercurialのリビジョンをコミットする前に、変更を管理したい、もしくは、途中で他の作業をやらないといけないので、今の変更をどっかに置かないといけない場合に便利なエクステンションです。
 
@@ -97,3 +99,5 @@ hg qfinish mypatch
 ```text
 hg qfinish qbase:qtip
 ```
+
+<!-- textlint-enable rousseau -->

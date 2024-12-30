@@ -8,6 +8,8 @@ tags: javascript mochikit
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I found out today that the principle author of a popular
 Javascript/[AJAX](http://en.wikipedia.org/wiki/AJAX) library
 [Mochikit](http://www.mochikit.com/) is my former highschool classmate
@@ -27,3 +29,5 @@ low level API development for Bob rather than the relatively high level
 application/library development in javascript/web applications. I guess
 everyone follows the buck in the end to some extent and the money is in web
 dev.
+
+<!-- textlint-enable rousseau -->

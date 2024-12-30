@@ -8,6 +8,8 @@ tags: python django stringio
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 C で作られた cStringIO は ピュア Python で作られた StringIO
 モジュールと違うのをみんな知っていると思いますけど、今日、私が知らなかった違いをもう一つ見つけました。
 
@@ -69,3 +71,5 @@ AttributeError: 'cStringIO.StringI' object has no attribute 'write'
 >>> f.read()
 'a'
 ```
+
+<!-- textlint-enable rousseau -->

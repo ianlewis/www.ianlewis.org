@@ -8,6 +8,10 @@ tags: space
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <img src="http://www.geekologie.com/2009/11/05/real-invaders.jpg" alt="Space Invaders">
 
 <p>One word: Awesome.</p>
+
+<!-- textlint-enable rousseau -->

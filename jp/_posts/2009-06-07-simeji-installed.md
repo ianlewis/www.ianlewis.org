@@ -8,6 +8,8 @@ tags: 日本語 simeji android
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 最近参加してきた [Google I/O](http://code.google.com/events/io/)
 でもらったAndroid 開発フォンはアメリカ型で日本語入力出来なかったので、Social
 IME [simeji](http://www.adamrocker.com/blog/236/simeji_android_japanese_input.html)
@@ -66,3 +68,5 @@ Success
 iPhoneとほぼ同じで快適。こんな感じで
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F9cmA70cSiA?si=kUAJZ3TKDXCLTiM0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: python google appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Google Appengine 1.3.8 がリリースされました！
 
 今回のリリースは、いろな面白い機能が入ってきた。
@@ -45,3 +47,5 @@ builtins:
 
 - [ダウンロード](http://code.google.com/intl/ja/appengine/downloads.html)
 - [リリースノート](http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes)
+
+<!-- textlint-enable rousseau -->

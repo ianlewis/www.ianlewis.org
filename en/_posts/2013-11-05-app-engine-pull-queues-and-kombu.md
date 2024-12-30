@@ -8,6 +8,8 @@ tags: python appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 App Engine provides a [pull queue API](https://developers.google.com/appengine/docs/python/taskqueue/overview-pull)
 for accessing, leasing, and processing tasks outside of App Engine. You might
 do this to perform long running tasks that aren't suited to App Engine's
@@ -189,3 +191,5 @@ API.
 The kombu backend should make it a bit easier to create a worker that polls the
 pull task queue API and process tasks. I hope you find it useful. If you have
 any feedback please let me know. Pull requests are also welcome ;-)
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: python django
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Recently there have been a lot of conversations on the Django mailing
 list about fixing the auth module. Here are some of the recent mailing
 list threads:
@@ -106,3 +108,5 @@ wanting to check out the code or or work on fixing some of the issues
 with newauth can fork the project on
 [bitbucket](https://bitbucket.org/IanLewis/django-newauth) or
 [github](https://github.com/IanLewis/django-newauth).
+
+<!-- textlint-enable rousseau -->

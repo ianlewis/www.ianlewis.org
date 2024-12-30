@@ -8,6 +8,8 @@ tags: appengine schema mapper migration queue task
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 One thing that many people using appengine know is that writing schema
 migrations is hard. Improving performance on Appengine often revolves
 around getting objects by key or key name rather than using filters,
@@ -146,3 +148,5 @@ MyModel objects you would need to alter those too but this demonstrates
 some of the things you can to with the Mapper class. Here you would just
 need to run the run_migration() method and it would add the mapper to
 the task queue to be run in the background.
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: golang google-container-builder
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <img class="align-center" src="/assets/images/764/container-builder-go.png">
 
 _Gopher image [Creative Commons Attribution 3.0 Unported (ja)](https://creativecommons.org/licenses/by/3.0/deed.ja) by [tenntenn](https://github.com/tenntenn/gopher-stickers)_
@@ -85,3 +87,5 @@ gcloud container builds submit --config cloudbuild.yaml
 ```
 
 This will build us a nice small image that we can pull from `gcr.io/$PROJECT_ID/testapp`.
+
+<!-- textlint-enable rousseau -->

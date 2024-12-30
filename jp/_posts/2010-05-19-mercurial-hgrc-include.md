@@ -8,6 +8,8 @@ tags: python mercurial
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 僕は [僕のシェル環境設定ファイル](http://bitbucket.org/IanLewis/my) をbitbucket で管理している。
 新しいサーバーで作業する時にこのレポジトリからクローンして、ファイルを設定するけど、ローカル環境のみの設定が必要な場合が多い。今まで、bashrc等のスクリプトの中でローカル設定ファイルがあれば、sourceして、適用したんですけど、
 mercurial の hgrc はそういうのができなかった。
@@ -23,3 +25,5 @@ mercurial の hgrc はそういうのができなかった。
 ファイルの場所は include したファイルの場所からの相対パス
 
 でも、このファイルな存在しなければ、エラーが出るので、 `touch ~/.hgrc.local` を一回やらないとうるさい。
+
+<!-- textlint-enable rousseau -->

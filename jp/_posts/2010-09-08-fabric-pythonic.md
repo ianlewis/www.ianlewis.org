@@ -8,6 +8,8 @@ tags: python nginx デプロイ
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <!-- textlint-disable alex -->
 
 Pythonで作られたデプロイ・自動化ツール [Fabric](http://www.fabfile.org/)
@@ -181,3 +183,5 @@ from __future__ import with_statement
 この with の書き方で、Python的でかなり好きです。
 
 <!-- textlint-enable alex -->
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: cloud-bigtable google-cloud-platform
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 > これは [Google Cloud Platform Advent Calendar 2015](http://qiita.com/advent-calendar/2015/gcp)の19日目の記事です。
 
 <img alt="Cloud Bigtable" title="Cloud Bigtable" class="align-center" src="/assets/images/746/bigtable.png">
@@ -136,3 +138,5 @@ for (Result result : resultScanner) {
 Cloud Bigtableは現在betaで、来年GA (一般公開)するように頑張っています。まず安定性にフォーカスして、GAのあとに新しい機能や改善にフォーカスすることになるでしょう。
 
 Betaの間は誰でも使えるので、[ぜひ試してみてください](https://cloud.google.com/bigtable/)。
+
+<!-- textlint-enable rousseau -->

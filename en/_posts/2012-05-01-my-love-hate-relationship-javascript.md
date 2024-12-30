@@ -8,6 +8,8 @@ tags: javascript coffeescript require.js
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I have a love-hate relationship with JavaScript. Well, more hate and
 less love but I find myself conflicted when I write it. JavaScript
 simply makes it hard for me to write good code. As a little background,
@@ -170,3 +172,5 @@ and JavaScript.
 I don't know what that would look like but I have a feeling it would be
 radically different from what the environment is like today. The sooner
 we can radically improve HTML,JavaScript the better.
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: python pyconjp
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 ![PyconJP](/assets/images/661/logo_small.png)\_
 
 スタッフとして、楽しい楽しいPyconJP に参加しました。 今回、約200人の Python プログラマーを集めることを成功しました。 本当に
@@ -43,3 +45,5 @@ PyconJP 2011 で始めて感じていました。海外の方もいらっしゃ�
 <http://ianlewis.bitbucket.org/pyconjp_2011_slides/template/index.html>
 
 皆さん、どうもありがとうございました！
+
+<!-- textlint-enable rousseau -->

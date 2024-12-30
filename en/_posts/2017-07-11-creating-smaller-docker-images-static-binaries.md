@@ -8,6 +8,8 @@ tags: golang docker smaller-docker-images-series
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 This is the fourth post in a series on making smaller Docker images: static binaries. In the
 [first post](/en/creating-smaller-docker-images) I talked about how to create
 smaller images by writing better Dockerfiles. In the [second
@@ -223,3 +225,5 @@ ianlewis@test:~/kubernetes$ ldd _output/dockerized/bin/linux/amd64/kube-apiserve
 ```
 
 So to summarize, static binaries are smaller, include all of their runtime dependencies so they can be run in containers easily, and can now be built easily with modern languages like Go. What's not to like?
+
+<!-- textlint-enable rousseau -->

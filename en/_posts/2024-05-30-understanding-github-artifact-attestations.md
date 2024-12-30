@@ -8,6 +8,8 @@ tags: security slsa
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 GitHub recently introduced [Artifact
 Attestations](https://github.blog/2024-05-02-introducing-artifact-attestations-now-in-public-beta/),
 a beta feature that enhances the security of Open Source software supply
@@ -310,3 +312,5 @@ and see if SLSA L3 isn’t achievable for your projects.
 _Thanks to [Hayden Blauzvern](https://twitter.com/haydentherapper), [Ramon
 Petgrave](https://twitter.com/thePetgrave), and [Laurent
 Simon](https://twitter.com/lsim99) for reviewing this post._
+
+<!-- textlint-enable rousseau -->

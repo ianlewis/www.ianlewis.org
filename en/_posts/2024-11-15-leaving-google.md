@@ -8,6 +8,8 @@ tags: google
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Today is my last day as a Google employee. After nearly 10 years working on the
 Google Cloud Developer Relations team, I’ve decided to step away and pursue
 other challenges.
@@ -123,3 +125,5 @@ Thanks to all the folks I worked with along the way! I feel most grateful for
 your support.
 
 [^1]: API Experts eventually became the [Google Developer Experts (GDE)](https://developers.google.com/community/experts) program.
+
+<!-- textlint-enable rousseau -->

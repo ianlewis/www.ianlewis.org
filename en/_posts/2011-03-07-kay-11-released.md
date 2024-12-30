@@ -8,6 +8,8 @@ tags: python appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 The Kay team just just released Kay 1.1\! I want to thank Takashi
 Matsuo, Nickolas Daskalou, Tasuku Suenaga, and Yosuke Suzuki for their
 hard work on this release.
@@ -190,3 +192,5 @@ forward to Kay 2.0 so if you have any suggestions about any large new
 features now is the time to let us know\!
 
 We look forward to hearing feedback about Kay\!
+
+<!-- textlint-enable rousseau -->

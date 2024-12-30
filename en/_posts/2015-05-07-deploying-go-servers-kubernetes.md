@@ -8,6 +8,8 @@ tags: golang kubernetes docker google-container-engine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 > Cross posted on [medium](https://medium.com/@IanMLewis/deploying-go-servers-with-kubernetes-on-container-engine-3fee717a7e2a)
 
 I was trying to get a Go app running on Container Engine and couldn't quite
@@ -251,3 +253,5 @@ future so hopefully that gave you an idea of how you can deploy a Go app and
 upgrade it using Container Engine. As a next step try out some of the many
 [example apps](https://github.com/GoogleCloudPlatform/kubernetes/tree/master/examples)
 available in the Kubernetes repo.
+
+<!-- textlint-enable rousseau -->

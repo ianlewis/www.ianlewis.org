@@ -8,6 +8,8 @@ tags: windows superfetch thrashing vista
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I don't use Windows Vista that often but when I do it would thrash at
 the hard drive constantly for hours. Not knowing what the problem is I
 looked it up and it is aparently the "SuperFetch" service. Using the
@@ -18,3 +20,5 @@ almost immediately.
 - Right click on the "SuperFetch" service and click Properties.
 - Set the service to disabled and hit Ok.
 - Right click on the service again and click "Stop" to stop it.
+
+<!-- textlint-enable rousseau -->

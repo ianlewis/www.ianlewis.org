@@ -8,6 +8,8 @@ tags: python tokyotyrant python-tokyotyrant pytyrant
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 [夏のPython温泉](http://d.hatena.ne.jp/Voluntas/20090516/1242482537) で [Bob様](http://bob.pythonmac.org/) が作ってくれたピュアーパイソンクライアント [pytyrant](http://code.google.com/p/pytyrant/) は [酒徳さん](http://d.hatena.ne.jp/perezvon/) の [python-tokyotyrant](http://code.google.com/p/python-tokyotyrant/) より速いという話を 聞いたと [moriyoshiさん](http://d.hatena.ne.jp/moriyoshi/) に言った。それで、moriyoshiさんはprofileのテストを作ってくれたけど、結果として、pytyrantとpython-tokyotyrantはあまり変わらないのが出た。</p>
 
 ```python
@@ -201,3 +203,5 @@ Running 20 threads took 8.746 seconds</pre>
 ```
 
 理由が分からないけども、python-tokyotyrantは [PyRex](http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/) を使ったわけですかね
+
+<!-- textlint-enable rousseau -->

@@ -7,6 +7,8 @@ blog: en
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I'm the kind of guy that likes to be open about data and such I thought
 it might be interesting to share what kind of access pattern my humble
 little bi-lingual blog gets. I really don't get that many visits, so
@@ -77,3 +79,5 @@ My life is in Japan, so the Japanese content is more pertinent to me and
 my career, but it's clear, after looking at the data, that with half of
 the accesses being to English content, I should spend a bit more time on
 the English side of things.
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: python django kubernetes
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <img alt="Kubernetes + Django" title="Kubernetes + Django" class="align-center" src="/assets/images/752/kube-django.png">
 
 In a previous post I wrote about [Kubernetes health checks](/en/using-kubernetes-health-checks). Since I'm a Python developer and a fan, I went about implementing it in Django. Health checks are a great way to help Kubernetes help your app to have high availability, and that includes Django apps. However, with Django it's not quite as simple as it sounds.
@@ -140,3 +142,5 @@ readinessProbe:
 Hopefully that helps you write more resilient Django websites! Django was written well before Docker, Kubernetes and containerization became popular but Django applications can easily be adapted to work with them. Some PaaS solutions like [Eldarion Cloud](http://eldarion.cloud/) are already making it easy to deploy Python apps using Kubernetes under the hood.
 
 If you are interested in learning more about Kubernetes check out the [Kubernetes Slack](http://slack.kubernetes.io/). That's where the best Kubernetes developers get together to discuss all things Kubernetes. Check out the #sig-apps channel for discussion about deploying applications on Kubernetes.
+
+<!-- textlint-enable rousseau -->

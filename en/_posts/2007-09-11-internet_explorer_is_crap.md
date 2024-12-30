@@ -8,6 +8,8 @@ tags: programming internet-explorer
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Basically the title says it all. Since I started doing web development I've lost count of the number of bugs that I've found in Internet Explorer but I want to highlight a couple that were especially annoying to me.
 
 1.) The `<button>` tag doesn't work. The button tag has a value attribute which is supposed to be sent as the value of the post when I submit a form but it's not. The display value of the button is sent instead. So if you have a form like so:
@@ -38,3 +40,5 @@ which if you are using [php](http://www.php.net/) is not so bad since you just c
 That's just the 2 most annoying bugs/issues. I can't imagine how the button bug got though the testing phase for IE but probably there are too many applications that depend on the bug working as is for Microsoft to ever change it to work the way it's supposed to.
 
 I realize I shouldn't hold my breath, but the sooner everyone stops using IE the better.
+
+<!-- textlint-enable rousseau -->

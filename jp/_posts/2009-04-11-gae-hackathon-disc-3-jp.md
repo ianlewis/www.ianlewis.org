@@ -8,6 +8,8 @@ tags: python google appengine 全文検索 text search
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p><a href="http://code.google.com/appengine/" title="Google App Engine">GAE</a> Hackathon Disc. 3 に参加してきました！ 私と<a href="http://d.hatena.ne.jp/a2c/">id:a2c</a> (<a href="http://twitter.com/atusi">Twitter</a>) が<a href="http://www.google.com/" title="Google">Google</a> <a href="http://code.google.com/appengine/" title="Appengine">Appengine</a>の日本語が対応する全文検索エンジンを作ってみました。</p>
 
 <p><a href="http://code.google.com/appengine/" title="Google App Engine">GAE</a> では、データストアが Entity と言う概念で作られてるけど、Entityを検索する時に、データを完全一致しないと、データを取れないので、全文検索が難しくて、以下の状況になってる。</p>
@@ -41,3 +43,5 @@ render_with_liquid: false
 <p>検索キーワードをngramで分けて、インデクスを検索すると、ちゃんと部分的にデータが引っ張ってくる。 <a href="http://saichugen.appspot.com/">http://saichugen.appspot.com/</a> でテストアプリを見れる。コードは<a href="http://bitbucket.org/a2c/gaehackathon_misopotato/">bitbucket</a>で公開されてる。</p>
 
 <p>これから、a2cさんともっと検索結果を取れるようにするのと、インデクスの容量をへらしたりするのと、分け方を自分で実装できるapiを導入したいと思うので、ぜひ期待してください
+
+<!-- textlint-enable rousseau -->

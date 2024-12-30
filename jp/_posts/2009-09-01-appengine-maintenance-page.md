@@ -8,6 +8,8 @@ tags: appengine メンテナンス
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Google
 Appengineのメンテナンス時間がある時、datastoreが読み込み専用になるのが多いと思いますが、データを書こうとする時に、CapabilitiesErrorと言う例外が起こる。それを自分のコードうまく処理しないと、500エラーがでて、ユーザには良くない表現になる。
 
@@ -64,3 +66,5 @@ def myview(request):
   if request.method == "POST":
     #書き込み
 ```
+
+<!-- textlint-enable rousseau -->

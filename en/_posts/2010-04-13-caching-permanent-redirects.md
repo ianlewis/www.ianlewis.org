@@ -8,6 +8,8 @@ tags: redirect
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Since I've started using Chrome as my main browser for surfing I have
 noticed that some web applications seem to redirect to 404 pages. After
 some investigation it seems that the browser caches 301 responses (they
@@ -25,3 +27,5 @@ or somesuch.
 This kind of thing looks ok when they are developing it as 301 and 302
 have very similar affects on the browser, but they really mean different
 things.
+
+<!-- textlint-enable rousseau -->

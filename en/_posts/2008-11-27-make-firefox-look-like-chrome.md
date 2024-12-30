@@ -8,6 +8,8 @@ tags: google
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p>Recently <a href="http://www.google.com/chrome/intl/en/features.html">Google Chrome</a> has been pretty popular with web folks and <a href="http://www.google.com/" title="Google">Google</a> fans. It's fast and has only a little "chrome" or window trimmings which makes the overall screen bigger when viewing webpages. However it lacks a lot of features that are present in <a href="http://www.getfirefox.com/" title="Firefox">Firefox</a> that I pretty much can't do without so today I set about making <a href="http://www.getfirefox.com/" title="Firefox">Firefox</a> have all the small interface improvements that make Chrome so nice. Fortunately you can do this with existing plugins.</p>
 
 <p>The first thing I did was try to reduce <a href="http://www.getfirefox.com/" title="Firefox">Firefox</a>'s "chrome" by tightening up the menus. I right clicked on the menu's in the top and hit "Customize" which lets me customize the menu bars. I put the navigation buttons (back, forward, stop, etc.), bookmark buttons, home, toolbar bookmarks, navigation bar and search bar all in the same toolbar. I hid all other toolbars. I hid the status bar by selecting the checkbox under View->Show statusbar.</p>
@@ -39,3 +41,5 @@ render_with_liquid: false
 <p><a href="/gallery2/d/11050-1/Screenshot.png" rel="lightbox"><img src="/gallery2/d/11051-2/Screenshot.png" alt="" /></a></p>
 
 <p>Now I have a much more usable and productive browser and still have access to all the nice <a href="http://www.getfirefox.com/" title="Firefox">Firefox</a> plugins that I use regularly Firebug and Delicious bookmarks.</p>
+
+<!-- textlint-enable rousseau -->

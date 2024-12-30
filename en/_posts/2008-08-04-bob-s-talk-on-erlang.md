@@ -8,6 +8,8 @@ tags: erlang
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 > _Update (2023-10-02): The video is no longer available._
 
 I just watched this video of [Bob](http://bob.pythonmac.org/) giving a
@@ -19,3 +21,5 @@ things. [JSON](http://www.json.org/) was another. He's even the guy that
 [coined the term jsonp](http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/)
 before that was really popular. Anyway, highly informative. I might give
 erlang a try a little later on.
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: python
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Since [everyone](http://blog.hirokiky.org/2013/12/31/new_years_python_meme_2013.html) [else](http://pelican.aodag.jp/new-years-python-meme-2014.html) was doing it I thought I'd write one up too.
 
 ## What’s the coolest Python application, framework or library you discovered this year?
@@ -59,3 +61,5 @@ I want more tools that help make python a more modern language.
 - Better async tools. i.e. green-threads + queues (like go).
 - A Python code formatter that re-formats code to be compliant with pep-8 in the same spirit as gofmt. ([autopep8](https://pypi.python.org/pypi/autopep8/) seems reasonable)
 - A Python code processor that helps verify the "correctness" of code and/or comments. Annotating code or checking docstrings might be interesting.
+
+<!-- textlint-enable rousseau -->

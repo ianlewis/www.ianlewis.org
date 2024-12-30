@@ -8,6 +8,8 @@ tags: python pip pypi
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 pip、buildout などを使うとデプロイする時に Python ライブラリの依存関係はややこしいことがあります。
 普段はデプロイスクリプトで、 pip に requirements.txt
 を指定して、もしくは、 buildoutを実行して、 依存ライブラリを落としてインストールしますが、
@@ -150,3 +152,5 @@ def deploy():
 ```
 
 こういう感じで、ローカルとサーバーの接続さえできれば、デプロイできます。 外部サイトに依存したいのが楽過ぎて、逆にいい意味で困ります。
+
+<!-- textlint-enable rousseau -->

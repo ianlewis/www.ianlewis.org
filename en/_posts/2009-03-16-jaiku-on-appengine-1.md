@@ -8,6 +8,8 @@ tags: appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p><a href="/assets/images/516/jaiku.png"><img src="/assets/images/516/jaiku.png" /></a></p>
 
 <p>Yesterday <a href="http://www.google.com/">Google</a>'s <a href="http://www.twitter.com/">Twitter</a>-like service, <a href="http://www.jaiku.com/">Jaiku</a> was released as <a href="http://code.google.com/p/jaikuengine/">open source</a> running on <a href="http://code.google.com/appengine/">Google Appengine</a> so I decided to take it for a spin. It has a lot of neat parts like XMPP and google contacts integration, but what I'm interested in most is how it implements it's publisher/subscriber model.</p>
@@ -54,3 +56,5 @@ render_with_liquid: false
 </td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"><div class="amc3"></div></div></td><td>&nbsp;)$</td></tr></table></div>
 
 <p>From there it should have worked but I got an error about the pstats module. That just happened to not be installed on my machine so installed python-profiler and Jaiku ran from there.</p>
+
+<!-- textlint-enable rousseau -->

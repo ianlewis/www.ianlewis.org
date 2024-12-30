@@ -8,6 +8,8 @@ tags: google google-cloud-platform
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I joined Google one year ago today. It's been a really busy year and I can't
 believe it's over so fast. I still feel like I just joined and there's so much
 that I'm still getting used to. Google has been at the same time the easiest
@@ -159,3 +161,5 @@ with developers and create OSS projects, demos, and talks that help inspire and
 inform developers better than last year.
 
 I'm really excited for this year and I hope you are too.
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: 日本語 java フォント
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 LinuxではJavaは標準に日本語フォントが大体インストールされてないので、手でインストールしないといけない。
 
 Ubuntuでは、このようにFontインストールが済む:
@@ -16,3 +18,5 @@ Ubuntuでは、このようにFontインストールが済む:
 mkdir -p <jvm>/jre/lib/fonts/fallback
 cp /usr/share/fonts/truetype/vlgothic/*.ttf <jvm>/jre/lib/fonts/fallback
 ```
+
+<!-- textlint-enable rousseau -->

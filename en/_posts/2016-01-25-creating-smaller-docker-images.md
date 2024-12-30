@@ -8,6 +8,8 @@ tags: docker smaller-docker-images-series
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 ![Docker](/assets/images/docker/large_v-trans.png)
 
 Recently I've been working with containers a lot and the most popular technology out there is, of course, Docker. On top of allowing you to easily run containers using the `docker run` command, Docker provides a method to build container images and a format for the resulting image. By writing a `Dockerfile` and executing the `docker build` command you can easily create images that can be run anywhere (within some constraints) Docker is installed.
@@ -104,3 +106,5 @@ Docker images usually inherit from a Debian or Ubuntu image. One reason that the
 At Google, all of the applications that are run in the datacenter are [run inside a container](https://speakerdeck.com/jbeda/containers-at-scale?slide=2). Including a bunch of stuff in the container image or archive is a waste that increases network usage as the binaries are copied to machines that need to run them. In order to make the applications work they are all built as static binaries. I think this is a pretty awesome way to do things as it allows the app to have all the necessary parts built into the image and reduces complexity. You can probably think of the reason why Go compiles apps statically by default as being due to the culture of building cloud applications this way.
 
 I'll go into this a bit more in later blog posts on the subject.
+
+<!-- textlint-enable rousseau -->

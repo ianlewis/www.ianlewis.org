@@ -8,6 +8,8 @@ tags: django 勉強会 rst restructured text pdf ドキュメント
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p><a href="http://d.hatena.ne.jp/nullpobug/" title="岡野真也">id:tokibito</a>が<a href="http://d.hatena.ne.jp/nullpobug/20090424">見つけてくれた</a> <a href="">rst2pdf</a> を使って<a href="http://takashi-matsuo.blogspot.com/" title="松尾 貴史">id:tmatsuo</a> と<a href="http://www.djangoproject.com/" title="Django">Django</a>勉強会Disc.8 ハンズオンC の資料をPDFにした。</p>
 
 <p>ほとんど <a href="http://d.hatena.ne.jp/nullpobug/" title="岡野真也">id:tokibito</a>と同じやり方でPDFを吐き出したけど、問題点が二つあった。</p>
@@ -75,3 +77,5 @@ ValueError: CJK Wordwrap can only handle one fragment per paragraph for now
 <li><a href="http://bitbucket.org/tmatsuo/gae-handson/raw/12bccec0295a/django-hack-a-thon-get-handson.part2.pdf">Part 2</a></li>
 </ul>
 </p>
+
+<!-- textlint-enable rousseau -->

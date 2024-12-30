@@ -8,6 +8,8 @@ tags: python flask ldap python_ldap
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 この間、会社で少し大きくなって、利用するツールが少し増えつつありますので、
 ユーザー管理を統一するために、LDAPサーバーを使うようになりました。
 
@@ -336,3 +338,5 @@ else:
 コードはbitbucketにアップしているので、是非ご覧ください。
 
 <https://bitbucket.org/beproud/ldapchangepw/overview>
+
+<!-- textlint-enable rousseau -->

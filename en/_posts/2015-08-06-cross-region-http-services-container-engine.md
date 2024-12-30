@@ -8,6 +8,8 @@ tags: kubernetes google-container-engine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <!--
 Conversion notes (using libgdc version 59):
 
@@ -238,3 +240,5 @@ service](https://cloud.google.com/compute/docs/load-balancing/http/cross-region-
 
 You can support more complicated setups with the HTTP load balancer. Check out
 the docs on [content-based load balancing](https://cloud.google.com/compute/docs/load-balancing/http/content-based-example) or [setting up SSL certificates](https://cloud.google.com/compute/docs/load-balancing/http/ssl-certificates) for HTTPS load balancing.
+
+<!-- textlint-enable rousseau -->

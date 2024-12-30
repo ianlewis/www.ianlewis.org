@@ -8,6 +8,8 @@ tags: python appengine python onsen google web toolkit json schema
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 ![Table of Japanese food](/assets/images/gallery/dcf_0207_big.jpg)
 
 This weekend I went to the Python Onsen (Japanese) organized by
@@ -55,3 +57,5 @@ schema and JSON parsing library over top of, or separate from, the
 existing JSON library for the Google web toolkit.
 
 Pretty good for a two day hackathon.
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: django models
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Since I've been using it for a while now I've gotten a good idea about
 what is good and what is annoying about development with django. This
 might seem a little trite at parts since some of these gripes are with
@@ -98,3 +100,5 @@ and need to be added via syncdb. django-notifications does this because
 they want other applications to be able to add notification types
 easily. They could do that by providing their own settings for things
 like notifications.
+
+<!-- textlint-enable rousseau -->

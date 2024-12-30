@@ -8,6 +8,8 @@ tags: python c++ c open-vcdiff
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I started a project today to implement an interface for the
 [open-vcdiff](http://code.google.com/p/open-vcdiff/) using
 [Cython](http://www.cython.org/). I'm not a C++ master and the Python C
@@ -23,3 +25,5 @@ dealing with binary blobs.
 The code is over at bitbucket in my
 [python-openvcdiff](http://bitbucket.org/IanLewis/python-openvcdiff)
 repository.
+
+<!-- textlint-enable rousseau -->

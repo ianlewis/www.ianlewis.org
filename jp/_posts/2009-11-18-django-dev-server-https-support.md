@@ -8,6 +8,8 @@ tags: django stunnel 開発サーバ
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Djangoの開発サーバはHTTPSを普段に対応してないので、HTTPS対応をどうやって開発すればいいんだろうと思ったら、調べてみた。秘密は開発サーバ、http用とhttps用を二つ立ち上げます。https開発サーバはstunnelでHTTPS対応します。stunnelは普通のソケットをSSL
 tunnelingをしてくれます。
 
@@ -50,3 +52,5 @@ python manage.py runserver 0.0.0.0:8000
 ```
 
 これで、 <http://localhost:8001> と <https://localhost:8002> で接続することができる。
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: google photosphere
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Testing out the new photo sphere widget. The widget below is a photo
 sphere of our trip to [Great Falls Park](http://www.nps.gov/grfa/).
 
@@ -21,3 +23,5 @@ You can find out more about how to embed the widget here:
 <https://developers.google.com/panorama/web>
 
 Another working example is here: <http://goo.gl/BbEpS>
+
+<!-- textlint-enable rousseau -->

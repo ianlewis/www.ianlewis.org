@@ -8,6 +8,8 @@ tags: python pip virtualenv virtualenvwrapper 仮想化
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 あるプロジェクトの依存は特定なバージョンじゃないとダメな場合が結構多いと思いますけど、最近、pythonの仮想環境を簡単に作れるようになりました。virtualenv
 と virtualenvwrapper と pip の組み合わせを紹介します。
 
@@ -114,3 +116,5 @@ pip -E /path/to/my/virtualenv install mymod
 
 これで、pip が仮想環境にインストールする。これから、pip install
 で仮想環境にパッケージをインストールできるようになった。それで、プロジェクトに必要なパッケージをインストールし、pythonのsite-packagesが汚くならないので、安心
+
+<!-- textlint-enable rousseau -->

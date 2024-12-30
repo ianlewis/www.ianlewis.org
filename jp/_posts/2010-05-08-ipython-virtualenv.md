@@ -8,6 +8,8 @@ tags: python virtualenv
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 # 概要
 
 python の皆さんはみんな使っている ipython は virtualenv を使う時に virtualenv
@@ -147,3 +149,5 @@ In [1]:
 が出て、virtualenv を使っていることが確認できる。
 
 それでは、それでは、
+
+<!-- textlint-enable rousseau -->

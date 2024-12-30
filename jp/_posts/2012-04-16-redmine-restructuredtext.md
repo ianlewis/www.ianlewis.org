@@ -8,6 +8,8 @@ tags: python redmine restructuredtext ruby
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 我々BeProudのRedmineのWikiやチケットの説明文やチケットのコメント文にはReStructuredTextを使っている。
 RedmineのデフォルトのTextileはPythonが好きな弊社で使うのは以ての外。なので、ReSTを使うようにした。
 そして、生のReSTしか使わなければ、出来ることが少ないので、blockdiagや、コードの構文ハイライト（Pygments)
@@ -234,3 +236,5 @@ directives.register_directive("code-block", pygments_directive)
 [blockdiag](http://blockdiag.com/ja/blockdiag/index.html) もRedmineのWiki
 で書けます。 [seqdiag](http://blockdiag.com/en/seqdiag/) もあって、可能性がいろいろあります。
 いろいろ試してみてください！
+
+<!-- textlint-enable rousseau -->

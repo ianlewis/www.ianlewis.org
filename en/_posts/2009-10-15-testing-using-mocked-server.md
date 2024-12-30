@@ -8,6 +8,8 @@ tags: django mock testing
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Recently I got some tests working for my
 [django-lifestream](http://bitbucket.org/IanLewis/django-lifestream/)
 project. The lifestream imports data from RSS/Atom feeds so there isn't
@@ -172,3 +174,5 @@ stop it.
 There you have it. This code seems to work in Linux but I'm not sure if
 it is very portable code. If someone wants to give it a try and let me
 know the results I'd be eternally grateful.
+
+<!-- textlint-enable rousseau -->

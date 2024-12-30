@@ -8,6 +8,8 @@ tags: mercurial ブランチ
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 merucurial の hg
 branchesっていうコマンドを打つと、inactiveブランチが普段に出てうるさいので、表示しないようにしてみた。これを
 .hgrc に追加した
@@ -34,3 +36,5 @@ ian@laptop:~/src/prj$ hg branches
 default                     1662:1fa310d3052a
 hoge                        1661:62d737e7146e
 ```
+
+<!-- textlint-enable rousseau -->

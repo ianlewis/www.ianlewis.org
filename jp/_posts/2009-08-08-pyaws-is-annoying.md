@@ -8,6 +8,8 @@ tags: python aws
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 AmazonのアフィリエイトAPIのpython クライアント pyaws は単純にpythonオブジェクトを持つ Bagクラスがある。
 
 ```python
@@ -32,3 +34,5 @@ Traceback (most recent call last):
   File "build/bdist.linux-i686/egg/simplejson/encoder.py", line 343, in default
 TypeError: <Bag instance: {...}> is not JSON serializable
 ```
+
+<!-- textlint-enable rousseau -->

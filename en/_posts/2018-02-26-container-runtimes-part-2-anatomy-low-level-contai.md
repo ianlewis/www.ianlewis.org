@@ -8,6 +8,8 @@ tags: containers container-runtime-series
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 This is the second in a four-part series on container runtimes. In [part 1](https://www.ianlewis.org/en/container-runtimes-part-1-introduction-container-r), I gave an overview of container runtimes and discussed the differences between low-level and high-level runtimes. In this post I will go into detail on low-level container runtimes.
 
 Low-level runtimes have a limited feature set and typically perform the low-level tasks for running a container. Most developers shouldn't use them for their day-to-day work. Low-level runtimes are usually implemented as simple tools or libraries that developers of higher level runtimes and tools can use for the low-level features. While most developers won't use low-level runtimes directly, it's good to know how they work for troubleshooting and debugging purposes.
@@ -181,3 +183,5 @@ Until then, you can get more involved with the Kubernetes community via these ch
 - Contribute to the Kubernetes project on [GitHub](https://github.com/kubernetes/kubernetes)
 
 _> Thanks to [Craig Box](https://twitter.com/craigbox), Jack Wilbur, Philip Mallory, [David Gageot](https://twitter.com/dgageot), Jonathan MacMillan, and [Maya Kaczorowski](https://twitter.com/MayaKaczorowski) for reviewing drafts of this post._
+
+<!-- textlint-enable rousseau -->

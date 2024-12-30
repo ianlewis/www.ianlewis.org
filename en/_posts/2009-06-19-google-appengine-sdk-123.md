@@ -8,6 +8,8 @@ tags: google appengine django task-queue
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 The [Google Appengine
 SDK 1.2.3](http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes#Version_1.2.3_-_June_18,_2009)
 was just released and contains some often asked for goodies such as
@@ -93,3 +95,5 @@ def main():
 if __name__ == '__main__':
   main()
 ```
+
+<!-- textlint-enable rousseau -->

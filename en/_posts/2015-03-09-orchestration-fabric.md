@@ -8,6 +8,8 @@ tags: orchestration vagrant
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 When figuring out how I wanted to deploy my website I had a few things that I
 knew I wanted. I wanted to be able to create my server(s), provision them, and
 deploy the app all from one tool. This will be the first in a series of posts
@@ -184,3 +186,5 @@ vagrant that we can use later for other remote commands.
 In a future post I'll explain how I go on to provision and deploy an app to
 that instance. And subsequent posts will talk about how to use the same
 commands with instances on Google Cloud Platform.
+
+<!-- textlint-enable rousseau -->

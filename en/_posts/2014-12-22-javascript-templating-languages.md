@@ -8,6 +8,8 @@ tags: javascript templates
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I have been looking at JavaScript templating libraries recently for a personal
 project and I'd like to write about my thoughts here.
 
@@ -174,3 +176,5 @@ documents, template inheritance is pretty much a must in my mind and that
 leaves only Jade, Swig, and Nunjucks. Jade seems nice but I don't like the
 shorthand html. That leaves Swig and Nunjucks and when compared Nunjucks seems
 to be the winner.
+
+<!-- textlint-enable rousseau -->

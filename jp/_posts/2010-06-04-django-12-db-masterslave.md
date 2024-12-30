@@ -8,6 +8,8 @@ tags: python django
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Django 1.2 はマルチDB対応ができまして、master/slave
 レプリにも対応しているのですが、詳しく見るといろな問題が出てきます。
 
@@ -50,3 +52,5 @@ using() で対応する必要があります。
 
 今のところは monkey patch しなければ、 Django 1.2 のマルチDBでちゃんと master/slave
 レプリを使えないのかな。やっぱり微妙ですね。
+
+<!-- textlint-enable rousseau -->

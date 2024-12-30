@@ -8,6 +8,8 @@ tags: python
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Pythonでは、あるクラスもしくは、クラスインスタンスに動的にメソッドを付けたいことがあります。Pythonコードでは、一般的に考えるとこういう風に書くって思いがちだけど、
 
 ```python
@@ -73,3 +75,5 @@ AttributeError: 'MyObj' object has no attribute 'method
 ```
 
 そうすると、新しいインスタンスを作成すると、動的に追加したメソッドも付いてくる。
+
+<!-- textlint-enable rousseau -->

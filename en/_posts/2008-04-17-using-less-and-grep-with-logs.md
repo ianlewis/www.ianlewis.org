@@ -8,6 +8,8 @@ tags: linux unix
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p>Recently I&apos;ve been doing a decent amount of debugging a database conversion process and looking at log files on the Red Hat servers at work. This has meant looking at some rather big (10 or so megabytes) log files. Normally I just fire up vim when looking at text files but opening a text file in a text editor that is a number of megabytes is a no-no since pretty much any text editor will load the whole file.</p>
 
 <p>Text viewers like more and less, however, however can skip this little bit since  you aren&apos;t going to be changing an arbitrary part of the file. So you can skip through the file with relative ease. While I know my way around a <a href="http://en.wikipedia.org/wiki/Linux" title="Linux">Linux</a> system, I am unfortunately woefully lacking in knowledge (sed-fu, grep-fu, find-fu or whatever) more than *very* basic usage of rather common *nix tools.</p>
@@ -23,3 +25,5 @@ render_with_liquid: false
 <pre>grep -A 5 -B 10 error &lt;file&gt;</pre>
 
 <p>will give print the lines matching the string &apos;error&apos; in the given file, but also give 5 lines of context after and 10 lines of context before the matched line. This is pretty useful when searching log files but can get confusing sorting out what is context and what is a match when it matches many lines.</p>
+
+<!-- textlint-enable rousseau -->

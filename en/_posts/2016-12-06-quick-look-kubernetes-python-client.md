@@ -8,6 +8,8 @@ tags: python kubernetes
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 For those of you that don't know there is a new Python API client in the kubernetes-incubator project: [client-python](https://github.com/kubernetes-incubator/client-python). There has been some high quality Python clients like [pykube](https://github.com/kelproject/pykube), but client-python can serve as the official Python client.
 
 ## The Structure of the Client
@@ -87,3 +89,5 @@ Event: MODIFIED nginx-2048367498-zwkfg
 Up until now most projects in the Kubernetes ecosystem have been using Go. There are a lot of reasons to use Go, it supports writing asynchronous applications easily, and the only stable first-party API client library is written in Go. Python, however, is a great language in it's own right. It's easy to get started, and will be great for scripting up small bits of cluster automation. The Kubernetes API is really powerful and now it's easier than ever to use from Python. The API client is still an incubator project, but I look forward to seeing more projects written in Python that make deep use of the Kubernetes API. I encourage everyone to try out the Python API client and provide feedback.
 
 If you are interested in learning more about Kubernetes, the Python client I suggest joining the [Kubernetes Slack Channel](http://slack.kubernetes.io/). That's where the best Kubernetes developers get together to discuss Kubernetes. For the Python client specifically, check out the `#sig-api-machinery` in Slack. That's where you can ask questions about the client, and more general questions about the API. You can catch me there as well. I'm `@ianlewis` in the Kubernetes Slack team so feel free to say hi!
+
+<!-- textlint-enable rousseau -->

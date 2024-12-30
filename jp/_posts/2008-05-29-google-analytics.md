@@ -8,6 +8,8 @@ tags: モバイル ソフトウエア開発 php javascript google analytics
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 会社のモバイルサイトで、 [Google Analytics](http://www.google.com/analytics/ja-JP/)
 のトラッキングを導入した。Google
 Analyticsはブラウザーでいろな情報を集めてGoogleサーバに送るものなので、トラッキングをするには
@@ -57,3 +59,5 @@ $handle = fopen($urchinUrl, 'r', false, stream_context_create($opts));
 $test = fgets($handle);
 fclose($handle);
 ```
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: containers container-runtime-series
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 One of the terms you hear a lot when dealing with containers is "container runtime". "Container runtime" can have different meanings to different people so it's no wonder that it's such a confusing and vaguely understood term, even within the container community.
 
 This post is the first in a series that will be in four parts:
@@ -83,3 +85,5 @@ Until then, you can get more involved with the Kubernetes community via these ch
 - Contribute to the Kubernetes project on [GitHub](https://github.com/kubernetes/kubernetes)
 
 > Thanks to [Sandeep Dinesh](https://twitter.com/SandeepDinesh), [Mark Mandel](https://twitter.com/neurotic), [Craig Box](https://twitter.com/craigbox), [Maya Kaczorowski](https://twitter.com/mayakaczorowski), and Joe Burnett for reviewing drafts of this post.
+
+<!-- textlint-enable rousseau -->

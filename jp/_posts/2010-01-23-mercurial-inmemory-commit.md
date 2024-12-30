@@ -8,6 +8,8 @@ tags: mercurial
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p>mercurial はpythonで書かれて、わかりやすいAPIを用意しているので、触りたいと思って、インメモリでコミットをしようとするとどうすればいいかというのを調べてみた。</p>
 
 <p>mercurialは、リポジトリオブジェクト(localrepository)があって、そのしたに、チェンジコンテキスト(changectx)がって、その下に、ファイルコンテキスト(filectx)があると言う仕組みになる。触るのが意外と簡単です。</p>
@@ -26,3 +28,5 @@ render_with_liquid: false
 </div>
 
 <p>ファイルの更新は同じく新しいファイルの内容を渡せば、勝手にdiffしてくれます。</p>
+
+<!-- textlint-enable rousseau -->

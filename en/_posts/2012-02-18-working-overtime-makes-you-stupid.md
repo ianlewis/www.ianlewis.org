@@ -8,6 +8,8 @@ tags: work sleep
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 There was a recent article I read online about how working working over
 40 hours a week makes you less productive.
 
@@ -83,3 +85,5 @@ a complex place and you can't simply say that working more than 8 hours
 a day is bad.
 
 Now get off my lawn.
+
+<!-- textlint-enable rousseau -->

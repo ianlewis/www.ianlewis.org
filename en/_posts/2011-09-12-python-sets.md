@@ -8,6 +8,8 @@ tags: python set
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I had an application with two lists of unique items that I wanted to
 take the intersection of. I had figured that using a python set would be
 faster but I didn't realize that it would be faster than the simple list
@@ -66,3 +68,5 @@ case scenario so we end of getting an average of somewhere in between.
 In any case sets are a very useful tool to avoid having to do inclusion
 checks on lists when you need to get the intersection, union, or diff of
 a list.
+
+<!-- textlint-enable rousseau -->

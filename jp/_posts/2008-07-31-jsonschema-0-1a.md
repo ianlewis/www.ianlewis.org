@@ -8,6 +8,8 @@ tags: projects python json jsonschema
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 昨日、[JSONSchema](http://tinyurl.com/32qd4v)　ヴァリデーターを漸くリリースしました。XML
 Schemaと同じようなJSONSchemaは　JSON文書の構造が正しいかどうかを検証するための文書。さらに、jsonschema
 ヴァリデーターはそのJSONSchema文書に従ってJSON文書が正しいかどうかを検証するPythonモジュール。[JSON
@@ -83,3 +85,5 @@ JSONSchemaに拡張プロパティを付けることや、デフォルト検証�
 とても柔軟なモジュールだと思っています (自分が作ったことについて言えるかなぁ ^^; )
 。僕自身は[GAE](http://code.google.com/appengine/)のプロジェクトで使うつもりだし、
 皆さんのご意見を是非聞かせてもらいたいと思います。
+
+<!-- textlint-enable rousseau -->

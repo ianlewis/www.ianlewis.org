@@ -8,6 +8,8 @@ tags: python mixin
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Python supports a simple type of multiple inheritance which allows the
 creation of Mixins. Mixins are a sort of class that is used to "mix in"
 extra properties and methods into a class. This allows you to create
@@ -63,3 +65,5 @@ many bugs.
 >>> obj.test()
 Mixin2
 ```
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: django reverse urls
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I recently used the new feature in Django 1.1 for [reversing django
 admin
 urls](http://docs.djangoproject.com/en/dev/ref/contrib/admin/#reversing-admin-urls)
@@ -89,3 +91,5 @@ The template like the following:
 Here I'm getting the url for my custom admin view with the code {% url
 admin:admin\_update\_feeds %}, "admin_update_feeds" being the name I
 supplied in the get_urls method above.
+
+<!-- textlint-enable rousseau -->

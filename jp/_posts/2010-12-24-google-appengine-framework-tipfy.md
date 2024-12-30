@@ -8,6 +8,8 @@ tags: python google appengine tipfy
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 _(この記事は_ [Python Web フレームワーク
 アドベントカレンダー2010](http://atnd.org/events/10465)
 _のために書いた 12/24 の記事です。 他の記事を読むには http://atnd.org/events/10465
@@ -187,3 +189,5 @@ Tipfy は Mixin の使い方ですとかが Python の初心者に分かりに�
 も同じように拡張を配布できるようにして、Tipfy
 のいいところを勉強していきたいと思っています。そして、 Kay を気にいっていない開発者に Tipfy
 を試してみるのがおすすめします。
+
+<!-- textlint-enable rousseau -->

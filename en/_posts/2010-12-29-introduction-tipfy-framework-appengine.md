@@ -8,6 +8,8 @@ tags: python google appengine tipfy
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 _(This post is the English translation of the Dec. 24th edition of the_
 [Python Web Framework Advent
 Calendar 2010](http://atnd.org/events/10465). _Other posts can be found
@@ -229,3 +231,5 @@ developers to add only the required code and modules to their project.
 I think that the Kay framework has a lot to learn from the Tipfy project
 and I suspect that we will be integrating many of the ideas in Tipfy in
 the future.
+
+<!-- textlint-enable rousseau -->

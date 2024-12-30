@@ -8,6 +8,8 @@ tags: google android san-francisco
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I'm about 2 weeks late getting around to writing about Google I/O and
 most people already know what went on but I'll share a bit more. The
 keynote was given by [Vic
@@ -32,3 +34,5 @@ hours party which included interesting talks with Brett Slatkin and
 [Guido Van Rossum](http://www.python.org/~guido/) both from the
 appengine team and one being, of course, the creator of the python
 programming language and ridiculously famous.
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: programming golang dart haskell rust typescript
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 There are a number of next generation of languages that have come out and are
 becoming popular in recent years that are trying to use what has been learned
 from large development projects. Some of the more popular languages aimed at
@@ -158,3 +160,5 @@ So that's it. Just a few patterns I noticed in programming languages and
 environments. What do you think? I'm sure I missed something so if there is
 something on your mind just leave a comment below or get in touch on Twitter →
 [@IanMLewis](https://twitter.com/IanMLewis)
+
+<!-- textlint-enable rousseau -->

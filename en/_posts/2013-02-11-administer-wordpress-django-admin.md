@@ -8,6 +8,8 @@ tags: python wordpress django
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I recently came across one feature of Django that seemed pretty useful
 for one off projects and customizations and was startled because it's
 one of Django's least mentioned features. In fact, I've been using
@@ -361,3 +363,5 @@ experience. You can get started by reading the Django docs for the
 admin: [The Django admin
 site](https://docs.djangoproject.com/en/1.4/ref/contrib/admin/). Have
 fun\!
+
+<!-- textlint-enable rousseau -->

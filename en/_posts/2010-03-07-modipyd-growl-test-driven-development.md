@@ -8,6 +8,8 @@ tags: growl modipyd pyautotest
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Recently at work my coworker [Shinya
 Okano](http://d.hatena.ne.jp/nullpobug/) came across
 [Modipyd](http://www.metareal.org/p/modipyd/) written by [Takanori
@@ -79,3 +81,5 @@ For Snarl:
 ```shell
 pyautotest -r growltestrunner.SnarlTestRunner
 ```
+
+<!-- textlint-enable rousseau -->

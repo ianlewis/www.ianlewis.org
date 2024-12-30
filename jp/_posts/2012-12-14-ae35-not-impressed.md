@@ -8,6 +8,8 @@ tags: python appengine meme
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 僕が作った appengine アプリ <http://ae35notimpressed.ian-test-hr.appspot.com/>
 (**Update: 落としました**)はもう見ているかもしれませんが、何で作ったか、
 どういう意味なのかがわからない人が多くて、ちょっとブログで説明しようかなと思って、書いてみた。
@@ -60,3 +62,5 @@ photoshopして、本当にすごいことに感心しない McKayla さんの�
 新しい meme が生まれた。。
 
 ![image](/assets/images/686/meme.png)
+
+<!-- textlint-enable rousseau -->

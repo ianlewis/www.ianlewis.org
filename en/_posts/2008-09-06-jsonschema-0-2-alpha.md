@@ -8,6 +8,8 @@ tags: python json jsonschema schema
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p>I just released a new version of jsonschema 0.2 alpha over at <a href="http://code.google.com/p/jsonschema">http://code.google.com/p/jsonschema</a></p>
 <p>The source can be downloaded here: <a href="http://jsonschema.googlecode.com/files/jsonschema-0.2a.tar.gz">jsonschema-0.2a.tar.gz</a><br /> The documentation can be found here: <a href="http://www.bitbucket.org/IanLewis/jsonschema/raw/4ad1ade5779d/docs/jsonschema.html">jsonschema (version 0.2a) documentation</a></p>
 <p>The new release includes the following notable changes.</p>
@@ -27,3 +29,5 @@ render_with_liquid: false
 <p>The type field was also fixed so that it handles adding schemas as types, so now you can define,</p>
 <div class="codeblock amc_javascript amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #66cc66;">&#123;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>&nbsp; <span style="color: #3366CC;">&quot;type&quot;</span>: <span style="color: #66cc66;">&#91;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td>&nbsp; &nbsp; <span style="color: #66cc66;">&#123;</span> <span style="color: #3366CC;">&quot;type&quot;</span>: <span style="color: #3366CC;">&quot;array&quot;</span>,  <span style="color: #3366CC;">&quot;minItems&quot;</span>: <span style="color: #CC0000;">10</span> <span style="color: #66cc66;">&#125;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; &nbsp; <span style="color: #66cc66;">&#123;</span> <span style="color: #3366CC;">&quot;type&quot;</span>: <span style="color: #3366CC;">&quot;string&quot;</span>, <span style="color: #3366CC;">&quot;pattern&quot;</span>: <span style="color: #3366CC;">&quot;^0+$&quot;</span> <span style="color: #66cc66;">&#125;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; <span style="color: #66cc66;">&#93;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td><span style="color: #66cc66;">&#125;</span></td></tr></table></div>
 <p>This can let you define more complex types for use in schema.</p>
+
+<!-- textlint-enable rousseau -->

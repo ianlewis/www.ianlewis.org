@@ -8,6 +8,8 @@ tags: javascript require.js qunit
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 > ```text
 > AMD の仕様では、「JSファイルのリストを順番通りに読み込み/実行する」
 > ということができない。実際何が困ったかというと、分割した mocha
@@ -95,3 +97,5 @@ define(["jquery"], testmod(function($) {
   });
 </script>
 ```
+
+<!-- textlint-enable rousseau -->

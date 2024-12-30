@@ -7,6 +7,8 @@ blog: en
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p>I went to <a href="http://www.google.com/" title="Google">Google</a> Developer Day 2008 in Yokohama Japan yesterday. The keynote speech was pretty much the exact same info as was given at the <a href="http://jp.youtube.com/watch?v=vk1HvP7NO5w">keynote</a> at <a href="http://code.google.com/events/io/">Google I/O</a> where <a href="http://www.google.com/" title="Google">Google</a> announced their direction, moving forward the web as a platform.</p>
 <h3>Keynote</h3>
 <p>As with the <a href="http://www.google.com/" title="Google">Google</a> I/O keynote it was mentioned how <a href="http://www.google.com/" title="Google">Google</a> feels that Computing power and accessability have kind of flip-flopped over the years. In the mainframe era you had computing power but no accessability, in the PC era you had accessability but lost relative computing power, and now in the web era we are getting back computing power in the form of cloud computing but we are loosing accessablity to those resources. They plan on fixing this with the, so called, three Cs. Client, Connectablity and Cloud.</p>
@@ -19,3 +21,5 @@ render_with_liquid: false
 <p>For what it's worth I presented my application which I hope to make into a workable form application builder. I haven't uploaded it yet so you'll have to make do with my first <a href="http://code.google.com/appengine/" title="Appengine">Appengine</a> application, a <a href="http://prefix-calc.appspot.com/">prefix calculator with a simple rest api</a>.</p>
 <h3>Dinner</h3>
 <p>Afterwards I went out to dinner with a number of folks who participated in the Hackathon. It turned out to be a lot of fun and I made a lot of new friends many of whom are now in my <a href="http://twitter.com/IanMLewis/friends">twitter contacts</a>. All in all a hugely satisfying experience.</p>
+
+<!-- textlint-enable rousseau -->

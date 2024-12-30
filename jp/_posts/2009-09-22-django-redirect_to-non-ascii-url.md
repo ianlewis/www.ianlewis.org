@@ -8,6 +8,8 @@ tags: django redirect redirect_to
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Django は一般的なリダイレクトするビューを django.views.generic.simple.redirect_to
 に用意していますけど、unicodeのキーワードがあれば、動かないのが最近見つけた。
 
@@ -63,3 +65,5 @@ UnicodeEncodeError: 'ascii' codec can't encode characters in position 8-11: ordi
 
 [\#11522 Crash on redirect to a relative URL if request.path is
 unicode](http://code.djangoproject.com/ticket/11522)
+
+<!-- textlint-enable rousseau -->

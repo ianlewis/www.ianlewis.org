@@ -8,6 +8,8 @@ tags: python django
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 今日、会社で特定なDjangoモデルを別のDBに保存するようなニーズがあって、Django マルチDBを使えるかなという話がありました。
 この間、
 [Django1.2のマルチDBはレプリケーション対応に微妙](/jp/django-12-db-masterslave)
@@ -61,3 +63,5 @@ DATABASES = {
 }
 DATABASE_ROUTERS = ['path.to.MonjudohRouter']
 ```
+
+<!-- textlint-enable rousseau -->

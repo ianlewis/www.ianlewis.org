@@ -8,6 +8,8 @@ tags: javascript phantomjs qunit
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 ![image](/assets/images/690/phantomjs+qunit.png)
 
 I have been using [PhantomJS](http://phantomjs.org/) and
@@ -219,3 +221,5 @@ Wada](https://github.com/twada).
 
 Some things to think about for the future are getting saving coverage
 information using [JSCoverage](http://siliconforks.com/jscoverage/).
+
+<!-- textlint-enable rousseau -->

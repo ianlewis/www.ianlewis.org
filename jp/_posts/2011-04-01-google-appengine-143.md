@@ -8,6 +8,8 @@ tags: python google appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 # Google Appengine 1.4.3
 
 水曜日に Google Appengine 1.4.3 がリリースされました！ 1.4.1 と 1.4.2 はブログ記事を書くほど
@@ -201,3 +203,5 @@ queue:
 
 - [ダウンロード](http://code.google.com/intl/en/appengine/downloads.html)
 - [リリースノート](http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes)
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: openness walled-garden
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I recently read a couple posts on the openness of the iPad and the
 effect it will have on tinkering and computer hacking. One was a
 [post](http://al3x.net/2010/01/28/ipad.html) by [al3x](http://al3x.net/)
@@ -77,3 +79,5 @@ books and do basic kinds of tasks but I would never EVER consider it as
 a machine to program on. So, there needs to be one that I _can_ program
 on and every computer trying to be like the iPad limits my choices and
 my access to that information.
+
+<!-- textlint-enable rousseau -->

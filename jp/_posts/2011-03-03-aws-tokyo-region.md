@@ -8,6 +8,8 @@ tags: ec2 aws s3
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 ![image](/assets/images/651/logo_aws.gif)
 
 ようやく！ [AWS
@@ -19,3 +21,5 @@ AWS EC2/S3 をちょうど 3年ずっと使っている僕は嬉しい限りで�
 を使って工夫してきましたが、これから積極的に AWS 東京を使いたいと思っています！
 
 ちょう嬉しいです
+
+<!-- textlint-enable rousseau -->

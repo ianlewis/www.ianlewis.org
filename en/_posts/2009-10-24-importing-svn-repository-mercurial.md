@@ -8,6 +8,8 @@ tags: mercurial hg svn
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Recently I've been forking svn repositories by converting them to
 mercurial repositories and uploading them to
 [bitbucket](http://www.bitbucket.org/). It's fairly easy with the
@@ -49,3 +51,5 @@ repository remotely.
 $ hg convert foomirror   # convert directly from repo mirror to foomirror-hg
 ...
 ```
+
+<!-- textlint-enable rousseau -->

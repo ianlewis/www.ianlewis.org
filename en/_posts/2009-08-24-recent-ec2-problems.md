@@ -8,6 +8,8 @@ tags: ec2 problems
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Over the weekend we had some some problems with EC2 in which some
 instances could not be connected to via a network. This happened to us
 for a nginx load balancing server on Friday and a database master on
@@ -62,3 +64,5 @@ able to if you had your own Xen server is frustrating. There is no way
 of knowing the state of the dead server. The forums are pretty much
 useless for time sensitive issues, and it's hard to consider paying
 Amazon for a support plan when their service is acting up.
+
+<!-- textlint-enable rousseau -->

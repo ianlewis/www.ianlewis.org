@@ -8,6 +8,8 @@ tags: gcp kubernetes mesos
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 _この記事は [Kubernetes Advent Calendar 2014](http://qiita.com/advent-calendar/2014/kubernetes)
 の19日目の記事です。18日の記事は [kazunori279](http://qiita.com/kazunori279) の
 [GKE＋BQがうまく動かなかった話](http://qiita.com/kazunori279/items/974c8b848af079d48d9c)。_
@@ -181,3 +183,5 @@ kubernetes-mesosは組み合わせて使うものではなく、Kubernetesを「
 
 Kubernetesのスケジューラーがもっとプラガブルになったら、MesosでKubernetesや、
 Hadoopや、Impalaなどを同じリソースプールで動かせるので、本当に強力になると思う。
+
+<!-- textlint-enable rousseau -->

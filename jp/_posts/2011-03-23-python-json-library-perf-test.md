@@ -8,6 +8,8 @@ tags: python json jsonlib jsonlib2 simplejson
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 # 概要
 
 最近、あるお客さんから、 快速なので、 [cjson](http://pypi.python.org/pypi/python-cjson/)
@@ -86,3 +88,5 @@ Pythonの世界で、 Cを名前に付けているライブラリが早いとイ
 
 ちなみに、Python 2.6+ に入っている json ライブラリは simplejson
 ではありますが、古いバージョンになっているし、必ずC拡張がコンパイルされているわけではないので、simplejsonの最新版を使うのがおすすめです。
+
+<!-- textlint-enable rousseau -->

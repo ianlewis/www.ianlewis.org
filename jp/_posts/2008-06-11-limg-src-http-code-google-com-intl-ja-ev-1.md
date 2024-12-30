@@ -7,6 +7,8 @@ blog: jp
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p><a rel="lightbox" href="/gallery2/d/10647-2/beforestart.jpg"><img src="/gallery2/d/10648-2/beforestart.jpg" alt="" width="150" height="113" /></a> <a rel="lightbox" href="/gallery2/d/10645-2/shachou.jpg"><img src="/gallery2/d/10646-2/shachou.jpg" alt="" width="150" height="113" /></a> <a rel="lightbox" href="/gallery2/d/10641-2/recruit.jpg"><img src="/gallery2/d/10642-2/recruit.jpg" alt="" width="150" height="113" /></a></p>
 <p>昨日、<a href="http://www.google.com/" title="Google">Google</a> Developer Day 2008に行ってきました。キーノットスピーチは <a href="http://code.google.com/events/io/">Google I/O</a> と全く同じだと思いますが (プレゼンのスライドは翻訳したそのまま）、<a href="http://www.google.com/" title="Google">Google</a>のデベロッパー向けの将来的なブランが発表された。</p>
 <h3>Keynote</h3>
@@ -21,3 +23,5 @@ render_with_liquid: false
 <p>僕も一応、ローカルで動いたフォームメーカーのアプリケーションを発表したんだけど、すごく緊張してて、意味がなかなか分からなかった人もいったかもしれない。</p>
 <h3>宴会</h3>
 <p><a href="http://www.google.com/" title="Google">Google</a> Developer Dayの終了後、Appengineセッションに参加したデベロッパーと一緒に宴会。たくさんの人の名刺を貰って、僕自身の名刺がなくなってしまった。それでも、皆さんと皆ですごく楽しめて、大満足だった。家に戻ったら、<a href="http://d.hatena.ne.jp/a2c/">a2cさん</a>や、<a href="http://yamashita.dyndns.org/blog/">山下英孝</a>さんや、<a href="http://takashi-matsuo.blogspot.com/">松尾貴史</a>さんや、<a href="http://code.google.com/intl/ja/events/developerday/2008/supporters.html">Google Developer Day サポーター　ページ</a>に載った人が多かったと気づいた。こんな素晴らしいデベロッパーなのに接することができたなんて本当によかったと思った。今度を本当に楽しみにしている。</p>
+
+<!-- textlint-enable rousseau -->

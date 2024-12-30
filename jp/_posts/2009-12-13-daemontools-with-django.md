@@ -8,6 +8,8 @@ tags: django
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 daemontoolsの上にdjango
 fastcgiを使うのは簡単にできるけど、正しいユーザとして、フォアグラウンドに起動するにはbashとdaemontoolsの設定する必要がある。
 
@@ -31,3 +33,5 @@ exec setuidgid www python /home/www/django-prj/manage.py runfcgi \
     --settings=settings_production method=threaded  port=8001 \
     pidfile=$PIDFILE daemonize=false 2>&1
 ```
+
+<!-- textlint-enable rousseau -->

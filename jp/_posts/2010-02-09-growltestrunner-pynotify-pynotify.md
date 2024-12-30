@@ -8,6 +8,8 @@ tags: python test growl libnotify pynotify テスト 通知
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 最近、会社の [AE35](http://twitter.com/ae35) さんが
 [growltestrunner](https://bitbucket.org/ae35/growltestrunner/) を作っていて、
 [modipyd](http://www.metareal.org/p/modipyd/ja/)
@@ -25,3 +27,5 @@ pynotify.init("My App")
 n = pynotify.Notification("Title", "Message", "/path/to/my/icon.png")
 n.show()
 ```
+
+<!-- textlint-enable rousseau -->

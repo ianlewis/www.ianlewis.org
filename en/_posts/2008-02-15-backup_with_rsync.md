@@ -8,6 +8,8 @@ tags: windows linux rsync
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I wanted to have a simple incremental backup system I could use on my machine
 to backup to an external drive so I came across
 [this post](http://benno.id.au/blog/2007/05/30/rsync-backup) on
@@ -40,3 +42,5 @@ might be difficult in some situations.
 Both ways have downsides but I
 don't use windows much at all so I'm leaning towards just making a ext3
 partition. Maybe I'll do that this weekend.
+
+<!-- textlint-enable rousseau -->

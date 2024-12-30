@@ -8,6 +8,8 @@ tags: python django ssl
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 今日、 bpssl をリリースしました。bpsslは [BeProud](http://www.beproud.jp/) で欲使っている
 Django用のSSL対応アプリです。 アクセスする時にHTTPSが必須なURLを指定することがよくありますよね？ 例えば、
 ログイン画面をHTTPSでしかアクセスできないようにする。ただし、 HTTPでアクセスした場合、
@@ -92,3 +94,5 @@ Django 側はこれで以上ですが、やっぱりウェブサーバーでの�
 
 詳しくは [bpssl のドキュメント](http://beproud.bitbucket.org/bpssl-1.0/ja/) もしくは、
 [ソースコード](http://bitbucket.org/beproud/bpssl/) を見ててください！
+
+<!-- textlint-enable rousseau -->

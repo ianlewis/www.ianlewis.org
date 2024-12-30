@@ -8,6 +8,8 @@ tags: python appengine mapper
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Matcher APIはあるオブジェクトが登録したクエリーにマッチするかをスケーラブルにチェックしてくれるサービスです。
 クエリーが既に登録しているから、あるオブジェクトが一つ一つの登録したクエリーにマッチするかが他のクエリーに依存しないので、
 [Map-Reduce](http://ja.wikipedia.org/wiki/MapReduce)
@@ -168,3 +170,5 @@ Trusted Tester の権限を 得られると、本番で試すことができま�
 <https://spreadsheets.google.com/a/google.com/viewform?hl=en&formkey=dG5XNnlVWXJYWG1yS0ExV2RmTW5EZEE6MQ#gid=0>
 
 <!-- textlint-enable spelling -->
+
+<!-- textlint-enable rousseau -->

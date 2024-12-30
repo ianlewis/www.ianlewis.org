@@ -8,6 +8,8 @@ tags: python google appengine transaction
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 The way to store data on [Appengine](http://code.google.com/appengine/) is with
 [Google](http://www.google.com/)'s
 [BigTable Datastore](http://code.google.com/appengine/docs/python/datastore/)
@@ -67,3 +69,5 @@ that matters as current backup solutions for Appengine rely on key names to
 maintain the keys of entities when backing up and restoring. It wouldn't be to
 fun if all the urls for an entity that had numeric ids changed after restoring
 the data from a backup.
+
+<!-- textlint-enable rousseau -->

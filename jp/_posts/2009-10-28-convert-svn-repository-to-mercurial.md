@@ -8,6 +8,8 @@ tags: mercurial hg svn
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 最近、svn・gitのリポジトリをmercurialにして、bitbucketに載せるのが多い。難しいか面倒だろうと思う人がいるかもしれないけど、現実は
 hg convert というコマンドを使うとすごく簡単です。hg convert は [mercurial convert
 extension](http://mercurial.selenic.com/wiki/ConvertExtension)
@@ -43,3 +45,5 @@ Copied properties for revision 2.
 $ hg convert foomirror   # convert directly from repo mirror to foomirror-hg
 ...
 ```
+
+<!-- textlint-enable rousseau -->

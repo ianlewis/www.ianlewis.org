@@ -8,6 +8,8 @@ tags: mercurial hg mq patch
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I recently started using mercurial's [mq
 extension](http://mercurial.selenic.com/wiki/MqExtension) at work as I
 found myself switching between changes a lot. I often had to set changes
@@ -125,3 +127,5 @@ hg qfinish qbase:qtip
 ```
 
 That's it\!
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: kubernetes containers container-runtime-series
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 _This is the fourth and last part in a four part series on container runtimes.
 It's been a while since
 [part 1](https://www.ianlewis.org/en/container-runtimes-part-1-introduction-container-r),
@@ -275,3 +277,5 @@ channels:
 If you have any suggestions or ideas for blog posts, send them to me on Twitter
 at [@IanMLewis](https://twitter.com/IanMLewis) via either a reply or DM.
 Thanks!
+
+<!-- textlint-enable rousseau -->

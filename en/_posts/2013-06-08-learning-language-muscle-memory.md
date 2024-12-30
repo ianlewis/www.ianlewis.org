@@ -7,6 +7,8 @@ blog: en
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <img alt="/assets/images/707/0-utrb8piu3ltmh9d7_big.jpeg" class="align-center" src="/assets/images/707/0-utrb8piu3ltmh9d7_big.jpeg">
 
 > Note: This post is cross-posted from [my post on medium](https://medium.com/what-i-learned-today/16332f7c7666).
@@ -18,3 +20,5 @@ Most people think about learning a second language as a kind of [rote learning](
 However, after interacting with many people living in Japan and attempting to learn the language, I felt that too many people focus on this area too much. Their knowledge of the language constructs, vocabulary and culture sometimes exceeds my own, but their fluency in conversation leaves something to be desired. How is that?
 
 I’ve come to believe that learning a language is as much about [muscle memory](http://en.wikipedia.org/wiki/Muscle_memory) as about rote learning. Speaking a language is a real time activity. You need to be able to respond to a query, ideally, in about a second, and absolutely within a few seconds. Getting that kind of speed requires practice. You need to be able to understand commonly used phrases quickly, and react properly when you don’t know how to respond. The only way to really get better at conversation is to talk to people. The more the better.
+
+<!-- textlint-enable rousseau -->

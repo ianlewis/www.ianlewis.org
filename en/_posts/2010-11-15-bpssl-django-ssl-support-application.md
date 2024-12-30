@@ -8,6 +8,8 @@ tags: python django ssl
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 The other day I released bpssl which is a Django application that helps
 you support HTTPS on your website. The main functionality is performing
 redirection for HTTPS only URLs and views. For instance, if a request
@@ -117,3 +119,5 @@ some setup required on the web server depending on your setup. Please
 check out the
 [Documentation](http://beproud.bitbucket.org/bpssl-1.0/en/) or [Source
 Code](http://bitbucket.org/beproud/bpssl/) for details.
+
+<!-- textlint-enable rousseau -->

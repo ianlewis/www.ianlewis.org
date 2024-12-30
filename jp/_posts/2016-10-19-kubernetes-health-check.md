@@ -8,6 +8,8 @@ tags: kubernetes
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 最近、Kubernetesのヘルスチェックについての質問をよく見ています。ここでヘルスチェックの種類の違いや、どう使うか説明してみます。
 
 ## Liveness Probe
@@ -97,3 +99,5 @@ http.ListenAndServe(":8080", nil)
 ## より安定性のあるアプリケーション
 
 `livenessProbe`と`readinessProbe`はどっちもアプリケーションの安定性に助かる機能。トラフィックを受けられるコンテナだけにトラフィックを転送しないようにしてくれるし、クラッシュしたコンテナや、固まったコンテナを再起動してくれるし、非常に便利。そして、私の同僚のKelsey Hightowerが解説した [12 Fractured Apps](https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c)の解決策でもある。ヘルスチェックがあれば、依存するサービスの起動を待ったりする複雑なEntrypointスクリプトはいらない。トラフィックを受けられる時だけ受けるし、ローリングアップデートやスケールアップがスムーズに動きます。
+
+<!-- textlint-enable rousseau -->

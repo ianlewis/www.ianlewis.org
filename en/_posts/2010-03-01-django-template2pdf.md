@@ -8,6 +8,8 @@ tags: django pdf rml
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 This is cool Django application from [Yasushi
 Masuda](http://twitter.com/whosaysni) which allows you to render data to
 a pdf using [trml2pdf](http://pypi.python.org/pypi/trml2pdf).
@@ -30,3 +32,5 @@ def myview(request, template_name='trml2pdf/mytemplate.rml'):
         direct_to_pdf(request, template_name, params),
         mimetype='application/pdf')
 ```
+
+<!-- textlint-enable rousseau -->

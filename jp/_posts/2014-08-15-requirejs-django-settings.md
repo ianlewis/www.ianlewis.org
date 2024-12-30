@@ -8,6 +8,8 @@ tags: javascript django require.js
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 JavaScriptをよく書いている場合、普通のアプリケーションと同じように設定を
 書きたい場合があると思う。たとえば、開発の場合によく `DEBUG` フラグとか設定するよね？
 たとえば、 Djangoを使っている場合、 `settings.DEBUG` が `True` と時に、JavaScriptにも
@@ -79,3 +81,5 @@ define(["jquery", "settings"], function ($, settings) {
 ```
 
 もちろん、Django じゃなくても、Ruby on Rails や、Pyramid で同じ仕組みを使えるはず。
+
+<!-- textlint-enable rousseau -->

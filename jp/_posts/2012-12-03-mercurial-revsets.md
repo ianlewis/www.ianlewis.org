@@ -8,6 +8,8 @@ tags: mercurial source-control
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 ![image](/assets/images/mercurial/mercurial_medium.png)
 
 > この記事は [Mercurial Advent Calendar 2012](http://connpass.com/event/1431/)
@@ -208,3 +210,5 @@ $ hg log -r "sort(date('Nov 2012'), user)" | grep "ユーザ:" | awk 'BEGIN { FS
 ```
 
 おうふ、もうちょっと仕事すればいいんですね。はいはい
+
+<!-- textlint-enable rousseau -->

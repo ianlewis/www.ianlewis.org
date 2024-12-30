@@ -8,6 +8,8 @@ tags: python riak
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 ![image](/assets/images/699/riak_big.png)
 
 Riak は [Basho](http://basho.com/) が作っているキーべリューストレージ (KVS) システム。 せっかく
@@ -108,3 +110,5 @@ Index、Search を含めて、基本的にすべての機能が使えて、安�
 <http://basho.github.io/riak-python-client/>
 
 分散サーバーにしては、Riak は結構簡単に動かせて、簡単にPython からつなげて、 割と、面白いなと思いますので、是非使ってみて下さい。
+
+<!-- textlint-enable rousseau -->

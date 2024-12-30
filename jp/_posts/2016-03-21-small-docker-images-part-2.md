@@ -8,6 +8,8 @@ tags: docker
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 この記事は小さいDockerイメージの作成について第２版目の記事。[前回の記事](/jp/small-docker-images)で小さいDockerイメージの作り方について書きましたが、その方法を使った場合、どのくらい小さくできるかは限られている。イメージに追加するレイヤーを小さくする方法を使ったんですが、その方法が使えない場合がある。Dockerfileを実行するコマンドを特定な順番で実行しなければならない場合はどうすることもできない。例えば、ある中間ステップでファイルを追加しなければならない場合：
 
 ```docker
@@ -104,3 +106,5 @@ docker-squash -from 18d8ebf067fd -i ... -o ...
 ```
 
 Docker Squashは万能ではないけど、Docker利用者のツールの一つとしてかなり便利だと思います。[使ってみて](https://github.com/jwilder/docker-squash)、もし何かコメントや意見があれば、下にコメントや[Twitter](https://twitter.com/IanMLewis)で教えてください。これからの記事で、Dockerイメージを小さくするまた別の方法の話を書いてみますので、ぜひ期待してください。
+
+<!-- textlint-enable rousseau -->

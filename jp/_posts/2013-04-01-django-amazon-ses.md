@@ -8,6 +8,8 @@ tags: python django aws
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Amazon さんが、Amazon Web Services の下にメール送信サービス [Simple Email Service
 (SES)](http://aws.amazon.com/jp/ses/) を
 提供している。このサービスは、主に大量なメールでも正しく送信して、
@@ -192,3 +194,5 @@ SES
 SES もバウンスメールの処理もできるので、その処理を今 [僕の django-ses
 のフォーク](https://github.com/IanLewis/django-ses/compare/master...bounce_notifications)
 を実装しようとしていますので、興味ある方は見てみてください。
+
+<!-- textlint-enable rousseau -->

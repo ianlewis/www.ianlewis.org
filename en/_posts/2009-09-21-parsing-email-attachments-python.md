@@ -8,6 +8,8 @@ tags: python parsing
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Recently I needed to be able to parse out attachments and body from
 multipart emails and use the resulting data to post to a service. So I
 wrote the code below to parse out text and html portions of the email
@@ -116,3 +118,5 @@ def parse(content):
         'attachments': attachments,
     }
 ```
+
+<!-- textlint-enable rousseau -->

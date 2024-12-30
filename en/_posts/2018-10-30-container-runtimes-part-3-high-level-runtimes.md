@@ -8,6 +8,8 @@ tags: containers container-runtime-series
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 _This is the third part in a four-part series on container runtimes. It's been a while since [part 1](https://www.ianlewis.org/en/container-runtimes-part-1-introduction-container-r), but in that post I gave an overview of container runtimes and discussed the differences between low-level and high-level runtimes. In [part 2](https://www.ianlewis.org/en/container-runtimes-part-2-anatomy-low-level-contai) I went into detail on low-level container runtimes and built a simple low-level runtime._
 
 High-level runtimes are higher up the stack than low-level runtimes. While low-level runtimes are responsible for the mechanics of actually running a container, high-level runtimes are responsible for transport and management of container images, unpacking the image, and passing off to the low-level runtime to run the container. Typically, high-level runtimes provide a daemon application and an API that remote applications can use to logically run containers and monitor them but they sit on top of and delegate to low-level runtimes or other high-level runtimes for the actual work.
@@ -120,3 +122,5 @@ Until then, you can get more involved with the Kubernetes community via these ch
 If you have any suggestions or ideas for blog posts, send them to me on Twitter at [@IanMLewis](https://twitter.com/IanMLewis) via either a reply or DM. Thanks!
 
 _> Thanks to [Craig Box](https://twitter.com/craigbox), [Marcus Johansson](https://twitter.com/marcjoha), Steve Perry, and Nicolas Lacasse for reviewing drafts of this post._
+
+<!-- textlint-enable rousseau -->

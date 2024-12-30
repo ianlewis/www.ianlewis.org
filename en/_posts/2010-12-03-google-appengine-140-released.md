@@ -8,6 +8,8 @@ tags: python google appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 [Google Appengine](http://code.google.com/appengine/) 1.4.0 was just
 released and has lots of interesting new features. Channel API, "Always
 On" (reserved instances), Improvements to background processing, Warm up
@@ -240,3 +242,5 @@ yet but you can download it from the links at the google project page.
 - Java:
   [appengine-java-sdk-1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=appengine-java-sdk-1.4.0.zip)
 - [Release Notes](http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes)
+
+<!-- textlint-enable rousseau -->

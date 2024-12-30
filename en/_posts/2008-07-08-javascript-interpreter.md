@@ -8,6 +8,8 @@ tags: javascript mochikit
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I wanted a convenient way to test out some javascript by running it in a
 browser and being able to play with it via an interpreter like python has. As
 it turns out the almighty [Bob](http://bob.pythonmac.org/) created a nice
@@ -37,3 +39,5 @@ function (jssource) {
 ```
 
 Check out the slightly modified interpreter [here](/assets/demos/files/interpreter/index.html)
+
+<!-- textlint-enable rousseau -->

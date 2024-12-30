@@ -8,6 +8,8 @@ tags: arduino
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 今週末の Python温泉で、最近買った、arduino を初めて触った。
 [Arduino+Pythonハッキング勉強会](http://connpass.com/event/1107/)
 の [資料](http://kitagami.org/Study/arduinopy20120917.html)
@@ -152,3 +154,5 @@ void loop() {
 これで余裕で音楽鳴らせるべ！ってもりよしさんともりあがって、もりよしさんが JavaScript からHTTPで叩きまくった。
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9X_8mkjM06M?si=LxQf3TctQ-VFtMt-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<!-- textlint-enable rousseau -->

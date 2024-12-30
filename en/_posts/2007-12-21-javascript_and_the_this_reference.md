@@ -8,6 +8,8 @@ tags: javascript mochikit
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 So the last few days I've been playing around with
 [MochiKit](http://www.mochikit.com/) and working with Javascript. Until now I
 have done some Javascript here and there but not too much. MochiKit seems to
@@ -76,3 +78,5 @@ Most people who program in JavaScript already know about MochiKit but if you
 are interested in it check out the
 [screencast](http://mochikit.com/screencasts/MochiKit_Intro-1.mov) at
 http://www.mochikit.com/
+
+<!-- textlint-enable rousseau -->

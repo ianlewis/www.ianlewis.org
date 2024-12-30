@@ -8,6 +8,8 @@ tags: golang
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Go is a really powerful programming language that allows you to write concurrent code that is still easy to understand. But designing APIs can be hard, even for seasoned Go programmers. When designing APIs for libraries and applications in Go it's important to keep in mind the strengths of the language to make your APIs easier to use and avoid pitfalls like goroutine leaks. With that in mind, here are a few common issues I see often with Go APIs and some tips for how to make them better.
 
 ## Don't Take APIs Out of Context
@@ -198,3 +200,5 @@ As always, Dave Cheney's website is a goldmine for [resources on this](https://d
 Hopefully these tips are helpful to you when designing your next Go API. Let me know if you run across any other examples of good (or bad!) practices by sending me a message on [Twitter](https://twitter.com/IanMLewis).
 
 _Thanks to Eno Compton for reviewing this post and offering lots of improvements._
+
+<!-- textlint-enable rousseau -->

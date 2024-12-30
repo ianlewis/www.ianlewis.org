@@ -8,6 +8,8 @@ tags: jquery sortable jquery-ui
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 [jQuery](http://jquery.com/) has a UI framework called
 [jQueryUI](http://jqueryui.com/) which provides a number of UI controls and
 widgets that you can use to create cool user interfaces. I've been using
@@ -61,3 +63,5 @@ $("#my-other-list").sortable({
 ```
 
 You can check out a demo that connects two sortables together here: [DEMO >>](/assets/demos/files/sortables/index.html)
+
+<!-- textlint-enable rousseau -->

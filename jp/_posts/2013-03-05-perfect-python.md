@@ -8,6 +8,8 @@ tags: python パーパイ
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 ![image](/assets/images/698/2013-02-27_23.08.01_medium.jpg)
 
 僕が執筆に参加していた「 [パーフェクトPython](http://gihyo.jp/book/2013/978-4-7741-5539-5)
@@ -30,3 +32,5 @@ Python3.3がリリースされて、Python3対応のライブラリーやフレ�
 
 パーフェクトPythonは [技術評論社](http://www.gihyo.jp)
 で出版されます。もちろん、Amazonでオンラインで購入できますし、本屋さんでも購入できます。
+
+<!-- textlint-enable rousseau -->

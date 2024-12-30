@@ -8,6 +8,8 @@ tags: django homepage pygments
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I finally got around to finishing up my
 [Django](http://www.djangoproject.com/) based website. It's pretty
 inexcusable for a Django developer to have a PHP based blog website. I'm
@@ -48,3 +50,5 @@ also or else I'll be publishing some half baked looking blog posts.
 Also, I think I got most things but there may be broken links and bugs
 on the site so if you see one let me know on
 [Twitter](http://twitter.com/ianmlewis).
+
+<!-- textlint-enable rousseau -->

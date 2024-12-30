@@ -8,6 +8,8 @@ tags: mercurial
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I just set up my e-mail settings with
 [Mercurial](http://www.selenic.com/mercurial/) so that I can e-mail patches via
 my [Gmail](http://www.google.com/mail/) account. I have
@@ -56,3 +58,5 @@ Simple. Now I just enable POP for my gmail and I can use hg email and it will
 go through my gmail account. Now only if the Mercurial guys would fix
 [this issue](http://www.selenic.com/mercurial/bts/issue814) so I can send the
 patch email with the correct encoding.
+
+<!-- textlint-enable rousseau -->

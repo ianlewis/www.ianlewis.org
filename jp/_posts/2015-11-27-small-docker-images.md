@@ -8,6 +8,8 @@ tags: docker
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 最近、コンテナ技術が流行っていていろなツールを興味深く触っている。その中の一番人気のはみんな大好きなDocker。Dockerは docker
 runでコンテナの実行環境を簡単に作ってくれる上、docker build でコンテナのイメージの構築も簡単にできる。Dockerのイメージ構築はDockerfileというMakefileのようなファイルを元にその中のコマンドを順番に実行して構築していくもの。
 
@@ -102,3 +104,5 @@ Dockerイメージが大抵DebianやUbuntuのイメージから継承して、�
 などを使うのが便利。
 
 [Googleではすべてのアプケーションがコンテナで動いている](https://speakerdeck.com/jbeda/containers-at-scale?slide=2)。コンテナのアプリを実行するために必要ないものがいっぱい入っているのが無駄なので、コンテナの外にスタティックバイナリにビルドして、そのバイナリと必要なファイルだけイメージに入れるのがGoogleのやり方。このやり方はイメージは小さくなって、依存ライブラリの管理は簡単なので、なかなか賢いと思う。これは Go がデフォールトでスタティックバイナリにコンパイルする理由のひとつ。
+
+<!-- textlint-enable rousseau -->

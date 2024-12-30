@@ -8,6 +8,8 @@ tags: python google django sitemap
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p><a href="http://www.djangoproject.com/" title="Django">Django</a> <a href="http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/">sitemap framework</a>を使うのが簡単過ぎる。下記のようにサイトマップクラスを作って、urls.pyに登録するだけ。サイトマップに載るURLを取るのに、サイトマップフレームワークが自分が作ったクラスのitems()を呼び出して、アイテムのget_absolute_url()を順番に呼び出す感じ。</p>
 
 <h4>models.py</h4>
@@ -25,3 +27,5 @@ render_with_liquid: false
 <p>後、サイトのコンテンツが変更された時、<a href="http://www.google.com/" title="Google">Google</a>が新しいコンテンツをインデクスするために ping_googleというmanage.pyコマンドが用意してある。</p>
 <span class="codespan">python manage.py ping_google</span>
 <p>でも、<a href="http://d.hatena.ne.jp/mstn/20080425">他の検索エンジンが同じようなサービスがある</a>のに、ping_googleしかないので、上記のようなコマンドをいくつも作っていた。</p>
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p><a href="/assets/images/516/jaiku.png"><img src="/assets/images/516/jaiku.png" /></a></p>
 
 <p>昨日、<a href="http://www.google.co.jp/">Google</a>の<a href="http://www.twitter.com/">Twitter</a>ライクなサービス、<a href="http://www.jaiku.com/">Jaiku</a>が<a href="http://code.google.com/p/jaikuengine/">オープンソース</a>になって、<a href="http://code.google.com/intl/ja/appengine/">Google Appengine</a>に移動することに</p>
@@ -54,3 +56,5 @@ render_with_liquid: false
 </td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"><div class="amc3"></div></div></td><td>&nbsp;)$</td></tr></table></div>
 
 <p>これでようやく動くはずなのに、またエラーが出たけど、今回はpstatsのエラーで、python-profileのパッケージを入れて、解決した。</p>
+
+<!-- textlint-enable rousseau -->

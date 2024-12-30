@@ -8,6 +8,8 @@ tags: django pyspa
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Django の日本語ドキュメントの翻訳が 1.0～1.1 の間のままで、Django 1.3
 が年末にそろそろ出るということで、かなり遅れています。
 
@@ -23,3 +25,5 @@ ATNDで参加しますと、オンラインか、Python温泉で参加するか�
 よろしくお願いします！
 
 **Update:** 19日～21日の日付が確定されてないみたいなので、変更される可能性大 orz
+
+<!-- textlint-enable rousseau -->

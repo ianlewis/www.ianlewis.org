@@ -8,6 +8,8 @@ tags: jquery jqueryui
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 最近、[jQueryUI](http://jqueryui.com/)をバリバリ使ってて、[sortable](http://jqueryui.com/demos/sortable/)というウィジェットで簡単にできることがあまりにも面白い。
 
 ```javascript
@@ -47,3 +49,5 @@ $("#my-other-list").sortable({
 ```
 
 <a href="/assets/demos/files/sortables/index.html" target="_blank">DEMO &gt;&gt;</a>
+
+<!-- textlint-enable rousseau -->

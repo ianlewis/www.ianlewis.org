@@ -8,6 +8,8 @@ tags: python django werkzeug
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p>I wanted to impove a <a href="http://code.google.com/appengine/">Google Appengine</a> application that a friend of mine created (<a href="http://twisted-mind.appspot.com/">ほぼ汎用イベント管理ツール</a>(jp)) and noticed that he was <a href="http://bitbucket.org/voluntas/twisted-mind/src/tip/views.py#cl-132">redirecting directly to urls</a>. He is using <a href="http://werkzeug.pocoo.org/">Werkzeug</a> to handle url routing so I wondered if there was a method for generating urls from a name like you can in <a href="http://www.djangoproject.com/">Django</a>.</p>
 
 <p>It turns out you can but you give it an endpoint name rather than a url name.</p>
@@ -23,3 +25,5 @@ views.py
 <p>You need to give the build function a full endpoint. in the above example you can have endpoints like admin_create_${name} where ${name} is the name of a resource. This would need to be filled in when passing it to build.</p>
 
 <div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td>...<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>&nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> reverse<span style="color: black;">&#40;</span><span style="color: #483d8b;">'admin_create_event'</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td>...</td></tr></table></div>
+
+<!-- textlint-enable rousseau -->

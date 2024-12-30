@@ -7,6 +7,8 @@ blog: en
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p>I just set up <a href="http://www.plagger.org/" title="Plagger">Plagger</a> to send me e-mails to my cellphone and gmail when there are updates to my replies rss feed on twitter. This took way longer than anticipated because of how long it took to install and configure <a href="http://www.plagger.org/" title="Plagger">Plagger</a> properly.</p>
 <p>First installing it took a long time. I installed it via cpan and <a href="http://www.plagger.org/" title="Plagger">Plagger</a> has a huge number of dependencies. Many of the dependencies are not set properly so cpan fails to install it more often then not. I had to force install the IO::Socket::SSL package because the tests failed. I didn't need TLS for mail and it's an optional package so I'm not sure why I needed SSL in the first place.</p>
 <p>Once plagger was installed there isn't a terribly large amount of info about how to set it up. You basically have to create a config.yaml file in the same directory as the plagger executable or create a yaml file with any name and specify the location with the -c flag.</p>
@@ -37,3 +39,5 @@ render_with_liquid: false
 </td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; host: localhost:26<br />
 </td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; username: &lt;local mail user&gt;<br />
 </td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; password: &lt;local mail password&gt;</td></tr></table></div>
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: javascript jquery
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Earlier this week I came across the [jQuery Pageslide](http://halobrite.com/blog/jquery-pageslide/) plugin via
 [Ajaxian](http://www.ajaxian.com/) and was impressed with the design. I set
 about using it to display help messages to the user for a site I am working on.
@@ -31,3 +33,5 @@ View the source:
 
 - [demo.html](/assets/demos/files/view-source/view-source.html#multi-pageslide/demo.html)
 - [jquery.pageslide-0.2.js](/assets/demos/files/view-source/view-source.html#multi-pageslide/jquery.pageslide-0.2.js)
+
+<!-- textlint-enable rousseau -->

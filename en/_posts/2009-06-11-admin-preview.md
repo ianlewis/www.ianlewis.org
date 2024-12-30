@@ -8,6 +8,8 @@ tags: django preview
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I
 [implemented](http://bitbucket.org/IanLewis/homepage/changeset/a7f07d233910/)
 blog post previews for my blog using the technique described here:
@@ -24,3 +26,5 @@ parameters on your preview view. A post is nice since it wouldn't
 require javascript but it would cause the browser to load the preview
 page in the current window so you would have to hit back button in your
 browser to get it
+
+<!-- textlint-enable rousseau -->

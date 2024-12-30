@@ -8,6 +8,8 @@ tags: python programming method
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 In Python you sometimes want to dynamically add methods to classes or
 class instances (objects). In Python code, the most obvious way to
 accomplish this might be something like the following but it has one
@@ -83,3 +85,5 @@ instances of that Class have the new method we will need to add an
 
 So now we can create any number of `MyObj` instances and they will all
 contain the new method. Pretty handy eh?
+
+<!-- textlint-enable rousseau -->

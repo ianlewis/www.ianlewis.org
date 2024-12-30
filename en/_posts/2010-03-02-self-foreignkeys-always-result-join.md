@@ -8,6 +8,8 @@ tags: django orm sql
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I came across a little annoyance in Django today. I found that
 ForeignKeys that reference 'self', i.e. they point to the same table,
 always result in a join in a filter.
@@ -45,3 +47,5 @@ table is big. Let's do it the right way.
 
 Ahh, that's better. I don't really like using extra() but in situations
 like these I'm glad it's there.
+
+<!-- textlint-enable rousseau -->

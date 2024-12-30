@@ -8,6 +8,8 @@ tags: python django testing
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 The normal way to test Django views is via the [test client](https://docs.djangoproject.com/en/1.8/topics/testing/tools/). The test client fakes being a wsgi server and actually makes an HTTP request through all of Django’s request routing machinery. There are a number of reasons why this isn’t an ideal approach.
 
 ## Tests are Slow
@@ -74,3 +76,5 @@ response = MyView.as_view()(request)
 ## Clean, Stable Tests
 
 Testing views this way produces tests that are faster, cleaner, more stable, and have the right dependencies. Because the test only depends on what the view itself depends on, and only tests the logic of the view itself, the tests will be stable and continue to work even when refactoring middleware or `urls.py`.
+
+<!-- textlint-enable rousseau -->

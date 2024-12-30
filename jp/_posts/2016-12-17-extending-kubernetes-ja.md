@@ -8,6 +8,8 @@ tags: kubernetes
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 > この記事は
 > [Kubernetes Advent Calendar 2016](http://qiita.com/advent-calendar/2016/kubernetes)の第17日目の記事。
 > 第１6目は[yuanying](https://twitter.com/yuanying)さんの
@@ -384,3 +386,5 @@ backup-8dasy            1         1            5m
 また、もし興味がある方は [Kubernetes Slackチャンネル](http://slack.kubernetes.io/)にジョインすると、他のKubernetes開発者と話せますし、`#jp-users` に日本のユーザーもいるのでぜひジョインしてみてください。
 
 以上、 [Kubernetes Advent Calendar 2016](http://qiita.com/advent-calendar/2016/kubernetes) の第17日の記事でした。明日は、[hiyosi](https://twitter.com/hiyosi)さんの「認証関連で何か」を期待しましょう。
+
+<!-- textlint-enable rousseau -->

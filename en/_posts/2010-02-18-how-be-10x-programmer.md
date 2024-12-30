@@ -8,6 +8,8 @@ tags: programming superstar
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I recently read a blog post that is a satirical look at how to gain a
 reputation as a guru programmer by converting code to your own code and
 making it hard for other programmers to get their work done. It's called
@@ -85,3 +87,5 @@ another language (which I also have some experience with), there is a
 large sunk cost and it takes a lot of time to get to a level of fluency.
 
 That's it. Let me know if you have any comments\!
+
+<!-- textlint-enable rousseau -->

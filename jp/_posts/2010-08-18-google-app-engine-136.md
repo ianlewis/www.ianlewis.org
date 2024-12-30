@@ -8,6 +8,8 @@ tags: python google appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 今日、 [Appengine](http://code.google.com/appengine/) 1.3.6
 がリリースされました。今回の大きいなリリースは以下の4つです。元のブログポストは
 [こちら](http://googleappengine.blogspot.com/2010/08/multi-tenancy-support-high-performance_17.html)
@@ -46,3 +48,5 @@ Picasa のインフラーを使っていて、リサイズ、切れ抜きなど�
 1000件リミットを外すことにしました。これから、莫大クエリーは早く返ってこないだろうけれど、1000件リミットではなく、自分のCPUクオータと、リクエスト時間がネックになります。無料アプリケーションは
 Burst クオータも、有料アプリケーションの同じレベルになりました。
 [クオータリミットのドキュメント](http://code.google.com/appengine/docs/quotas.html)
+
+<!-- textlint-enable rousseau -->

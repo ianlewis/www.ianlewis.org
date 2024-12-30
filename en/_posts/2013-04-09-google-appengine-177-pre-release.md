@@ -8,6 +8,8 @@ tags: python appengine socket
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <div class="note">
 
 <div class="title">
@@ -253,3 +255,5 @@ number of sockets created, but we'll have to see.
 I hope 1.7.7 is released soon because I'm looking forward to using the
 socket API with at least one of the apps I've created. Till then I'll
 just have to sit on my hands. :)
+
+<!-- textlint-enable rousseau -->

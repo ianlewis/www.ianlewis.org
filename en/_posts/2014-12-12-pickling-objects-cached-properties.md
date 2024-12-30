@@ -8,6 +8,8 @@ tags: python
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Python descriptors allow you to create properties on python objects
 that are the result of executing some code. One of the simplest ways of doing
 that is using the `@property` decorator. Here, accessing the `myprop` will
@@ -57,3 +59,5 @@ to classes but it's not terribly clean and seems like it would be brittle.
 
 I'm not really satisfied with this solution so I'd be interested in hearing if
 there are any other ideas about how to do avoid pickling cached data.
+
+<!-- textlint-enable rousseau -->

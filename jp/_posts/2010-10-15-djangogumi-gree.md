@@ -8,6 +8,8 @@ tags: django gumi
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 ![image](/assets/images/633/gumi.gif)
 
 僕の会社BeProud のもう一つの主に Django を使っている会社は [gumi](http://gu3.co.jp/). グミはもともと
@@ -21,3 +23,5 @@ CTOをやっています。すこし、Django がもうちょっと人気にな�
 それよりも Python のコミュニティを広げたいと思っているので、gumi は大きくなっているのが、いいことだと思っている。
 
 頑張って、グミさん\!\!
+
+<!-- textlint-enable rousseau -->

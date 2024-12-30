@@ -8,6 +8,8 @@ tags: python kubernetes
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 > この記事は [pyspa Advent Calendar 2016](http://www.adventar.org/calendars/1435#list-2016-12-02) の第２日目の記事。第１目はakisuteさんの「[今年の話](http://akisute.com/2016/12/pyspa-advent-calendar-2016-1.html)」だった。
 
 「斧さんの記事凄かった。pyspa の二日目の人まじかわいそう」というかわいそうなイアンです。よろしくです。
@@ -132,3 +134,5 @@ Event: MODIFIED nginx-2048367498-zwkfg
 このところまで読んだら「んじゃ、APIで何ができる？なんのメリットある？」って思っているかもしれない。APIの上に作れるものは幅広いんだけど、便利なUI (例: [dashboard](https://github.com/kubernetes/dashboard))や、CIシステムのパイプライン(例: [fabric8](https://fabric8.io/))や、監視ツールや、フルフルなPaaS(例: [Deis](http://deis.io/), [OpenShift](https://www.openshift.com/))、やserverless的なFaaS(Function as a Service, 例: [fission.io](http://fission.io/), [funktion](https://github.com/fabric8io/funktion))が作れるだろう。
 
 [client-python](https://github.com/kubernetes-incubator/client-python)をインストールして、Pythonでアプリを作ってみよう。もし、興味がある方は [Kubernetes Slackチャンネル](http://slack.kubernetes.io/)にジョインすると、他のKubernetes開発者と話せる。Pythonクライアントを担当しているのが `#sig-api-machinery` というチャンネルですが、英語得意じゃない方はぜひ `#jp-users` にジョインしていただけると幸い
+
+<!-- textlint-enable rousseau -->

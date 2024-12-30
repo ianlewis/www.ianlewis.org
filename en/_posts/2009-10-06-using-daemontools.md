@@ -8,6 +8,8 @@ tags: monitoring system admin
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 # Introduction
 
 [Daemontools](http://cr.yp.to/daemontools.html) is a set of programs for
@@ -143,3 +145,5 @@ That wraps up a basic use of daemontools to manage processes. Using
 daemontools can be pretty frustrating as many processes refuse to run in
 the foreground and don't handle UNIX signals properly but if you get it
 running properly it can really improve the reliability of your services.
+
+<!-- textlint-enable rousseau -->

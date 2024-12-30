@@ -8,6 +8,8 @@ tags: projects gallery2-plugin gallery2
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I made some changes to the [TinyMCE
 plugin](http://manual.b2evolution.net/Plugins/tinymce_plugin) for
 [b2evolution](http://www.b2evolution.net/) to support some callbacks which will
@@ -65,3 +67,5 @@ function tinymce_extend_plugins( &$params ) {
 
 You can view the changes made in the checked in code
 [here](http://evocms-plugins.svn.sourceforge.net/viewvc/evocms-plugins?view=rev&revision=714).
+
+<!-- textlint-enable rousseau -->

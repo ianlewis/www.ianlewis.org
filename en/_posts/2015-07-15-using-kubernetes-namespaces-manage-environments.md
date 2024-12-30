@@ -8,6 +8,8 @@ tags: kubernetes
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 One of the advantages that Kubernetes provides is the ability to manage various environments easier and better than you have been doing. For most nontrivial applications, you have test, staging, and production environments. You can spin up a separate cluster of resources, such as VMs, with the same configuration in staging and production, but that can be costly and managing the differences between the environments can be difficult.
 
 Kubernetes includes a cool feature called [namespaces](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/design/namespaces.md), which enable you to manage different environments within the same cluster. For example, you can have different test and staging environments in the same cluster of machines, potentially saving resources. You can also run different types of server, batch, or other jobs in the same cluster without worrying about them affecting each other.
@@ -97,3 +99,5 @@ Notice that the IP addresses are different depending on which namespace I use ev
 While you can run staging and production environments in the same cluster and save resources and money by doing so, you will need to be careful to set up resource limits so that your staging environment doesn't starve production for CPU, memory, or disk resources. Setting resource limits properly, and testing that they are working takes a lot of time and effort so unless you can measurably save money by running production in the same cluster as staging or test, you may not really want to do that.
 
 Whether or not you run staging and production in the same cluster, namespaces are a great way to isolate different apps within the same cluster. Namespaces will also serve as a level where you can apply resource limits so look for more resource management features at the namespace level in the future.
+
+<!-- textlint-enable rousseau -->

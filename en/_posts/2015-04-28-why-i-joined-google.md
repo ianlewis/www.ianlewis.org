@@ -8,6 +8,8 @@ tags: google
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 As some of you may or may not know, I joined Google as a Developer Advocate on
 the Google Cloud Platform Team in January. I just completed my first 3 months
 and, like [many others](http://paul.kinlan.me/my-first-year-in-google/), it's
@@ -116,3 +118,5 @@ technology. Many people have talked about the ability of technology to improve
 people's lives. I think that new technologies like cloud, containers, mobile,
 and wearables, have huge potential to change people's lives exponentially
 more than computers have so far. The next few years will be exciting!
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: kubernetes
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I've seen a lot of questions about Kubernetes health checks recently and how
 they should be used. I'll do my best to explain them and the difference between
 the types of health checks and how each will affect your application.
@@ -130,3 +132,5 @@ checks in place you can deploy your applications in any order without having to
 worry about dependencies or complicated entrypoint scripts. And applications
 will start serving traffic when they are ready so auto-scaling and rolling
 updates work smoothly.
+
+<!-- textlint-enable rousseau -->

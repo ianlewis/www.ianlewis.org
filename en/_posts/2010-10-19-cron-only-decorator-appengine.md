@@ -8,6 +8,8 @@ tags: python appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 For a recent project I recently I have been using appengine's cron
 feature to aggregate data and perform maintenance tasks. However, since
 cron is a simple web request, if a user accesses that url then the cron
@@ -32,3 +34,5 @@ def cron_only(func):
         return func(request, *args, **kwargs)
     return inner
 ```
+
+<!-- textlint-enable rousseau -->

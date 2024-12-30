@@ -8,6 +8,8 @@ tags: kubernetes
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 > For those that want to dive right in, I have put up a tutorial and some sample manifests on github. Check it out at [https://github.com/IanLewis/kubernetes-bluegreen-deployment-tutorial](https://github.com/IanLewis/kubernetes-bluegreen-deployment-tutorial)
 
 Kubernetes has a really awesome built-in feature called [Deployments](https://github.com/kubernetes/kubernetes/tree/master/pkg/controller/deployment). Deployments come with the ability to do rolling updates of containers when you update your application to a new version. Rolling updates are a great way to update applications because your app uses about the same amount of resources during an update as it does when not updating, all with minimal impact to performance and availability.
@@ -199,3 +201,5 @@ echo "Done."
 ```
 
 Hopefully Kubernetes will support blue/green deployments natively but until then you can get by with some automation like this. To connect with folks who care about how applications are deployed on Kubernetes check out the `#sig-apps` channel in the [Kubernetes Slack](http://slack.kubernetes.io/).
+
+<!-- textlint-enable rousseau -->

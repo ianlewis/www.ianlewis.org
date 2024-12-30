@@ -8,6 +8,8 @@ tags: projects python json jsonschema
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I just released the first version for a project that I've been working on since
 the [Python Onsen](http://www.ianlewis.org/index.php/en/python-onsen). It's a
 validator for [JSON Schema](http://www.json.com/category/json-schema/) written
@@ -86,3 +88,5 @@ the default validation for standard properties so I think it could be used for a
 wide range of applications. I plan to use it for a Form Maker application
 ([code](http://www.ianlewis.org/hg/formmaker-appengine/)) on
 [GAE](http://code.google.com/appengine/). Let me know what you think!
+
+<!-- textlint-enable rousseau -->

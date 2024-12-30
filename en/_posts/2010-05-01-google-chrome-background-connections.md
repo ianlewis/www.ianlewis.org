@@ -8,6 +8,8 @@ tags: google
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Today I found that google chrome was making lots of background
 connections to 1e100.net. I was a little worried at first but this seems
 to be a google owned domain and these connections are used for their
@@ -37,3 +39,5 @@ PING www.google.com (66.249.89.104) 56(84) bytes of data.
 64 bytes from nrt04s01-in-f104.1e100.net (66.249.89.104): icmp_seq=1 ttl=51 time=10.2 ms
 ...
 ```
+
+<!-- textlint-enable rousseau -->

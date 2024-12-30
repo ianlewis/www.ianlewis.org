@@ -8,6 +8,8 @@ tags: japan python
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 There is a small but growing Python community in Japan. Many people, even some
 of those Python enthusiasts who living in Japan, are unaware of this and don't
 know who any of these people are. There are a lot of reasons for this but the
@@ -105,3 +107,5 @@ book](http://www.amazon.co.jp/Django%C3%97Python-LL%E3%83%95%E3%83%AC%E3%83%BC%E
 and has given numerous talks on Python and Django.
 
 - Twitter [@everes](http://twitter.com/everes)
+
+<!-- textlint-enable rousseau -->

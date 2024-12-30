@@ -8,6 +8,8 @@ tags: appengine golang
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 昨日、 [Go\! 言語](http://golang.org/) の trusted tester 権限を頂いたので、以前に作っていた
 [Guestbook](https://bitbucket.org/IanLewis/golang_guestbook) アプリを本番
 Appengine にデプロイしてみた。
@@ -140,3 +142,5 @@ golang は appengine に動かすのが結構面白いかなと思った。
 
 それでは、みんな、 [Guestbook
 でメッセージ残してください！](http://golang-guestbook.ian-test-hr.appspot.com/)
+
+<!-- textlint-enable rousseau -->

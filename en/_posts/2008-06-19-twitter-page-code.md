@@ -7,6 +7,8 @@ blog: en
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p><img src="/assets/images/gallery/twitter.png" alt="Twitter" /></p>
 <p>I took a look at <a href="http://www.twitter.com/" title="Twitter">Twitter</a>'s code as an example of a site that gets lots of traffic and noticed a couple things.</p>
 <ol>
@@ -20,3 +22,5 @@ render_with_liquid: false
 </ol>
 
 <p>It kind of surprised me that they include a version of prototype <em>AND</em> <a href="http://jquery.com/" title="jQuery">jQuery</a> <em>AND</em> script.aculo.us since they aren't really light javascript files. Prototype comes in at 123kb, <a href="http://jquery.com/" title="jQuery">jQuery</a> is 53kb, and script.aculo.us is 38kb. Seems to me that even with caching and all they could significantly reduce download traffic by sticking to one javascript library. I'm sure there is some wierd reason they do it though.</p>
+
+<!-- textlint-enable rousseau -->

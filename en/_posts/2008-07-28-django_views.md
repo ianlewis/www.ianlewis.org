@@ -8,6 +8,8 @@ tags: python pylons appengine django web applications
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 I was thinking about using [Django](http://www.djangoproject.com) for one of my
 projects on [GAE](http://code.google.com/appengine/) because it seems like a
 popular project and somewhat easy to use, but I'm not quite understanding yet
@@ -54,3 +56,5 @@ checks.
 
 Personally I feel better with the [Pylons](http://pylonshq.com/)-ish
 controller/handler approach. Anyone have an opinion?
+
+<!-- textlint-enable rousseau -->

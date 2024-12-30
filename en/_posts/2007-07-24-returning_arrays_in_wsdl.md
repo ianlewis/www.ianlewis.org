@@ -8,6 +8,8 @@ tags: xml wsdl soap
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 This week I've been working on setting up several web service for a
 project I'm working on for work. Because we are creating these web
 services from scratch we had to start by creating a
@@ -124,3 +126,5 @@ instead of what I did above.
 The message definition doesn't need to change from above. After doing
 that your favorite web services client or server that supports WSDL
 should recognize that what you are returning is an array type properly.
+
+<!-- textlint-enable rousseau -->

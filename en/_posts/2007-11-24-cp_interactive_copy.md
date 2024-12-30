@@ -8,6 +8,8 @@ tags: linux
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Is it just me or has the behavior of cp in linux distributions changed recently? cp is non-interactive by default so a lot of people, myself included, set an alias to include the -i flag so that cp was interactive by default.
 
 ```bash
@@ -21,3 +23,5 @@ But I used to enjoy the fact that if I set this alias it would prompt me when ov
 ```shell
 "cp" source destination
 ```
+
+<!-- textlint-enable rousseau -->

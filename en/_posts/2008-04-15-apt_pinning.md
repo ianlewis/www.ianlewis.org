@@ -7,6 +7,8 @@ blog: en
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p>Many people who are new to <a href="http://www.debian.org/" title="Debian">Debian</a> might be thinking that <a href="http://www.debian.org/" title="Debian">Debian</a> stable releases are slow. You are right. Many do look at this and turn to <a href="http://www.ubuntu.com/" title="Ubuntu">Ubuntu</a> because of their relatively quick releases. It's true that <a href="http://www.ubuntu.com/" title="Ubuntu">Ubuntu</a> does release &quot;stable&quot; versions more often but I would encourage people to sit back down and give <a href="http://www.debian.org/" title="Debian">Debian</a> another try. Especially with the cool feature of <a href="http://www.debian.org/" title="Debian">Debian</a>'s packaging system, <a href="http://en.wikipedia.org/wiki/Advanced_Packaging_Tool">apt</a>, called <a href="http://wiki.debian.org/AptPinning">apt pinning</a>.</p>
 
 <p>Apt pinning allows you to get the best of both worlds. You get the stability of stable packages from stable, with the new software of testing and unstable as needed. Of course you will need to be a bit careful because some packages from testing or unstable can include packages that are unstable or otherwise broken. Installing packages from multiple distributions makes your system inherently more unstable since that kind of setup isn't tested as well as a normal setup.</p>
@@ -34,3 +36,5 @@ E: The package lists or status file could not be parsed or opened.
 <p>Now that that is taken care of, lets say you have a particular package you want to install the newest version of, but the newest version of that packages isn't in stable yet. Synaptic will show you the version that's in stable because we set that as the highest priority. But you know there is a newer version out there. You can check <a href="http://packages.debian.org/">packages.debian.org</a> to see if the package you want is included in either testing or unstable but the quicker way is to check in synaptic itself. </p>
 
 <p><a rel="lightbox" href="/assets/images/gallery/wget.png"><img src="/assets/images/gallery/wget.png" alt="wget" title="Different versions of wget" hspace="10" width="150" height="135" align="left" /></a>If there is a package that has a newer version in testing or unstable that you would like to install then you can do so by opening the properties for the package. Then click on the versions tab. There it will show you what versions you can install from different repositories. You can then select which version to install by choosing Package -&gt; Force version... or Package -&gt; Versions...  The name of the option might be slightly different as it changes a bit in different versions of synaptic. </p>
+
+<!-- textlint-enable rousseau -->

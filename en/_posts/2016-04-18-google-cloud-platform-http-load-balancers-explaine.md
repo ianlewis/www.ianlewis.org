@@ -8,6 +8,8 @@ tags: google-cloud-platform
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 The Google Cloud Platform Load Balancers are based off of technology that
 Google developed for our applications. There are two types of load balancers,
 the Network (L3) Load Balancer and the HTTP (L7) Load Balancer. The HTTP Load
@@ -280,3 +282,5 @@ it has lots more info and guides like how to do some more complex setups like
 [cross-region load balancing](https://cloud.google.com/compute/docs/load-balancing/http/cross-region-example)
 and
 [content based load balancing](https://cloud.google.com/compute/docs/load-balancing/http/content-based-example).
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: media python rss
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 [feedparser](http://www.feedparser.org/)で、どうやってビデオを取れるかをずっと悩みましたけど、今日少しだけ、進展した。問題の核心はyoutubeや、vimeoは
 [Yahoo! RSS モジュール](http://search.yahoo.com/mrss/)を使って、RSS拡張ネームスペースにデータを入れている。この拡張データの処理はfeedparserが
 中途半端でやってる。見てみよう。
@@ -125,3 +127,5 @@ feedparser._StrictFeedParser = DlifeFeedParser
 
 それで、`media:content`の属性を取れた。`media:group`の下にcontentが複数ある場合もあるから、
 もうちょっとまとめないといけないけど、やり方が少し分かってきた。
+
+<!-- textlint-enable rousseau -->

@@ -8,6 +8,8 @@ tags: python google appengine django python温泉
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 明日からPython温泉に参加しに行ってきます。課題は下記のとおり
 
 - [django-lifestream](http://bitbucket.org/IanLewis/django-lifestream/)
@@ -20,3 +22,5 @@ render_with_liquid: false
 - Google Analytics をモバイルで使えるライブラリの実装
 
 どこまでできるかわかんないけど、たぶんあまり眠らないでしょう。
+
+<!-- textlint-enable rousseau -->

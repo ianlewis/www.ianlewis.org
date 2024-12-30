@@ -8,6 +8,8 @@ tags: python django
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 ![image](/assets/images/django/django-logo-positive_medium.png)
 
 > この記事は [2012
@@ -158,3 +160,5 @@ future の書き方はまだ Django 1.5 でも動くので、多くのDjango
 
 Django 1.5 では、主に Python 3 の対応とユーザー認証のカスタマイズが一歩進んだ感じだね。　Django 1.5
 以降は非常に楽しみ
+
+<!-- textlint-enable rousseau -->

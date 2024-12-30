@@ -8,6 +8,8 @@ tags: google googleio
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 This year's [Google IO page](https://developers.google.com/events/io/)
 has a nifty little game that allows you to build a machine that guides a
 ball from an input chute to an output chute. I noticed right away that
@@ -19,3 +21,5 @@ so I went about trying to figure out how. I think I got something that's
 represents the Google logo pretty well. What do you think? ;-)
 
 ![IOMachine](/assets/images/675/io_machine.png)\_
+
+<!-- textlint-enable rousseau -->

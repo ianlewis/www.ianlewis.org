@@ -8,6 +8,8 @@ tags: work beproud
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <div class="note">
 
 <div class="title">
@@ -64,3 +66,5 @@ BeProud では自分から決定する人たくさんいるの？ というと�
 
 自分は自分から行動したり、きちんと指示言われなくてもちゃんと仕事出来る人であれば、 BeProud はいつも人を探していますので、是非
 [採用サイト](http://jobs.beproud.jp/) を見てお問い合わせください。
+
+<!-- textlint-enable rousseau -->

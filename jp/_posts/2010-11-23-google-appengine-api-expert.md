@@ -8,6 +8,8 @@ tags: python google appengine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 ![image](/assets/images/python/python-powered.png)
 
 ![image](/assets/images/appengine/appengine_lowres.png)
@@ -30,3 +32,5 @@ Japan 2008](http://code.google.com/intl/ja/events/developerday/2008/home.html)
 で質問したり、してください！
 
 僕は日本、日本人が大好きなので、日本のデベロッパーを応援しながら、日本に情報を持ってたり、日本から出来たものを世界中に紹介したり、世界中に広げげたりしていきたいと思っています。これからも、よろしくお願いします！！
+
+<!-- textlint-enable rousseau -->

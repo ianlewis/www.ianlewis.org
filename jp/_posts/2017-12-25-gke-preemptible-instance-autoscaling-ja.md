@@ -8,6 +8,8 @@ tags: kubernetes google-container-engine
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 > このポストは [Kubernetes Advent Calendar Day 25](https://qiita.com/advent-calendar/2017/kubernetes)の記事です。
 
 Google Compute Engine (GCE)ではPreemptible Instanceを作ることができます。Preemptible Instanceを使うと変動するようなワークロードにかなりコストを削減できます。
@@ -163,3 +165,5 @@ GKEの高度な機能を組み合わせることで、低コストとアプリ�
 - [Kubernetes Slack](http://slack.k8s.io/)に参加すfる (#gkeチャンネルに注目)
 
 ではまた！
+
+<!-- textlint-enable rousseau -->

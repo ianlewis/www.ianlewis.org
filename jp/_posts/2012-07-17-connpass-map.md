@@ -8,6 +8,8 @@ tags: javascript connpass google-maps
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 最近、僕が作っているサイト、 [connpass](http://connpass.com/)
 では、関西や、札幌のイベントが増えって来て、connpass
 のイベントは東京意外、どのくらいあるか、どこにあるかが見たかったのがきっかけ。
@@ -127,3 +129,5 @@ function create_marker(event) {
 ![image](/assets/images/680/connpass_map_tooltip_big.png)
 
 こういうのはわりと簡単に出来るので、これからもっと作ってみたいなと思っている。
+
+<!-- textlint-enable rousseau -->

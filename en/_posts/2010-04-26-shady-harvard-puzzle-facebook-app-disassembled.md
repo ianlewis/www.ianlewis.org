@@ -8,6 +8,8 @@ tags: javascript
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 Today I got an email from a friend on Facebook that suggested that I try
 out this application called "[Only 4% of harvard grads can solve this
 riddle..](http://www.facebook.com/pages/Only-4-of-harvard-grads-can-solve-this-riddle/112049325499228?v=wall)".
@@ -165,3 +167,5 @@ mean that 543 people followed the instructions on the application. The
 application itself doesn't do anything particularly bad besides spam all
 of your friends so I took it to be a security research application.
 Anyone else have a better take on it?
+
+<!-- textlint-enable rousseau -->

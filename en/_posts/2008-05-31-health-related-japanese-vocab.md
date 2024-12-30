@@ -8,6 +8,8 @@ tags: japanese vocabulary
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 <p>Since I went to the doctor today I thought I would post some Japanese words that are relatively new to me. Some I learned today and some I had learned before but they all relate to illness or infirmity. Forgive the somewhat advanced and somewhat gross nature of some of the words but I hope they could be useful to someone looking to go to the Japanese Doctor.</p>
 
 <table border="1" cellspacing="0" cellpadding="3">
@@ -85,3 +87,5 @@ render_with_liquid: false
 </tr>
 </tbody>
 </table>
+
+<!-- textlint-enable rousseau -->

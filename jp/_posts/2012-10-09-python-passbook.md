@@ -8,6 +8,8 @@ tags: python ios passbook
 render_with_liquid: false
 ---
 
+<!-- textlint-disable rousseau -->
+
 最近、iPhoneのiOS6でPassbookという機能が出ました。Passbookはイベントのチケットや、飛行機や船の搭乗券や、クーポンや、ポイントカードを管理出来る地味に便利なアプリ。
 
 僕は興味があって、Pythonでどう作るかを調べてみたので、ここで共有しようと思っている。Passbookはパスの更新の仕組みもありますが、とりあえず、パスを作るとところまで説明しようと。
@@ -233,3 +235,5 @@ response['Content-Disposition'] = 'attachment; filename=pass.pkpass'
 これで、zipファイルがダウンロードできて、iPhone で見れるはず。
 
 ![image](/assets/images/681/passbook_big.png)
+
+<!-- textlint-enable rousseau -->
