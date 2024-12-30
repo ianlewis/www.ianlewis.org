@@ -6,7 +6,7 @@
   "devDependencies": {
     "node": ">=23.3.0",
     "dictionary-en": "^4.0.0",
-    "markdownlint-cli": "0.42.0",
+    "markdownlint-cli": "0.43.0",
     "prettier": "^3.4.2",
     "textlint": "^14.3.0",
     "textlint-filter-rule-comments": "^1.2.2",
