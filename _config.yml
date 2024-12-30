@@ -19,7 +19,6 @@ plugins:
 plainwhite:
   name: Ian Lewis
   tagline: Engineer in Tokyo
-  # TODO(#3): Update to use better portfolio image.
   portfolio_image: assets/images/profile.png
   sitemap: true
   search: false
