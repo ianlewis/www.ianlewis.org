@@ -63,6 +63,13 @@
           </li>
         </a>
         {%- endif -%}
+        {%- if site.plainwhite.social_links.bluesky -%}
+        <a rel="me" href="https://bsky.app/profile/{{ site.plainwhite.social_links.bluesky }}" target="_blank">
+          <li>
+            <i class="icon-bluesky_logo"></i>
+          </li>
+        </a>
+        {%- endif -%}
         {%- if site.plainwhite.social_links.instagram -%}
         <a rel="me" href="https://instagram.com/{{ site.plainwhite.social_links.instagram }}" target="_blank">
           <li>
