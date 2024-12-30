@@ -8,7 +8,7 @@ tags: monitoring system admin
 render_with_liquid: false
 ---
 
-# Introduction
+## Introduction
 
 [Daemontools](http://cr.yp.to/daemontools.html) is a set of programs for
 monitoring daemon programs and also restarts them immediately if they
@@ -16,7 +16,7 @@ crash or are terminated. I generally use daemontools for daemons that
 are required and are always running web sites. These include webservers,
 mail servers, monitoring servers and fastcgi servers.
 
-# Processes
+## Processes
 
 Daemons usually run in the background so they don't hold up the
 terminal. But Daemontools works by keeping the standard pipe to the
@@ -26,7 +26,7 @@ closed. This means that daemons need to be set to run in the foreground.
 Daemons usually run as background processes so many require an option to
 be set to run in the foreground.
 
-# Services
+## Services
 
 Services consist of a script called 'run' which starts the application
 and a supervise directory. The run script is run by daemon tools in the
@@ -69,9 +69,9 @@ lrwxrwx--- 1 root root 18  3月 24 11:39 snmpd -> /var/service/snmpd
 lrwxrwx--- 1 root root 18  3月 24 11:50 myapp -> /var/service/myapp
 ```
 
-# Commands
+## Commands
 
-## svstat
+### svstat
 
 Once you create these symbolic links the supervise daemon should start
 the daemons immediately. You can confirm that it is running by using the
@@ -112,7 +112,7 @@ process. You can check it by running a command like:
 ps -Af | grep readproctitle
 ```
 
-## svc
+### svc
 
 [svc](http://cr.yp.to/daemontools/svc.html) allows you to control
 services. You use svc to start, stop, and restart services. Services are

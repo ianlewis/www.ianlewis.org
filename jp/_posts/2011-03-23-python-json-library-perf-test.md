@@ -8,7 +8,7 @@ tags: python json jsonlib jsonlib2 simplejson
 render_with_liquid: false
 ---
 
-# 概要
+## 概要
 
 最近、あるお客さんから、 快速なので、 [cjson](http://pypi.python.org/pypi/python-cjson/)
 を使おうという要望をいただきましたが、 以前、僕は cjson
@@ -25,7 +25,7 @@ render_with_liquid: false
 
 <https://bitbucket.org/IanLewis/jsonlib-test>
 
-# 準備
+## 準備
 
 buildout を使って、環境を作ります
 
@@ -34,7 +34,7 @@ python bootstrap.py --distribute
 ./bin/bootstrap
 ```
 
-# テストを実行
+## テストを実行
 
 `./bin/run_test` を実行します。オプションはいくつかあります。
 
@@ -45,7 +45,7 @@ python bootstrap.py --distribute
 3. `-i`, `--iterations`: 1つのループのオペレーション回数。 デフォールトは 100回
 4. `-f`, `--file`: テストJSONファイル。デフォールトはリポジトリ内の `schema.json`
 
-# テスト結果
+## テスト結果
 
 ローカルの MacBook Pro に動かしました。
 
@@ -76,7 +76,7 @@ json:              673.22381 /s
 demjson:           145.67908 /s
 ```
 
-# まとめ
+## まとめ
 
 cjson はやはり早いのですが、現代の simplejson と jsonlib2 は cjson
 より早くなっています。あんまり差が出ないけど、

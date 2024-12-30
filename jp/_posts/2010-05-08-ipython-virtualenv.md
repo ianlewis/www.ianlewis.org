@@ -8,7 +8,7 @@ tags: python virtualenv
 render_with_liquid: false
 ---
 
-# 概要
+## 概要
 
 python の皆さんはみんな使っている ipython は virtualenv を使う時に virtualenv
 に入っているモジュールをインポートできないことが起こります。 ipython は特に
@@ -18,7 +18,7 @@ virtualenv に対応していないわけです。 ipython をグローバルじ
 [pipを使うべきだぞ](/jp/virtualenv-pip-fabric) )
 を使わない限り、絶対にイライラする。
 
-# ipython と virtualenv を使う方法第一
+## ipython と virtualenv を使う方法第一
 
 ということで、第一方法は PIP_DOWNLOAD_CACHE を設定して、virtualenv
 を作る時に、virtualenvwrapper (
@@ -50,7 +50,7 @@ pip install ipython
 それで、mkvirtualenv naninani を実行するときに virtualenv をちゃんと使う ipython
 をインストールしてくれます。
 
-# ipython と virtualenv を使う方法第二
+## ipython と virtualenv を使う方法第二
 
 ipython はpython
 で書くユーザ設定ファイル機能があります。それを使えば、PYTHONPATHをいじれたりすることができるので、それで
