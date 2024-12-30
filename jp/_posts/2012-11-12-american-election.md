@@ -7,10 +7,7 @@ blog: jp
 render_with_liquid: false
 ---
 
-アメリカの大統領選挙が終わりました。僕の会社の人が「あ、今日は選挙だ」って言ったんだけど、みなさんは同じようにあまり詳細が分かってないような感じだと思いますが、僕が思ったことと、面白いと思ったことをまとめようかなと思いました。ま、実はFumi
-さんのブログの [オバマ再選メモ](http://fumit.blogspot.jp/2012/11/blog-post.html)
-が素晴らしくて、読んだら間違いないんだけど、この纏め + α
-書いてみようと思います。まずは、Fumiさんの纏めをお読みください。
+アメリカの大統領選挙が終わりました。僕の会社の人が「あ、今日は選挙だ」って言ったんだけど、みなさんは同じようにあまり詳細が分かってないような感じだと思いますが、僕が思ったことと、面白いと思ったことをまとめようかなと思いました。ま、実はFumiさんのブログの [オバマ再選メモ](http://fumit.blogspot.jp/2012/11/blog-post.html)が素晴らしくて、読んだら間違いないんだけど、この纏め + α 書いてみようと思います。まずは、Fumiさんの纏めをお読みください。
 
 まずは、背景
 
@@ -22,49 +19,29 @@ render_with_liquid: false
 で見れます。
 
 ![image](/assets/images/683/romney_big.jpg)
-
 ![image](/assets/images/683/obama_big.jpg)
 
 ---
 
 ![image](/assets/images/683/487px-garyjohnsonphoto_-_modified_fb_thumb.jpg)
-
 ![image](/assets/images/683/444px-jill_stein_2012_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-stephen_durham_campaign_portrait_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-robert_david_steele_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-robert_burck_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-rep_virgil_goode_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-randy_blythe_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-randall_terry_2_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-r._lee_wrights_august_2012_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-r.j._harris_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-peta_lindsay_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-pastor_terry_jones_before_the_march_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-kotlikoff_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-jimhedges_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-jerry_white_addresses_a_meeting_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-dcastle08_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-carl_e._person_town_attorney_general_attire_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-buddy_roemer_by_gage_skidmore_fb_thumb.jpg)
-
 ![image](/assets/images/683/100px-andre_barnett_fb_thumb.png)
-
 ![image](/assets/images/683/100px-a_photo_of_michealene_risley_fb_thumb.png)
 
 独自と第三者の候補者は数多いのですが、投票用紙に載る候補は州がそれぞれ決まるので、二大政党以外はすべての州の投票用紙に乗れないので、選出する可能性はほぼゼロです。大統領選挙に出馬するのがほぼ講義の方向性や、ある問題をアメリカの国民に知らせる為と考えれば良い。
@@ -95,8 +72,9 @@ States](http://mashable.com/2012/11/07/nate-silver-wins/)
 世論調査や、色な情報を使って、統計で候補者の選出可能性を出した、New York Times の Nate Silver
 が完璧に選挙の結果を推定しました。
 
-<blockquote class="twitter-tweet tw-align-center"><p>For the Nate-haters, here’s the 538 prediction and actual results side by side <a href="http://t.co/jbny4pRX" title="http://twitter.com/cosentino/status/266042007758200832/photo/1">twitter.com/cosentino/stat…</a></p>&mdash; Michael Cosentino (@cosentino) <a href="https://twitter.com/cosentino/status/266042007758200832" data-datetime="2012-11-07T04:58:52+00:00">November 7, 2012</a></blockquote>
-<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+> For the Nate-haters, here’s the 538 prediction and actual results side by side [twitter.com/cosentino/stat…](http://t.co/jbny4pRX)
+>
+> &mdash; Michael Cosentino (@cosentino) [November 7, 2012](https://twitter.com/cosentino/status/266042007758200832)
 
 ま、それだけじゃ、完璧に推定した人は数人いたんですが、 Nate Silver
 さんは大統領の選挙を完璧に推定しただけでなく、国会の上院、衆議院も完璧に推定し、知事の選挙を一つだけ間違えたという素晴らしすぎる推定力でした。
@@ -109,12 +87,7 @@ House](http://elections.nytimes.com/2012/results/president/scenarios)
 でロムニーさんかオバマさんかどっちが勝ったら、こうなるって決定経路を表しています。表の上に州が大きい順で並んでいます。オバマさんかロムニーさんのボタンを押したら、その人が勝ったような状況を確定して、表がかわります。そもそもオバマさんが勝つパスが
 431 ケースがあって、ロムニーサンが勝つケースは 76 あるってこれだけで、オバマさんが有利ってわかります。
 
-<div class="lightbox" data-align="center">
-
-</assets/images/683/paths_big.png>
-</assets/images/683/paths.png>
-
-</div>
+<a href="/assets/images/683/paths.png"><img src="/assets/images/683/paths_big.png" /></a>
 
 Swing State の中、Florida と Ohio が一番でかい。ロムニーさんはそもそも Florida と Ohio
 を両方勝ってないと、平等にならないのが現実だった。North Carolina
@@ -123,12 +96,7 @@ Florida, Ohio, North Carolinaで勝ったとしても、オバマさんはその
 州で勝ったら、大体平等的な状況に戻る。つまり、ロムニーさんは選出のために
 Florida と Ohio はマストです。オバマさんは負けたらいたいんけど、確実にアウトではないという状況でした。
 
-<div class="lightbox" data-align="center">
-
-</assets/images/683/paths2_big.png>
-</assets/images/683/paths2.png>
-
-</div>
+<a href="/assets/images/683/paths2.png"><img src="/assets/images/683/paths2_big.png" /></a>
 
 つまり、ロムニーさんは最初からもっと厳しい目に見られたはずです。
 
@@ -136,16 +104,13 @@ Florida と Ohio はマストです。オバマさんは負けたらいたいん
 
 マスコミの政治評論家は選挙の前にいろいろ言っていましたが、それぞれの政治評論家は保守派なのか、リベラルなのか、そういう偏り(bias)がある。そして、この選挙では、評論家の推定を結果と合っていたかチェックすると、ほぼみんな間違えていたっていうのがわかりました。
 
-参考: [It's Time to Grade Pundit
-Predictions](http://www.theatlanticwire.com/politics/2012/11/grading-pundit-predictions/58768/)
+参考: [It's Time to Grade Pundit Predictions](http://www.theatlanticwire.com/politics/2012/11/grading-pundit-predictions/58768/)
 
-参考: [Slate’s Pundit
-Scorecard](http://www.slate.com/articles/news_and_politics/politics/2012/11/pundit_scorecard_checking_pundits_predictions_against_the_actual_results.html)
+参考: [Slate’s Pundit Scorecard](http://www.slate.com/articles/news_and_politics/politics/2012/11/pundit_scorecard_checking_pundits_predictions_against_the_actual_results.html)
 
 その人たちは状況を見て誰が選出するかより、誰が選出して欲しいということを言っているだけ。選挙の解析には他にいい方法あれば、政治評論家がいらないんじゃないか？っていう議論も上がっています。
 
-参考: [Pundit Forecasts All Wrong, Silver Perfectly Right. Is Punditry
-Dead?](http://techcrunch.com/2012/11/07/pundit-forecasts-all-wrong-silver-perfectly-right-is-punditry-dead/)
+参考: [Pundit Forecasts All Wrong, Silver Perfectly Right. Is Punditry Dead?](http://techcrunch.com/2012/11/07/pundit-forecasts-all-wrong-silver-perfectly-right-is-punditry-dead/)
 
 僕は、政治評論家は少なくとも、しばらくなくならないと思います。なぜなら、統計で科学的なことは、一般の国民はよく分かってないし、エンタテインメントとして、受ける人はいるんじゃないかと思います。
 
@@ -153,8 +118,7 @@ Dead?](http://techcrunch.com/2012/11/07/pundit-forecasts-all-wrong-silver-perfec
 
 今年の選挙は、結果のデータが簡単に頂けるので、ネット上で色な面白いビジュアライゼーションが出来上がり、結構盛り上がりました。
 
-例えば、 [What The 2012 Election Would Have Looked Like Without Universal
-Suffrage](http://www.buzzfeed.com/buzzfeedpolitics/what-the-2012-election-would-have-looked-like-with)
+例えば、 [What The 2012 Election Would Have Looked Like Without Universal Suffrage](http://www.buzzfeed.com/buzzfeedpolitics/what-the-2012-election-would-have-looked-like-with)
 ですと、1850年のアメリカだと今年の選挙はこういう結果になったでしょう。1850年では、白人の男性しか投票できなかった。女性や、少数民族の重要性を伝えるビジュアライゼーション。男性だけの場合とか、白人(男女)だけだとか、いろな地図が見れるので、是非見てみてください。
 
 ![image](/assets/images/683/sufferage_big.jpg)
