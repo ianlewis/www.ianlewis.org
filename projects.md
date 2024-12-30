@@ -12,12 +12,12 @@ These are some of my current and past projects.
 
 <img align="left" src="/assets/images/slsa-logo-green.svg" height="80" style="margin-right: 10px">
 
-[SLSA](https://slsa.dev/) is a security framework, a checklist of standards and controls to prevent
-tampering, improve integrity, and secure packages and infrastructure. It’s how
-you get from "safe enough" to being as resilient as possible, at any link in
-the chain.
+[Supply-chain Levels for Software Artifacts](https://slsa.dev/) (SLSA) is a
+security framework, a checklist of standards and controls to prevent tampering,
+improve integrity, and secure packages and infrastructure. It’s how you get
+from "safe enough" to being as resilient as possible, at any link in the chain.
 
-I am working on SLSA tooling for GitHub that supports [SLSA v1.0 Build
+I worked on tooling for GitHub that supports [SLSA v1.0 Build
 L3](https://slsa.dev/spec/v1.0/levels#build-l3) at
 [slsa-framework/slsa-github-generator](https://github.com/slsa-framework/slsa-github-generator)
 and SLSA provenance verification at

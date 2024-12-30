@@ -91,7 +91,7 @@ textlint: node_modules/.installed ## Runs the textlint linter.
 					message=$$(echo "$$m" | jq -c -r '.message'); \
 					echo "::error file=$${file},line=$${line},endLine=$${endline}::$${message}"; \
 				done <<<"$$(echo "$$p" | jq -c -r '.messages[] // empty')"; \
-			done <<< "$$(./node_modules/.bin/textlint --format json "**/.md" 2>&1 | jq -c '.[]')"; \
+			done <<< "$$(./node_modules/.bin/textlint --format json "**/*.md" 2>&1 | jq -c '.[]')"; \
 			exit "$${exit_code}"; \
 		else \
 			./node_modules/.bin/textlint "**/*.md"; \
