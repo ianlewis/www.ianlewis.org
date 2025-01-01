@@ -10,8 +10,11 @@ render_with_liquid: false
 
 Recently I saw a tweet from the awesome Amy Codes (I really hope that's her real name) about Kubernetes Pods:
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">You know why containers in a pod are always scheduled together? It&#39;s cuz they&#39;re nested containers.<br><br>Mind. Blown.</p>&mdash; Amy Codes (@TheAmyCode) <a href="https://twitter.com/TheAmyCode/status/899462049184350208">August 21, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+> You know why containers in a pod are always scheduled together? It&#39;s cuz they&#39;re nested containers.
+>
+> Mind. Blown.
+>
+> &mdash; Amy Codes (@TheAmyCode) [August 21, 2017](https://twitter.com/TheAmyCode/status/899462049184350208)
 
 While it wasn't 100% accurate (Containers aren't really a thing. We'll get to that in a bit) it did point out the fact that Pods are amazing things. It's worth taking a look at Pods and containers in general and learn what they actually are.
 

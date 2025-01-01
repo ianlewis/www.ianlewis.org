@@ -72,7 +72,7 @@ States](http://mashable.com/2012/11/07/nate-silver-wins/)
 世論調査や、色な情報を使って、統計で候補者の選出可能性を出した、New York Times の Nate Silver
 が完璧に選挙の結果を推定しました。
 
-> For the Nate-haters, here’s the 538 prediction and actual results side by side [twitter.com/cosentino/stat…](http://t.co/jbny4pRX)
+> For the Nate-haters, here’s the 538 prediction and actual results side by side
 >
 > &mdash; Michael Cosentino (@cosentino) [November 7, 2012](https://twitter.com/cosentino/status/266042007758200832)
 
