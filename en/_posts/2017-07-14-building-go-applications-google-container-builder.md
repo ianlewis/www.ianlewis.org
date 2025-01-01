@@ -14,8 +14,7 @@ _Gopher image [Creative Commons Attribution 3.0 Unported (ja)](https://creativec
 
 Recently I wrote on Twitter about how doing CI right requires you to properly separate your build and run steps for your container images.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">i.e. you have one Docker image to build your Go static binary, and one that&#39;s 3 lines long to copy it into a scratch image ;)</p>&mdash; Ian Lewis (@IanMLewis) <a href="https://twitter.com/IanMLewis/status/865733243391299585">May 20, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+[![i.e. you have one Docker image to build your Go static binary, and one that's 3 lines long to copy it into a scratch image ;)](/assets/images/2017-07-14-building-go-applications-google-container-builder/2025-01-01_16.40.57.png)](https://twitter.com/IanMLewis/status/865733243391299585)
 
 The reason for this issue is that you want to keep your final image as small as possible for a number of reasons. The obvious reason is for performance but there are several other reasons. Keeping it small keeps the images simple and reduces the risk of bugs, and reduces the security attack surface.
 
