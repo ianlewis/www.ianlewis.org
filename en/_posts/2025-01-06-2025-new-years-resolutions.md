@@ -49,7 +49,7 @@ Feb, 2023. GitHub eventually integrated SLSA provenance into
 [npm](https://github.blog/security/supply-chain-security/introducing-npm-package-provenance/)
 and [artifact
 attestations](https://github.blog/news-insights/product-news/introducing-artifact-attestations-now-in-public-beta/)
-informed by our work. My work on SLSA resulted in the team receiving a Google
+informed by our work. My work on SLSA contributed to the team receiving a Google
 Core Impact Award and Google Tech Impact Award in 2023 and 2024 respectively.
 
 ![Google Tech Impact Awards](/assets/images/2025-01-06-2025-new-years-resolutions/award.jpg "Google Tech Impact Awards"){:style="width: 70%; display:block; margin-left:auto; margin-right:auto"}
