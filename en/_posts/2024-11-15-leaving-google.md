@@ -4,7 +4,7 @@ title: "Leaving Google"
 date: 2024-11-15 00:00:00 +0000
 permalink: /en/leaving-google
 blog: en
-tags: google
+tags: google work personal
 render_with_liquid: false
 ---
 
@@ -25,7 +25,7 @@ many people who would be long lasting friends.
 
 ![Google Developer Day 2008](/assets/images/2024-11-15-leaving-google/google-developer-day-2008.jpg "Google Developer Day 2008"){:style="width: 70%; display:block; margin-left:auto; margin-right:auto"}
 
-*Do you remember iGoogle?*
+_Do you remember iGoogle?_
 
 In 2010 I became an API Expert[^1] for Google App Engine. My fellow experts
 [Eiji Kitamura](https://twitter.com/agektmr),
