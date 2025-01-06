@@ -4,7 +4,7 @@ title: "Leaving Google"
 date: 2024-11-15 00:00:00 +0000
 permalink: /en/leaving-google
 blog: en
-tags: google personal
+tags: google work personal
 render_with_liquid: false
 ---
 

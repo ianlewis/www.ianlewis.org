@@ -4,7 +4,7 @@ title: "2025 New Year’s Resolutions"
 date: 2025-01-06 00:00:00 +0000
 permalink: /en/2025-new-years-resolutions
 blog: en
-tags:
+tags: work personal
 render_with_liquid: false
 ---
 
@@ -148,4 +148,4 @@ to people.
 I feel some trepidation about the future but I hope that this is the year I can
 put the pandemic firmly in the past and move forward. The new year is a good
 time to reflect and reprioritize around the right goals so I’m excited to see
-what 2025 holds! Onward!
+what 2025 holds!
