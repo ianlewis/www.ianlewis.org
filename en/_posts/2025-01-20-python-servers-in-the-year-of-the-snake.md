@@ -11,13 +11,12 @@ render_with_liquid: false
 ![](/assets/images/2025-01-20-python-servers-in-the-year-of-the-snake/python_snake.png){:style="width: 40%; display:block; margin-left:auto; margin-right:auto"}
 
 This year is the [year of the snake in the Chinese
-Zodiac](<https://en.wikipedia.org/wiki/Snake_(zodiac)>). Every 12th year is a bit
-of a special year for the Python community in Asia. For example in 2013, in the
-last year of the Snake, the theme for the PyCon JP conference was [“The Year of
-Python”](https://apac-2013.pycon.jp/ja/about/index.html). This year is a good
-opportunity for the community to reflect on where it is and where it is going.
-So I wanted to take the opportunity to reflect on the state of Python and how
-my relationship with it has changed personally over the last 12 years.
+Zodiac](<https://en.wikipedia.org/wiki/Snake_(zodiac)>). Every 12th year is a
+bit of a special year for the Python community in Asia. For example in 2013, in
+the last year of the Snake, the theme for the PyCon JP conference was [“The
+Year of Python”](https://apac-2013.pycon.jp/ja/about/index.html). This year is
+an especially good opportunity to reflect on the state of Python and how my
+relationship with it has changed personally over the last 12 years.
 
 Python has a very diverse community of academics, data scientists, DevOps
 engineers, security engineers, and many many others but one group of
