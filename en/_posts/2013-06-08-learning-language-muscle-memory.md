@@ -4,6 +4,7 @@ title: "Learning a Language as Muscle Memory"
 date: 2013-06-08 10:00:00 +0000
 permalink: /en/learning-language-muscle-memory
 blog: en
+tags: musings
 render_with_liquid: false
 ---
 

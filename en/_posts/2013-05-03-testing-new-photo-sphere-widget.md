@@ -4,12 +4,14 @@ title: "Testing the new Photo Sphere Widget"
 date: 2013-05-03 17:40:59 +0000
 permalink: /en/testing-new-photo-sphere-widget
 blog: en
-tags: google photosphere
+tags: tech
 render_with_liquid: false
 ---
 
 Testing out the new photo sphere widget. The widget below is a photo
 sphere of our trip to [Great Falls Park](http://www.nps.gov/grfa/).
+
+> Update: This doesn't work anymore :(
 
 <g:panoembed imageurl="https://lh5.googleusercontent.com/-maPPvKNg7EE/UYQl4e3czeI/AAAAAAAADHQ/ug4uWBDlg6M/w837-h419/13+-+1"
 fullsize="4000,2000"

@@ -4,7 +4,7 @@ title: "Building Go Applications with Google Container Builder"
 date: 2017-07-14 10:15:00 +0000
 permalink: /en/building-go-applications-google-container-builder
 blog: en
-tags: golang google-container-builder
+tags: tech programming golang cloud google-cloud google-container-builder
 render_with_liquid: false
 ---
 

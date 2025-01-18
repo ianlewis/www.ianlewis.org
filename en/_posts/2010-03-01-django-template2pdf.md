@@ -4,7 +4,7 @@ title: "Django template2pdf"
 date: 2010-03-01 18:21:14 +0000
 permalink: /en/django-template2pdf
 blog: en
-tags: django pdf rml
+tags: tech programming python django pdf rml
 render_with_liquid: false
 ---
 

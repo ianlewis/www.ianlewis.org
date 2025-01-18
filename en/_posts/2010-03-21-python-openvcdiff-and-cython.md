@@ -4,7 +4,7 @@ title: "python-openvcdiff and Cython"
 date: 2010-03-21 18:26:15 +0000
 permalink: /en/python-openvcdiff-and-cython
 blog: en
-tags: python c++ c open-vcdiff
+tags: tech programming python c++ c
 render_with_liquid: false
 ---
 

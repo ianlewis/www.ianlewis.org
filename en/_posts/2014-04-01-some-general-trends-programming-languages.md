@@ -4,7 +4,7 @@ title: "Some General Trends in Programming Languages"
 date: 2014-04-01 03:00:00 +0000
 permalink: /en/some-general-trends-programming-languages
 blog: en
-tags: programming golang dart haskell rust typescript
+tags: tech programming golang dart haskell rust typescript
 render_with_liquid: false
 ---
 

@@ -4,7 +4,7 @@ title: "Kubernetes Health Checks in Django"
 date: 2017-05-15 16:07:14 +0000
 permalink: /en/kubernetes-health-checks-django
 blog: en
-tags: python django kubernetes
+tags: tech python django containers kubernetes
 render_with_liquid: false
 ---
 

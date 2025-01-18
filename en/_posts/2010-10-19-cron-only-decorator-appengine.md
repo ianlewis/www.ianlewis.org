@@ -4,7 +4,7 @@ title: "Cron only decorator for appengine"
 date: 2010-10-19 10:54:14 +0000
 permalink: /en/cron-only-decorator-appengine
 blog: en
-tags: python appengine
+tags: tech programming python cloud google-cloud appengine
 render_with_liquid: false
 ---
 

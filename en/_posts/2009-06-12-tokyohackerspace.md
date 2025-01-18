@@ -4,7 +4,7 @@ title: "Tokyo Hackerspace"
 date: 2009-06-12 17:03:15 +0000
 permalink: /en/tokyohackerspace
 blog: en
-tags: tokyo
+tags: tech personal
 render_with_liquid: false
 ---
 

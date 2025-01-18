@@ -4,7 +4,7 @@ title: "Blue/Green Deployments on Kubernetes"
 date: 2017-09-15 19:00:00 +0000
 permalink: /en/bluegreen-deployments-kubernetes
 blog: en
-tags: kubernetes
+tags: tech containers kubernetes
 render_with_liquid: false
 ---
 

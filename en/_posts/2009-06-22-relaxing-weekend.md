@@ -4,7 +4,7 @@ title: "Relaxing weekend"
 date: 2009-06-22 16:29:04 +0000
 permalink: /en/relaxing-weekend
 blog: en
-tags: tokyo
+tags: personal
 render_with_liquid: false
 ---
 

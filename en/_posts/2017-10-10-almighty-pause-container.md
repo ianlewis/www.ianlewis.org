@@ -4,7 +4,7 @@ title: "The Almighty Pause Container"
 date: 2017-10-10 11:40:00 +0000
 permalink: /en/almighty-pause-container
 blog: en
-tags: kubernetes docker
+tags: tech kubernetes docker
 render_with_liquid: false
 ---
 
