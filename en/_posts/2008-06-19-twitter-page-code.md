@@ -4,6 +4,7 @@ title: "Twitter Page Code"
 date: 2008-06-19 19:14:11 +0000
 permalink: /en/twitter-page-code
 blog: en
+tags: tech programming
 render_with_liquid: false
 ---
 

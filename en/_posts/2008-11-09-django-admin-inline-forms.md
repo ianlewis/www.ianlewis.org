@@ -4,15 +4,55 @@ title: "Django admin inline forms"
 date: 2008-11-09 01:09:55 +0000
 permalink: /en/django-admin-inline-forms
 blog: en
-tags: python django model
+tags: tech programming python django
 render_with_liquid: false
 ---
 
-<p>For my new project dlife (<strong>Update:</strong> Now <a href="http://bitbucket.org/IanLewis/django-lifestream/">django-lifestream</a>), I went about implementing a simple comments interface that would allow users to make comments on imported feed items. I wanted to support this in the admin in the typical manner such that when you click on an item in the admin, you can see all the comments and edit them from the item's page.</p>
-<p>I found that you can use <a href="http://docs.djangoproject.com/en/dev/ref/contrib/admin/#inlinemodeladmin-objects">inline forms</a> in the admin but it seems to show a bunch of forms (3 by default) even though I don't have any comments for the item yet. I'll mess with this a bit more later to try to get the behavior I want.</p>
+For my new project dlife (**Update:** Now
+[django-lifestream](http://bitbucket.org/IanLewis/django-lifestream/)), I went
+about implementing a simple comments interface that would allow users to make
+comments on imported feed items. I wanted to support this in the admin in the
+typical manner such that when you click on an item in the admin, you can see
+all the comments and edit them from the item's page.
 
-<h4>models.py</h4>
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">class</span> Comment<span style="color: black;">&#40;</span>models.<span style="color: black;">Model</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>&nbsp; <span style="color: #483d8b;">''</span><span style="color: #483d8b;">'An item comment'</span><span style="color: #483d8b;">''</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td>&nbsp; comment_item = models.<span style="color: black;">ForeignKey</span><span style="color: black;">&#40;</span>Item<span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; comment_date = models.<span style="color: black;">DateTimeField</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; comment_user = models.<span style="color: black;">ForeignKey</span><span style="color: black;">&#40;</span>User, null=<span style="color: #008000;">True</span>, blank=<span style="color: #008000;">True</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td>&nbsp; comment_name = models.<span style="color: black;">CharField</span><span style="color: black;">&#40;</span>max_length=<span style="color: #ff4500;">30</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>&nbsp; comment_email = models.<span style="color: black;">EmailField</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>&nbsp; comment_homepage = models.<span style="color: black;">URLField</span><span style="color: black;">&#40;</span>max_length=<span style="color: #ff4500;">300</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"></div></td><td>&nbsp; comment_content = models.<span style="color: black;">TextField</span><span style="color: black;">&#40;</span>null=<span style="color: #008000;">True</span>, blank=<span style="color: #008000;">True</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc1"></div></div></td><td>&nbsp; <br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc1"></div></div></td><td>&nbsp; <span style="color: #ff7700;font-weight:bold;">class</span> Meta:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; db_table=<span style="color: #483d8b;">&quot;comments&quot;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; ordering=<span style="color: black;">&#91;</span><span style="color: #483d8b;">&quot;comment_item&quot;</span>, <span style="color: #483d8b;">&quot;-comment_date&quot;</span><span style="color: black;">&#93;</span></td></tr></table></div>
+I found that you can use [inline
+forms](http://docs.djangoproject.com/en/dev/ref/contrib/admin/#inlinemodeladmin-objects)
+in the admin but it seems to show a bunch of forms (3 by default) even though I
+don't have any comments for the item yet. I'll mess with this a bit more later
+to try to get the behavior I want.
 
-<h4>admin.py</h4>
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">class</span> CommentInline<span style="color: black;">&#40;</span>admin.<span style="color: black;">StackedInline</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>&nbsp; model &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = Comment<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td>&nbsp; max_num &nbsp; &nbsp; &nbsp; &nbsp; = <span style="color: #ff4500;">1</span> &nbsp; <span style="color: #808080; font-style: italic;">#TODO: Fix this</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; exclude &nbsp; &nbsp; &nbsp; &nbsp; = <span style="color: black;">&#91;</span><span style="color: #483d8b;">'comment_item'</span>,<span style="color: #483d8b;">'content_type'</span>,<span style="color: #483d8b;">'object_id'</span><span style="color: black;">&#93;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td><span style="color: #ff7700;font-weight:bold;">class</span> ItemAdmin<span style="color: black;">&#40;</span>admin.<span style="color: black;">ModelAdmin</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>&nbsp; list_display &nbsp; &nbsp;= <span style="color: black;">&#40;</span><span style="color: #483d8b;">'item_title'</span>, <span style="color: #483d8b;">'item_date'</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>&nbsp; exclude &nbsp; &nbsp; &nbsp; &nbsp; = <span style="color: black;">&#91;</span><span style="color: #483d8b;">'item_clean_content'</span>,<span style="color: black;">&#93;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"></div></td><td>&nbsp; list_filter &nbsp; &nbsp; = <span style="color: black;">&#40;</span><span style="color: #483d8b;">'item_feed'</span>,<span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc1"></div></div></td><td>&nbsp; search_fields &nbsp; = <span style="color: black;">&#40;</span><span style="color: #483d8b;">'item_title'</span>,<span style="color: #483d8b;">'item_clean_content'</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc1"></div></div></td><td>&nbsp; list_per_page &nbsp; = <span style="color: #ff4500;">20</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"><div class="amc1"></div></div></td><td>&nbsp; <br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"><div class="amc1"></div></div></td><td>&nbsp; inlines &nbsp; &nbsp; &nbsp; &nbsp; = <span style="color: black;">&#91;</span>CommentInline,<span style="color: black;">&#93;</span></td></tr></table></div>
+**models.py**
+
+```python
+class Comment(models.Model):
+  '''An item comment'''
+  comment_item = models.ForeignKey(Item)
+  comment_date = models.DateTimeField()
+  comment_user = models.ForeignKey(User, null=True, blank=True)
+  comment_name = models.CharField(max_length=30)
+  comment_email = models.EmailField()
+  comment_homepage = models.URLField(max_length=300)
+  comment_content = models.TextField(null=True, blank=True)
+ 
+  class Meta:
+    db_table="comments"
+    ordering=["comment_item", "-comment_date"]
+```
+
+**admin.py**
+
+```python
+class CommentInline(admin.StackedInline):
+  model           = Comment
+  max_num         = 1   #TODO: Fix this
+  exclude         = ['comment_item','content_type','object_id']
+
+class ItemAdmin(admin.ModelAdmin):
+  list_display    = ('item_title', 'item_date')
+  exclude         = ['item_clean_content',]
+  list_filter     = ('item_feed',)
+  search_fields   = ('item_title','item_clean_content')
+  list_per_page   = 20
+ 
+  inlines         = [CommentInline,]
+```

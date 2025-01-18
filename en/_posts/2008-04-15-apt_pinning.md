@@ -4,6 +4,7 @@ title: "apt pinning"
 date: 2008-04-15 00:00:48 +0000
 permalink: /en/apt_pinning
 blog: en
+tags: tech devops
 render_with_liquid: false
 ---
 

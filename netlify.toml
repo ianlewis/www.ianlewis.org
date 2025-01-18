@@ -19,6 +19,12 @@ command = "bundle exec jekyll build"
 # Removed posts
 ############################
 
+
+[[redirects]]
+  from = "/en/linux-hater-s-blog"
+  to = "/en/tag/tech/"
+  status = 301
+
 [[redirects]]
   from = "/en/redis-initd-script"
   to = "/en/tag/tech/"
@@ -84,7 +90,12 @@ command = "bundle exec jekyll build"
 
 [[redirects]]
   from = "/en/tag/internet%20explorer/"
-  to = "/en/tag/internet-explorer/"
+  to = "/en/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/internet-explorer/"
+  to = "/en/tag/tech/"
   status = 301
 
 [[redirects]]
@@ -174,7 +185,7 @@ command = "bundle exec jekyll build"
 
 [[redirects]]
   from = "/en/tag/googleio/"
-  to = "/jp/tag/google/"
+  to = "/jp/tag/events/"
   status = 301
 
 [[redirects]]
@@ -239,7 +250,17 @@ command = "bundle exec jekyll build"
 
 [[redirects]]
   from = "/en/tag/pyconsg/"
-  to = "/jp/tag/pycon/"
+  to = "/jp/tag/events/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/pycon/"
+  to = "/jp/tag/events/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/pyconjp/"
+  to = "/jp/tag/events/"
   status = 301
 
 [[redirects]]
@@ -299,6 +320,11 @@ command = "bundle exec jekyll build"
 
 [[redirects]]
   from = "/en/tag/schema/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/jsonschema/"
   to = "/jp/tag/programming/"
   status = 301
 
@@ -455,4 +481,249 @@ command = "bundle exec jekyll build"
 [[redirects]]
   from = "/en/tag/coffeescript/"
   to = "/jp/tag/javascript/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/pygments/"
+  to = "/jp/tag/python/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/wave/"
+  to = "/jp/tag/google/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/tbarcamp/"
+  to = "/jp/tag/events/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/jquery/"
+  to = "/jp/tag/javascript/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/jquery-ui/"
+  to = "/jp/tag/javascript/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/sortable/"
+  to = "/jp/tag/javascript/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/transaction/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/werkzeug/"
+  to = "/jp/tag/python/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/json/"
+  to = "/jp/tag/javascript/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/ie/"
+  to = "/jp/tag/javascript/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/xss/"
+  to = "/jp/tag/javascript/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/timedelta/"
+  to = "/jp/tag/python/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/guile/"
+  to = "/jp/tag/scheme/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/utf8/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/sitemap/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/plugin/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/disqus/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/yongfook/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/sweetcron/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/rss/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/graphviz/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/stardict/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/pylons/"
+  to = "/jp/tag/python/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/web/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/applications/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/protocol-buffers/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/mochikit/"
+  to = "/jp/tag/javascript/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/onsen/"
+  to = "/jp/tag/events/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/toolkit/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/gallery-plugin/"
+  to = "/jp/tag/php/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/gallery2/"
+  to = "/jp/tag/php/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/mobile/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/google-analytics/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/wordpress/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/linux/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/unix/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/windows/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/tortoisehg/"
+  to = "/jp/tag/mercurial/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/website/"
+  to = "/jp/tag/meta/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/additions/"
+  to = "/jp/tag/meta/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/media/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/scm/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/rsync/"
+  to = "/jp/tag/devops/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/gtk2/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/gtkmm/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/gorbital/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/xml/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/wsdl/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/soap/"
+  to = "/jp/tag/programming/"
   status = 301

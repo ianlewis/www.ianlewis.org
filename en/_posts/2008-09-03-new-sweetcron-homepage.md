@@ -4,7 +4,7 @@ title: "New Sweetcron Homepage"
 date: 2008-09-03 22:02:39 +0000
 permalink: /en/new-sweetcron-homepage
 blog: en
-tags: php rss sweetcron yongfook
+tags: tech meta programming php
 render_with_liquid: false
 ---
 

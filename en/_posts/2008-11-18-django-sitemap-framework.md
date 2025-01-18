@@ -4,20 +4,64 @@ title: "Django Sitemap Framework"
 date: 2008-11-18 21:22:06 +0000
 permalink: /en/django-sitemap-framework
 blog: en
-tags: python django sitemap
+tags: tech programming python django
 render_with_liquid: false
 ---
 
-<p>Using the <a href="http://www.djangoproject.com/" title="Django">Django</a> <a href="http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/">sitemap framework</a> is so easy it's almost no work at all. Just make a sitemap object and add it to the sitemap in urls.py. The sitemap framework calls items() in your Sitemap to get the list of objects to put in the sitemap and then calls get_absolute_url() on each object.</p>
+Using the Django [sitemap
+framework](http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/) is so
+easy it's almost no work at all. Just make a sitemap object and add it to the
+sitemap in `urls.py`. The sitemap framework calls `items()` in your Sitemap to
+get the list of objects to put in the sitemap and then calls
+`get_absolute_url()` on each object.
 
-<h4>models.py</h4>
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> django.<span style="color: black;">db</span> <span style="color: #ff7700;font-weight:bold;">import</span> models<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>...<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><span style="color: #ff7700;font-weight:bold;">class</span> Entry<span style="color: black;">&#40;</span>models.<span style="color: black;">Model</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>...<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; &nbsp; @permalink<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td>&nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">def</span> get_absolute_url<span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> ...<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>...</td></tr></table></div>
+**models.py***
 
-<h4>sitemap.py</h4>
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> django.<span style="color: black;">contrib</span>.<span style="color: black;">sitemaps</span> <span style="color: #ff7700;font-weight:bold;">import</span> Sitemap<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> mysite.<span style="color: black;">blog</span>.<span style="color: black;">models</span> <span style="color: #ff7700;font-weight:bold;">import</span> Entry<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> django.<span style="color: black;">contrib</span>.<span style="color: black;">sitemaps</span> <span style="color: #ff7700;font-weight:bold;">import</span> Sitemap<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> mysite.<span style="color: black;">blog</span>.<span style="color: black;">models</span> <span style="color: #ff7700;font-weight:bold;">import</span> Entry<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td><span style="color: #ff7700;font-weight:bold;">class</span> BlogSitemap<span style="color: black;">&#40;</span>Sitemap<span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>&nbsp; &nbsp; priority = <span style="color: #ff4500;">0.5</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">def</span> items<span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> Entry.<span style="color: black;">objects</span>.<span style="color: #008000;">filter</span><span style="color: black;">&#40;</span>is_draft=<span style="color: #008000;">False</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"><div class="amc1"></div></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">def</span> lastmod<span style="color: black;">&#40;</span><span style="color: #008000;">self</span>, obj<span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> obj.<span style="color: black;">pub_date</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"><div class="amc1"></div></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; <span style="color: #808080; font-style: italic;"># changefreq can be callable too</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">def</span> changefreq<span style="color: black;">&#40;</span><span style="color: #008000;">self</span>, obj<span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #483d8b;">&quot;daily&quot;</span> <span style="color: #ff7700;font-weight:bold;">if</span> obj.<span style="color: black;">comments_open</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span> <span style="color: #ff7700;font-weight:bold;">else</span> <span style="color: #483d8b;">&quot;never&quot;</span></td></tr></table></div>
+```python
+from django.db import models
 
-<h4>urls.py</h4>
+class Entry(models.Model):
+    @permalink
+    def get_absolute_url(self):
+        return self.url 
+```
 
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> mysite.<span style="color: black;">blog</span>.<span style="color: black;">sitemap</span> <span style="color: #ff7700;font-weight:bold;">import</span> BlogSitemap<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>...<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><span style="color: black;">sitemaps</span> = <span style="color: black;">&#123;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; &nbsp; <span style="color: #483d8b;">&quot;blog&quot;</span>: BlogSitemap<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td><span style="color: black;">&#125;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td><span style="color: black;">&#40;</span>r<span style="color: #483d8b;">'^sitemap.xml$'</span>, <span style="color: #483d8b;">'django.contrib.sitemaps.views.sitemap'</span>, <span style="color: black;">&#123;</span><span style="color: #483d8b;">'sitemaps'</span>: sitemaps<span style="color: black;">&#125;</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>...</td></tr></table></div>
+**sitemap.py**
 
-<p>You can even generate <a href="http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/#creating-a-sitemap-index">sitemap indexes</a> and it will pagenate the indexes on <a href="http://www.google.com/" title="Google">Google</a>'s limit of 50,000 urls so that you don't have a problem with it crawling your indexes.</p>
+```python
+from django.contrib.sitemaps import Sitemap
+from mysite.blog.models import Entry
+
+from django.contrib.sitemaps import Sitemap
+from mysite.blog.models import Entry
+
+class BlogSitemap(Sitemap):
+    priority = 0.5
+
+    def items(self):
+        return Entry.objects.filter(is_draft=False)
+
+    def lastmod(self, obj):
+        return obj.pub_date
+
+    # changefreq can be callable too
+    def changefreq(self, obj):
+        return "daily" if obj.comments_open() else "never"
+```
+
+**urls.py**
+
+```python
+from mysite.blog.sitemap import BlogSitemap
+# ...
+sitemaps = {
+    "blog": BlogSitemap
+}
+(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps})
+# ...
+```
+
+You can even generate [sitemap
+indexes](http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/#creating-a-sitemap-index)
+and it will pagenate the indexes on Google's limit of 50,000 urls so that you
+don't have a problem with it crawling your indexes.

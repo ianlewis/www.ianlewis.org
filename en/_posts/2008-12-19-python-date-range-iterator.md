@@ -24,48 +24,28 @@ def datetimeIterator(from_date, to_date):
         return
 ```
 
-<div class="note">
+> **Update**: It didn't take me long to realize that it wasn't as nice as
+> it could have been.
+> 
+> ```python
+> from datetime import datetime,timedelta
+> 
+> def datetimeIterator(from_date=datetime.now(), to_date=None):
+>     while to_date is None or from_date <= to_date:
+>         yield from_date
+>         from_date = from_date + timedelta(days = 1)
+>     return
+> ```
 
-<div class="title">
-
-Note
-
-</div>
-
-**Update**: It didn't take me long to realize that it wasn't as nice as
-it could have been.
-
-```python
-from datetime import datetime,timedelta
-
-def datetimeIterator(from_date=datetime.now(), to_date=None):
-    while to_date is None or from_date <= to_date:
-        yield from_date
-        from_date = from_date + timedelta(days = 1)
-    return
-```
-
-</div>
-
-<div class="note">
-
-<div class="title">
-
-Note
-
-</div>
-
-**Another Update** based on the comments below:
-
-```python
-from datetime import datetime,timedelta
-
-def datetimeIterator(from_date=None, to_date=None, delta=timedelta(minutes=1)):
-    from_date = from_date or datetime.now()
-    while to_date is None or from_date <= to_date:
-        yield from_date
-        from_date = from_date + delta
-    return
-```
-
-</div>
+> **Another Update** based on the comments below:
+> 
+> ```python
+> from datetime import datetime,timedelta
+> 
+> def datetimeIterator(from_date=None, to_date=None, delta=timedelta(days=1)):
+>     from_date = from_date or datetime.now()
+>     while to_date is None or from_date <= to_date:
+>         yield from_date
+>         from_date = from_date + delta
+>     return
+> ```
