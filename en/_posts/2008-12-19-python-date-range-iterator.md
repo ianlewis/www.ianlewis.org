@@ -4,7 +4,7 @@ title: "Python date range iterator"
 date: 2008-12-19 15:27:30 +0000
 permalink: /en/python-date-range-iterator
 blog: en
-tags: python timedelta
+tags: tech programming python
 render_with_liquid: false
 ---
 
