@@ -13,11 +13,11 @@ render_with_liquid: false
 Let's look at an example. Say we have two models we want to save to the server simultaneously but we only want to update the UI when both are finished. We can use jQuery deferreds to set up the pipeline.
 
 ```javascript
-band = Band({name: "Yes"});
-song = Song({title: "Parallels"});
+band = Band({ name: "Yes" });
+song = Song({ title: "Parallels" });
 
-$.when(band.save(), song.save()).done(function() {
-     alert("You know we've got the power!");
+$.when(band.save(), song.save()).done(function () {
+  alert("You know we've got the power!");
 });
 ```
 

@@ -26,19 +26,19 @@ For partial html in the browser I have often used [Underscore.js templates](http
 simple and the logic is written in JavaScript so it's pretty fast.
 
 ```html
-    <html lang="en">
-      <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-      </head>
-      <body>
-        <h1><%- title %></h1>
-        <ul>
-          <% _.each(items, function(item) { %>
-            <li><%- item %></li>
-          <% }); %>
-        </ul>
-      </body>
-    </html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1><%- title %></h1>
+    <ul>
+      <% _.each(items, function(item) { %>
+      <li><%- item %></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
 ```
 
 But Underscore.js' templates have no good way of including templates in other
@@ -52,19 +52,19 @@ generally logicless or light on logic. Mustache has partials which can be used
 to include sub-templates or other kinds of logic.
 
 ```html
-    <html lang="en">
-      <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-      </head>
-      <body>
-        <h1>{{title}}</h1>
-        <ul>
-          {{#items}}
-            <li>{{item}}</li>
-          {{/items}}
-        </ul>
-      </body>
-    </html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+    <ul>
+      {{#items}}
+      <li>{{item}}</li>
+      {{/items}}
+    </ul>
+  </body>
+</html>
 ```
 
 Mustache is logicless and so is easy to port to other languages but in order to
