@@ -33,9 +33,8 @@ and [gVisor](https://gvisor.dev/).
 Prior to Google I focused on developer communities developing
 [Connpass](https://connpass.com/), the largest IT meetup event tool in Japan
 with hundreds of thousands of users. I also co-founded and served on the board
-of [PyCon JP](https://www.pycon.jp/), the largest Python event in Japan.
-
-During this time I was a [Google Developer
+of [PyCon JP](https://www.pycon.jp/), the largest Python event in Japan. During
+this time I was a [Google Developer
 Expert](https://developers.google.com/experts/) specializing in the Python
 language version of [App Engine](https://cloud.google.com/appengine/).
 
@@ -44,5 +43,11 @@ Python community members, and have written articles for [Nikkei Linux
 Magazine](https://info.nikkeibp.co.jp/media/LIN/).
 
 ## Contact
+
+If you want to have a chat with me you can book an appointment on my appointment page.
+
+<a href="https://calendar.app.google/98BzZNZ424TMFrwh9">
+    <button style="color:white;font-weight:bold;border-color:dodgerblue;background-color:dodgerblue;border-radius:4px;">Book an Appointment</button>
+</a>
 
 You can contact me via my email at [ianmlewis@gmail.com](mailto:ianmlewis@gmail.com).
