@@ -50,4 +50,4 @@ If you want to have a chat with me you can book an appointment on my appointment
     <button style="color:white;font-weight:bold;border-color:dodgerblue;background-color:dodgerblue;border-radius:4px;">Book an Appointment</button>
 </a>
 
-You can contact me via my email at [ianmlewis@gmail.com](mailto:ianmlewis@gmail.com).
+You can contact me via my email at [ian@ianlewis.org](mailto:ian@ianlewis.org).
