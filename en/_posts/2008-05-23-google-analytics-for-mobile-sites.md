@@ -2,7 +2,7 @@
 layout: post
 title: "Google Analytics for Mobile Sites"
 date: 2008-05-23 20:13:41 +0000
-permalink: /en/title
+permalink: /en/google-analytics-for-mobile-sites
 blog: en
 tags: tech programming php javascript
 render_with_liquid: false

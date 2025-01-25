@@ -16,6 +16,14 @@ command = "bundle exec jekyll build"
   to = "/:splat"
   status = 301
 
+# Renamed posts
+############################
+
+[[redirects]]
+  from = "/en/title"
+  to = "/en/google-analytics-for-mobile-sites"
+  status = 301
+
 # Removed posts
 ############################
 
