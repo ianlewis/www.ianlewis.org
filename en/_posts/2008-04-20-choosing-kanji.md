@@ -57,7 +57,7 @@ follows:
 
 But fire up the dictionary and you get example sentences like the following:
 
-- 私の頭痛が治まった: My headache settled down. 
+- 私の頭痛が治まった: My headache settled down.
 - その辞書は棚に収まる: That dictionary goes on the shelf.
 
 Shouln't the first one be 収まった? Shouldn't the second one be 納まる? There

@@ -10,9 +10,9 @@ render_with_liquid: false
 
 Over the weekend at Python Onsen I worked on a lifestream web application using Django and [feedparser](http://www.feedparser.org/). I was really impressed with how simple feedparser is to use and how easy it is to get unified results from atom or rss feeds. You simply import feedparser and call feedparser.parse to parse a feed from a url.
 
-**feeds.py**
-
 ```python
+# feeds.py
+
 def update_feeds():
   feeds = Feed.objects.filter(feed_deleted=False)
   for feed in feeds:

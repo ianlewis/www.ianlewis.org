@@ -15,20 +15,20 @@ sitemap in `urls.py`. The sitemap framework calls `items()` in your Sitemap to
 get the list of objects to put in the sitemap and then calls
 `get_absolute_url()` on each object.
 
-**models.py***
-
 ```python
+# models.py
+
 from django.db import models
 
 class Entry(models.Model):
     @permalink
     def get_absolute_url(self):
-        return self.url 
+        return self.url
 ```
 
-**sitemap.py**
-
 ```python
+# sitemap.py
+
 from django.contrib.sitemaps import Sitemap
 from mysite.blog.models import Entry
 
@@ -49,9 +49,9 @@ class BlogSitemap(Sitemap):
         return "daily" if obj.comments_open() else "never"
 ```
 
-**urls.py**
-
 ```python
+# urls.py
+
 from mysite.blog.sitemap import BlogSitemap
 # ...
 sitemaps = {

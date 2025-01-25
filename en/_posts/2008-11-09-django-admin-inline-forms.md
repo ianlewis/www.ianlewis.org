@@ -21,9 +21,9 @@ in the admin but it seems to show a bunch of forms (3 by default) even though I
 don't have any comments for the item yet. I'll mess with this a bit more later
 to try to get the behavior I want.
 
-**models.py**
-
 ```python
+# models.py
+
 class Comment(models.Model):
   '''An item comment'''
   comment_item = models.ForeignKey(Item)
@@ -33,15 +33,15 @@ class Comment(models.Model):
   comment_email = models.EmailField()
   comment_homepage = models.URLField(max_length=300)
   comment_content = models.TextField(null=True, blank=True)
- 
+
   class Meta:
     db_table="comments"
     ordering=["comment_item", "-comment_date"]
 ```
 
-**admin.py**
-
 ```python
+# admin.py
+
 class CommentInline(admin.StackedInline):
   model           = Comment
   max_num         = 1   #TODO: Fix this
@@ -53,6 +53,6 @@ class ItemAdmin(admin.ModelAdmin):
   list_filter     = ('item_feed',)
   search_fields   = ('item_title','item_clean_content')
   list_per_page   = 20
- 
+
   inlines         = [CommentInline,]
 ```

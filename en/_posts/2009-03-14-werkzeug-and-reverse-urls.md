@@ -54,7 +54,6 @@ url_map = Map([
 ])
 ```
 
-
 **views.py:**
 
 ```python

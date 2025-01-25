@@ -25,9 +25,9 @@ extensively so there might be bugs but I'm pretty sure they're working. I'd be
 interested to see how well these work with large input data, particularly the
 merge sort.
 
-**insertion-sort.py**
-
 ```python
+# insertion-sort.py
+
 def sort(array):
   for j in xrange(1, len(array)):
     i = j - 1
@@ -39,19 +39,19 @@ def sort(array):
   return array
 ```
 
-**merge-sort.py**
-
 ```python
+# merge-sort.py
+
 def sort(array):
   mergesort(array, 0, len(array))
- 
+
 def mergesort(array, start, end):
   if end > start + 1:
     pivot = (start + end) / 2
     mergesort(array, start, pivot)
     mergesort(array, pivot, end)
     merge(array, start, pivot, end)
- 
+
 def merge(array, start, pivot, end):
   l = array[start:pivot]
   lenl = pivot - start
