@@ -1,4 +1,4 @@
-# Copyright 2023 Google LLC
+# Copyright 2024 Ian Lewis
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,7 +28,10 @@ MD025:
   # Disable checking of YAML frontmatter.
   front_matter_title: ""
 
-# # MD029/ol-prefix - Ordered list item prefix
+# MD028/no-blanks-blockquote - Blank line inside blockquote
+MD028: false
+
+# MD029/ol-prefix - Ordered list item prefix
 MD029:
   # List style
   style: "ordered"
@@ -53,7 +56,7 @@ MD034: false
 # TODO(#17): Fix no-alt-text
 MD045: false
 
-# # MD046/code-block-style - Code block style
+# MD046/code-block-style - Code block style
 MD046:
   style: "fenced"
 
