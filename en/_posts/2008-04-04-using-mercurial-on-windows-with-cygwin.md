@@ -4,7 +4,7 @@ title: "Using mercurial on windows with cygwin"
 date: 2008-04-04 18:40:54 +0000
 permalink: /en/using-mercurial-on-windows-with-cygwin
 blog: en
-tags: tech mercurial windows tortoisehg
+tags: tech mercurial
 render_with_liquid: false
 ---
 

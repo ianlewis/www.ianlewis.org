@@ -4,7 +4,7 @@ title: "Gallery2 plugin with TinyMCE"
 date: 2008-06-04 18:18:21 +0000
 permalink: /en/gallery2-plugin-with-tinymce
 blog: en
-tags: tech programming projects pgp
+tags: tech programming projects php
 render_with_liquid: false
 ---
 
