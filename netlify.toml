@@ -19,9 +19,18 @@ command = "bundle exec jekyll build"
 # Removed posts
 ############################
 
+[[redirects]]
+  from = "/en/jesse-schells-mindblowing-talk-future-games"
+  to = "/en/tag/tech/"
+  status = 301
 
 [[redirects]]
   from = "/en/linux-hater-s-blog"
+  to = "/en/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/noisebridge-hackerspace-new-digs"
   to = "/en/tag/tech/"
   status = 301
 
@@ -31,7 +40,17 @@ command = "bundle exec jekyll build"
   status = 301
 
 [[redirects]]
-  from = "/en/jesse-schells-mindblowing-talk-future-games"
+  from = "/en/smipple-embeddable-snippets"
+  to = "/en/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/superfetch"
+  to = "/en/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/testing-new-photo-sphere-widget"
   to = "/en/tag/tech/"
   status = 301
 
@@ -42,21 +61,6 @@ command = "bundle exec jekyll build"
 
 [[redirects]]
   from = "/en/what-real-space-invaders-look"
-  to = "/en/tag/tech/"
-  status = 301
-
-[[redirects]]
-  from = "/en/smipple-embeddable-snippets"
-  to = "/en/tag/tech/"
-  status = 301
-
-[[redirects]]
-  from = "/en/noisebridge-hackerspace-new-digs"
-  to = "/en/tag/tech/"
-  status = 301
-
-[[redirects]]
-  from = "/en/superfetch"
   to = "/en/tag/tech/"
   status = 301
 
