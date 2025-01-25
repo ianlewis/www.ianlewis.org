@@ -71,7 +71,7 @@ license-headers: ## Update license headers.
 				'*.js' '**/*.js' \
 				'*.py' '**/*.py' \
 				'*.yaml' '**/*.yaml' \
-				'*.yml' '**/*.yml' \
+				'*.yml' '**/*.yml' | grep -v '^assets/demos' \
 		); \
 		name=$$(git config user.name); \
 		if [ "$${name}" == "" ]; then \
