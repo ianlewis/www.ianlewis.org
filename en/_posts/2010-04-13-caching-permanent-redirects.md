@@ -4,7 +4,7 @@ title: "Caching Permanent Redirects"
 date: 2010-04-13 14:47:03 +0000
 permalink: /en/caching-permanent-redirects
 blog: en
-tags: redirect
+tags: tech programming
 render_with_liquid: false
 ---
 

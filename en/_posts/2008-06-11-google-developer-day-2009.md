@@ -4,6 +4,7 @@ title: "Google Developer Day 2008"
 date: 2008-06-11 22:04:08 +0000
 permalink: /en/google-developer-day-2009
 blog: en
+tags: tech events google
 render_with_liquid: false
 ---
 

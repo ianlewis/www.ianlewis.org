@@ -4,26 +4,65 @@ title: "Introduction to Algorithms"
 date: 2008-12-15 18:10:37 +0000
 permalink: /en/introduction_to_algorithms
 blog: en
-tags: python programming
+tags: tech programming python
 render_with_liquid: false
 ---
 
-<table>
-<tbody>
-<tr>
-<td><img src="http://ecx.images-amazon.com/images/I/41-ilDXINeL._SL500_AA240_.jpg" /></td>
-<td>
-<p>Today my copy of Introduction to Algorithms came in the mail (a gift from the family). I've decided, mostly inspired by <a href="http://www.catonmat.net/">Peteris Krumins</a> to revisit classic algorithms as it's been a while since I've taken a look at them.</p>
+![](/assets/images/2008-12-15-introduction_to_algorithms/intro_to_algorithms.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
-<p>I have decided to also take a look at the MIT Intro to Algorithms course in order to revisit algorithms and concepts. I won't provide any lecture notes or anything since Peteris did a much better job of of writing <a href="http://www.catonmat.net/blog/mit-introduction-to-algorithms-part-one/">lecture notes</a> that I ever could but I did go ahead and create some python implementations of the sorting algorithms covered in the first lecture. These haven't been tested extensively so there might be bugs but I'm pretty sure they're working. I'd be interested to see how well these work with large input data, particularly the merge sort.</p>
-</td>
+Today my copy of Introduction to Algorithms came in the mail (a gift from the
+family). I've decided, mostly inspired by [Peteris
+Krumins](http://www.catonmat.net/) to revisit classic algorithms as it's been a
+while since I've taken a look at them.
 
-</tr>
-</tbody>
-</table>
+I have decided to also take a look at the MIT Intro to Algorithms course in
+order to revisit algorithms and concepts. I won't provide any lecture notes or
+anything since Peteris did a much better job of of writing [lecture
+notes](http://www.catonmat.net/blog/mit-introduction-to-algorithms-part-one/)
+that I ever could but I did go ahead and create some python implementations of
+the sorting algorithms covered in the first lecture. These haven't been tested
+extensively so there might be bugs but I'm pretty sure they're working. I'd be
+interested to see how well these work with large input data, particularly the
+merge sort.
 
-<h4>insertion-sort.py</h4>
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #808080; font-style: italic;">#!/usr/bin/env python</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><span style="color: #ff7700;font-weight:bold;">def</span> sort<span style="color: black;">&#40;</span><span style="color: #dc143c;">array</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; <span style="color: #ff7700;font-weight:bold;">for</span> j <span style="color: #ff7700;font-weight:bold;">in</span> <span style="color: #008000;">xrange</span><span style="color: black;">&#40;</span><span style="color: #ff4500;">1</span>, <span style="color: #008000;">len</span><span style="color: black;">&#40;</span><span style="color: #dc143c;">array</span><span style="color: black;">&#41;</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; &nbsp; i = j - <span style="color: #ff4500;">1</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td>&nbsp; &nbsp; key = <span style="color: #dc143c;">array</span><span style="color: black;">&#91;</span>j<span style="color: black;">&#93;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>&nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">while</span> i <span style="color: #66cc66;">&gt;</span>= <span style="color: #ff4500;">0</span> <span style="color: #ff7700;font-weight:bold;">and</span> key <span style="color: #66cc66;">&lt;</span> <span style="color: #dc143c;">array</span><span style="color: black;">&#91;</span>i<span style="color: black;">&#93;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>&nbsp; &nbsp; &nbsp; <span style="color: #dc143c;">array</span><span style="color: black;">&#91;</span>i<span style="color: #ff4500;">+1</span><span style="color: black;">&#93;</span> = <span style="color: #dc143c;">array</span><span style="color: black;">&#91;</span>i<span style="color: black;">&#93;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"></div></td><td>&nbsp; &nbsp; &nbsp; i = i - <span style="color: #ff4500;">1</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; <span style="color: #dc143c;">array</span><span style="color: black;">&#91;</span>i<span style="color: #ff4500;">+1</span><span style="color: black;">&#93;</span> = key<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc1"></div></div></td><td>&nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #dc143c;">array</span></td></tr></table></div>
+```python
+# insertion-sort.py
 
-<h4>merge-sort.py</h4>
-<div class="codeblock amc_python amc_long"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #808080; font-style: italic;">#!/usr/bin/env python</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><span style="color: #ff7700;font-weight:bold;">def</span> sort<span style="color: black;">&#40;</span><span style="color: #dc143c;">array</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; mergesort<span style="color: black;">&#40;</span><span style="color: #dc143c;">array</span>, <span style="color: #ff4500;">0</span>, <span style="color: #008000;">len</span><span style="color: black;">&#40;</span><span style="color: #dc143c;">array</span><span style="color: black;">&#41;</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; <br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td><span style="color: #ff7700;font-weight:bold;">def</span> mergesort<span style="color: black;">&#40;</span><span style="color: #dc143c;">array</span>, start, end<span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>&nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> end <span style="color: #66cc66;">&gt;</span> start + <span style="color: #ff4500;">1</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>&nbsp; &nbsp; pivot = <span style="color: black;">&#40;</span>start + end<span style="color: black;">&#41;</span> / <span style="color: #ff4500;">2</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"></div></td><td>&nbsp; &nbsp; mergesort<span style="color: black;">&#40;</span><span style="color: #dc143c;">array</span>, start, pivot<span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; mergesort<span style="color: black;">&#40;</span><span style="color: #dc143c;">array</span>, pivot, end<span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; merge<span style="color: black;">&#40;</span><span style="color: #dc143c;">array</span>, start, pivot, end<span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"><div class="amc1"></div></div></td><td>&nbsp; <br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"><div class="amc1"></div></div></td><td><span style="color: #ff7700;font-weight:bold;">def</span> merge<span style="color: black;">&#40;</span><span style="color: #dc143c;">array</span>, start, pivot, end<span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"><div class="amc1"></div></div></td><td>&nbsp; l = <span style="color: #dc143c;">array</span><span style="color: black;">&#91;</span>start:pivot<span style="color: black;">&#93;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"><div class="amc1"></div></div></td><td>&nbsp; lenl = pivot - start<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"><div class="amc1"></div></div></td><td>&nbsp; r = <span style="color: #dc143c;">array</span><span style="color: black;">&#91;</span>pivot:end<span style="color: black;">&#93;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"><div class="amc1"></div></div></td><td>&nbsp; lenr = end - pivot<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"><div class="amc1"></div></div></td><td>&nbsp; i = j = <span style="color: #ff4500;">0</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"><div class="amc1"></div></div></td><td>&nbsp; <span style="color: #ff7700;font-weight:bold;">for</span> k <span style="color: #ff7700;font-weight:bold;">in</span> <span style="color: #008000;">xrange</span><span style="color: black;">&#40;</span>start,end<span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> j <span style="color: #66cc66;">&gt;</span>= lenr <span style="color: #ff7700;font-weight:bold;">or</span> <span style="color: black;">&#40;</span>i <span style="color: #66cc66;">&lt;</span> lenl <span style="color: #ff7700;font-weight:bold;">and</span> l<span style="color: black;">&#91;</span>i<span style="color: black;">&#93;</span> <span style="color: #66cc66;">&lt;</span>= r<span style="color: black;">&#91;</span>j<span style="color: black;">&#93;</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &nbsp; <span style="color: #dc143c;">array</span><span style="color: black;">&#91;</span>k<span style="color: black;">&#93;</span> = l<span style="color: black;">&#91;</span>i<span style="color: black;">&#93;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &nbsp; i += <span style="color: #ff4500;">1</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">else</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &nbsp; <span style="color: #dc143c;">array</span><span style="color: black;">&#91;</span>k<span style="color: black;">&#93;</span> = r<span style="color: black;">&#91;</span>j<span style="color: black;">&#93;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &nbsp; j += <span style="color: #ff4500;">1</span></td></tr></table></div>
+def sort(array):
+  for j in xrange(1, len(array)):
+    i = j - 1
+    key = array[j]
+    while i >= 0 and key < array[i]:
+      array[i+1] = array[i]
+      i = i - 1
+    array[i+1] = key
+  return array
+```
+
+```python
+# merge-sort.py
+
+def sort(array):
+  mergesort(array, 0, len(array))
+
+def mergesort(array, start, end):
+  if end > start + 1:
+    pivot = (start + end) / 2
+    mergesort(array, start, pivot)
+    mergesort(array, pivot, end)
+    merge(array, start, pivot, end)
+
+def merge(array, start, pivot, end):
+  l = array[start:pivot]
+  lenl = pivot - start
+  r = array[pivot:end]
+  lenr = end - pivot
+  i = j = 0
+  for k in xrange(start,end):
+    if j >= lenr or (i < lenl and l[i] <= r[j]):
+      array[k] = l[i]
+      i += 1
+    else:
+      array[k] = r[j]
+      j += 1
+```

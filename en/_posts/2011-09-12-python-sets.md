@@ -4,7 +4,7 @@ title: "Python Sets"
 date: 2011-09-12 20:00:00 +0000
 permalink: /en/python-sets
 blog: en
-tags: python set
+tags: tech programming python
 render_with_liquid: false
 ---
 

@@ -4,7 +4,7 @@ title: "Bob Ippolito"
 date: 2007-12-17 14:49:21 +0000
 permalink: /en/bob_ippolito
 blog: en
-tags: javascript mochikit
+tags: tech javascript
 render_with_liquid: false
 ---
 

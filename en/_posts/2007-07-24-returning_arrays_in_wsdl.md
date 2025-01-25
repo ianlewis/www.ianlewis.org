@@ -4,7 +4,7 @@ title: "Returning Arrays in WSDL"
 date: 2007-07-24 18:41:28 +0000
 permalink: /en/returning_arrays_in_wsdl
 blog: en
-tags: xml wsdl soap
+tags: tech programming
 render_with_liquid: false
 ---
 

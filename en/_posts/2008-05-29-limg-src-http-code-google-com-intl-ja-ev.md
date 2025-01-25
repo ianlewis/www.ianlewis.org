@@ -4,7 +4,7 @@ title: "Google Developer Day 2008"
 date: 2008-05-29 20:39:03 +0000
 permalink: /en/limg-src-http-code-google-com-intl-ja-ev
 blog: en
-tags: python google javascript appengine google developer day 2008
+tags: tech events programming python google javascript google-cloud appengine
 render_with_liquid: false
 ---
 

@@ -4,6 +4,7 @@ title: "Twitter reply updates via e-mail"
 date: 2008-08-09 19:10:52 +0000
 permalink: /en/twitter-reply-updates-via-e-mail
 blog: en
+tags: tech
 render_with_liquid: false
 ---
 

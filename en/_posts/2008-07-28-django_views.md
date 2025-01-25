@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Django"
+title: "Django Views"
 date: 2008-07-28 01:15:30 +0000
 permalink: /en/django_views
 blog: en
-tags: python pylons appengine django web applications
+tags: tech programming python cloud google-cloud appengine django
 render_with_liquid: false
 ---
 

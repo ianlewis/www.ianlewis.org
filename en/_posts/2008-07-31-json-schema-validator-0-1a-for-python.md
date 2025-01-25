@@ -4,7 +4,7 @@ title: "JSON Schema Validator 0.1a for Python"
 date: 2008-07-31 01:01:32 +0000
 permalink: /en/json-schema-validator-0-1a-for-python
 blog: en
-tags: projects python json jsonschema
+tags: tech programming projects python
 render_with_liquid: false
 ---
 

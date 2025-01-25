@@ -4,7 +4,7 @@ title: "Orchestration with Fabric  #1"
 date: 2015-03-09 15:30:00 +0000
 permalink: /en/orchestration-fabric
 blog: en
-tags: orchestration vagrant
+tags: tech devops
 render_with_liquid: false
 ---
 

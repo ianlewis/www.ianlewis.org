@@ -4,7 +4,7 @@ title: "Why I Joined Google"
 date: 2015-04-28 02:30:00 +0000
 permalink: /en/why-i-joined-google
 blog: en
-tags: google
+tags: work tech google
 render_with_liquid: false
 ---
 

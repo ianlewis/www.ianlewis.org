@@ -4,7 +4,7 @@ title: "Protocol Buffers"
 date: 2008-07-12 20:22:09 +0000
 permalink: /en/protocol-buffers
 blog: en
-tags: python google java protocol-buffers
+tags: tech programming python google java
 render_with_liquid: false
 ---
 

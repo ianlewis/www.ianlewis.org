@@ -4,7 +4,7 @@ title: "Using Mercurial MQ"
 date: 2009-08-18 10:04:44 +0000
 permalink: /en/using-mercurial-mq
 blog: en
-tags: mercurial hg mq patch
+tags: tech mercurial
 render_with_liquid: false
 ---
 

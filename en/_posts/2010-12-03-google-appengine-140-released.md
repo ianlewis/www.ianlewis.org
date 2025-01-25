@@ -4,7 +4,7 @@ title: "Google Appengine 1.4.0 Released!!"
 date: 2010-12-03 09:19:38 +0000
 permalink: /en/google-appengine-140-released
 blog: en
-tags: python google appengine
+tags: tech python cloud google-cloud appengine
 render_with_liquid: false
 ---
 
