@@ -4,7 +4,7 @@ title: "Creating Smaller Docker Images: Part #2"
 date: 2016-02-17 22:00:00 +0000
 permalink: /en/creating-smaller-docker-images-part2
 blog: en
-tags: docker smaller-docker-images-series
+tags: tech containers docker smaller-docker-images-series
 render_with_liquid: false
 ---
 

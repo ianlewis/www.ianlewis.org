@@ -4,22 +4,78 @@ title: "Werkzeug and reverse urls"
 date: 2009-03-14 11:57:52 +0000
 permalink: /en/werkzeug-and-reverse-urls
 blog: en
-tags: python django werkzeug
+tags: tech programming python django
 render_with_liquid: false
 ---
 
-<p>I wanted to impove a <a href="http://code.google.com/appengine/">Google Appengine</a> application that a friend of mine created (<a href="http://twisted-mind.appspot.com/">ほぼ汎用イベント管理ツール</a>(jp)) and noticed that he was <a href="http://bitbucket.org/voluntas/twisted-mind/src/tip/views.py#cl-132">redirecting directly to urls</a>. He is using <a href="http://werkzeug.pocoo.org/">Werkzeug</a> to handle url routing so I wondered if there was a method for generating urls from a name like you can in <a href="http://www.djangoproject.com/">Django</a>.</p>
+I wanted to impove a [Google Appengine](http://code.google.com/appengine)
+application that a friend of mine created (
+[ほぼ汎用イベント管理ツール](http://twisted-mind.appspot.com/)(jp)) and noticed
+that he was [redirecting directly to
+urls](http://bitbucket.org/voluntas/twisted-mind/src/tip/views.py#cl-132). He
+is using [Werkzeug](http://werkzeug.pocoo.org/) to handle url routing so I
+wondered if there was a method for generating urls from a name like you can in
+[Django](http://www.djangoproject.com/).
 
-<p>It turns out you can but you give it an endpoint name rather than a url name.</p>
+It turns out you can but you give it an endpoint name rather than a url name.
 
-urls.py
+**urls.py:**
 
-<div class="codeblock amc_python amc_long"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> werkzeug.<span style="color: black;">routing</span> <span style="color: #ff7700;font-weight:bold;">import</span> Map, Rule, RuleTemplate, Submount, EndpointPrefix<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><span style="color: #dc143c;">resource</span> = RuleTemplate<span style="color: black;">&#40;</span><span style="color: black;">&#91;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; Rule<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/${name}/'</span>, endpoint=<span style="color: #483d8b;">'${name}_index'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; Rule<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/${name}/create/'</span>, endpoint=<span style="color: #483d8b;">'create_${name}'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td>&nbsp; Rule<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/${name}/update/&lt;string:${var}&gt;/'</span>, endpoint=<span style="color: #483d8b;">'update_${name}'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>&nbsp; Rule<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/${name}/delete/&lt;string:${var}&gt;/'</span>, endpoint=<span style="color: #483d8b;">'delete_${name}'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td><span style="color: black;">&#93;</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc1"></div></div></td><td>url_map = Map<span style="color: black;">&#40;</span><span style="color: black;">&#91;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc1"></div></div></td><td>&nbsp; Rule<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/'</span>, endpoint=<span style="color: #483d8b;">'index'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"><div class="amc1"></div></div></td><td>&nbsp; Rule<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/&lt;string:slug&gt;/'</span>, endpoint=<span style="color: #483d8b;">'project_or_event'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"><div class="amc1"></div></div></td><td>&nbsp; Rule<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/form/&lt;string:key&gt;/&lt;string:slug&gt;/'</span>, endpoint=<span style="color: #483d8b;">'form'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"><div class="amc1"></div></div></td><td>&nbsp; Submount<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/account'</span>, <span style="color: black;">&#91;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; Rule<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/'</span>, endpoint=<span style="color: #483d8b;">'account_index'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; Rule<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/create/'</span>, endpoint=<span style="color: #483d8b;">'create_account'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; Rule<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/update/'</span>, endpoint=<span style="color: #483d8b;">'update_account'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; Rule<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/delete/'</span>, endpoint=<span style="color: #483d8b;">'delete_account'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; Rule<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/event/cancel/&lt;string:slug&gt;/'</span>, endpoint=<span style="color: #483d8b;">'event_cancel'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc2"></div></div></td><td>&nbsp; <span style="color: black;">&#93;</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc2"></div></div></td><td>&nbsp; EndpointPrefix<span style="color: black;">&#40;</span><span style="color: #483d8b;">'admin_'</span>, <span style="color: black;">&#91;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; Submount<span style="color: black;">&#40;</span><span style="color: #483d8b;">'/admin'</span>, <span style="color: black;">&#91;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &nbsp; <span style="color: #dc143c;">resource</span><span style="color: black;">&#40;</span>name=<span style="color: #483d8b;">'account'</span>, var=<span style="color: #483d8b;">'email'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &nbsp; <span style="color: #dc143c;">resource</span><span style="color: black;">&#40;</span>name=<span style="color: #483d8b;">'project'</span>, var=<span style="color: #483d8b;">'slug'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &nbsp; <span style="color: #dc143c;">resource</span><span style="color: black;">&#40;</span>name=<span style="color: #483d8b;">'event'</span>, var=<span style="color: #483d8b;">'slug'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &nbsp; <span style="color: #dc143c;">resource</span><span style="color: black;">&#40;</span>name=<span style="color: #483d8b;">'program'</span>, var=<span style="color: #483d8b;">'slug'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; &nbsp; <span style="color: #dc143c;">resource</span><span style="color: black;">&#40;</span>name=<span style="color: #483d8b;">'application'</span>, var=<span style="color: #483d8b;">'slug'</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"><div class="amc2"></div></div></td><td>&nbsp; &nbsp; <span style="color: black;">&#93;</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"><div class="amc2"></div></div></td><td>&nbsp; <span style="color: black;">&#93;</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc3"></div></div></td><td><span style="color: black;">&#93;</span><span style="color: black;">&#41;</span></td></tr></table></div>
+```python
+from werkzeug.routing import Map, Rule, RuleTemplate, Submount, EndpointPrefix
 
-views.py
+resource = RuleTemplate([
+  Rule('/${name}/', endpoint='${name}_index'),
+  Rule('/${name}/create/', endpoint='create_${name}'),
+  Rule('/${name}/update/<string:${var}>/', endpoint='update_${name}'),
+  Rule('/${name}/delete/<string:${var}>/', endpoint='delete_${name}'),
+])
 
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> werkzeug redirect as wredirect<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> urls <span style="color: #ff7700;font-weight:bold;">import</span> url_map<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td><span style="color: #ff7700;font-weight:bold;">def</span> reverse<span style="color: black;">&#40;</span><span style="color: #66cc66;">**</span>kwargs<span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; c = url_map.<span style="color: black;">bind</span><span style="color: black;">&#40;</span><span style="color: #483d8b;">''</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td>&nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> wredirect<span style="color: black;">&#40;</span>c.<span style="color: black;">build</span><span style="color: black;">&#40;</span><span style="color: #66cc66;">**</span>kwargs<span style="color: black;">&#41;</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>...<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"></div></td><td>&nbsp; &nbsp;<span style="color: #ff7700;font-weight:bold;">return</span> reverse<span style="color: black;">&#40;</span><span style="color: #483d8b;">'form'</span>, <span style="color: #008000;">dict</span><span style="color: black;">&#40;</span>key=key, slug=slug<span style="color: black;">&#41;</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc1"></div></div></td><td>...</td></tr></table></div>
+url_map = Map([
+  Rule('/', endpoint='index'),
+  Rule('/<string:slug>/', endpoint='project_or_event'),
+  Rule('/form/<string:key>/<string:slug>/', endpoint='form'),
+  Submount('/account', [
+    Rule('/', endpoint='account_index'),
+    Rule('/create/', endpoint='create_account'),
+    Rule('/update/', endpoint='update_account'),
+    Rule('/delete/', endpoint='delete_account'),
+    Rule('/event/cancel/<string:slug>/', endpoint='event_cancel'),
+  ]),
+  EndpointPrefix('admin_', [
+    Submount('/admin', [
+      resource(name='account', var='email'),
+      resource(name='project', var='slug'),
+      resource(name='event', var='slug'),
+      resource(name='program', var='slug'),
+      resource(name='application', var='slug'),
+    ]),
+  ])
+])
+```
 
-<p>You need to give the build function a full endpoint. in the above example you can have endpoints like admin_create_${name} where ${name} is the name of a resource. This would need to be filled in when passing it to build.</p>
+**views.py:**
 
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td>...<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>&nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> reverse<span style="color: black;">&#40;</span><span style="color: #483d8b;">'admin_create_event'</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td>...</td></tr></table></div>
+```python
+from werkzeug import redirect as wredirect
+from urls import url_map
+
+def reverse(**kwargs):
+  c = url_map.bind('')
+  return wredirect(c.build(**kwargs))
+
+# ...
+
+  return reverse('form', dict(key=key, slug=slug))
+# ...
+```
+
+You need to give the build function a full endpoint. in the above example you
+can have endpoints like `admin_create_${name}` where `${name}` is the name of a
+resource. This would need to be filled in when passing it to build.
+
+```python
+# ...
+  return reverse('admin_create_event')
+# ...
+```

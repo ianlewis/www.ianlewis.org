@@ -4,7 +4,7 @@ title: "Gallery2 for WordPress"
 date: 2008-04-18 11:51:03 +0000
 permalink: /en/gallery2-for-wordpress
 blog: en
-tags: projects gallery2 wordpress plugin
+tags: tech programming projects
 render_with_liquid: false
 ---
 

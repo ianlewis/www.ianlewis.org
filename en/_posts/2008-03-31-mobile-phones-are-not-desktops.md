@@ -4,6 +4,7 @@ title: "Mobile phones are not Desktops"
 date: 2008-03-31 23:28:33 +0000
 permalink: /en/mobile-phones-are-not-desktops
 blog: en
+tags: tech musings
 render_with_liquid: false
 ---
 

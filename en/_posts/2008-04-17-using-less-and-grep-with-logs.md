@@ -4,7 +4,7 @@ title: "Using less and grep with logs"
 date: 2008-04-17 17:34:43 +0000
 permalink: /en/using-less-and-grep-with-logs
 blog: en
-tags: linux unix
+tags: tech devops
 render_with_liquid: false
 ---
 

@@ -49,8 +49,8 @@
           </li>
         </a>
         {%- endif -%}
-        {%- if site.plainwhite.social_links.linkedIn -%}
-        <a rel="me" href="https://www.linkedin.com/{{ site.plainwhite.social_links.linkedIn }}" target="_blank">
+        {%- if site.plainwhite.social_links.linkedin -%}
+        <a rel="me" href="https://www.linkedin.com/{{ site.plainwhite.social_links.linkedin }}" target="_blank">
           <li>
             <i class="icon-linkedin-squared"></i>
           </li>
@@ -66,7 +66,7 @@
         {%- if site.plainwhite.social_links.bluesky -%}
         <a rel="me" href="https://bsky.app/profile/{{ site.plainwhite.social_links.bluesky }}" target="_blank">
           <li>
-            <i class="icon-bluesky_logo"></i>
+            <i class="icon-bluesky"></i>
           </li>
         </a>
         {%- endif -%}
@@ -135,6 +135,13 @@
           </li>
         </a>
         {%- endif -%}
+        {%- if site.plainwhite.social_links.keybase -%}
+        <a rel="me" href="https://keybase.io/{{ site.plainwhite.social_links.keybase }}" target="_blank">
+          <li>
+            <i class="icon-keybase"></i>
+          </li>
+        </a>
+        {%- endif -%}
         {%- if site.plainwhite.social_links.email -%}
         <a rel="me" href="mailto:{{ site.plainwhite.social_links.email }}" target="_blank">
           <li style="font-size: 34px; margin: 0 0.2em;">
@@ -164,9 +171,7 @@
         </ul>
       </nav>
       {%- endif -%}
-      <p class="about-footer {{condensed_class}}">&copy;
-        {{ "now" | date: "%Y" }}
-      </p>
+      <p class="about-footer {{condensed_class}}">&copy; {{ "now" | date: "%Y" }} {{ site.plainwhite.name }}</p>
       {%- if site.plainwhite.dark_mode -%}
       <div class="about-footer {{condensed_class}}">
         <p>Dark Mode

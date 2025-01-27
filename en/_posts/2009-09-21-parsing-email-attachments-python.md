@@ -4,7 +4,7 @@ title: "Parsing email with attachments in python"
 date: 2009-09-21 11:33:31 +0000
 permalink: /en/parsing-email-attachments-python
 blog: en
-tags: python parsing
+tags: tech programming python
 render_with_liquid: false
 ---
 

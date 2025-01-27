@@ -4,7 +4,7 @@ title: "Custom Admin Views and Reversing Django Admin URLs"
 date: 2009-08-26 18:08:29 +0000
 permalink: /en/reversing-django-admin-urls
 blog: en
-tags: django reverse urls
+tags: tech programming python django
 render_with_liquid: false
 ---
 

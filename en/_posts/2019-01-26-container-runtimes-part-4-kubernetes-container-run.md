@@ -4,7 +4,7 @@ title: "Container Runtimes Part 4: Kubernetes Container Runtimes & CRI"
 date: 2019-01-26 12:00:00 +0000
 permalink: /en/container-runtimes-part-4-kubernetes-container-run
 blog: en
-tags: kubernetes containers container-runtime-series
+tags: tech kubernetes containers container-runtime-series
 render_with_liquid: false
 ---
 

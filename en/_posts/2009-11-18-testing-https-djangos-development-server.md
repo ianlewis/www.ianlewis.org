@@ -4,7 +4,7 @@ title: "Testing HTTPS with Django's Development Server"
 date: 2009-11-18 21:36:14 +0000
 permalink: /en/testing-https-djangos-development-server
 blog: en
-tags: django stunnel server
+tags: tech python django
 render_with_liquid: false
 ---
 

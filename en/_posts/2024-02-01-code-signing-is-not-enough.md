@@ -4,7 +4,7 @@ title: "Code Signing is not Enough"
 date: 2024-02-01 00:00:00 +0000
 permalink: /en/code-signing-is-not-enough
 blog: en
-tags: security slsa
+tags: tech security
 render_with_liquid: false
 ---
 

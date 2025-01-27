@@ -4,7 +4,7 @@ title: "Mixins and Python"
 date: 2013-01-15 14:00:00 +0000
 permalink: /en/mixins-and-python
 blog: en
-tags: python mixin
+tags: tech programming python
 render_with_liquid: false
 ---
 

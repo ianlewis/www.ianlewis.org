@@ -4,7 +4,7 @@ title: "Mercurial and named branches and hgweb"
 date: 2008-02-20 12:19:59 +0000
 permalink: /en/hg_and_named_branches_in_hgweb
 blog: en
-tags: scm mercurial
+tags: tech mercurial
 render_with_liquid: false
 ---
 

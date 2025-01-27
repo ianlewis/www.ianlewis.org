@@ -4,7 +4,7 @@ title: "jsonschema 0.2 alpha"
 date: 2008-09-06 20:04:08 +0000
 permalink: /en/jsonschema-0-2-alpha
 blog: en
-tags: python json jsonschema schema
+tags: tech programming projects python
 render_with_liquid: false
 ---
 

@@ -4,7 +4,7 @@ title: "Google App Engine 1.7.7 pre-release"
 date: 2013-04-09 07:00:00 +0000
 permalink: /en/google-appengine-177-pre-release
 blog: en
-tags: python appengine socket
+tags: tech programming python google-cloud appengine
 render_with_liquid: false
 ---
 
