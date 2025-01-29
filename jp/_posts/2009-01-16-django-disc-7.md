@@ -8,39 +8,37 @@ tags: django 勉強会 オクセンス
 render_with_liquid: false
 ---
 
-<p>昨日、<a href="http://accense.com/">アクセンス・テクノロジー</a>の東京本社に<a href="http://djangoproject.jp/etude/7/">Django 勉強会 Disc.7</a>に参加しに行ってきました。</p>
+昨日、[アクセンス・テクノロジー](http://accense.com/)の東京本社に [Django
+勉強会 Disc.7](http://djangoproject.jp/etude/7/)に参加しに行ってきました。
 
-<h3>GeoDjango</h3>
-<p>最初は<a href="http://twitter.com/tmatsuo">松尾さん</a>の<a href="http://geodjango.org/">geodjango</a>の話。</p>
-<ul>
-<li>GeoDjangoのDBサポートはpostgisが一番対応してます。</li>
-<li>Adminで地形のエリア編集などは地図のJavascriptアプリで楽々</li>
-<li>GeoDjangoのGeoManagerでfilter(field__poly_contains=point)ができる。</li>
+## GeoDjango
 
-</ul>
+最初は[松尾さん](https://x.com/tmatsuo)の[geodjango](http://geodjango.org/)の話。
 
-<h3>ContentType</h3>
-<p>次は増田さんのGenericForeignKeyの話と、次に岡野さんのContentTypeの話</p>
-<ul>
-<li>GenericForeignKeyはContentTypeとobject_idのフィールドのラッパーに過ぎない</li>
-<li>ContentTypeでModelの処理が結構一般的にできる(<a href="http://bitbucket.org/tokibito/sample_nullpobug/src/tip/django/ct_sample/">岡野さんのサンプルアプリ</a>)</li>
-<li>ContentTypeManagerのget_for_model()と、ContentTypeのget_object_for_this_type()で色な面白いことができる。</li>
-</ul>
-<li>
+- GeoDjangoのDBサポートはpostgisが一番対応してます。
+- Adminで地形のエリア編集などは地図のJavascriptアプリで楽々
+- GeoDjangoのGeoManagerで `filter(field__poly_contains=point)` ができる。
 
-<h3>モバイル</h3>
-<p>次に、OpenIdの話と、最後に<a href="http://d.hatena.ne.jp/perezvon/">酒徳さん</a>の<a href="http://www.djangoproject.com/" title="Django">Django</a>でモバイルサイトの話</p>
-<ul>
-<li>モバイルの開発は大変</li>
-<li>セッションを使わずにurlでフォームウィザードみたいなのを作るのがあり</li>
-<li><a href="http://gu3.jp/">gumi</a>がよくできてる。</li>
-</ul>
+## ContentType
 
-<h3>まとめ</h3>
-<ul>
-<li><a href="http://accense.com/">アクセンス・テクノロジー</a>の人たちに感謝</li>
-<li>懇親会で酒徳さんと松尾さんといい話をして楽しかった</li>
-<li>アクセンスから、かっこいい手帳をもらった。<br /><a href="http://farm4.static.flickr.com/3338/3201528890_28293f2266.jpg?v=0" rel="lightbox"><img src="http://farm4.static.flickr.com/3338/3201528890_28293f2266_m.jpg" title="アクセンス・テクノロジーfullflex手帳" alt="" /></a></li>
-</ul>
+次は増田さんのGenericForeignKeyの話と、次に岡野さんのContentTypeの話
 
-参加したみんなさん、お疲れ様でした！</li>
+- `GenericForeignKey`は`ContentType`と`object_id`のフィールドのラッパーに過ぎない
+- `ContentType`で`Model`の処理が結構一般的にできる([岡野さんのサンプルアプリ](http://bitbucket.org/tokibito/sample_nullpobug/src/tip/django/ct_sample/))
+- `ContentTypeManager`の`get_for_model()`と、`ContentTypeのget_object_for_this_type()`で色な面白いことができる。
+
+## モバイル
+
+次に、OpenIdの話と、最後に[酒徳さん](http://d.hatena.ne.jp/perezvon/)のDjangoでモバイルサイトの話
+
+- モバイルの開発は大変
+- セッションを使わずにurlでフォームウィザードみたいなのを作るのがあり
+- [gumi](http://gu3.jp/)がよくできてる。
+
+## まとめ
+
+- アクセンス・テクノロジーの人たちに感謝
+- 懇親会で酒徳さんと松尾さんといい話をして楽しかった
+- アクセンスから、かっこいい手帳をもらった。
+
+参加したみんなさん、お疲れ様でした！
