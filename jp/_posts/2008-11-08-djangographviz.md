@@ -8,8 +8,17 @@ tags: python django graphviz model
 render_with_liquid: false
 ---
 
-<p>今日、<a href="http://www.djangoproject.com/" title="Django">Django</a>アプリケーションのモデルの構成を分かりやすく見たくて、モデル構成から<a href="http://ja.wikipedia.org/wiki/Graphviz">Graphviz</a> ドットファイルを生成できれば、いいなと思って、<a href="http://code.djangoproject.com/wiki/DjangoGraphviz">DjangoGraphviz</a>を見つけた。ただ、<a href="http://code.unicoders.org/django/trunk/utils/modelviz.py">ここ</a>からダウンロードして、こう実行する。</p>
-<p>PYTHONPATH=$PYTHONPATH:. DJANGO_SETTINGS_MODULE=appmodule.settings python modelviz.py applabel &gt; app.dot<br />dot app.dot -Tpng app.png</p>
-<p>最近作った <a href="http://www.bitbucket.org/IanLewis/django-lifestream/overview/">django-lifestream</a>のモデル構成イメージを作るとこれがでる。</p>
-<p><a rel="lightbox" href="http://www.ianlewis.org/gallery2/d/11018-2/dlife.png"><img src="/gallery2/d/11019-2/dlife.png" alt="" width="80" height="150" /></a></p>
-<p>よくできてるね。</p>
+> **Update:** DjangoGraphVizはもう存在しませんが、[`django-extensions`](https://github.com/django-extensions/django-extensions)パッケージで[同様な機能](https://django-extensions.readthedocs.io/en/latest/graph_models.html)が入っています。
+
+今日、[Django](http://www.djangoproject.com/)アプリケーションのモデルの構成を分かりやすく見たくて、モデル構成から[Graphviz](http://ja.wikipedia.org/wiki/Graphviz)ドットファイルを生成できれば、いいなと思って、[DjangoGraphviz](http://code.djangoproject.com/wiki/DjangoGraphviz)を見つけた。ただ、[ここ](http://code.unicoders.org/django/trunk/utils/modelviz.py)からダウンロードして、こう実行する。
+
+```shell
+PYTHONPATH=$PYTHONPATH:. DJANGO_SETTINGS_MODULE=appmodule.settings python modelviz.py applabel > app.dot
+dot app.dot -Tpng app.png
+```
+
+最近作った[django-lifestream](http://www.bitbucket.org/IanLewis/django-lifestream/overview/)のモデル構成イメージを作るとこれがでる。
+
+![](/assets/images/gallery/dlife.png){:style="width: 40%; display:block; margin-left:auto; margin-right:auto"}
+
+よくできてるね。
