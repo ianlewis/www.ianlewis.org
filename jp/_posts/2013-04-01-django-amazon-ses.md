@@ -23,7 +23,7 @@ Django ではどう使えばいいかを説明したいなと思った。
 実は、SESをDjangoで使うのが簡単過ぎて、あまりネタにならないので、 Django の説明とSESのはまりどころの話をしょうと思っている。
 本来は この話は Djangoよりは、SESの話になるかも。
 
-# django_ses
+## django_ses
 
 connpass は [django-ses](https://github.com/hmarr/django_ses/)
 を使っている。django-ses は Django の
@@ -68,7 +68,7 @@ SERVER_EMAIL = u"noreply <no-reply@example.com>"
 
 それで、アプリケーションで普通に Django の `send_mail()` を呼び出すことで、SES経由でメール送信できる。
 
-# 本番アクセス
+## 本番アクセス
 
 最初にアカウントをセットアップした時、SESは「sandbox」モードになっている。 sandbox
 モードは特に使い方は特殊ではないのですが、メール送信が大きく制限されている。
@@ -82,7 +82,7 @@ SESを本格的に使う場合は [Production
 Access](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html)
 を申請する必要がある。 本番アクセスの許可が来るまでに数日がかかるので、余裕を持って申請をしてください。
 
-# クオータ
+## クオータ
 
 設定が非常に簡単ですが、AWS側でいろな設定が必要です。まずは、クオータの話。AWSは
 メール送信のクオータがあります。最初はクオータが小さくて、信用性が高いメールを
@@ -118,7 +118,7 @@ SESのクオータがリリースギリギリまで、上がって来なかっ�
 Request](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/submit-extended-access-request.html))を
 出すことが出来る。 ただし、すぐアカウントを作った後にはこれは期待できない。
 
-# メール受信
+## メール受信
 
 SES はメール受信の機能がないですが、自分のサーバーで postfix などを立てて、 DNSのMXレコードを設定すれば、SMTPで受信する
 ことができます。ただし、 SMTPサーバーを立てなければ、特に何もしなくともいいですが、SMTPサーバーを
@@ -183,7 +183,7 @@ no-reply のユーザーだと、以下コマンドを実行すると、メア�
 # sudo newaliases
 ```
 
-# まとめ
+## まとめ
 
 SES
 はセットアップが少し面倒くさくて時間かかるのですが、メールが届かない問題や、スパムとして判定される問題が避けるのが大きなメリットで、connpass
