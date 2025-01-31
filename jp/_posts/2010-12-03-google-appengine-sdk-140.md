@@ -9,27 +9,19 @@ render_with_liquid: false
 locale: ja
 ---
 
-[Google Appengine](http://code.google.com/appengine/) 1.4.0 がリリースされました！！
-このリリースはかなりでかい！！ チャンネルAPI, "Always On"
-(リザーブインスタンス)、タスクキューの正式リリース、スタートアップリクエスト、バックグラウンド処理の改善などなど、
+[Google Appengine](http://code.google.com/appengine/)1.4.0がリリースされました！！このリリースはかなりでかい！！チャンネルAPI,"Always On"(リザーブインスタンス)、タスクキューの正式リリース、スタートアップリクエスト、バックグラウンド処理の改善などなど、
 
-# チャンネルAPI
+## チャンネルAPI
 
-まずは、一番重要なチャンネルAPI。チャンネルAPIでクライアントブラウザーにプッシュすることができるようになります。内部的には、[Google
-Talk](http://www.google.com/talk/intl/ja/) の
-[XMPP](http://ja.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol)
-インフラを使っているらしくて、それでスケールアウトしてくれます。チャンネルAPI は2つの部分がに分けています。 サーバー再度のチャンネルAPI
-と チャンネルAPI の Javascript ライブラリ。
+まずは、一番重要なチャンネルAPI。チャンネルAPIでクライアントブラウザーにプッシュすることができるようになります。内部的には、[Google Talk](http://www.google.com/talk/intl/ja/)の[XMPP](http://ja.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol)インフラを使っているらしくて、それでスケールアウトしてくれます。チャンネルAPIは2つの部分がに分けています。サーバー再度のチャンネルAPIとチャンネルAPIのJavascriptライブラリ。
 
-チャンネルAPIはサーバー側から、クライアントの通信に使います。クライアントからサーバーへの通信は今までどおりのPOSTがGET
-HTTPリクエスト。
+チャンネルAPIはサーバー側から、クライアントの通信に使います。クライアントからサーバーへの通信は今までどおりのPOSTがGET HTTPリクエスト。
 
-## サーバー側
+### サーバー側
 
-まずは、チャンネルのIDをクライアントに渡す。クライアントはそのIDを使って、 チャンネルに接続する。
+まずは、チャンネルのIDをクライアントに渡す。クライアントはそのIDを使って、チャンネルに接続する。
 
-`channel.create_channel()` に渡す `user` は、ユーザーだけじゃなくて、 内部的に文字列にするので、
-`create_channel()` に渡すデータは単の文字列でも大丈夫です。
+`channel.create_channel()`に渡す`user`は、ユーザーだけじゃなくて、内部的に文字列にするので、`create_channel()`に渡すデータは単の文字列でも大丈夫です。
 
 ```python
 from google.appengine.ext import webapp
@@ -52,7 +44,7 @@ class MyHandler(BaseHandler):
         )
 ```
 
-クライアント側の Javascript はチャンネルに接続
+クライアント側のJavascriptはチャンネルに接続
 
 ```javascript
 var channel = new goog.appengine.Channel("{{ channel_id }}");
@@ -92,55 +84,35 @@ class AjaxHandler(BaseHandler):
 Channel API のドキュメント:
 <http://code.google.com/intl/ja/appengine/docs/python/channel/overview.html>
 
-# Always On
+## Always On
 
-今までは、リクエストが少ない場合は、 Appengine のサーバーインスタンスがすべて落とされるので、
-リクエストがその状態で来た時、かなりスピンアップ
-(サーバーインスタンスの起動)に時間かかってしまいました。 "Always On"
-という機能を使うと３つのインスタンスを保持してくれます。 有料ですが、
-かなりスピンアップに困っている人に好調的だね。
+今までは、リクエストが少ない場合は、Appengineのサーバーインスタンスがすべて落とされるので、リクエストがその状態で来た時、かなりスピンアップ(サーバーインスタンスの起動)に時間かかってしまいました。"Always On"という機能を使うと３つのインスタンスを保持してくれます。有料ですが、かなりスピンアップに困っている人に好調的だね。
 
-<div class="note">
+> **Note:** "Always On"はアクセスがあんまりこない時のみに効果があるので、自分のアプリは常にトラフィック量が高い場合、最低３つのインスタンスを保持してもしょうがないです。３つまで下がってないからです。
 
-<div class="title">
+## スタートアップリクエスト
 
-Note
+この機能もスピンアップにいいのですが、効果がちょっと違うので、説明します。今まで、リクエストが増えて、スケールアウト（新しいインスタンスの起動)が必要な場合、あるリクエストが新しいインスタンスに割り当てると、インスタンスがロードに時間かかったり、`DeadlineExceededError`が出たりしました。
 
-</div>
+スタートアップリクエスト機能は、スケールアウトが必要な場合、ユーザーからのリクエストを割り当てる前に、スタートアップリクエストをインスタンスに投げる。このリクエストで必要なモジュールを未然にロードできるようになります。それで、最初のユーザーリクエストが来たら、より速く返せるようになります。
 
-"Always On" はアクセスがあんまりこない時のみに効果があるので、自分のアプリは常にトラフィック量が高い場合、
-最低３つのインスタンスを保持してもしょうがないです。３つまで下がってないからです。
+つまり、スタートアップリクエストがスケールアウトする時に効果があるので、インスタンスがいくらでもあっても効果的です。
 
-</div>
-
-# スタートアップリクエスト
-
-この機能もスピンアップにいいのですが、効果がちょっと違うので、説明します。今まで、リクエストが増えて、
-スケールアウト（新しいインスタンスの起動)が必要な場合、あるリクエストが新しいインスタンスに割り当てると、
-インスタンスがロードに時間かかったり、 `DeadlineExceededError` が出たりしました。
-
-スタートアップリクエスト機能は、スケールアウトが必要な場合、ユーザーからのリクエストを割り当てる前に、
-スタートアップリクエストをインスタンスに投げる。このリクエストで必要なモジュールを未然にロードできる
-ようになります。それで、最初のユーザーリクエストが来たら、より速く返せるようになります。
-
-つまり、スタートアップリクエストがスケールアウトする時に効果があるので、 インスタンスがいくらでもあっても効果的です。
-
-使うには、まずはメールみたいに、 `inbound_services` を `app.yaml` に設定します。
+使うには、まずはメールみたいに、`inbound_services`を`app.yaml`に設定します。
 
 ```yaml
 inbound_services:
   - warmup
 ```
 
-スタートアップリクエストが `/_ah/warmup` のURLに来るので、スタートアップリクエストを受けとるURLを `app.yaml`
-に設定する。
+スタートアップリクエストが`/_ah/warmup`のURLに来るので、スタートアップリクエストを受けとるURLを`app.yaml`に設定する。
 
 ```yaml
 - url: /_ah/warmup.*
   script: warmup.py
 ```
 
-`warmup.py` の中に、必要そうなモジュールをインポートする。
+`warmup.py`の中に、必要そうなモジュールをインポートする。
 
 ```python
 # ロードが重いモジュールを未然にロードする
@@ -152,27 +124,19 @@ def main():
     print "OK"
 ```
 
-# タスクキュー正式リリース
+## タスクキュー正式リリース
 
-今まで、 Appengine のタスクキューは Beta で `google.appengine.api.labs.taskqueue`
-に入っていたけど、 labs から卒業するので、 `google.appengine.api.taskqueue`
-に移動される。 タスクキューのデータもデータのクオータに含まれるようになります。 データクオータにひっかかるので、
-ヘビーに使っている人たちはちょっと大変かもしれない。
+今まで、AppengineのタスクキューはBetaで`google.appengine.api.labs.taskqueue`に入っていたけど、labsから卒業するので、`google.appengine.api.taskqueue`に移動される。タスクキューのデータもデータのクオータに含まれるようになります。データクオータにひっかかるので、ヘビーに使っている人たちはちょっと大変かもしれない。
 
-# cron/タスクキューの改善
+## cron/タスクキューの改善
 
-cron とタスクキューの時間制限は今まで、30秒でしたが、10分になります。
-ですが、長く実行しているcronジョブ・タスクは認識され、別インフラに移動されて、
-スループット(実行頻度）が落ちるので、速くて小さいタスクが良好だと言われる。
+cronとタスクキューの時間制限は今まで、30秒でしたが、10分になります。ですが、長く実行しているcronジョブ・タスクは認識され、別インフラに移動されて、スループット(実行頻度）が落ちるので、速くて小さいタスクが良好だと言われる。
 
-# Metadata クエリー
+## Metadata クエリー
 
-Appengine データストアのメタデータ、`Namespace`, `Kind`, `Property`
-をクエリすることができるようになりました。 メタデータのモデルクラスは
-`google.appengine.ext.db.metadata` モジュールに入っています。
+Appengineデータストアのメタデータ、`Namespace`,`Kind`,`Property`をクエリすることができるようになりました。メタデータのモデルクラスは`google.appengine.ext.db.metadata`モジュールに入っています。
 
-`Kind` インスタンスが持っている `Property` の親になるので、ある `Kind` の `Property` を取得するには、
-`ancestor()` クエリができます。
+`Kind`インスタンスが持っている`Property`の親になるので、ある`Kind`の`Property`を取得するには、`ancestor()`クエリができます。
 
 ```python
 from google.appengine.ext.db.metadata import Namespace, Kind, Property
@@ -186,11 +150,9 @@ for kind in Kind.all():
         print "    %s" % property.property_name
 ```
 
-# ダウンロード
+## ダウンロード
 
-<http://code.google.com/intl/en/appengine/downloads.html>
-ではまだ出てないみたいですが、code.google.com
-のプロジェクトの以下のURLからダウンロードできます。
+<http://code.google.com/intl/en/appengine/downloads.html> ではまだ出てないみたいですが、code.google.comのプロジェクトの以下のURLからダウンロードできます。
 
 - Python: [google_appengine_1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=google_appengine_1.4.0.zip)
 - Java: [appengine-java-sdk-1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=appengine-java-sdk-1.4.0.zip)
