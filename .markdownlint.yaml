@@ -23,6 +23,7 @@ MD007:
 # MD013/line-length - Line length
 MD013: false
 
+# TODO(#17): Include frontmatter title in title check.
 # MD025/single-title/single-h1 - Multiple top-level headings
 MD025:
   # Disable checking of YAML frontmatter.
