@@ -44,7 +44,11 @@ Magazine](https://info.nikkeibp.co.jp/media/LIN/).
 
 ## Contact
 
-If you want to have a chat with me you can book an appointment on my appointment page.
+If you want to have a chat with me you can book an appointment on my appointment page. I can help you with:
+
+- DevOps / Infrastructure / Cloud Native / Security
+- Programming
+- Career advice
 
 <a href="https://calendar.app.google/98BzZNZ424TMFrwh9">
     <button style="color:white;font-weight:bold;border-color:dodgerblue;background-color:dodgerblue;border-radius:4px;">Book an Appointment</button>
