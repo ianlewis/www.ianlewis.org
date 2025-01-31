@@ -9,17 +9,11 @@ render_with_liquid: false
 locale: ja
 ---
 
-# Google Appengine 1.4.3
-
-水曜日に Google Appengine 1.4.3 がリリースされました！ 1.4.1 と 1.4.2 はブログ記事を書くほど
-大きくはなかったのですか、 1.4.3 はまたいろいろ入っているので、ご紹介します。
+水曜日にGoogle Appengine 1.4.3がリリースされました！1.4.1と1.4.2はブログ記事を書くほど大きくはなかったのですか、1.4.3はまたいろいろ入っているので、ご紹介します。
 
 ## Prospective Search API
 
-以前、 [Matcher API のブログ記事](/jp/appengine-matcher-api) を書きましたが、 Trusted
-Tester リリースで出ていた Matcher API は 「Prospective Search
-API」という名前で開発者全員にリリースされています。
-まだ、Labs機能で、正式リリースではない様ですけど、 モジュール名が変わっています。
+以前、[Matcher API のブログ記事](/jp/appengine-matcher-api)を書きましたが、Trusted Testerリリースで出ていたMatcher APIは「Prospective Search API」という名前で開発者全員にリリースされています。まだ、Labs機能で、正式リリースではない様ですけど、モジュール名が変わっています。
 
 ```python
 from google.appengine.api import prospective_search
@@ -52,14 +46,11 @@ def remove_tweet_alert(user, tweet_text):
     prospective_search.unsubscribe(query, subscribe_name, topic=topic)
 ```
 
-`matcher` というモジュールが、 `prospective_search`
-というモジュール名になった意外は、特に大きいな変更はなさそうですね。
+`matcher`というモジュールが、`prospective_search`というモジュール名になった意外は、特に大きいな変更はなさそうですね。
 
 ## Testbed
 
-Testbed はテストを実行できるために、 Appengine 環境を偽装するものです。 開発サーバーみたいに、
-Appengine本番にデプロイせずに、ローカル環境で、Memcached、 Datastore などの
-Appengineのサービスが テストの中に使えます。
+Testbedはテストを実行できるために、Appengine環境を偽装するものです。開発サーバーみたいに、Appengine本番にデプロイせずに、ローカル環境で、Memcached、DatastoreなどのAppengineのサービスがテストの中に使えます。
 
 ```python
 import unittest
@@ -104,10 +95,7 @@ class DemoTestCase(unittest.TestCase):
     # ...
 ```
 
-テストを実行するために、テストランナーが必要です。 [gaeunit](http://code.google.com/p/gaeunit/)
-、もしくは、 [nose-gae](http://code.google.com/p/nose-gae/) のテストランナー
-を使うことが出来ます。 簡単な例は以下のテストランナー。 `unittest2`
-が必要なので、まずそれをインストールする必要があります。
+テストを実行するために、テストランナーが必要です。[gaeunit](http://code.google.com/p/gaeunit/)、もしくは、[nose-gae](http://code.google.com/p/nose-gae/)のテストランナーを使うことが出来ます。簡単な例は以下のテストランナー。`unittest2`が必要なので、まずそれをインストールする必要があります。
 
 ```python
 #!/usr/bin/python
@@ -142,8 +130,7 @@ if __name__ == '__main__':
     main(SDK_PATH, TEST_PATH)
 ```
 
-それで、スクリプトを実行すれば、プロジェクトの `test*.py` でテストケースを探して来て、テストを実行することができます。
-モジュール、もしくは、テストクラスを指定することもできます。
+それで、スクリプトを実行すれば、プロジェクトの`test*.py`でテストケースを探して来て、テストを実行することができます。モジュール、もしくは、テストクラスを指定することもできます。
 
 ```shell
 python testrunner.py demo.tests.DemoTestCase
@@ -174,8 +161,7 @@ blob_key = files.blobstore.get_blob_key(file_name)
 
 ## Cron と Task キューのヴァージョン指定
 
-Cron ジョブを実行するアプリケーションバージョンを指定することができるようになりました。 `cron.yaml` の `target`
-プロパティでバージョン名を指定します。
+Cronジョブを実行するアプリケーションバージョンを指定することができるようになりました。`cron.yaml`の`target`プロパティでバージョン名を指定します。
 
 ```yaml
 cron:
@@ -185,7 +171,7 @@ cron:
     target: version-2
 ```
 
-キューの定義でも、あるキューのタスクがどのバージョンで実行されるかを `queue.yaml` の `target` プロパティで指定できます。
+キューの定義でも、あるキューのタスクがどのバージョンで実行されるかを`queue.yaml`の`target`プロパティで指定できます。
 
 ```yaml
 queue:
@@ -198,7 +184,7 @@ queue:
 
 ## まとめ
 
-このリリースも結構大きくて、いろいろ改善されています。 ファイルAPIを 早速触ってみたいところです。
+このリリースも結構大きくて、いろいろ改善されています。ファイルAPIを早速触ってみたいところです。
 
 - [ダウンロード](http://code.google.com/intl/en/appengine/downloads.html)
 - [リリースノート](http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes)

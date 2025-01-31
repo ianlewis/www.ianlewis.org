@@ -210,6 +210,6 @@ serve: ## Run Jekyll test server.
 .PHONY: clean
 clean: ## Delete temporary files.
 	@rm -rf \
-		vendor \
+		.venv \
 		node_modules \
 		_site

@@ -9,17 +9,11 @@ render_with_liquid: false
 locale: ja
 ---
 
-<!-- textlint-disable alex -->
+Pythonで作られたデプロイ・自動化ツール[Fabric](http://www.fabfile.org/)があります。デプロイスクリプトなどをPythonで書くことができます。最近、Fabricで結構複雑なこともしたかったんですけど、FabricのAPIが結構Python的で楽だったので、みんなに共有しようかなと思いました。
 
-Pythonで作られたデプロイ・自動化ツール [Fabric](http://www.fabfile.org/)
-があります。デプロイスクリプトなどをPythonで書くことができます。最近、
-Fabric で結構複雑なこともしたかったんですけど、 Fabric のAPIが結構
-Python的で楽だったので、みんなに共有しようかなと思いました。
+まず、Fabricは`fabfile.py`というPythonスクリプトを書く必要があります。`fab`コマンドを実行すると、現在のディレクトリに探して、このファイルをロードしてくれます。
 
-まず、 Fabric は fabfile.py という Python スクリプトを書く必要があります。 fab
-コマンドを実行すると、現在のディレクトリに探して、このファイルをロードしてくれます。
-
-Hello World 書きましょう
+Hello Worldを書きましょう
 
 ```python
 def hello():
@@ -31,12 +25,9 @@ $ fab hello
 Hello world!
 ```
 
-Fabric
-は指定したコマンドを各ホストで実行する実行モデルです。この場合は特にホストの指定がなかったので、全部ローカルで、一回実行することになります。
+Fabricは指定したコマンドを各ホストで実行する実行モデルです。この場合は特にホストの指定がなかったので、全部ローカルで、一回実行することになります。
 
-これは結構つまんないので、本当の例を見ましょう。これは最近、仕事で作ったコマンドです。 nginx
-サーバーでメンテ画面を出すようなコマンドです。
-各ロードバランサーで実行します。
+これは結構つまんないので、本当の例を見ましょう。これは最近、仕事で作ったコマンドです。Nginxサーバーでメンテ画面を出すようなコマンドです。各ロードバランサーで実行します。
 
 ```python
 from fabric.api import run, cd, abort, require, sudo, env
@@ -60,10 +51,9 @@ def start_maintenance():
 
 最初は動きは分からないと思うのですが、一個一個説明します。
 
-# 環境辞書
+## 環境辞書
 
-`env` という環境辞書があります。 これで、どの環境で実行するかを設定することができます。
-普段は環境を設定するコマンドを実装するのが多いです。
+`env`という環境辞書があります。これで、どの環境で実行するかを設定することができます。普段は環境を設定するコマンドを実装するのが多いです。
 
 ```python
 def production():
@@ -81,15 +71,15 @@ def production():
     env.lb_maintenance_settings = 'example-maintenance'
 ```
 
-これで、以下のように `fab` を実行する。
+これで、以下のように`fab`を実行する。
 
 ```shell
 fab production start_maintenance
 ```
 
-# ホスト
+## ホスト
 
-ホスト設定は `env.hosts` でグローバルで設定することができます。 `hosts` というデコレータでも設定することができます。
+ホスト設定は`env.hosts`でグローバルで設定することができます。`hosts`というデコレータでも設定することができます。
 
 ```python
 def production():
@@ -101,9 +91,9 @@ def mycommand():
     # do something
 ```
 
-コマンドにホスト設定がなかったら、グローバルの `env.hosts` を使います。
+コマンドにホスト設定がなかったら、グローバルの`env.hosts`を使います。
 
-ロール(役）という設定もあります。 ロールというのは、サーバーの種類毎で設定します。 hosts と同じようにデコレータを使えます。
+ロール(役）という設定もあります。ロールというのは、サーバーの種類毎で設定します。`hosts`と同じようにデコレータを使えます。
 
 ```python
 def production():
@@ -118,9 +108,9 @@ def mycommand():
     # do something
 ```
 
-# サブコマンド
+## サブコマンド
 
-上のコマンドで、 `_production_check()` と `pull()` というコードがありますけど、これはサブコマンドになります。
+上のコマンドで、`_production_check()`と`pull()`というコードがありますけど、これはサブコマンドになります。
 
 ```python
 @runs_once
@@ -149,22 +139,19 @@ def pull(rev=None):
     _hg_update(rev)
 ```
 
-`runs_once` デコレータは付けた関数が一回しか実行されないように指定しています。 `_production_check()`
-で本番環境に反映してもいいかどうかをチェックする。 `pull` で本番環境のサーバーを更新する。
+`runs_once`デコレータは付けた関数が一回しか実行されないように指定しています。`_production_check()`で本番環境に反映してもいいかどうかをチェックする。`pull`で本番環境のサーバーを更新する。
 
-# コマンドを実行する
+## コマンドを実行する
 
-Fabric は３つのコマンドを実行する関数があります。
+Fabricは３つのコマンドを実行する関数があります。
 
 1. local - ローカルで実行する。
 2. run - リモートホストで実行する
-3. sudo - sudo を使って他のユーザーでコマンドを実行する。
+3. sudo - `sudo`を使って他のユーザーでコマンドを実行する。
 
-# with の素敵な書き方
+## `with`の素敵な書き方
 
-Python 2.5 から入っている `with` 文を使って、あるディレクトリに入った状態でコマンドを実行する。ここで、nginx
-の設定ファイルのシンボリックリンクを置き換えています。 環境設定コマンドで設定した `lb_settings`
-などを使っています。
+Python 2.5から入っている`with`文を使って、あるディレクトリに入った状態でコマンドを実行する。ここで、Nginxの設定ファイルのシンボリックリンクを置き換えています。環境設定コマンドで設定した `lb_settings`などを使っています。
 
 ```python
 with cd("/etc/nginx/sites-enabled"):
@@ -173,12 +160,10 @@ with cd("/etc/nginx/sites-enabled"):
     sudo("/etc/init.d/nginx reload")
 ```
 
-Python 2.5 の場合、 future モジュールからインポートする必要があります。
+Python 2.5の場合、`future`モジュールからインポートする必要があります。
 
 ```python
 from __future__ import with_statement
 ```
 
-この with の書き方で、Python的でかなり好きです。
-
-<!-- textlint-enable alex -->
+この`with`の書き方で、Python的でかなり好きです。

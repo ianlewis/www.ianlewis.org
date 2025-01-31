@@ -9,18 +9,15 @@ render_with_liquid: false
 locale: ja
 ---
 
-daemontoolsの上にdjango
-fastcgiを使うのは簡単にできるけど、正しいユーザとして、フォアグラウンドに起動するにはbashとdaemontoolsの設定する必要がある。
+daemontoolsの上にDjango fastcgiを使うのは簡単にできるけど、正しいユーザとして、フォアグラウンドに起動するには`bash`と`daemontools`の設定する必要がある。
 
-フォアグラウンドに起動するには、daemonize=falseを指定する必要がある。
+フォアグラウンドに起動するには、`daemonize=false`を指定する必要がある。
 
-それで、起動するデイモンはユーザを指定するオプションがないとrootユーザとして、起動する。runfcgi
-はそういうオプションがないので、daemontools の setuidgid
-ツールを使う。
+それで、起動するデイモンはユーザを指定するオプションがないとrootユーザとして、起動する。`runfcgi`はそういうオプションがないので、`daemontools`の`setuidgid`ツールを使う。
 
-setuidgidのコマンドになるので、プロセスの標準パイプを正しく接続するには、bashのexecコマンドを使う。
+`setuidgid`のコマンドになるので、プロセスの標準パイプを正しく接続するには、`bash`の`exec`コマンドを使う。
 
-# /service/myapp/run
+## /service/myapp/run
 
 ```bash
 #!/bin/bash

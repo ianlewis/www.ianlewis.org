@@ -8,36 +8,24 @@ tags: tech programming python django
 render_with_liquid: false
 ---
 
-The other day I released bpssl which is a Django application that helps
-you support HTTPS on your website. The main functionality is performing
-redirection for HTTPS only URLs and views. For instance, if a request
-for your login view '/login' is recieved over HTTP, the provided
-middleware can redirect the user to the equivalent HTTPS page.
+The other day I released bpssl which is a Django application that helps you support HTTPS on your website. The main functionality is performing redirection for HTTPS only URLs and views. For instance, if a request for your login view '/login' is recieved over HTTP, the provided middleware can redirect the user to the equivalent HTTPS page.
 
-Specifying views and urls as secure is supported as are
-[flatpages](http://docs.djangoproject.com/en/dev/ref/contrib/flatpages/).
-[Fastcgi](http://docs.djangoproject.com/en/dev/howto/deployment/fastcgi)
-and HTTP proxy setups are also well supported.
+Specifying views and urls as secure is supported as are [flatpages](http://docs.djangoproject.com/en/dev/ref/contrib/flatpages/). [Fastcgi](http://docs.djangoproject.com/en/dev/howto/deployment/fastcgi) and HTTP proxy setups are also well supported.
 
-Many people support this at the web server level but the pages that
-require SSL can change often and it is often easier to manage this at
-the application layer.
+Many people support this at the web server level but the pages that require SSL can change often and it is often easier to manage this at the application layer.
 
-bpssl draws inspiration from the well known SSL Middleware snippets on
-<http://www.djangosnippets.org> . It roughly supports the features of
-the following snippets:
+bpssl draws inspiration from the well known SSL Middleware snippets on <http://www.djangosnippets.org> . It roughly supports the features of the following snippets:
 
 - <http://djangosnippets.org/snippets/880/>
 - <http://djangosnippets.org/snippets/240/>
 - <http://djangosnippets.org/snippets/1999/>
 
-# For the lazy
+## For the lazy
 
 - [Documentation](http://beproud.bitbucket.org/bpssl-1.0/en/)
-- [Source Code](http://bitbucket.org/beproud/bpssl/) (Holy crap\!
-  there are tests\!)
+- [Source Code](http://bitbucket.org/beproud/bpssl/) (Holy crap\! there are tests\!)
 
-# Installation
+## Installation
 
 First install the `bpssl` package using PIP:
 
@@ -45,15 +33,13 @@ First install the `bpssl` package using PIP:
 pip install bpssl
 ```
 
-or easy_install:
+or `easy_install`:
 
 ```shell
 easy_install bpssl
 ```
 
-Next add `'beproud.django.ssl'` to your
-[INSTALLED_APPS](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#installed-apps)
-in your `settings.py`.
+Next add `'beproud.django.ssl'` to your [`INSTALLED_APPS`](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#installed-apps) in your `settings.py`.
 
 ```python
 INSTALLED_APPS = (
@@ -68,9 +54,7 @@ INSTALLED_APPS = (
 )
 ```
 
-Next add `'beproud.django.ssl.middleware.SSLRedirectMiddleware'` to your
-[MIDDLEWARE_CLASSES](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#setting-MIDDLEWARE_CLASSES)
-setting.
+Next add `'beproud.django.ssl.middleware.SSLRedirectMiddleware'` to your [`MIDDLEWARE_CLASSES`](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#setting-MIDDLEWARE_CLASSES) setting.
 
 ```python
 MIDDLEWARE_CLASSES = (
@@ -85,10 +69,7 @@ MIDDLEWARE_CLASSES = (
 )
 ```
 
-Finally add
-[SSL_URLS](http://beproud.bitbucket.org/bpssl-1.0/en/settings.html#setting-ssl-urls)
-to your settings. SSL_URLS is a list of regular expressions that match
-Urls.
+Finally add [`SSL_URLS`](http://beproud.bitbucket.org/bpssl-1.0/en/settings.html#setting-ssl-urls) to your settings. `SSL_URLS` is a list of regular expressions that match request URLs.
 
 ```python
 SSL_URLS = (
@@ -107,13 +88,6 @@ SSL_URLS = (
 )
 ```
 
-There is also a
-[ssl_view()](http://beproud.bitbucket.org/bpssl-1.0/en/usage.html#beproud.django.ssl.decorators.ssl_view)
-decorator which allows you to attach redirection logic to individual
-views.
+There is also an [ssl_view()](http://beproud.bitbucket.org/bpssl-1.0/en/usage.html#beproud.django.ssl.decorators.ssl_view) decorator which allows you to attach redirection logic to individual views.
 
-On the Django side this is all you need to setup and run bpssl. There is
-some setup required on the web server depending on your setup. Please
-check out the
-[Documentation](http://beproud.bitbucket.org/bpssl-1.0/en/) or [Source
-Code](http://bitbucket.org/beproud/bpssl/) for details.
+On the Django side this is all you need to setup and run bpssl. There is some setup required on the web server depending on your setup. Please check out the [Documentation](http://beproud.bitbucket.org/bpssl-1.0/en/) or [Source Code](http://bitbucket.org/beproud/bpssl/) for details.

@@ -9,31 +9,25 @@ render_with_liquid: false
 locale: ja
 ---
 
-今日、 bpssl をリリースしました。bpsslは [BeProud](http://www.beproud.jp/) で欲使っている
-Django用のSSL対応アプリです。 アクセスする時にHTTPSが必須なURLを指定することがよくありますよね？ 例えば、
-ログイン画面をHTTPSでしかアクセスできないようにする。ただし、 HTTPでアクセスした場合、
-HTTPSのほうのURLにリダイレクトしたいこともよくあります。 bpssl はその対応を簡単にできるようなアプリです。
+今日、bpsslをリリースしました。bpsslは[BeProud](http://www.beproud.jp/)で欲使っているDjango用のSSL対応アプリです。アクセスする時にHTTPSが必須なURLを指定することがよくありますよね？例えば、ログイン画面をHTTPSでしかアクセスできないようにする。ただし、HTTPでアクセスした場合、HTTPSのほうのURLにリダイレクトしたいこともよくあります。bpsslはその対応を簡単にできるようなアプリです。
 
-ウェブサーバーで対応することもありますが、設定変更も面倒だし、アプリケーション
-ロジックをラップしたいことが多いので、アプリケーションレベルで対応します。
+ウェブサーバーで対応することもありますが、設定変更も面倒だし、アプリケーションロジックをラップしたいことが多いので、アプリケーションレベルで対応します。
 
-# 使い方は結構簡単
+## 使い方は結構簡単
 
-まずは、ポッケージを PIP でインストールします:
+まずは、ポッケージをPIPでインストールします:
 
 ```shell
 pip install bpssl
 ```
 
-もしくは `easy_install` で:
+もしくは`easy_install`で:
 
 ```shell
 easy_install bpssl
 ```
 
-次に、 `'beproud.django.ssl'` を `settings.py` の
-[INSTALLED_APPS](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#installed-apps)
-に追加してください。
+次に、`'beproud.django.ssl'`を`settings.py`の[`INSTALLED_APPS`](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#installed-apps)に追加してください。
 
 ```python
 INSTALLED_APPS = (
@@ -48,11 +42,7 @@ INSTALLED_APPS = (
 )
 ```
 
-それから、
-'[beproud.django.ssl.middleware.SSLRedirectMiddleware](http://beproud.bitbucket.org/bpssl-1.0/ja/usage.html#beproud.django.ssl.middleware.SSLRedirectMiddleware)'
-を
-[MIDDLEWARE_CLASSES](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#setting-MIDDLEWARE_CLASSES)
-に追加してください。
+それから、[`'beproud.django.ssl.middleware.SSLRedirectMiddleware'`](http://beproud.bitbucket.org/bpssl-1.0/ja/usage.html#beproud.django.ssl.middleware.SSLRedirectMiddleware)を[`MIDDLEWARE_CLASSES`](http://djangoproject.jp/doc/ja/1.0/ref/settings.html#setting-MIDDLEWARE_CLASSES)に追加してください。
 
 ```python
 MIDDLEWARE_CLASSES = (
@@ -67,9 +57,7 @@ MIDDLEWARE_CLASSES = (
 )
 ```
 
-次は
-[SSL_URLS](http://beproud.bitbucket.org/bpssl-1.0/ja/settings.html#setting-ssl-urls)
-の正規表現んを設定する。
+次は[`SSL_URLS`](http://beproud.bitbucket.org/bpssl-1.0/ja/settings.html#setting-ssl-urls)の正規表現んを設定する。
 
 ```python
 SSL_URLS = (
@@ -79,17 +67,14 @@ SSL_URLS = (
 )
 ```
 
-[ssl_view()](http://beproud.bitbucket.org/bpssl-1.0/ja/usage.html#beproud.django.ssl.decorators.ssl_view)
-というビューデコレータもありますので、ビューレベルでもSSL対応ができます。
+[`ssl_view()`](http://beproud.bitbucket.org/bpssl-1.0/ja/usage.html#beproud.django.ssl.decorators.ssl_view)というビューデコレータもありますので、ビューレベルでもSSL対応ができます。
 
-Django 側はこれで以上ですが、やっぱりウェブサーバーでの設定も必要ですが、それも簡単です。
+Django側はこれで以上ですが、やっぱりウェブサーバーでの設定も必要ですが、それも簡単です。
 
-もともと、bpssl は <http://www.djangosnippets.org> に投稿したSSLミドルウエアから、
-インスピレーションを得た。以下のスニペットの機能にほぼ対応しています。
+もともと、bpsslは <http://www.djangosnippets.org> に投稿したSSLミドルウエアから、インスピレーションを得た。以下のスニペットの機能にほぼ対応しています。
 
 - <http://djangosnippets.org/snippets/880/>
 - <http://djangosnippets.org/snippets/240/>
 - <http://djangosnippets.org/snippets/1999/>
 
-詳しくは [bpssl のドキュメント](http://beproud.bitbucket.org/bpssl-1.0/ja/) もしくは、
-[ソースコード](http://bitbucket.org/beproud/bpssl/) を見ててください！
+詳しくは[bpsslのドキュメント](http://beproud.bitbucket.org/bpssl-1.0/ja/)もしくは、[ソースコード](http://bitbucket.org/beproud/bpssl/)を見ててください！

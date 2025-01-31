@@ -23,7 +23,7 @@ Be sure to check out the amazing talk ["Building a container from scratch in Go"
 
 A robust low-level container runtime, however, would do a lot more, like allow for setting resource limits on the cgroup, setting up a root filesystem, and chrooting the container's process to the root file system.
 
-# Building a Sample Runtime
+## Building a Sample Runtime
 
 Let's walk through running a simple ad hoc runtime to set up a container. We can perform the steps using the standard Linux [cgcreate](https://linux.die.net/man/1/cgcreate), [cgset](https://linux.die.net/man/1/cgset), [cgexec](https://linux.die.net/man/1/cgexec), [chroot](http://man7.org/linux/man-pages/man2/chroot.2.html) and [unshare](http://man7.org/linux/man-pages/man1/unshare.1.html) commands. You'll need to run most of the commands below as root.
 

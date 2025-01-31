@@ -72,7 +72,7 @@ admin template with my own [subclassed
 template](http://bitbucket.org/IanLewis/django-lifestream/src/tip/lifestream/templates/admin/lifestream/item/change_list.html).
 The template like the following:
 
-```html+django
+```django
 {% extends "admin/change_list.html" %}
 {% load adminmedia admin_list i18n %}
 

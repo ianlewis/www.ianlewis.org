@@ -14,7 +14,7 @@ Google Developer Expert (旧Google Api Expert) を卒業しました](http://goo
 とても楽しかったです。Google IO に行ったり、地方のプログラマーと接したり、いろな貴重な経験を
 させて頂きました。
 
-# Api Expertになったころ
+## Api Expertになったころ
 
 [２０１０年１１月に Google Api Expert になりました](http://www.ianlewis.org/jp/google-appengine-api-expert)。
 その時は、App Engine がまだプレビューだったごろでした。すこし、
@@ -27,22 +27,18 @@ Google Developer Expert (旧Google Api Expert) を卒業しました](http://goo
 
 ![この頃からa2cと仲がいい](/assets/images/719/a2c_big.jpg)
 
-# API Expert の制度の進化
+## API Expert の制度の進化
 
 API Expert という制度が大昔 (２００７年頃)の開発者のGoogleファンたちの Api Guru というものの真似として、
 日本から発生しましたプログラムです。Guru のプログラムは非常に中等半端な感じで Google さんがやっていた
 (ごめんなさい >< )が、真面目な日本人がAPI Expertをちゃんと作ったのが素晴らしいと思います。
-
-<!-- textlint-disable alex -->
 
 その後、日本から世界へAPI Expertの制度広げたいという希望があって、Israel にExpert制度が始まった
 (２０１１年末頃かな)。 そして、1年間(くらいかな)経ってから、世界からExpertの人たちの募集が始まった
 (２０１２年末頃)。 この頃から、「Api Expert」と呼ばれなくなって、「Developer Expert」となった。
 現在では、日本だけでなく、 [世界中にたくさんの Developer Expert がいます](https://developers.google.com/experts/)
 
-<!-- textlint-enable alex -->
-
-# Google I/O
+## Google I/O
 
 Deveoper Expertやっていた頃、Google I/O に参加させて頂きました。日本から開発者がたくさんいて、みんなで
 ワイワイ勉強しながら、カンファレンスに参加するのが毎年の大きな楽しみでした。毎年、クラウドの Expertたちが
@@ -57,7 +53,7 @@ Google I/O の後にいつも報告会をやります。その会では、地方
 
 ![Google IO 報告会](/assets/images/719/googleio_report.gif)
 
-# Developer Expert Summit
+## Developer Expert Summit
 
 Expert の制度が世界に広まって、Expertの人たちが増えたのが間違いないです。去年の１１月に
 Developer Experts Summit に参加してきて、非常に多くの開発者と話すことができました。
@@ -70,7 +66,7 @@ Developer Experts Summit に参加してきて、非常に多くの開発者と�
 
 ![はっぴ](/assets/images/719/happi_big.jpg)
 
-# 卒業
+## 卒業
 
 今に至って振り返ると「あ、楽しかったなー」と思いますが、その3年半でいろいろ生活が変わり、
 仕事の事情も変わり、自分のプライオリティが変わり、必然的なライフ変更がありました。
