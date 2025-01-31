@@ -6,6 +6,7 @@ permalink: /jp/hanashi_ga_nagai_riyuu
 blog: jp
 tags: 日本語、伝え方、話し方
 render_with_liquid: false
+locale: ja
 ---
 
 <p>会社の目上から紹介された<a href="http://d.hatena.ne.jp/sotacafe/20090129/1233229769">ブログの記事</a>を読んでみました。仕事の関連者と話す時は僕の話が長くなるくせがあるという。自分自身はあまり気づいてないと思うけど、僕はそう言われると確かに一理があります。</p>

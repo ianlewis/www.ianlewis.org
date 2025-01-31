@@ -6,6 +6,7 @@ permalink: /jp/perfect-python
 blog: jp
 tags: python パーパイ
 render_with_liquid: false
+locale: ja
 ---
 
 ![image](/assets/images/698/2013-02-27_23.08.01_medium.jpg)

@@ -6,6 +6,7 @@ permalink: /jp/django-amazon-ses
 blog: jp
 tags: python django aws
 render_with_liquid: false
+locale: ja
 ---
 
 Amazon さんが、Amazon Web Services の下にメール送信サービス [Simple Email Service

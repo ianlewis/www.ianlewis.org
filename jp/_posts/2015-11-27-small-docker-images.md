@@ -6,6 +6,7 @@ permalink: /jp/small-docker-images
 blog: jp
 tags: docker
 render_with_liquid: false
+locale: ja
 ---
 
 最近、コンテナ技術が流行っていていろなツールを興味深く触っている。その中の一番人気のはみんな大好きなDocker。Dockerは docker

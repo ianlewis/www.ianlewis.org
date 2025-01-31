@@ -6,6 +6,7 @@ permalink: /jp/feedparser_and_media
 blog: jp
 tags: media python rss
 render_with_liquid: false
+locale: ja
 ---
 
 [feedparser](http://www.feedparser.org/)で、どうやってビデオを取れるかをずっと悩みましたけど、今日少しだけ、進展した。問題の核心はyoutubeや、vimeoは

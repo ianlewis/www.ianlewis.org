@@ -6,6 +6,7 @@ permalink: /jp/django-datetimefield-auto_now-auto_now_add
 blog: jp
 tags: python django
 render_with_liquid: false
+locale: ja
 ---
 
 Django の Model の DateTimeField に auto_nowと auto_now_add

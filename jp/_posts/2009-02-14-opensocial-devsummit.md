@@ -6,6 +6,7 @@ permalink: /jp/opensocial-devsummit
 blog: jp
 tags: python google appengine opensocial デブサミ
 render_with_liquid: false
+locale: ja
 ---
 
 <p>昨日、デブサミ版の<a href="http://www.opensocial.org/">OpenSocial</a>ハッカソンに参加してきた。結構コーディングができて効率な一日でした。</p>

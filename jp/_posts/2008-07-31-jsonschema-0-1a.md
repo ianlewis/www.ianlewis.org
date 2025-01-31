@@ -6,6 +6,7 @@ permalink: /jp/jsonschema-0-1a
 blog: jp
 tags: projects python json jsonschema
 render_with_liquid: false
+locale: ja
 ---
 
 昨日、[JSONSchema](http://tinyurl.com/32qd4v)　ヴァリデーターを漸くリリースしました。XML

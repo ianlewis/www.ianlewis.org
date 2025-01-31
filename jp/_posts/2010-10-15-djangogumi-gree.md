@@ -6,6 +6,7 @@ permalink: /jp/djangogumi-gree
 blog: jp
 tags: django gumi
 render_with_liquid: false
+locale: ja
 ---
 
 ![image](/assets/images/633/gumi.gif)

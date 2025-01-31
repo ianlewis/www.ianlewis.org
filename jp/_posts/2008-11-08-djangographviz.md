@@ -6,6 +6,7 @@ permalink: /jp/djangographviz
 blog: jp
 tags: python django graphviz model
 render_with_liquid: false
+locale: ja
 ---
 
 > **Update:** DjangoGraphVizはもう存在しませんが、[`django-extensions`](https://github.com/django-extensions/django-extensions)パッケージで[同様な機能](https://django-extensions.readthedocs.io/en/latest/graph_models.html)が入っています。

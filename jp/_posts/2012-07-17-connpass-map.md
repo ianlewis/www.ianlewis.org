@@ -6,6 +6,7 @@ permalink: /jp/connpass-map
 blog: jp
 tags: javascript connpass google-maps
 render_with_liquid: false
+locale: ja
 ---
 
 最近、僕が作っているサイト、 [connpass](http://connpass.com/)

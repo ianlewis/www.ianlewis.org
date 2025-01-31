@@ -6,6 +6,7 @@ permalink: /jp/python-hackathon-201102
 blog: jp
 tags: python twisted
 render_with_liquid: false
+locale: ja
 ---
 
 Python Hackathon 2011.02 に参加しに行ってきました。今回は、ちょっと遅く着いたが、楽しかった。

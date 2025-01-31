@@ -6,6 +6,7 @@ permalink: /jp/redmine-restructuredtext
 blog: jp
 tags: python redmine restructuredtext ruby
 render_with_liquid: false
+locale: ja
 ---
 
 我々BeProudのRedmineのWikiやチケットの説明文やチケットのコメント文にはReStructuredTextを使っている。

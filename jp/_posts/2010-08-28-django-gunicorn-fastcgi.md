@@ -6,6 +6,7 @@ permalink: /jp/django-gunicorn-fastcgi
 blog: jp
 tags: python django
 render_with_liquid: false
+locale: ja
 ---
 
 ![image](/assets/images/624/large_gunicorn_big.png)

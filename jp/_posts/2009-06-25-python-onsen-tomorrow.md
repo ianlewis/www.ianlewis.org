@@ -6,6 +6,7 @@ permalink: /jp/python-onsen-tomorrow
 blog: jp
 tags: python google appengine django python温泉
 render_with_liquid: false
+locale: ja
 ---
 
 明日からPython温泉に参加しに行ってきます。課題は下記のとおり

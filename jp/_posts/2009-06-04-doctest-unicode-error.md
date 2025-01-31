@@ -6,6 +6,7 @@ permalink: /jp/doctest-unicode-error
 blog: jp
 tags: python django 例外 unicode test
 render_with_liquid: false
+locale: ja
 ---
 
 <p><a href="http://www.python.org/" title="Python">Python</a>の例外オブジェクトは苦手です。例外のメッセージが何でもasciiとして扱われることがひどい。</p>

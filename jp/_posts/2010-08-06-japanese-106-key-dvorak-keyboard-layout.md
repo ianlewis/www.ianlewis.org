@@ -6,6 +6,7 @@ permalink: /jp/japanese-106-key-dvorak-keyboard-layout
 blog: jp
 tags: ubuntu linux dvorak キーボード
 render_with_liquid: false
+locale: ja
 ---
 
 私はQwerty配列でキーボードで打つのがあまりよくなくて、Dvorakを使ったほうが効率高いんじゃないかと考えて、ずっと前から

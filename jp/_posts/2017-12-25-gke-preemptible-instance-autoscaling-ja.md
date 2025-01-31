@@ -6,6 +6,7 @@ permalink: /jp/gke-preemptible-instance-autoscaling-ja
 blog: jp
 tags: kubernetes google-container-engine
 render_with_liquid: false
+locale: ja
 ---
 
 > このポストは [Kubernetes Advent Calendar Day 25](https://qiita.com/advent-calendar/2017/kubernetes)の記事です。

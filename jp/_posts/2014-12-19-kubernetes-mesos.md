@@ -6,6 +6,7 @@ permalink: /jp/kubernetes-mesos
 blog: jp
 tags: gcp kubernetes mesos
 render_with_liquid: false
+locale: ja
 ---
 
 _この記事は [Kubernetes Advent Calendar 2014](http://qiita.com/advent-calendar/2014/kubernetes)

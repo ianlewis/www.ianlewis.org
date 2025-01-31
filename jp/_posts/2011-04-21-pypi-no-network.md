@@ -6,6 +6,7 @@ permalink: /jp/pypi-no-network
 blog: jp
 tags: python pip pypi
 render_with_liquid: false
+locale: ja
 ---
 
 pip、buildout などを使うとデプロイする時に Python ライブラリの依存関係はややこしいことがあります。

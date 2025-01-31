@@ -6,6 +6,7 @@ permalink: /jp/google-developer-experts
 blog: jp
 tags: google appengine
 render_with_liquid: false
+locale: ja
 ---
 
 先週の月曜日(6/9)に公開されて、皆さんは多分見逃している人が多いと思いますが、[私は

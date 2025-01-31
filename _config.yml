@@ -15,6 +15,7 @@
 # Jekyll site settings
 
 title: Ian Lewis
+tagline: Engineer in Tokyo
 email: ianmlewis@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Ian Lewis is an engineer based in Tokyo, Japan. His current interests are
@@ -61,6 +62,23 @@ plainwhite:
 
   analytics_id: "G-1C2E36DTVT"
 
+# social config is used in jekyll-seo-tag JSON-LD output.
+social:
+  name: Ian Lewis
+  links:
+    - https://github.com/ianlewis
+    - https://www.linkedin.com/in/ianmlewis
+    - https://bsky.app/profile/ianlewis.org
+    - https://hachyderm.io/@ianlewis
+    - https://keybase.io/ianlewis
+    # TODO(#163): Remove references to Twitter profile after deletion on Dec 31, 2025.
+    - https://x.com/IanMLewis
+
+# twitter is used by jekyll-seo-tag
+twitter:
+  # username is used for twitter:site
+  username: IanMLewis
+
 pagination:
   enabled: true
   per_page: 10
@@ -79,6 +97,12 @@ pagination:
 exclude:
   - .sass-cache/
   - .jekyll-cache/
+  - gemfiles/
+  - node_modules/
+  - tools/
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - SECURITY.md
   - README.md
   - Makefile
   - LICENSE
@@ -86,6 +110,4 @@ exclude:
   - Gemfile.lock
   - package.json
   - package-lock.json
-  - gemfiles/
-  - node_modules/
-  - tools/
+  - requirements.txt

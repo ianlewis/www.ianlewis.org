@@ -6,6 +6,7 @@ permalink: /jp/cloud-bigtable
 blog: jp
 tags: cloud-bigtable google-cloud-platform
 render_with_liquid: false
+locale: ja
 ---
 
 > これは [Google Cloud Platform Advent Calendar 2015](http://qiita.com/advent-calendar/2015/gcp)の19日目の記事です。

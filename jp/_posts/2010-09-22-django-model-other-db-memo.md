@@ -6,6 +6,7 @@ permalink: /jp/django-model-other-db-memo
 blog: jp
 tags: python django
 render_with_liquid: false
+locale: ja
 ---
 
 今日、会社で特定なDjangoモデルを別のDBに保存するようなニーズがあって、Django マルチDBを使えるかなという話がありました。

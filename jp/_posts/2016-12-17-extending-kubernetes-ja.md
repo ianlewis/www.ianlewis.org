@@ -6,6 +6,7 @@ permalink: /jp/extending-kubernetes-ja
 blog: jp
 tags: kubernetes
 render_with_liquid: false
+locale: ja
 ---
 
 > この記事は

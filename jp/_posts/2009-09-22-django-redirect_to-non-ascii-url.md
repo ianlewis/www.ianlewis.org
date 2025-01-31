@@ -6,6 +6,7 @@ permalink: /jp/django-redirect_to-non-ascii-url
 blog: jp
 tags: django redirect redirect_to
 render_with_liquid: false
+locale: ja
 ---
 
 Django は一般的なリダイレクトするビューを django.views.generic.simple.redirect_to

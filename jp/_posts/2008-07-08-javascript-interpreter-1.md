@@ -6,6 +6,7 @@ permalink: /jp/javascript-interpreter-1
 blog: jp
 tags: javascript mochikit
 render_with_liquid: false
+locale: ja
 ---
 
 [JSON schema proposal](http://www.json.org/json-schema-proposal/)の実装した典型的javascript validatorを試してみとうと思って、[Python](http://www.python.org/)のインタラクティブシェルみたいなjavascriptインタラクティブ　インタープリターを使いたいとさらに思って、以前に使ってた[Bob](http://bob.pythonmac.org/)さんの[Mochikit](http://mochikit.com)インタープリターをまた取り出した。

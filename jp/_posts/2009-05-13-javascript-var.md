@@ -6,6 +6,7 @@ permalink: /jp/javascript-var
 blog: jp
 tags: javascript 変数
 render_with_liquid: false
+locale: ja
 ---
 
 <p>javascript で変数を定義する時に、var を付ける場合があります。var を付けないと、変数がグローバル名前空間に入ってしまう。</p>

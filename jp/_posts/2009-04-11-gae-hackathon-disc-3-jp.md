@@ -6,6 +6,7 @@ permalink: /jp/gae-hackathon-disc-3-jp
 blog: jp
 tags: python google appengine 全文検索 text search
 render_with_liquid: false
+locale: ja
 ---
 
 <p><a href="http://code.google.com/appengine/" title="Google App Engine">GAE</a> Hackathon Disc. 3 に参加してきました！ 私と<a href="http://d.hatena.ne.jp/a2c/">id:a2c</a> (<a href="http://twitter.com/atusi">Twitter</a>) が<a href="http://www.google.com/" title="Google">Google</a> <a href="http://code.google.com/appengine/" title="Appengine">Appengine</a>の日本語が対応する全文検索エンジンを作ってみました。</p>

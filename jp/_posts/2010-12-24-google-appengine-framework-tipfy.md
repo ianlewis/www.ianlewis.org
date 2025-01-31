@@ -6,6 +6,7 @@ permalink: /jp/google-appengine-framework-tipfy
 blog: jp
 tags: python google appengine tipfy
 render_with_liquid: false
+locale: ja
 ---
 
 _(この記事は_ [Python Web フレームワーク

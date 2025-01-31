@@ -6,6 +6,7 @@ permalink: /jp/bp-how-beproud-works
 blog: jp
 tags: work beproud
 render_with_liquid: false
+locale: ja
 ---
 
 最近、githubの人、Zach Holman さんはgithubの社内の環境について、いくつかのブログ記事を書いていて、話題になっていました。

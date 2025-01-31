@@ -6,6 +6,7 @@ permalink: /jp/python-planet-japan
 blog: jp
 tags: japan python planet
 render_with_liquid: false
+locale: ja
 ---
 
 <p><img src="http://planetpythonjp.ianlewis.org/images/python-logo.gif" alt="Python" width="211" height="71" /></p>

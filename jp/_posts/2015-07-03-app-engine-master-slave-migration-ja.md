@@ -6,6 +6,7 @@ permalink: /jp/app-engine-master-slave-migration-ja
 blog: jp
 tags: appengine
 render_with_liquid: false
+locale: ja
 ---
 
 App Engineの一部のユーザーに最近は以下のようなメールが何件届いていると思います。こういうようなメールは英語で書かれいて、「英語を読むの面倒くせぇー、スルーしよう」ってメールを消す方が多いんじゃないかなと思うんだが、実は重要なお知らせです。

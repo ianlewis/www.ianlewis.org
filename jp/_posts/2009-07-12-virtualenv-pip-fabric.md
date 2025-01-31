@@ -6,6 +6,7 @@ permalink: /jp/virtualenv-pip-fabric
 blog: jp
 tags: python pip virtualenv virtualenvwrapper 仮想化
 render_with_liquid: false
+locale: ja
 ---
 
 あるプロジェクトの依存は特定なバージョンじゃないとダメな場合が結構多いと思いますけど、最近、pythonの仮想環境を簡単に作れるようになりました。virtualenv

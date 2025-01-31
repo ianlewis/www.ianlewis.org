@@ -6,6 +6,7 @@ permalink: /jp/jqueryui-sortable-connect
 blog: jp
 tags: jquery jqueryui
 render_with_liquid: false
+locale: ja
 ---
 
 最近、[jQueryUI](http://jqueryui.com/)をバリバリ使ってて、[sortable](http://jqueryui.com/demos/sortable/)というウィジェットで簡単にできることがあまりにも面白い。

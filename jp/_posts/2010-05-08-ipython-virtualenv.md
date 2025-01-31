@@ -6,6 +6,7 @@ permalink: /jp/ipython-virtualenv
 blog: jp
 tags: python virtualenv
 render_with_liquid: false
+locale: ja
 ---
 
 ## 概要

@@ -6,6 +6,7 @@ permalink: /jp/google-app-engine-136
 blog: jp
 tags: python google appengine
 render_with_liquid: false
+locale: ja
 ---
 
 今日、 [Appengine](http://code.google.com/appengine/) 1.3.6

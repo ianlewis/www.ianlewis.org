@@ -6,6 +6,7 @@ permalink: /jp/mercurial-10-tips
 blog: jp
 tags: mercurial source-control
 render_with_liquid: false
+locale: ja
 ---
 
 <img src="/assets/images/mercurial/mercurial_medium.png" class="align-center" />

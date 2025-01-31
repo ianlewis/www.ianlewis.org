@@ -6,6 +6,7 @@ permalink: /jp/django-modelformset_factory
 blog: jp
 tags: django modelform
 render_with_liquid: false
+locale: ja
 ---
 
 Django

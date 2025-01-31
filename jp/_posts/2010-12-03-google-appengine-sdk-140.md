@@ -6,6 +6,7 @@ permalink: /jp/google-appengine-sdk-140
 blog: jp
 tags: python google appengine
 render_with_liquid: false
+locale: ja
 ---
 
 [Google Appengine](http://code.google.com/appengine/) 1.4.0 がリリースされました！！

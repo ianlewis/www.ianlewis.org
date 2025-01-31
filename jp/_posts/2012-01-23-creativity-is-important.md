@@ -6,6 +6,7 @@ permalink: /jp/creativity-is-important
 blog: jp
 tags: work beproud
 render_with_liquid: false
+locale: ja
 ---
 
 <div class="note">

@@ -6,6 +6,7 @@ permalink: /jp/django-disc-8-rst
 blog: jp
 tags: django 勉強会 rst restructured text pdf ドキュメント
 render_with_liquid: false
+locale: ja
 ---
 
 <p><a href="http://d.hatena.ne.jp/nullpobug/" title="岡野真也">id:tokibito</a>が<a href="http://d.hatena.ne.jp/nullpobug/20090424">見つけてくれた</a> <a href="">rst2pdf</a> を使って<a href="http://takashi-matsuo.blogspot.com/" title="松尾 貴史">id:tmatsuo</a> と<a href="http://www.djangoproject.com/" title="Django">Django</a>勉強会Disc.8 ハンズオンC の資料をPDFにした。</p>

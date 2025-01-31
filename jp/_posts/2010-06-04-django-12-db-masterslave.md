@@ -6,6 +6,7 @@ permalink: /jp/django-12-db-masterslave
 blog: jp
 tags: python django
 render_with_liquid: false
+locale: ja
 ---
 
 Django 1.2 はマルチDB対応ができまして、master/slave
