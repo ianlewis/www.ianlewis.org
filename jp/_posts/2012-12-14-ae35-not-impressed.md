@@ -6,6 +6,7 @@ permalink: /jp/ae35-not-impressed
 blog: jp
 tags: python appengine meme
 render_with_liquid: false
+locale: ja
 ---
 
 僕が作った appengine アプリ <http://ae35notimpressed.ian-test-hr.appspot.com/>

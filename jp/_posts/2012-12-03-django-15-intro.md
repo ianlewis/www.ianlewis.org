@@ -6,6 +6,7 @@ permalink: /jp/django-15-intro
 blog: jp
 tags: python django
 render_with_liquid: false
+locale: ja
 ---
 
 ![image](/assets/images/django/django-logo-positive_medium.png)

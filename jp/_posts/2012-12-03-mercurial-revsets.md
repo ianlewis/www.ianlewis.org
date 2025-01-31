@@ -6,6 +6,7 @@ permalink: /jp/mercurial-revsets
 blog: jp
 tags: mercurial source-control
 render_with_liquid: false
+locale: ja
 ---
 
 ![image](/assets/images/mercurial/mercurial_medium.png)

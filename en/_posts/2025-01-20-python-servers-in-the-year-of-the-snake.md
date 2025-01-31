@@ -6,6 +6,7 @@ permalink: /en/python-servers-in-the-year-of-the-snake
 blog: en
 tags: tech programming python
 render_with_liquid: false
+image: /assets/images/2025-01-20-python-servers-in-the-year-of-the-snake/python_snake.png
 ---
 
 ![](/assets/images/2025-01-20-python-servers-in-the-year-of-the-snake/python_snake.png){:style="width: 40%; display:block; margin-left:auto; margin-right:auto"}

@@ -6,13 +6,15 @@ permalink: /jp/jsonschema-0-1a
 blog: jp
 tags: projects python json jsonschema
 render_with_liquid: false
+locale: ja
 ---
 
 昨日、[JSONSchema](http://tinyurl.com/32qd4v)　ヴァリデーターを漸くリリースしました。XML
 Schemaと同じようなJSONSchemaは　JSON文書の構造が正しいかどうかを検証するための文書。さらに、jsonschema
 ヴァリデーターはそのJSONSchema文書に従ってJSON文書が正しいかどうかを検証するPythonモジュール。[JSON
 Schema Proposal Second
-Draft](http://groups.google.com/group/json-schema/web/json-schema-proposal---second-draft)を基にしています。
+Draft](http://groups.google.com/group/json-schema/web/json-schema-proposallocale: ja
+---second-draft)を基にしています。
 
 ソースコードはこちらからダウンロードできます: ">[jsonschema-0.1a.tar.gz](http://jsonschema.googlecode.com/files/jsonschema-0.1a.tar.gz)
 

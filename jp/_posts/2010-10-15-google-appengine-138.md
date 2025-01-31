@@ -6,6 +6,7 @@ permalink: /jp/google-appengine-138
 blog: jp
 tags: python google appengine
 render_with_liquid: false
+locale: ja
 ---
 
 Google Appengine 1.3.8 がリリースされました！

@@ -6,6 +6,7 @@ permalink: /jp/django-document-translation-sprint
 blog: jp
 tags: django pyspa
 render_with_liquid: false
+locale: ja
 ---
 
 Django の日本語ドキュメントの翻訳が 1.0～1.1 の間のままで、Django 1.3

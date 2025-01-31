@@ -6,6 +6,7 @@ permalink: /jp/fabric-pythonic
 blog: jp
 tags: python nginx デプロイ
 render_with_liquid: false
+locale: ja
 ---
 
 <!-- textlint-disable alex -->

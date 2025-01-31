@@ -6,6 +6,7 @@ permalink: /jp/mercurial-hgrc-include
 blog: jp
 tags: python mercurial
 render_with_liquid: false
+locale: ja
 ---
 
 僕は [僕のシェル環境設定ファイル](http://bitbucket.org/IanLewis/my) をbitbucket で管理している。

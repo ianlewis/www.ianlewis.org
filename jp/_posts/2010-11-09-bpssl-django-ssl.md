@@ -6,6 +6,7 @@ permalink: /jp/bpssl-django-ssl
 blog: jp
 tags: python django ssl
 render_with_liquid: false
+locale: ja
 ---
 
 今日、 bpssl をリリースしました。bpsslは [BeProud](http://www.beproud.jp/) で欲使っている

@@ -6,6 +6,7 @@ permalink: /jp/appengine-matcher-api
 blog: jp
 tags: python appengine mapper
 render_with_liquid: false
+locale: ja
 ---
 
 Matcher APIはあるオブジェクトが登録したクエリーにマッチするかをスケーラブルにチェックしてくれるサービスです。

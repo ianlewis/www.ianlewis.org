@@ -6,6 +6,7 @@ permalink: /jp/arduino-http
 blog: jp
 tags: arduino
 render_with_liquid: false
+locale: ja
 ---
 
 今週末の Python温泉で、最近買った、arduino を初めて触った。

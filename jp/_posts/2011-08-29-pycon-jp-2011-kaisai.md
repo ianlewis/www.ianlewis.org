@@ -6,6 +6,7 @@ permalink: /jp/pycon-jp-2011-kaisai
 blog: jp
 tags: python pyconjp
 render_with_liquid: false
+locale: ja
 ---
 
 ![PyconJP](/assets/images/661/logo_small.png)\_

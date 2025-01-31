@@ -6,6 +6,7 @@ permalink: /jp/requirejs-django-settings
 blog: jp
 tags: javascript django require.js
 render_with_liquid: false
+locale: ja
 ---
 
 JavaScriptをよく書いている場合、普通のアプリケーションと同じように設定を

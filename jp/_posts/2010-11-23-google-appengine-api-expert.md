@@ -6,6 +6,7 @@ permalink: /jp/google-appengine-api-expert
 blog: jp
 tags: python google appengine
 render_with_liquid: false
+locale: ja
 ---
 
 ![image](/assets/images/python/python-powered.png)

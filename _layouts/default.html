@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.plainwhite.html_lang }}">
+<html lang="{% if page.locale %}{{ page.locale }}{% else %}{{ site.plainwhite.html_lang }}{% endif %}">
 
 <head>
   {%- include head.html -%}
@@ -50,7 +50,7 @@
         </a>
         {%- endif -%}
         {%- if site.plainwhite.social_links.linkedin -%}
-        <a rel="me" href="https://www.linkedin.com/{{ site.plainwhite.social_links.linkedin }}" target="_blank">
+        <a rel="me" href="https://www.linkedin.com/in/{{ site.plainwhite.social_links.linkedin }}" target="_blank">
           <li>
             <i class="icon-linkedin-squared"></i>
           </li>

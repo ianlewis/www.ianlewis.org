@@ -6,6 +6,7 @@ permalink: /jp/google-cloud-developer-advocate-ni-natta
 blog: jp
 tags: google gcp
 render_with_liquid: false
+locale: ja
 ---
 
 <img alt="Google Cloud Platform" title="Google Cloud Platform" class="align-center" src="/assets/images/730/cloudplatform_horizontallockup_big.png" />

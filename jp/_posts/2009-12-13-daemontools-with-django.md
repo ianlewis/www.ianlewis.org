@@ -6,6 +6,7 @@ permalink: /jp/daemontools-with-django
 blog: jp
 tags: django
 render_with_liquid: false
+locale: ja
 ---
 
 daemontoolsの上にdjango

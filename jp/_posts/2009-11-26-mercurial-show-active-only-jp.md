@@ -6,6 +6,7 @@ permalink: /jp/mercurial-show-active-only-jp
 blog: jp
 tags: mercurial ブランチ
 render_with_liquid: false
+locale: ja
 ---
 
 merucurial の hg

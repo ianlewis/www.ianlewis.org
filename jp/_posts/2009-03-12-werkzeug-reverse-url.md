@@ -6,6 +6,7 @@ permalink: /jp/werkzeug-reverse-url
 blog: jp
 tags: python django werkzeug
 render_with_liquid: false
+locale: ja
 ---
 
 <p><a href="http://twisted-mind.appspot.com/">ほぼ汎用イベント管理ツール</a>の改善をしようと思ってて、実際にコードを見ると<a href="http://bitbucket.org/voluntas/twisted-mind/src/tip/views.py#cl-132">URLを使ってる</a>のが気になった。</p>

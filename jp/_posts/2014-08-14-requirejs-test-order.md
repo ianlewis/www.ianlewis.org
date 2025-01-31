@@ -6,6 +6,7 @@ permalink: /jp/requirejs-test-order
 blog: jp
 tags: javascript require.js qunit
 render_with_liquid: false
+locale: ja
 ---
 
 > ```text

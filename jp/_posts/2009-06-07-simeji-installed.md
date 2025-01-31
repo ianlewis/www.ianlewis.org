@@ -6,6 +6,7 @@ permalink: /jp/simeji-installed
 blog: jp
 tags: 日本語 simeji android
 render_with_liquid: false
+locale: ja
 ---
 
 最近参加してきた [Google I/O](http://code.google.com/events/io/)

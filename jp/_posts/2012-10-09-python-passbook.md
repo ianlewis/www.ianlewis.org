@@ -6,6 +6,7 @@ permalink: /jp/python-passbook
 blog: jp
 tags: python ios passbook
 render_with_liquid: false
+locale: ja
 ---
 
 最近、iPhoneのiOS6でPassbookという機能が出ました。Passbookはイベントのチケットや、飛行機や船の搭乗券や、クーポンや、ポイントカードを管理出来る地味に便利なアプリ。

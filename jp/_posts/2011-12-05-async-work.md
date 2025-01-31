@@ -6,6 +6,7 @@ permalink: /jp/async-work
 blog: jp
 tags: work beproud
 render_with_liquid: false
+locale: ja
 ---
 
 > この記事は BeProud ではどう仕事しているかの3部構成シリーズの2部目。github のZach Holman さんが書いて頂いた 「

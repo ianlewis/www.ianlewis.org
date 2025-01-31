@@ -6,6 +6,7 @@ permalink: /jp/kubernetes-mesos
 blog: jp
 tags: gcp kubernetes mesos
 render_with_liquid: false
+locale: ja
 ---
 
 _この記事は [Kubernetes Advent Calendar 2014](http://qiita.com/advent-calendar/2014/kubernetes)
@@ -142,6 +143,7 @@ $ nohup controller-manager \
 ```shell
 $ sudo kubecfg -c /usr/local/opt/gopath/src/github.com/mesosphere/kubernetes-mesos/examples/pod-nginx.json create pods
 ID                  Image(s)            Host                Labels                 Status
+locale: ja
 ----------          ----------          ----------          ----------             ----------
 nginx-id-01         dockerfile/nginx    <unassigned>        cluster=gce,name=foo   Waiting
 ```

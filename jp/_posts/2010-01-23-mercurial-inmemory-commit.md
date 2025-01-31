@@ -6,6 +6,7 @@ permalink: /jp/mercurial-inmemory-commit
 blog: jp
 tags: mercurial
 render_with_liquid: false
+locale: ja
 ---
 
 <p>mercurial はpythonで書かれて、わかりやすいAPIを用意しているので、触りたいと思って、インメモリでコミットをしようとするとどうすればいいかというのを調べてみた。</p>

@@ -6,6 +6,7 @@ permalink: /jp/java-japanese-fonts
 blog: jp
 tags: 日本語 java フォント
 render_with_liquid: false
+locale: ja
 ---
 
 LinuxではJavaは標準に日本語フォントが大体インストールされてないので、手でインストールしないといけない。

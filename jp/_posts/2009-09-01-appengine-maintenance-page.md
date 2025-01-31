@@ -6,6 +6,7 @@ permalink: /jp/appengine-maintenance-page
 blog: jp
 tags: appengine メンテナンス
 render_with_liquid: false
+locale: ja
 ---
 
 Google

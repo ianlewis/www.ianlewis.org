@@ -6,6 +6,7 @@ permalink: /jp/mixi-canvas-gets-smaller
 blog: jp
 tags: mixi
 render_with_liquid: false
+locale: ja
 ---
 
 昨日、mixi アプリのキャンバスサイズ (run_appli.pl (canvas) の表示サイズ) が狭くなる

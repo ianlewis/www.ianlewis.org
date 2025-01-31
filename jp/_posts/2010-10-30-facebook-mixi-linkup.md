@@ -6,6 +6,7 @@ permalink: /jp/facebook-mixi-linkup
 blog: jp
 tags: mixi
 render_with_liquid: false
+locale: ja
 ---
 
 先ほど、Facebook にログインしたんだけど、このメッセージが出てきました。 自動的に、Facebook のつぶやきをMixi

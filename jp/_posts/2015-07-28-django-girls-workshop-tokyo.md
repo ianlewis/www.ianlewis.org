@@ -6,6 +6,7 @@ permalink: /jp/django-girls-workshop-tokyo
 blog: jp
 tags: django
 render_with_liquid: false
+locale: ja
 ---
 
 <!-- textlint-disable alex -->

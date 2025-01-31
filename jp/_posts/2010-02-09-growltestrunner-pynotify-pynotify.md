@@ -6,6 +6,7 @@ permalink: /jp/growltestrunner-pynotify-pynotify
 blog: jp
 tags: python test growl libnotify pynotify テスト 通知
 render_with_liquid: false
+locale: ja
 ---
 
 最近、会社の [AE35](http://twitter.com/ae35) さんが

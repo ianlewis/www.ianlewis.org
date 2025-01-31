@@ -6,6 +6,7 @@ permalink: /jp/google-analytics
 blog: jp
 tags: モバイル ソフトウエア開発 php javascript google analytics
 render_with_liquid: false
+locale: ja
 ---
 
 会社のモバイルサイトで、 [Google Analytics](http://www.google.com/analytics/ja-JP/)

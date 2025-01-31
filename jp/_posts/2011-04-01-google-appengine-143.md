@@ -6,6 +6,7 @@ permalink: /jp/google-appengine-143
 blog: jp
 tags: python google appengine
 render_with_liquid: false
+locale: ja
 ---
 
 # Google Appengine 1.4.3

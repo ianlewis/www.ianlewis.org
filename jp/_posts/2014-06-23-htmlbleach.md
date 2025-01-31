@@ -6,6 +6,7 @@ permalink: /jp/htmlbleach
 blog: jp
 tags: python html
 render_with_liquid: false
+locale: ja
 ---
 
 最近にHTMLををサニタイズしてくれる便利なライブラリ bleach を見つけた。HTMLを受け取ってウェブ上に表示したいんだけど、

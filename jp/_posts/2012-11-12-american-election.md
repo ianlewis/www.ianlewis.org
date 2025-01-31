@@ -5,6 +5,7 @@ date: 2012-11-12 13:44:08 +0000
 permalink: /jp/american-election
 blog: jp
 render_with_liquid: false
+locale: ja
 ---
 
 アメリカの大統領選挙が終わりました。僕の会社の人が「あ、今日は選挙だ」って言ったんだけど、みなさんは同じようにあまり詳細が分かってないような感じだと思いますが、僕が思ったことと、面白いと思ったことをまとめようかなと思いました。ま、実はFumiさんのブログの [オバマ再選メモ](http://fumit.blogspot.jp/2012/11/blog-post.html)が素晴らしくて、読んだら間違いないんだけど、この纏め + α 書いてみようと思います。まずは、Fumiさんの纏めをお読みください。
@@ -21,6 +22,7 @@ render_with_liquid: false
 ![image](/assets/images/683/romney_big.jpg)
 ![image](/assets/images/683/obama_big.jpg)
 
+locale: ja
 ---
 
 ![image](/assets/images/683/487px-garyjohnsonphoto_-_modified_fb_thumb.jpg)

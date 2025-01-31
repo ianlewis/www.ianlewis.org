@@ -6,6 +6,7 @@ permalink: /jp/django-disc-8
 blog: jp
 tags: appengine django 勉強会
 render_with_liquid: false
+locale: ja
 ---
 
 。。というか、ハンズオンC [Django](http://www.djangoproject.com/) on

@@ -6,6 +6,7 @@ permalink: /jp/flask-ldapchangepw
 blog: jp
 tags: python flask ldap python_ldap
 render_with_liquid: false
+locale: ja
 ---
 
 この間、会社で少し大きくなって、利用するツールが少し増えつつありますので、

@@ -6,6 +6,7 @@ permalink: /jp/objective-c-like-python
 blog: jp
 tags: python iphone objective-c
 render_with_liquid: false
+locale: ja
 ---
 
 今日、 Facebook iPhone アプリの作者 [Joe Hewitt](http://twitter.com/joehewitt)

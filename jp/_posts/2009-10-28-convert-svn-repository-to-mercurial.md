@@ -6,6 +6,7 @@ permalink: /jp/convert-svn-repository-to-mercurial
 blog: jp
 tags: mercurial hg svn
 render_with_liquid: false
+locale: ja
 ---
 
 最近、svn・gitのリポジトリをmercurialにして、bitbucketに載せるのが多い。難しいか面倒だろうと思う人がいるかもしれないけど、現実は

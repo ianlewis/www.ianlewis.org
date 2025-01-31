@@ -6,6 +6,7 @@ permalink: /jp/vim_benkyoukai-1
 blog: jp
 tags: 勉強会 vim
 render_with_liquid: false
+locale: ja
 ---
 
 <p>昨日、VIM勉強会に参加してきた。いろな話があったのだが、screenの使い方が大きな話題になりました。僕はsshや、コンソールでvimをほぼ使ってないので、screenに得意じゃないけど、リモートサーバに接続するときによく使う。以下は<a href="http://twitter.com/shin_no_suke">id:shin_no_suke</a>のプレゼンの資料になります。</p>

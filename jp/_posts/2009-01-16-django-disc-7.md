@@ -6,6 +6,7 @@ permalink: /jp/django-disc-7
 blog: jp
 tags: django 勉強会 オクセンス
 render_with_liquid: false
+locale: ja
 ---
 
 昨日、[アクセンス・テクノロジー](http://accense.com/)の東京本社に [Django

@@ -6,6 +6,7 @@ permalink: /jp/go-appengine
 blog: jp
 tags: appengine golang
 render_with_liquid: false
+locale: ja
 ---
 
 昨日、 [Go\! 言語](http://golang.org/) の trusted tester 権限を頂いたので、以前に作っていた

@@ -6,6 +6,7 @@ permalink: /jp/mercurial-mq-extension
 blog: jp
 tags: mercurial hg mq patch
 render_with_liquid: false
+locale: ja
 ---
 
 最近 mercurial の mq

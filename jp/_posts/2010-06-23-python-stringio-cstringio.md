@@ -6,6 +6,7 @@ permalink: /jp/python-stringio-cstringio
 blog: jp
 tags: python django stringio
 render_with_liquid: false
+locale: ja
 ---
 
 C で作られた cStringIO は ピュア Python で作られた StringIO

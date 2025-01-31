@@ -6,6 +6,7 @@ permalink: /jp/aws-tokyo-region
 blog: jp
 tags: ec2 aws s3
 render_with_liquid: false
+locale: ja
 ---
 
 ![image](/assets/images/651/logo_aws.gif)

@@ -6,6 +6,7 @@ permalink: /jp/python-add-class-method
 blog: jp
 tags: python
 render_with_liquid: false
+locale: ja
 ---
 
 Pythonでは、あるクラスもしくは、クラスインスタンスに動的にメソッドを付けたいことがあります。Pythonコードでは、一般的に考えるとこういう風に書くって思いがちだけど、

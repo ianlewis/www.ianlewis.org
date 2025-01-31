@@ -6,6 +6,7 @@ permalink: /jp/pyaws-is-annoying
 blog: jp
 tags: python aws
 render_with_liquid: false
+locale: ja
 ---
 
 AmazonのアフィリエイトAPIのpython クライアント pyaws は単純にpythonオブジェクトを持つ Bagクラスがある。

@@ -6,6 +6,7 @@ permalink: /jp/jaiku-on-appengine
 blog: jp
 tags: appengine
 render_with_liquid: false
+locale: ja
 ---
 
 <p><a href="/assets/images/516/jaiku.png"><img src="/assets/images/516/jaiku.png" /></a></p>

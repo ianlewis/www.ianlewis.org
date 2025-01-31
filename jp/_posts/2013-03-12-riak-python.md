@@ -6,6 +6,7 @@ permalink: /jp/riak-python
 blog: jp
 tags: python riak
 render_with_liquid: false
+locale: ja
 ---
 
 ![image](/assets/images/699/riak_big.png)
