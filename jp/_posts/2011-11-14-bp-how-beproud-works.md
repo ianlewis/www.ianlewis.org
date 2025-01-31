@@ -15,7 +15,6 @@ locale: ja
 
 ![Zach](/assets/images/668/howgithubworks.png)\_
 
-locale: ja
 ---
 
 <!-- textlint-disable alex -->

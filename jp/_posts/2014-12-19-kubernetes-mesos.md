@@ -143,7 +143,6 @@ $ nohup controller-manager \
 ```shell
 $ sudo kubecfg -c /usr/local/opt/gopath/src/github.com/mesosphere/kubernetes-mesos/examples/pod-nginx.json create pods
 ID                  Image(s)            Host                Labels                 Status
-locale: ja
 ----------          ----------          ----------          ----------             ----------
 nginx-id-01         dockerfile/nginx    <unassigned>        cluster=gce,name=foo   Waiting
 ```

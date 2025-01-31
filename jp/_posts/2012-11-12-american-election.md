@@ -22,7 +22,6 @@ locale: ja
 ![image](/assets/images/683/romney_big.jpg)
 ![image](/assets/images/683/obama_big.jpg)
 
-locale: ja
 ---
 
 ![image](/assets/images/683/487px-garyjohnsonphoto_-_modified_fb_thumb.jpg)

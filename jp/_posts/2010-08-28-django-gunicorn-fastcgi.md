@@ -125,7 +125,6 @@ echo "delete from perftest_mymodel;" | mysql -u root gunicorn_test
 
 ```text
 fastcgi (threaded)
-locale: ja
 ---------------------------
 
 Min time: 0.0689101219177s
@@ -134,7 +133,6 @@ Average Time: 8.089163658s
 Errors: 1002 / 2000 (50.1%)
 
 fastcgi (prefork)
-locale: ja
 ---------------------------
 
 Min time: 0.0668342113495s
@@ -143,7 +141,6 @@ Average Time: 4.586471732s
 Errors: 561 / 2000 (28.1%)
 
 gunicorn
-locale: ja
 ----------------------------
 
 Min time: 0.0718009471893s
