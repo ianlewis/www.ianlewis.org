@@ -182,7 +182,7 @@ SomeFunc()?;
 // … to this.
 let result = SomeFunc();
 if let Err(e) = result {
-	return Err(e);
+    return Err(e);
 }
 ```
 
@@ -241,13 +241,12 @@ error types later.
 
 ```go
 func SomeFunc() error {
-	// This could be strconv.NumError or io.EOF
-	err := SomeOtherFunc()
+    // This could be strconv.NumError or io.EOF
+    err := SomeOtherFunc()
 
     // Using SomeError declared above. Both the error returned by SomeOtherFunc
     // and the SomeError are wrapped.
-	return fmt.Errorf(“%w: %w”, SomeError{}, err)
-
+    return fmt.Errorf(“%w: %w”, SomeError{}, err)
 }
 ```
 
@@ -265,7 +264,7 @@ if errors.Is(err, io.EOF) {
 
 var someErr *SomeError
 if errors.As(err, &SomeError) {
-	// Matches all SomeErrors
+    // Matches all SomeErrors
 }
 ```
 
