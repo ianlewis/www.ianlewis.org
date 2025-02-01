@@ -1,0 +1,57 @@
+==================================================================
+https://keybase.io/ianlewis
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.ianlewis.org
+  * I am ianlewis (https://keybase.io/ianlewis) on keybase.
+  * I have a public key ASCB-cpf3qu3_l-VJJuInEbzh--93qihS4VF3WECDVz6NQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120ba6c8582af64c5c2fe9013807aa566451aec1f5497891065a312ae7e57c531640a",
+      "host": "keybase.io",
+      "kid": "012081f9ca5fdeabb7fe5f95249b889c46f387efbddea8a14b8545dd61020d5cfa350a",
+      "uid": "e9974da3677e3e011ce4fe57b6a4ed19",
+      "username": "ianlewis"
+    },
+    "merkle_root": {
+      "ctime": 1738383687,
+      "hash": "06c47384f1ccbc805d77a09ee8e5508803c15ea006366fcf3dc8cc01460b4f274d74229cca27ef1b83cd8c649391a5a3a249048139970c804d3e60ed239a55cd",
+      "hash_meta": "d62483b20c8a1c06c5e75aa1ab9e763961cb791f9663053bce5c879443197749",
+      "seqno": 26508138
+    },
+    "service": {
+      "entropy": "kusxqy+T4yYerV+Q8J8QjMEB",
+      "hostname": "www.ianlewis.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.4.0"
+  },
+  "ctime": 1738383789,
+  "expire_in": 504576000,
+  "prev": "932fc555b7c2eb08b2889bfacc3a9ee1d8614910e40e9a64861d18a9c905c6e5",
+  "seqno": 68,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEggfnKX96rt/5flSSbiJxG84fvvd6ooUuFRd1hAg1c+jUKp3BheWxvYWTESpcCRMQgky/FVbfC6wiyiJv6zDqe4dhhSRDkDppkhh0YqckFxuXEID0P2DYZ/tm0TPMvzS6rGRyCU4vfajpew8Pv2jjKfe6zAgHCo3NpZ8RARuPL/QK6VvhYWA9Pxbp4SlNphiTl60XrBio1aSmOKeeqnODFnZ+LvYRAUmFExAnGAqmNVdv5kAr5Od3mH3ZjCahzaWdfdHlwZSCkaGFza
+IKkdHlwZQildmFsdWXEICUKSAqNI4Je7gfXeXTHBsuq0aA7MSZb+4qLu38qXyh3o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ianlewis
+
+==================================================================
