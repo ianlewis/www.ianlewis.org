@@ -206,11 +206,11 @@ SomeFunc()?.parse::<usize>()?.checked_add_signed(i).ok_or_else(|| 0)?;
 
 Propagating errors in Rust is a bit tricky and it took me a while to figure out
 how to do it right. To return an `Error` from a function that may return any
-number of error types, it needs to be returned as a `Box&lt;dyn Error>`. The
+number of error types, it needs to be returned as a `Box<dyn Error>`. The
 aforementioned `anyhow` and `thiserror` libraries have more features and are
 widely used. Error types are also returned directly and pre-defined as an
 `enum` and/or converted between error types with the [`From
-trait`](https://doc.rust-lang.org/std/convert/trait.From.html)
+trait`](https://doc.rust-lang.org/std/convert/trait.From.html).
 
 ```rust
 #[derive(Debug)]
