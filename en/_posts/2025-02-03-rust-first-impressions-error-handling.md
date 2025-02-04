@@ -38,6 +38,13 @@ of these methods are basically an `if` statement that does different things in
 the case that an error is encountered. This heavily favors the style in Rust of
 chaining logic together and using closures which can easily get unwieldy.
 
+> **Update:** The Rust `Result` type is not actaully implemented as tuple but
+> an
+> [`enum`](https://github.com/rust-lang/rust/blob/affdb59607566c1615c829eea9e7b27a093994ec/library/core/src/result.rs#L528n).
+> This means that it cannot return both a return value and error at the same
+> time like a tuple would. It also stores it in slightly less memory since the
+> `enum` just needs to store the `enum` variant and value.
+
 ```rust
 // Why this?
 if result.is_err_and(|x| x.kind() == ErrorKind::NotFound) { /* … */ }
