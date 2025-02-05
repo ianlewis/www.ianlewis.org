@@ -9,25 +9,21 @@ render_with_liquid: false
 locale: ja
 ---
 
-我々BeProudのRedmineのWikiやチケットの説明文やチケットのコメント文にはReStructuredTextを使っている。
-RedmineのデフォルトのTextileはPythonが好きな弊社で使うのは以ての外。なので、ReSTを使うようにした。
-そして、生のReSTしか使わなければ、出来ることが少ないので、blockdiagや、コードの構文ハイライト（Pygments)
-を使っている。
+我々BeProudのRedmineのWikiやチケットの説明文やチケットのコメント文にはReStructuredTextを使っている。RedmineのデフォルトのTextileはPythonが好きな弊社で使うのは以ての外。なので、ReSTを使うようにした。そして、生のReSTしか使わなければ、出来ることが少ないので、blockdiagや、コードの構文ハイライト（Pygments）を使っている。
 
-Redmine はテキストフォマッターを入れ換えるように作られている。プラグインを入れるとWiki
-やチケットの内容のフォーマットを変えることができます。BeProud
-では Redmine reStructuredText Formatter の RbST/docutils ブランチを使っている。
+Redmineはテキストフォマッターを入れ換えるように作られている。プラグインを入れるとWikiやチケットの内容のフォーマットを変えることができます。BeProudではRedmine
+reStructuredText FormatterのRbST/docutilsブランチを使っている。
 
 <http://glacialis.postmodo.com/posts/zyd1ig>
 
-# インストール
+## インストール
 
 > ここには説明しないんですけど、Redmine を先にインストールする必要があります。
 
 まずは、Redmine reStructuredText Formatter プラグインを入れる。その為、RbST
 ライブラリをインストールする必要がある。
 
-# RbST
+## RbST
 
 RbST のdocutils バージョンはデータをフォーマットする時に、Python プロセスを実行して、そのプログラムの標準入力に ReST
 コンテンツを送信して、標準出力でHTMLコンテンツを受け取ると言う形になっている。
@@ -87,7 +83,7 @@ reSTでWiki 書きましょう
 
 Textile 書かなくてもよくて、気持ちいいですね！
 
-# Wikiリンク
+## Wikiリンク
 
 デフォルトでリンクを書く時に、そのまま表示するURL書かないといけないのでWikiで簡単にリンク書けるようにしょう。
 
@@ -158,7 +154,7 @@ reStructuredText](http://www.planewave.org/translations/rst/quickref.html#hyperl
 > 相対パスを吐き出すようにしているだけ。従って、プレビューする時などパスが違うのでレンダーするリンクが
 > おかしくなる。それだけは我慢してください (´･ω･\`)
 
-# コードブロック
+## コードブロック
 
 標準のreSTじゃつまらないので、コードハイライトできるようにしょう。まずはライブラリをインストールするので、virtualenv を作ろう
 
@@ -227,7 +223,7 @@ directives.register_directive("code-block", pygments_directive)
 
 ![image](/assets/images/673/highlight.png)
 
-# まとめ
+## まとめ
 
 とにかく、Redmineは大変だから、だけか、Python版を作ってほしい！
 

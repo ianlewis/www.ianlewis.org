@@ -15,7 +15,7 @@ Riak は [Basho](http://basho.com/) が作っているキーべリュースト�
 [Riak Meetup Tokyo](http://connpass.com/event/1823/) に参加しているっていうことを
 きっかけにして、Riak を Python から使ってみよう。
 
-# インストールなど
+## インストールなど
 
 Riak をインストールするにはちょっと面倒くさいことがあるけど、動かしてみると使いやすい。 Riak
 のインストールはここに説明しないけど、僕が以前に [Riak
@@ -23,7 +23,7 @@ Source Code Reading](http://connpass.com/series/218/) で 発表した Riak
 のインストールと動作の内容を見て頂ければと思います =\> [Let's
 りあっくぅ](https://docs.google.com/presentation/d/1TEUie_V7kr6Z7reeNNnQTUQUWcWzFfHXFZxtgofEx5Q/edit?usp=sharing)
 
-# クライアントの準備
+## クライアントの準備
 
 Riak をPythonから使う為のクライアントライブラリが用意されています。 実際はオープンソースで、Github でソースコード見れます。
 PyPi にも上がっていて、 pip で簡単にインストールできます:
@@ -34,7 +34,7 @@ pip install riak
 
 その後は、簡単に `riak` モジュールをインポートできます。
 
-# 接続
+## 接続
 
 まずは、サーバーに接続しよう。上の資料で riak の開発環境を立ち上げる時に デフォルトポートと違うポートになるので、その設定に合わせます。
 
@@ -55,7 +55,7 @@ Riak はデータを `Bucket` という名前空間でデータを分ける形�
 
 `bucket` が `client` オブジェクトを内蔵しているので、接続オブジェクトとして 使いまわすことが出来ます。
 
-# データを保存
+## データを保存
 
 それで、一個一個のレコードは JSON オブジェクトみたいなフォーマットで保存するのですが、 その JSON データをラッピングする
 `RiakObject` があります。 キーを決めて、 `RiakObject` を 作成して、最終的に `store()`
@@ -69,7 +69,7 @@ Riak はデータを `Bucket` という名前空間でデータを分ける形�
 >>> obj.store()
 ```
 
-# データを取得
+## データを取得
 
 データを取得するのが簡単で、キーで取得するだけ。 `bucket` の `get()` メソッドで キーを渡して、データ保存する時の同じ
 `RiakObject` が返ってきます。
@@ -82,7 +82,7 @@ JSON の `dict` データを取得する為に、 `RiakObject` の `get_data()` 
 {'spam': 'hoge', 'eggs': 'fuga'}
 ```
 
-# MapReduce
+## MapReduce
 
 MapReduce は JavaScript で書くことができます。 Riak は Firefox が使っている JavaScript エンジン
 SpiderMonkey を使っています。
@@ -99,7 +99,7 @@ JavaScript を渡して、 `run()` メソッドで実行出来ます。
 key - {'spam': 'hoge', 'eggs': 'fuga'}
 ```
 
-# まとめ
+## まとめ
 
 Riak の Python クライアントは実際 Riak 作っている Basho の中の人はメンテしているので、 Secondary
 Index、Search を含めて、基本的にすべての機能が使えて、安定しています。 Python
