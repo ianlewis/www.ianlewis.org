@@ -31,19 +31,13 @@ In this post I’ll be focusing on error handling.
 ## The Result type
 
 Rust returns errors as part of the [Result
-type](https://doc.rust-lang.org/std/result/). Results are basically tuples but
-include a number of methods like `expect`, `unwrap`, `unwrap_or`,
-`unwrap_or_default`, and `unwrap_or_else` that simplify error handling. Each
-of these methods are basically an `if` statement that does different things in
-the case that an error is encountered. This heavily favors the style in Rust of
-chaining logic together and using closures which can easily get unwieldy.
-
-> **Update:** The Rust `Result` type is not actaully implemented as tuple but
-> an
-> [`enum`](https://github.com/rust-lang/rust/blob/affdb59607566c1615c829eea9e7b27a093994ec/library/core/src/result.rs#L528n).
-> This means that it cannot return both a return value and error at the same
-> time like a tuple would. It also stores it in slightly less memory since the
-> `enum` just needs to store the `enum` variant and value.
+type](https://doc.rust-lang.org/std/result/). Results are implemented as an
+`enum` with a return value XOR a error value and include a number of methods
+like `expect`, `unwrap`, `unwrap_or`, `unwrap_or_default`, and `unwrap_or_else`
+that simplify error handling. Each of these methods are basically an `if`
+statement that does different things in the case that an error is encountered.
+This heavily favors the style in Rust of chaining logic together and using
+closures which can easily get unwieldy.
 
 ```rust
 // Why this?
@@ -67,8 +61,14 @@ if err != nil && errors.Is(err, fs.IsNotExist) {
 }
 ```
 
-One thing that is nice about the Result type is that it is annotated with the
-`#[must_use]` attribute which allows the compiler to issue a warning if the
+In Rust, the fact that the Result can have only one of either a return value or
+an error means that there is less of a chance that someone will attempt to use
+the return value when an error is given. In practice, I haven't found this to
+be too much of an issue with Go and in some cases it's useful to have both a
+return value and error but I suppose Rust's approach is a bit safer overall.
+
+One other thing that is nice about the Result type is that it is annotated with
+the `#[must_use]` attribute which allows the compiler to issue a warning if the
 error isn’t handled. In Go, popular linters will make this check but it’s nice
 that it’s built into the compiler for Rust.
 
@@ -290,3 +290,8 @@ mark [proposal](https://github.com/golang/go/issues/71203), and [continuing
 discussion](https://github.com/golang/go/discussions/71460), was introduced to
 reduce repetition but I see introducing features like this as mostly a
 misadventure.
+
+> **Update:** This post used to include language where I compared Rust's
+> `Result` type to a tuple. This is technically incorrect and I updated the
+> language to be more clear about the differences between returning a tuple
+> with an error vs. an `enum` (tagged union) type.
