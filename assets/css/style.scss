@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "plain";
+@use "plain";
 
 {% if site.plainwhite.search %}
   @import "search";
