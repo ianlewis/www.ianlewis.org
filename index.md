@@ -56,3 +56,5 @@ If you want to have a chat with me you can book an appointment on my appointment
 </a>
 
 You can contact me via my email at [ian@ianlewis.org](mailto:ian@ianlewis.org).
+
+My public key can be downloaded at [ian@ianlewis.org.pem.pub](/ian@ianlewis.org.pem.pub) and viewed at [ian@ianlewis.org.pem.pub.txt](/ian@ianlewis.org.pem.pub.txt)
