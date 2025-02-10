@@ -5,6 +5,7 @@
 
 layout: home
 permalink: /
+feeds: [en, jp]
 ---
 
 # Hi, I'm Ian
