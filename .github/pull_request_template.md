@@ -16,6 +16,4 @@ proposing them via a Pull Request. -->
 - [ ] Review the [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md) documentation.
 - [ ] Add a reference to a related issue in the repository.
 - [ ] Add a description of the changes proposed in the pull request.
-- [ ] Add unit tests if applicable.
 - [ ] Update documentation if applicable.
-- [ ] Add a note in the [CHANGELOG.md](../blob/main/CHANGELOG.md) if applicable.
