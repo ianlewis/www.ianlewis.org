@@ -24,6 +24,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.ianlewis.org" # the base hostname & protocol for your site, e.g. http://example.com
 timezone: UTC
 
+# Default permalink style
+permalink: /:categories/:year/:month/:day/:slug
+
 # Build settings
 plugins:
   - jekyll-seo-tag
@@ -62,6 +65,8 @@ plainwhite:
       url: /
     - title: Projects
       url: /projects
+    - title: Today I Learned
+      url: /til
 
   analytics_id: "G-1C2E36DTVT"
 

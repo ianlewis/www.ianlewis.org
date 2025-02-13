@@ -5,7 +5,7 @@
 
 layout: page
 permalink: /
-feeds: [en, jp]
+feeds: [en, jp, til]
 ---
 
 # Hi, I'm Ian
@@ -21,7 +21,7 @@ The opinions stated here are my own, not necessarily those of my company.
 
 ## Recent blog posts
 
-{% assign posts = site.posts | slice: 0, 5 %}
+{% assign posts = site.posts | where_exp: "post","post.categories contains 'en' or post.categories contains 'jp'" | slice: 0, 5 %}
 {% for post in posts %}- {{ post.date | date: "%Y/%m" }} [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
