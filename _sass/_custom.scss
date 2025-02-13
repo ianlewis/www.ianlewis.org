@@ -5,3 +5,9 @@ blockquote {
     padding: 0.5em 10px;
     quotes: "\201C" "\201D" "\2018" "\2019";
 }
+
+main {
+  .about {
+    padding-bottom: inherit;
+  }
+}
