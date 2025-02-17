@@ -194,12 +194,15 @@ textlint: node_modules/.installed ## Runs the textlint linter.
 
 .PHONY: build
 build: ## Build the site with Jekyll
-	bundle exec jekyll build
+	@bundle exec jekyll build
 
 .PHONY: serve
 serve: ## Run Jekyll test server.
-	bundle exec jekyll serve --future --drafts
+	@bundle exec jekyll serve --future --drafts
 
 .PHONY: clean
 clean: ## Delete temporary files.
-	rm -rf vendor node_modules _site
+	@rm -rf \
+		vendor \
+		node_modules \
+		_site

@@ -16,12 +16,25 @@
     <section class="about">
       <div class="about-header {{condensed_class}}">
         <div class="about-title">
+          {% assign today = site.time | date: "%m-%d" %}
+
+          {% assign valentines_start = "02-01" %}
+          {% assign valentines_end = "02-14" %}
+
+          {% assign xmas_start = "12-01" %}
+          {% assign xmas_end = "12-25" %}
+
+          {% assign portfolio_image = site.plainwhite.portfolio_image.default %}
+          {% if today >= valentines_start and today <= valentines_end %}
+            {% assign portfolio_image = site.plainwhite.portfolio_image.valentines_day %}
+          {% elsif today >= xmas_start and today <= xmas_end %}
+            {% assign portfolio_image = site.plainwhite.portfolio_image.xmas %}
+          {% endif %}
+
           <a href="{{ "/" | relative_url}}">
+            <img class="light" src="{{ site.baseurl }}/{{ portfolio_image }}" alt="{{ site.plainwhite.name }}" />
             {% if site.plainwhite.portfolio_image_dark and site.plainwhite.dark_mode %}
-            <img class="light" src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}" />
-            <img class="dark" src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image_dark }}" alt="{{ site.plainwhite.name }}" />
-            {% else %}
-            <img src="{{site.baseurl }}/{{ site.plainwhite.portfolio_image }}" alt="{{ site.plainwhite.name }}" />
+            <img class="dark" src="{{ site.baseurl }}/{{ portfolio_image_dark }}" alt="{{ site.plainwhite.name }}" />
             {% endif %}
           </a>
           <h2 id="title">
