@@ -36,9 +36,10 @@ plugins:
 plainwhite:
   name: Ian Lewis
   tagline: Engineer in Tokyo
-  # portfolio_image: assets/images/profile.jpg
-  portfolio_image: assets/images/profile_valentines.jpg
-  # portfolio_image: assets/images/profile_xmas.jpg
+  portfolio_image:
+    default: assets/images/profile.png
+    valentines_day: assets/images/profile_valentines.jpg
+    xmas: assets/images/profile_xmas.png
   sitemap: true
   search: false
   dark_mode: false
