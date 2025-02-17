@@ -58,6 +58,13 @@ node_modules/.installed: package.json package-lock.json
 	./.venv/bin/pip install -r requirements.txt --require-hashes
 	touch .venv/.installed
 
+## Content
+#####################################################################
+
+.PHONY: til
+til: ## Start a new TIL entry.
+	@./til.sh
+
 ## Tools
 #####################################################################
 
