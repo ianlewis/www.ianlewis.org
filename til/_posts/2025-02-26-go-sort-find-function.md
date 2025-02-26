@@ -2,6 +2,7 @@
 layout: post
 title: "Go's sort.Find function"
 date: "2025-02-26 00:00:00 +0900"
+blog: til
 tags: go programming
 render_with_liquid: false
 ---

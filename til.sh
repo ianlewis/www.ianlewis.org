@@ -11,6 +11,7 @@ if [ ! -f "${newfile}" ]; then
 layout: post
 title: "${title}"
 date: "$(date +'%Y-%m-%d 00:00:00 +0900')"
+blog: til
 # tags: <tags>
 render_with_liquid: false
 ---
