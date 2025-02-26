@@ -1,8 +1,5 @@
 // Copyright (c) 2019 Samarjeet
 
----
----
-
 window.onload = function () {
     var $searchbar = document.getElementById('searchbar');
     var $searchResults = document.getElementById('search-results');
