@@ -2,6 +2,7 @@
 layout: post
 title: "Today I Learned"
 date: 2025-02-13 00:00:00 +0000
+blog: til
 tags: meta
 render_with_liquid: false
 ---

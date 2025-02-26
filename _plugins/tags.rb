@@ -21,6 +21,7 @@ module Jekyll
       tags.each do |tag|
         site.pages << TagPage.new(site, site.source, "en", tag)
         site.pages << TagPage.new(site, site.source, "jp", tag)
+        site.pages << TagPage.new(site, site.source, "til", tag)
       end
     end
   end
