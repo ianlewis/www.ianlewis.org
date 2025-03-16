@@ -9,7 +9,7 @@ if [ ! -f "${newfile}" ]; then
     cat <<EOF >"${newfile}"
 ---
 layout: post
-title: "${title}"
+title: "TIL: ${title}"
 date: "$(date +'%Y-%m-%d 00:00:00 +0900')"
 blog: til
 # tags: <tags>

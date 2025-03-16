@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Grouping Dependabot updates"
+title: "TIL: Grouping Dependabot updates"
 date: "2025-02-17 00:00:00 +0900"
 blog: til
 tags: github

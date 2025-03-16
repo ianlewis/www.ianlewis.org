@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Go's errors.Unwrap doesn't work with errors.Join"
+title: "TIL: Go's errors.Unwrap doesn't work with errors.Join"
 date: "2025-03-16 00:00:00 +0900"
 blog: til
 tags: go programming
