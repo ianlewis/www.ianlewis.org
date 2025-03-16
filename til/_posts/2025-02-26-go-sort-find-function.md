@@ -7,7 +7,7 @@ tags: go programming
 render_with_liquid: false
 ---
 
-Today I learned about the `sort.Find` function in the Go standard library. It performs a binary search over a sorted array when provided with a comparator function.
+Today I learned about the [`sort.Find`](https://pkg.go.dev/sort#Find) function in the Go standard library. It performs a binary search over a sorted array when provided with a comparator function.
 
 ```go
 sorted := make([]string, 150)
