@@ -8,7 +8,7 @@ tags: tech containers container-runtime-series
 render_with_liquid: false
 ---
 
-_This is the third part in a four-part series on container runtimes. It's been a while since [part 1](https://www.ianlewis.org/en/container-runtimes-part-1-introduction-container-r), but in that post I gave an overview of container runtimes and discussed the differences between low-level and high-level runtimes. In [part 2](https://www.ianlewis.org/en/container-runtimes-part-2-anatomy-low-level-contai) I went into detail on low-level container runtimes and built a simple low-level runtime._
+> _This is the third part in a four-part series on container runtimes. It's been a while since [part 1](https://www.ianlewis.org/en/container-runtimes-part-1-introduction-container-r), but in that post I gave an overview of container runtimes and discussed the differences between low-level and high-level runtimes. In [part 2](https://www.ianlewis.org/en/container-runtimes-part-2-anatomy-low-level-contai) I went into detail on low-level container runtimes and built a simple low-level runtime._
 
 High-level runtimes are higher up the stack than low-level runtimes. While low-level runtimes are responsible for the mechanics of actually running a container, high-level runtimes are responsible for transport and management of container images, unpacking the image, and passing off to the low-level runtime to run the container. Typically, high-level runtimes provide a daemon application and an API that remote applications can use to logically run containers and monitor them but they sit on top of and delegate to low-level runtimes or other high-level runtimes for the actual work.
 
@@ -18,11 +18,11 @@ Here's a conceptual diagram to understand how the components fit together:
 
 <img src="/assets/images/771/runtime-architecture.png" alt="Runtime architecture diagram" class="align-center" />
 
-# Examples of High-Level Runtimes
+## Examples of High-Level Runtimes
 
 To better understand high-level runtimes, it’s helpful to look at a few examples. Like low-level runtimes, each runtime implements different features.
 
-## Docker
+### Docker
 
 Docker is one of the first open source container runtimes. It was developed by the platform-as-a-service company dotCloud, and was used to run their users' web applications in containers.
 
@@ -36,7 +36,7 @@ Docker originally implemented both high-level and low-level runtime features, bu
 
 `dockerd` provides features such as building images, and dockerd uses `docker-containerd` to provide features such as image management and running containers. For instance, Docker's build step is actually just some logic that interprets a Dockerfile, runs the necessary commands in a container using `containerd`, and saves the resulting container file system as an image.
 
-## containerd
+### containerd
 
 [containerd](https://containerd.io/) is a high-level runtime that was split off from Docker. Like runc, which was broken off as the low-level runtime piece, containerd was broken off as the high-level runtime piece of Docker. `containerd` implements downloading images, managing them, and running containers from images. When it needs to run a container it unpacks the image into an OCI runtime bundle and shells out to `runc` to run it.
 
@@ -74,7 +74,7 @@ sudo ctr container delete redis
 
 These commands are similar to how a user interacts with Docker. However, in contrast with Docker, containerd is focused solely on running containers, so it does not provide a mechanism for building containers. Docker was focused on end-user and developer use cases, whereas containerd is focused on operational use cases, such as running containers on servers. Tasks such as building container images are left to other tools.
 
-# rkt
+## rkt
 
 In the previous post, I mentioned that `rkt` is a runtime that has both low-level and high-level features. For instance, much like Docker, rkt allows you to build container images, fetch and manage container images in a local repository, and run them all from a single command. `rkt` stops short of Docker's functionality, however, in that it doesn't provide a long-running daemon and remote API.
 
@@ -104,7 +104,7 @@ rm: 1 image(s) successfully removed
 
 Though rkt doesn't seem to be actively developed very much anymore it is an interesting tool and an important part of the history of container technology.
 
-# Onward, Upward
+## Onward, Upward
 
 In the next post I'll move up the stack and talk about runtimes from the perspective of Kubernetes and how they work. Be sure to add [my RSS feed](https://www.ianlewis.org/feed/enfeed) or follow me on Twitter to get notified when the next blog post comes out.
 

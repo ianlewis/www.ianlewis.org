@@ -23,11 +23,11 @@ locale: ja
 がリリースされました](https://www.djangoproject.com/weblog/2012/nov/27/15-beta-1/)
 。徐々に Django 1.5 の正式リリースに近づいてきいます。もしかして、年内にいいクリスマスプレゼントになるかもしれません。
 
-# 新機能
+## 新機能
 
 Django 1.5 はたくさんの変更がありますが、一番大きい変更をピックアップして、紹介します。
 
-# Python 3 対応
+## Python 3 対応
 
 Django 1.5 では、Python 3の体験的サポートが入っています。少なくとも、Django 1.5 の unittest
 がすべて成功して、一般的に動作します。主要な対象はまだ Python 2 なので、
@@ -39,7 +39,7 @@ Django に組み込まれています。Django自体の互換性を守るため�
 
 Python 3 の本格的サポートは 1.5 以降ですし、 surgo さんももっと詳しく書いてくれるのを期待しましょう。
 
-# カスタムユーザーモデル
+## カスタムユーザーモデル
 
 これは Django 1.5 の一番大きい新機能なのかなと思います。今までは、Django の `contrib.auth`
 モジュールを使うには、 `username` や、 `password`
@@ -91,7 +91,7 @@ model](https://docs.djangoproject.com/en/dev/topics/auth/#customizing-the-user-m
 ユーザーモデルは settings.py で設定するので、複数の settings.py
 モジュールを用意して、別プロセスで起動すれば、複数のユーザーモデルを使うことができるんじゃないかなと思います。
 
-# モデルフィールドのサブセットだけを保存
+## モデルフィールドのサブセットだけを保存
 
 Django 1.5 まで、 モデルの `save()` メソッドを呼び出した時に、モデルのすべてのフィールドが保存されたんだが、 Django
 1.5 からは、保存するフィールドを指定することができるようになった。 保存するフィールドを指定するのは `update_fields`
@@ -101,7 +101,7 @@ Django 1.5 まで、 モデルの `save()` メソッドを呼び出した時に�
 mymodel.save(update_fields=['name', 'date'])
 ```
 
-# リレーションで同じモデルをキャッシュする
+## リレーションで同じモデルをキャッシュする
 
 Django 1.4以下は、あるモデルのインスタンスが同じIDだったのに、データベースから２回取ってきたりしました。Django 1.5
 からは、リレーションでアクセスしたモデルインスタンスは使ったモデルを使います。
@@ -116,12 +116,12 @@ True
 Django 1.4 だと、 `first_choice.poll` は別クエリが発生して、 `first_poll`
 と別インスタンスになった。
 
-# 注意点
+## 注意点
 
 しかし、Django 1.5 で、いくつかのことが変わっていますので、少し注意が必要。Django
 を内部的に触っている場合も、プログラムの修正が必要な場合があります。
 
-# url テンプレートタグの旧バージョンがなくなる
+## url テンプレートタグの旧バージョンがなくなる
 
 Django 1.3 では `{% url %}` の旧バージョンが [deprecated
 になりました](https://docs.djangoproject.com/en/1.3/ref/templates/builtins/#url)
@@ -135,12 +135,12 @@ Django の Deprecation ポリシーに従って、deprecated バージョンは�
 future の書き方はまだ Django 1.5 でも動くので、多くのDjango
 バージョンに対応する必要がある場合は、こういう風に書くのがおすすめです。
 
-```html+django
+```django
 {% load url from future %}
 {% url 'myapp:view-name' %}
 ```
 
-# 非フォームデータとHTTPリクエスト
+## 非フォームデータとHTTPリクエスト
 
 今までは、Django はどんなコンテントタイプヘッダー (`Content-Type`) でPOSTリクエストを送信しても、フォームデータを
 `request.POST` に突っ込みました。Django 1.5 からは、`multipart/form-data` か
@@ -149,13 +149,13 @@ future の書き方はまだ Django 1.5 でも動くので、多くのDjango
 それ以外の場合にリクエストデータをアクセスしたい場合は、
 `request.body` を使ってください。
 
-# などなど
+## などなど
 
 他に互換性を持たない変更があるので、
 [リリースノート](https://docs.djangoproject.com/en/dev/releases/1.5-beta-1/#backwards-incompatible-changes-in-1-5)
 を読んでみて下さい。
 
-# まとめ
+## まとめ
 
 Django 1.5 では、主に Python 3 の対応とユーザー認証のカスタマイズが一歩進んだ感じだね。　Django 1.5
 以降は非常に楽しみ

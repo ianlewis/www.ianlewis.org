@@ -17,7 +17,7 @@ locale: ja
 
 基礎の仕組み的に、Passbookはサーバーからダウンロードしたzipファイル。パスの内容はpass.jsonというJSONファイルの中に入っている。中身のファイル毎にsha1ハッシュを取って、manifest.jsonというファイルに書いている。そして、manifest.jsonの中身の署名を作成して、signatureというファイルに入れます。
 
-# まずは準備
+## まずは準備
 
 この準備は一番面倒くさい部分なんだけど、結構はまりそうなので、丁寧に説明する。
 
@@ -100,7 +100,7 @@ $ openssl pkcs12 -in cert.p12 -nocerts -out key.pem
 
 この３つのファイル AppleWWDRCA.pem、certificate.pem、key.pem を後で使います。
 
-# ライブラリー
+## ライブラリー
 
 Passbook の signature ファイルを作成するために、M2Crypto というライブラリが必要です。virtualenv
 を作って、インストールします。
@@ -115,7 +115,7 @@ $ pip install M2Crypto
 
 やっと、準備完了。ハァハァ
 
-# 漸くコーディングできる
+## 漸くコーディングできる
 
 まずは、pass.json ファイルのデータを作成する。
 

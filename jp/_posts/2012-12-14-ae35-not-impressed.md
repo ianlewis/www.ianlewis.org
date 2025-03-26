@@ -13,7 +13,7 @@ locale: ja
 (**Update: 落としました**)はもう見ているかもしれませんが、何で作ったか、
 どういう意味なのかがわからない人が多くて、ちょっとブログで説明しようかなと思って、書いてみた。
 
-# PyFesから始まる
+## PyFesから始まる
 
 １１月２４日の PyFes で [connpass](http://connpass.com/) チームとして
 [@ae35](http://twitter.com/ae35)
@@ -26,7 +26,7 @@ ae35 の表情は想像してみるとあまり感心してないように見え
 
 [![](/assets/images/686/ae353_thumbnail.jpg)](/assets/images/686/ae353.jpg)
 
-# McKayla is Not Impressed
+## McKayla is Not Impressed
 
 ![image](/assets/images/686/mckayla_medium.jpg)
 
@@ -40,7 +40,7 @@ photoshopして、本当にすごいことに感心しない McKayla さんの�
 大統領とも写真取られた](http://mckaylaisnotimpressed.tumblr.com/image/35914202850)
 。
 
-# AE35 is Not Impressed
+## AE35 is Not Impressed
 
 その後、僕は以下のの2つの画像を作って、Twitterで投稿した。AE35はエレクトロのDJなので、一つは俺が作っている音楽に不関心のような意味を出そうとした。
 
@@ -48,7 +48,7 @@ photoshopして、本当にすごいことに感心しない McKayla さんの�
 
 [![](/assets/images/686/ian-beat_small.jpg)](/assets/images/686/ian-beat.jpg)
 
-# Moriyoshi がやってきた
+## Moriyoshi がやってきた
 
 そして、Moriyoshi さんが以下のツイートをしてくれた。
 

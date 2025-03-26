@@ -9,26 +9,15 @@ render_with_liquid: false
 locale: ja
 ---
 
-pip、buildout などを使うとデプロイする時に Python ライブラリの依存関係はややこしいことがあります。
-普段はデプロイスクリプトで、 pip に requirements.txt
-を指定して、もしくは、 buildoutを実行して、 依存ライブラリを落としてインストールしますが、
-PYPI がダウンしている場合、環境によって、PYPIにアクセス 出来ない場合もありますので、デプロイが止まってしまって困ります。
-PYPIはダウンしている時に pip は PYPI
-のミラーを使うことができますが、ミラーに必要がパッケージバージョンが入っていない、
-[ミラーの最後のIDのDNS](http://www.python.org/dev/peps/pep-0381/#how-a-client-can-use-pypi-and-its-mirrors)
-が ちゃんと動いていないときに、 pip は当然ちゃんと動かない場合も。 bitbucket や、 github
-からのリポジトリに依存している場合、
-接続できなかったら、ミラーがないので、当然インストールできます。
+`pip`、`buildout`などを使うとデプロイする時にPythonライブラリの依存関係はややこしいことがあります。普段はデプロイスクリプトで、`pip`に`requirements.txt`を指定して、もしくは、`buildout`を実行して、依存ライブラリを落としてインストールしますが、
+
+PYPIがダウンしている場合、環境によって、PYPIにアクセス出来ない場合もありますので、デプロイが止まってしまって困ります。PYPIはダウンしている時に`pip`はPYPIのミラーを使うことができますが、ミラーに必要がパッケージバージョンが入っていない、[ミラーの最後のIDのDNS](http://www.python.org/dev/peps/pep-0381/#how-a-client-can-use-pypi-and-its-mirrors)がちゃんと動いていないときに、`pip`は当然ちゃんと動かない場合も。Bitbucketや、GitHubからのリポジトリに依存している場合、接続できなかったら、ミラーがないので、当然インストールできます。
 
 **つもり、デプロイは外部サイトに依存していて、デプロイを邪魔する問題が出てくる可能性が高いです。**
 
-ローカルで必要なライブラリは既にインストールしているので、それを使えばいいじゃん！と自然に思います。
-実は、情報がなくて、あまり使われてないみたいですが、
-pip はバンドルを作成する機能があります。バンドルは `requirements.txt` の依存ライブラリを zip に固めて、そして、
-`install` コマンドで、バンドルから
-ライブラリをインストールしてくれる機能です。つもり、バンドルさえあれば、PYPIにアクセスしたくても良い。
+ローカルで必要なライブラリは既にインストールしているので、それを使えばいいじゃん！と自然に思います。実は、情報がなくて、あまり使われてないみたいですが、`pip`はバンドルを作成する機能があります。バンドルは`requirements.txt`の依存ライブラリを`zip`に固めて、そして、`install`コマンドで、バンドルからライブラリをインストールしてくれる機能です。つもり、バンドルさえあれば、PYPIにアクセスしたくても良い。
 
-# やったぜ！ これを使おう
+## やったぜ！ これを使おう
 
 バンドルを作成するのが簡単:
 
@@ -42,11 +31,11 @@ pip bundle -r requirements.txt mybundle.pybundle
 pip install mybundle.pybundle
 ```
 
-もちろん、 [virtualenv](/jp/virtualenv-pip-fabric) と組み合わせて使えます。
+もちろん、[virtualenv](/jp/virtualenv-pip-fabric)と組み合わせて使えます。
 
-**注意：** ファイルの拡張子は pybundle じゃないと install コマンドがバンドルを認識してくれない
+**注意：**ファイルの拡張子は`pybundle`じゃないと`install`コマンドがバンドルを認識してくれない。
 
-バンドルは単の zip ファイル:
+バンドルは単のzipファイル:
 
 ```shell
 $ unzip mybundle.pybundle
@@ -65,12 +54,11 @@ South==0.7.3
 ...
 ```
 
-# デプロイ
+## デプロイ
 
-デプロイは Fabric を使います。ローカルで、バンドルを一回作っておけば、依存ライブラリを修正しない限り、 そのまま使えます。
+デプロイはFabricを使います。ローカルで、バンドルを一回作っておけば、依存ライブラリを修正しない限り、そのまま使えます。
 
-まずは、 バンドルを作成するコマンドを作る。 `runs_once()` デコレータで一回しか実行しないようにします。 `local()`
-メソッドでローカルコマンドを叩きます。
+まずは、バンドルを作成するコマンドを作る。`runs_once()`デコレータで一回しか実行しないようにします。`local()`メソッドでローカルコマンドを叩きます。
 
 ```python
 from fabric.decorators import runs_once
@@ -83,7 +71,7 @@ def create_bundle():
     print 'Created bundle mybundle.pybundle'
 ```
 
-次は、コード自体をアップするコマンドを作ります。下記は、 mercurial を ssh で push しています。
+次は、コード自体をアップするコマンドを作ります。下記は、Mercurialを`ssh`でpushしています。
 
 ```python
 from fabric.api import sudo, cd, local
@@ -116,7 +104,7 @@ def update_deps():
         sudo('pip install -E %(venv_path)s mybundle.pybundle' % env)
 ```
 
-mercurial の代わりに rsync を使う場合はこんな感じで、一発でできる。
+Mercurialの代わりに`rsync`を使う場合はこんな感じで、一発でできる。
 
 ```python
 from fabric.contrib.project import rsync_project
@@ -136,7 +124,7 @@ def push():
         sudo('pip install -E %(venv_path)s mybundle.pybundle' % env)
 ```
 
-最後は、deploy コマンドを作る
+最後は、`deploy`コマンドを作る
 
 ```python
 def deploy():
@@ -150,4 +138,4 @@ def deploy():
     reboot_server()
 ```
 
-こういう感じで、ローカルとサーバーの接続さえできれば、デプロイできます。 外部サイトに依存したいのが楽過ぎて、逆にいい意味で困ります。
+こういう感じで、ローカルとサーバーの接続さえできれば、デプロイできます。外部サイトに依存したいのが楽過ぎて、逆にいい意味で困ります。

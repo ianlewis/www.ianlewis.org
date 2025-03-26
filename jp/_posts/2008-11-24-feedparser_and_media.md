@@ -9,9 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-[feedparser](http://www.feedparser.org/)で、どうやってビデオを取れるかをずっと悩みましたけど、今日少しだけ、進展した。問題の核心はyoutubeや、vimeoは
-[Yahoo! RSS モジュール](http://search.yahoo.com/mrss/)を使って、RSS拡張ネームスペースにデータを入れている。この拡張データの処理はfeedparserが
-中途半端でやってる。見てみよう。
+[`feedparser`](http://www.feedparser.org/)で、どうやってビデオを取れるかをずっと悩みましたけど、今日少しだけ、進展した。問題の核心はyoutubeや、vimeoは[Yahoo! RSS モジュール](http://search.yahoo.com/mrss/)を使って、RSS拡張ネームスペースにデータを入れている。この拡張データの処理は`feedparser`が中途半端でやってる。見てみよう。
 
 YoutubeのGDATA APIで取ったデータはこうなる
 
@@ -57,7 +55,7 @@ smashing pumpkins- the beginning is the end is the beginning</media:description>
 </entry>
 ```
 
-media という名前空間の下に結構データが入ってる。なのに、feedparserはちょっとしか取らない。
+`media`という名前空間の下に結構データが入ってる。なのに、`feedparser`はちょっとしか取らない。
 
 ```python
 >>> d = feedparser.parse("http://gdata.youtube.com/feeds/api/users/IanLewisInJapan/favorites")
@@ -75,11 +73,9 @@ u'Last.fm/presents Yellow Magic Orchestra Interview at Royal Festival Hall in Lo
 >>>
 ```
 
-ビデオのURLはどこかにない。原因はfeedparserの拡張ネームスペース処理に入ってるけども、一言いうと、
-`<media:content>`というタグの属性は取れてない。こう見たら、どうやって、とれるかを調べたら、
-`unknown_starttag()`というメソッドの中にこのコードを見つけた。
+ビデオのURLはどこかにない。原因は`feedparser`の拡張ネームスペース処理に入ってるけども、一言いうと、`<media:content>`というタグの属性は取れてない。こう見たら、どうやって、とれるかを調べたら、`unknown_starttag()`というメソッドの中にこのコードを見つけた。
 
-# feedparser.py
+## feedparser.py
 
 ```python
 # call special handler (if defined) or default handler
@@ -91,9 +87,7 @@ except AttributeError:
   return self.push(prefix + suffix, 1)
 ```
 
-じゃ、[XML](http://en.wikipedia.org/wiki/XML)を解析するときに、タグを見つけたら、`unknown_starttag()`という関数が実行されて、
-タグの名前に一致するメソッドがあれば、実行する処理やってる。それで、`start_media_content()`というメソッドがあれば実行してくれるわけだね。
-でも、どうやって、パーサークラスに付けるのか。feedparserは`_StrictFeedParser`というクラスを名前で使ってるから、自分が作ったクラスを`_ScrictFeedParser`と交換。
+じゃ、[XML](http://en.wikipedia.org/wiki/XML)を解析するときに、タグを見つけたら、`unknown_starttag()`という関数が実行されて、タグの名前に一致するメソッドがあれば、実行する処理やってる。それで、`start_media_content()`というメソッドがあれば実行してくれるわけだね。でも、どうやって、パーサークラスに付けるのか。`feedparser`は`_StrictFeedParser`というクラスを名前で使ってるから、自分が作ったクラスを`_ScrictFeedParser`と交換。
 
 ```python
 feedparser._StrictFeedParser_old = feedparser._StrictFeedParser
@@ -124,5 +118,4 @@ feedparser._StrictFeedParser = DlifeFeedParser
 ['medium', 'format', 'url', 'expression', 'duration', 'type', 'yt:format']
 ```
 
-それで、`media:content`の属性を取れた。`media:group`の下にcontentが複数ある場合もあるから、
-もうちょっとまとめないといけないけど、やり方が少し分かってきた。
+それで、`media:content`の属性を取れた。`media:group`の下にcontentが複数ある場合もあるから、もうちょっとまとめないといけないけど、やり方が少し分かってきた。

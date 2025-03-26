@@ -9,33 +9,22 @@ render_with_liquid: false
 locale: ja
 ---
 
-_(この記事は_ [Python Web フレームワーク
-アドベントカレンダー2010](http://atnd.org/events/10465)
-_のために書いた 12/24 の記事です。 他の記事を読むには http://atnd.org/events/10465
-をご覧ください)_
+> この記事は[Python Webフレームワークアドベントカレンダー2010](http://atnd.org/events/10465)のために書いた12/24の記事です。他の記事を読むには <http://atnd.org/events/10465> をご覧ください
 
-私は普段、 [kay フレームワーク](http://code.google.com/p/kay-framework/) を使いますが、最近、
-[Tipfy](http://www.tipfy.org/) (<http://www.tipfy.org>)
-というフレームワークを試してみました。 Tipfy は Kay と同じく、
-Google Appengine専用フレームワークです。 Kay は
-[Django](http://www.djangoproject.com) に似ているものの、 Tipfy は Appengine SDK の
-[Webapp
-フレームワーク](http://code.google.com/intl/ja/appengine/docs/python/gettingstarted/usingwebapp.html)
-に 似ているように作りました。
+私は普段、[kay フレームワーク](http://code.google.com/p/kay-framework/)を使いますが、最近、[Tipfy](http://www.tipfy.org/) (<http://www.tipfy.org>)というフレームワークを試してみました。TipfyはKayと同じく、Google Appengine専用フレームワークです。Kayは[Django](http://www.djangoproject.com)に似ているものの、TipfyはAppengine SDKの[Webapp フレームワーク](http://code.google.com/intl/ja/appengine/docs/python/gettingstarted/usingwebapp.html)に似ているように作りました。
 
-# インストール
+## インストール
 
-Tipfy は [buildout](http://www.buildout.org/) という環境管理ツールの利用を推進しています。
+Tipfyは[buildout](http://www.buildout.org/)という環境管理ツールの利用を推進しています。
 
-まずは、 [Tipfy の配布プロジェクトテンプレート](http://www.tipfy.org/tipfy.zip) をダウンロードします。
+まずは、[Tipfy の配布プロジェクトテンプレート](http://www.tipfy.org/tipfy.zip)をダウンロードします。
 
 ```shell
 wget http://www.tipfy.org/tipfy.zip
 unzip tipfy.zip
 ```
 
-次に、 buildout で環境を構築。buildout は Appengine SDK と依存ライブラリをすべて、
-[pypi](http://pypi.python.org/) から落としてくれます。
+次に、buildoutで環境を構築。buildoutはAppengine SDKと依存ライブラリをすべて、[pypi](http://pypi.python.org/)から落としてくれます。
 
 ```shell
 cd project
@@ -43,15 +32,13 @@ python2.5 bootstrap.py --distribute
 ./bin/buildout
 ```
 
-それから、 dev_appserverや、 appcfg のスクリプトファイルが `bin`
-ディレクトリに入っています。開発サーバーを起動するには、
-`./bin/dev_appserver` を実行します。
+それから、dev_appserverや、appcfgのスクリプトファイルが`bin`ディレクトリに入っています。開発サーバーを起動するには、`./bin/dev_appserver`を実行します。
 
 ```shell
 ./bin/dev_appserver
 ```
 
-# ディレクトリ構造
+## ディレクトリ構造
 
 この時点でファイルディレクトリ構造が出来ているはず。
 
@@ -80,14 +67,13 @@ gaetools.cfg - gae SDK に関するの設定
 versions.cfg - バージョン管理ファイル (デフォールトは空)
 ```
 
-# 設定
+## 設定
 
-設定は app/config.py に入っています。設定は `config` という辞書オブジェクトに定義します。
+設定は`app/config.py`に入っています。設定は`config`という辞書オブジェクトに定義します。
 
-第三者モジュールの設定はモジュール名のキーで設定します。 以下で `tipfy.ext.session`
-のセッション対応モジュールの設定をします。
+第三者モジュールの設定はモジュール名のキーで設定します。以下で`tipfy.ext.session`のセッション対応モジュールの設定をします。
 
-`apps_installed` はアプリケーションモジュールの設定です。アプリモジュールで定義した URLを自動で 登録します。
+`apps_installed`はアプリケーションモジュールの設定です。アプリモジュールで定義したURLを自動で登録します。
 
 ```python
 # Configurations for the 'tipfy' module.
@@ -106,11 +92,11 @@ config['tipfy.ext.session'] = {
 }
 ```
 
-# URLルーティング
+## URLルーティング
 
-URLルーティングは `urls.py` の `make_rules()` 関数で定義します。
+URLルーティングは`urls.py`の`make_rules()`関数で定義します。
 
-`app/apps/hello_world/urls.py` を見るとこんな感じです。
+`app/apps/hello_world/urls.py`を見るとこんな感じです。
 
 ```python
 from tipfy import Rule
@@ -131,10 +117,9 @@ def get_rules(app):
     return rules
 ```
 
-# リクエストハンドラー
+## リクエストハンドラー
 
-リクエストハンドラーでアプリケーションのロジックを実装します。 Tipfy は Jinja2
-のテンプレートレンダリングエンジンをデフォルトで使います。
+リクエストハンドラーでアプリケーションのロジックを実装します。TipfyはJinja2のテンプレートレンダリングエンジンをデフォルトで使います。
 
 ```python
 from tipfy import RequestHandler, Response
@@ -146,11 +131,9 @@ class HelloWorldHandler(RequestHandler):
         return render_response('hello_world.html', message='Hello, World!')
 ```
 
-# ハンドラー Mixin の使い方
+## ハンドラー Mixin の使い方
 
-ハンドラーに機能を追加するには、ハンドラー Mixin を使います。 普段は、毎回ハンドラーに
-追加するのではなく、アプリケーション用のベースハンドラーで使う機能のMixin
-を追加する。 例えば、 ミドルウエアの設定、セッション処理とかがベースハンドラーで設定することができます。
+ハンドラーに機能を追加するには、ハンドラーMixinを使います。普段は、毎回ハンドラーに追加するのではなく、アプリケーション用のベースハンドラーで使う機能のMixinを追加する。例えば、ミドルウエアの設定、セッション処理とかがベースハンドラーで設定することができます。
 
 ```python
 from tipfy import RequestHandler, Response
@@ -169,22 +152,14 @@ class HelloWorldHandler(BaseHandler):
         )
 ```
 
-# 拡張モジュール
+## 拡張モジュール
 
-`tipfy.ext` というモジュールの中にいろな拡張モジュールがあります。 `app/distlib/tipfy/ext`
-ディレクトリに入っています。 メール受信ハンドラーとか、 i18n とかのサポートモジュールが入っています。
-英語ドキュメントしかないのですが、以下のドキュメント に拡張の使い方について書いています。
+`tipfy.ext`というモジュールの中にいろな拡張モジュールがあります。`app/distlib/tipfy/ext`ディレクトリに入っています。メール受信ハンドラーとか、i18nとかのサポートモジュールが入っています。英語ドキュメントしかないのですが、以下のドキュメントに拡張の使い方について書いています。
 
 1. [標準拡張のドキュメント](http://www.tipfy.org/wiki/extensions/#extension-pages)
 2. [拡張をプロジェクトに追加](http://www.tipfy.org/wiki/guide/extensions/#adding-or-removing-extensions)
 3. [拡張を作る方法](http://www.tipfy.org/wiki/guide/extensions/create/#creating-extensions)
 
-# まとめ
+## まとめ
 
-Tipfy は Mixin の使い方ですとかが Python の初心者に分かりにくいかもしれないけど、Webapp に似ていて、
-コードのクオリティがかなり高いと思います。GAEプロジェクトは普通の Python プロジェクトと違っていて、
-全てのコードがプロジェクトディレクトリの下に入っていないといけないから、拡張モジュールの配布に問題ありますが、 Tipfy は
-`buildout` を使っていて、その問題を解決しているのがうまい使い方なと思いました。これから、Kay
-も同じように拡張を配布できるようにして、Tipfy
-のいいところを勉強していきたいと思っています。そして、 Kay を気にいっていない開発者に Tipfy
-を試してみるのがおすすめします。
+TipfyはMixinの使い方ですとかがPythonの初心者に分かりにくいかもしれないけど、Webappに似ていて、コードのクオリティがかなり高いと思います。GAEプロジェクトは普通のPythonプロジェクトと違っていて、全てのコードがプロジェクトディレクトリの下に入っていないといけないから、拡張モジュールの配布に問題ありますが、Tipfyは`buildout`を使っていて、その問題を解決しているのがうまい使い方なと思いました。これから、Kayも同じように拡張を配布できるようにして、Tipfyのいいところを勉強していきたいと思っています。そして、Kayを気にいっていない開発者にTipfyを試してみるのがおすすめします。
