@@ -1,4 +1,4 @@
-# Copyright 2025 Ian Lewis
+# Copyright 2024 Ian Lewis
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,9 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+uname_s := $(shell uname -s)
+uname_m := $(shell uname -m)
+arch.x86_64 := amd64
+arch.aarch64 := arm64
+arch = $(arch.$(uname_m))
+kernel.Linux := linux
+kernel = $(kernel.$(uname_s))
+
 SHELL := /bin/bash
 OUTPUT_FORMAT ?= $(shell if [ "${GITHUB_ACTIONS}" == "true" ]; then echo "github"; else echo ""; fi)
-REPO_NAME = $(shell basename "$$(pwd)")
+REPO_ROOT = $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+REPO_NAME = $(shell basename "$(REPO_ROOT)")
+
+AQUA_VERSION ?= 2.46.0
+AQUA_REPO ?= github.com/aquaproj/aqua
+AQUA_CHECKSUM.Linux.x86_64 = 6908509aa0c985ea60ed4bfdc69a69f43059a6b539fb16111387e1a7a8d87a9f
+AQUA_CHECKSUM ?= $(AQUA_CHECKSUM.$(uname_s).$(uname_m))
+AQUA_URL = https://$(AQUA_REPO)/releases/download/v$(AQUA_VERSION)/aqua_$(kernel)_$(arch).tar.gz
+AQUA_ROOT_DIR = .aqua
 
 # The help command prints targets in groups. Help documentation in the Makefile
 # uses comments with double hash marks (##). Documentation is printed by the
@@ -29,14 +45,14 @@ REPO_NAME = $(shell basename "$$(pwd)")
 #	## Group name
 
 .PHONY: help
-help: ## Shows all targets and help from the Makefile (this message).
+help: ## Print all Makefile targets (this message).
 	@echo "$(REPO_NAME) Makefile"
 	@echo "Usage: make [COMMAND]"
 	@echo ""
 	@grep --no-filename -E '^([/a-z.A-Z0-9_%-]+:.*?|)##' $(MAKEFILE_LIST) | \
 		awk 'BEGIN {FS = "(:.*?|)## ?"}; { \
 			if (length($$1) > 0) { \
-				printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2; \
+				printf "  \033[36m%-25s\033[0m %s\n", $$1, $$2; \
 			} else { \
 				if (length($$2) > 0) { \
 					printf "%s\n", $$2; \
@@ -44,19 +60,31 @@ help: ## Shows all targets and help from the Makefile (this message).
 			} \
 		}'
 
-package-lock.json:
-	npm install
+package-lock.json: package.json
+	@npm install
 
-node_modules/.installed: package.json package-lock.json
-	npm ci
-	touch node_modules/.installed
+node_modules/.installed: package-lock.json
+	@npm ci
+	@touch node_modules/.installed
 
 .venv/bin/activate:
-	python -m venv .venv
+	@python -m venv .venv
 
 .venv/.installed: .venv/bin/activate requirements.txt
-	./.venv/bin/pip install -r requirements.txt --require-hashes
-	touch .venv/.installed
+	@./.venv/bin/pip install -r requirements.txt --require-hashes
+	@touch .venv/.installed
+
+.bin/aqua-$(AQUA_VERSION)/aqua:
+	@set -euo pipefail; \
+		mkdir -p .bin/aqua-$(AQUA_VERSION); \
+		tempfile=$$(mktemp --suffix=".aqua-v$(AQUA_VERSION).tar.gz"); \
+		curl -sSLo "$${tempfile}" "$(AQUA_URL)"; \
+		echo "$(AQUA_CHECKSUM)  $${tempfile}" | sha256sum -c; \
+		tar -x -C .bin/aqua-$(AQUA_VERSION) -f "$${tempfile}"
+
+$(AQUA_ROOT_DIR)/.installed: aqua.yaml .bin/aqua-$(AQUA_VERSION)/aqua
+	@AQUA_ROOT_DIR="$(AQUA_ROOT_DIR)" ./.bin/aqua-$(AQUA_VERSION)/aqua --config aqua.yaml install
+	@touch $@
 
 ## Content
 #####################################################################
@@ -72,13 +100,16 @@ til: ## Start a new TIL entry.
 license-headers: ## Update license headers.
 	@set -euo pipefail; \
 		files=$$( \
-			git ls-files \
-				'*.go' '**/*.go' \
-				'*.ts' '**/*.ts' \
-				'*.js' '**/*.js' \
-				'*.py' '**/*.py' \
-				'*.yaml' '**/*.yaml' \
-				'*.yml' '**/*.yml' | grep -v '^assets/demos' \
+			git ls-files --deduplicate \
+				'*.go' \
+				'*.ts' \
+				'*.js' \
+				'*.py' \
+				'*.yaml' \
+				'*.yml' \
+				'Makefile' \
+				| grep -v '^assets/demos' \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
 		); \
 		name=$$(git config user.name); \
 		if [ "$${name}" == "" ]; then \
@@ -88,23 +119,37 @@ license-headers: ## Update license headers.
 		fi; \
 		for filename in $${files}; do \
 			if ! ( head "$${filename}" | grep -iL "Copyright" > /dev/null ); then \
-				autogen -i --no-code --no-tlc -c "$${name}" -l apache "$${filename}"; \
+				./third_party/mbrukman/autogen/autogen.sh -i --no-code --no-tlc -c "$${name}" -l apache "$${filename}"; \
 			fi; \
 		done; \
 		if ! ( head Makefile | grep -iL "Copyright" > /dev/null ); then \
-			autogen -i --no-code --no-tlc -c "$${name}" -l apache Makefile; \
+			third_party/mbrukman/autogen/autogen.sh -i --no-code --no-tlc -c "$${name}" -l apache Makefile; \
 		fi;
 
+## Formatting
+#####################################################################
+
 .PHONY: format
-format: md-format yaml-format ## Format all files
+format: json-format md-format yaml-format ## Format all files
+
+.PHONY: json-format
+json-format: node_modules/.installed ## Format JSON files.
+	@set -euo pipefail; \
+		files=$$( \
+			git ls-files --deduplicate \
+				'*.json' \
+				'*.json5' \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+		); \
+		npx prettier --write --no-error-on-unmatched-pattern $${files}
 
 .PHONY: md-format
 md-format: node_modules/.installed ## Format Markdown files.
 	@set -euo pipefail; \
 		files=$$( \
-			git ls-files \
-				'*.md' '**/*.md' \
-				'*.markdown' '**/*.markdown' \
+			git ls-files --deduplicate \
+				'*.md' \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
 		); \
 		npx prettier --write --no-error-on-unmatched-pattern $${files}
 
@@ -112,40 +157,92 @@ md-format: node_modules/.installed ## Format Markdown files.
 yaml-format: node_modules/.installed ## Format YAML files.
 	@set -euo pipefail; \
 		files=$$( \
-			git ls-files \
-				'*.yml' '**/*.yml' \
-				'*.yaml' '**/*.yaml' \
+			git ls-files --deduplicate \
+				'*.yml' \
+				'*.yaml' \
 		); \
 		npx prettier --write --no-error-on-unmatched-pattern $${files}
 
-## Linters
+## Linting
 #####################################################################
 
 .PHONY: lint
-lint: yamllint actionlint markdownlint textlint ## Run all linters.
+lint: actionlint markdownlint renovate-config-validator textlint yamllint zizmor ## Run all linters.
 
 .PHONY: actionlint
-actionlint: ## Runs the actionlint linter.
+actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
 	@# NOTE: We need to ignore config files used in tests.
 	@set -euo pipefail;\
 		files=$$( \
-			git ls-files \
+			git ls-files --deduplicate \
 				'.github/workflows/*.yml' \
 				'.github/workflows/*.yaml' \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
 		); \
+		PATH="$(REPO_ROOT)/.bin/aqua-$(AQUA_VERSION):$(AQUA_ROOT_DIR)/bin:$${PATH}"; \
+		AQUA_ROOT_DIR="$(AQUA_ROOT_DIR)"; \
 		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 			actionlint -format '{{range $$err := .}}::error file={{$$err.Filepath}},line={{$$err.Line}},col={{$$err.Column}}::{{$$err.Message}}%0A```%0A{{replace $$err.Snippet "\\n" "%0A"}}%0A```\n{{end}}' -ignore 'SC2016:' $${files}; \
 		else \
 			actionlint $${files}; \
 		fi
 
-.PHONY: markdownlint
-markdownlint: node_modules/.installed ## Runs the markdownlint linter.
+.PHONY: zizmor
+zizmor: .venv/.installed ## Runs the zizmor linter.
+	@# NOTE: On GitHub actions this outputs SARIF format to zizmor.sarif.json
+	@#       in addition to outputting errors to the terminal.
 	@set -euo pipefail;\
 		files=$$( \
-			git ls-files \
-				'*.md' '**/*.md' \
-				'*.markdown' '**/*.markdown' \
+			git ls-files --deduplicate \
+				'.github/workflows/*.yml' \
+				'.github/workflows/*.yaml' \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+		); \
+		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
+			.venv/bin/zizmor --quiet --pedantic --format sarif $${files} > zizmor.sarif.json || true; \
+		fi; \
+		.venv/bin/zizmor --quiet --pedantic --format plain $${files}
+
+.PHONY: markdownlint
+markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the markdownlint linter.
+	@# NOTE: Issue and PR templates are handled specially so we can disable
+	@# MD041/first-line-heading/first-line-h1 without adding an ugly html comment
+	@# at the top of the file.
+	@set -euo pipefail;\
+		files=$$( \
+			git ls-files --deduplicate \
+				'*.md' \
+				':!:.github/pull_request_template.md' \
+				':!:.github/ISSUE_TEMPLATE/*.md' \
+				':!:projects.md' \
+				':!:en/_posts/*.md' \
+				':!:jp/_posts/*.md' \
+				':!:til/_posts/*.md' \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+		); \
+		PATH="$(REPO_ROOT)/.bin/aqua-$(AQUA_VERSION):$(AQUA_ROOT_DIR)/bin:$${PATH}"; \
+		AQUA_ROOT_DIR="$(AQUA_ROOT_DIR)"; \
+		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
+			exit_code=0; \
+			while IFS="" read -r p && [ -n "$$p" ]; do \
+				file=$$(echo "$$p" | jq -c -r '.fileName // empty'); \
+				line=$$(echo "$$p" | jq -c -r '.lineNumber // empty'); \
+				endline=$${line}; \
+				message=$$(echo "$$p" | jq -c -r '.ruleNames[0] + "/" + .ruleNames[1] + " " + .ruleDescription + " [Detail: \"" + .errorDetail + "\", Context: \"" + .errorContext + "\"]"'); \
+				exit_code=1; \
+				echo "::error file=$${file},line=$${line},endLine=$${endline}::$${message}"; \
+			done <<< "$$(npx markdownlint --config .markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
+			if [ "$${exit_code}" != "0" ]; then \
+				exit "$${exit_code}"; \
+			fi; \
+		else \
+			npx markdownlint --config .markdownlint.yaml --dot $${files}; \
+		fi; \
+		files=$$( \
+			git ls-files --deduplicate \
+				'.github/pull_request_template.md' \
+				'.github/ISSUE_TEMPLATE/*.md' \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
 		); \
 		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 			exit_code=0; \
@@ -156,29 +253,51 @@ markdownlint: node_modules/.installed ## Runs the markdownlint linter.
 				message=$$(echo "$$p" | jq -c -r '.ruleNames[0] + "/" + .ruleNames[1] + " " + .ruleDescription + " [Detail: \"" + .errorDetail + "\", Context: \"" + .errorContext + "\"]"'); \
 				exit_code=1; \
 				echo "::error file=$${file},line=$${line},endLine=$${endline}::$${message}"; \
-			done <<< "$$(npx markdownlint --dot --json $${files} 2>&1 | jq -c '.[]')"; \
-			exit "$${exit_code}"; \
+			done <<< "$$(npx markdownlint --config .github/template.markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
+			if [ "$${exit_code}" != "0" ]; then \
+				exit "$${exit_code}"; \
+			fi; \
 		else \
-			npx markdownlint --dot $${files}; \
-		fi
-
-.PHONY: yamllint
-yamllint: .venv/.installed ## Runs the yamllint linter.
-	@set -euo pipefail;\
-		extraargs=""; \
+			npx markdownlint  --config .github/template.markdownlint.yaml --dot $${files}; \
+		fi; \
 		files=$$( \
-			git ls-files \
-				'*.yml' '**/*.yml' \
-				'*.yaml' '**/*.yaml' \
+			git ls-files --deduplicate \
+				'projects.md' \
+				'en/_posts/*.md' \
+				'jp/_posts/*.md' \
+				'til/_posts/*.md' \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
 		); \
 		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
-			extraargs="-f github"; \
-		fi; \
-		.venv/bin/yamllint --strict -c .yamllint.yaml $${extraargs} $${files}
+			exit_code=0; \
+			while IFS="" read -r p && [ -n "$$p" ]; do \
+				file=$$(echo "$$p" | jq -c -r '.fileName // empty'); \
+				line=$$(echo "$$p" | jq -c -r '.lineNumber // empty'); \
+				endline=$${line}; \
+				message=$$(echo "$$p" | jq -c -r '.ruleNames[0] + "/" + .ruleNames[1] + " " + .ruleDescription + " [Detail: \"" + .errorDetail + "\", Context: \"" + .errorContext + "\"]"'); \
+				exit_code=1; \
+				echo "::error file=$${file},line=$${line},endLine=$${endline}::$${message}"; \
+			done <<< "$$(npx markdownlint --config .posts.markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
+			if [ "$${exit_code}" != "0" ]; then \
+				exit "$${exit_code}"; \
+			fi; \
+		else \
+			npx markdownlint  --config .posts.markdownlint.yaml --dot $${files}; \
+		fi
+
+.PHONY: renovate-config-validator
+renovate-config-validator: node_modules/.installed ## Validate Renovate configuration.
+	@./node_modules/.bin/renovate-config-validator --strict
 
 .PHONY: textlint
-textlint: node_modules/.installed ## Runs the textlint linter.
+textlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textlint linter.
 	@set -e;\
+		files=$$( \
+			git ls-files --deduplicate \
+				'*.md' \
+				'*.txt' \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+		); \
 		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 			exit_code=0; \
 			while IFS="" read -r p && [ -n "$$p" ]; do \
@@ -190,11 +309,26 @@ textlint: node_modules/.installed ## Runs the textlint linter.
 					message=$$(echo "$$m" | jq -c -r '.message'); \
 					echo "::error file=$${file},line=$${line},endLine=$${endline}::$${message}"; \
 				done <<<"$$(echo "$$p" | jq -c -r '.messages[] // empty')"; \
-			done <<< "$$(./node_modules/.bin/textlint --format json "**/*.md" 2>&1 | jq -c '.[]')"; \
+			done <<< "$$(./node_modules/.bin/textlint -c .textlintrc.json --format json $${files} 2>&1 | jq -c '.[]')"; \
 			exit "$${exit_code}"; \
 		else \
-			./node_modules/.bin/textlint "**/*.md"; \
+			./node_modules/.bin/textlint -c .textlintrc.json $${files}; \
 		fi
+
+.PHONY: yamllint
+yamllint: .venv/.installed ## Runs the yamllint linter.
+	@set -euo pipefail;\
+		extraargs=""; \
+		files=$$( \
+			git ls-files --deduplicate \
+				'*.yml' \
+				'*.yaml' \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+		); \
+		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
+			extraargs="-f github"; \
+		fi; \
+		.venv/bin/yamllint --strict -c .yamllint.yaml $${extraargs} $${files}
 
 ## Maintenance
 #####################################################################
@@ -210,6 +344,9 @@ serve: ## Run Jekyll test server.
 .PHONY: clean
 clean: ## Delete temporary files.
 	@rm -rf \
+		.bin \
+		$(AQUA_ROOT_DIR) \
 		.venv \
 		node_modules \
+		*.sarif.json \
 		_site

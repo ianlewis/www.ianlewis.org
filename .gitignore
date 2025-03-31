@@ -1,9 +1,14 @@
 # For markdownlint
-.git
+.git/
 
 # Dependency directories (remove the comment below to include it)
 node_modules/
-.venv
+.bin/
+.venv/
+.aqua
+
+# SARIF files
+*.sarif.json
 
 # Jekyll build files.
 _site
