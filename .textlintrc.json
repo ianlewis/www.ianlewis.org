@@ -13,7 +13,6 @@
     "comments": true
   },
   "rules": {
-    "no-todo": true,
     "spelling": {
       "language": "en",
       "skipPatterns": ["JavaScript"],
