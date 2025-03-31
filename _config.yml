@@ -121,10 +121,13 @@ include:
 exclude:
   - .sass-cache/
   - .jekyll-cache/
+  - aqua-checksums.json
+  - aqua.yaml
   - gemfiles/
   - node_modules/
   - tools/
   - CODE_OF_CONDUCT.md
+  - CODEOWNERS
   - CONTRIBUTING.md
   - SECURITY.md
   - README.md
@@ -134,4 +137,6 @@ exclude:
   - Gemfile.lock
   - package.json
   - package-lock.json
+  - renovate.json5
   - requirements.txt
+  - til.sh
