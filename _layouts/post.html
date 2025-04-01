@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+{% comment %}
+vim: ft=liquid
+{% endcomment %}
 {%- assign date_format = site.plainwhite.date_format | default: "%b %-d, %Y" -%}
 {% assign category = page.path | split: "/" | first %}
 <div class="post-container">

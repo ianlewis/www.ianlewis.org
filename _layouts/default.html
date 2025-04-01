@@ -1,3 +1,6 @@
+{% comment %}
+vim: ft=liquid
+{% endcomment %}
 <!DOCTYPE html>
 <html lang="{% if page.locale %}{{ page.locale }}{% else %}{{ site.plainwhite.html_lang }}{% endif %}">
 
@@ -34,7 +37,7 @@
             {% assign portfolio_image_dark = site.plainwhite.portfolio_image_dark.xmas %}
           {% endif %}
 
-          <a href="{{ "/" | relative_url}}">
+          <a href="{{ "/" | relative_url }}">
             <img class="light" src="{{ site.baseurl }}/{{ portfolio_image }}" alt="{{ site.plainwhite.name }}" />
             {% if site.plainwhite.portfolio_image_dark and site.plainwhite.dark_mode %}
             <img class="dark" src="{{ site.baseurl }}/{{ portfolio_image_dark }}" alt="{{ site.plainwhite.name }}" />
