@@ -36,31 +36,39 @@ plugins:
 plainwhite:
   name: Ian Lewis
   tagline: Engineer in Tokyo
-  portfolio_image:
-    default: assets/images/profile.png
+
+  favicon:
     default_16x16: assets/images/profile_16x16.png
     default_32x32: assets/images/profile_32x32.png
     default_64x64: assets/images/profile_64x64.png
     default_96x96: assets/images/profile_96x96.png
-    valentines_day: assets/images/profile_valentines.png
     valentines_day_16x16: assets/images/profile_valentines_16x16.png
     valentines_day_32x32: assets/images/profile_valentines_32x32.png
     valentines_day_64x64: assets/images/profile_valentines_64x64.png
     valentines_day_96x96: assets/images/profile_valentines_96x96.png
-    xmas: assets/images/profile_xmas.png
     xmas_16x16: assets/images/profile_xmas_16x16.png
     xmas_32x32: assets/images/profile_xmas_32x32.png
     xmas_64x64: assets/images/profile_xmas_64x64.png
     xmas_96x96: assets/images/profile_xmas_96x96.png
+
+  portfolio_image:
+    default: assets/images/profile.png
+    valentines_day: assets/images/profile_valentines.png
+    xmas: assets/images/profile_xmas.png
+
+  portfolio_image_dark:
+    default: assets/images/profile.png
+    valentines_day: assets/images/profile_valentines.png
+    xmas: assets/images/profile_xmas.png
+
   sitemap: true
   search: false
-  dark_mode: false
+  dark_mode: true
   html_lang: "en"
   condensed_mobile:
     - page
     - post
     - post_list
-
   social_links:
     bluesky: ianlewis.org
     keybase: ianlewis

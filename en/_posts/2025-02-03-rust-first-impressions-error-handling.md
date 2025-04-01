@@ -6,10 +6,10 @@ permalink: /en/rust-first-impressions-error-handling
 blog: en
 tags: tech programming rust rust-first-impressions
 render_with_liquid: false
-image: /assets/images/2025-02-03-rust-first-impressions-error-handling/Gemini_Generated_Image_61aptz61aptz61ap.jpeg
+image: /assets/images/2025-02-03-rust-first-impressions-error-handling/Gemini_Generated_Image_61aptz61aptz61ap.png
 ---
 
-![An cartoon image of a crab that was alerted to some danger, showing an exclamation point above the crab's head](/assets/images/2025-02-03-rust-first-impressions-error-handling/Gemini_Generated_Image_61aptz61aptz61ap.jpeg){:style="width: 50%; display:block; margin-left:auto; margin-right:auto"}
+![An cartoon image of a crab that was alerted to some danger, showing an exclamation point above the crab's head](/assets/images/2025-02-03-rust-first-impressions-error-handling/Gemini_Generated_Image_61aptz61aptz61ap.png){:style="width: 50%; display:block; margin-left:auto; margin-right:auto"}
 
 For the 2024 edition of Advent of Code I decided to finally give Rust a try and
 implement the puzzle solutions in the language. Rust has been pretty stable for
