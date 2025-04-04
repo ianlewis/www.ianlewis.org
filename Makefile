@@ -32,6 +32,8 @@ AQUA_CHECKSUM ?= $(AQUA_CHECKSUM.$(uname_s).$(uname_m))
 AQUA_URL = https://$(AQUA_REPO)/releases/download/v$(AQUA_VERSION)/aqua_$(kernel)_$(arch).tar.gz
 AQUA_ROOT_DIR = .aqua
 
+JEKYLL_SERVE_HOST ?= 127.0.0.1
+
 # The help command prints targets in groups. Help documentation in the Makefile
 # uses comments with double hash marks (##). Documentation is printed by the
 # help target in the order in appears in the Makefile.
@@ -339,7 +341,7 @@ build: ## Build the site with Jekyll
 
 .PHONY: serve
 serve: ## Run Jekyll test server.
-	@bundle exec jekyll serve --future --drafts
+	@bundle exec jekyll serve --future --drafts -H $(JEKYLL_SERVE_HOST)
 
 .PHONY: clean
 clean: ## Delete temporary files.

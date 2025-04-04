@@ -4,10 +4,23 @@
 @use "syntax";
 
 $linkColor: #0a59b0;
-$mobileW: 768px;
+
+// smallMobileW is the max width of small mobile devices. Small mobile devices
+// are w <= smallMobileW.
 $smallMobileW: 480px;
+
+// mobileW is the max width of mobile devices. Mobile devices are
+// smallMobileW < x <= mobileW.
+$mobileW: 768px;
+
+// NOTE: "normal" devices are mobileW < x < bigScreenW
+
+// bigScreenW is the min width of very large screens. Big screens are
+// w <= bigScreenW.
 $bigScreenW: 1600px;
-$leftWidth: 220px;
+
+// leftWidth is the width of the left-side menu.
+$leftWidth: 280px;
 
 *,
 *:before,
@@ -62,7 +75,7 @@ main {
   }
 
   @media screen and (max-width: $mobileW) {
-    margin: 0 10px;
+    margin: 5vh 40px;
     flex-direction: column;
   }
   @media screen and (max-width: $smallMobileW) {
@@ -79,21 +92,16 @@ main {
   .about {
     display: flex;
     height: 100vh;
-    padding-bottom: 15vh;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     min-width: $leftWidth;
     @media screen and (max-width: $mobileW) {
       height: auto;
-      padding: 5vh 30px;
-    }
-    @media screen and (max-width: $smallMobileW) {
-      padding: 5vh 20px;
     }
     @media screen and (min-width: $mobileW + 1) {
       position: fixed;
-      max-width: 280px;
+      max-width: $leftWidth;
     }
     h2 {
       font-size: 22px;
@@ -230,13 +238,13 @@ main {
 .posts,
 .post-container {
   list-style-type: none;
-  margin: 45px 30px;
+  margin: 45px 0;
+  padding: 0;
   @media screen and (max-width: $smallMobileW) {
     margin-left: 20px;
     margin-right: 20px;
   }
   @media screen and (max-width: $mobileW) {
-    padding: 0 !important;
     margin-top: 0;
   }
 }
@@ -329,7 +337,6 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 40px;
     @media screen and (max-width: $smallMobileW) {
       margin: 0 20px;
     }
