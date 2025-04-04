@@ -58,5 +58,10 @@
       matchDepTypes: ["devDependencies"],
       groupName: "npm dev",
     },
+    {
+      matchManagers: ["bundler"],
+      matchUpdateTypes: ["minor", "patch"],
+      groupName: "ruby",
+    },
   ],
 }
