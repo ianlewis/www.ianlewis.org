@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Creates and starts editing a new TIL entry.
-read -p "Title: " title
+read -rp "Title: " title
 slug=$(echo "${title}" | iconv -t ascii//TRANSLIT | sed -E -e 's/[^[:alnum:]]+/-/g' -e 's/^-+|-+$//g' | tr '[:upper:]' '[:lower:]')
 
 newfile="til/_posts/$(date +'%Y-%m-%d')-${slug}.md"
