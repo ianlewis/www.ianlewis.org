@@ -27,7 +27,6 @@ And here I set up `efm-langserver` to run `actionlint` as a linter for the `yaml
 local prettier = require("efmls-configs.formatters.prettier")
 local actionlint = require("efmls-configs.linters.actionlint")
 local yamllint = require("efmls-configs.linters.yamllint")
--- }}}
 
 lspconfig.efm.setup({
     init_options = { documentFormatting = true },
