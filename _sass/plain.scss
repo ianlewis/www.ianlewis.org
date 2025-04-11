@@ -79,7 +79,7 @@ main {
     flex-direction: column;
   }
   @media screen and (max-width: $smallMobileW) {
-    margin: 0;
+    margin: 3vh 20px;
   }
 
   .content {
@@ -240,16 +240,12 @@ main {
   list-style-type: none;
   margin: 45px 0;
   padding: 0;
-  @media screen and (max-width: $smallMobileW) {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
   @media screen and (max-width: $mobileW) {
     margin-top: 0;
   }
 }
 .post-container {
-  padding-left: 30px;
+  padding-left: 20px;
 }
 .post {
   font-family: "Merriweather", sans-serif;
