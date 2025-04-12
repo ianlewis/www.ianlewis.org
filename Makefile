@@ -106,11 +106,14 @@ license-headers: ## Update license headers.
 				'*.go' \
 				'*.ts' \
 				'*.js' \
+				'*.scss' \
+				'*.css' \
 				'*.py' \
 				'*.yaml' \
 				'*.yml' \
 				'Makefile' \
-				| grep -v '^assets/demos' \
+				':!:assets/demos' \
+				':!:_sass/ext' \
 				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
 		); \
 		name=$$(git config user.name); \
@@ -132,7 +135,18 @@ license-headers: ## Update license headers.
 #####################################################################
 
 .PHONY: format
-format: json-format md-format yaml-format ## Format all files
+format: javascript-format json-format md-format sass-format yaml-format ## Format all files
+
+.PHONY: javascript-format
+javascript-format: node_modules/.installed ## Format YAML files.
+	@set -euo pipefail; \
+		files=$$( \
+			git ls-files --deduplicate \
+				'*.js' \
+				':!:*.min.js' \
+				':!:assets/demos' \
+		); \
+		npx prettier --write --no-error-on-unmatched-pattern $${files}
 
 .PHONY: json-format
 json-format: node_modules/.installed ## Format JSON files.
@@ -155,6 +169,17 @@ md-format: node_modules/.installed ## Format Markdown files.
 		); \
 		npx prettier --write --no-error-on-unmatched-pattern $${files}
 
+.PHONY: sass-format
+sass-format: node_modules/.installed ## Format YAML files.
+	@set -euo pipefail; \
+		files=$$( \
+			git ls-files --deduplicate \
+				'*.scss' \
+				':!:assets/css/style.scss' \
+				':!:_sass/ext' \
+		); \
+		npx prettier --write --no-error-on-unmatched-pattern $${files}
+
 .PHONY: yaml-format
 yaml-format: node_modules/.installed ## Format YAML files.
 	@set -euo pipefail; \
@@ -169,7 +194,7 @@ yaml-format: node_modules/.installed ## Format YAML files.
 #####################################################################
 
 .PHONY: lint
-lint: actionlint markdownlint renovate-config-validator textlint yamllint zizmor ## Run all linters.
+lint: actionlint eslint markdownlint renovate-config-validator textlint yamllint zizmor ## Run all linters.
 
 .PHONY: actionlint
 actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
@@ -187,6 +212,43 @@ actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
 			actionlint -format '{{range $$err := .}}::error file={{$$err.Filepath}},line={{$$err.Line}},col={{$$err.Column}}::{{$$err.Message}}%0A```%0A{{replace $$err.Snippet "\\n" "%0A"}}%0A```\n{{end}}' -ignore 'SC2016:' $${files}; \
 		else \
 			actionlint $${files}; \
+		fi
+
+.PHONY: eslint
+eslint: node_modules/.installed ## Runs eslint.
+	@set -euo pipefail; \
+		files=$$( \
+			git ls-files \
+				'*.js' \
+				':!:*.min.js' \
+				':!:assets/demos' \
+		); \
+		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
+			set -euo pipefail; \
+			exit_code=0; \
+			while IFS="" read -r p && [ -n "$${p}" ]; do \
+				file=$$(echo "$${p}" | jq -c '.filePath // empty' | tr -d '"'); \
+				while IFS="" read -r m && [ -n "$${m}" ]; do \
+					severity=$$(echo "$${m}" | jq -c '.severity // empty' | tr -d '"'); \
+					line=$$(echo "$${m}" | jq -c '.line // empty' | tr -d '"'); \
+					endline=$$(echo "$${m}" | jq -c '.endLine // empty' | tr -d '"'); \
+					col=$$(echo "$${m}" | jq -c '.column // empty' | tr -d '"'); \
+					endcol=$$(echo "$${m}" | jq -c '.endColumn // empty' | tr -d '"'); \
+					message=$$(echo "$${m}" | jq -c '.message // empty' | tr -d '"'); \
+					exit_code=1; \
+					case $${severity} in \
+					"1") \
+						echo "::warning file=$${file},line=$${line},endLine=$${endline},col=$${col},endColumn=$${endcol}::$${message}"; \
+						;; \
+					"2") \
+						echo "::error file=$${file},line=$${line},endLine=$${endline},col=$${col},endColumn=$${endcol}::$${message}"; \
+						;; \
+					esac; \
+				done <<<$$(echo "$${p}" | jq -c '.messages[]'); \
+			done <<<$$(npx eslint --max-warnings 0 -f json $${files} | jq -c '.[]'); \
+			exit "$${exit_code}"; \
+		else \
+			npx eslint --max-warnings 0 $${files}; \
 		fi
 
 .PHONY: zizmor

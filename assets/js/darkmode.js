@@ -15,7 +15,7 @@
 
 function setDarkMode() {
   const DARK_CLASS = "dark";
-  var body = document.querySelector("body");
+  const body = document.querySelector("body");
 
   if (window.matchMedia?.("(prefers-color-scheme: dark)")?.matches) {
     body.classList.add(DARK_CLASS);
