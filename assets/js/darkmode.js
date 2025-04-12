@@ -1,55 +1,37 @@
 // Copyright (c) 2019 Samarjeet
+// Copyright 2025 Ian Lewis
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
-function toggleDarkMode() {
+function setDarkMode() {
   const DARK_CLASS = "dark";
-
   var body = document.querySelector("body");
-  if (body.classList.contains(DARK_CLASS)) {
-    setCookie("theme", "light");
-    body.classList.remove(DARK_CLASS);
-  } else {
-    setCookie("theme", "dark");
+
+  if (window.matchMedia?.("(prefers-color-scheme: dark)")?.matches) {
     body.classList.add(DARK_CLASS);
+  } else {
+    body.classList.remove(DARK_CLASS);
   }
 }
 
-function getCookie(name) {
-  var v = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
-  return v ? v[2] : null;
+// Attempt both requestAnimationFrame and DOMContentLoaded, whichever comes
+// first.
+if (window.requestAnimationFrame) {
+  window.requestAnimationFrame(setDarkMode);
 }
-function setCookie(name, value, days) {
-  var d = new Date();
-  d.setTime(d.getTime() + 24 * 60 * 60 * 1000 * days);
-  document.cookie =
-    name + "=" + value + ";path=/;SameSite=strict;expires=" + d.toGMTString();
-}
+window.addEventListener("DOMContentLoaded", setDarkMode);
 
-function deleteCookie(name) {
-  setCookie(name, "", -1);
-}
-
-const userPrefersDark =
-  window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme: dark)").matches;
-var theme = getCookie("theme");
-if ((theme === null && userPrefersDark) || theme === "dark") {
-  var checkDarkDone = false;
-  function checkDark() {
-    if (!checkDarkDone) {
-      toggleDarkMode();
-    }
-    checkDarkDone = true;
-  }
-
-  function toggleSwitch() {
-    document
-      .querySelectorAll(".dark-mode-toggle")
-      .forEach((ti) => (ti.checked = true));
-  }
-
-  // Attempt both requestAnimationFrame and DOMContentLoaded, whichever comes first.
-  if (window.requestAnimationFrame) window.requestAnimationFrame(checkDark);
-  window.addEventListener("DOMContentLoaded", checkDark);
-
-  window.addEventListener("DOMContentLoaded", toggleSwitch);
-}
+// Watch for changes to the preferred color scheme.
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", setDarkMode);
