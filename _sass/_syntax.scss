@@ -29,15 +29,18 @@
 div.highlight {
   padding: 5px 20px;
 }
+
 pre.highlight,
 code {
-  font-family: "Consolas", Menlo, monospace;
+  font-family: Consolas, Menlo, monospace;
   line-height: 1.4em;
   tab-size: 4;
 }
-.highlight code {
-  color: inherit;
-}
+
 code {
   color: green;
+}
+
+.highlight code {
+  color: inherit;
 }

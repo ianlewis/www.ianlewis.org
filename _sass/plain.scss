@@ -25,33 +25,33 @@
 @use "ext/normalize";
 @use "syntax";
 
-$linkColor: #0a59b0;
+$link-color: #0a59b0;
 
-// smallMobileW is the max width of small mobile devices. Small mobile devices
-// are w <= smallMobileW.
-$smallMobileW: 480px;
+// small-mobile-width is the max width of small mobile devices. Small mobile
+// devices are w <= small-mobile-width.
+$small-mobile-width: 480px;
 
-// mobileW is the max width of mobile devices. Mobile devices are
-// smallMobileW < x <= mobileW.
-$mobileW: 768px;
+// mobile-width is the max width of mobile devices. Mobile devices are
+// small-mobile-width < x <= mobile-width.
+$mobile-width: 768px;
 
-// NOTE: "normal" devices are mobileW < x < bigScreenW
+// NOTE: "normal" devices are mobile-width < x < big-screen-width
 
-// bigScreenW is the min width of very large screens. Big screens are
-// w <= bigScreenW.
-$bigScreenW: 1600px;
+// big-screen-width is the min width of very large screens. Big screens are
+// w <= big-screen-width.
+$big-screen-width: 1600px;
 
-// leftWidth is the width of the left-side menu.
-$leftWidth: 280px;
+// left-width is the width of the left-side menu.
+$left-width: 280px;
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: Raleway, sans-serif;
   font-size: 16px;
   line-height: 1.2em;
   margin: 0;
@@ -69,113 +69,65 @@ video {
 a {
   color: #000;
   transition: color 0.3s;
+
   &:hover {
-    color: $linkColor;
+    color: $link-color;
   }
 }
 
 h2 {
   margin: 0.7em 0;
-  @media screen and (max-width: $mobileW) {
+
+  @media screen and (max-width: $mobile-width) {
     margin: 0.3em 0;
   }
 }
-main {
-  margin: 0 90px;
-  display: flex;
-  height: 100%;
 
-  @media screen and (min-width: $bigScreenW) {
-    margin: 0 auto;
-    max-width: 1440px;
-  }
-  @media screen and (max-width: 1280px) {
-    margin: 0 75px;
-  }
-  @media screen and (max-width: 1024px) {
-    margin: 0 35px;
-  }
-
-  @media screen and (max-width: $mobileW) {
-    margin: 5vh 40px;
-    flex-direction: column;
-  }
-  @media screen and (max-width: $smallMobileW) {
-    margin: 3vh 20px;
-  }
-
-  .content {
-    @media screen and (min-width: $mobileW + 1) {
-      max-width: calc(100% - #{$leftWidth});
-      margin-left: $leftWidth;
-      width: 100%;
-    }
-  }
-  .about {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    min-width: $leftWidth;
-    @media screen and (max-width: $mobileW) {
-      height: auto;
-    }
-    @media screen and (min-width: $mobileW + 1) {
-      position: fixed;
-      max-width: $leftWidth;
-    }
-    h2 {
-      font-size: 22px;
-      margin-top: 25px;
-      margin-bottom: 0;
-      color: #222222;
-      font-weight: normal;
-    }
-    .tagline {
-      text-align: center;
-      font-size: 22px;
-      margin-top: 0px;
-      color: #aaa;
-      white-space: pre-wrap;
-      line-height: normal;
-    }
-    img {
-      max-width: 150px;
-    }
-    img.dark {
-      display: none;
-    }
-    .about-header {
-      display: flex;
-      flex-direction: column;
-      .about-title {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 17px;
-      }
-    }
-  }
-}
-#title {
-  a {
-    text-decoration: none;
-  }
-}
 .social {
   list-style-type: none;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
   a {
     margin-bottom: 0.5em;
   }
+
   li {
     i {
       font-size: 34px;
     }
+  }
+}
+
+.post {
+  font-family: Merriweather, sans-serif;
+  font-weight: 300;
+  color: #222;
+  line-height: 1.9em;
+
+  p {
+    margin-top: 10px;
+  }
+
+  a {
+    color: $link-color;
+    text-decoration: none;
+    transition: border-bottom 0.4s;
+
+    &:hover {
+      border-bottom: 0.5px solid $link-color;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: Raleway, sans-serif;
   }
 }
 
@@ -187,24 +139,124 @@ main {
     padding: 0;
     margin-top: 0;
 
-    li:last-child {
-      a {
-        border-bottom: 0;
-      }
-    }
-
+    /* Stylelint seems buggy here as `.navigation ul a` is a different
+     * specificity than `.post a` */
+    /* stylelint-disable-next-line no-descending-specificity */
     a {
       display: block;
-      font-family: "Merriweather";
+      font-family: Merriweather, serif;
       text-align: center;
       padding: 1rem 0;
       text-decoration: none;
       border-bottom: 1px solid #ececec;
 
-      @media screen and (max-width: $mobileW) {
+      @media screen and (max-width: $mobile-width) {
         padding: 2rem 0;
       }
     }
+
+    li:last-child {
+      a {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+main {
+  margin: 0 90px;
+  display: flex;
+  height: 100%;
+
+  @media screen and (min-width: $big-screen-width) {
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+
+  @media screen and (width <= 1280px) {
+    margin: 0 75px;
+  }
+
+  @media screen and (width <= 1024px) {
+    margin: 0 35px;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    margin: 5vh 40px;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: $small-mobile-width) {
+    margin: 3vh 20px;
+  }
+
+  .content {
+    @media screen and (min-width: $mobile-width + 1) {
+      max-width: calc(100% - #{$left-width});
+      margin-left: $left-width;
+      width: 100%;
+    }
+  }
+
+  .about {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-width: $left-width;
+
+    @media screen and (max-width: $mobile-width) {
+      height: auto;
+    }
+
+    @media screen and (min-width: $mobile-width + 1) {
+      position: fixed;
+      max-width: $left-width;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-top: 25px;
+      margin-bottom: 0;
+      color: #222;
+      font-weight: normal;
+    }
+
+    .tagline {
+      text-align: center;
+      font-size: 22px;
+      margin-top: 0;
+      color: #aaa;
+      white-space: pre-wrap;
+      line-height: normal;
+    }
+
+    img {
+      max-width: 150px;
+    }
+
+    img.dark {
+      display: none;
+    }
+
+    .about-header {
+      display: flex;
+      flex-direction: column;
+
+      .about-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 17px;
+      }
+    }
+  }
+}
+
+#title {
+  a {
+    text-decoration: none;
   }
 }
 
@@ -218,6 +270,7 @@ main {
   list-style-type: none;
   margin: 0;
   padding: 0;
+
   li {
     font-size: 14px;
     float: left;
@@ -225,29 +278,35 @@ main {
     padding: 5px 20px;
     border-radius: 2px;
     margin-right: 10px;
-    @media screen and (max-width: $mobileW) {
+
+    @media screen and (max-width: $mobile-width) {
       margin-top: 5px;
     }
   }
 }
+
 .post-date {
   margin-right: 10px;
   color: #555;
   min-width: 150px;
 }
+
 .post-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 30px;
-  @media screen and (max-width: $mobileW) {
+
+  @media screen and (max-width: $mobile-width) {
     flex-direction: column;
     align-items: baseline;
+
     .post-date {
       margin: 10px 0;
     }
   }
 }
+
 .post-link {
   text-decoration: none;
 }
@@ -257,45 +316,24 @@ main {
   font-size: 28px;
   margin-bottom: 10px;
 }
+
 .posts,
 .post-container {
   list-style-type: none;
   margin: 45px 0;
   padding: 0;
-  @media screen and (max-width: $mobileW) {
+
+  @media screen and (max-width: $mobile-width) {
     margin-top: 0;
   }
 }
+
 .post-container {
   padding-left: 20px;
 }
-.post {
-  font-family: "Merriweather", sans-serif;
-  font-weight: 300;
-  color: #222;
-  line-height: 1.9em;
-  p {
-    margin-top: 10px;
-  }
-  a {
-    color: $linkColor;
-    text-decoration: none;
-    transition: border-bottom 0.4s;
-    &:hover {
-      border-bottom: 0.5px solid $linkColor;
-    }
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: Raleway, sans-serif;
-  }
-}
+
 .posts-labelgroup {
-  margin: 0 0 0.67em 0;
+  margin: 0 0 0.67em;
   display: flex;
   align-items: baseline;
   border-bottom: 1px solid #eee;
@@ -312,52 +350,63 @@ main {
   overflow: hidden;
   transition: width 0.1s;
 }
+
 table {
   th,
   td {
     padding: 8px 13px;
     border: 1px solid #dfe2e5;
   }
+
   th {
     background-color: #eee;
-    font-family: Raleway;
+    font-family: Raleway, sans-serif;
   }
 }
 
 footer {
   display: none;
 }
-@media screen and (max-width: $mobileW) {
+
+@media screen and (max-width: $mobile-width) {
   .about {
     .about-header.condensed {
       align-items: start;
       align-self: start;
+
       .about-title {
         flex-direction: row;
         margin-bottom: 10px;
+
         img {
           max-height: 40px;
         }
+
         h2 {
           margin: 0 10px;
         }
       }
+
       .tagline {
         font-size: 18px;
-        margin-bottom: 0px;
+        margin-bottom: 0;
       }
     }
+
     .about-footer.condensed {
       display: none;
     }
   }
+
   footer.condensed {
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media screen and (max-width: $smallMobileW) {
+
+    @media screen and (max-width: $small-mobile-width) {
       margin: 0 20px;
     }
+
     border-top: 1px solid #eee;
   }
 }

@@ -194,7 +194,7 @@ yaml-format: node_modules/.installed ## Format YAML files.
 #####################################################################
 
 .PHONY: lint
-lint: actionlint eslint markdownlint renovate-config-validator textlint yamllint zizmor ## Run all linters.
+lint: actionlint eslint markdownlint renovate-config-validator stylelint textlint yamllint zizmor ## Run all linters.
 
 .PHONY: actionlint
 actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
@@ -249,6 +249,21 @@ eslint: node_modules/.installed ## Runs eslint.
 			exit "$${exit_code}"; \
 		else \
 			npx eslint --max-warnings 0 $${files}; \
+		fi
+
+.PHONY: stylelint
+stylelint: node_modules/.installed ## Runs the stylelint linter.
+	@set -euo pipefail; \
+		files=$$( \
+			git ls-files --deduplicate \
+				'*.scss' \
+				':!:assets/css/style.scss' \
+				':!:_sass/ext' \
+		); \
+		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
+			npx stylelint --formatter github $${files}; \
+		else \
+			npx stylelint $${files}; \
 		fi
 
 .PHONY: zizmor

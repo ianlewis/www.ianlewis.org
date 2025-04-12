@@ -24,30 +24,33 @@
 
 .dark,
 .dark * {
-  $dark_text_color: #f6f6f6;
-  $dark_link_color: #4da3ff;
+  $dark-text-color: #f6f6f6;
+  $dark-link-color: #4da3ff;
+
   background-color: #171717;
-  color: $dark_text_color;
+  color: $dark-text-color;
   border-color: #e6e6e6;
 
   .about {
     img.light {
       display: none;
     }
+
     img.dark {
       display: inline;
     }
   }
+
   .post p {
     color: #ddd;
   }
 
   .social [class^="icon-"] {
-    color: $dark_text_color;
+    color: $dark-text-color;
   }
 
   #posts-label {
-    color: $dark_text_color;
+    color: $dark-text-color;
     border-bottom: 1px solid #272727;
   }
 
@@ -60,9 +63,10 @@
   div.highlight-dark {
     padding: 5px 20px;
   }
+
   pre.highlight-dark,
   code {
-    font-family: "Consolas", Menlo, monospace;
+    font-family: Consolas, Menlo, monospace;
     line-height: 1.4em;
     tab-size: 4;
   }
@@ -75,17 +79,12 @@
   }
 
   a {
-    color: $dark_link_color;
-  }
-  #title a {
-    color: #fff;
-    &:hover {
-      color: $dark_link_color;
-    }
+    color: $dark-link-color;
   }
 
   .posts-labelgroup {
     border-bottom: 1px solid #333;
+
     .search-results {
       background-color: #333;
 
@@ -100,6 +99,14 @@
 
     .search-section i {
       background-color: transparent;
+    }
+  }
+
+  #title a {
+    color: #fff;
+
+    &:hover {
+      color: $dark-link-color;
     }
   }
 
@@ -119,7 +126,7 @@
     }
 
     input {
-      color: $dark_text_color;
+      color: $dark-text-color;
     }
 
     i {
@@ -127,11 +134,13 @@
     }
   }
 }
+
 .dark table {
   th,
   td {
     border: 1px solid #333;
   }
+
   th {
     background-color: #0d0d0d;
   }
