@@ -2,6 +2,7 @@
 base = "."
 publish = "_site/"  # relative to `base` directory
 command = "bundle exec jekyll build"
+environment = { NODE_VERSION = "22" }
 
 [context.deploy-preview]
   command = "bundle exec jekyll build --drafts --future"
