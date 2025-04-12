@@ -24,7 +24,7 @@ main {
 
 .posts-labelgroup {
   /* Firefox Flex Hack */
-  @-moz-document url-prefix() {
+  @document url-prefix() {
     align-items: center;
   }
 
@@ -68,11 +68,11 @@ main {
     min-width: 160px;
     width: 100%;
     min-height: 50px;
-    box-shadow: 0 1px 2px 0 rgba(32, 33, 36, 0.28);
+    box-shadow: 0 1px 2px 0 rgb(32 33 36 / 28%);
     z-index: 3;
     padding: 10px 0;
     font-size: 15px;
-    border: 1px solid rgba(223, 225, 229, 0);
+    border: 1px solid rgb(223 225 229 / 0%);
 
     &:empty::before {
       content: attr(data-placeholder);
@@ -92,7 +92,10 @@ main {
 
       &::before {
         content: "\e805";
-        font-family: "fontello";
+
+        /* fontello is a custom font that is guaranteed to be available. */
+        /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+        font-family: fontello;
         font-style: normal;
         speak: none;
         display: inline-block;
@@ -125,8 +128,8 @@ main {
     .search-section {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      box-shadow: 0 1px 2px 0 rgba(32, 33, 36, 0.28);
-      border: 1px solid rgba(223, 225, 229, 0);
+      box-shadow: 0 1px 2px 0 rgb(32 33 36 / 28%);
+      border: 1px solid rgb(223 225 229 / 0%);
       border-bottom: solid 1px #eee;
       z-index: 3;
       margin: 0 auto;
