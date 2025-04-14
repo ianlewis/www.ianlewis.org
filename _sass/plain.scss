@@ -168,6 +168,10 @@ main {
   display: flex;
   height: 100%;
 
+  img.dark {
+    display: none;
+  }
+
   @media screen and (min-width: $big-screen-width) {
     margin: 0 auto;
     max-width: 1440px;
@@ -234,10 +238,6 @@ main {
 
     img {
       max-width: 150px;
-    }
-
-    img.dark {
-      display: none;
     }
 
     .about-header {

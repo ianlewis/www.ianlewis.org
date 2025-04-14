@@ -31,14 +31,12 @@
   color: $dark-text-color;
   border-color: #e6e6e6;
 
-  .about {
-    img.light {
-      display: none;
-    }
+  img.light {
+    display: none;
+  }
 
-    img.dark {
-      display: inline;
-    }
+  img.dark {
+    display: inline;
   }
 
   .post p {
