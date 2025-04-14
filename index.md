@@ -12,3 +12,12 @@ feeds: [en, jp, til]
 <!-- header is in include file -->
 
 {% include_relative third_party/ianlewis/ianlewis/README.md %}
+
+---
+
+My public key can be downloaded at
+[ian@ianlewis.org.pem.pub](/ian@ianlewis.org.pem.pub) and viewed at
+[ian@ianlewis.org.pem.pub.txt](/ian@ianlewis.org.pem.pub.txt)
+
+- Fingerprint: 12C7 4E53 8D98 B426 3669 DEF0 04FF D449 3ADA 4FC8
+- Expiration: 2035-01-19
