@@ -20,14 +20,17 @@
  * ONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-@use "ext/solarized-dark";
+@use "sass:meta";
+
+.dark {
+  background-color: #171717;
+}
 
 .dark,
 .dark * {
   $dark-text-color: #f6f6f6;
   $dark-link-color: #4da3ff;
 
-  background-color: #171717;
   color: $dark-text-color;
   border-color: #e6e6e6;
 
@@ -52,10 +55,11 @@
     border-bottom: 1px solid #272727;
   }
 
+  @include meta.load-css("ext/solarized-dark");
+
   .highlight,
   .highlight * {
     background-color: #00080a;
-    color: #93a1a1;
   }
 
   div.highlight-dark {
@@ -67,6 +71,7 @@
     font-family: Consolas, Menlo, monospace;
     line-height: 1.4em;
     tab-size: 4;
+    color: seagreen;
   }
 
   .post-categories {
