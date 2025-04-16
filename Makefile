@@ -135,10 +135,20 @@ license-headers: ## Update license headers.
 #####################################################################
 
 .PHONY: format
-format: javascript-format json-format md-format sass-format yaml-format ## Format all files
+format: html-format javascript-format json-format md-format sass-format yaml-format ## Format all files
+
+.PHONY: html-format
+html-format: node_modules/.installed ## Format HTML files.
+	@set -euo pipefail; \
+		files=$$( \
+			git ls-files --deduplicate \
+				'*.html' \
+				':!:assets/demos' \
+		); \
+		npx prettier --write --no-error-on-unmatched-pattern $${files}
 
 .PHONY: javascript-format
-javascript-format: node_modules/.installed ## Format YAML files.
+javascript-format: node_modules/.installed ## Format Javascript files.
 	@set -euo pipefail; \
 		files=$$( \
 			git ls-files --deduplicate \
@@ -170,7 +180,7 @@ md-format: node_modules/.installed ## Format Markdown files.
 		npx prettier --write --no-error-on-unmatched-pattern $${files}
 
 .PHONY: sass-format
-sass-format: node_modules/.installed ## Format YAML files.
+sass-format: node_modules/.installed ## Format SASS files.
 	@set -euo pipefail; \
 		files=$$( \
 			git ls-files --deduplicate \

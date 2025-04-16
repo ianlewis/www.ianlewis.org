@@ -1,16 +1,13 @@
-{% comment %}
-# vim: ft=liquid
-{% endcomment %}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-{%- assign today = site.time | date: "%m-%d" -%}
+{%- assign today = site.time | date: '%m-%d' -%}
 
-{%- assign valentines_start = "02-01" -%}
-{%- assign valentines_end = "02-14" -%}
+{%- assign valentines_start = '02-01' -%}
+{%- assign valentines_end = '02-14' -%}
 
-{%- assign xmas_start = "12-01" -%}
-{%- assign xmas_end = "12-25" -%}
+{%- assign xmas_start = '12-01' -%}
+{%- assign xmas_end = '12-25' -%}
 
 {%- assign icon_image_16x16 = site.plainwhite.favicon.default_16x16 -%}
 {%- assign icon_image_32x32 = site.plainwhite.favicon.default_32x32 -%}
@@ -46,20 +43,29 @@
 {%- endif -%}
 
 {%- if icon_image_16x16 %}
-<link rel="icon" type="image/png" href="{{ site.baseurl }}/{{ icon_image_16x16 }}" sizes="16x16">
-{%- endif -%}
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/{{ icon_image_16x16 }}" sizes="16x16">
+{%- endif %}
 {%- if icon_image_32x32 %}
-<link rel="icon" type="image/png" href="{{ site.baseurl }}/{{ icon_image_32x32 }}" sizes="32x32">
-{%- endif -%}
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/{{ icon_image_32x32 }}" sizes="32x32">
+{%- endif %}
 {%- if icon_image_64x64 %}
-<link rel="icon" type="image/png" href="{{ site.baseurl }}/{{ icon_image_64x64 }}" sizes="64x64">
-{%- endif -%}
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/{{ icon_image_64x64 }}" sizes="64x64">
+{%- endif %}
 {%- if icon_image_96x96 %}
-<link rel="icon" type="image/png" href="{{ site.baseurl }}/{{ icon_image_96x96 }}" sizes="96x96">
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/{{ icon_image_96x96 }}" sizes="96x96">
 {%- endif %}
 <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
 <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-{% seo %}{% if page.feeds contains "en" %}<link rel="alternate" type="application/rss+xml" title="English Blog" href="/en/feed.xml" />
-{% endif %}{% if page.feeds contains "jp" %}<link rel="alternate" type="application/rss+xml" title="日本語ブログ" href="/jp/feed.xml" />
-{% endif %}{% if site.plainwhite.dark_mode %}<script type="text/javascript" src="{{ "/assets/js/darkmode.js" | relative_url }}"></script>
-{% endif %}
+{%- seo -%}
+{%- if page.feeds contains 'en' %}
+  <link rel="alternate" type="application/rss+xml" title="English Blog" href="/en/feed.xml">
+{%- endif %}
+{%- if page.feeds contains 'jp' %}
+  <link rel="alternate" type="application/rss+xml" title="日本語ブログ" href="/jp/feed.xml">
+{%- endif %}
+{%- if site.plainwhite.dark_mode %}
+  <script type="text/javascript" src="{{ "/assets/js/darkmode.js" | relative_url }}"></script>
+{%- endif -%}
+{% comment %}
+  # vim: ft=liquid
+{% endcomment %}

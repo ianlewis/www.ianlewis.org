@@ -2,7 +2,21 @@
   "engines": {
     "node": ">=22.0.0 <23"
   },
+  "prettier": {
+    "plugins": [
+      "@shopify/prettier-plugin-liquid"
+    ],
+    "overrides": [
+      {
+        "files": "**/*.html",
+        "options": {
+          "parser": "liquid-html"
+        }
+      }
+    ]
+  },
   "devDependencies": {
+    "@shopify/prettier-plugin-liquid": "^1.9.2",
     "dictionary-en": "4.0.0",
     "eslint": "^9.24.0",
     "eslint-plugin-github": "^6.0.0",
