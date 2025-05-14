@@ -62,6 +62,9 @@
 {%- if page.feeds contains 'jp' %}
   <link rel="alternate" type="application/rss+xml" title="日本語ブログ" href="/jp/feed.xml">
 {%- endif %}
+{%- if page.feeds contains 'til' %}
+  <link rel="alternate" type="application/rss+xml" title="Today I Learned" href="/til/feed.xml">
+{%- endif %}
 {%- if site.plainwhite.dark_mode %}
   <script type="text/javascript" src="{{ "/assets/js/darkmode.js" | relative_url }}"></script>
 {%- endif -%}
