@@ -4,7 +4,7 @@ layout: null
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
- <title>Today I Leaned</title>
+ <title>Today I Learned</title>
  <description>{{ site.description | xml_escape }}</description>
  <link>{{ site.url }}/til/</link>
  <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
@@ -19,7 +19,7 @@ layout: null
   {% else %}
   <description>{{ post.content | xml_escape }}</description>
   {% endif %}
-  <link>{{ post.url }}</link>
+  <link>{{ site.url }}{{ post.url }}</link>
   <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
   <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
  </item>
