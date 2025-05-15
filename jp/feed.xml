@@ -20,7 +20,7 @@ layout: null
   <description>{{ post.content | xml_escape }}</description>
   {% endif %}
   <description>{{ post.description | xml_escape }}</description>
-  <link>{{ post.url }}</link>
+  <link>{{ site.url }}{{ post.url }}</link>
   <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
   <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
  </item>
