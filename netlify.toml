@@ -25,6 +25,11 @@ environment = { NODE_VERSION = "22" }
   to = "/en/google-analytics-for-mobile-sites"
   status = 301
 
+[[redirects]]
+  from = "/til/2025/05/17/may-19-2025-weekly-reading"
+  to = "/til/2025/05/19/may-19-2025-weekly-reading"
+  status = 301
+
 # Removed posts
 ############################
 
