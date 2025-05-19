@@ -11,7 +11,7 @@ These are some of the things I was reading this last week or so.
 
 ## Code
 
-- [sbp](https://github.com/brujoand/sbp)
+- [`sbp`](https://github.com/brujoand/sbp)
 
     A nice little bash prompt library. I decided to use this in my
     [dotfiles](https://github.com/ianlewis/dotfiles) and wrote a [Tokyo

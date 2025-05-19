@@ -159,8 +159,8 @@ GKEの高度な機能を組み合わせることで、低コストとアプリ�
 もっとKubernetes知りたい方は、以下のアイテムをどうぞ:
 
 - GKEの [how-to guides](https://cloud.google.com/kubernetes-engine/docs/how-to/) を読む。
-- [Google Cloud Platform Slack](https://gcp-slack.appspot.com/) (#kubernetes-engine チャンネルに参加してください。)
-- [GCPUG Slack](https://docs.google.com/forms/d/e/1FAIpQLScYxAGwuosFFNvH-5yOj-_p-pAKdqZpmM2cgKh9Q8Zu6531Bw/viewform)に参加する (#gke_jaチャンネルに参加してください）
-- [Kubernetes Slack](http://slack.k8s.io/)に参加すfる (#gkeチャンネルに注目)
+- [Google Cloud Platform Slack](https://gcp-slack.appspot.com/) (`#kubernetes-engine` チャンネルに参加してください。)
+- [GCPUG Slack](https://docs.google.com/forms/d/e/1FAIpQLScYxAGwuosFFNvH-5yOj-_p-pAKdqZpmM2cgKh9Q8Zu6531Bw/viewform)に参加する (`#gke_ja`チャンネルに参加してください）
+- [Kubernetes Slack](http://slack.k8s.io/)に参加すfる (`#gke`チャンネルに注目)
 
 ではまた！

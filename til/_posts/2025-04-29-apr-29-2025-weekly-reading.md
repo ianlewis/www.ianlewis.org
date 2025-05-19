@@ -41,7 +41,7 @@ These are some of the things I was reading this last week or so.
   (Japanese) - yudppp
 
     One related project that caught my eye was
-    [pprof-mcp-agent](https://github.com/yudppp/pprof-mcp-agent) which is a MCP
+    [`pprof-mcp-agent`](https://github.com/yudppp/pprof-mcp-agent) which is a MCP
     server that can be used to analyze performance Go programs by providing pprof
     profiles to AI models.
 
@@ -49,7 +49,7 @@ These are some of the things I was reading this last week or so.
   Tooling](https://a16z.com/a-deep-dive-into-mcp-and-the-future-of-ai-tooling/) - Yoko Li (a16z).
 
     I'm not a big fan of Andreessen Horowitz, but this is a good overview of MCP
-    and how it was indeed inspired by LCP. It does a much better job than the
+    and how it was indeed inspired by LSP. It does a much better job than the
     Anthropic post of explaining the motivation behind MCP and showing some
     examples of how it could be used.
 
