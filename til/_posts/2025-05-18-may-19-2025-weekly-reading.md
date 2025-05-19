@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TIL: May 19, 2025 - Weekly Reading: The Go Scheduler, CNCF/NATS Drama, and Signalgate"
-date: "2025-05-18 00:00:00 +0900"
+date: "2025-05-19 09:45:00 +0900"
 blog: til
 tags: programming
 render_with_liquid: false
@@ -32,7 +32,7 @@ Here are some of the things I was reading this last week or two.
 ## CNCF/NATS Drama
 
 - [Protecting NATS and the integrity of open source: CNCF’s commitment to the
-  community] - _CNCF_
+  community](https://www.cncf.io/blog/2025/05/01/protecting-nats-and-the-integrity-of-open-source-cncfs-commitment-to-the-community/) - _CNCF_
 
     The CNCF issued a statement about the NATS trademark dispute. Synadia, the
     seward of the NATS project, want to withdraw from the CNCF and reclaim the
@@ -44,7 +44,9 @@ Here are some of the things I was reading this last week or two.
     Apparently the trademark transfer of NATS to the CNCF was never officially
     completed so Synadia is trying to weasel out of their deal.
 
-- [Looking Ahead with Clarity and Purpose for NATS.io](https://www.synadia.com/blog/synadia-response-to-cncf)
+- [Looking Ahead with Clarity and Purpose for
+  NATS.io](https://www.synadia.com/blog/synadia-response-to-cncf) - _Derek
+  Collison_
 
     This is Synadia's response to the CNCF's statement. They say they are
     committed to maintaining an open source Apache 2.0 license for NATS, but
@@ -63,7 +65,7 @@ Here are some of the things I was reading this last week or two.
     the open-source community in the past which kept me away from their
     projects. I can't remember exactly what it was though.
 
-- [Shootout at the CNCF Corral](https://oxide-and-friends.transistor.fm/episodes/shootout-at-the-cncf-corral) _Oxide and Friends_
+- [Shootout at the CNCF Corral](https://oxide-and-friends.transistor.fm/episodes/shootout-at-the-cncf-corral) - _Oxide and Friends_
 
     Oxide and Friends had an episode about the dispute. Oxide folks come down on
     the side of NATS mostly and don't really like Open Source foundations. Many
@@ -84,7 +86,7 @@ Here are some of the things I was reading this last week or two.
 
     The CNCF and Synadia have come to an agreement on the future of NATS. The
     CNCF will continue to host the NATS project and Synadia will continue to
-    maintain it. Ultimeately, Synadia did decide to fork the project for their
+    maintain it. Ultimately, Synadia did decide to fork the project for their
     own server-side proprietary NATS service. This seems like it was the only
     possible outcome.
 
