@@ -1,0 +1,220 @@
+# Copyright 2025 Ian Lewis
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+plugin:
+  - id: "@textlint/textlint-plugin-text"
+  - id: "@textlint/textlint-plugin-markdown"
+filters:
+  comments: true
+rules:
+  spelling:
+    language: "en"
+    skipPatterns:
+      # Person Names and handles
+      ##########################################################################
+
+      - "Andreessen"
+      - "Aoife"
+      - "Armin"
+      - "Balahan"
+      - "Branchaud"
+      - "Collison"
+      - "Cramer"
+      - "Dougherty"
+      - "Enamoto"
+      - "Fikes"
+      - "Ghemawat"
+      - "Godbolt"
+      - "Graeme"
+      - "Hightower"
+      - "IanMLewis" # Ian M Lewis
+      - "Klabnik"
+      - "Makabi"
+      - "Nghia"
+      - "Ronacher"
+      - "Sanjay"
+      - "Stapelberg"
+      - "Trong"
+      - "Willison"
+      - "Vella"
+      - "akisute"
+      - "deeet"
+      - "hiyosi"
+      - "mcyoung"
+      - "whosaysni"
+      - "yuanying"
+      - "yudppp"
+      - "/[Ff]eiz/"
+
+      # Company/Product Names
+      ##########################################################################
+
+      - "Anthropic"
+      - "Apcera"
+      - "Bigtable"
+      - "BeProud"
+      - "Bluesky"
+      - "Connpass" # Japanese event platform (connpass.com)
+      - "CoreOS"
+      - "Datastore"
+      - "EuroPython"
+      - "Gmail"
+      - "Mesosphere"
+      - "PyCon"
+      - "Jupyter"
+      - "SoftBank"
+      - "Synadia"
+      - "TeleMessage"
+      - "Stunlock"
+      - "Oakveil"
+
+      # Tech Names
+      ##########################################################################
+
+      - "Appc"
+      - "BeautifulSoup"
+      - "Funktion"
+      - "Kubernetes"
+      - "Jubatus"
+      - "QUnit" # JavaScript Unit Testing Framework
+      - "LuaLaTeX"
+      - "MapReduce"
+      - "Maturin"
+      - "Mesos"
+      - "NATS" # NATS.io
+      - "NATS.io" # NATS.io
+      - "Neovim"
+      - "NixOS"
+      - "Noto" # Noto fonts
+      - "OpenShift"
+      - "OpenStack"
+      - "RequireJS"
+      - "Symposion" # Django library for conference management
+      - "Stylelint"
+      - "Tensorflow"
+      - "XeLaTeX"
+      - "Zizmor"
+      - "cgroup" # control groups
+      - "dotfiles"
+      - "etcd" # etcd.io
+      - "npm" # Node Package Manager
+      - "pprof" # Go profiler
+      - "rebuild.fm" # rebuild.fm podcast
+      - "supervisord"
+      - "/[Cc]ron/"
+      - "/[Mm]emcached/"
+      - "/[Nn]ginx/"
+      - "/[Ww]i-?[Ff]i/"
+
+      # Tech Names (cont.)
+      - "pyspa" # Python Onsen
+      - "PyLadies" # Python Ladies
+      - "NSStudy"
+
+      # Tech Terminology
+      ##########################################################################
+
+      - "Googler" # Google employee
+      - "TrueType"
+      - "Dockerfile"
+      - "/[Aa]utoscaler/"
+      - "/[Aa]utoscaling/"
+      - "/[Bb]ackend/"
+      - "/[Cc]omparator/" # compare + ator
+      - "/[Dd]eclarative/"
+      - "/[Ff]iletype/" # file + type
+      - "/[Gg]oroutine/"
+      - "/[Ll]iveness/"
+      - "/[Nn]amespace/"
+      - "/[Pp]laintext/"
+      - "/[Ii]mpactful/" # impact + -ful
+      - "/[Ii]ntegrations/" # irregular plural-form
+      - "/[Ss]erverless/"
+      - "/[Ss]tylesheet/"
+      - "/[Tt]radeoff/" # trade + off
+
+      # Acronyms
+      ##########################################################################
+
+      - "ACPI" # Advanced Configuration and Power Interface
+      - "API" # Application Programming Interface
+      - "BQ" # BigQuery
+      - "BUSL" # Business Source License
+      - "CNCF" # Cloud Native Computing Foundation
+      - "CFP" # Call for Papers/Proposals
+      - "CSV" # Comma-Separated Values
+      - "FaaS" # Function as a Service
+      - "GCE" # Google Compute Engine
+      - "GCP" # Google Cloud Platform
+      - "GCPUG" # Google Cloud Platform User Group
+      - "GDE" # Google Developer Expert
+      - "GFS" # Google File System
+      - "GMP" # Goroutine, Mutex, and Channel (GMP)
+      - "GKE" # Google Kubernetes Engine
+      - "Gb" # Gigabyte
+      - "HDFS" # Hadoop Distributed File System
+      - "JSON" # JavaScript Object Notation
+      - "LSP" # Language Server Protocol
+      - "MCP" # Model Context Protocol
+      - "MNIST" # Modified National Institute of Standards and Technology DB
+      - "NoSQL" # Not Only SQL
+      - "OSS" # Open Source Software
+      - "QPS" # Queries Per Second
+      - "PaaS" # Platform as a Service
+      - "RDBMS" # Relational Database Management System
+      - "SLA" # Service Level Agreement
+      - "SLSA" # Supply Chain Levels for Software Artifacts
+      - "VC" # Venture Capital
+      - "VM" # Virtual Machine
+      - "WASM" # WebAssembly
+      - "YAML" # YAML Ain't Markup Language
+      - "yaml" # YAML Ain't Markup Language
+
+      # Other
+      ##########################################################################
+
+      # https://dictionary.cambridge.org/dictionary/english/dumbing-down
+      - "dumbed-down"
+      - "Houthi" # Houthi movement
+
+      - "CHANGELOG"
+      - "CODEOWNER"
+      - "CLI"
+      - "CVSS"
+      - "DCO"
+      - "PR"
+      - "UI"
+      - "YAML"
+      - "Changelog"
+      - "CodeQL"
+      - "Dependabot"
+      - "JavaScript"
+      - "MacOS"
+      - "Makefile"
+      - "Node.js"
+      - "OpenSSF"
+      - "TODO"
+      - "e2e"
+      - "/[Ff]ormatter/"
+      - "/[Ll]inter/"
+      - "/[Pp]re/"
+      - "/[Rr]untime/"
+      - "/[Ss]exualized/"
+      - "/[Ss]ocio-economic/"
+      - "/[Uu]serspace/"
+      - "/[Vv]endored/"
+      - "/[Vv]irtualenv/"
+      - "/v[0-9]+/"
+      - "/[0-9]+/"
+      - ":white_check_mark:"

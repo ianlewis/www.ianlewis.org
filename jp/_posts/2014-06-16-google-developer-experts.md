@@ -9,40 +9,30 @@ render_with_liquid: false
 locale: ja
 ---
 
-先週の月曜日(6/9)に公開されて、皆さんは多分見逃している人が多いと思いますが、[私は
-Google Developer Expert (旧Google Api Expert) を卒業しました](http://googledevjp.blogspot.jp/2014/06/google-api-expert-5.html)。私が3年半くらいやっていて、
-とても楽しかったです。Google IO に行ったり、地方のプログラマーと接したり、いろな貴重な経験を
-させて頂きました。
+先週の月曜日(6/9)に公開されて、皆さんは多分見逃している人が多いと思いますが、[私はGoogle Developer Expert (旧Google API Expert) を卒業しました](http://googledevjp.blogspot.jp/2014/06/google-api-expert-5.html)。私が3年半くらいやっていて、とても楽しかったです。Google IO に行ったり、地方のプログラマーと接したり、いろな貴重な経験をさせて頂きました。
 
-## Api Expertになったころ
+## API Expertになったころ
 
-[２０１０年１１月に Google Api Expert になりました](http://www.ianlewis.org/jp/google-appengine-api-expert)。
-その時は、App Engine がまだプレビューだったごろでした。すこし、
-[kay-framework](https://code.google.com/p/kay-framework/)の開発を松尾さんに手伝ったんですか、Api Expert に
-なってから、Kay 1.1 の開発を中心でやって、いくつかの機能を組み込みました。
+[２０１０年１１月に Google API Expertになりました](http://www.ianlewis.org/jp/google-appengine-api-expert)。その時は、App Engineがまだプレビューだったごろでした。すこし、[`kay-framework`](https://code.google.com/p/kay-framework/)の開発を松尾さんに手伝ったんですか、API Expert になってから、Kay 1.1 の開発を中心でやって、いくつかの機能を組み込みました。
 
-その次の２０１１年の夏から、App Engineのリリーススケジュールが大体1ヶ月1リリースになったので、
-どんどん機能が爆発的に増えた。 Javaが一番ユーザーが多いんですが、まだPython版が機能追加が速くて
-うれしかったです。
+その次の２０１１年の夏から、App Engineのリリーススケジュールが大体1ヶ月1リリースになったので、どんどん機能が爆発的に増えた。Javaが一番ユーザーが多いんですが、まだPython版が機能追加が速くてうれしかったです。
 
 ![この頃からa2cと仲がいい](/assets/images/719/a2c_big.jpg)
 
 ## API Expert の制度の進化
 
-API Expert という制度が大昔 (２００７年頃)の開発者のGoogleファンたちの Api Guru というものの真似として、
+API Expert という制度が大昔 (２００７年頃)の開発者のGoogleファンたちの API Guru というものの真似として、
 日本から発生しましたプログラムです。Guru のプログラムは非常に中等半端な感じで Google さんがやっていた
 (ごめんなさい >< )が、真面目な日本人がAPI Expertをちゃんと作ったのが素晴らしいと思います。
 
 その後、日本から世界へAPI Expertの制度広げたいという希望があって、Israel にExpert制度が始まった
 (２０１１年末頃かな)。 そして、1年間(くらいかな)経ってから、世界からExpertの人たちの募集が始まった
-(２０１２年末頃)。 この頃から、「Api Expert」と呼ばれなくなって、「Developer Expert」となった。
+(２０１２年末頃)。 この頃から、「API Expert」と呼ばれなくなって、「Developer Expert」となった。
 現在では、日本だけでなく、 [世界中にたくさんの Developer Expert がいます](https://developers.google.com/experts/)
 
 ## Google I/O
 
-Deveoper Expertやっていた頃、Google I/O に参加させて頂きました。日本から開発者がたくさんいて、みんなで
-ワイワイ勉強しながら、カンファレンスに参加するのが毎年の大きな楽しみでした。毎年、クラウドの Expertたちが
-I/O を充実して、貴重な経験になりました。
+Developer Expertやっていた頃、Google I/O に参加させて頂きました。日本から開発者がたくさんいて、みんなでワイワイ勉強しながら、カンファレンスに参加するのが毎年の大きな楽しみでした。毎年、クラウドの ExpertたちがI/Oを充実して、貴重な経験になりました。
 
 ![日本のExpert に皆さん](/assets/images/719/beanbags_big.jpg)
 

@@ -7,17 +7,19 @@ tags: github
 render_with_liquid: false
 ---
 
-Today I learned, Dependabot has a way to group updates by type. This page has some examples of how to do this.
+Today I learned, Dependabot has a way to group updates by type. This page has
+some examples of how to do this.
 
 [Optimizing the creation of pull requests for Dependabot version updates](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/optimizing-pr-creation-version-updates)
 
 I had some experience using [Renovate](https://www.mend.io/renovate/) to group
-updates when working on slsa-github-generator
-([renovate.json](https://github.com/slsa-framework/slsa-github-generator/blob/main/renovate.json))
+updates when working on `slsa-github-generator`
+([`renovate.json`](https://github.com/slsa-framework/slsa-github-generator/blob/main/renovate.json))
 but I didn't realize that Dependabot has this feature too. I think it's a
 somewhat recent feature.
 
-For npm I group minor and patch updates into PRs by dev dependencies and production dependencies. Major version updates get their own PRs.
+For npm I group minor and patch updates into PRs by development dependencies and
+production dependencies. Major version updates get their own PRs.
 
 ```yaml
 - package-ecosystem: "npm"

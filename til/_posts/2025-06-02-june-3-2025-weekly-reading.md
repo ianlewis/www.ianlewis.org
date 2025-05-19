@@ -34,7 +34,7 @@ render_with_liquid: false
 
     I also love that computers are generally deterministic and produce precise
     results. AI really takes that away in that it produces results that are not
-    exacty what you asked for but are maybe good enough for most people.
+    exactly what you asked for but are maybe good enough for most people.
 
     I recently heard an analogy that human coding is like tending to a garden. I
     suppose the idea is that with AI, software development will be more like big
@@ -52,8 +52,8 @@ render_with_liquid: false
     pretty easily.
 
     The other cool takeaway is the use of `nixos-anywhere` which you can use to
-    declaritively describe the installation you want (disk partitions, inital NixOS
-    configuration, etc.) and automate it over SSH. You just boot up the
+    declaratively describe the installation you want (disk partitions, initial
+    NixOS configuration, etc.) and automate it over SSH. You just boot up the
     custom ISO installer image you created and then run `nixos-anywhere` to
     complete the installation.
 

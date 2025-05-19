@@ -25,12 +25,13 @@ OUTPUT_FORMAT ?= $(shell if [ "${GITHUB_ACTIONS}" == "true" ]; then echo "github
 REPO_ROOT = $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 REPO_NAME = $(shell basename "$(REPO_ROOT)")
 
-AQUA_VERSION ?= 2.46.0
+AQUA_VERSION ?= 2.51.2
 AQUA_REPO ?= github.com/aquaproj/aqua
-AQUA_CHECKSUM.Linux.x86_64 = 6908509aa0c985ea60ed4bfdc69a69f43059a6b539fb16111387e1a7a8d87a9f
+AQUA_CHECKSUM.Linux.x86_64 = 17db2da427bde293b1942e3220675ef796a67f1207daf89e6e80fea8d2bb8c22
+AQUA_CHECKSUM.Linux.aarch64 = b3f0d573e762ce9d104c671b8224506c4c4a32eedd1e6d7ae1e1e39983cdb6a8
 AQUA_CHECKSUM ?= $(AQUA_CHECKSUM.$(uname_s).$(uname_m))
 AQUA_URL = https://$(AQUA_REPO)/releases/download/v$(AQUA_VERSION)/aqua_$(kernel)_$(arch).tar.gz
-AQUA_ROOT_DIR = .aqua
+AQUA_ROOT_DIR = $(REPO_ROOT)/.aqua
 
 JEKYLL_SERVE_HOST ?= 127.0.0.1
 
@@ -51,30 +52,42 @@ help: ## Print all Makefile targets (this message).
 	@echo "$(REPO_NAME) Makefile"
 	@echo "Usage: make [COMMAND]"
 	@echo ""
-	@grep --no-filename -E '^([/a-z.A-Z0-9_%-]+:.*?|)##' $(MAKEFILE_LIST) | \
-		awk 'BEGIN {FS = "(:.*?|)## ?"}; { \
-			if (length($$1) > 0) { \
-				printf "  \033[36m%-25s\033[0m %s\n", $$1, $$2; \
-			} else { \
-				if (length($$2) > 0) { \
-					printf "%s\n", $$2; \
-				} \
-			} \
-		}'
+	@set -euo pipefail; \
+		normal=""; \
+		cyan=""; \
+		if [ -t 1 ]; then \
+			normal=$$(tput sgr0); \
+			cyan=$$(tput setaf 6); \
+		fi; \
+		grep --no-filename -E '^([/a-z.A-Z0-9_%-]+:.*?|)##' $(MAKEFILE_LIST) | \
+			awk \
+				--assign=normal="$${normal}" \
+				--assign=cyan="$${cyan}" \
+				'BEGIN {FS = "(:.*?|)## ?"}; { \
+					if (length($$1) > 0) { \
+						printf("  " cyan "%-25s" normal " %s\n", $$1, $$2); \
+					} else { \
+						if (length($$2) > 0) { \
+							printf("%s\n", $$2); \
+						} \
+					} \
+				}'
 
 package-lock.json: package.json
 	@npm install
+	@npm audit signatures
 
 node_modules/.installed: package-lock.json
-	@npm ci
+	@npm clean-install
+	@npm audit signatures
 	@touch node_modules/.installed
 
 .venv/bin/activate:
 	@python -m venv .venv
 
-.venv/.installed: .venv/bin/activate requirements.txt
-	@./.venv/bin/pip install -r requirements.txt --require-hashes
-	@touch .venv/.installed
+.venv/.installed: requirements.txt .venv/bin/activate
+	@./.venv/bin/pip install -r $< --require-hashes
+	@touch $@
 
 .bin/aqua-$(AQUA_VERSION)/aqua:
 	@set -euo pipefail; \
@@ -103,18 +116,24 @@ license-headers: ## Update license headers.
 	@set -euo pipefail; \
 		files=$$( \
 			git ls-files --deduplicate \
+				'*.c' \
+				'*.cpp' \
 				'*.go' \
+				'*.h' \
+				'*.hpp' \
 				'*.ts' \
 				'*.js' \
-				'*.scss' \
-				'*.css' \
+				'*.lua' \
 				'*.py' \
+				'*.rb' \
+				'*.rs' \
+				'*.toml' \
 				'*.yaml' \
 				'*.yml' \
 				'Makefile' \
 				':!:assets/demos' \
 				':!:_sass/ext' \
-				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 		); \
 		name=$$(git config user.name); \
 		if [ "$${name}" == "" ]; then \
@@ -135,7 +154,7 @@ license-headers: ## Update license headers.
 #####################################################################
 
 .PHONY: format
-format: html-format javascript-format json-format md-format sass-format yaml-format ## Format all files
+format: html-format js-format json-format md-format sass-format yaml-format ## Format all files
 
 .PHONY: html-format
 html-format: node_modules/.installed ## Format HTML files.
@@ -145,10 +164,13 @@ html-format: node_modules/.installed ## Format HTML files.
 				'*.html' \
 				':!:assets/demos' \
 		); \
-		npx prettier --write --no-error-on-unmatched-pattern $${files}
+		./node_modules/.bin/prettier \
+			--write \
+			--no-error-on-unmatched-pattern \
+			$${files}
 
-.PHONY: javascript-format
-javascript-format: node_modules/.installed ## Format Javascript files.
+.PHONY: js-format
+js-format: node_modules/.installed ## Format Javascript files.
 	@set -euo pipefail; \
 		files=$$( \
 			git ls-files --deduplicate \
@@ -156,7 +178,10 @@ javascript-format: node_modules/.installed ## Format Javascript files.
 				':!:*.min.js' \
 				':!:assets/demos' \
 		); \
-		npx prettier --write --no-error-on-unmatched-pattern $${files}
+		./node_modules/.bin/prettier \
+			--write \
+			--no-error-on-unmatched-pattern \
+			$${files}
 
 .PHONY: json-format
 json-format: node_modules/.installed ## Format JSON files.
@@ -165,9 +190,12 @@ json-format: node_modules/.installed ## Format JSON files.
 			git ls-files --deduplicate \
 				'*.json' \
 				'*.json5' \
-				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 		); \
-		npx prettier --write --no-error-on-unmatched-pattern $${files}
+		./node_modules/.bin/prettier \
+			--write \
+			--no-error-on-unmatched-pattern \
+			$${files}
 
 .PHONY: md-format
 md-format: node_modules/.installed ## Format Markdown files.
@@ -193,7 +221,10 @@ sass-format: node_modules/.installed ## Format SASS files.
 				':!:assets/css/style.scss' \
 				':!:_sass/ext' \
 		); \
-		npx prettier --write --no-error-on-unmatched-pattern $${files}
+		./node_modules/.bin/prettier \
+			--write \
+			--no-error-on-unmatched-pattern \
+			$${files}
 
 .PHONY: yaml-format
 yaml-format: node_modules/.installed ## Format YAML files.
@@ -203,13 +234,16 @@ yaml-format: node_modules/.installed ## Format YAML files.
 				'*.yml' \
 				'*.yaml' \
 		); \
-		npx prettier --write --no-error-on-unmatched-pattern $${files}
+		./node_modules/.bin/prettier \
+			--write \
+			--no-error-on-unmatched-pattern \
+			$${files}
 
 ## Linting
 #####################################################################
 
 .PHONY: lint
-lint: actionlint eslint markdownlint renovate-config-validator stylelint textlint yamllint zizmor ## Run all linters.
+lint: actionlint eslint markdownlint renovate-config-validator stylelint textlint todos yamllint zizmor ## Run all linters.
 
 .PHONY: actionlint
 actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
@@ -219,7 +253,7 @@ actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
 			git ls-files --deduplicate \
 				'.github/workflows/*.yml' \
 				'.github/workflows/*.yaml' \
-				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 		); \
 		PATH="$(REPO_ROOT)/.bin/aqua-$(AQUA_VERSION):$(AQUA_ROOT_DIR)/bin:$${PATH}"; \
 		AQUA_ROOT_DIR="$(AQUA_ROOT_DIR)"; \
@@ -263,7 +297,7 @@ eslint: node_modules/.installed ## Runs eslint.
 			done <<<$$(npx eslint --max-warnings 0 -f json $${files} | jq -c '.[]'); \
 			exit "$${exit_code}"; \
 		else \
-			npx eslint --max-warnings 0 $${files}; \
+			./node_modules/.bin/eslint --max-warnings 0 $${files}; \
 		fi
 
 .PHONY: stylelint
@@ -276,9 +310,9 @@ stylelint: node_modules/.installed ## Runs the stylelint linter.
 				':!:_sass/ext' \
 		); \
 		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
-			npx stylelint --formatter github $${files}; \
+			./node_modules/.bin/stylelint --formatter github $${files}; \
 		else \
-			npx stylelint $${files}; \
+			./node_modules/.bin/stylelint $${files}; \
 		fi
 
 .PHONY: zizmor
@@ -290,7 +324,7 @@ zizmor: .venv/.installed ## Runs the zizmor linter.
 			git ls-files --deduplicate \
 				'.github/workflows/*.yml' \
 				'.github/workflows/*.yaml' \
-				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 		); \
 		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 			.venv/bin/zizmor --quiet --pedantic --format sarif $${files} > zizmor.sarif.json || true; \
@@ -312,7 +346,7 @@ markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the ma
 				':!:en/_posts/*.md' \
 				':!:jp/_posts/*.md' \
 				':!:til/_posts/*.md' \
-				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 		); \
 		PATH="$(REPO_ROOT)/.bin/aqua-$(AQUA_VERSION):$(AQUA_ROOT_DIR)/bin:$${PATH}"; \
 		AQUA_ROOT_DIR="$(AQUA_ROOT_DIR)"; \
@@ -325,18 +359,18 @@ markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the ma
 				message=$$(echo "$$p" | jq -c -r '.ruleNames[0] + "/" + .ruleNames[1] + " " + .ruleDescription + " [Detail: \"" + .errorDetail + "\", Context: \"" + .errorContext + "\"]"'); \
 				exit_code=1; \
 				echo "::error file=$${file},line=$${line},endLine=$${endline}::$${message}"; \
-			done <<< "$$(npx markdownlint --config .markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
+			done <<< "$$(./node_modules/.bin/markdownlint --config .markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
 			if [ "$${exit_code}" != "0" ]; then \
 				exit "$${exit_code}"; \
 			fi; \
 		else \
-			npx markdownlint --config .markdownlint.yaml --dot $${files}; \
+			./node_modules/.bin/markdownlint --config .markdownlint.yaml --dot $${files}; \
 		fi; \
 		files=$$( \
 			git ls-files --deduplicate \
 				'.github/pull_request_template.md' \
 				'.github/ISSUE_TEMPLATE/*.md' \
-				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 		); \
 		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 			exit_code=0; \
@@ -347,20 +381,19 @@ markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the ma
 				message=$$(echo "$$p" | jq -c -r '.ruleNames[0] + "/" + .ruleNames[1] + " " + .ruleDescription + " [Detail: \"" + .errorDetail + "\", Context: \"" + .errorContext + "\"]"'); \
 				exit_code=1; \
 				echo "::error file=$${file},line=$${line},endLine=$${endline}::$${message}"; \
-			done <<< "$$(npx markdownlint --config .github/template.markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
+			done <<< "$$(./node_modules/.bin/markdownlint --config .github/template.markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
 			if [ "$${exit_code}" != "0" ]; then \
 				exit "$${exit_code}"; \
 			fi; \
 		else \
-			npx markdownlint  --config .github/template.markdownlint.yaml --dot $${files}; \
+			./node_modules/.bin/markdownlint  --config .github/template.markdownlint.yaml --dot $${files}; \
 		fi; \
 		files=$$( \
 			git ls-files --deduplicate \
-				'projects.md' \
 				'en/_posts/*.md' \
 				'jp/_posts/*.md' \
 				'til/_posts/*.md' \
-				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 		); \
 		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 			exit_code=0; \
@@ -371,12 +404,12 @@ markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the ma
 				message=$$(echo "$$p" | jq -c -r '.ruleNames[0] + "/" + .ruleNames[1] + " " + .ruleDescription + " [Detail: \"" + .errorDetail + "\", Context: \"" + .errorContext + "\"]"'); \
 				exit_code=1; \
 				echo "::error file=$${file},line=$${line},endLine=$${endline}::$${message}"; \
-			done <<< "$$(npx markdownlint --config .posts.markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
+			done <<< "$$(./node_modules/.bin/markdownlint --config .github/template.markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
 			if [ "$${exit_code}" != "0" ]; then \
 				exit "$${exit_code}"; \
 			fi; \
 		else \
-			npx markdownlint  --config .posts.markdownlint.yaml --dot $${files}; \
+			./node_modules/.bin/markdownlint  --config .posts.markdownlint.yaml --dot $${files}; \
 		fi
 
 .PHONY: renovate-config-validator
@@ -390,7 +423,11 @@ textlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textli
 			git ls-files --deduplicate \
 				'*.md' \
 				'*.txt' \
-				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+				':!:requirements.txt' \
+				':!:robots.txt' \
+				':!:index.md' \
+				':!:projects.md' \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 		); \
 		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 			exit_code=0; \
@@ -401,12 +438,33 @@ textlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textli
 					line=$$(echo "$$m" | jq -c -r '.loc.start.line'); \
 					endline=$$(echo "$$m" | jq -c -r '.loc.end.line'); \
 					message=$$(echo "$$m" | jq -c -r '.message'); \
+					exit_code=1; \
 					echo "::error file=$${file},line=$${line},endLine=$${endline}::$${message}"; \
 				done <<<"$$(echo "$$p" | jq -c -r '.messages[] // empty')"; \
-			done <<< "$$(./node_modules/.bin/textlint -c .textlintrc.json --format json $${files} 2>&1 | jq -c '.[]')"; \
+			done <<< "$$(./node_modules/.bin/textlint -c .textlintrc.yaml --format json $${files} 2>&1 | jq -c '.[]')"; \
 			exit "$${exit_code}"; \
 		else \
-			./node_modules/.bin/textlint -c .textlintrc.json $${files}; \
+			./node_modules/.bin/textlint -c .textlintrc.yaml $${files}; \
+		fi
+
+.PHONY: todos
+todos: $(AQUA_ROOT_DIR)/.installed ## Check for outstanding TODOs.
+	@set -euo pipefail;\
+		files=$$( \
+			git ls-files --deduplicate \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
+		); \
+		PATH="$(REPO_ROOT)/.bin/aqua-$(AQUA_VERSION):$(AQUA_ROOT_DIR)/bin:$${PATH}"; \
+		AQUA_ROOT_DIR="$(AQUA_ROOT_DIR)"; \
+		output="default"; \
+		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
+			output="github"; \
+		fi; \
+		TODOS=$$(todos --output "$${output}" --todo-types="FIXME,Fixme,fixme,BUG,Bug,bug,XXX,COMBAK"); \
+		# TODO: remove when todos v0.13.0 is released. \
+		if [ "$${TODOS}" != "" ]; then \
+			echo "$${TODOS}"; \
+			exit 1; \
 		fi
 
 .PHONY: yamllint
@@ -417,7 +475,7 @@ yamllint: .venv/.installed ## Runs the yamllint linter.
 			git ls-files --deduplicate \
 				'*.yml' \
 				'*.yaml' \
-				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 		); \
 		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 			extraargs="-f github"; \

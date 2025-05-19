@@ -9,50 +9,31 @@ render_with_liquid: false
 locale: ja
 ---
 
-_この記事は [Kubernetes Advent Calendar 2014](http://qiita.com/advent-calendar/2014/kubernetes)
-の19日目の記事です。18日の記事は [kazunori279](http://qiita.com/kazunori279) の
-[GKE＋BQがうまく動かなかった話](http://qiita.com/kazunori279/items/974c8b848af079d48d9c)。_
+_この記事は [Kubernetes Advent Calendar 2014](http://qiita.com/advent-calendar/2014/kubernetes)の19日目の記事です。18日の記事は [kazunori279](http://qiita.com/kazunori279) の[GKE＋BQがうまく動かなかった話](http://qiita.com/kazunori279/items/974c8b848af079d48d9c)。_
 
-Kubernetes (k8s)とMesosがやっていることが似ているように見えて、
-何が違うかイマイチわからない開発者が多いと思います。
-それぞれがやっていることと、役割について書いて、その後、
-組み合わせて使うにはどうしたらいいか少し書いてみたいと思います。
+Kubernetes (Kubernetes)とMesosがやっていることが似ているように見えて、何が違うかイマイチわからない開発者が多いと思います。それぞれがやっていることと、役割について書いて、その後、組み合わせて使うにはどうしたらいいか少し書いてみたいと思います。
 
-## k8s について
+## Kubernetesについて
 
-まず、k8s はどこまで何をしてくれるの？ という疑問がよくあると思う。
-コンテナーのクラスターが作れるみたいだけど、
-自動的にスケールしてくれるのかな？とか、考えてくるよね。
+まず、Kubernetesはどこまで何をしてくれるの？ という疑問がよくあると思う。コンテナーのクラスターが作れるみたいだけど、自動的にスケールしてくれるのかな？とか、考えてくるよね。
 
-k8s は Docker コンテナーのクラスターを管理してくれるものだ。Docker自体はコンテナーを管理してくれるから k8s は
-なんで必要かと思っていしまうかもしれないけど、Dockerはローカルに動かしているコンテナーしか面倒見てくれない。
-そのため、１台以上のクラスタになってくると、それぞれのサーバーに入っているDockerコンテナーをどうやって
-管理するかってことになる。k8s はそれぞれのサーバー (Node)の中にコンテナーをグループ化 (Pod)して、
-管理してくれます。そのコンテナーに動かしているものをどうやってアクセスするかをサービス(Service)という定義で
-設定します。それぞれのサーバーとコンテナーとネットワークなどの面倒をしてくれる。
+KubernetesはDockerコンテナーのクラスターを管理してくれるものだ。Docker自体はコンテナーを管理してくれるからKubernetesはなんで必要かと思っていしまうかもしれないけど、Dockerはローカルに動かしているコンテナーしか面倒見てくれない。そのため、１台以上のクラスタになってくると、それぞれのサーバーに入っているDockerコンテナーをどうやって管理するかってことになる。Kubernetes はそれぞれのサーバー (Node)の中にコンテナーをグループ化 (Pod)して、管理してくれます。そのコンテナーに動かしているものをどうやってアクセスするかをサービス(Service)という定義で設定します。それぞれのサーバーとコンテナーとネットワークなどの面倒をしてくれる。
 
-![Kubernetes](/assets/images/727/k8s_big.png)
+![Kubernetes](/assets/images/727/Kubernetes_big.png)
 
-その上に、クラスターを管理するために API を用意してる。そのAPIを使って、コンテナーを追加したら、
-減らしたりすることができます。コンテナーを追加したり、減らしたりすると k8s のスケジューラーで
-どのサーバーのどのPodに対して、コンテナーを追加・削除するかが決まる。そのスケジューラーは今のところ
-かなりシンプルで、クラスターのリソースを見たりしないので、同じサーバーの中に k8s 以外のものを動かしていると
-メモリーや、CPUを使ってしまったり、リソースを取り合ってしまうと思います。
+その上に、クラスターを管理するために API を用意してる。そのAPIを使って、コンテナーを追加したら、減らしたりすることができます。コンテナーを追加したり、減らしたりすると Kubernetes のスケジューラーでどのサーバーのどのPodに対して、コンテナーを追加・削除するかが決まる。そのスケジューラーは今のところかなりシンプルで、クラスターのリソースを見たりしないので、同じサーバーの中に Kubernetes 以外のものを動かしているとメモリーや、CPUを使ってしまったり、リソースを取り合ってしまうと思います。
 
-k8sもAutoScalingなどができると聞いたことあるかもしれませんが、それはGoogleが提供している
-k8sのホステッド版、Google Container Engineの機能です。ホステッドだとロードバランサーや、
-サーバーの状況がわかるので、そういうのが提供できるんですが、k8s自体はAuto Scalingを提供しない。
+KubernetesもAutoscalingなどができると聞いたことあるかもしれませんが、それはGoogleが提供しているKubernetesのホステッド版、Google Container Engineの機能です。ホステッドだとロードバランサーや、サーバーの状況がわかるので、そういうのが提供できるんですが、Kubernetes自体はAuto Scalingを提供しない。
 
 ## Mesos
 
-[Mesos](http://mesos.apache.org/) はクラスターのサーバーのメモリや、CPUを抽象的に使えるようにするサービスで、空いてるCPUやメモリのところにアプリを動かせるようにしてくれる。あるクラスターにあるアプリを実行しようって思った時に、Mesosでどこに動かしたらいいかが決まっていて、
-アプリをそこに動かすようにスケジュリングを提供してくれる。ようするに、k8sがやってくれないことをしっかりやってくれるやつだ！と思いきや、実は、Mesosはリソースを見てくれるけど、Auto Scalingは提供しない。あくまで、追加したり、減らしたりしたい場合は、どこから削除するか、どこに追加すればいいかしか提供しない。けど、Auto Scalingの一部にはなるし、Auto Scalingがなくても、結構助かると思います。
+[Mesos](http://mesos.apache.org/) はクラスターのサーバーのメモリや、CPUを抽象的に使えるようにするサービスで、空いてるCPUやメモリのところにアプリを動かせるようにしてくれる。あるクラスターにあるアプリを実行しようって思った時に、Mesosでどこに動かしたらいいかが決まっていて、アプリをそこに動かすようにスケジュリングを提供してくれる。ようするに、Kubernetesがやってくれないことをしっかりやってくれるやつだ！と思いきや、実は、Mesosはリソースを見てくれるけど、Auto Scalingは提供しない。あくまで、追加したり、減らしたりしたい場合は、どこから削除するか、どこに追加すればいいかしか提供しない。けど、Auto Scalingの一部にはなるし、Auto Scalingがなくても、結構助かると思います。
 
-## k8s + Mesosの組み合わせ
+## Kubernetes + Mesosの組み合わせ
 
-実は、k8s + Mesos の話をチャレンジしたいと思っていたが、僕はそんなに mesos 詳しくないから、動かすにはいろいろ苦労した。
+実は、Kubernetes + Mesos の話をチャレンジしたいと思っていたが、僕はそんなに Mesos 詳しくないから、動かすにはいろいろ苦労した。
 
-Mesos の会社 MesosphereはMesosのでもイメージを作ってくれたので、以下の ~~VagrantFile`` でとりあえず Mesos を動かせると思います。
+Mesosの会社MesosphereはMesosのでもイメージを作ってくれたので、以下の`Vagrantfile`でとりあえずMesosを動かせると思います。
 
 ```ruby
 # -*- mode: ruby -*-
@@ -80,15 +61,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 end
 ```
 
-そして、k8sとMesosを連動して動かせるのかなって調べてみたら、Mesosphereが作り中の
-[kubernetes-mesos](https://github.com/mesosphere/kubernetes-mesos) プロジェクトがあった。
+そして、KubernetesとMesosを連動して動かせるのかなって調べてみたら、Mesosphereが作り中の[`kubernetes-mesos`](https://github.com/mesosphere/kubernetes-mesos)プロジェクトがあった。
 
-このプロジェクトはk8sを拡張して、Mesosが使えるようにしている。 k8s のコードはかなりパッケージ化して
-そのままインポートして、Mesosスケジューラを実装しているみたい。
+このプロジェクトはKubernetesを拡張して、Mesosが使えるようにしている。Kubernetesのコードはかなりパッケージ化してそのままインポートして、Mesosスケジューラを実装しているみたい。
 
-[https://github.com/mesosphere/kubernetes-mesos/blob/master/kubernetes-mesos/main.go](https://github.com/mesosphere/kubernetes-mesos/blob/master/kubernetes-mesos/main.go)
+[`https://github.com/mesosphere/kubernetes-mesos/blob/master/kubernetes-mesos/main.go`](https://github.com/mesosphere/kubernetes-mesos/blob/master/kubernetes-mesos/main.go)
 
-まずは、buildしてみましょう。まずは、上のVagrantFileで起動したVMで Go をインストールする必要がある。
+まずは、buildしてみましょう。まずは、上の`Vagrantfile`で起動したVMでGoをインストールする必要がある。
 
 ```shell
 $ mkdir -p /usr/local/opt/gopath
@@ -104,7 +83,7 @@ $ cat <<EOF > /etc/profile.d/gopath.sh
 > EOF
 ```
 
-次は kubernetes-mesos をビルドする
+次は`kubernetes-mesos`をビルドする。
 
 ```shell
 $ go get github.com/tools/godep
@@ -119,7 +98,7 @@ $ go install github.com/mesosphere/kubernetes-mesos/kubernetes-{mesos,executor}
 $ go install github.com/mesosphere/kubernetes-mesos/controller-manager
 ```
 
-そうすると、kubernetes-mesosサービスを起動できる
+そうすると、`kubernetes-mesos`サービスを起動できる。
 
 ```shell
 $ export servicehost=127.0.0.1
@@ -138,7 +117,7 @@ $ nohup controller-manager \
 >   -v=2 2>&1 >> /var/log/controller-manager.log &
 ```
 
-サービスが起動できたら、 `kubectl` で Pod を起動できるはずだが、なぜかステータスが Waiting になっている。
+サービスが起動できたら、`kubectl`でPodを起動できるはずだが、なぜかステータスがWaitingになっている。
 
 ```shell
 $ sudo kubecfg -c /usr/local/opt/gopath/src/github.com/mesosphere/kubernetes-mesos/examples/pod-nginx.json create pods
@@ -168,17 +147,12 @@ W1219 08:00:04.636499  1297 master.cpp:751] Dropping 'mesos.internal.RegisterFra
 ...
 ```
 
-Mesosのマスターは当選されてないような感じなのか？よくわからんorz (MesosphereのサンプルVMの問題なのかな？)
+Mesosのマスターは当選されてないような感じなのか？よくわからん (MesosphereのサンプルVMの問題なのかな？)
 
-まだちゃんと動かないのですが、上のことをもっと簡単にできるために、サンプル用の `VagrantFile` を作って、
-[github](https://github.com/IanLewis/k8s-mesos-demo) に上げた。
+まだちゃんと動かないのですが、上のことをもっと簡単にできるために、サンプル用の`VagrantFile`を作って、[GitHub](https://github.com/IanLewis/Kubernetes-mesos-demo)に上げた。
 
 ## 感想
 
-Kubernetesのスケジューラーがまだそんなに賢くなくて、そして、まだ簡単にプラガブルではなく差し替えにくいので、
-kubernetes-mesosは組み合わせて使うものではなく、Kubernetesを「フレームワーク」として使って、
-自前でサービスを作っているっぽい（知っている人は少ないと思うが、 [jubatus](http://jubat.us/ja/)
-の使い方を思い出した)。
+Kubernetesのスケジューラーがまだそんなに賢くなくて、そして、まだ簡単にプラガブルではなく差し替えにくいので、`kubernetes-mesos`は組み合わせて使うものではなく、Kubernetesを「フレームワーク」として使って、自前でサービスを作っているっぽい（知っている人は少ないと思うが、[Jubatus](http://jubat.us/ja/)の使い方を思い出した)。
 
-Kubernetesのスケジューラーがもっとプラガブルになったら、MesosでKubernetesや、
-Hadoopや、Impalaなどを同じリソースプールで動かせるので、本当に強力になると思う。
+Kubernetesのスケジューラーがもっとプラガブルになったら、MesosでKubernetesや、Hadoopや、Impalaなどを同じリソースプールで動かせるので、本当に強力になると思う。

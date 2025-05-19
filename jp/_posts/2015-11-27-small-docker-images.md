@@ -41,9 +41,9 @@ VIRTUAL SIZE
 
 ## なんで大きいんだ？
 
-上のDockerfileの1行目は `FROM debian:jessie` って書いているんだけど、イメージが大きくなっているのは、Debian 8.x がまるまるイメージに入るわけです。さらに、Dockerfileの中に何かをgccやg++をビルドする必要があれば、アプリを実行するのに必要ないのに、ビルドするたにツールやライブラリがイメージに入っていて、結構な量になる。
+上の`Dockerfile`の1行目は `FROM debian:jessie` って書いているんだけど、イメージが大きくなっているのは、Debian 8.x がまるまるイメージに入るわけです。さらに、`Dockerfile`の中に何かを`gcc`や`g++`をビルドする必要があれば、アプリを実行するのに必要ないのに、ビルドするたにツールやライブラリがイメージに入っていて、結構な量になる。
 
-じゃ、例えばredisのイメージを作る場合はこうするのが一番わかりやすくて概念的にいいんだが
+じゃ、例えばRedisのイメージを作る場合はこうするのが一番わかりやすくて概念的にいいんだが
 
 ```dockerfile
 FROM debian:jessie
@@ -72,7 +72,7 @@ Dockerは RUNコマンドを実行するたびに、イメージの「レイヤ�
 
 結局 RUN を実行するたびにコミットするので、全部１個のRUNコマンドで実行しなければならない。
 
-以下、は[実際のredisのDockerfile](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/3.0/Dockerfile) ([Docker BSD LICENSE](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/LICENSE))からとったスニペット
+以下、は[実際のRedisの`Dockerfile`](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/3.0/Dockerfile) ([Docker BSD LICENSE](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/LICENSE))からとったスニペット
 
 ```dockerfile
 ENV REDIS_VERSION 3.0.5
