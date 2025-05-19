@@ -162,18 +162,23 @@ Your HTML may look as follows
 ```html
 <!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>QUnit Example</title>
-    <link rel="stylesheet" href="qunit.css" type="text/css" media="screen" />
-    <script type="text/javascript" src="qunit.js"></script>
+    <head>
+        <meta charset="UTF-8" />
+        <title>QUnit Example</title>
+        <link
+            rel="stylesheet"
+            href="qunit.css"
+            type="text/css"
+            media="screen"
+        />
+        <script type="text/javascript" src="qunit.js"></script>
 
-    <script type="text/javascript" src="mymodule.test.js"></script>
-  </head>
-  <body>
-    <div id="qunit"></div>
-    <div id="qunit-fixture"></div>
-  </body>
+        <script type="text/javascript" src="mymodule.test.js"></script>
+    </head>
+    <body>
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+    </body>
 </html>
 ```
 

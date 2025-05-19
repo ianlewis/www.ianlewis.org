@@ -17,7 +17,7 @@ band = Band({ name: "Yes" });
 song = Song({ title: "Parallels" });
 
 $.when(band.save(), song.save()).done(function () {
-  alert("You know we've got the power!");
+    alert("You know we've got the power!");
 });
 ```
 

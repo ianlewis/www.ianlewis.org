@@ -27,17 +27,17 @@ simple and the logic is written in JavaScript so it's pretty fast.
 
 ```html
 <html lang="en">
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <h1><%- title %></h1>
-    <ul>
-      <% _.each(items, function(item) { %>
-      <li><%- item %></li>
-      <% }); %>
-    </ul>
-  </body>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <h1><%- title %></h1>
+        <ul>
+            <% _.each(items, function(item) { %>
+            <li><%- item %></li>
+            <% }); %>
+        </ul>
+    </body>
 </html>
 ```
 
@@ -53,17 +53,17 @@ to include sub-templates or other kinds of logic.
 
 ```html
 <html lang="en">
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <h1>{{title}}</h1>
-    <ul>
-      {{#items}}
-      <li>{{item}}</li>
-      {{/items}}
-    </ul>
-  </body>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+        <h1>{{title}}</h1>
+        <ul>
+            {{#items}}
+            <li>{{item}}</li>
+            {{/items}}
+        </ul>
+    </body>
 </html>
 ```
 

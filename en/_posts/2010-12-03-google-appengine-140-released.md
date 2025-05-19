@@ -52,18 +52,18 @@ On the client site we use javascript to connect to the channel.
 var channel = new goog.appengine.Channel("{{ channel_id }}");
 var socket = channel.open();
 socket.onopen = function () {
-  window.setTimeout(function () {
-    alert("Connected!");
-  }, 100);
+    window.setTimeout(function () {
+        alert("Connected!");
+    }, 100);
 };
 
 // Register a message handler
 socket.onmessage = function (evt) {
-  // Here we are getting text from the server
-  // But JSON data is recommended.
-  // var o = JSON.parse(evt.data);
-  alert(evt.data);
-  // do something
+    // Here we are getting text from the server
+    // But JSON data is recommended.
+    // var o = JSON.parse(evt.data);
+    alert(evt.data);
+    // do something
 };
 ```
 
@@ -102,7 +102,7 @@ In order to enable Warmup Requests, you need to add `warmup` to your `inbound_se
 
 ```yaml
 inbound_services:
-  - warmup
+    - warmup
 ```
 
 The warmup request will be sent to `/_ah/warmup` so you can add a handler to your `app.yaml` to specifically handle the request or just use a catch all handler.

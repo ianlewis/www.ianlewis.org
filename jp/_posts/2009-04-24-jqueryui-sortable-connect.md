@@ -13,7 +13,7 @@ locale: ja
 
 ```javascript
 $("#my-list").sortable({
-  axis: "x",
+    axis: "x",
 });
 ```
 
@@ -23,7 +23,7 @@ draggableというウィジェットもあって、これであるオブジェ�
 
 ```javascript
 $("#my-item").draggable({
-  connectToSortable: "#my-list",
+    connectToSortable: "#my-list",
 });
 ```
 
@@ -31,7 +31,7 @@ $("#my-item").draggable({
 
 ```javascript
 $("#my-list").sortable({
-  connectWith: "#my-other-list",
+    connectWith: "#my-other-list",
 });
 ```
 
@@ -39,11 +39,11 @@ $("#my-list").sortable({
 
 ```javascript
 $("#my-list").sortable({
-  connectWith: "#my-other-list",
+    connectWith: "#my-other-list",
 });
 
 $("#my-other-list").sortable({
-  connectWith: "#my-list",
+    connectWith: "#my-list",
 });
 ```
 

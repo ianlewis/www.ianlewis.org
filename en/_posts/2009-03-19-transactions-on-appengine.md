@@ -18,13 +18,13 @@ in that,
    basically call `run_in_transaction()` on a function. This can sometimes be a
    pain but can generally be worked around with decorators and the like.
 
-   ```python
-   def my_update_function():
-     # Some update code here
-     ent.put()
+    ```python
+    def my_update_function():
+      # Some update code here
+      ent.put()
 
-   run_in_transaction(my_update_function)
-   ```
+    run_in_transaction(my_update_function)
+    ```
 
 2. You can only update entities in the same entity group. This means all
    entities must be in the same ancestor tree. This can make updating entities
@@ -34,31 +34,31 @@ in that,
 3. You cannot do filters in a transaction. This means you cannot do any kind of
    select, _period_. This means you cannot do the following:
 
-   ```python
-   class ModelA(db.Model):
-     pass
+    ```python
+    class ModelA(db.Model):
+      pass
 
-   class ModelB(db.Model):
-     modela = ReferenceProperty(ModelA)
+    class ModelB(db.Model):
+      modela = ReferenceProperty(ModelA)
 
-   def update_func():
-     # Sorry this won't work
-     modelas = ModelA.all()
+    def update_func():
+      # Sorry this won't work
+      modelas = ModelA.all()
 
-     # This is the only thing that works
-     modela = ModelA.get_by_id(123)
+      # This is the only thing that works
+      modela = ModelA.get_by_id(123)
 
-     # Jeez, you can't do this either!
-     modelb = ModelB.filter('modela =', modela)
-   ```
+      # Jeez, you can't do this either!
+      modelb = ModelB.filter('modela =', modela)
+    ```
 
-   You can only do gets based on the key of an entity. Which means if you have
-   a relationship like the one above you need to be able to derive the key to
-   ModelB given the key for ModelA. And since you cannot chose numeric keys with
-   which to save entities (numeric keys are always assigned), you will need to
-   assign
-   [key names](http://code.google.com/appengine/docs/python/datastore/keysandentitygroups.html#Kinds_Names_and_IDs)
-   for both entities.
+    You can only do gets based on the key of an entity. Which means if you have
+    a relationship like the one above you need to be able to derive the key to
+    ModelB given the key for ModelA. And since you cannot chose numeric keys with
+    which to save entities (numeric keys are always assigned), you will need to
+    assign
+    [key names](http://code.google.com/appengine/docs/python/datastore/keysandentitygroups.html#Kinds_Names_and_IDs)
+    for both entities.
 
 All this makes transactions a bit of a pain in
 [Appengine](http://code.google.com/appengine/) but workable if you put a bit of

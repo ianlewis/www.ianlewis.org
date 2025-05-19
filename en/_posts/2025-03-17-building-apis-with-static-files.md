@@ -82,32 +82,32 @@ By storing the data in a git repository I can easily refresh the data by using a
 
 ```yaml
 on:
-  schedule:
-    - cron: "0 0 * * *"
+    schedule:
+        - cron: "0 0 * * *"
 
 jobs:
-  update:
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          # NOTE: Needed so we can check in the changes.
-          persist-credentials: true
-      - uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
-        with:
-          node-version-file: "package.json"
-      - uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5.4.0
-        with:
-          python-version: "3.10"
-      - run: make update
-      - run: |
-          git config --global user.name github-actions
-          git config --global user.email github-actions@github.com
-          git add .
-          git commit -m "Update data $(date +"%Y-%m-%d")" || true
-          git push
+    update:
+        permissions:
+            contents: write
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+              with:
+                  # NOTE: Needed so we can check in the changes.
+                  persist-credentials: true
+            - uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
+              with:
+                  node-version-file: "package.json"
+            - uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5.4.0
+              with:
+                  python-version: "3.10"
+            - run: make update
+            - run: |
+                  git config --global user.name github-actions
+                  git config --global user.email github-actions@github.com
+                  git add .
+                  git commit -m "Update data $(date +"%Y-%m-%d")" || true
+                  git push
 ```
 
 This will create a new commit containing the new data scraped each day.

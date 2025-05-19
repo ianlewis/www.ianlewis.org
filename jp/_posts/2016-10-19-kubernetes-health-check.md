@@ -28,12 +28,12 @@ http.ListenAndServe(":8080", nil)
 
 ```yaml
 livenessProbe:
-  # an http probe
-  httpGet:
-    path: /healthz
-    port: 8080
-  initialDelaySeconds: 15
-  timeoutSeconds: 1
+    # an http probe
+    httpGet:
+        path: /healthz
+        port: 8080
+    initialDelaySeconds: 15
+    timeoutSeconds: 1
 ```
 
 この`livenessProbe`はアプリケーションが生きているだけをチェックします。`initialDelaySeconds`はアプリを起動してから、何秒後にヘルスチェックを始めるかを示している。例えば、起動するまで時間かかるようなアプリケーションだとこの設定を指定すると便利。`timeoutSeconds`はヘルスチェックのレスポンスを何秒待つかを示す。`livenessProbe`の場合はこれをできるだけ短くしたほうが早く検知するので復活が速い。でも、注意すべき点があって、負荷がかかっている状態でも適切なタイムアウトを設定しないと、一番忙しい時なのにアプリが再起動されてしまったり、パフォーマンスに影響がでる。なので、適切な`timeoutSeconds`を指定するのが大事。
@@ -50,12 +50,12 @@ livenessProbe:
 
 ```yaml
 readinessProbe:
-  # an http probe
-  httpGet:
-    path: /readiness
-    port: 8080
-  initialDelaySeconds: 20
-  timeoutSeconds: 5
+    # an http probe
+    httpGet:
+        path: /readiness
+        port: 8080
+    initialDelaySeconds: 20
+    timeoutSeconds: 5
 ```
 
 `readinesProbe`の実装では、アプリケーションの依存サービスに接続できるかどうかをチェックする。一つの例として、データベースとmemcachedに依存するアプリケーションの`readinessProbe`を実装する。

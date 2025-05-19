@@ -165,21 +165,21 @@ Cronジョブを実行するアプリケーションバージョンを指定す�
 
 ```yaml
 cron:
-  - description: new daily summary job
-    url: /tasks/summary
-    schedule: every 24 hours
-    target: version-2
+    - description: new daily summary job
+      url: /tasks/summary
+      schedule: every 24 hours
+      target: version-2
 ```
 
 キューの定義でも、あるキューのタスクがどのバージョンで実行されるかを`queue.yaml`の`target`プロパティで指定できます。
 
 ```yaml
 queue:
-  - name: my-queue
-    rate: 20/s
-    bucket_size: 40
-    max_concurrent_requests: 10
-    target: version-2
+    - name: my-queue
+      rate: 20/s
+      bucket_size: 40
+      max_concurrent_requests: 10
+      target: version-2
 ```
 
 ## まとめ

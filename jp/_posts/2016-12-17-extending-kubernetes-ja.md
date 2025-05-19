@@ -49,12 +49,12 @@ Kubernetesを拡張するには標準コントローラーと同じことをす�
 
 ```yaml
 metadata:
-  name: cron-tab.alpha.ianlewis.org
+    name: cron-tab.alpha.ianlewis.org
 apiVersion: extensions/v1beta1
 kind: ThirdPartyResource
 description: "A specification of a Job to run on a cron style schedule"
 versions:
-  - name: v1
+    - name: v1
 ```
 
 この`CronTab`を`resource.yaml`に保存して、`kubectl`で作成する。`CronTab`のオブジェクト名は`cron-tab.alpha.ianlewis.org`の最初の部分`cron-tab`をCamel Caseにした名称になる。
@@ -76,14 +76,14 @@ kubectl get crontab
 apiVersion: "alpha.ianlewis.org/v1"
 kind: "CronTab"
 metadata:
-  name: backup
+    name: backup
 spec:
-  schedule: "@daily"
-  jobTemplate:
-    containers:
-      - image: mybackupscript:v9
-        name: backup
-    restartPolicy: Never
+    schedule: "@daily"
+    jobTemplate:
+        containers:
+            - image: mybackupscript:v9
+              name: backup
+        restartPolicy: Never
 ```
 
 `backup`の`CronTab`を作成する
@@ -333,25 +333,25 @@ func runCronJob(c cronTab) error {
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: cron-controller
+    name: cron-controller
 spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        name: cron-controller
-    spec:
-      containers:
-        - name: cron
-          image: my.registry.com/cron-controller:0.0.1
-        # 認証するためにkubectl proxyを使う
-        - name: kubectl
-          image: my.registry.com/kubectl:v1.5.1
-          args:
-            - "proxy"
-          ports:
-            - name: proxy
-              containerPort: 8001
+    replicas: 1
+    template:
+        metadata:
+            labels:
+                name: cron-controller
+        spec:
+            containers:
+                - name: cron
+                  image: my.registry.com/cron-controller:0.0.1
+                # 認証するためにkubectl proxyを使う
+                - name: kubectl
+                  image: my.registry.com/kubectl:v1.5.1
+                  args:
+                      - "proxy"
+                  ports:
+                      - name: proxy
+                        containerPort: 8001
 ```
 
 これでクラスタにデプロイして、Cronサーバーを動かす。

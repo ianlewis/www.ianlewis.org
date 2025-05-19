@@ -171,13 +171,18 @@ json-format: node_modules/.installed ## Format JSON files.
 
 .PHONY: md-format
 md-format: node_modules/.installed ## Format Markdown files.
+	@#NOTE: tab-width of 4 is recommended for Markdown files.
 	@set -euo pipefail; \
 		files=$$( \
 			git ls-files --deduplicate \
 				'*.md' \
-				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}"; done \
+				| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 		); \
-		npx prettier --write --no-error-on-unmatched-pattern $${files}
+		./node_modules/.bin/prettier \
+			--tab-width 4 \
+			--write \
+			--no-error-on-unmatched-pattern \
+			$${files}
 
 .PHONY: sass-format
 sass-format: node_modules/.installed ## Format SASS files.

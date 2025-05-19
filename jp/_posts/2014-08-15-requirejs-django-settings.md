@@ -24,17 +24,17 @@ Djangoの設定はこんな感じで、JSに渡せる。
 ```html
 <script src="{{ STATIC_URL }}js/require.js"></script>
 <script>
-  require.config({
-      // require.js の i18n プラグインにも便利！！！
-      locale: '{{ LANGUAGE_CODE }}',
-      config: {
-          settings: {
-              {% if debug %}DEBUG: true,{% endif %}
-              MEDIA_URL: "{{ MEDIA_URL|escapejs }}",
-              STATIC_URL: "{{ STATIC_URL|escapejs }}",
-          }
-      }
-  });
+    require.config({
+        // require.js の i18n プラグインにも便利！！！
+        locale: '{{ LANGUAGE_CODE }}',
+        config: {
+            settings: {
+                {% if debug %}DEBUG: true,{% endif %}
+                MEDIA_URL: "{{ MEDIA_URL|escapejs }}",
+                STATIC_URL: "{{ STATIC_URL|escapejs }}",
+            }
+        }
+    });
 </script>
 ```
 
@@ -43,19 +43,19 @@ requireする。
 
 ```javascript
 define(["module", "jquery"], function (module, $) {
-  // underscore.js の extend() でもいい
-  return $.extend(
-    {
-      // Default settings
-      DEBUG: false,
-      MEDIA_URL: "/media/",
-      STATIC_URL: "/static/",
+    // underscore.js の extend() でもいい
+    return $.extend(
+        {
+            // Default settings
+            DEBUG: false,
+            MEDIA_URL: "/media/",
+            STATIC_URL: "/static/",
 
-      // Other settings
-      SALES_TAX: 0.05,
-    },
-    module.config(),
-  );
+            // Other settings
+            SALES_TAX: 0.05,
+        },
+        module.config(),
+    );
 });
 ```
 
@@ -64,18 +64,18 @@ settingsをインポートできる。
 
 ```javascript
 define(["jquery", "settings"], function ($, settings) {
-  $("#salestax").html(
-    '<img src="' +
-      settings.STATIC_URL +
-      'img/money.gif"> ' +
-      String(settings.SALES_TAX),
-  );
+    $("#salestax").html(
+        '<img src="' +
+            settings.STATIC_URL +
+            'img/money.gif"> ' +
+            String(settings.SALES_TAX),
+    );
 
-  if (settings.DEBUG) {
-    console.log("[DEBUG] Set sales tax.");
-  }
+    if (settings.DEBUG) {
+        console.log("[DEBUG] Set sales tax.");
+    }
 
-  // etc.
+    // etc.
 });
 ```
 

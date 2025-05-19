@@ -40,9 +40,9 @@ If you are simply creating a namespace that you want to be able to show in the n
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: my-namespace
-  labels:
     name: my-namespace
+    labels:
+        name: my-namespace
 ```
 
 Then you can run this command to create it:

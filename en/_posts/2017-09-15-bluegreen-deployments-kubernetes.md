@@ -30,21 +30,21 @@ We can create our "blue" deployment by saving the following yaml to a file `blue
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: nginx-1.10
+    name: nginx-1.10
 spec:
-  replicas: 3
-  template:
-    metadata:
-      labels:
-        name: nginx
-        version: "1.10"
-    spec:
-      containers:
-        - name: nginx
-          image: nginx:1.10
-          ports:
-            - name: http
-              containerPort: 80
+    replicas: 3
+    template:
+        metadata:
+            labels:
+                name: nginx
+                version: "1.10"
+        spec:
+            containers:
+                - name: nginx
+                  image: nginx:1.10
+                  ports:
+                      - name: http
+                        containerPort: 80
 ```
 
 You can then create the deployment using the kubectl command.
@@ -61,18 +61,18 @@ In this case we have two labels, `name=nginx` and `version=1.10`. We will set th
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx
-  labels:
     name: nginx
+    labels:
+        name: nginx
 spec:
-  ports:
-    - name: http
-      port: 80
-      targetPort: 80
-  selector:
-    name: nginx
-    version: "1.10"
-  type: LoadBalancer
+    ports:
+        - name: http
+          port: 80
+          targetPort: 80
+    selector:
+        name: nginx
+        version: "1.10"
+    type: LoadBalancer
 ```
 
 Creating the service will create a load balancer that is accessible outside the cluster.
@@ -100,21 +100,21 @@ For the "green" deployment we will deploy a new deployment in parallel wit the "
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: nginx-1.11
+    name: nginx-1.11
 spec:
-  replicas: 3
-  template:
-    metadata:
-      labels:
-        name: nginx
-        version: "1.11"
-    spec:
-      containers:
-        - name: nginx
-          image: nginx:1.11
-          ports:
-            - name: http
-              containerPort: 80
+    replicas: 3
+    template:
+        metadata:
+            labels:
+                name: nginx
+                version: "1.11"
+        spec:
+            containers:
+                - name: nginx
+                  image: nginx:1.11
+                  ports:
+                      - name: http
+                        containerPort: 80
 ```
 
 ... I can create the new deployment like so.
@@ -135,18 +135,18 @@ To cut over to the "green" deployment we will update the selector for the servic
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx
-  labels:
     name: nginx
+    labels:
+        name: nginx
 spec:
-  ports:
-    - name: http
-      port: 80
-      targetPort: 80
-  selector:
-    name: nginx
-    version: "1.11"
-  type: LoadBalancer
+    ports:
+        - name: http
+          port: 80
+          targetPort: 80
+    selector:
+        name: nginx
+        version: "1.11"
+    type: LoadBalancer
 ```
 
 This apply will update the existing `nginx` service in place.

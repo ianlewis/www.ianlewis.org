@@ -31,21 +31,21 @@ QUnitを使っています。
 
 ```javascript
 define(["jquery"], function ($) {
-  return {
-    runTests: function () {
-      module("test/module");
+    return {
+        runTests: function () {
+            module("test/module");
 
-      test("Test 1", function () {
-        // Test Code here
-      });
+            test("Test 1", function () {
+                // Test Code here
+            });
 
-      test("Test 2", function () {
-        // Test Code here
-      });
+            test("Test 2", function () {
+                // Test Code here
+            });
 
-      // ...
-    },
-  };
+            // ...
+        },
+    };
 });
 ```
 
@@ -79,20 +79,20 @@ define(["jquery"], testmod(function($) {
 
 ```html
 <script>
-  QUnit.config.autostart = false;
-  QUnit.config.testTimeout = 30000; // 30 Seconds
+    QUnit.config.autostart = false;
+    QUnit.config.testTimeout = 30000; // 30 Seconds
 
-  require([
-    // 順番保証
-    "testmod1",
-    "testmod2",
-  ], function () {
-    QUnit.start();
+    require([
+        // 順番保証
+        "testmod1",
+        "testmod2",
+    ], function () {
+        QUnit.start();
 
-    for (i = 0; i < arguments.length; i++) {
-      TestModule = arguments[i];
-      TestModule.runTests();
-    }
-  });
+        for (i = 0; i < arguments.length; i++) {
+            TestModule = arguments[i];
+            TestModule.runTests();
+        }
+    });
 </script>
 ```

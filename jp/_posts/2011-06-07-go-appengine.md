@@ -62,28 +62,28 @@ if (len(body) > 0) {
 
 ```html
 <body>
-  <div style="float:right">
-    {.section CurrentUser} {CurrentUser} <a href="{LoginUrl}">Sign Out</a>
-    {.or}
-    <a href="{LoginUrl}">Sign In</a>
+    <div style="float:right">
+        {.section CurrentUser} {CurrentUser} <a href="{LoginUrl}">Sign Out</a>
+        {.or}
+        <a href="{LoginUrl}">Sign In</a>
+        {.end}
+    </div>
+
+    <h1>Appengine Go! Guestbook <img src="/static/img/appengine-go.png" /></h1>
+    <a href="https://bitbucket.org/IanLewis/golang_guestbook/">Source Code</a>
+    <form action="/save" method="POST" style="margin-bottom: 50px">
+        <div><textarea name="body" rows="10" cols="80"></textarea></div>
+        <div><input type="submit" value="Save" /></div>
+    </form>
+    {.repeated section Greetings}
+    <div>
+        User: {AccountEmail|userName}<br />
+        {Date|date}
+        <p style="padding-left:10px">{Body|html}</p>
+    </div>
     {.end}
-  </div>
 
-  <h1>Appengine Go! Guestbook <img src="/static/img/appengine-go.png" /></h1>
-  <a href="https://bitbucket.org/IanLewis/golang_guestbook/">Source Code</a>
-  <form action="/save" method="POST" style="margin-bottom: 50px">
-    <div><textarea name="body" rows="10" cols="80"></textarea></div>
-    <div><input type="submit" value="Save" /></div>
-  </form>
-  {.repeated section Greetings}
-  <div>
-    User: {AccountEmail|userName}<br />
-    {Date|date}
-    <p style="padding-left:10px">{Body|html}</p>
-  </div>
-  {.end}
-
-  <div style="text-align:center"></div>
+    <div style="text-align:center"></div>
 </body>
 ```
 

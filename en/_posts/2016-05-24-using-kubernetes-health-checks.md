@@ -34,12 +34,12 @@ and in the deployment:
 
 ```yaml
 livenessProbe:
-  # an http probe
-  httpGet:
-    path: /healthz
-    port: 8080
-  initialDelaySeconds: 15
-  timeoutSeconds: 1
+    # an http probe
+    httpGet:
+        path: /healthz
+        port: 8080
+    initialDelaySeconds: 15
+    timeoutSeconds: 1
 ```
 
 This just tells Kubernetes that the application is up and running. The
@@ -73,12 +73,12 @@ The definition of a readiness probe is the same as liveness probes. Readiness pr
 
 ```yaml
 readinessProbe:
-  # an http probe
-  httpGet:
-    path: /readiness
-    port: 8080
-  initialDelaySeconds: 20
-  timeoutSeconds: 5
+    # an http probe
+    httpGet:
+        path: /readiness
+        port: 8080
+    initialDelaySeconds: 20
+    timeoutSeconds: 5
 ```
 
 You will want to check that you can connect to all of your application's dependencies

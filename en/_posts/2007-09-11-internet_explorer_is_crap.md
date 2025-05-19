@@ -28,8 +28,8 @@ and expect it to work. Internet Explorer simply does nothing. No error message. 
 
 ```html
 <a
-  href="mailto:myperson@mymail.com?subject=%E3%81%8A%E3%81%AF%E3%82%88%E3%81%86%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%99%26"
-  >e-mail me</a
+    href="mailto:myperson@mymail.com?subject=%E3%81%8A%E3%81%AF%E3%82%88%E3%81%86%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%99%26"
+    >e-mail me</a
 >
 ```
 

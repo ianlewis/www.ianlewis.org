@@ -20,14 +20,14 @@ the dialog and on the tag in the dialog that you want to close it.
 <a href="#" class="jqModal">view</a>
 ...
 <div class="jqmWindow" id="dialog">
-  <p>This is my dialog.</p>
-  <a href="#" class="jqmClose">Close</a>
+    <p>This is my dialog.</p>
+    <a href="#" class="jqmClose">Close</a>
 </div>
 ```
 
 ```javascript
 $().ready(function () {
-  $("#dialog").jqm();
+    $("#dialog").jqm();
 });
 ```
 
@@ -41,15 +41,15 @@ about a few minutes to straiten out and test.
 <a href="#" class="jqModal">Update</a>
 ...
 <div class="jqmWindow" id="dialog">
-  <p>I'm going to update. Is that ok?</p>
-  <a href="#" class="dialogok">OK</a> <a href="#" class="jqmClose">Cancel</a>
+    <p>I'm going to update. Is that ok?</p>
+    <a href="#" class="dialogok">OK</a> <a href="#" class="jqmClose">Cancel</a>
 </div>
 ```
 
 ```javascript
 $("#dialog #dialogok").bind("click", function () {
-  /* Do your update logic here. */
-  $("#dialog").jqmHide();
+    /* Do your update logic here. */
+    $("#dialog").jqmHide();
 });
 ```
 

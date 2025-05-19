@@ -135,42 +135,42 @@ binary built by GoReleaser might look like the following:
 
 ```yaml
 jobs:
-  goreleaser:
-    outputs:
-      hashes: ${{ steps.hash.outputs.hashes }}
+    goreleaser:
+        outputs:
+            hashes: ${{ steps.hash.outputs.hashes }}
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
 
-      - name: Run GoReleaser
-        id: run-goreleaser
-        uses: goreleaser/goreleaser-action@b953231f81b8dfd023c58e0854a721e35037f28b # tag=v3
+            - name: Run GoReleaser
+              id: run-goreleaser
+              uses: goreleaser/goreleaser-action@b953231f81b8dfd023c58e0854a721e35037f28b # tag=v3
 
-      - name: Generate subject
-        id: hash
-        env:
-          ARTIFACTS: "${{ steps.run-goreleaser.outputs.artifacts }}"
-        run: |
-          set -euo pipefail
+            - name: Generate subject
+              id: hash
+              env:
+                  ARTIFACTS: "${{ steps.run-goreleaser.outputs.artifacts }}"
+              run: |
+                  set -euo pipefail
 
-          hashes=$(echo $ARTIFACTS | jq --raw-output '.[] | {name, "digest": (.extra.Digest // .extra.Checksum)} | select(.digest) | {digest} + {name} | join("  ") | sub("^sha256:";"")' | base64 -w0)
-          if test "$hashes" = ""; then # goreleaser < v1.13.0
-            checksum_file=$(echo "$ARTIFACTS" | jq -r '.[] | select (.type=="Checksum") | .path')
-            hashes=$(cat $checksum_file | base64 -w0)
-          fi
-          echo "hashes=$hashes" >> $GITHUB_OUTPUT
+                  hashes=$(echo $ARTIFACTS | jq --raw-output '.[] | {name, "digest": (.extra.Digest // .extra.Checksum)} | select(.digest) | {digest} + {name} | join("  ") | sub("^sha256:";"")' | base64 -w0)
+                  if test "$hashes" = ""; then # goreleaser < v1.13.0
+                    checksum_file=$(echo "$ARTIFACTS" | jq -r '.[] | select (.type=="Checksum") | .path')
+                    hashes=$(cat $checksum_file | base64 -w0)
+                  fi
+                  echo "hashes=$hashes" >> $GITHUB_OUTPUT
 
-  provenance:
-    needs: [goreleaser]
-    permissions:
-      actions: read # To read the workflow path.
-      id-token: write # To sign the provenance.
-      contents: write # To add assets to a release.
-    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.9.0
-    with:
-      base64-subjects: "${{ needs.goreleaser.outputs.hashes }}"
-      upload-assets: true # upload to a new release
+    provenance:
+        needs: [goreleaser]
+        permissions:
+            actions: read # To read the workflow path.
+            id-token: write # To sign the provenance.
+            contents: write # To add assets to a release.
+        uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.9.0
+        with:
+            base64-subjects: "${{ needs.goreleaser.outputs.hashes }}"
+            upload-assets: true # upload to a new release
 ```
 
 This will generate a signed provenance file that is uploaded to your GitHub
