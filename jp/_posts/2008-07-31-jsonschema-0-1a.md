@@ -24,10 +24,10 @@ JSONSchemaはJSON文書の構造を検証するために作られている。JSO
 
 ```json
 {
-  "name": "Ian Lewis",
-  "email": "IanLewis@xyz.com",
-  "address": "123 Main St.",
-  "phone": "080-1942-9494"
+    "name": "Ian Lewis",
+    "email": "IanLewis@xyz.com",
+    "address": "123 Main St.",
+    "phone": "080-1942-9494"
 }
 ```
 

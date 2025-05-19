@@ -74,52 +74,52 @@ create_marker()という関数で作れれている。マーカーにクリッ�
 var activeInfoWindow;
 
 function create_marker(event) {
-  if (event.lat && event.lon) {
-    var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(event.lat, event.lon),
-      title: event.title,
-    });
-    marker.infowindow = new google.maps.InfoWindow({
-      content:
-        "<p><strong>" +
-        event.title +
-        "</strong></p>" +
-        "<p>" +
-        event.catch +
-        "</p>" +
-        "<p>参加者数: " +
-        (event.accepted + event.waiting) +
-        (event.limit ? "/" + event.limit : "") +
-        "</p>" +
-        "<p>場所: " +
-        event.place +
-        " (" +
-        event.address +
-        ")</p>" +
-        "<p>時間: " +
-        event.started_at +
-        "</p>" +
-        '<p>URL: <a href="' +
-        event.event_url +
-        '" target="_blank">' +
-        event.event_url +
-        "</a></p>",
-    });
-    google.maps.event.addListener(marker, "click", function () {
-      if (activeInfoWindow == this.infowindow) {
-        return;
-      }
-      if (activeInfoWindow) {
-        activeInfoWindow.close();
-      }
-      this.infowindow.open(map, this);
-      activeInfoWindow = this.infowindow;
-    });
+    if (event.lat && event.lon) {
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(event.lat, event.lon),
+            title: event.title,
+        });
+        marker.infowindow = new google.maps.InfoWindow({
+            content:
+                "<p><strong>" +
+                event.title +
+                "</strong></p>" +
+                "<p>" +
+                event.catch +
+                "</p>" +
+                "<p>参加者数: " +
+                (event.accepted + event.waiting) +
+                (event.limit ? "/" + event.limit : "") +
+                "</p>" +
+                "<p>場所: " +
+                event.place +
+                " (" +
+                event.address +
+                ")</p>" +
+                "<p>時間: " +
+                event.started_at +
+                "</p>" +
+                '<p>URL: <a href="' +
+                event.event_url +
+                '" target="_blank">' +
+                event.event_url +
+                "</a></p>",
+        });
+        google.maps.event.addListener(marker, "click", function () {
+            if (activeInfoWindow == this.infowindow) {
+                return;
+            }
+            if (activeInfoWindow) {
+                activeInfoWindow.close();
+            }
+            this.infowindow.open(map, this);
+            activeInfoWindow = this.infowindow;
+        });
 
-    return marker;
-  } else {
-    return null;
-  }
+        return marker;
+    } else {
+        return null;
+    }
 }
 ```
 

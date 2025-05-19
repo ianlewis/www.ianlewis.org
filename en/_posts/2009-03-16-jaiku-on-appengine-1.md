@@ -36,39 +36,39 @@ the relevant parts in app.yaml.
 
 ```yaml
 skip_files: |
-  ^(.*/)?(
-  (app\.yaml)|
-  (app\.yml)|
-  (index\.yaml)|
-  (index\.yml)|
-  (#.*#)|
-  (.*~)|
-  (.*\.py[co])|
-  (.*/RCS/.*)|
-  # (\..*)|
-  # (manage.py)|
-  # (google_appengine.*)|
-  # (simplejson/.*)|
-  # (gdata/.*)|
-  # (atom/.*)|
-  # (tlslite/.*)|
-  # (oauth/.*)|
-  # (beautifulsoup/.*)|
-  # (django/.*)|
-  # (docutils/.*)|
-  # (epydoc/.*)|
-  # (appengine_django/management/commands/.*)|
-  # (README)|
-  # (CHANGELOG)|
-  # (Makefile)|
-  # (bin/.*)|
-  # (images/ads/.*)|
-  # (images/ext/.*)|
-  # (wsgiref/.*)|
-  # (elementtree/.*)|
-  # (doc/.*)|
-  # (profiling/.*)
-  )$
+    ^(.*/)?(
+    (app\.yaml)|
+    (app\.yml)|
+    (index\.yaml)|
+    (index\.yml)|
+    (#.*#)|
+    (.*~)|
+    (.*\.py[co])|
+    (.*/RCS/.*)|
+    # (\..*)|
+    # (manage.py)|
+    # (google_appengine.*)|
+    # (simplejson/.*)|
+    # (gdata/.*)|
+    # (atom/.*)|
+    # (tlslite/.*)|
+    # (oauth/.*)|
+    # (beautifulsoup/.*)|
+    # (django/.*)|
+    # (docutils/.*)|
+    # (epydoc/.*)|
+    # (appengine_django/management/commands/.*)|
+    # (README)|
+    # (CHANGELOG)|
+    # (Makefile)|
+    # (bin/.*)|
+    # (images/ads/.*)|
+    # (images/ext/.*)|
+    # (wsgiref/.*)|
+    # (elementtree/.*)|
+    # (doc/.*)|
+    # (profiling/.*)
+    )$
 ```
 
 From there it should have worked but I got an error about the pstats module.

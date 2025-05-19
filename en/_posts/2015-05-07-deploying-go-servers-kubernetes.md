@@ -73,25 +73,25 @@ the new `v1` version of the API:
 kind: ReplicationController
 apiVersion: v1
 metadata:
-  name: outyet-v1
+    name: outyet-v1
 spec:
-  replicas: 3
-  selector:
-    name: outyet
-    version: "1"
-  template:
-    metadata:
-      labels:
+    replicas: 3
+    selector:
         name: outyet
         version: "1"
-    spec:
-      containers:
-        - image: gcr.io/<project-id>/outyet:v1
-          name: outyet
-          ports:
-            - containerPort: 8080
-              hostPort: 8080
-              protocol: TCP
+    template:
+        metadata:
+            labels:
+                name: outyet
+                version: "1"
+        spec:
+            containers:
+                - image: gcr.io/<project-id>/outyet:v1
+                  name: outyet
+                  ports:
+                      - containerPort: 8080
+                        hostPort: 8080
+                        protocol: TCP
 ```
 
 Next we'll create a service for our app. Create an `outyet-service.yml` with
@@ -101,17 +101,17 @@ the contents below:
 kind: Service
 apiVersion: v1
 metadata:
-  name: outyet
-  labels:
     name: outyet
+    labels:
+        name: outyet
 spec:
-  ports:
-    - port: 80
-      targetPort: 8080
-      protocol: TCP
-  selector:
-    name: outyet
-  type: LoadBalancer
+    ports:
+        - port: 80
+          targetPort: 8080
+          protocol: TCP
+    selector:
+        name: outyet
+    type: LoadBalancer
 ```
 
 ## Deploy the Container Engine Cluster
@@ -201,25 +201,25 @@ Next lets update all the places it says v1 in our outyet-rc.yml and change it to
 kind: ReplicationController
 apiVersion: v1
 metadata:
-  name: outyet-v2
+    name: outyet-v2
 spec:
-  replicas: 3
-  selector:
-    name: outyet
-    version: "2"
-  template:
-    metadata:
-      labels:
+    replicas: 3
+    selector:
         name: outyet
         version: "2"
-    spec:
-      containers:
-        - image: gcr.io/<project-id>/outyet:v2
-          name: outyet
-          ports:
-            - containerPort: 8080
-              hostPort: 8080
-              protocol: TCP
+    template:
+        metadata:
+            labels:
+                name: outyet
+                version: "2"
+        spec:
+            containers:
+                - image: gcr.io/<project-id>/outyet:v2
+                  name: outyet
+                  ports:
+                      - containerPort: 8080
+                        hostPort: 8080
+                        protocol: TCP
 ```
 
 Next do a rolling update of our replication controller `outyet-v1` to our new

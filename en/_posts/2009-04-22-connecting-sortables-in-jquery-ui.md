@@ -21,7 +21,7 @@ to the sortable constructor/initializer. You can initialize a sortable like so:
 
 ```javascript
 $("#my-list").sortable({
-  axis: "x",
+    axis: "x",
 });
 ```
 
@@ -34,7 +34,7 @@ you can drag an object onto a sortable widget.
 
 ```javascript
 $("#my-item").draggable({
-  connectToSortable: "#my-list",
+    connectToSortable: "#my-list",
 });
 ```
 
@@ -43,7 +43,7 @@ potential for some interesting user interfaces.
 
 ```javascript
 $("#my-list").sortable({
-  connectWith: "#my-other-list",
+    connectWith: "#my-other-list",
 });
 ```
 
@@ -52,11 +52,11 @@ forth between the sortables:
 
 ```javascript
 $("#my-list").sortable({
-  connectWith: "#my-other-list",
+    connectWith: "#my-other-list",
 });
 
 $("#my-other-list").sortable({
-  connectWith: "#my-list",
+    connectWith: "#my-list",
 });
 ```
 

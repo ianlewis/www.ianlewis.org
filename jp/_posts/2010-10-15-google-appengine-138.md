@@ -20,11 +20,11 @@ Google Appengine1.3.8がリリースされました！
 
 - appstatsや、データストアの管理画面、リモートAPIのハンドラーが簡単に設定できるようになりました。
 
-  ```yaml
-  builtins:
-    datastore_admin: on
-    appstats: on
-  ```
+    ```yaml
+    builtins:
+        datastore_admin: on
+        appstats: on
+    ```
 
 ## 管理画面の改善
 

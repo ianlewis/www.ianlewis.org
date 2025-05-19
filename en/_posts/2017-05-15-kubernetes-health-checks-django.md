@@ -127,12 +127,12 @@ Then you need to make sure your `timeoutSeconds` for your health checks are long
 
 ```yaml
 readinessProbe:
-  # an http probe
-  httpGet:
-    path: /readiness
-    port: 8080
-  initialDelaySeconds: 20
-  timeoutSeconds: 5
+    # an http probe
+    httpGet:
+        path: /readiness
+        port: 8080
+    initialDelaySeconds: 20
+    timeoutSeconds: 5
 ```
 
 ## Resilient Django Websites

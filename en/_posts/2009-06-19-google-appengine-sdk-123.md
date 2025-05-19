@@ -21,12 +21,12 @@ the Task Queue API.
 - [Google Appengine Blog](http://googleappengine.blogspot.com/)
 - [The task queue API
   documentation](http://code.google.com/appengine/docs/python/taskqueue/overview.html)
-  - Looks relatively complete.
+    - Looks relatively complete.
 - [Offline Processing on App Engine: a Look
   Ahead](http://code.google.com/events/io/sessions/OfflineProcessingAppEngine.html)
-  - This is the session at Google I/O where Brett Slatkin talks about
-    the task queue API. I attended the talk in person and it was pretty
-    informative.
+    - This is the session at Google I/O where Brett Slatkin talks about
+      the task queue API. I attended the talk in person and it was pretty
+      informative.
 - [Slides from Offline Processing on App Engine: a Look
   Ahead](http://dl.google.com/io/2009/pres/Th_1045_Offline_Processing_On_App_Engine_A_Look_Ahead.pdf).
 - Some [task queue API

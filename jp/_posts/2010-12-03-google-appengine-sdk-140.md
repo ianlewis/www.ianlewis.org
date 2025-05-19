@@ -50,17 +50,17 @@ class MyHandler(BaseHandler):
 var channel = new goog.appengine.Channel("{{ channel_id }}");
 var socket = channel.open();
 socket.onopen = function () {
-  window.setTimeout(function () {
-    alert("Connected!");
-  }, 100);
+    window.setTimeout(function () {
+        alert("Connected!");
+    }, 100);
 };
 
 // メッセージのハンドラーを登録
 socket.onmessage = function (evt) {
-  // テキストを受けているけど、JSONがおすすめ
-  // var o = JSON.parse(evt.data);
-  alert(evt.data);
-  // do something
+    // テキストを受けているけど、JSONがおすすめ
+    // var o = JSON.parse(evt.data);
+    alert(evt.data);
+    // do something
 };
 ```
 
@@ -102,7 +102,7 @@ Channel API のドキュメント:
 
 ```yaml
 inbound_services:
-  - warmup
+    - warmup
 ```
 
 スタートアップリクエストが`/_ah/warmup`のURLに来るので、スタートアップリクエストを受けとるURLを`app.yaml`に設定する。

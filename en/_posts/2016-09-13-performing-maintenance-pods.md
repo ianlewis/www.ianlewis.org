@@ -24,17 +24,17 @@ Let's create a Deployment with an `enabled` label:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: nginx
+    name: nginx
 spec:
-  template:
-    metadata:
-      labels:
-        name: nginx
-        enabled: "true"
-    spec:
-      containers:
-        - name: nginx
-          image: nginx
+    template:
+        metadata:
+            labels:
+                name: nginx
+                enabled: "true"
+        spec:
+            containers:
+                - name: nginx
+                  image: nginx
 ```
 
 In our service we will use these labels in our selector:
@@ -43,17 +43,17 @@ In our service we will use these labels in our selector:
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
+    labels:
+        name: nginx
     name: nginx
-  name: nginx
 spec:
-  ports:
-    - name: http
-      port: 80
-      targetPort: 80
-  selector:
-    name: nginx
-    enabled: "true"
+    ports:
+        - name: http
+          port: 80
+          targetPort: 80
+    selector:
+        name: nginx
+        enabled: "true"
 ```
 
 After we create our deployment and service we would have some pods running.

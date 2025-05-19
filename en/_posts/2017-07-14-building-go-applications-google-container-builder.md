@@ -36,29 +36,29 @@ There is a `gcr.io/cloud-builders/go` image that you can use to run the go compi
 
 ```yaml
 steps:
-  - name: "gcr.io/cloud-builders/go"
-    args: ["generate"]
-    env: ["PROJECT_ROOT=github.com/IanLewis/testapp"]
-  - name: "gcr.io/cloud-builders/go"
-    args: ["test", "./..."]
-    env: ["PROJECT_ROOT=github.com/IanLewis/testapp"]
-  - name: "gcr.io/cloud-builders/go"
-    args:
-      [
-        "install",
-        "-a",
-        "-ldflags",
-        "'-s'",
-        "-installsuffix",
-        "cgo",
-        "github.com/IanLewis/testapp",
-      ]
-    env:
-      [
-        "PROJECT_ROOT=github.com/IanLewis/testapp",
-        "CGO_ENABLED=0",
-        "GOOS=linux",
-      ]
+    - name: "gcr.io/cloud-builders/go"
+      args: ["generate"]
+      env: ["PROJECT_ROOT=github.com/IanLewis/testapp"]
+    - name: "gcr.io/cloud-builders/go"
+      args: ["test", "./..."]
+      env: ["PROJECT_ROOT=github.com/IanLewis/testapp"]
+    - name: "gcr.io/cloud-builders/go"
+      args:
+          [
+              "install",
+              "-a",
+              "-ldflags",
+              "'-s'",
+              "-installsuffix",
+              "cgo",
+              "github.com/IanLewis/testapp",
+          ]
+      env:
+          [
+              "PROJECT_ROOT=github.com/IanLewis/testapp",
+              "CGO_ENABLED=0",
+              "GOOS=linux",
+          ]
 ```
 
 In the final step I build the Docker image.
