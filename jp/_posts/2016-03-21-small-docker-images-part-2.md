@@ -9,7 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-この記事は小さいDockerイメージの作成について第２版目の記事。[前回の記事](/jp/small-docker-images)で小さいDockerイメージの作り方について書きましたが、その方法を使った場合、どのくらい小さくできるかは限られている。イメージに追加するレイヤーを小さくする方法を使ったんですが、その方法が使えない場合がある。Dockerfileを実行するコマンドを特定な順番で実行しなければならない場合はどうすることもできない。例えば、ある中間ステップでファイルを追加しなければならない場合：
+この記事は小さいDockerイメージの作成について第２版目の記事。[前回の記事](/jp/small-docker-images)で小さいDockerイメージの作り方について書きましたが、その方法を使った場合、どのくらい小さくできるかは限られている。イメージに追加するレイヤーを小さくする方法を使ったんですが、その方法が使えない場合がある。`Dockerfile`を実行するコマンドを特定な順番で実行しなければならない場合はどうすることもできない。例えば、ある中間ステップでファイルを追加しなければならない場合：
 
 ```docker
 RUN ...
@@ -29,7 +29,7 @@ RUN ...
 
 ## Docker Squash
 
-Docker単体では、Dockerfileのコマンドとイメージレイヤーの作成を切り離すことができない設計になっている。普段、この設計は大丈夫だけど、必要より大きなイメージができてしまう場合がある。レイヤーの数を減らすのとレイヤーの大きさを小さくするには、Dockerイメージのレイヤーを[gitのコミットと同じように圧縮する](http://www.backlog.jp/git-guide/stepup/stepup7_5.html)かっこいいツール[docker-squash](https://github.com/jwilder/docker-squash)がある。
+Docker単体では、`Dockerfile`のコマンドとイメージレイヤーの作成を切り離すことができない設計になっている。普段、この設計は大丈夫だけど、必要より大きなイメージができてしまう場合がある。レイヤーの数を減らすのとレイヤーの大きさを小さくするには、Dockerイメージのレイヤーを[gitのコミットと同じように圧縮する](http://www.backlog.jp/git-guide/stepup/stepup7_5.html)かっこいいツール[docker-squash](https://github.com/jwilder/docker-squash)がある。
 
 ![Vise](/assets/images/748/vise.jpg)
 
@@ -39,7 +39,7 @@ docker-squashを使うと、イメージレイヤーを圧縮して、中間ス�
 
 ## Pythonイメージを圧縮してみよう
 
-Docker Hubにある[python:2.7.11の標準イメージ](https://hub.docker.com/_/python/)を圧縮してみる。[Dockerfile](https://github.com/docker-library/python/blob/master/2.7/Dockerfile)を見てみると、継承しているイメージに入っていたpythonパッケージを削除してから、自前でPythonをダウンロードしてビルドしているのがわかる。でも、Pythonパッケージを削除しているのに、
+Docker Hubにある[python:2.7.11の標準イメージ](https://hub.docker.com/_/python/)を圧縮してみる。[`Dockerfile`](https://github.com/docker-library/python/blob/master/2.7/Dockerfile)を見てみると、継承しているイメージに入っていたpythonパッケージを削除してから、自前でPythonをダウンロードしてビルドしているのがわかる。でも、Pythonパッケージを削除しているのに、
 レイヤーにすでに入っているから、イメージの容量に含まれている。他にいくつかのイメージを継承していて、それぞれのイメージはレイヤーを追加している。圧縮することでどのくらい小さくなるかみてみよう。
 
 まずはローカルPCにpullする。

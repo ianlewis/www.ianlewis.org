@@ -35,7 +35,7 @@ Here are some of the things I was reading this last week or two.
   community](https://www.cncf.io/blog/2025/05/01/protecting-nats-and-the-integrity-of-open-source-cncfs-commitment-to-the-community/) - _CNCF_
 
     The CNCF issued a statement about the NATS trademark dispute. Synadia, the
-    seward of the NATS project, want to withdraw from the CNCF and reclaim the
+    steward of the NATS project, want to withdraw from the CNCF and reclaim the
     NATS trademark. The problem there is that the CNCF isn't a program that you
     enter into with a process for withdrawing. You basically donate the
     project's trademark to the CNCF in order to protect against license

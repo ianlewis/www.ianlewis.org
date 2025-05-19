@@ -29,4 +29,9 @@ packages:
     - name: Kampfkarren/selene@0.28.0
 ```
 
-Another thing that's cool is that it can keep a checksum of the dependency in `aqua-checksums.json` or use SLSA provenence to verify the integrity of the downloaded binary tools. There are a lot of features like managing tool versions per project as well. The only downside I've found so far is that it can only really support tools that can be compiled to a binary so it can't really manage tools written in interpretet languages like JavaScript, or Python.
+Another thing that's cool is that it can keep a checksum of the dependency in
+`aqua-checksums.json` or use SLSA provenance to verify the integrity of the
+downloaded binary tools. There are a lot of features like managing tool versions
+per project as well. The only downside I've found so far is that it can only
+really support tools that can be compiled to a binary so it can't really manage
+tools written in interpretet languages like JavaScript, or Python.
