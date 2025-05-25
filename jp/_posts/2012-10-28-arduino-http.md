@@ -9,21 +9,14 @@ render_with_liquid: false
 locale: ja
 ---
 
-今週末の Python温泉で、最近買った、arduino を初めて触った。
-[Arduino+Pythonハッキング勉強会](http://connpass.com/event/1107/)
-の [資料](http://kitagami.org/Study/arduinopy20120917.html)
-を見て、何か同じようなもの作れないかと思った。
+今週末のPython温泉で、最近買った、Arduinoを初めて触った。[Arduino+Pythonハッキング勉強会](http://connpass.com/event/1107/)の[資料](http://kitagami.org/Study/arduinopy20120917.html)を見て、何か同じようなもの作れないかと思った。
 
-Starter Kit を買ったので、arduino だけじゃなくて、いろなものが付いてきた。そのなかの一つはピエゾバザー。
-バザーの動作を確認した後に、HTTPでbuzzer を操作できたらいいんじゃないかと思って、簡単な
-HTTP API を作った。
+Starter Kitを買ったので、Arduinoだけじゃなくて、いろなものが付いてきた。そのなかの一つはピエゾバザー。バザーの動作を確認した後に、HTTPでbuzzerを操作できたらいいんじゃないかと思って、簡単なHTTP APIを作った。
 
-サーバーは最近作った [namake](http://github.com/IanLewis/namake) ベースで、arduino
-との通信は PySerial でシリアルUSB。音のピッチと長さ(ms)をHTTP
-GETパラメターで受け取って、arduino に流す。
+サーバーは最近作った[`namake`](http://github.com/IanLewis/namake)ベースで、Arduinoとの通信はPySerialでシリアルUSB。音のピッチと長さ(ms)をHTTP `GET`パラメターで受け取って、Arduinoに流す。
 
-シリアルUSBはバイト通信なので、普通な整数でも通信が結構面倒くさいです。下のサーバーで struct モジュールで int
-データをバイナリに変換して、通信している (pack_int).
+シリアルUSBはバイト通信なので、普通な整数でも通信が結構面倒くさいです。下のサーバーで`struct`モジュールで`int`
+データをバイナリに変換して、通信している「`pack_int`」.
 
 ```python
 #:coding=utf-8:
@@ -76,20 +69,13 @@ if __name__ == '__main__':
     run_devserver(app)
 ```
 
-arduino の方はこの感じ。ピエゾバザーを出力PIN 8 につながっていて、非常に簡単。
+Arduino の方はこの感じ。ピエゾバザーを出力PIN 8 につながっていて、非常に簡単。
 
-<div class="lightbox">
+[![](/assets/images/682/2012-10-28_09.41.22_small.jpg)](/assets/images/682/2012-10-28_09.41.22_big.jpg)
 
-</assets/images/682/2012-10-28_09.41.22_small.jpg>
-</assets/images/682/2012-10-28_09.41.22_big.jpg>
+Arduinoのコードは以下の通り。ArduinoのIDEで入力するコードは基本的にC++。２つの整数の８バイト(4バイトずつ)を受け取る。Arduinoが呼び出している`loop()`で`Serial.read()`して、`u_tag`の`union`データの埋めこむ。
 
-</div>
-
-arduino のコードは以下の通り。 arduino のIDEで入力するコードは基本的に c++。２つの整数の８バイト(4バイトずつ)
-を受け取る。arduino が呼び出している loop() で Serial.read() して、u_tag の union
-データの埋めこむ。
-
-8バイト読んだら、arduinoのtone()関数を呼び出して、音を鳴らす。読み込み中の間に、組み込まれている LEDをデバグの為、電気をつく。
+8バイト読んだら、Arduinoの`tone()`関数を呼び出して、音を鳴らす。読み込み中の間に、組み込まれている LEDをデバグの為、電気をつく。
 
 ```cpp
 // digital pin 2 has a pushbutton attached to it. Give it a name:

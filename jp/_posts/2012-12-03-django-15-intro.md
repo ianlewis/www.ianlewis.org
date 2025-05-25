@@ -9,35 +9,21 @@ render_with_liquid: false
 locale: ja
 ---
 
-![image](/assets/images/django/django-logo-positive_medium.png)
+![](/assets/images/django/django-logo-positive_medium.png)
 
-> この記事は [2012
-> Pythonアドベントカレンダー(Webフレームワーク)](http://connpass.com/event/1439/)
-> の第３目の記事。昨日の記事は id:shomah4a の「 [2012 Python アドベントカレンダー (Web フレームワーク ) 二日目
-> WSGI でなんか作ってみる](http://d.hatena.ne.jp/shomah4a/20121202) 」。明日は surgo
-> さんが、 Django 1.5 以降と Python 3 あたりの記事を書いてくれます。
+> この記事は[2012 Pythonアドベントカレンダー(Webフレームワーク)](http://connpass.com/event/1439/)の第３目の記事。昨日の記事は id:shomah4a の「 [2012 Python アドベントカレンダー (Web フレームワーク ) 二日目WSGIでなんか作ってみる](http://d.hatena.ne.jp/shomah4a/20121202) 」。明日は surgoさんが、Django 1.5以降とPython 3あたりの記事を書いてくれます。
 
-１０月２５日に [Django 1.5 alpha 1
-がリリースされて](https://www.djangoproject.com/weblog/2012/oct/25/15-alpha-1/)
-、順調に先週の火曜日（１１月２７日）に [Django 1.5 beta 1
-がリリースされました](https://www.djangoproject.com/weblog/2012/nov/27/15-beta-1/)
-。徐々に Django 1.5 の正式リリースに近づいてきいます。もしかして、年内にいいクリスマスプレゼントになるかもしれません。
+１０月２５日に [Django 1.5 alpha 1がリリースされて](https://www.djangoproject.com/weblog/2012/oct/25/15-alpha-1/)、順調に先週の火曜日（１１月２７日）に [Django 1.5 beta 1がリリースされました](https://www.djangoproject.com/weblog/2012/nov/27/15-beta-1/)。徐々に Django 1.5 の正式リリースに近づいてきいます。もしかして、年内にいいクリスマスプレゼントになるかもしれません。
 
 ## 新機能
 
-Django 1.5 はたくさんの変更がありますが、一番大きい変更をピックアップして、紹介します。
+Django 1.5はたくさんの変更がありますが、一番大きい変更をピックアップして、紹介します。
 
 ## Python 3 対応
 
-Django 1.5 では、Python 3の体験的サポートが入っています。少なくとも、Django 1.5 の unittest
-がすべて成功して、一般的に動作します。主要な対象はまだ Python 2 なので、
-[six](http://packages.python.org/six/) という Python 2/3 互換性のためのライブラリが
-Django に組み込まれています。Django自体の互換性を守るためももちろんですが、第三者の Django
-アプリの作者はこのライブラリを使って、今まで Python 2
-でしか動かない汎用アプリを Python 2 でも 3 でも動くように修正できることも Django
-に組み込む目的の一つです。
+Django 1.5 では、Python 3の体験的サポートが入っています。少なくとも、Django 1.5 の`unittest`がすべて成功して、一般的に動作します。主要な対象はまだ Python 2 なので、[`six`](http://packages.python.org/six/) という Python 2/3 互換性のためのライブラリがDjangoに組み込まれています。Django自体の互換性を守るためももちろんですが、第三者の Django アプリの作者はこのライブラリを使って、今まで Python 2でしか動かない汎用アプリを Python 2 でも 3 でも動くように修正できることも Djangoに組み込む目的の一つです。
 
-Python 3 の本格的サポートは 1.5 以降ですし、 surgo さんももっと詳しく書いてくれるのを期待しましょう。
+Python 3の本格的サポートは1.5以降ですし、surgoさんももっと詳しく書いてくれるのを期待しましょう。
 
 ## カスタムユーザーモデル
 
@@ -88,14 +74,11 @@ class MyUser(AbstractBaseUser):
 model](https://docs.djangoproject.com/en/dev/topics/auth/#customizing-the-user-model)
 を読んでみて下さい。
 
-ユーザーモデルは settings.py で設定するので、複数の settings.py
-モジュールを用意して、別プロセスで起動すれば、複数のユーザーモデルを使うことができるんじゃないかなと思います。
+ユーザーモデルは`settings.py`で設定するので、複数の`settings.py`モジュールを用意して、別プロセスで起動すれば、複数のユーザーモデルを使うことができるんじゃないかなと思います。
 
 ## モデルフィールドのサブセットだけを保存
 
-Django 1.5 まで、 モデルの `save()` メソッドを呼び出した時に、モデルのすべてのフィールドが保存されたんだが、 Django
-1.5 からは、保存するフィールドを指定することができるようになった。 保存するフィールドを指定するのは `update_fields`
-という引数を渡します。
+Django 1.5まで、モデルの`save()`メソッドを呼び出した時に、モデルのすべてのフィールドが保存されたんだが、Django 1.5からは、保存するフィールドを指定することができるようになった。保存するフィールドを指定するのは`update_fields`という引数を渡します。
 
 ```python
 mymodel.save(update_fields=['name', 'date'])
@@ -121,7 +104,7 @@ Django 1.4 だと、 `first_choice.poll` は別クエリが発生して、 `firs
 しかし、Django 1.5 で、いくつかのことが変わっていますので、少し注意が必要。Django
 を内部的に触っている場合も、プログラムの修正が必要な場合があります。
 
-## url テンプレートタグの旧バージョンがなくなる
+## `url`テンプレートタグの旧バージョンがなくなる
 
 Django 1.3 では `{% url %}` の旧バージョンが [deprecated
 になりました](https://docs.djangoproject.com/en/1.3/ref/templates/builtins/#url)

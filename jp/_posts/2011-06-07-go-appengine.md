@@ -9,15 +9,13 @@ render_with_liquid: false
 locale: ja
 ---
 
-昨日、 [Go\! 言語](http://golang.org/) の trusted tester 権限を頂いたので、以前に作っていた
-[Guestbook](https://bitbucket.org/IanLewis/golang_guestbook) アプリを本番
-Appengine にデプロイしてみた。
+昨日、[Go\! 言語](http://golang.org/)のtrusted tester権限を頂いたので、以前に作っていた[Guestbook](https://bitbucket.org/IanLewis/golang_guestbook)アプリを本番App Engineにデプロイしてみた。
 
-<http://golang-guestbook.ian-test-hr.appspot.com/>
+[`http://golang-guestbook.ian-test-hr.appspot.com/`](http://golang-guestbook.ian-test-hr.appspot.com/)
 
 結構シンプルなアプリだけど、いくつかのところのコードをピックアップして紹介しようと思います。
 
-まずは、ログイン。 Google アカウントの認証を使っているのですが、こんな感じでできています。
+まずは、ログイン。Google アカウントの認証を使っているのですが、こんな感じでできています。
 
 ```golang
 c := appengine.NewContext(request)
@@ -29,8 +27,7 @@ if current_user == nil {
 }
 ```
 
-次はデータの読み込み。ここで Greeting エンティティのデータをクエリーで取得しています。 データを取得した後に GetAll()
-メソッドで greetings というスライス (配列ポインター) に突っ込んでいます。
+次はデータの読み込み。ここでGreetingエンティティのデータをクエリーで取得しています。データを取得した後に`GetAll()`メソッドで`greetings`というスライス「配列ポインター」に突っ込んでいます。
 
 ```golang
 greetings := &[]Greeting{}
@@ -39,10 +36,7 @@ datastore.NewQuery("Greeting").
           GetAll(c, greetings)
 ```
 
-データの書き込みはこんな感じ。POST したデータを FormValue() メソッドで取得して、新しい Greeting struct
-のインスタンスに突っ込んで、 datastore.Put() 関数で、データストアに新しいエンティティを書き込んでいます。
-新しいデータを書き込むときに、 datastore.NewIncompleteKey() を使います。未確定キーオブジェクトで、
-datastore.Put() は新しいキーを取得するかどうかを判断するみたいです。
+データの書き込みはこんな感じ。`POST`したデータを`FormValue()`メソッドで取得して、新しい`Greeting` `struct`のインスタンスに突っ込んで、`datastore.Put()`関数で、データストアに新しいエンティティを書き込んでいます。新しいデータを書き込むときに、`datastore.NewIncompleteKey()`を使います。未確定キーオブジェクトで、`datastore.Put()`は新しいキーを取得するかどうかを判断するみたいです。
 
 ```golang
 body := request.FormValue("body")
@@ -57,8 +51,7 @@ if (len(body) > 0) {
 }
 ```
 
-次は template パッケージの使いを紹介します。html テンプレートをレンダーしてくれるパッケージです。こんな感じで書けます。 if
-文の処理は section どいうタグで実現できます。 for は repeated section で実現できます。
+次は`template`パッケージの使いを紹介します。HTMLテンプレートをレンダーしてくれるパッケージです。こんな感じで書けます。 `if`文の処理は`section`どいうタグで実現できます。`for`はrepeated sectionで実現できます。
 
 ```html
 <body>
@@ -87,12 +80,9 @@ if (len(body) > 0) {
 </body>
 ```
 
-デートの表示フォーマットを変更するのに、データフォーマッターという機能があります。 `{{ hoge|fuga }}` みたいに、バーで hoge
-データを fuga フォーマッターでデータ変更ができる。 HTML をエスケープする `html`
-というフォーマッターが標準にあります。上に Body
-データをエスケープしています。
+デートの表示フォーマットを変更するのに、データフォーマッターという機能があります。 `{{ hoge|fuga }}` みたいに、バーで`hoge`データを`fuga`フォーマッターでデータ変更ができる。HTMLをエスケープする`html`というフォーマッターが標準にあります。上に`Body`データをエスケープしています。
 
-他のフォーマッターはこんな感じで登録できます。テンプレートを解析するときに、 FormatterMap オブジェクトを渡してあげます。
+他のフォーマッターはこんな感じで登録できます。テンプレートを解析するときに、`FormatterMap`オブジェクトを渡してあげます。
 
 ```golang
 func userNameFormatter(wr io.Writer, formatter string, data ...interface{}) {
@@ -118,9 +108,7 @@ fm["userName"] = userNameFormatter
 t, _ := template.ParseFile("templates/base.html", fm)
 ```
 
-テンプレートをレンダーするときに、 struct データをテンプレートに渡します。 golang は Python
-とかより固い言語なので、stuct
-の変数型を全部定義しないといけません。面倒くさいからインラインでやっています。
+テンプレートをレンダーするときに、`struct`データをテンプレートに渡します。GoはPythonとかより固い言語なので、`struct`の変数型を全部定義しないといけません。面倒くさいからインラインでやっています。
 
 ```golang
 w.Header().Set("Content-Type", "text/html")
@@ -135,9 +123,6 @@ err := t.Execute(w, struct{
 })
 ```
 
-本番 Appengine で見るとアプリのインスタンスレイテンシーは、最大50ms、 平均は大体
-20ms。データストアからデータ取得しているにも関わらず、結構早いなと思いました。スピンアップ時間も全然気付きませんでした。もしかして、もっと大きいアプリを作ると変わりますが、
-golang は appengine に動かすのが結構面白いかなと思った。
+本番 App Engine で見るとアプリのインスタンスレイテンシーは、最大50ms、平均は大体20ms。データストアからデータ取得しているにも関わらず、結構早いなと思いました。スピンアップ時間も全然気付きませんでした。もしかして、もっと大きいアプリを作ると変わりますが、GoはApp Engineに動かすのが結構面白いかなと思った。
 
-それでは、みんな、 [Guestbook
-でメッセージ残してください！](http://golang-guestbook.ian-test-hr.appspot.com/)
+それでは、みんな、[Guestbookでメッセージ残してください！](http://golang-guestbook.ian-test-hr.appspot.com/)

@@ -17,7 +17,7 @@ locale: ja
 
 ## Kubernetesはなんっすか
 
-みんなDocker触ったことあるけど、Kubernetesなんで触ったことない人がまだ結構いると思うけど、ちょっと説明してみる。Kubernetesは今までやっていたことを自分なりに自動化したものだと考えるといい。今まで、chefやansibleでウェブアプリをサーバーにダウンロードして起動してsupervisordか何かの方法で監視して、その前にロードバランサを作って外からアクセスすることができるようにしたと思う。sshを使わないし、内部でやっていることがだいぶ違うけど、ハイレベルで考えるとKubernetesはアプリのパッケージフォーマットとしてDockerイメージを使って以前にchefやansibleでやったことをAPIでできるようにしているもの。
+みんなDocker触ったことあるけど、Kubernetesなんで触ったことない人がまだ結構いると思うけど、ちょっと説明してみる。Kubernetesは今までやっていたことを自分なりに自動化したものだと考えるといい。今まで、ChefやAnsibleでウェブアプリをサーバーにダウンロードして起動してsupervisordか何かの方法で監視して、その前にロードバランサを作って外からアクセスすることができるようにしたと思う。sshを使わないし、内部でやっていることがだいぶ違うけど、ハイレベルで考えるとKubernetesはアプリのパッケージフォーマットとしてDockerイメージを使って以前にChefやAnsibleでやったことをAPIでできるようにしているもの。
 
 簡単な例ですが、`nginx`をデプロイしてみる。KubernetesのAPIを簡単に使えるために`kubectl`というCLIがあります。
 
@@ -62,7 +62,7 @@ $ curl -s http://104.155.215.220/ | grep title
 
 ## PythonからAPIを触ってみる
 
-KubernetesはREST APIを提供しているので、基本的にどの言語でもKubernetesクラスタを制御できる。私の一番好きな言語の一つがPythonだし、最近新しい[正式Pythonクライアント](https://github.com/kubernetes-incubator/client-python)が kubernetes-incubatorに出たので、使ってみようと思う。
+KubernetesはREST APIを提供しているので、基本的にどの言語でもKubernetesクラスタを制御できる。私の一番好きな言語の一つがPythonだし、最近新しい[正式Pythonクライアント](https://github.com/kubernetes-incubator/client-python)が`kubernetes-incubator`に出たので、使ってみようと思う。
 
 インストールはいつもどおり`pip`を使う
 

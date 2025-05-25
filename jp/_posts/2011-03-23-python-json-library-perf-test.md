@@ -11,24 +11,17 @@ locale: ja
 
 ## 概要
 
-最近、あるお客さんから、 快速なので、 [cjson](http://pypi.python.org/pypi/python-cjson/)
-を使おうという要望をいただきましたが、 以前、僕は cjson
-は色なエッジケースの処理が微妙と分かっていて、実際に他のライブラリより早いのかなと思いました。
-[cjsonのPyPiページ](http://pypi.python.org/pypi/python-cjson/)
-いろなコメントが書かれています。しかも、 最新パージョンは 2007
-リリースでかなり古い。バグがあるのに、直っていないし、あんまりメンテしてないライブラリに見える。
+最近、あるお客さんから、快速なので、[`cjson`](http://pypi.python.org/pypi/python-cjson/)を使おうという要望をいただきましたが、以前、僕は`cjson`は色なエッジケースの処理が微妙と分かっていて、実際に他のライブラリより早いのかなと思いました。[`cjson`のPyPiページ](http://pypi.python.org/pypi/python-cjson/)いろなコメントが書かれています。しかも、最新パージョンは2007リリースでかなり古い。バグがあるのに、直っていないし、あんまりメンテしてないライブラリに見える。
 
-[simplejson](http://pypi.python.org/pypi/simplejson/) も
-[jsonlib](http://pypi.python.org/pypi/jsonlib/) もCで拡張があり、
-かなり最適化されていると思ったので、テストしてみようと思いました。
+[`simplejson`](http://pypi.python.org/pypi/simplejson/)も[`jsonlib`](http://pypi.python.org/pypi/jsonlib/) もCで拡張があり、かなり最適化されていると思ったので、テストしてみようと思いました。
 
-というわけで、パフォーマンステストを作って、bitbucket にアップしました
+というわけで、パフォーマンステストを作って、Bitbucketにアップしました
 
-<https://bitbucket.org/IanLewis/jsonlib-test>
+[`https://bitbucket.org/IanLewis/jsonlib-test`](https://bitbucket.org/IanLewis/jsonlib-test)
 
 ## 準備
 
-buildout を使って、環境を作ります
+`buildout`を使って、環境を作ります
 
 ```shell
 python bootstrap.py --distribute
@@ -37,7 +30,7 @@ python bootstrap.py --distribute
 
 ## テストを実行
 
-`./bin/run_test` を実行します。オプションはいくつかあります。
+`./bin/run_test`を実行します。オプションはいくつかあります。
 
 1. `-c`, `--concurrency`: プロセス数。
    これは、少なくとも、プロダクション環境になるべく近いようにするには、コアの台数にするのがおすすめです。デフォールトは
@@ -79,11 +72,8 @@ demjson:           145.67908 /s
 
 ## まとめ
 
-cjson はやはり早いのですが、現代の simplejson と jsonlib2 は cjson
-より早くなっています。あんまり差が出ないけど、
-メンテされていないし、 パーフォマンスのため、わざわざ cjson を選ぶメリットは特にないと思います。
+`cjson`はやはり早いのですが、現代の`simplejson`と`jsonlib2`は`cjson`より早くなっています。あんまり差が出ないけど、メンテされていないし、パーフォマンスのため、わざわざ`cjson`を選ぶメリットは特にないと思います。
 
-Pythonの世界で、 Cを名前に付けているライブラリが早いとイメージですが、他のライブラリより必ずしも早いというわけではない。
+Pythonの世界で、Cを名前に付けているライブラリが早いとイメージですが、他のライブラリより必ずしも早いというわけではない。
 
-ちなみに、Python 2.6+ に入っている json ライブラリは simplejson
-ではありますが、古いバージョンになっているし、必ずC拡張がコンパイルされているわけではないので、simplejsonの最新版を使うのがおすすめです。
+ちなみに、Python 2.6+に入っている`json`ライブラリは`simplejson`ではありますが、古いバージョンになっているし、必ずC拡張がコンパイルされているわけではないので、`simplejson`の最新版を使うのがおすすめです。

@@ -9,11 +9,11 @@ render_with_liquid: false
 locale: ja
 ---
 
-[Google Appengine](http://code.google.com/appengine/)1.4.0がリリースされました！！このリリースはかなりでかい！！チャンネルAPI,"Always On"(リザーブインスタンス)、タスクキューの正式リリース、スタートアップリクエスト、バックグラウンド処理の改善などなど、
+[Google App Engine](http://code.google.com/appengine/)1.4.0がリリースされました！！このリリースはかなりでかい！！チャンネルAPI,"Always On"(リザーブインスタンス)、タスクキューの正式リリース、スタートアップリクエスト、バックグラウンド処理の改善などなど、
 
 ## チャンネルAPI
 
-まずは、一番重要なチャンネルAPI。チャンネルAPIでクライアントブラウザーにプッシュすることができるようになります。内部的には、[Google Talk](http://www.google.com/talk/intl/ja/)の[XMPP](http://ja.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol)インフラを使っているらしくて、それでスケールアウトしてくれます。チャンネルAPIは2つの部分がに分けています。サーバー再度のチャンネルAPIとチャンネルAPIのJavascriptライブラリ。
+まずは、一番重要なチャンネルAPI。チャンネルAPIでクライアントブラウザーにプッシュすることができるようになります。内部的には、[Google Talk](http://www.google.com/talk/intl/ja/)の[XMPP](http://ja.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol)インフラを使っているらしくて、それでスケールアウトしてくれます。チャンネルAPIは2つの部分がに分けています。サーバー再度のチャンネルAPIとチャンネルAPIのJavaScriptライブラリ。
 
 チャンネルAPIはサーバー側から、クライアントの通信に使います。クライアントからサーバーへの通信は今までどおりのPOSTがGET HTTPリクエスト。
 
@@ -44,7 +44,7 @@ class MyHandler(BaseHandler):
         )
 ```
 
-クライアント側のJavascriptはチャンネルに接続
+クライアント側のJavaScriptはチャンネルに接続
 
 ```javascript
 var channel = new goog.appengine.Channel("{{ channel_id }}");
@@ -82,7 +82,7 @@ class AjaxHandler(BaseHandler):
 ```
 
 Channel API のドキュメント:
-<http://code.google.com/intl/ja/appengine/docs/python/channel/overview.html>
+[`http://code.google.com/intl/ja/appengine/docs/python/channel/overview.html`](http://code.google.com/intl/ja/appengine/docs/python/channel/overview.html)
 
 ## Always On
 

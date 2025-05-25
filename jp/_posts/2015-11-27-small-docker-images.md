@@ -9,8 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-最近、コンテナ技術が流行っていていろなツールを興味深く触っている。その中の一番人気のはみんな大好きなDocker。Dockerは docker
-runでコンテナの実行環境を簡単に作ってくれる上、docker build でコンテナのイメージの構築も簡単にできる。Dockerのイメージ構築はDockerfileというMakefileのようなファイルを元にその中のコマンドを順番に実行して構築していくもの。
+最近、コンテナ技術が流行っていていろなツールを興味深く触っている。その中の一番人気のはみんな大好きなDocker。Dockerは`docker run`でコンテナの実行環境を簡単に作ってくれる上、`docker build`でコンテナのイメージの構築も簡単にできる。Dockerのイメージ構築はDockerfileというMakefileのようなファイルを元にその中のコマンドを順番に実行して構築していくもの。
 
 例えば、
 
@@ -41,7 +40,7 @@ VIRTUAL SIZE
 
 ## なんで大きいんだ？
 
-上の`Dockerfile`の1行目は `FROM debian:jessie` って書いているんだけど、イメージが大きくなっているのは、Debian 8.x がまるまるイメージに入るわけです。さらに、`Dockerfile`の中に何かを`gcc`や`g++`をビルドする必要があれば、アプリを実行するのに必要ないのに、ビルドするたにツールやライブラリがイメージに入っていて、結構な量になる。
+上の`Dockerfile`の1行目は `FROM debian:jessie` って書いているんだけど、イメージが大きくなっているのは、Debian 8.x がまるまるイメージに入るわけです。さらに、Dockerfileの中に何かを`gcc`や`g++`をビルドする必要があれば、アプリを実行するのに必要ないのに、ビルドするたにツールやライブラリがイメージに入っていて、結構な量になる。
 
 じゃ、例えばRedisのイメージを作る場合はこうするのが一番わかりやすくて概念的にいいんだが
 
@@ -66,13 +65,13 @@ RUN apt-get purge -y --auto-remove gcc libc6-dev make
 
 ```
 
-Dockerは RUNコマンドを実行するたびに、イメージの「レイヤー」を保存して、その状態をイメージにキャッシュする。最後に削除しても、途中でレイヤーにコミットしちゃっているから、結局イメージのサイズがそのまま大きくなる
+Dockerは`RUN`コマンドを実行するたびに、イメージの「レイヤー」を保存して、その状態をイメージにキャッシュする。最後に削除しても、途中でレイヤーにコミットしちゃっているから、結局イメージのサイズがそのまま大きくなる
 
 ## どうやって小さくするのか
 
-結局 RUN を実行するたびにコミットするので、全部１個のRUNコマンドで実行しなければならない。
+結局`RUN`を実行するたびにコミットするので、全部１個の`RUN`コマンドで実行しなければならない。
 
-以下、は[実際のRedisの`Dockerfile`](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/3.0/Dockerfile) ([Docker BSD LICENSE](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/LICENSE))からとったスニペット
+以下、は[実際のRedisのDockerfile](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/3.0/Dockerfile) ([Docker BSD LICENSE](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/LICENSE))からとったスニペット
 
 ```dockerfile
 ENV REDIS_VERSION 3.0.5

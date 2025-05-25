@@ -9,7 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-水曜日にGoogle Appengine 1.4.3がリリースされました！1.4.1と1.4.2はブログ記事を書くほど大きくはなかったのですか、1.4.3はまたいろいろ入っているので、ご紹介します。
+水曜日にGoogle App Engine 1.4.3がリリースされました！1.4.1と1.4.2はブログ記事を書くほど大きくはなかったのですか、1.4.3はまたいろいろ入っているので、ご紹介します。
 
 ## Prospective Search API
 
@@ -50,7 +50,7 @@ def remove_tweet_alert(user, tweet_text):
 
 ## Testbed
 
-Testbedはテストを実行できるために、Appengine環境を偽装するものです。開発サーバーみたいに、Appengine本番にデプロイせずに、ローカル環境で、Memcached、DatastoreなどのAppengineのサービスがテストの中に使えます。
+Testbedはテストを実行できるために、App Engine環境を偽装するものです。開発サーバーみたいに、App Engine本番にデプロイせずに、ローカル環境で、Memcached、DatastoreなどのApp Engineのサービスがテストの中に使えます。
 
 ```python
 import unittest
@@ -95,7 +95,7 @@ class DemoTestCase(unittest.TestCase):
     # ...
 ```
 
-テストを実行するために、テストランナーが必要です。[gaeunit](http://code.google.com/p/gaeunit/)、もしくは、[nose-gae](http://code.google.com/p/nose-gae/)のテストランナーを使うことが出来ます。簡単な例は以下のテストランナー。`unittest2`が必要なので、まずそれをインストールする必要があります。
+テストを実行するために、テストランナーが必要です。[`gaeunit`](http://code.google.com/p/gaeunit/)、もしくは、[`nose-gae`](http://code.google.com/p/nose-gae/)のテストランナーを使うことが出来ます。簡単な例は以下のテストランナー。`unittest2`が必要なので、まずそれをインストールする必要があります。
 
 ```python
 #!/usr/bin/python
@@ -138,7 +138,7 @@ python testrunner.py demo.tests.DemoTestCase
 
 ## ファイルAPI
 
-ファイルAPI で Appengine の Blobstore にファイル読み込み、書き込みができます。 レポートの生成、データインポートなど、
+ファイルAPIでApp EngineのBlobstoreにファイル読み込み、書き込みができます。レポートの生成、データインポートなど、
 ファイルシステムに必要なことに使えます。
 
 ```python

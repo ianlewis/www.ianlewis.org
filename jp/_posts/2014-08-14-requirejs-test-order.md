@@ -21,7 +21,9 @@ locale: ja
 
 [`http://teppeis.hatenablog.com/entry/re-requirejs`](http://teppeis.hatenablog.com/entry/re-requirejs)
 
-結構古い記事だけど、最近読んだので、僕がやっていることを書いてみようかなと思った。[Connpass](http://connpass.com/)ではRequireJSばりばり使っていて、ユニットテストもそこそこ書いています。mochaはいろいろAPIがよかったが、ブラウザ内のテストランナーがクソイので、僕達の場合はQUnitを使っています。
+結構古い記事だけど、最近読んだので、僕がやっていることを書いてみようかなと思った。[Connpass](http://connpass.com/) では RequireJS ばりばり使っていて、ユニットテストもそこそこ書いています。
+mocha はいろいろAPIがよかったが、ブラウザ内のテストランナーがクソイので、僕達の場合は
+QUnitを使っています。
 
 テストの順番の問題は確かにあったけど、すぐ解決したので、特に面倒と感じてなかった。テストの順番を保証するために、 `runTests()` というメソッドが付いているオブジェクトを各テストモジュールで返しています。コードで書いてみるとこんな感じ。
 
@@ -69,7 +71,7 @@ define(["jquery"], testmod(function($) {
 });
 ```
 
-順番保証は、テストランナーのHTMLファイルでやっています。それぞれのテストモジュールを読み込んで、 `runTests()` を呼び出しています。こうすると、`require`する順番で実行される。
+順番保証は、テストランナーのHTMLファイルでやっています。それぞれのテストモジュールを読み込んで、 `runTests()` を呼び出しています。こうすると、requireする順番で実行される。
 
 ```html
 <script>

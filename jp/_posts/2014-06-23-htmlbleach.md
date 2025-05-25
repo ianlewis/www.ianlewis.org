@@ -21,7 +21,7 @@ locale: ja
 <input name=submit type=submit value=検索>
 ```
 
-BeautifulSoup は Python 2.x だと`HTMLParser`ベースで、`HTMLParser`がこういうHTMLが入っているとこけちゃいますので、僕のパーサーに以下のようなモンキーパッチをしていました。
+BeautifulSoup は Python 2.x だと `HTMLParser` ベースで、 `HTMLParser`がこういうHTMLが入っているとこけちゃいますので、僕のパーサーに以下のようなモンキーパッチをしていました。
 
 ```python
 import HTMLParser

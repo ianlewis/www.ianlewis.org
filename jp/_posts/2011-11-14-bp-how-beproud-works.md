@@ -9,7 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-最近、githubの人、Zach Holmanさんはgithubの社内の環境について、いくつかのブログ記事を書いていて、話題になっていました。僕もいろいろ気になっているので、 僕が働いているBeProudをgithubと比べながら、僕の考え方を説明したい。Zachさんの記事は3つに分かれているので、僕も3つに分ける。
+最近、GitHubの人、Zach HolmanさんはGitHubの社内の環境について、いくつかのブログ記事を書いていて、話題になっていました。僕もいろいろ気になっているので、 僕が働いているBeProudをGitHubと比べながら、僕の考え方を説明したい。Zachさんの記事は3つに分かれているので、僕も3つに分ける。
 
 ![](/assets/images/668/howgithubworks.png)
 
@@ -31,7 +31,7 @@ BPのコアビジネスも異なるし、みんなの通勤時間がバラバラ
 
 家で仕事する人が会社で働く人より、集中を散らすことが多く、効率が悪いという話もある。独身の若者たちにはいけるかもしれませんが、家族や家でもやることが多い人には全滅。簡単にいうと仕事できない。
 
-<http://www.theregister.co.uk/2011/09/20/pjs_every_day/> (英語)
+[`http://www.theregister.co.uk/2011/09/20/pjs_every_day/`](http://www.theregister.co.uk/2011/09/20/pjs_every_day/) (英語)
 
 ![](/assets/images/668/workathome.png)
 

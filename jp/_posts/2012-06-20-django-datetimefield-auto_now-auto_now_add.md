@@ -9,11 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-Django の Model の DateTimeField に auto_nowと auto_now_add
-というキーワード引数があります。この引数はデフォールトで False になっていますが、
-True にすると、 モデルのインスタンスを保存するタイミングで更新されます。
-auto_now=Trueの場合はモデルインスタンスを保存する度に現在の時間で更新される。auto_now_add
-はインスタンスの作成(DBにINSERT)する度に更新される。
+Djangoの`Model`の`DateTimeField`に`auto_now`と`auto_now_add`というキーワード引数があります。この引数はデフォールトで False になっていますが、`True`にすると、 モデルのインスタンスを保存するタイミングで更新されます。`auto_now=True`の場合はモデルインスタンスを保存する度に現在の時間で更新される。`auto_now_add`はインスタンスの作成(DBに`INSERT`)する度に更新される。
 
 ただ、ありがちなのは、この引数を使うと、自分でこのフィールドを更新することができません。
 
@@ -27,7 +23,7 @@ class MyModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 ```
 
-これで、MyModelを作成しようとします。
+これで、`MyModel`を作成しようとします。
 
 ```python
 >>> from datetime import datetime
@@ -41,18 +37,15 @@ datetime.datetime(2012, 6, 20, 16, 44, 50, 585743)
 datetime.datetime(2012, 6, 20, 16, 44, 50, 585790)
 ```
 
-こういうふうに created_at と updated_at
-を指定しても、この二つのフィールドは現在の時間になります。自前で変更できません。
+こういうふうに`created_at`と`updated_at`を指定しても、この二つのフィールドは現在の時間になります。自前で変更できません。
 
 実は、Django 1.0 が出る前から、この引数を廃止するかどうかという議論があった。
 
-<https://code.djangoproject.com/ticket/7634>
+[`https://code.djangoproject.com/ticket/7634`](https://code.djangoproject.com/ticket/7634)
 
-最終的には使いやすくて便利な機能ですし、廃止すると互換性に非常にいたいことが起きてしまうので、このままにしましょう。という結論でした。とは言ってもDjango
-のユーザーとして、これは意識しないといけません。
+最終的には使いやすくて便利な機能ですし、廃止すると互換性に非常にいたいことが起きてしまうので、このままにしましょう。という結論でした。とは言ってもDjangoのユーザーとして、これは意識しないといけません。
 
-auto_now_add に関しては、 default 引数は callable オブジェクトにも対応しているので、
-default=datetime.now にすると自分で、作成時間を指定することができます。
+`auto_now_add`に関しては、`default`引数は`callable`オブジェクトにも対応しているので、`default=datetime.now`にすると自分で、作成時間を指定することができます。
 
 ```python
 from datetime import datetime
@@ -62,8 +55,7 @@ class MyModel(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 ```
 
-auto_now は
-save()メソッドをオーバーライドして、実装するのがおすすめと言われますが、僕はそんなことがよくあるパターンでメンテするコストが高すぎるので、やらない。
+`auto_now`は`save()`メソッドをオーバーライドして、実装するのがおすすめと言われますが、僕はそんなことがよくあるパターンでメンテするコストが高すぎるので、やらない。
 
 でも、もし、やろうとすると、こんな感じなのかなと思います。
 

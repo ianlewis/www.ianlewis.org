@@ -23,6 +23,6 @@ indent_size = 4
 indent_style = tab
 
 # Matches config files like package.json.
-[{*.json,*.yaml}]
+[{*.json,*.yaml,*.yml,*.toml,*.html,*.css,*.scss,*.xml,*.js,*.ts}]
 indent_style = space
 indent_size = 2

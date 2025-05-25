@@ -86,8 +86,7 @@ def after_request(response):
     g.ldap.unbind() return response
 ```
 
-次はパスワード変更フォームを作ります。wtforms はここだけに使うので、このライブラリを使うのがどうかなと思いますが、
-やっぱりパスワード変更でセキュリティの面があるから予想外の入力バグを防ぐために導入しました。
+次はパスワード変更フォームを作ります。`wtforms`はここだけに使うので、このライブラリを使うのがどうかなと思いますが、やっぱりパスワード変更でセキュリティの面があるから予想外の入力バグを防ぐために導入しました。
 
 ```python
 # (略
@@ -108,8 +107,7 @@ class PasswordChangeForm(wtforms.Form):
              message=u'パスワードと確認用パスワードは一致しません。')])
 ```
 
-次はパスワード変更ロジックを実装します。まずはフォームを表示する部分を実装します。 ここで Flask の render_template
-関数を使って Jinja2 テンプレートをレンダーします。
+次はパスワード変更ロジックを実装します。まずはフォームを表示する部分を実装します。ここでFlaskの`render_template`関数を使って Jinja2 テンプレートをレンダーします。
 
 ```python
 # (略
@@ -333,7 +331,6 @@ else:
 ```
 
 もちろん、ウェブアプリのベストプラクティスが適用されるので、HTTPSを使ったりしないといけませんが、
-このアプリで割と安心ユーザーにでLDAPパスワードを変更させられます。
-コードはbitbucketにアップしているので、是非ご覧ください。
+このアプリで割と安心ユーザーにでLDAPパスワードを変更させられます。コードはBitbucketにアップしているので、是非ご覧ください。
 
-<https://bitbucket.org/beproud/ldapchangepw/overview>
+[`https://bitbucket.org/beproud/ldapchangepw/overview`](https://bitbucket.org/beproud/ldapchangepw/overview)

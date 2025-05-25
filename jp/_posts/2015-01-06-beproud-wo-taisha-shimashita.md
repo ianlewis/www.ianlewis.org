@@ -42,4 +42,4 @@ Pythonは海外で並の言語なのに、日本では代表者が少なかっ�
 
 次の仕事は何をするかまだ決まってないけど、もう過ごししてから見えてくると思うので、ぜひ期待してください。 BPで支えてくれた皆様、ありがとうございました！
 
-![Feiz & Me](/assets/images/729/feiz_medium.jpg)
+![feiz & Me](/assets/images/729/feiz_medium.jpg)

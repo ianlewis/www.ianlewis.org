@@ -23,15 +23,18 @@ KubernetesはDockerコンテナーのクラスターを管理してくれるも�
 
 その上に、クラスターを管理するために API を用意してる。そのAPIを使って、コンテナーを追加したら、減らしたりすることができます。コンテナーを追加したり、減らしたりすると Kubernetes のスケジューラーでどのサーバーのどのPodに対して、コンテナーを追加・削除するかが決まる。そのスケジューラーは今のところかなりシンプルで、クラスターのリソースを見たりしないので、同じサーバーの中に Kubernetes 以外のものを動かしているとメモリーや、CPUを使ってしまったり、リソースを取り合ってしまうと思います。
 
-KubernetesもAutoscalingなどができると聞いたことあるかもしれませんが、それはGoogleが提供しているKubernetesのホステッド版、Google Container Engineの機能です。ホステッドだとロードバランサーや、サーバーの状況がわかるので、そういうのが提供できるんですが、Kubernetes自体はAuto Scalingを提供しない。
+k8sもauto-scalingなどができると聞いたことあるかもしれませんが、それはGoogleが提供している
+k8sのホステッド版、Google Container Engineの機能です。ホステッドだとロードバランサーや、
+サーバーの状況がわかるので、そういうのが提供できるんですが、k8s自体はAutoscalingを提供しない。
 
 ## Mesos
 
-[Mesos](http://mesos.apache.org/) はクラスターのサーバーのメモリや、CPUを抽象的に使えるようにするサービスで、空いてるCPUやメモリのところにアプリを動かせるようにしてくれる。あるクラスターにあるアプリを実行しようって思った時に、Mesosでどこに動かしたらいいかが決まっていて、アプリをそこに動かすようにスケジュリングを提供してくれる。ようするに、Kubernetesがやってくれないことをしっかりやってくれるやつだ！と思いきや、実は、Mesosはリソースを見てくれるけど、Auto Scalingは提供しない。あくまで、追加したり、減らしたりしたい場合は、どこから削除するか、どこに追加すればいいかしか提供しない。けど、Auto Scalingの一部にはなるし、Auto Scalingがなくても、結構助かると思います。
+[Mesos](http://mesos.apache.org/) はクラスターのサーバーのメモリや、CPUを抽象的に使えるようにするサービスで、空いてるCPUやメモリのところにアプリを動かせるようにしてくれる。あるクラスターにあるアプリを実行しようって思った時に、Mesosでどこに動かしたらいいかが決まっていて、
+アプリをそこに動かすようにスケジュリングを提供してくれる。ようするに、k8sがやってくれないことをしっかりやってくれるやつだ！と思いきや、実は、Mesosはリソースを見てくれるけど、Autoscalingは提供しない。あくまで、追加したり、減らしたりしたい場合は、どこから削除するか、どこに追加すればいいかしか提供しない。けど、Autoscalingの一部にはなるし、Autoscalingがなくても、結構助かると思います。
 
 ## Kubernetes + Mesosの組み合わせ
 
-実は、Kubernetes + Mesos の話をチャレンジしたいと思っていたが、僕はそんなに Mesos 詳しくないから、動かすにはいろいろ苦労した。
+実は、k8s + Mesosの話をチャレンジしたいと思っていたが、僕はそんなにMesos詳しくないから、動かすにはいろいろ苦労した。
 
 Mesosの会社MesosphereはMesosのでもイメージを作ってくれたので、以下の`Vagrantfile`でとりあえずMesosを動かせると思います。
 
@@ -61,11 +64,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 end
 ```
 
-そして、KubernetesとMesosを連動して動かせるのかなって調べてみたら、Mesosphereが作り中の[`kubernetes-mesos`](https://github.com/mesosphere/kubernetes-mesos)プロジェクトがあった。
+そして、k8sとMesosを連動して動かせるのかなって調べてみたら、Mesosphereが作り中の[`kubernetes-mesos`](https://github.com/mesosphere/kubernetes-mesos)プロジェクトがあった。
 
-このプロジェクトはKubernetesを拡張して、Mesosが使えるようにしている。Kubernetesのコードはかなりパッケージ化してそのままインポートして、Mesosスケジューラを実装しているみたい。
-
-[`https://github.com/mesosphere/kubernetes-mesos/blob/master/kubernetes-mesos/main.go`](https://github.com/mesosphere/kubernetes-mesos/blob/master/kubernetes-mesos/main.go)
+このプロジェクトはk8sを拡張して、Mesosが使えるようにしている。k8sのコードはかなりパッケージ化してそのままインポートして、[Mesosスケジューラを実装しているみたい](https://github.com/mesosphere/kubernetes-mesos/blob/master/kubernetes-mesos/main.go)。
 
 まずは、buildしてみましょう。まずは、上の`Vagrantfile`で起動したVMでGoをインストールする必要がある。
 
@@ -83,7 +84,7 @@ $ cat <<EOF > /etc/profile.d/gopath.sh
 > EOF
 ```
 
-次は`kubernetes-mesos`をビルドする。
+次は`kubernetes-mesos`をビルドする
 
 ```shell
 $ go get github.com/tools/godep
@@ -98,7 +99,7 @@ $ go install github.com/mesosphere/kubernetes-mesos/kubernetes-{mesos,executor}
 $ go install github.com/mesosphere/kubernetes-mesos/controller-manager
 ```
 
-そうすると、`kubernetes-mesos`サービスを起動できる。
+そうすると、`kubernetes-mesos`サービスを起動できる
 
 ```shell
 $ export servicehost=127.0.0.1
@@ -117,7 +118,7 @@ $ nohup controller-manager \
 >   -v=2 2>&1 >> /var/log/controller-manager.log &
 ```
 
-サービスが起動できたら、`kubectl`でPodを起動できるはずだが、なぜかステータスがWaitingになっている。
+サービスが起動できたら、`kubectl`でPodを起動できるはずだが、なぜかステータスが`Waiting`になっている。
 
 ```shell
 $ sudo kubecfg -c /usr/local/opt/gopath/src/github.com/mesosphere/kubernetes-mesos/examples/pod-nginx.json create pods
@@ -149,7 +150,7 @@ W1219 08:00:04.636499  1297 master.cpp:751] Dropping 'mesos.internal.RegisterFra
 
 Mesosのマスターは当選されてないような感じなのか？よくわからん (MesosphereのサンプルVMの問題なのかな？)
 
-まだちゃんと動かないのですが、上のことをもっと簡単にできるために、サンプル用の`VagrantFile`を作って、[GitHub](https://github.com/IanLewis/Kubernetes-mesos-demo)に上げた。
+まだちゃんと動かないのですが、上のことをもっと簡単にできるために、サンプル用の`VagrantFile`を作って、[GitHub](https://github.com/ianlewis/k8s-mesos-demo)に上げた。
 
 ## 感想
 

@@ -9,13 +9,13 @@ render_with_liquid: false
 locale: ja
 ---
 
-> この記事は[Python Webフレームワークアドベントカレンダー2010](http://atnd.org/events/10465)のために書いた12/24の記事です。他の記事を読むには <http://atnd.org/events/10465> をご覧ください
+> この記事は[Python Webフレームワークアドベントカレンダー2010](http://atnd.org/events/10465)のために書いた12/24の記事です。他の記事を読むにはご覧ください
 
-私は普段、[kay フレームワーク](http://code.google.com/p/kay-framework/)を使いますが、最近、[Tipfy](http://www.tipfy.org/) (<http://www.tipfy.org>)というフレームワークを試してみました。TipfyはKayと同じく、Google Appengine専用フレームワークです。Kayは[Django](http://www.djangoproject.com)に似ているものの、TipfyはAppengine SDKの[Webapp フレームワーク](http://code.google.com/intl/ja/appengine/docs/python/gettingstarted/usingwebapp.html)に似ているように作りました。
+私は普段、[Kay フレームワーク](http://code.google.com/p/kay-framework/)を使いますが、最近、[Tipfy](http://www.tipfy.org/)というフレームワークを試してみました。TipfyはKayと同じく、Google App Engine専用フレームワークです。Kayは[Django](http://www.djangoproject.com)に似ているものの、TipfyはApp Engine SDKの[Webapp フレームワーク](http://code.google.com/intl/ja/appengine/docs/python/gettingstarted/usingwebapp.html)に似ているように作りました。
 
 ## インストール
 
-Tipfyは[buildout](http://www.buildout.org/)という環境管理ツールの利用を推進しています。
+Tipfyは[`buildout`](http://www.buildout.org/)という環境管理ツールの利用を推進しています。
 
 まずは、[Tipfy の配布プロジェクトテンプレート](http://www.tipfy.org/tipfy.zip)をダウンロードします。
 
@@ -24,7 +24,7 @@ wget http://www.tipfy.org/tipfy.zip
 unzip tipfy.zip
 ```
 
-次に、buildoutで環境を構築。buildoutはAppengine SDKと依存ライブラリをすべて、[pypi](http://pypi.python.org/)から落としてくれます。
+次に、`buildout`で環境を構築。`buildout`はApp Engine SDKと依存ライブラリをすべて、[PyPi](http://pypi.python.org/)から落としてくれます。
 
 ```shell
 cd project
@@ -32,7 +32,7 @@ python2.5 bootstrap.py --distribute
 ./bin/buildout
 ```
 
-それから、dev_appserverや、appcfgのスクリプトファイルが`bin`ディレクトリに入っています。開発サーバーを起動するには、`./bin/dev_appserver`を実行します。
+それから、`dev_appserver`や、`appcfg`のスクリプトファイルが`bin`ディレクトリに入っています。開発サーバーを起動するには、`./bin/dev_appserver`を実行します。
 
 ```shell
 ./bin/dev_appserver

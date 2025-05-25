@@ -9,11 +9,17 @@ render_with_liquid: false
 locale: ja
 ---
 
-先週の月曜日(6/9)に公開されて、皆さんは多分見逃している人が多いと思いますが、[私はGoogle Developer Expert (旧Google API Expert) を卒業しました](http://googledevjp.blogspot.jp/2014/06/google-api-expert-5.html)。私が3年半くらいやっていて、とても楽しかったです。Google IO に行ったり、地方のプログラマーと接したり、いろな貴重な経験をさせて頂きました。
+先週の月曜日(6/9)に公開されて、皆さんは多分見逃している人が多いと思いますが、[私は
+Google Developer Expert (旧Google API Expert) を卒業しました](http://googledevjp.blogspot.jp/2014/06/google-api-expert-5.html)。私が3年半くらいやっていて、
+とても楽しかったです。Google IO に行ったり、地方のプログラマーと接したり、いろな貴重な経験を
+させて頂きました。
 
 ## API Expertになったころ
 
-[２０１０年１１月に Google API Expertになりました](http://www.ianlewis.org/jp/google-appengine-api-expert)。その時は、App Engineがまだプレビューだったごろでした。すこし、[`kay-framework`](https://code.google.com/p/kay-framework/)の開発を松尾さんに手伝ったんですか、API Expert になってから、Kay 1.1 の開発を中心でやって、いくつかの機能を組み込みました。
+[２０１０年１１月に Google API Expert になりました](http://www.ianlewis.org/jp/google-appengine-api-expert)。
+その時は、App Engine がまだプレビューだったごろでした。すこし、
+[`kay-framework`](https://code.google.com/p/kay-framework/)の開発を松尾さんに手伝ったんですか、API Expert に
+なってから、Kay 1.1 の開発を中心でやって、いくつかの機能を組み込みました。
 
 その次の２０１１年の夏から、App Engineのリリーススケジュールが大体1ヶ月1リリースになったので、どんどん機能が爆発的に増えた。Javaが一番ユーザーが多いんですが、まだPython版が機能追加が速くてうれしかったです。
 
@@ -32,7 +38,9 @@ API Expert という制度が大昔 (２００７年頃)の開発者のGoogleフ
 
 ## Google I/O
 
-Developer Expertやっていた頃、Google I/O に参加させて頂きました。日本から開発者がたくさんいて、みんなでワイワイ勉強しながら、カンファレンスに参加するのが毎年の大きな楽しみでした。毎年、クラウドの ExpertたちがI/Oを充実して、貴重な経験になりました。
+Developer Expertやっていた頃、Google I/O に参加させて頂きました。日本から開発者がたくさんいて、みんなで
+ワイワイ勉強しながら、カンファレンスに参加するのが毎年の大きな楽しみでした。毎年、クラウドの Expertたちが
+I/O を充実して、貴重な経験になりました。
 
 ![日本のExpert に皆さん](/assets/images/719/beanbags_big.jpg)
 

@@ -30,10 +30,13 @@ rules:
       - "Balahan"
       - "Branchaud"
       - "Collison"
+      - "/[Cc]osentino/"
       - "Cramer"
+      - "Daskalou"
       - "Dougherty"
       - "Enamoto"
       - "Fikes"
+      - "Fumi"
       - "Ghemawat"
       - "Godbolt"
       - "Graeme"
@@ -41,6 +44,10 @@ rules:
       - "IanMLewis" # Ian M Lewis
       - "Klabnik"
       - "Makabi"
+      - "McKayla"
+      - "/[Mm]oriyoshi/"
+      - "Maroney"
+      - "Moscone"
       - "Nghia"
       - "Ronacher"
       - "Sanjay"
@@ -48,13 +55,28 @@ rules:
       - "Trong"
       - "Willison"
       - "Vella"
+      - "Zach"
       - "akisute"
       - "deeet"
+      - "ae35"
+      - "akisute"
+      - "bucho"
+      - "deeet"
+      - "feiz"
       - "hiyosi"
+      - "ianmlewis"
+      - "kaz"
       - "mcyoung"
-      - "whosaysni"
+      - "shimizukawa"
+      - "shoma"
+      - "surgo"
+      - "takanory"
+      - "terapyon"
+      - "toruot"
+      - "troter"
       - "yuanying"
       - "yudppp"
+      - "whosaysni"
       - "/[Ff]eiz/"
 
       # Company/Product Names
@@ -62,35 +84,57 @@ rules:
 
       - "Anthropic"
       - "Apcera"
-      - "Bigtable"
+      - "Appc"
+      - "Basho"
       - "BeProud"
+      - "Bigtable"
       - "Bluesky"
+      - "Bitbucket"
+      - "ChromeOS"
       - "Connpass" # Japanese event platform (connpass.com)
       - "CoreOS"
+      - "CoreOS"
       - "Datastore"
+      - "Deis"
       - "EuroPython"
+      - "ElasticSearch"
       - "Gmail"
+      - "MacBook"
       - "Mesosphere"
+      - "NATS.io"
+      - "Photoshop"
       - "PyCon"
+      - "PyPi"
       - "Jupyter"
       - "SoftBank"
       - "Synadia"
       - "TeleMessage"
+      - "SoftBank"
       - "Stunlock"
       - "Oakveil"
+      - "UStream"
 
       # Tech Names
       ##########################################################################
 
       - "Appc"
+      - "Ansible"
+      - "Appstats" # App Engine Appstats
       - "BeautifulSoup"
+      - "Blobstore" # App Engine Blobstore
+      - "CloudFront" # AWS CloudFront
+      - "/[Cc]ron/"
       - "Funktion"
+      - "Jubatus"
+      - "/[Kk]eychain/"
       - "Kubernetes"
       - "Jubatus"
       - "QUnit" # JavaScript Unit Testing Framework
       - "LuaLaTeX"
       - "MapReduce"
+      - "Matcher API" # App Engine Matcher API
       - "Maturin"
+      - "/[Mm]emcached/"
       - "Mesos"
       - "NATS" # NATS.io
       - "NATS.io" # NATS.io
@@ -112,72 +156,144 @@ rules:
       - "pprof" # Go profiler
       - "rebuild.fm" # rebuild.fm podcast
       - "supervisord"
+      - "Noto" # Noto fonts
+      - "OpenShift"
+      - "OpenStack"
+      - "PIL" # Python Imaging Library
+      - "Postfix" # mail server
+      - "PySerial" # Python Serial port library
+      - "Pygments" # Python syntax highlighting library
+      - "QUnit" # JavaScript testing framework
+      - "Redis" # in-memory data structure store
+      - "Redmine" # project management tool
+      - "RequireJS" # JavaScript module loader
+      - "Riak" # distributed NoSQL database
+      - "SpiderMonkey" # JavaScript engine
+      - "Stylelint" # CSS linter
+      - "Tensorflow"
+      - "Tipfy" # App Engine Python web framework
+      - "TortoiseHg" # Mercurial client
+      - "XeLaTeX" # LaTeX engine
+      - "Zizmor"
+      - "Webapp" # App Engine WebApp framework
+      - "WebGL" # Web Graphics Library
+      - "cgroup" # control groups
+      - "etcd" # etcd.io
+      - "npm" # Node Package Manager
+      - "pprof" # Go profiler
+      - "reST" # reStructuredText
+      - "reStructuredText" # reST
+      - "supervisord"
       - "/[Cc]ron/"
       - "/[Mm]emcached/"
       - "/[Nn]ginx/"
       - "/[Ww]i-?[Ff]i/"
+      - "/[Nn]ginx/"
 
-      # Tech Names (cont.)
-      - "pyspa" # Python Onsen
+      # Organizations/Events
+      - "appengine ja night" # App Engine Java/Japan Night
+      - "AJN" # App Engine Java/Japan Night
+      - "BPStudy" # BeProud Study
+      - "BPStyle" # BeProud internal study
+      - "PyFes" # Python Festival
       - "PyLadies" # Python Ladies
       - "NSStudy"
+      - "/[Pp]yspa/" # Python Onsen
 
       # Tech Terminology
       ##########################################################################
 
+      # Tech Terminology
+      - "Autoscaling"
+      - "Dockerfile"
       - "Googler" # Google employee
       - "TrueType"
-      - "Dockerfile"
+      - "Vagrantfile"
+      - "dotfiles"
+      - "/[Aa]cyclic/" # not displaying or forming part of a cycle.
       - "/[Aa]utoscaler/"
       - "/[Aa]utoscaling/"
       - "/[Bb]ackend/"
       - "/[Cc]omparator/" # compare + ator
       - "/[Dd]eclarative/"
+      - "/[Dd]ev/" # Development/Developer
       - "/[Ff]iletype/" # file + type
       - "/[Gg]oroutine/"
+      - "/[Hh]ackathon/"
       - "/[Ll]iveness/"
+      - "/[Mm]ixin/"
       - "/[Nn]amespace/"
       - "/[Pp]laintext/"
       - "/[Ii]mpactful/" # impact + -ful
       - "/[Ii]ntegrations/" # irregular plural-form
+      - "/[Rr]evset/" # Revision Set (Mercurial)
       - "/[Ss]erverless/"
       - "/[Ss]tylesheet/"
+      - "/[Tt]estbed/"
       - "/[Tt]radeoff/" # trade + off
+      - "[Ww]ifi" # Wi-Fi
+      - "µsec" # microsecond
+      - "usec" # microsecond
+      - "msec" # millisecond
 
       # Acronyms
       ##########################################################################
 
+      - "ACL" # Access Control List
       - "ACPI" # Advanced Configuration and Power Interface
+      - "APAC" # Asia-Pacific
       - "API" # Application Programming Interface
+      - "BPBP" # BeProud Book Purchase
       - "BQ" # BigQuery
       - "BUSL" # Business Source License
+      - "CFP" # Call for Papers/Proposals
       - "CNCF" # Cloud Native Computing Foundation
       - "CFP" # Call for Papers/Proposals
       - "CSV" # Comma-Separated Values
+      - "CSR" # Certificate Signing Request
+      - "CSV" # Comma-Separated Values
+      - "DAG" # Directed Acyclic Graph
+      - "DNS" # Domain Name System
+      - "DSL" # Domain-Specific Language
       - "FaaS" # Function as a Service
+      - "GAE" # Google App Engine
+      - "GC" # Garbage Collector/Collection
       - "GCE" # Google Compute Engine
+      - "GDE" # Google Developer Expert
       - "GCP" # Google Cloud Platform
       - "GCPUG" # Google Cloud Platform User Group
-      - "GDE" # Google Developer Expert
+      - "GDG" # Google Developer Group
       - "GFS" # Google File System
       - "GMP" # Goroutine, Mutex, and Channel (GMP)
       - "GKE" # Google Kubernetes Engine
       - "Gb" # Gigabyte
       - "HDFS" # Hadoop Distributed File System
+      - "HTTPS" # Hypertext Transfer Protocol Secure
       - "JSON" # JavaScript Object Notation
+      - "KVS" # Key-Value Store
+      - "LDAP" # Lightweight Directory Access Protocol
       - "LSP" # Language Server Protocol
       - "MCP" # Model Context Protocol
       - "MNIST" # Modified National Institute of Standards and Technology DB
+      - "MQ" # Message Queue
       - "NoSQL" # Not Only SQL
       - "OSS" # Open Source Software
       - "QPS" # Queries Per Second
       - "PaaS" # Platform as a Service
+      - "PID" # Process ID
+      - "QPS" # Query Per Second
       - "RDBMS" # Relational Database Management System
+      - "RPC" # Remote Procedure Call
+      - "SDK" # Software Development Kit
+      - "SES" # AWS Simple Email Service
       - "SLA" # Service Level Agreement
       - "SLSA" # Supply Chain Levels for Software Artifacts
+      - "SMTP" # Simple Mail Transfer Protocol
       - "VC" # Venture Capital
       - "VM" # Virtual Machine
       - "WASM" # WebAssembly
+      - "WSGI" # Web Server Gateway Interface
+      - "XMPP" # Extensible Messaging and Presence Protocol
       - "YAML" # YAML Ain't Markup Language
       - "yaml" # YAML Ain't Markup Language
 

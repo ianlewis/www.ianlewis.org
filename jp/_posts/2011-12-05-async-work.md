@@ -9,7 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-> この記事は BeProud ではどう仕事しているかの3部構成シリーズの2部目。github のZach Holman さんが書いて頂いた 「[How Github Works](http://zachholman.com/posts/how-github-works/) 」シリーズのBeProud版。１部目は「[Hours are Bullshit](http://zachholman.com/posts/how-github-works-hours/)」の解説の「[BPで働くのがどうか (How BeProud Works)](/jp/bp-how-beproud-works) 」でした。今回は「[Be Asynchronous](http://zachholman.com/posts/how-github-works-asynchronous/)」という話の解説。
+> この記事は BeProud ではどう仕事しているかの3部構成シリーズの2部目。GitHubのZach Holman さんが書いて頂いた 「[How GitHub Works](http://zachholman.com/posts/how-github-works/) 」シリーズのBeProud版。１部目は「[Hours are Bullshit](http://zachholman.com/posts/how-github-works-hours/)」の解説の「[BPで働くのがどうか (How BeProud Works)](/jp/bp-how-beproud-works) 」でした。今回は「[Be Asynchronous](http://zachholman.com/posts/how-github-works-asynchronous/)」という話の解説。
 
 ## Communication
 
