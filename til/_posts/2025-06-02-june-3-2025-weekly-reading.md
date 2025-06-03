@@ -3,7 +3,7 @@ layout: post
 title: "TIL: June 3, 2025 - Weekly Reading: AI, NixOS, and more"
 date: "2025-06-02 00:00:00 +0900"
 blog: til
-tags: AI, programming, nixos
+tags: AI programming nixos
 render_with_liquid: false
 ---
 
