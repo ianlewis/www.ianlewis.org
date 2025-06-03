@@ -36,4 +36,5 @@ function (jssource) {
 }
 ```
 
-Check out the slightly modified interpreter [here](/assets/demos/files/interpreter/index.html)
+Check out the slightly modified interpreter on this [demo
+page](/assets/demos/files/interpreter/index.html).

@@ -79,7 +79,8 @@ balancing mode. The prefered way to set the port is via named ports on the
 instance group. You can set a named port for port 80 called `http-port` using
 the following command. I’m assuming you already have an instance group called
 `my-instance-group` set up. You can find out more about creating managed
-instance groups [here](https://cloud.google.com/compute/docs/instance-groups/).
+instance groups in the [Compute Engine
+docs](https://cloud.google.com/compute/docs/instance-groups/).
 
 ```shell
 gcloud compute instance-groups set-named-ports my-instance-group \

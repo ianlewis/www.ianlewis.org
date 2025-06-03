@@ -63,5 +63,6 @@ function tinymce_extend_plugins( &$params ) {
 }
 ```
 
-You can view the changes made in the checked in code
-[here](http://evocms-plugins.svn.sourceforge.net/viewvc/evocms-plugins?view=rev&revision=714).
+You can view the changes made in the checked in code on [the project's
+SourceForge
+page](http://evocms-plugins.svn.sourceforge.net/viewvc/evocms-plugins?view=rev&revision=714).
