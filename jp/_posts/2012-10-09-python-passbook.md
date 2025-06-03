@@ -11,85 +11,44 @@ locale: ja
 
 最近、iPhoneのiOS6でPassbookという機能が出ました。Passbookはイベントのチケットや、飛行機や船の搭乗券や、クーポンや、ポイントカードを管理出来る地味に便利なアプリ。
 
-僕は興味があって、Pythonでどう作るかを調べてみたので、ここで共有しようと思っている。Passbookはパスの更新の仕組みもありますが、とりあえず、パスを作るとところまで説明しようと。
-まずは、Appleの日本語ドキュメントの「Passbook プログラミングガイド」をざっと見たほうがいいかもしれない =\>
-<https://developer.apple.com/jp/devcenter/ios/library/japanese.html>
+僕は興味があって、Pythonでどう作るかを調べてみたので、ここで共有しようと思っている。Passbookはパスの更新の仕組みもありますが、とりあえず、パスを作るとところまで説明しようと。まずは、Appleの日本語ドキュメントの[「Passbook プログラミングガイド」](https://developer.apple.com/jp/devcenter/ios/library/japanese.html)をざっと見たほうがいいかもしれない。
 
-基礎の仕組み的に、Passbookはサーバーからダウンロードしたzipファイル。パスの内容はpass.jsonというJSONファイルの中に入っている。中身のファイル毎にsha1ハッシュを取って、manifest.jsonというファイルに書いている。そして、manifest.jsonの中身の署名を作成して、signatureというファイルに入れます。
+基礎の仕組み的に、Passbookはサーバーからダウンロードしたzipファイル。パスの内容は`pass.json`というJSONファイルの中に入っている。中身のファイル毎にsha1ハッシュを取って、`manifest.json`というファイルに書いている。そして、`manifest.json`の中身の署名を作成して、`signature`というファイルに入れます。
 
 ## まずは準備
 
 この準備は一番面倒くさい部分なんだけど、結構はまりそうなので、丁寧に説明する。
 
-署名を作るために、Appleのルート証明書が必要。「Passbook
-プログラミングガイド」の「パスタイプIDを要求する」というところに書いていますが、情報が少ないので、これでやり方が絶対わからないから、わかりやすく説明する。
-まずは後で使うキーペア(公開鍵、秘密鍵のペア)を作ります。MacのKeychain Accessでキーペアを作成する。
+署名を作るために、Appleのルート証明書が必要。「Passbook プログラミングガイド」の「パスタイプIDを要求する」というところに書いていますが、情報が少ないので、これでやり方が絶対わからないから、わかりやすく説明する。まずは後で使うキーペア(公開鍵、秘密鍵のペア)を作ります。MacのKeychain Accessでキーペアを作成する。
 
 キーチェーンアクセスメニューから、「証明書アシスタント」の「証明局に証明書を要求...」を選ぶ。情報を入力したら、「ディスクに保存」を選んで、作成する。それで、CSRを保存する。
 
-Pass Type ID を要求する。まずは、 iOS Dev Center にログインする =\>
-<https://developer.apple.com/devcenter/ios/index.action>
+Pass Type IDを要求する。まずは、[iOS Dev Center](https://developer.apple.com/devcenter/ios/index.action)にログインする。
 
 そして、右側の「iOS Provisioning Portal」に移動して、左側の「Pass Type IDs」をクリックする。
 
-<div class="lightbox">
-
-</assets/images/681/provisioning_portal_thumbnail.png>
-</assets/images/681/provisioning_portal_big.png>
-
-</div>
-
-<div class="lightbox">
-
-</assets/images/681/pass_type_ids_thumbnail.png>
-</assets/images/681/pass_type_ids_big.png>
-
-</div>
+[![](/assets/images/681/provisioning_portal_thumbnail.png)](/assets/images/681/provisioning_portal_big.png)
+[![](/assets/images/681/pass_type_ids_thumbnail.png)](/assets/images/681/pass_type_ids_big.png)
 
 Pass Type IDs画面で、「New Pass Type ID」ボタンをクリックしてください。
 
-<div class="lightbox">
+[![](/assets/images/681/new_pass_type_small.png)](/assets/images/681/new_pass_type_big.png)
 
-</assets/images/681/new_pass_type_small.png>
-</assets/images/681/new_pass_type_big.png>
-
-</div>
-
-これで適当なDescription と Identifierを入力してください。 Identifier は
-pass.\<ドメイン名\>.\<パス名\>
-という風に設定するのがおすすめ。「Submit」を押したら、ファイルアップロードの画面が出ます。ここに自分が作った公開鍵をアップします。
+これで適当なDescription と Identifierを入力してください。Identifierは`pass.<ドメイン名>.<パス名>`という風に設定するのがおすすめ。「Submit」を押したら、ファイルアップロードの画面が出ます。ここに自分が作った公開鍵をアップします。
 
 アップしたら、Apple側でサインした証明書をダウンロードします。このファイルを保存して、ダブルクリックすることで、キーチェーンアシスタントにインポートします。
 
-<div class="lightbox">
+[![](/assets/images/681/install_cert_small.png)](/assets/images/681/install_cert_big.png)
 
-</assets/images/681/install_cert_small.png>
-</assets/images/681/install_cert_big.png>
+次は、[Apple のルート証明書](http://developer.apple.com/certificationauthority/AppleWWDRCA.cer)をダウンロードして、キーチェーンアシスタントにインポートします。
 
-</div>
+その手順が終わったら、Keychain Accessから鍵を.p12ファイルとして、エクスポートする(以降、cert.p12というファイル名とする)。エクスポートするときに、以前に作った秘密鍵ではなく、「Pass Type ID: ほげほげ」という証明書を選択して、右クリックして、「ほげほげを書き出す」というオプションを選びます。ここにパスワードを指定出来ます。パスワードを後で使いますので、覚えておいてください。
 
-次は、Apple のルート証明書をこのURLからダウンロードして、キーチェーンアシスタントにインポートします。 =\>
-<http://developer.apple.com/certificationauthority/AppleWWDRCA.cer>
+[![](/assets/images/681/export_cert_small.png)](/assets/images/681/export_cert_big.png)
 
-その手順が終わったら、Keychain Access
-から鍵を.p12ファイルとして、エクスポートする(以降、cert.p12というファイル名とする)。エクスポートするときに、以前に作った秘密鍵ではなく、「Pass
-Type ID:
-ほげほげ」という証明書を選択して、右クリックして、「ほげほげを書き出す」というオプションを選びます。ここにパスワードを指定出来ます。パスワードを後で使いますので、覚えておいてください。
+次に、「Apple Developer Relations Certification Authority」の証明書を`pem`ファイルとして書きだす。(これ以降、`AppleWWDRCA.pem`のファイル名とする)
 
-<div class="lightbox">
-
-</assets/images/681/export_cert_small.png>
-</assets/images/681/export_cert_big.png>
-
-</div>
-
-次に、「Apple Developer Relations Certification Authority」の証明書を pem
-ファイルとして書きだす。(これ以降、AppleWWDRCA.pem のファイル名とする)
-
-書きだした p12
-ファイルに対して、下記のコマンドを実行して、証明書(certificate.pem)と公開鍵(key.pem)を書き出す。ここに
-p12 ファイルのパスワードを使います。pem ファイルのパスワードを指定できます。pem
-ファイルのパスワードは後で使うので、覚えておいてください。
+書きだした`p12`ファイルに対して、下記のコマンドを実行して、証明書(`certificate.pem`)と公開鍵(`key.pem`)を書き出す。ここに`p12`ファイルのパスワードを使います。`pem`ファイルのパスワードを指定できます。`pem`ファイルのパスワードは後で使うので、覚えておいてください。
 
 ```text
 $ openssl pkcs12 -in cert.p12 -clcerts -nokeys -out certificate.pem
@@ -98,12 +57,11 @@ $ openssl pkcs12 -in cert.p12 -nocerts -out key.pem
 ...
 ```
 
-この３つのファイル AppleWWDRCA.pem、certificate.pem、key.pem を後で使います。
+この３つのファイル`AppleWWDRCA.pem`、`certificate.pem`、`key.pem`を後で使います。
 
 ## ライブラリー
 
-Passbook の signature ファイルを作成するために、M2Crypto というライブラリが必要です。virtualenv
-を作って、インストールします。
+Passbookの`signature`ファイルを作成するために、M2Crypto というライブラリが必要です。Python virtualenvを作って、インストールします。
 
 ```text
 $ mkvirtualenv passbook-test
@@ -117,7 +75,7 @@ $ pip install M2Crypto
 
 ## 漸くコーディングできる
 
-まずは、pass.json ファイルのデータを作成する。
+まずは、`pass.json`ファイルのデータを作成する。
 
 ```python
 passinfo = json.dumps({
@@ -153,9 +111,7 @@ passinfo = json.dumps({
  })
 ```
 
-次に、画像データを読み込む。僕は
-[PHP-PKPass](https://github.com/tschoffelen/PHP-PKPass/tree/master/images)
-の example の画像を使いました。
+次に、画像データを読み込む。僕は[`PHP-PKPass`](https://github.com/tschoffelen/PHP-PKPass/tree/master/images)のexampleの画像を使いました。
 
 ```python
 filepaths = [
@@ -170,7 +126,7 @@ for name, path in filepaths:
         fileinfo.append(name, fd.read())
 ```
 
-次に、manifest.json を作成します。
+次に、`manifest.json`を作成します。
 
 ```python
 manifest = {
@@ -182,8 +138,7 @@ for filename, filedata in fileinfo:
 manifest = json.dumps(manifest)
 ```
 
-次に、signature ファイルを作成する。ここに、
-AppleWWDRCA.pem、key.pem、certificate.pemのパスを指定します。そして、証明書のパスワードをここに指定します。
+次に、`signature`ファイルを作成する。ここに、`AppleWWDRCA.pem`、`key.pem`、`certificate.pem`のパスを指定します。そして、証明書のパスワードをここに指定します。
 
 ```python
 smime = SMIME.SMIME()
@@ -218,9 +173,7 @@ zf.close()
 zipfiledata = zipfileobj.getvalue()
 ```
 
-iPhone のブラウザに渡すときに、 'application/vnd.apple.pkpass'
-というコンテントタイプを指定しないといけない。僕は
-Django をよく使うので、この例を Django で書きますが、どのフレームワークでも、出来るはずです。
+iPhone のブラウザに渡すときに、`application/vnd.apple.pkpass`というコンテントタイプを指定しないといけない。僕はDjango をよく使うので、この例をDjangoで書きますが、どのフレームワークでも、出来るはずです。
 
 ```python
 response = HttpResponse(
@@ -231,6 +184,6 @@ response['Pragma'] = 'no-cache'
 response['Content-Disposition'] = 'attachment; filename=pass.pkpass'
 ```
 
-これで、zipファイルがダウンロードできて、iPhone で見れるはず。
+これで、zipファイルがダウンロードできて、iPhoneで見れるはず。
 
-![image](/assets/images/681/passbook_big.png)
+![](/assets/images/681/passbook_big.png)

@@ -20,7 +20,7 @@ Bigtableは分散データベースでスケーラービリティが高い...と
 
 Googleの検索インデクスは [100,000,000 Gb 以上の容量があります](https://www.google.com/insidesearch/howsearchworks/crawling-indexing.html)。つまり **100 Petabyte** ！　しかも実際の内部的な数字はこれよりかなり大きく(おそらく何倍か)。100Petabyteは現在公開されているひかえめな数字に過ぎません。
 
-GoogleではBigtableを約10年前から使っていますが、2006年にその設計について書かれた[ホワイトペーパー](http://research.google.com/archive/bigtable.html)を公開しました。このホワイトペーパーの著者はGoogleの**レジェンド級開発者** Jeff Dean, Sanjay Ghemawat, Andrew Fikes など、自分と同じ会社に勤めていると思えない超人たち。このホワイトペーパーからオープンソースのBigDataエコシステムが生まれました。具体的には、MapReduceを実装するHadoopや、GFS(Google File System)をインスパイアしたHDFSがIT産業を変えています。Bigtableの設計を元にしたHBaseも利用者を集めました。
+GoogleではBigtableを約10年前から使っていますが、2006年にその設計について書かれた[ホワイトペーパー](http://research.google.com/archive/bigtable.html)を公開しました。このホワイトペーパーの著者はGoogleの**レジェンド級開発者** Jeff Dean, Sanjay Ghemawat, Andrew Fikes など、自分と同じ会社に勤めていると思えない超人たち。このホワイトペーパーからオープンソースのbig Dataエコシステムが生まれました。具体的には、MapReduceを実装するHadoopや、GFS(Google File System)をインスパイアしたHDFSがIT産業を変えています。Bigtableの設計を元にしたHBaseも利用者を集めました。
 
 ## Bigtableのパフォーマンス
 
@@ -43,11 +43,11 @@ BigtableはNoSQLの概念を人気にさせたと言われています。でもN
 BigtableはいわゆるKey/Valueデータベースですが、単純なKey/Valueデータベースにはないいくつか特殊な機能を持っています。
 まずは、一つのキーに複数の値を持つ機能があります。これはRDBMSと同じようなコラムとして表現されるけど、RDBMSと違ってテーブルスキーマがなく、rowデータに含まれているコラムがrowごとに変わってもよいのです。図にすると、
 
-![BigTable rows](/assets/images/746/rows.png)
+![Bigtable rows](/assets/images/746/rows.png)
 
 rowもキーによってソートされているので、rowキーを指定してスキャンができます。しかしそれぞれのコラムに入っているデータでのクエリーやスキャンができません。RDBMS的に言うとprimary key indexがあるけど、secondary indexがない、ということですね。
 
-![BigTable scan](/assets/images/746/scan.png)
+![Bigtable scan](/assets/images/746/scan.png)
 
 row間のトランザクションはないけど、一つのrowに含まれているコラムに対して、書き込みの整合性はあります。
 
@@ -57,7 +57,7 @@ GoogleはMapReduceやBigtableの**技術**をホワイトペーパーとして�
 その状況でOSSの実装が出てきたけれど、そこには当然Googleのノウハウが使われておらず、GoogleがMapReduceやBigtableほどの性能がありません。
 
 最近のGoogleは、OSSやIT産業にノウハウやその技術を貢献できるように、もっとOSSやAPIを作ろうという傾向があります。これは最近公開した [Kubernetes](http://kubernetes.io/)や、[Tensorflow](http://tensorflow.io/)で具体的に実現しています。
-ただ、Bigtableに関しては時すでに遅しなので、技術的に一番近いHBase 互換のAPIをBigtagleで提供することになりました。つまり、HBaseを使っていた開発者はコードを変えずにそのままBigtableを使えるし、Bigtableにベンダーロックされることもありません。
+ただ、Bigtableに関しては時すでに遅しなので、技術的に一番近いHBase 互換のAPIをBigtableで提供することになりました。つまり、HBaseを使っていた開発者はコードを変えずにそのままBigtableを使えるし、Bigtableにベンダーロックされることもありません。
 
 ## HBase API
 

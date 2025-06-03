@@ -11,7 +11,8 @@ locale: ja
 
 <img src="/assets/images/mercurial/mercurial_medium.png" class="align-center" />
 
-_この記事は [Mercurial Advent Calendar 2013](http://connpass.com/event/3950/) の第３目の記事 (なのに 10日に公開しています orz)。前の記事は @cointoss1973 さんの「 [TortoiseHg のワークベンチから快適なターミナルを起動する(Windows)](http://cointoss.hatenablog.com/entry/2013/12/02/182618)」。次の記事は @toruot さんの「 [Mercurialのextdiffツールを自作する](http://toruot.hatenablog.jp/entry/2013/12/04/231914) 」という記事です。_
+_この記事は [Mercurial Advent Calendar 2013](http://connpass.com/event/3950/)
+の第３目の記事 (なのに 10日に公開しています。。。)。前の記事は @cointoss1973 さんの「 [TortoiseHg のワークベンチから快適なターミナルを起動する(Windows)](http://cointoss.hatenablog.com/entry/2013/12/02/182618)」。次の記事は @toruot さんの「 [Mercurialの`extdiff`ツールを自作する](http://toruot.hatenablog.jp/entry/2013/12/04/231914) 」という記事です。_
 
 Mercurial はログ情報を出力する時に、テンプレートを指定することで、出力の形式を変更することができます。
 
@@ -27,7 +28,7 @@ bf5b22ba1b0243dcab398620b5c1c5ea5b7fef36: fuga
 
 ## author の解析
 
-テンプレートはいいところは unix のパイプコマンドでいろなことができるところです。例えば、コミットの `author` の解析:
+テンプレートはいいところは Unix のパイプコマンドでいろなことができるところです。例えば、コミットの `author` の解析:
 
 ```shell
 $ hg log --template="{author}" | sort | uniq -c | sort -r

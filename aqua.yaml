@@ -1,3 +1,4 @@
+---
 # Copyright 2025 Ian Lewis
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,8 +12,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
----
+#
 # yaml-language-server: $schema=https://raw.githubusercontent.com/aquaproj/aqua/main/json-schema/aqua-yaml.json
 # aqua - Declarative CLI Version Manager
 # https://aquaproj.github.io/
@@ -28,3 +28,4 @@ packages:
   - name: rhysd/actionlint@v1.7.7
   - name: koalaman/shellcheck@v0.10.0
   - name: jqlang/jq@jq-1.7.1
+  - name: ianlewis/todos@v0.12.0

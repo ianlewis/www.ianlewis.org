@@ -17,7 +17,7 @@ locale: ja
 
 ## Kubernetesはなんっすか
 
-みんなDocker触ったことあるけど、Kubernetesなんで触ったことない人がまだ結構いると思うけど、ちょっと説明してみる。Kubernetesは今までやっていたことを自分なりに自動化したものだと考えるといい。今まで、chefやansibleでウェブアプリをサーバーにダウンロードして起動してsupervisordか何かの方法で監視して、その前にロードバランサを作って外からアクセスすることができるようにしたと思う。sshを使わないし、内部でやっていることがだいぶ違うけど、ハイレベルで考えるとKubernetesはアプリのパッケージフォーマットとしてDockerイメージを使って以前にchefやansibleでやったことをAPIでできるようにしているもの。
+みんなDocker触ったことあるけど、Kubernetesなんで触ったことない人がまだ結構いると思うけど、ちょっと説明してみる。Kubernetesは今までやっていたことを自分なりに自動化したものだと考えるといい。今まで、ChefやAnsibleでウェブアプリをサーバーにダウンロードして起動してsupervisordか何かの方法で監視して、その前にロードバランサを作って外からアクセスすることができるようにしたと思う。sshを使わないし、内部でやっていることがだいぶ違うけど、ハイレベルで考えるとKubernetesはアプリのパッケージフォーマットとしてDockerイメージを使って以前にChefやAnsibleでやったことをAPIでできるようにしているもの。
 
 簡単な例ですが、`nginx`をデプロイしてみる。KubernetesのAPIを簡単に使えるために`kubectl`というCLIがあります。
 
@@ -58,11 +58,11 @@ $ curl -s http://104.155.215.220/ | grep title
 <title>Welcome to nginx!</title>
 ```
 
-そして、`Deployment`だけじゃなくて、設定をもつ[ConfigMap](http://kubernetes.io/docs/user-guide/configmap/)や[Secret](http://kubernetes.io/docs/user-guide/secrets/)もあるし、永住ストーレッジの[PersistentVolume](http://kubernetes.io/docs/user-guide/persistent-volumes/)もあるし、必要なものはたいていあって全部APIから制御できる。
+そして、`Deployment`だけじゃなくて、設定をもつ[`ConfigMap`](http://kubernetes.io/docs/user-guide/configmap/)や[Secret](http://kubernetes.io/docs/user-guide/secrets/)もあるし、永住ストーレッジの[`PersistentVolume`](http://kubernetes.io/docs/user-guide/persistent-volumes/)もあるし、必要なものはたいていあって全部APIから制御できる。
 
 ## PythonからAPIを触ってみる
 
-KubernetesはREST APIを提供しているので、基本的にどの言語でもKubernetesクラスタを制御できる。私の一番好きな言語の一つがPythonだし、最近新しい[正式Pythonクライアント](https://github.com/kubernetes-incubator/client-python)が kubernetes-incubatorに出たので、使ってみようと思う。
+KubernetesはREST APIを提供しているので、基本的にどの言語でもKubernetesクラスタを制御できる。私の一番好きな言語の一つがPythonだし、最近新しい[正式Pythonクライアント](https://github.com/kubernetes-incubator/client-python)が`kubernetes-incubator`に出たので、使ってみようと思う。
 
 インストールはいつもどおり`pip`を使う
 
@@ -130,6 +130,6 @@ Event: MODIFIED nginx-2048367498-zwkfg
 
 ## まとめ
 
-このところまで読んだら「んじゃ、APIで何ができる？なんのメリットある？」って思っているかもしれない。APIの上に作れるものは幅広いんだけど、便利なUI (例: [dashboard](https://github.com/kubernetes/dashboard))や、CIシステムのパイプライン(例: [fabric8](https://fabric8.io/))や、監視ツールや、フルフルなPaaS(例: [Deis](http://deis.io/), [OpenShift](https://www.openshift.com/))、やserverless的なFaaS(Function as a Service, 例: [fission.io](http://fission.io/), [funktion](https://github.com/fabric8io/funktion))が作れるだろう。
+このところまで読んだら「んじゃ、APIで何ができる？なんのメリットある？」って思っているかもしれない。APIの上に作れるものは幅広いんだけど、便利なUI (例: [`kubernetes/dashboard`](https://github.com/kubernetes/dashboard))や、CIシステムのパイプライン(例: [fabric8](https://fabric8.io/))や、監視ツールや、フルフルなPaaS(例: [Deis](http://deis.io/), [OpenShift](https://www.openshift.com/))、やserverless的なFaaS(Function as a Service, 例: [`fission.io`](http://fission.io/), [Funktion](https://github.com/fabric8io/funktion))が作れるだろう。
 
 [client-python](https://github.com/kubernetes-incubator/client-python)をインストールして、Pythonでアプリを作ってみよう。もし、興味がある方は [Kubernetes Slackチャンネル](http://slack.kubernetes.io/)にジョインすると、他のKubernetes開発者と話せる。Pythonクライアントを担当しているのが `#sig-api-machinery` というチャンネルですが、英語得意じゃない方はぜひ `#jp-users` にジョインしていただけると幸い

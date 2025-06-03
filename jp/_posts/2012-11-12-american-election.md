@@ -8,60 +8,51 @@ render_with_liquid: false
 locale: ja
 ---
 
-アメリカの大統領選挙が終わりました。僕の会社の人が「あ、今日は選挙だ」って言ったんだけど、みなさんは同じようにあまり詳細が分かってないような感じだと思いますが、僕が思ったことと、面白いと思ったことをまとめようかなと思いました。ま、実はFumiさんのブログの [オバマ再選メモ](http://fumit.blogspot.jp/2012/11/blog-post.html)が素晴らしくて、読んだら間違いないんだけど、この纏め + α 書いてみようと思います。まずは、Fumiさんの纏めをお読みください。
+アメリカの大統領選挙が終わりました。僕の会社の人が「あ、今日は選挙だ」って言ったんだけど、みなさんは同じようにあまり詳細が分かってないような感じだと思いますが、僕が思ったことと、面白いと思ったことをまとめようかなと思いました。ま、実はFumiさんのブログの[オバマ再選メモ](http://fumit.blogspot.jp/2012/11/blog-post.html)が素晴らしくて、読んだら間違いないんだけど、この纏め + α 書いてみようと思います。まずは、Fumiさんの纏めをお読みください。
 
 まずは、背景
 
 ## 候補者
 
-アメリカの選挙はそもそも、誰が出馬するの？
-アメリカは二大政党制だと聞いているのに、オバマさんとロムニーさん以外の候補も聞いているけど、それはなんだろう？って思っている人いるかもしれません。実は、アメリカは二大政党制ではありますが、公式上に認めてない他に独立の政党があります。独立(Independent)と第三者(Third-party)候補者と言います。実は独自と第三者の候補者がかなり数多いです。すべての候補者のリストは
-[Wikipedia](http://en.wikipedia.org/wiki/United_States_third_party_and_independent_presidential_candidates,_2012)
-で見れます。
+アメリカの選挙はそもそも、誰が出馬するの？アメリカは二大政党制だと聞いているのに、オバマさんとロムニーさん以外の候補も聞いているけど、それはなんだろう？って思っている人いるかもしれません。実は、アメリカは二大政党制ではありますが、公式上に認めてない他に独立の政党があります。独立(Independent)と第三者(Third-party)候補者と言います。実は独自と第三者の候補者がかなり数多いです。すべての候補者のリストは[Wikipedia](http://en.wikipedia.org/wiki/United_States_third_party_and_independent_presidential_candidates,_2012)で見れます。
 
-![image](/assets/images/683/romney_big.jpg)
-![image](/assets/images/683/obama_big.jpg)
+![](/assets/images/683/romney_big.jpg)
+![](/assets/images/683/obama_big.jpg)
 
 ---
 
-![image](/assets/images/683/487px-garyjohnsonphoto_-_modified_fb_thumb.jpg)
-![image](/assets/images/683/444px-jill_stein_2012_fb_thumb.jpg)
-![image](/assets/images/683/100px-stephen_durham_campaign_portrait_fb_thumb.jpg)
-![image](/assets/images/683/100px-robert_david_steele_fb_thumb.jpg)
-![image](/assets/images/683/100px-robert_burck_fb_thumb.jpg)
-![image](/assets/images/683/100px-rep_virgil_goode_fb_thumb.jpg)
-![image](/assets/images/683/100px-randy_blythe_fb_thumb.jpg)
-![image](/assets/images/683/100px-randall_terry_2_fb_thumb.jpg)
-![image](/assets/images/683/100px-r._lee_wrights_august_2012_fb_thumb.jpg)
-![image](/assets/images/683/100px-r.j._harris_fb_thumb.jpg)
-![image](/assets/images/683/100px-peta_lindsay_fb_thumb.jpg)
-![image](/assets/images/683/100px-pastor_terry_jones_before_the_march_fb_thumb.jpg)
-![image](/assets/images/683/100px-kotlikoff_fb_thumb.jpg)
-![image](/assets/images/683/100px-jimhedges_fb_thumb.jpg)
-![image](/assets/images/683/100px-jerry_white_addresses_a_meeting_fb_thumb.jpg)
-![image](/assets/images/683/100px-dcastle08_fb_thumb.jpg)
-![image](/assets/images/683/100px-carl_e._person_town_attorney_general_attire_fb_thumb.jpg)
-![image](/assets/images/683/100px-buddy_roemer_by_gage_skidmore_fb_thumb.jpg)
-![image](/assets/images/683/100px-andre_barnett_fb_thumb.png)
-![image](/assets/images/683/100px-a_photo_of_michealene_risley_fb_thumb.png)
+![](/assets/images/683/487px-garyjohnsonphoto_-_modified_fb_thumb.jpg)
+![](/assets/images/683/444px-jill_stein_2012_fb_thumb.jpg)
+![](/assets/images/683/100px-stephen_durham_campaign_portrait_fb_thumb.jpg)
+![](/assets/images/683/100px-robert_david_steele_fb_thumb.jpg)
+![](/assets/images/683/100px-robert_burck_fb_thumb.jpg)
+![](/assets/images/683/100px-rep_virgil_goode_fb_thumb.jpg)
+![](/assets/images/683/100px-randy_blythe_fb_thumb.jpg)
+![](/assets/images/683/100px-randall_terry_2_fb_thumb.jpg)
+![](/assets/images/683/100px-r._lee_wrights_august_2012_fb_thumb.jpg)
+![](/assets/images/683/100px-r.j._harris_fb_thumb.jpg)
+![](/assets/images/683/100px-peta_lindsay_fb_thumb.jpg)
+![](/assets/images/683/100px-pastor_terry_jones_before_the_march_fb_thumb.jpg)
+![](/assets/images/683/100px-kotlikoff_fb_thumb.jpg)
+![](/assets/images/683/100px-jimhedges_fb_thumb.jpg)
+![](/assets/images/683/100px-jerry_white_addresses_a_meeting_fb_thumb.jpg)
+![](/assets/images/683/100px-dcastle08_fb_thumb.jpg)
+![](/assets/images/683/100px-carl_e._person_town_attorney_general_attire_fb_thumb.jpg)
+![](/assets/images/683/100px-buddy_roemer_by_gage_skidmore_fb_thumb.jpg)
+![](/assets/images/683/100px-andre_barnett_fb_thumb.png)
+![](/assets/images/683/100px-a_photo_of_michealene_risley_fb_thumb.png)
 
 独自と第三者の候補者は数多いのですが、投票用紙に載る候補は州がそれぞれ決まるので、二大政党以外はすべての州の投票用紙に乗れないので、選出する可能性はほぼゼロです。大統領選挙に出馬するのがほぼ講義の方向性や、ある問題をアメリカの国民に知らせる為と考えれば良い。
 
 ## 選出ルール
 
-大統領選挙は直接選挙ではなく、Electoral College というものが大統領を選出する。州ごとに勝つ候補者が認められ、その州の
-Electoral College の投票がすべてその候補者が頂く。例えば、フロリダー州の投票は 51% オバマで、49%
-ロムニーだとしても、フロリダー州の投票はすべてオバマさんのものになる。何でこういうシステムになっているかといいますと、少数民族を守るのと、小さい州の有力を高めるだめでした。すごく歴史のあることなんですが、この制度を変更するには、憲法を改正しないといけないので、変わる可能性がかなり低い。
+大統領選挙は直接選挙ではなく、Electoral Collegeというものが大統領を選出する。州ごとに勝つ候補者が認められ、その州のElectoral Collegeの投票がすべてその候補者が頂く。例えば、フロリダー州の投票は５１％オバマで、４９％ロムニーだとしても、フロリダー州の投票はすべてオバマさんのものになる。何でこういうシステムになっているかといいますと、少数民族を守るのと、小さい州の有力を高めるだめでした。すごく歴史のあることなんですが、この制度を変更するには、憲法を改正しないといけないので、変わる可能性がかなり低い。
 
-[Google Politics and
-Elections](https://www.google.com/elections/ed/us/results)
-などの選挙情報まとめサイトが、赤い州と青い州を表示しているのが、ロムニーさんとオバマさんがそれぞれ
-Electoral College の投票を引き取った表になるわけです。
+[Google Politics and Elections](https://www.google.com/elections/ed/us/results)などの選挙情報まとめサイトが、赤い州と青い州を表示しているのが、ロムニーさんとオバマさんがそれぞれElectoral Collegeの投票を引き取った表になるわけです。
 
-![image](/assets/images/683/google_politics_big.png)
+![](/assets/images/683/google_politics_big.png)
 
-そして、アメリカは、州によってどの政党が勝つのが大体決まっている場合があります。決まってない、どの候補者が勝ってももおかしくない州は Swing
-State と言います。Swing State 以外は決まっているので、ほぼ Swing State で選挙が決まる。
+そして、アメリカは、州によってどの政党が勝つのが大体決まっている場合があります。決まってない、どの候補者が勝ってももおかしくない州はSwing Stateと言います。Swing State以外は決まっているので、ほぼSwing Stateで選挙が決まる。
 
 ## 誰が選出するって事前にわかった？
 
@@ -77,8 +68,7 @@ States](http://mashable.com/2012/11/07/nate-silver-wins/)
 >
 > &mdash; Michael Cosentino (@cosentino) [November 7, 2012](https://twitter.com/cosentino/status/266042007758200832)
 
-ま、それだけじゃ、完璧に推定した人は数人いたんですが、 Nate Silver
-さんは大統領の選挙を完璧に推定しただけでなく、国会の上院、衆議院も完璧に推定し、知事の選挙を一つだけ間違えたという素晴らしすぎる推定力でした。
+ま、それだけじゃ、完璧に推定した人は数人いたんですが、 Nate Silverさんは大統領の選挙を完璧に推定しただけでなく、国会の上院、衆議院も完璧に推定し、知事の選挙を一つだけ間違えたという素晴らしすぎる推定力でした。
 
 ま、統計学者じゃなきゃわからないよねって思うとそうでもないですね。 [New York Times: Paths to the White
 House](http://elections.nytimes.com/2012/results/president/scenarios)
@@ -90,12 +80,7 @@ House](http://elections.nytimes.com/2012/results/president/scenarios)
 
 <a href="/assets/images/683/paths.png"><img src="/assets/images/683/paths_big.png" /></a>
 
-Swing State の中、Florida と Ohio が一番でかい。ロムニーさんはそもそも Florida と Ohio
-を両方勝ってないと、平等にならないのが現実だった。North Carolina
-はロムニーさんがほぼ確実に勝つので、それはいいんですが、ロムニーさんは
-Florida, Ohio, North Carolinaで勝ったとしても、オバマさんはその後の Virgina
-州で勝ったら、大体平等的な状況に戻る。つまり、ロムニーさんは選出のために
-Florida と Ohio はマストです。オバマさんは負けたらいたいんけど、確実にアウトではないという状況でした。
+Swing State の中、Florida と Ohio が一番でかい。ロムニーさんはそもそもFloridaとOhioを両方勝ってないと、平等にならないのが現実だった。North Carolinaはロムニーさんがほぼ確実に勝つので、それはいいんですが、ロムニーさんはFlorida, Ohio, North Carolinaで勝ったとしても、オバマさんはその後の Virginia州で勝ったら、大体平等的な状況に戻る。つまり、ロムニーさんは選出のためにFloridaとOhioはマストです。オバマさんは負けたらいたいんけど、確実にアウトではないという状況でした。
 
 <a href="/assets/images/683/paths2.png"><img src="/assets/images/683/paths2_big.png" /></a>
 

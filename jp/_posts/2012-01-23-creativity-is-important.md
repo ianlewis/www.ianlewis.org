@@ -9,8 +9,8 @@ render_with_liquid: false
 locale: ja
 ---
 
-> この記事は BeProud ではどう仕事しているかの3部構成シリーズの3部目。github
-> のZach Holman さんが書いて頂いた「[How Github
+> この記事は BeProud ではどう仕事しているかの3部構成シリーズの3部目。GitHub
+> のZach Holman さんが書いて頂いた「[How GitHub
 > Works](http://zachholman.com/posts/how-github-works/)」シリーズのBeProud版。１部目は「[Hours
 > are Bullshit](http://zachholman.com/posts/how-github-works-hours/)」の解説の「[BPで働くのがどうか
 > (How BeProud Works)](/jp/bp-how-beproud-works)」で、2部目は「[Be
@@ -23,7 +23,7 @@ locale: ja
 
 それでどうすればいいかの例の一つとして、Zachさんは、Alcoholということをあげた。みんなでお酒を飲んで楽しもう！っていうことだけど、本当はソーシャルのきっかけを作ろうという意味だと思う。みんな混じり合うとアイディアに対して興奮が盛り上がって、そのアイディアは直接お金にならなくても、その興奮と意欲がお金と繋がっているところに流れる。
 
-BeProudではGithubみたいにバーがあるけど、お酒のバーというよりはキッチンとミーティングスペースとして使っています。そのところにBPStyleという社内勉強会をやります。その勉強会では、みんなのアイディア、好きなプロジェクトについて発表したりします。社外で行うBPStudyにも、いろな影響を与えられています。ランチも充実している。毎日、みんなでランチを食べに行くので、その時に、チームメンバーと仲良くしたり、いろなことについて話し合える。
+BeProudではGitHubみたいにバーがあるけど、お酒のバーというよりはキッチンとミーティングスペースとして使っています。そのところにBPStyleという社内勉強会をやります。その勉強会では、みんなのアイディア、好きなプロジェクトについて発表したりします。社外で行うBPStudyにも、いろな影響を与えられています。ランチも充実している。毎日、みんなでランチを食べに行くので、その時に、チームメンバーと仲良くしたり、いろなことについて話し合える。
 
 ## Encourage Different
 

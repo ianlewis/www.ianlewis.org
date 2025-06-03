@@ -16,10 +16,10 @@ JavaScriptをよく書いている場合、普通のアプリケーションと�
 
 だけど、JavaScriptは静的ファイルなので、どうやって、DEBUGを設定するんだ？
 
-それで、 require.js を使って入れば、便利な config() 機能がある。その機能を使えば、
+それで、 `require.js` を使って入れば、便利な `config()` 機能がある。その機能を使えば、
 モジュールの設定を書けるようになる。
 
-Djangoの設定はこんな感じで、JSに渡せる。
+Djangoの設定はこんな感じで、JavaScriptに渡せる。
 
 ```html
 <script src="{{ STATIC_URL }}js/require.js"></script>
@@ -59,8 +59,7 @@ define(["module", "jquery"], function (module, $) {
 });
 ```
 
-これで、 Django の settings モジュールと同じように require.js で
-settingsをインポートできる。
+これで、Djangoのsettingsモジュールと同じようにRequireJSでsettingsをインポートできる。
 
 ```javascript
 define(["jquery", "settings"], function ($, settings) {

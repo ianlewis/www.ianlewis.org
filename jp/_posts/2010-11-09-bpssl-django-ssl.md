@@ -9,7 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-今日、bpsslをリリースしました。bpsslは[BeProud](http://www.beproud.jp/)で欲使っているDjango用のSSL対応アプリです。アクセスする時にHTTPSが必須なURLを指定することがよくありますよね？例えば、ログイン画面をHTTPSでしかアクセスできないようにする。ただし、HTTPでアクセスした場合、HTTPSのほうのURLにリダイレクトしたいこともよくあります。bpsslはその対応を簡単にできるようなアプリです。
+今日、`bpssl`をリリースしました。`bpssl`は[BeProud](http://www.beproud.jp/)で欲使っているDjango用のSSL対応アプリです。アクセスする時にHTTPSが必須なURLを指定することがよくありますよね？例えば、ログイン画面をHTTPSでしかアクセスできないようにする。ただし、HTTPでアクセスした場合、HTTPSのほうのURLにリダイレクトしたいこともよくあります。`bpssl`はその対応を簡単にできるようなアプリです。
 
 ウェブサーバーで対応することもありますが、設定変更も面倒だし、アプリケーションロジックをラップしたいことが多いので、アプリケーションレベルで対応します。
 
@@ -71,10 +71,10 @@ SSL_URLS = (
 
 Django側はこれで以上ですが、やっぱりウェブサーバーでの設定も必要ですが、それも簡単です。
 
-もともと、bpsslは <http://www.djangosnippets.org> に投稿したSSLミドルウエアから、インスピレーションを得た。以下のスニペットの機能にほぼ対応しています。
+もともと、`bpssl`は[Django Snippets](http://www.djangosnippets.org)に投稿したSSLミドルウエアから、インスピレーションを得た。以下のスニペットの機能にほぼ対応しています。
 
-- <http://djangosnippets.org/snippets/880/>
-- <http://djangosnippets.org/snippets/240/>
-- <http://djangosnippets.org/snippets/1999/>
+- [`http://djangosnippets.org/snippets/880/`](http://djangosnippets.org/snippets/880/)
+- [`http://djangosnippets.org/snippets/240/`](http://djangosnippets.org/snippets/240/)
+- [`http://djangosnippets.org/snippets/1999/`](http://djangosnippets.org/snippets/1999/)
 
-詳しくは[bpsslのドキュメント](http://beproud.bitbucket.org/bpssl-1.0/ja/)もしくは、[ソースコード](http://bitbucket.org/beproud/bpssl/)を見ててください！
+詳しくは[`bpssl`のドキュメント](http://beproud.bitbucket.org/bpssl-1.0/ja/)もしくは、[ソースコード](http://bitbucket.org/beproud/bpssl/)を見ててください！

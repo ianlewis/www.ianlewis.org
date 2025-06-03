@@ -19,15 +19,13 @@ locale: ja
 > たしかにテストケースは毎回同じ順番に並べたいですね。
 > 実はorderプラグインというのがあって簡単にロード順を制御できたのですが、RequireJS 2.0からはshimがあるんだからそれ使え！っていうことでサポートされなくなってしまいました。そのかわり、stepプラグインで若干設定が面倒ですが順番指定が可能です。テストの順番指定という用途であれば使えそう。
 
-[http://teppeis.hatenablog.com/entry/re-requirejs](http://teppeis.hatenablog.com/entry/re-requirejs)
+[`http://teppeis.hatenablog.com/entry/re-requirejs`](http://teppeis.hatenablog.com/entry/re-requirejs)
 
-結構古い記事だけど、最近読んだので、僕がやっていることを書いてみようかなと思った。[Connpass](http://connpass.com/) では Require.js ばりばり使っていて、ユニットテストもそこそこ書いています。
+結構古い記事だけど、最近読んだので、僕がやっていることを書いてみようかなと思った。[Connpass](http://connpass.com/) では RequireJS ばりばり使っていて、ユニットテストもそこそこ書いています。
 mocha はいろいろAPIがよかったが、ブラウザ内のテストランナーがクソイので、僕達の場合は
 QUnitを使っています。
 
-テストの順番の問題は確かにあったけど、すぐ解決したので、特に面倒と感じてなかった。テストの
-順番を保証するために、 `runTests()` というメソッドが付いているオブジェクトを
-各テストモジュールで返しています。コードで書いてみるとこんな感じ。
+テストの順番の問題は確かにあったけど、すぐ解決したので、特に面倒と感じてなかった。テストの順番を保証するために、 `runTests()` というメソッドが付いているオブジェクトを各テストモジュールで返しています。コードで書いてみるとこんな感じ。
 
 ```javascript
 define(["jquery"], function ($) {
@@ -73,9 +71,7 @@ define(["jquery"], testmod(function($) {
 });
 ```
 
-順番保証は、テストランナーの html ファイルでやっています。
-それぞれのテストモジュールを読み込んで、 `runTests()`
-を呼び出しています。こうすると、requireする順番で実行される。
+順番保証は、テストランナーのHTMLファイルでやっています。それぞれのテストモジュールを読み込んで、 `runTests()` を呼び出しています。こうすると、requireする順番で実行される。
 
 ```html
 <script>

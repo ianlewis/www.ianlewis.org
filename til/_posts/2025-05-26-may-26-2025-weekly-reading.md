@@ -36,7 +36,7 @@ render_with_liquid: false
     anymore. He argues that writers, editors, and readers just don't seem to
     care whether something is true or not as long it it's "good enough" and
     sounds plausible and that AI is a major cause. He also talks a bit about how
-    using AI contributes to creating dumbed down content that doesn't challenge
+    using AI contributes to creating dumbed-down content that doesn't challenge
     readers to think critically.
 
     Just like with programming, it feels like folks who actually know the

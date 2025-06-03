@@ -9,16 +9,15 @@ render_with_liquid: false
 locale: ja
 ---
 
-僕が作った appengine アプリ <http://ae35notimpressed.ian-test-hr.appspot.com/>
-(**Update: 落としました**)はもう見ているかもしれませんが、何で作ったか、
-どういう意味なのかがわからない人が多くて、ちょっとブログで説明しようかなと思って、書いてみた。
+僕が作ったApp Engineアプリ
+
+[`http://ae35notimpressed.ian-test-hr.appspot.com/`](http://ae35notimpressed.ian-test-hr.appspot.com/)
+
+(**Update: 落としました**)はもう見ているかもしれませんが、何で作ったか、どういう意味なのかがわからない人が多くて、ちょっとブログで説明しようかなと思って、書いてみた。
 
 ## PyFesから始まる
 
-１１月２４日の PyFes で [connpass](http://connpass.com/) チームとして
-[@ae35](http://twitter.com/ae35)
-と２人で発表しました。発表している時に、Python界のカメラマンがいっぱい写真をとりました。偶然なことではありますが
-ae35 の表情は想像してみるとあまり感心してないように見える写真がいくつかとられた。
+１１月２４日のPyFesで[Connpass](http://connpass.com/)チームとして[@ae35](http://twitter.com/ae35)と２人で発表しました。発表している時に、Python界のカメラマンがいっぱい写真をとりました。偶然なことではありますがae35の表情は想像してみるとあまり感心してないように見える写真がいくつかとられた。
 
 [![](/assets/images/686/ae351_thumbnail.jpg)](/assets/images/686/ae351.jpg)
 
@@ -28,17 +27,11 @@ ae35 の表情は想像してみるとあまり感心してないように見え
 
 ## McKayla is Not Impressed
 
-![image](/assets/images/686/mckayla_medium.jpg)
+![](/assets/images/686/mckayla_medium.jpg)
 
-その時に、McKayla Maroneyさんの「 [McKayla is Not
-Impressed](http://knowyourmeme.com/memes/mckayla-is-not-impressed)
-」というmemeを思い出した。Mckayla
-さんは、銀メダル獲得した時に、金じゃなかったというがっかり顔の写真が取られた。その写真を
-photoshopして、本当にすごいことに感心しない McKayla さんの画像がいっぱいネット上で広げた。
+その時に、McKayla Maroneyさんの「[McKayla is Not Impressed](http://knowyourmeme.com/memes/mckayla-is-not-impressed)」というmemeを思い出した。McKaylaさんは、銀メダル獲得した時に、金じゃなかったというがっかり顔の写真が取られた。その写真をPhotoshopして、本当にすごいことに感心しない McKayla さんの画像がいっぱいネット上で広げた。
 
-けど、結局、気楽に冗談として受けいて、 [Obama
-大統領とも写真取られた](http://mckaylaisnotimpressed.tumblr.com/image/35914202850)
-。
+けど、結局、気楽に冗談として受けいて、 [Obama大統領とも写真取られた](http://mckaylaisnotimpressed.tumblr.com/image/35914202850)。
 
 ## AE35 is Not Impressed
 
@@ -50,14 +43,18 @@ photoshopして、本当にすごいことに感心しない McKayla さんの�
 
 ## Moriyoshi がやってきた
 
-そして、Moriyoshi さんが以下のツイートをしてくれた。
+そして、Moriyoshiさんが以下のツイートをしてくれた。
 
-<blockquote class="twitter-tweet tw-align-center"><p>面白い投稿をお待ちしております (featuring.@<a href="https://twitter.com/ianmlewis">ianmlewis</a> and .@<a href="https://twitter.com/ae35">ae35</a> ) <a href="http://t.co/MFHjebf5" title="http://twitpic.com/bhd6fj">twitpic.com/bhd6fj</a></p>&mdash; moriyoshi (@moriyoshi) <a href="https://twitter.com/moriyoshi/status/273990569318035457" data-datetime="2012-11-29T03:23:36+00:00">November 29, 2012</a></blockquote>
+> 面白い投稿をお待ちしております(featuring.@">[ianmlewis](https://twitter.com/ianmlewis) and .@[ae35](https://twitter.com/ae35)) [`twitpic.com/bhd6fj`](http://twitpic.com/bhd6fj)
+>
+> &mdash; moriyoshi (@moriyoshi)
 
-僕はこれが伝説的なツイートだと思って、すぐ、Appengine のアプリを作り始めた。数時間後このツイートをしました。
+僕はこれが伝説的なツイートだと思って、すぐ、App Engine のアプリを作り始めた。数時間後このツイートをしました。
 
-<blockquote class="twitter-tweet tw-align-center"><p>お待たせしました。面白い投稿をお待ちしております -AE35 IS NOT IMPRESSED <a href="http://t.co/JJMQfwzu" title="http://ae35notimpressed.ian-test-hr.appspot.com/">…5notimpressed.ian-test-hr.appspot.com</a></p>&mdash; Ian Lewis (@IanMLewis <a href="https://twitter.com/IanMLewis/status/274081177239945216" data-datetime="2012-11-29T09:23:39+00:00">November 29, 2012</a></blockquote>
+> お待たせしました。面白い投稿をお待ちしております -AE35 IS NOT IMPRESSED [`…5notimpressed.ian-test-hr.appspot.com`](http://ae35notimpressed.ian-test-hr.appspot.com/)
+>
+> &mdash; Ian Lewis (@IanMLewis)
 
 新しい meme が生まれた。。
 
-![image](/assets/images/686/meme.png)
+![](/assets/images/686/meme.png)

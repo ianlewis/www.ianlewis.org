@@ -9,24 +9,15 @@ render_with_liquid: false
 locale: ja
 ---
 
-最近、僕が作っているサイト、 [connpass](http://connpass.com/)
-では、関西や、札幌のイベントが増えって来て、connpass
-のイベントは東京意外、どのくらいあるか、どこにあるかが見たかったのがきっかけ。
+最近、僕が作っているサイト、[Connpass](http://connpass.com/)では、関西や、札幌のイベントが増えって来て、Connpassのイベントは東京意外、どのくらいあるか、どこにあるかが見たかったのがきっかけ。
 
-connpass の API ではイベントに緯度と経度を簡単に取れるので、Google マップのマッシュアップは簡単に作れるのかた思って、
-[作ってみました](http://connpass-map.ian-test-hr.appspot.com/) 。
+ConnpassのAPIではイベントに緯度と経度を簡単に取れるので、Googleマップのマッシュアップは簡単に作れるのかた思って、[作ってみました](http://connpass-map.ian-test-hr.appspot.com/)。
 
-URL: <http://connpass-map.ian-test-hr.appspot.com/>
+URL: [`http://connpass-map.ian-test-hr.appspot.com/`](http://connpass-map.ian-test-hr.appspot.com/)
 
-Google Maps v3 はわりと簡単で、 [connpass
-の検索API](http://connpass.com/about/api/) からデータを取得して、Google Maps
-の上に表示するだけですが、イベントが地図の上に多い場合は、見づらいので、近いイベントをまとめたいと思った。イベントを纏めるには、
-[google maps utility
-library](https://code.google.com/p/google-maps-utility-library-v3/) の
-MarkerClusterer を利用した。
+Google Maps v3はわりと簡単で、[Connpass の検索API](http://connpass.com/about/api/)からデータを取得して、Google Mapsの上に表示するだけですが、イベントが地図の上に多い場合は、見づらいので、近いイベントをまとめたいと思った。イベントを纏めるには、[google maps utility library](https://code.google.com/p/google-maps-utility-library-v3/)の`MarkerClusterer`を利用した。
 
-データが終わるまで繰り返す処理もありますが、主なロジックはこんな感じです。AJAXでデータを取得して、MarkerCLusterer
-のオブジェクトインスタンスにマーカー追加する。検索APIは最大100件しか返さないので、
+データが終わるまで繰り返す処理もありますが、主なロジックはこんな感じです。AJAXでデータを取得して、`MarkerCLusterer`のオブジェクトインスタンスにマーカー追加する。検索APIは最大100件しか返さないので、
 
 ```javascript
 var map = new google.maps.Map(document.getElementById("map_canvas"), {
@@ -65,10 +56,9 @@ $.ajax({
 
 表示はこんな感じになります。
 
-![image](/assets/images/680/connpass_map_big.png)
+![](/assets/images/680/connpass_map_big.png)
 
-マーカーは
-create_marker()という関数で作れれている。マーカーにクリックすれば、ツールチップが出るためのコードがいろいろあって、ここにまとめた。
+マーカーは`create_marker()`という関数で作れれている。マーカーにクリックすれば、ツールチップが出るためのコードがいろいろあって、ここにまとめた。
 
 ```javascript
 var activeInfoWindow;

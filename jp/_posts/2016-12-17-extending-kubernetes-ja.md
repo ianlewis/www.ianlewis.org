@@ -12,16 +12,16 @@ locale: ja
 > この記事は
 > [Kubernetes Advent Calendar 2016](http://qiita.com/advent-calendar/2016/kubernetes)の第17日目の記事。
 > 第１6目は[yuanying](https://twitter.com/yuanying)さんの
-> 「[Openstack で Kubernetes を使う](http://www.fraction.jp/log/archives/2016/12/16/openstack-kubernetes)」
+> 「[OpenStack で Kubernetes を使う](http://www.fraction.jp/log/archives/2016/12/16/openstack-kubernetes)」
 > でした。
 
 Kubernetesは`Deployment`, `Secret`, `ConfigMap`, `Ingress`など、いろいろ機能があります。それぞれの機能はあることを自動化しているようなものです。 例えば、`Deployment`はアプリケーションのデプロイ・更新を自動化するもの。Ingressはロードバランサーの作成・管理を自動化しているようなもの。その機能は便利ですが、ある程度Kubernetesに取り込んだら、自分で拡張したくなる場合がが多くなる。例えば、[証明書の更新・管理](https://github.com/kelseyhightower/kube-cert-manager)の自動化だとか、[etcdクラスターの管理](https://coreos.com/blog/introducing-the-etcd-operator.html)の自動化だとか。
 
 ## Kubernetesアーキテクチャ
 
-Kubernetesをどうやって拡張するかを説明する前に、そもそもKubernetesのアーキテクチャを説明しなくちゃいけない。KubernetesのマスターにAPIサーバーはもちろんあるんですが、APIサーバーは基本的にKubernetesのオブジェクトデータのCRUDオペレーションくらいしかやっていない。例えば、`Deployment`の動きの実装はAPIサーバーには入っていない。ノードが落ちたら、そこに入っていたポッドを別のサーバーに移動したり、ローリングアップデートの動きなどはDeploymentコントローラーで実装されていて、コントローラーマネジャー(kube-controller-manager)というデーモンに入っている。コントローラーマネジャーは何かというと管理に便利だったため、Kubernetesの標準オブジェクト(`Deployment`, `ReplicaSet`, `DaemonSet`, `StatefulSet`など)の複数のコントローラーが合わせて入っているデーモン。
+Kubernetesをどうやって拡張するかを説明する前に、そもそもKubernetesのアーキテクチャを説明しなくちゃいけない。KubernetesのマスターにAPIサーバーはもちろんあるんですが、APIサーバーは基本的にKubernetesのオブジェクトデータのCRUDオペレーションくらいしかやっていない。例えば、`Deployment`の動きの実装はAPIサーバーには入っていない。ノードが落ちたら、そこに入っていたポッドを別のサーバーに移動したり、ローリングアップデートの動きなどはDeploymentコントローラーで実装されていて、コントローラーマネジャー(`kube-controller-manager`)というデーモンに入っている。コントローラーマネジャーは何かというと管理に便利だったため、Kubernetesの標準オブジェクト(`Deployment`, `ReplicaSet`, `DaemonSet`, `StatefulSet`など)の複数のコントローラーが合わせて入っているデーモン。
 
-![kube-controller-manager](/assets/images/759/kube-controller-manager.png)
+![Kubernetes controller manager diagram](/assets/images/759/kube-controller-manager.png)
 
 コントローラーは何かと言いますと、コントロールループで、クラスタのあるべき状態（APIサーバー・etcdに入っているデータ)とクラスタの実際の状態を常に比較して、クラスタのあるべき状態をクラスタに実現させるデーモン。ユーザーがAPIサーバーにあるべき状態を保存したあとに動作するものなので、必然的に非同期のアーキテクチャになる。
 
@@ -43,7 +43,7 @@ Kubernetesオブジェクトではなくて、`Ingress`や`Service`のように�
 
 Kubernetesを拡張するには標準コントローラーと同じことをする。あるオブジェクトを監視して、追加、変更などがあったら、必要なアクションをするコントローラーを作ります。ただ、標準オブジェクトはAPIがあるんですけど、カスタムオブジェクトを作りたい場合はどうするか？ Kubernetes自体を修正して再コンパイルしてデプロイしたくないので、Kubernetesでは[`ThirdPartyResource`](http://kubernetes.io/docs/user-guide/thirdpartyresources/)というカスタムオブジェクトの定義を作ることができます。`ThirdPartyResource`を作れば、APIサーバーに新しいAPI URLができて、そのURLでカスタムオブジェクトを作ることができます。簡単な例をみてみよう。
 
-## ThirdPartyResourceを定義する
+## `ThirdPartyResource`を定義する
 
 この例では定期的にバッチ`Job`を作るCronコントローラーを作ります。以下の`ThirdPartyResource`では`CronTab`というオブジェクト形を作ります。
 
@@ -70,7 +70,7 @@ thirdpartyresource "cron-tab.alpha.ianlewis.org" created
 kubectl get crontab
 ```
 
-`CronTab`オブジェクトを作ってみましょう。`ThirdPartyResource`のオブジェクトはKubernetesオブジェクトの標準フィールド`apiVersion`, `kind`, `metadata`が必要ですが、それ以外のフィールドはすべて任意JSONデータ。`CronTab`は`spec`というフィールドに[`Job`オブジェクトの`spec`](http://kubernetes.io/docs/user-guide/jobs/#writing-a-job-spec)と同じデータを入れます。以下のYamlを`backup.yaml`に保存します。
+`CronTab`オブジェクトを作ってみましょう。`ThirdPartyResource`のオブジェクトはKubernetesオブジェクトの標準フィールド`apiVersion`、`kind`、`metadata`が必要ですが、それ以外のフィールドはすべて任意JSONデータ。`CronTab`は`spec`というフィールドに[`Job`オブジェクトの`spec`](http://kubernetes.io/docs/user-guide/jobs/#writing-a-job-spec)と同じデータを入れます。以下のYAMLを`backup.yaml`に保存します。
 
 ```yaml
 apiVersion: "alpha.ianlewis.org/v1"
@@ -361,7 +361,7 @@ $ kubectl create -f deploy.yaml
 deployment "cron-controller" created
 ```
 
-うまく行けば、CronTabのスケジュールに従って、`Job`が作成される
+うまく行けば、`CronTab`のスケジュールに従って、`Job`が作成される
 
 ```shell
 $ kubectl logs cron-controller-3711479224-7z3t0

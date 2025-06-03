@@ -28,7 +28,7 @@ obj.update()
 obj2 = MyModel.objects.get(pk=obj.id)
 ```
 
-こういう場合に対応するには、 QuerySet の using メソッドを使わないとダメです。
+こういう場合に対応するには、`QuerySet`の`using`メソッドを使わないとダメです。
 
 ```python
 obj = MyModel.objects.create(content="Hello World")
@@ -41,13 +41,10 @@ obj2 = MyModel.objects.using("master").get(pk=obj.id)
 
 しかし、view コードの中に、DBの仕組みに依存しないといけなくなる。環境
 （開発、関連サイトなど）によってDBの仕組みが違う場合もあるだろう。第三者アプリも動かない場合があります。(
-Django 1.2 自体の contrib モジュールの標準アプリも保証なし）
+Django 1.2 自体の `contrib` モジュールの標準アプリも保証なし）
 
-上の問題と同じく、POSTして新しく追加したレコードも次のGETリクエストが来た時点では取れない可能性が高い。本当はPOSTした後のGETリクエストは
-マスター DBを使いたいんですが、 Django 1.2 の仕組みだとそういう処理を導入することが難しい。上と同じく view の中に
-using() で対応する必要があります。
+上の問題と同じく、`POST`して新しく追加したレコードも次の`GET`リクエストが来た時点では取れない可能性が高い。本当は`POST`した後の`GET`リクエストはマスター DBを使いたいんですが、Django 1.2の仕組みだとそういう処理を導入することが難しい。上と同じくviewの中に`using()`で対応する必要があります。
 
-どのDBを使うかは QuerySet 単位で、デフォールトDBの名前も固定で、リクエストごとデフォールトDBを変更することもできません。
+どのDBを使うかは`QuerySet`単位で、デフォールトDBの名前も固定で、リクエストごとデフォールトDBを変更することもできません。
 
-今のところは monkey patch しなければ、 Django 1.2 のマルチDBでちゃんと master/slave
-レプリを使えないのかな。やっぱり微妙ですね。
+今のところは monkey patch しなければ、 Django 1.2 のマルチDBでちゃんと master/slave レプリを使えないのかな。やっぱり微妙ですね。

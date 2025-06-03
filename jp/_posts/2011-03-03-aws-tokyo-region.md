@@ -9,14 +9,10 @@ render_with_liquid: false
 locale: ja
 ---
 
-![image](/assets/images/651/logo_aws.gif)
+![](/assets/images/651/logo_aws.gif)
 
-ようやく！ [AWS
-が東京に来ました！](http://aws.typepad.com/aws/2011/03/now-open-aws-region-in-tokyo.html)
-AWS EC2/S3 をちょうど 3年ずっと使っている僕は嬉しい限りです！
+ようやく！ [AWSが東京に来ました！](http://aws.typepad.com/aws/2011/03/now-open-aws-region-in-tokyo.html) AWS EC2/S3をちょうど 3年ずっと使っている僕は嬉しい限りです！
 
-東京は一番高いのですが、やっぱり、シンガポール・カルフォルニアがインタネット的に遠くて、HTTPリクエストにおよそ 200ms
-のオーバーヘッドかかるのが今まで、いたかった。 いろいろ、Cloudfront
-を使って工夫してきましたが、これから積極的に AWS 東京を使いたいと思っています！
+東京は一番高いのですが、やっぱり、シンガポール・カルフォルニアがインタネット的に遠くて、HTTPリクエストにおよそ 200ms のオーバーヘッドかかるのが今まで、いたかった。 いろいろ、CloudFront を使って工夫してきましたが、これから積極的に AWS 東京を使いたいと思っています！
 
 ちょう嬉しいです
