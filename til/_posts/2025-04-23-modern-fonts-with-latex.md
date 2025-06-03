@@ -3,7 +3,7 @@ layout: post
 title: "TIL: Modern Fonts with LaTeX"
 date: "2025-04-23 00:00:00 +0900"
 blog: til
-tags: programming, latex
+tags: programming latex
 render_with_liquid: false
 ---
 

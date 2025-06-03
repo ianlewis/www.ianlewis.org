@@ -3,7 +3,7 @@ layout: post
 title: "TIL: Packaging Static Binaries"
 date: "2025-05-14 00:00:00 +0900"
 blog: til
-tags: programming, python, rust
+tags: programming python rust
 render_with_liquid: false
 ---
 
