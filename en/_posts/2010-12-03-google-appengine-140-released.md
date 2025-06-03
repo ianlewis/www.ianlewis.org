@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Google Appengine 1.4.0 Released!!"
+title: "Google App Engine 1.4.0 Released!!"
 date: 2010-12-03 09:19:38 +0000
 permalink: /en/google-appengine-140-released
 blog: en
@@ -8,7 +8,7 @@ tags: tech python cloud google-cloud appengine
 render_with_liquid: false
 ---
 
-[Google Appengine](http://code.google.com/appengine/) 1.4.0 was just released and has lots of interesting new features. Channel API, "Always On" (reserved instances), Improvements to background processing, Warm up requests, and Metadata queries just to name the big ones.
+[Google App Engine](http://code.google.com/appengine/) 1.4.0 was just released and has lots of interesting new features. Channel API, "Always On" (reserved instances), Improvements to background processing, Warm up requests, and Metadata queries just to name the big ones.
 
 ## Channel API
 
@@ -88,15 +88,28 @@ class AjaxHandler(BaseHandler):
 
 ## Always On
 
-The "Always On" feature lets you pay to keep at least 3 instances running at all times. Until now your application could go completely cold with no instances running. When a user made a request for the first time, Appengine would have to spin up an instance in order to serve the request, which could take a lot of time.
+The "Always On" feature lets you pay to keep at least 3 instances running at all
+times. Until now your application could go completely cold with no instances
+running. When a user made a request for the first time, App Engine would have to
+spin up an instance in order to serve the request, which could take a lot of
+time.
 
-> Something to note is that this is only really effective for applications that have times where their application falls below 3 instances. If your application always has enough traffic to keep appengine above 3 instances then this feature won't do anything for you.
+> Something to note is that this is only really effective for applications that
+> have times where their application falls below 3 instances. If your
+> application always has enough traffic to keep App Engine above 3 instances
+> then this feature won't do anything for you.
 
 ## Warmup Requests
 
-Until now, when a request came that would cause Appengine to scale out and create a new instance, it would need to send the request to your instance cold. i.e. Your instance wouldn't have a chance to load modules before the request came, so that particular request would be served slowly.
+Until now, when a request came that would cause App Engine to scale out and
+create a new instance, it would need to send the request to your instance cold.
+i.e. Your instance wouldn't have a chance to load modules before the request
+came, so that particular request would be served slowly.
 
-Warmup requests are requests that are sent to your instance as the first request before serving user facing requests. This allows you to load heavy modules before serving user facing requests, allowing for a much better experience for users.
+Warmup requests are requests that are sent to your instance as the first request
+before serving user facing requests. This allows you to load heavy modules
+before serving user facing requests, allowing for a much better experience for
+users.
 
 In order to enable Warmup Requests, you need to add `warmup` to your `inbound_services` section of your `app.yaml` much like you would for mail or XMPP.
 
@@ -128,17 +141,34 @@ def main():
 
 ## Task Queue Official Release
 
-In 1.4.0, The task queue graduates from labs and becomes a first class feature of Appengine. This means that the taskqueue API module will move from `google.appengine.api.labs.taskqueue` to `google.appengine.api.taskqueue`. You can still import the task queue API from the old module but it will give you a deprecation warning on the development server and could be removed in future versions.
+In 1.4.0, The task queue graduates from labs and becomes a first class feature
+of App Engine. This means that the taskqueue API module will move from
+`google.appengine.api.labs.taskqueue` to `google.appengine.api.taskqueue`. You
+can still import the task queue API from the old module but it will give you a
+deprecation warning on the development server and could be removed in future
+versions.
 
-Task Queue tasks were not previously counted against your storage quota but they will be now so heavy users might need to start watching their data quota more closely.
+Task Queue tasks were not previously counted against your storage quota but they
+will be now so heavy users might need to start watching their data quota more
+closely.
 
 ## Improved Background Processing
 
-Cron and Task Queue tasks are going from having a request limit of 30 seconds to having a request limit of 10 minutes. This is a huge jump\!\! but it doesn't mean that you can be lazy now. Appengine will recognize long running cron jobs and tasks and process them separately (in a separate queue/different infrastructure) from fast running cron jobs/tasks. So you won't be able to get high throughput for long running tasks. This means you will only be able to do a few long running tasks or cron jobs at a time without backing things up.
+Cron and Task Queue tasks are going from having a request limit of 30 seconds to
+having a request limit of 10 minutes. This is a huge jump\!\! but it doesn't
+mean that you can be lazy now. App Engine will recognize long running cron jobs
+and tasks and process them separately (in a separate queue/different
+infrastructure) from fast running cron jobs/tasks. So you won't be able to get
+high throughput for long running tasks. This means you will only be able to do a
+few long running tasks or cron jobs at a time without backing things up.
 
 ## Metadata Queries
 
-You can now do queries against Appengine Datastore metadata. The SDK now provides new `Namespace`, `Kind`, and `Property` Model classes that live in `google.appengine.ext.db.metadata`. You can query these like regular models but you won't be able to create new ones by saving them to the datastore like you would be with regular modules.
+You can now do queries against App Engine Datastore metadata. The SDK now
+provides new `Namespace`, `Kind`, and `Property` Model classes that live in
+`google.appengine.ext.db.metadata`. You can query these like regular models but
+you won't be able to create new ones by saving them to the datastore like you
+would be with regular modules.
 
 Namespaces are pretty trivial. Kinds are parent objects of their properties so you can get the properties for a particular kind by doing an ancestor query.
 
@@ -156,8 +186,9 @@ for kind in Kind.all():
 
 ## Download
 
-It looks like the download hasn't made it to the appengine download page yet but you can download it from the links at the google project page.
+It looks like the download hasn't made it to the App Engine download page yet
+but you can download it from the links at the google project page.
 
-- Python: [google_appengine_1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=google_appengine_1.4.0.zip)
-- Java: [appengine-java-sdk-1.4.0.zip](http://code.google.com/p/googleappengine/downloads/detail?name=appengine-java-sdk-1.4.0.zip)
+- Python: [`google_appengine_1.4.0.zip`](http://code.google.com/p/googleappengine/downloads/detail?name=google_appengine_1.4.0.zip)
+- Java: [`appengine-java-sdk-1.4.0.zip`](http://code.google.com/p/googleappengine/downloads/detail?name=appengine-java-sdk-1.4.0.zip)
 - [Release Notes](http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes)

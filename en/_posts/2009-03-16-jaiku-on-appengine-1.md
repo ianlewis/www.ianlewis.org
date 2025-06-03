@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jaiku on Appengine"
+title: "Jaiku on App Engine"
 date: 2009-03-16 00:52:31 +0000
 permalink: /en/jaiku-on-appengine-1
 blog: en
@@ -12,14 +12,14 @@ render_with_liquid: false
 
 Yesterday Google's Twitter-like service, [Jaiku](http://www.jaiku.com/) was
 [released](http://code.google.com/p/jaikuengine/) as open source running on
-[Google Appengine](http://code.google.com/appengine/) so I decided to take it
+[Google App Engine](http://code.google.com/appengine/) so I decided to take it
 for a spin. It has a lot of neat parts like XMPP and google contacts
 integration, but what I'm interested in most is how it implements it's
 publisher/subscriber model.
 
 I brought the code down from svn and tried to follow the instructions, but I
 got a "No module named django" error. One of the problems currently with
-appengine is that you have a limit of 1000 files you can upload. Because of
+App Engine is that you have a limit of 1000 files you can upload. Because of
 this limit when deploying jaiku you need to zip a bunch of libraries into a zip
 file and use zipimport. Accordingly you have to prevent the source files from
 being uploaded because you get an error saying you can't upload more than 1000

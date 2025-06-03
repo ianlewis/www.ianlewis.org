@@ -9,9 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
-[`feedparser`](http://www.feedparser.org/)で、どうやってビデオを取れるかをずっと悩みましたけど、今日少しだけ、進展した。問題の核心はyoutubeや、vimeoは[Yahoo! RSS モジュール](http://search.yahoo.com/mrss/)を使って、RSS拡張ネームスペースにデータを入れている。この拡張データの処理は`feedparser`が中途半端でやってる。見てみよう。
+[`feedparser`](http://www.feedparser.org/)で、どうやってビデオを取れるかをずっと悩みましたけど、今日少しだけ、進展した。問題の核心はYouTubeや、Vimeoは[Yahoo! RSS モジュール](http://search.yahoo.com/mrss/)を使って、RSS拡張ネームスペースにデータを入れている。この拡張データの処理は`feedparser`が中途半端でやってる。見てみよう。
 
-YoutubeのGDATA APIで取ったデータはこうなる
+YouTubeのGDATA APIで取ったデータはこうなる
 
 ```xml
 <entry>
@@ -118,4 +118,4 @@ feedparser._StrictFeedParser = DlifeFeedParser
 ['medium', 'format', 'url', 'expression', 'duration', 'type', 'yt:format']
 ```
 
-それで、`media:content`の属性を取れた。`media:group`の下にcontentが複数ある場合もあるから、もうちょっとまとめないといけないけど、やり方が少し分かってきた。
+それで、`media:content`の属性を取れた。`media:group`の下に`content`が複数ある場合もあるから、もうちょっとまとめないといけないけど、やり方が少し分かってきた。

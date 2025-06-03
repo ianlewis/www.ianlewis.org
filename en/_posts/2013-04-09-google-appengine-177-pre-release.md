@@ -8,7 +8,8 @@ tags: tech programming python google-cloud appengine
 render_with_liquid: false
 ---
 
-> **Update:** App Engine 1.7.7 final has been released and is available here: <https://developers.google.com/appengine/downloads>
+> **Update:** App Engine 1.7.7 final has been released and is available here:
+> [`https://developers.google.com/appengine/downloads`](https://developers.google.com/appengine/downloads).
 
 ![image](/assets/images/appengine/appengine_lowres_small.png)
 

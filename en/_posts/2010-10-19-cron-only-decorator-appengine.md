@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cron only decorator for appengine"
+title: "Cron only decorator for App Engine"
 date: 2010-10-19 10:54:14 +0000
 permalink: /en/cron-only-decorator-appengine
 blog: en
@@ -8,7 +8,7 @@ tags: tech programming python cloud google-cloud appengine
 render_with_liquid: false
 ---
 
-For a recent project I recently I have been using appengine's cron
+For a recent project I recently I have been using App Engine's cron
 feature to aggregate data and perform maintenance tasks. However, since
 cron is a simple web request, if a user accesses that url then the cron
 job will run. In order to prevent normal users from being able to run

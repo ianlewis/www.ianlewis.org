@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "An introduction to the Tipfy Framework for Appengine"
+title: "An introduction to the Tipfy Framework for App Engine"
 date: 2010-12-29 10:31:34 +0000
 permalink: /en/introduction-tipfy-framework-appengine
 blog: en
@@ -8,9 +8,18 @@ tags: tech programming python cloud google-cloud appengine
 render_with_liquid: false
 ---
 
-_(This post is the English translation of the Dec. 24th edition of the_ [Python Web Framework Advent Calendar 2010](http://atnd.org/events/10465). _Other posts can be found at: http://atnd.org/events/10465 though they will be in Japanese)_
+_(This post is the English translation of the Dec. 24th edition of the_ [Python
+Web Framework Advent Calendar 2010](http://atnd.org/events/10465). _Other posts
+can be found on that page, though they will be in Japanese)_
 
-I usually use the [kay framework](http://code.google.com/p/kay-framework/) for Appengine development as I am a developer for the framework, but recently I have been playing with the [Tipfy](http://www.tipfy.org/) framework (<http://www.tipfy.org>) written by Rodrigo Moraes. Like Kay, Tipfy is a framework made specifically for Google Appengine. While Kay has drawn a lot of it's functionality from [Django](http://www.djangoproject.com), Tipfy attempts to be as close to the Appengine SDK's [Webapp Framework](http://code.google.com/intl/en/appengine/docs/python/gettingstarted/usingwebapp.html).
+I usually use the [kay framework](http://code.google.com/p/kay-framework/) for
+App Engine development as I am a developer for the framework, but recently I
+have been playing with the [Tipfy](http://www.tipfy.org/) framework written by
+Rodrigo Moraes. Like Kay, Tipfy is a framework made specifically for Google App
+Engine. While Kay has drawn a lot of it's functionality from
+[Django](http://www.djangoproject.com), Tipfy attempts to be as close to the App
+Engine SDK's [Webapp
+Framework](http://code.google.com/intl/en/appengine/docs/python/gettingstarted/usingwebapp.html).
 
 ## Install
 
@@ -23,7 +32,9 @@ wget http://www.tipfy.org/tipfy.zip
 unzip tipfy.zip
 ```
 
-Next, you will need to create the buildout environment. Buildout will download and install the Appengine SDK and everything you need to get started from [pypi](http://pypi.python.org/).
+Next, you will need to create the buildout environment. Buildout will download
+and install the App Engine SDK and everything you need to get started from
+[PyPI](http://pypi.python.org/).
 
 ```shell
 cd project

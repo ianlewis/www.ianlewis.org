@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Google Appengine SDK 1.2.3"
+title: "Google App Engine SDK 1.2.3"
 date: 2009-06-19 10:04:46 +0000
 permalink: /en/google-appengine-sdk-123
 blog: en
@@ -8,17 +8,17 @@ tags: tech programming python django cloud google-cloud appengine
 render_with_liquid: false
 ---
 
-The [Google Appengine
+The [Google App Engine
 SDK 1.2.3](http://code.google.com/p/googleappengine/wiki/SdkReleaseNotes#Version_1.2.3_-_June_18,_2009)
 was just released and contains some often asked for goodies such as
 Django 1.0 support and support for a [task queue
 API](http://googleappengine.blogspot.com/2009/06/new-task-queue-api-on-google-app-engine.html).
 
 I haven't found much information about the Django 1.0 version in
-Appengine but here are some links with some related information about
+App Engine but here are some links with some related information about
 the Task Queue API.
 
-- [Google Appengine Blog](http://googleappengine.blogspot.com/)
+- [Google App Engine Blog](http://googleappengine.blogspot.com/)
 - [The task queue API
   documentation](http://code.google.com/appengine/docs/python/taskqueue/overview.html)
     - Looks relatively complete.

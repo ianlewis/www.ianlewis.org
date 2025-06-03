@@ -31,7 +31,7 @@ create a task worker.
 I've put the code up on github so you can take a look at it there. It's
 available for use under the MIT License.
 
-[https://github.com/IanLewis/kombu-appengine-pullqueue](https://github.com/IanLewis/kombu-appengine-pullqueue)
+[`https://github.com/IanLewis/kombu-appengine-pullqueue`](https://github.com/IanLewis/kombu-appengine-pullqueue)
 
 ## Installing
 

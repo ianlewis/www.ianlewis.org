@@ -8,13 +8,13 @@ tags: tech programming python django
 render_with_liquid: false
 ---
 
-I wanted to impove a [Google Appengine](http://code.google.com/appengine)
-application that a friend of mine created (
-[ほぼ汎用イベント管理ツール](http://twisted-mind.appspot.com/)(jp)) and noticed
+I wanted to impove a [Google App Engine](http://code.google.com/appengine)
+application that a friend of mine created
+([ほぼ汎用イベント管理ツール](http://twisted-mind.appspot.com/)(jp)) and noticed
 that he was [redirecting directly to
-urls](http://bitbucket.org/voluntas/twisted-mind/src/tip/views.py#cl-132). He
-is using [Werkzeug](http://werkzeug.pocoo.org/) to handle url routing so I
-wondered if there was a method for generating urls from a name like you can in
+urls](http://bitbucket.org/voluntas/twisted-mind/src/tip/views.py#cl-132). He is
+using [Werkzeug](http://werkzeug.pocoo.org/) to handle url routing so I wondered
+if there was a method for generating urls from a name like you can in
 [Django](http://www.djangoproject.com/).
 
 It turns out you can but you give it an endpoint name rather than a url name.
