@@ -73,7 +73,7 @@ be used to run containers using low-level runtimes other than runc, like
 exposed in the Kubernetes API using the
 [RuntimeClass object](https://kubernetes.io/docs/concepts/containers/runtime-class/)
 which is alpha in Kubernetes 1.12. There is more on containerd's shim concept
-[here](https://github.com/containerd/containerd/pull/2434).
+on [PR #2434](https://github.com/containerd/containerd/pull/2434).
 
 ### Docker
 

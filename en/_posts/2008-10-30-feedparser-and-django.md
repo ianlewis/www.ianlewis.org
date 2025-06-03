@@ -22,7 +22,8 @@ def update_feeds():
         # ...
 ```
 
-You can check out `feeds.py` [here](http://bitbucket.org/IanLewis/django-lifestream/src/a64fcf2090a1/dlife/lifestream/feeds.py).
+You can check out [`feeds.py` on
+Bitbucket](http://bitbucket.org/IanLewis/django-lifestream/src/a64fcf2090a1/dlife/lifestream/feeds.py).
 
 The interesting bit comes with how I had to parse the dates which sometimes
 include timezone info and other goodies. In my search for a solution to the
