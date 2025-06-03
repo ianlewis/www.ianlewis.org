@@ -193,22 +193,22 @@ something like this:
 ```shell
 $ cat config.json
 {
-        "ociVersion": "1.0.0",
-        "process": {
-                "terminal": true,
-                "user": {
-                        "uid": 0,
-                        "gid": 0
-                },
-                "args": [
-                        "sh"
-                ],
-                "env": [
-                        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-                        "TERM=xterm"
-                ],
-                "cwd": "/",
-                "capabilities": {
+    "ociVersion": "1.0.0",
+    "process": {
+        "terminal": true,
+        "user": {
+            "uid": 0,
+            "gid": 0
+        },
+        "args": [
+            "sh"
+        ],
+        "env": [
+            "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "TERM=xterm"
+        ],
+        "cwd": "/",
+        "capabilities": {
 ...
 ```
 
