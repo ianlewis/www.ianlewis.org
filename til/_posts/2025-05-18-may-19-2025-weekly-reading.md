@@ -3,7 +3,7 @@ layout: post
 title: "TIL: May 19, 2025 - Weekly Reading: The Go Scheduler, CNCF/NATS Drama, and Signalgate"
 date: "2025-05-19 09:45:00 +0900"
 blog: til
-tags: programming
+tags: programming, go, security
 render_with_liquid: false
 ---
 
