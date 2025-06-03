@@ -11,7 +11,7 @@ locale: ja
 
 ## 概要
 
-最近、あるお客さんから、快速なので、[`cjson`](http://pypi.python.org/pypi/python-cjson/)を使おうという要望をいただきましたが、以前、僕は`cjson`は色なエッジケースの処理が微妙と分かっていて、実際に他のライブラリより早いのかなと思いました。[`cjson`のPyPiページ](http://pypi.python.org/pypi/python-cjson/)いろなコメントが書かれています。しかも、最新パージョンは2007リリースでかなり古い。バグがあるのに、直っていないし、あんまりメンテしてないライブラリに見える。
+最近、あるお客さんから、快速なので、[`cjson`](http://pypi.python.org/pypi/python-cjson/)を使おうという要望をいただきましたが、以前、僕は`cjson`は色なエッジケースの処理が微妙と分かっていて、実際に他のライブラリより早いのかなと思いました。[`cjson`のPyPIページ](http://pypi.python.org/pypi/python-cjson/)いろなコメントが書かれています。しかも、最新パージョンは2007リリースでかなり古い。バグがあるのに、直っていないし、あんまりメンテしてないライブラリに見える。
 
 [`simplejson`](http://pypi.python.org/pypi/simplejson/)も[`jsonlib`](http://pypi.python.org/pypi/jsonlib/) もCで拡張があり、かなり最適化されていると思ったので、テストしてみようと思いました。
 

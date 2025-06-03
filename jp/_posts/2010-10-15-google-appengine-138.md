@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Google Appengine 1.3.8リリースされました！"
+title: "Google App Engine 1.3.8リリースされました！"
 date: 2010-10-15 19:44:31 +0000
 permalink: /jp/google-appengine-138
 blog: jp
@@ -9,7 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-Google Appengine1.3.8がリリースされました！
+Google App Engine 1.3.8がリリースされました！
 
 今回のリリースは、いろな面白い機能が入ってきた。
 
@@ -18,7 +18,7 @@ Google Appengine1.3.8がリリースされました！
 
 ## ハンドラー
 
-- appstatsや、データストアの管理画面、リモートAPIのハンドラーが簡単に設定できるようになりました。
+- `appstats`や、データストアの管理画面、リモートAPIのハンドラーが簡単に設定できるようになりました。
 
     ```yaml
     builtins:
@@ -33,7 +33,7 @@ Google Appengine1.3.8がリリースされました！
 
 ## マルチアカウント
 
-- マルチアカウント認証を使えるようになりました。複数のGoogleアカウントでログインできるようになりました。Appengineのサイトにアクセスすると、どのアカウントを使うかを選択するようになります。
+- マルチアカウント認証を使えるようになりました。複数のGoogleアカウントでログインできるようになりました。App Engineのサイトにアクセスすると、どのアカウントを使うかを選択するようになります。
 
 ## 雑多な改善
 

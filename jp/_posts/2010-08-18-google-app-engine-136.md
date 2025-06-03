@@ -9,7 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-今日、[Appengine](http://code.google.com/appengine/) 1.3.6がリリースされました。今回の大きいなリリースは以下の4つです。元のブログポストは[こちら](http://googleappengine.blogspot.com/2010/08/multi-tenancy-support-high-performance_17.html)
+今日、[App Engine](http://code.google.com/appengine/) 1.3.6がリリースされました。今回の大きいなリリースは以下の4つです。元のブログポストは[こちら](http://googleappengine.blogspot.com/2010/08/multi-tenancy-support-high-performance_17.html)
 
 ## 1\. データの名前空間API
 
@@ -19,7 +19,7 @@ locale: ja
 
 ## 2\. 高速画像サービング
 
-Picasaのインフラーを使っていて、リサイズ、切れ抜きなどの自動変換した画像を高速でサーブできるようになった。Pythonの[get_serving_url](http://code.google.com/appengine/docs/python/images/functions.html)か、Javaの[getServingUrl](<http://code.google.com/appengine/docs/java/javadoc/com/google/appengine/api/images/ImagesService.html#getServingUrl(com.google.appengine.api.blobstore.BlobKey)>)を使うと画像のURLを取得できる。このURLを使うと別のインフラを使うので、アプリケーションのCPUクオータとダイナミックサービングロード、データストアアクセスクオータなどがかからないというのが特徴です。
+Picasaのインフラーを使っていて、リサイズ、切れ抜きなどの自動変換した画像を高速でサーブできるようになった。Pythonの[`get_serving_url`](http://code.google.com/appengine/docs/python/images/functions.html)か、Javaの[`getServingUrl`](<http://code.google.com/appengine/docs/java/javadoc/com/google/appengine/api/images/ImagesService.html#getServingUrl(com.google.appengine.api.blobstore.BlobKey)>)を使うと画像のURLを取得できる。このURLを使うと別のインフラを使うので、アプリケーションのCPUクオータとダイナミックサービングロード、データストアアクセスクオータなどがかからないというのが特徴です。
 
 ## 3\. カスタムエラーページ
 

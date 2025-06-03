@@ -67,6 +67,7 @@ rules:
       - "ianmlewis"
       - "kaz"
       - "mcyoung"
+      - "monjudoh"
       - "shimizukawa"
       - "shoma"
       - "surgo"
@@ -85,6 +86,7 @@ rules:
       - "Anthropic"
       - "Apcera"
       - "Appc"
+      - "ATND" # Japanese event platform (atnd.org)
       - "Basho"
       - "BeProud"
       - "Bigtable"
@@ -99,12 +101,15 @@ rules:
       - "EuroPython"
       - "ElasticSearch"
       - "Gmail"
+      - "Gree"
+      - "Gumi"
       - "MacBook"
       - "Mesosphere"
+      - "Mixi"
       - "NATS.io"
       - "Photoshop"
       - "PyCon"
-      - "PyPi"
+      - "PyPI"
       - "Jupyter"
       - "SoftBank"
       - "Synadia"
@@ -112,6 +117,7 @@ rules:
       - "SoftBank"
       - "Stunlock"
       - "Oakveil"
+      - "Unoh"
       - "UStream"
 
       # Tech Names
@@ -122,9 +128,14 @@ rules:
       - "Appstats" # App Engine Appstats
       - "BeautifulSoup"
       - "Blobstore" # App Engine Blobstore
+      - "Buildout" # Python build system
+      - "Buildbot" # Python continuous integration tool
       - "CloudFront" # AWS CloudFront
       - "/[Cc]ron/"
+      - "DvorakJP" # Dvorak Japanese Keyboard Layout
+      - "FastCGI"
       - "Funktion"
+      - "Gunicorn" # Python WSGI HTTP Server (Green Unicorn)
       - "Jubatus"
       - "/[Kk]eychain/"
       - "Kubernetes"
@@ -143,6 +154,7 @@ rules:
       - "Noto" # Noto fonts
       - "OpenShift"
       - "OpenStack"
+      - "Picasa" # Old Google photo management software for App Engine
       - "RequireJS"
       - "Symposion" # Django library for conference management
       - "Stylelint"
@@ -252,6 +264,7 @@ rules:
       - "CSV" # Comma-Separated Values
       - "CSR" # Certificate Signing Request
       - "CSV" # Comma-Separated Values
+      - "CTO" # Chief Technology Officer
       - "DAG" # Directed Acyclic Graph
       - "DNS" # Domain Name System
       - "DSL" # Domain-Specific Language
@@ -289,6 +302,7 @@ rules:
       - "SLA" # Service Level Agreement
       - "SLSA" # Supply Chain Levels for Software Artifacts
       - "SMTP" # Simple Mail Transfer Protocol
+      - "SSL" # Secure Sockets Layer
       - "VC" # Venture Capital
       - "VM" # Virtual Machine
       - "WASM" # WebAssembly
@@ -296,6 +310,11 @@ rules:
       - "XMPP" # Extensible Messaging and Presence Protocol
       - "YAML" # YAML Ain't Markup Language
       - "yaml" # YAML Ain't Markup Language
+
+      # Emoji
+      ##########################################################################
+
+      - "orz" # Japanese emoticon for despair or frustration
 
       # Other
       ##########################################################################

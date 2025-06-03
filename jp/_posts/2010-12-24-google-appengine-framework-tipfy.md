@@ -24,7 +24,7 @@ wget http://www.tipfy.org/tipfy.zip
 unzip tipfy.zip
 ```
 
-次に、`buildout`で環境を構築。`buildout`はApp Engine SDKと依存ライブラリをすべて、[PyPi](http://pypi.python.org/)から落としてくれます。
+次に、`buildout`で環境を構築。`buildout`はApp Engine SDKと依存ライブラリをすべて、[PyPI](http://pypi.python.org/)から落としてくれます。
 
 ```shell
 cd project
