@@ -13,8 +13,8 @@ render_with_liquid: false
 being held on June 10th at Google's offices in Shibuya and I've registered to
 attend this year. There were a number of sessions that people could take part
 in but I decided to register for a
-[Google appengine](http://code.google.com/appengine/) hackathon. I'm pretty
-curious about appengine since I've been working at becoming more familiar with
+[Google App Engine](http://code.google.com/appengine/) hackathon. I'm pretty
+curious about App Engine since I've been working at becoming more familiar with
 really newly evolving technologies and not necessarily ones that have been
 around a while. Newly evolving technologies is something I've always felt I've
 had to catch up on since starting programming in high school. Going to high
@@ -23,9 +23,9 @@ school with folks like Bob Ippolito ([Mochikit](http://www.mochikit.com),
 [Konrad Rokicki](http://www.facebook.com/profile.php?id=5317298) who started
 coding stuff when they were in early middle school didn't help my self esteem.
 
-Anyway, in the spirit of learning about Appengine I took a dive into the
+Anyway, in the spirit of learning about App Engine I took a dive into the
 [documentation](http://code.google.com/appengine/docs/) and learned a few of
-appengines [silly](http://twitter.com/IanMLewis/statuses/821766091)
+App Engine's [silly](http://twitter.com/IanMLewis/statuses/821766091)
 [limitations](http://twitter.com/IanMLewis/statuses/821750608) but I came up
 with a simple application that utilizes the simple python library I created for
 [prefix](http://prefix.sourceforge.net/) back in college. I put it up in my

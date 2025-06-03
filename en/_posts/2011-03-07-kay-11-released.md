@@ -18,7 +18,8 @@ We're excited about this release so I would like to introduce a few of Kay's new
 
 ## cron_only
 
-Kay has a new utility decorator for securing cron views so they can only be run by the cron system on Appengine.
+Kay has a new utility decorator for securing cron views so they can only be run
+by the cron system on App Engine.
 
 ```python
 @cron_only
@@ -126,7 +127,12 @@ The `AppStatsMiddleware` can work with the Live Settings API and can be enabled 
 
 ## EReporter
 
-Kay 1.1 adds a new `kay.ext.ereporter` application which will catch and save information about errors for later viewing and can send out daily error reports. The EReporter application works much like the [EReporter in the Appengine SDK](http://code.google.com/intl/en/appengine/articles/python/recording_exceptions_with_ereporter.html) but provides a convenient way of viewing the errors via a custom admin page and integrates with Kay's `ADMINS` and email related settings.
+Kay 1.1 adds a new `kay.ext.ereporter` application which will catch and save
+information about errors for later viewing and can send out daily error reports.
+The EReporter application works much like the [EReporter in the App Engine
+SDK](http://code.google.com/intl/en/appengine/articles/python/recording_exceptions_with_ereporter.html)
+but provides a convenient way of viewing the errors via a custom admin page and
+integrates with Kay's `ADMINS` and email related settings.
 
 ---
 
@@ -138,8 +144,15 @@ You can read the [documentation for the EReporter extension here](http://kay-doc
 
 ## Conclusion
 
-Kay 1.1 adds a number of new features which we hope will make development and management of applications on Appengine easier.
+Kay 1.1 adds a number of new features which we hope will make development and
+management of applications on App Engine easier.
 
-As always we would love to hear from you\! Please check out [Kay's project page](http://code.google.com/p/kay-framework/). We encourage you to send us bug reports and feature requests via our [issues page](http://code.google.com/p/kay-framework/issues/list) as well as give us feedback on the [mailing list](https://groups.google.com/group/kay-users). We are also looking forward to Kay 2.0 so if you have any suggestions about any large new features now is the time to let us know\!
+As always we would love to hear from you\! Please check out [Kay's project
+page](http://code.google.com/p/kay-framework/). We encourage you to send us bug
+reports and feature requests via our [issues
+page](http://code.google.com/p/kay-framework/issues/list) as well as give us
+feedback on the [mailing list](https://groups.google.com/group/kay-users). We
+are also looking forward to Kay 2.0 so if you have any suggestions about any
+large new features now is the time to let us know\!
 
 We look forward to hearing feedback about Kay\!

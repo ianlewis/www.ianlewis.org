@@ -48,7 +48,7 @@ Chrome's omnibox is pretty cool. You can get similar functionality but not
 quite a good from the
 [Omnibox](https://addons.mozilla.org/ja/firefox/addon/8823) Firefox addon.
 Firefox's omnibox ties into the registered search engines in firefox and
-requires that you type an @youtube or the like for search engines other than
+requires that you type `@youtube` or the like for search engines other than
 the default.
 
 You can hide window trimmings to maximize window space a bit more by using the

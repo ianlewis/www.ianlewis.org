@@ -21,7 +21,7 @@ rules:
   spelling:
     language: "en"
     skipPatterns:
-      # Person Names and handles
+      # Person Names
       ##########################################################################
 
       - "Ahmet"
@@ -41,6 +41,7 @@ rules:
       - "Dougherty"
       - "Eiji"
       - "Enamoto"
+      - "Eno"
       - "Fikes"
       - "Fumi"
       - "Gageot"
@@ -62,6 +63,7 @@ rules:
       - "Kinomiya"
       - "Kitamura"
       - "Klabnik"
+      - "Krumins"
       - "Lacasse"
       - "LonelyBob"
       - "Makabi"
@@ -74,7 +76,9 @@ rules:
       - "Masuda"
       - "Matsuo"
       - "Meiert"
-      - "/[Mm]oriyoshi/"
+      - "Moraes"
+      - "Morimoto"
+      - "Moriyoshi"
       - "Maroney"
       - "Moscone"
       - "Naoki"
@@ -95,7 +99,9 @@ rules:
       - "Shibukawa"
       - "Shimizukawa"
       - "Shinya"
+      - "Slatkin"
       - "Stapelberg"
+      - "Suenaga"
       - "Takanori"
       - "Takashi"
       - "Takayuki"
@@ -105,9 +111,10 @@ rules:
       - "Tetsuya"
       - "Trong"
       - "Tsuyuki"
+      - "Wada"
+      - "Wilber"
       - "Willison"
       - "Vella"
-      - "Voluntas"
       - "Yamaguchi"
       - "Yasushi"
       - "Yongfook"
@@ -116,6 +123,11 @@ rules:
       - "Yosuke"
       - "Zach"
       - "Ziadé"
+
+      # User handles
+      ##########################################################################
+
+      - "TheAmyCode"
       - "akisute"
       - "deeet"
       - "ae35"
@@ -132,6 +144,7 @@ rules:
       - "markhammonds"
       - "mcyoung"
       - "monjudoh"
+      - "moriyoshi"
       - "shimizukawa"
       - "shoma"
       - "surgo"
@@ -140,21 +153,25 @@ rules:
       - "tokibito"
       - "toruot"
       - "troter"
-      - "yuanying"
-      - "yudppp"
       - "whosaysni"
+      - "voluntas"
+      - "yoichiro"
+      - "yuanying"
+      - "yuroyoro"
+      - "yudppp"
       - "/[Ff]eiz/"
 
       # Company/Product Names
       ##########################################################################
 
+      - "ATND" # Japanese event platform (atnd.org)
       - "Accense"
       - "Anchorlab"
       - "Anthropic"
       - "Apcera"
       - "Aptana"
       - "Appc"
-      - "ATND" # Japanese event platform (atnd.org)
+      - "Atlassian"
       - "Basho"
       - "BeProud"
       - "Bigtable"
@@ -198,6 +215,8 @@ rules:
       - "Oakveil"
       - "Unoh"
       - "UStream"
+      - "Vimeo"
+      - "YouTube"
 
       # Tech Names
       ##########################################################################
@@ -241,9 +260,11 @@ rules:
       - "OpenStack" # OpenStack cloud computing platform
       - "Picasa" # Old Google photo management software for App Engine
       - "Plone" # Python content management system
+      - "PyCharm" # Python IDE by JetBrains
       - "Pyflakes" # Python static code analysis tool
       - "QUnit" # JavaScript Unit Testing Framework
       - "RequireJS"
+      - "ShiftJIS" # Japanese character encoding
       - "Sigstore" # Project for signing software artifacts
       - "Symposion" # Django library for conference management
       - "Stylelint"
@@ -297,7 +318,8 @@ rules:
       - "/[Ww]i-?[Ff]i/"
       - "/[Nn]ginx/"
 
-      # Organizations/Events
+      # Websites/Organizations/Events
+      - "Ajaxian" # Ajaxian.com, a web development blog
       - "appengine ja night" # App Engine Java/Japan Night
       - "AJN" # App Engine Java/Japan Night
       - "BPStudy" # BeProud Study
@@ -306,7 +328,7 @@ rules:
       - "PyFes" # Python Festival
       - "PyLadies" # Python Ladies
       - "NSStudy"
-      - "/[Pp]yspa/" # Python Onsen
+      - "/[Pp]y[Ss]pa/" # Python Onsen
 
       # Tech Terminology
       ##########################################################################
@@ -383,6 +405,7 @@ rules:
       - "Gb" # Gigabyte
       - "HDFS" # Hadoop Distributed File System
       - "HTTPS" # Hypertext Transfer Protocol Secure
+      - "IP" # Internet Protocol
       - "IPC" # Inter-Process Communication
       - "JSON" # JavaScript Object Notation
       - "KVS" # Key-Value Store
@@ -408,9 +431,13 @@ rules:
       - "SLSA" # Supply Chain Levels for Software Artifacts
       - "SMTP" # Simple Mail Transfer Protocol
       - "SSL" # Secure Sockets Layer
+      - "TCP" # Transmission Control Protocol
       - "TLS" # Transport Layer Security
       - "TTY" # Teletypewriter
       - "TUF" # The Update Framework
+      - "UTF" # Unicode Transformation Format
+      - "UTS" # Unix Time-Sharing
+      - "UX" # User Experience
       - "VC" # Venture Capital
       - "VM" # Virtual Machine
       - "WASM" # WebAssembly
@@ -434,6 +461,7 @@ rules:
       - "Houthi" # Houthi movement
       - "Shinagawa" # Shinagawa, a ward in Tokyo, Japan
       - "Shibuya" # Shibuya, a ward in Tokyo, Japan
+      - "Ryokan" # Ryokan, a type of traditional Japanese inn
 
       - "CHANGELOG"
       - "CODEOWNER"
@@ -482,7 +510,6 @@ rules:
       - "AHISWKBwT"
       - "Ahlstr"
       - "ajax"
-      - "Ajaxian"
       - "alpinelinux"
       - "ansible"
       - "ansible's"
@@ -490,10 +517,6 @@ rules:
       - "api"
       - "APK"
       - "appc"
-      - "appengine"
-      - "Appengine"
-      - "appengine's"
-      - "appengines"
       - "approachability"
       - "AppStats"
       - "AppStatsMiddleware"
@@ -506,8 +529,6 @@ rules:
       - "ascii"
       - "async"
       - "asyncio"
-      - "Atlassian"
-      - "atnd"
       - "atproto"
       - "atproto's"
       - "ats"
@@ -650,7 +671,6 @@ rules:
       - "emacs"
       - "Emporer's"
       - "encodings"
-      - "Eno"
       - "entrypoint"
       - "ENTRYPOINT"
       - "eol"
@@ -755,11 +775,8 @@ rules:
       - "IntelliJ"
       - "interative"
       - "IOMachine"
-      - "ipc"
       - "iphone"
       - "iPods"
-      - "ips"
-      - "IPs"
       - "iptables"
       - "ipython"
       - "iQJUBBMBCgA"
@@ -805,7 +822,6 @@ rules:
       - "kombu"
       - "Kougakuin"
       - "kp"
-      - "Krumins"
       - "kubeadm"
       - "KubeCon"
       - "kubectl"
@@ -870,8 +886,6 @@ rules:
       - "modipyd"
       - "Modipyd"
       - "Monotaro"
-      - "Moraes"
-      - "Morimoto"
       - "mq"
       - "Mq"
       - "MUFG"
@@ -941,7 +955,6 @@ rules:
       - "PhJH"
       - "photozou"
       - "php"
-      - "pid"
       - "pingbacks"
       - "PIP_DOWNLOAD_CACHE"
       - "pixabay"
@@ -961,17 +974,14 @@ rules:
       - "py"
       - "pyautotest"
       - "pyaws"
-      - "PyCharm"
       - "Pycon"
       - "PyconJP"
       - "PyconJP's"
       - "pygments"
       - "pykube"
       - "pynotify"
-      - "pypi"
       - "pypy"
       - "PyRex"
-      - "PySpa"
       - "PYTHONPATH"
       - "pytyrant"
       - "qbase"
@@ -1014,7 +1024,6 @@ rules:
       - "runc's"
       - "run_migration"
       - "runnable"
-      - "Ryokan"
       - "saba"
       - "san"
       - "Satruday"
@@ -1032,16 +1041,13 @@ rules:
       - "ses"
       - "setuidgid"
       - "shibukawa"
-      - "ShiftJIS"
       - "Shouln't"
       - "sig"
       - "sigstore"
       - "simeji"
       - "simplejson"
       - "Skidgel"
-      - "Slatkin"
       - "slsa"
-      - "Smipple's"
       - "Snipplr"
       - "somesuch"
       - "SOPA"
@@ -1063,7 +1069,6 @@ rules:
       - "StringIO"
       - "stunnel"
       - "subclassed"
-      - "Suenaga"
       - "svc"
       - "svn"
       - "svnsync"
@@ -1079,7 +1084,6 @@ rules:
       - "takonory"
       - "taskqueue"
       - "Tasuku"
-      - "TCP"
       - "tearDown"
       - "templating"
       - "tenntenn"
@@ -1087,11 +1091,9 @@ rules:
       - "TestCase"
       - "textarea"
       - "thdbJnyAQARAQAB"
-      - "TheAmyCode"
       - "theathletic"
       - "thiserror"
       - "Tictok"
-      - "tipfy"
       - "Titlebar"
       - "TMergePath"
       - "tokyotyrant"
@@ -1127,10 +1129,6 @@ rules:
       - "usless"
       - "ustream"
       - "utc"
-      - "UTF"
-      - "uts"
-      - "UTS"
-      - "UX"
       - "validator"
       - "vcdiff"
       - "ve"
@@ -1140,13 +1138,10 @@ rules:
       - "verifiers"
       - "Verifiers"
       - "vfat"
-      - "vimeo"
       - "virtualize"
-      - "voluntas"
       - "vorbis"
       - "vr"
       - "vTScqV"
-      - "Wada"
       - "warmup"
       - "Warmup"
       - "wCeESkKGj"
@@ -1159,7 +1154,6 @@ rules:
       - "Wendelin"
       - "weren"
       - "whitespace"
-      - "Wilber"
       - "WORKON_HOME"
       - "wsgi"
       - "www"
@@ -1170,10 +1164,6 @@ rules:
       - "Yii"
       - "Yk"
       - "yml"
-      - "yoichiro"
-      - "youtube"
-      - "Youtube"
-      - "yuroyoro"
       - "zip_all"
       - "zipimport"
       - "zsh"

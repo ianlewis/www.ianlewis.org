@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Writing Schema migrations for Appengine using the Mapper Class and the deferred Library"
+title: "Writing Schema migrations for App Engine using the Mapper Class and the deferred Library"
 date: 2009-12-27 13:59:03 +0000
 permalink: /en/writing-schema-migrations-appengine-using-mapper-c
 blog: en
@@ -8,8 +8,8 @@ tags: tech programming python cloud google-cloud appengine
 render_with_liquid: false
 ---
 
-One thing that many people using appengine know is that writing schema
-migrations is hard. Improving performance on Appengine often revolves
+One thing that many people using App Engine know is that writing schema
+migrations is hard. Improving performance on App Engine often revolves
 around getting objects by key or key name rather than using filters,
 however altering the makeup of an objects key requires pulling all the
 objects and saving them in the datastore anew. This also requires
@@ -18,7 +18,7 @@ changed object. On top of that, schema migrations generally require
 modifying lots of data and you have limits on the number of objects
 returned by a filter, and request timeouts to worry about.
 
-Fortunately, the Appengine SDK provides a task queue and a very
+Fortunately, the App Engine SDK provides a task queue and a very
 convenient way of using it in the [deferred
 library](http://code.google.com/appengine/articles/deferred.html). The
 deferred library allows you to set a function to be run by the task

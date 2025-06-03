@@ -27,8 +27,8 @@ At the end he announced that everyone gets an android phone. Since
 Android phones are starting to come out now they seem to really be
 ramping up trying to get people to write applications.
 
-After attending sessions, mostly on appengine, I attended the after
+After attending sessions, mostly on App Engine, I attended the after
 hours party which included interesting talks with Brett Slatkin and
 [Guido Van Rossum](http://www.python.org/~guido/) both from the
-appengine team and one being, of course, the creator of the python
+App Engine team and one being, of course, the creator of the Python
 programming language and ridiculously famous.

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Transactions on Appengine"
+title: "Transactions on App Engine"
 date: 2009-03-19 01:44:52 +0000
 permalink: /en/transactions-on-appengine
 blog: en
@@ -8,7 +8,7 @@ tags: tech programming python google appengine
 render_with_liquid: false
 ---
 
-The way to store data on [Appengine](http://code.google.com/appengine/) is with
+The way to store data on [App Engine](http://code.google.com/appengine/) is with
 [Google](http://www.google.com/)'s
 [BigTable Datastore](http://code.google.com/appengine/docs/python/datastore/)
 which has support for transactions. However, the transactions are quite limited
@@ -61,9 +61,9 @@ in that,
     for both entities.
 
 All this makes transactions a bit of a pain in
-[Appengine](http://code.google.com/appengine/) but workable if you put a bit of
+[App Engine](http://code.google.com/appengine/) but workable if you put a bit of
 effort into it. In the end you'll want to use key names for most every entity
-that matters as current backup solutions for Appengine rely on key names to
+that matters as current backup solutions for App Engine rely on key names to
 maintain the keys of entities when backing up and restoring. It wouldn't be to
 fun if all the urls for an entity that had numeric ids changed after restoring
 the data from a backup.

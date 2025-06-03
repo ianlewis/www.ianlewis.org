@@ -89,7 +89,7 @@ memcached: up (pid 2226) 220460 seconds
 Sometimes however daemon tools will report the service is up but it
 really isn't as it is trying to continually start the process and it's
 failing every time. In that case daemontools will say it's up but each
-time you run the svstat command it will show a new pid and the uptime
+time you run the svstat command it will show a new PID and the uptime
 will have been reset.
 
 ```text

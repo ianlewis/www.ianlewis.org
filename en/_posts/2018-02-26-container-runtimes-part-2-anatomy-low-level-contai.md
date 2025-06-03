@@ -128,8 +128,8 @@ rm -r $ROOTFS
 ```
 
 To further demonstrate how this works, I wrote a simple runtime in bash called
-[execc](https://github.com/ianlewis/execc). It supports mount, user, pid, ipc,
-uts, and network namespaces; setting memory limits; setting CPU limits by number
+[execc](https://github.com/ianlewis/execc). It supports mount, user, PID, IPC,
+UTS, and network namespaces; setting memory limits; setting CPU limits by number
 of cores; mounting the proc file system; and running the container in its own
 root file system.
 

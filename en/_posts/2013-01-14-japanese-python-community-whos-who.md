@@ -26,7 +26,7 @@ Atsushi Shibata is probably the most well known community leader in Japan. He wr
 
 - Twitter [@ats](http://twitter.com/ats)
 
-## Ryosuke Nakai (Voluntas)
+## Ryosuke Nakai (voluntas)
 
 ![Ryosuke giving away goods at PySpa](/assets/images/691/voluntas_big.jpg)
 
