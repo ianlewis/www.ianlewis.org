@@ -24,38 +24,98 @@ rules:
       # Person Names and handles
       ##########################################################################
 
+      - "Ahmet"
       - "Andreessen"
       - "Aoife"
       - "Armin"
+      - "Atamel"
+      - "Atsuo"
+      - "Atsushi"
       - "Balahan"
+      - "Blauzvern"
       - "Branchaud"
       - "Collison"
       - "/[Cc]osentino/"
       - "Cramer"
       - "Daskalou"
       - "Dougherty"
+      - "Eiji"
       - "Enamoto"
       - "Fikes"
       - "Fumi"
+      - "Gageot"
       - "Ghemawat"
       - "Godbolt"
       - "Graeme"
       - "Hightower"
-      - "IanMLewis" # Ian M Lewis
+      - "IanLewis"
+      - "IanMLewis"
+      - "Ikeda"
+      - "Ippolito"
+      - "Ishikawa"
+      - "Ishimoto"
+      - "Iwashi"
+      - "Johansson"
+      - "Jxck"
+      - "Kaczorowski"
+      - "Kamaelia"
+      - "Kinomiya"
+      - "Kitamura"
       - "Klabnik"
+      - "Lacasse"
+      - "LonelyBob"
       - "Makabi"
       - "McKayla"
+      - "Makoto"
+      - "Manabe"
+      - "Manabu"
+      - "Mandel"
+      - "Maru"
+      - "Masuda"
+      - "Matsuo"
+      - "Meiert"
       - "/[Mm]oriyoshi/"
       - "Maroney"
       - "Moscone"
+      - "Naoki"
       - "Nghia"
+      - "Nikhil"
+      - "Okano"
+      - "Petgrave"
+      - "Reiko"
+      - "Rokicki"
       - "Ronacher"
+      - "Rosner"
+      - "Rossum"
+      - "Ryosuke"
+      - "Sandeep"
+      - "Sato"
       - "Sanjay"
+      - "Shibata"
+      - "Shibukawa"
+      - "Shimizukawa"
+      - "Shinya"
       - "Stapelberg"
+      - "Takanori"
+      - "Takashi"
+      - "Takayuki"
+      - "Takuto"
+      - "Tarek"
+      - "Terada"
+      - "Tetsuya"
       - "Trong"
+      - "Tsuyuki"
       - "Willison"
       - "Vella"
+      - "Voluntas"
+      - "Yamaguchi"
+      - "Yasushi"
+      - "Yongfook"
+      - "Yoshi"
+      - "Yoshiki"
+      - "Yosuke"
       - "Zach"
+      - "Ziadé"
       - "akisute"
       - "deeet"
       - "ae35"
@@ -64,7 +124,9 @@ rules:
       - "deeet"
       - "feiz"
       - "hiyosi"
+      - "ianlewis"
       - "ianmlewis"
+      - "jbking"
       - "joehewitt"
       - "kaz"
       - "markhammonds"
@@ -75,6 +137,7 @@ rules:
       - "surgo"
       - "takanory"
       - "terapyon"
+      - "tokibito"
       - "toruot"
       - "troter"
       - "yuanying"
@@ -85,8 +148,11 @@ rules:
       # Company/Product Names
       ##########################################################################
 
+      - "Accense"
+      - "Anchorlab"
       - "Anthropic"
       - "Apcera"
+      - "Aptana"
       - "Appc"
       - "ATND" # Japanese event platform (atnd.org)
       - "Basho"
@@ -100,22 +166,32 @@ rules:
       - "CoreOS"
       - "Datastore"
       - "Deis"
+      - "Disqus"
+      - "Docomo"
       - "EuroPython"
       - "ElasticSearch"
+      - "Eldarion"
+      - "Elon"
+      - "Fulcio"
       - "Gmail"
       - "Gree"
       - "Gumi"
+      - "Joyent"
       - "MacBook"
       - "Mesosphere"
       - "Mixi"
       - "NATS.io"
       - "Netlify"
       - "Photoshop"
-      - "PyCon"
       - "PyPI"
+      - "Jaiku" # Old social networking service
+      - "JetBrains"
       - "Jupyter"
+      - "Simeji" # Japanese input method editor (bought by Baidu)
+      - "Smipple" # Code snippet sharing service (defunct)
       - "SoftBank"
       - "Synadia"
+      - "Tailscale"
       - "TeleMessage"
       - "SoftBank"
       - "Stunlock"
@@ -135,33 +211,45 @@ rules:
       - "Buildbot" # Python continuous integration tool
       - "CloudFront" # AWS CloudFront
       - "/[Cc]ron/"
+      - "Cygwin"
+      - "Cython" # C-Extensions for Python
       - "DvorakJP" # Dvorak Japanese Keyboard Layout
       - "FastCGI"
       - "Funktion"
+      - "GoReleaser" # Go release tool
+      - "GeoDjango" # Django geographic web framework
       - "Gunicorn" # Python WSGI HTTP Server (Green Unicorn)
       - "Jubatus"
       - "/[Kk]eychain/"
       - "Kubernetes"
+      - "JUnit"
       - "Jubatus"
-      - "QUnit" # JavaScript Unit Testing Framework
       - "LuaLaTeX"
       - "MapReduce"
       - "Matcher API" # App Engine Matcher API
       - "Maturin"
       - "/[Mm]emcached/"
       - "Mesos"
+      - "MochiKit"
       - "NATS" # NATS.io
       - "NATS.io" # NATS.io
       - "Neovim"
       - "NixOS"
       - "Noto" # Noto fonts
-      - "OpenShift"
-      - "OpenStack"
+      - "Nunjucks" # JavaScript templating engine
+      - "OpenShift" # Red Hat's container platform
+      - "OpenStack" # OpenStack cloud computing platform
       - "Picasa" # Old Google photo management software for App Engine
+      - "Plone" # Python content management system
+      - "Pyflakes" # Python static code analysis tool
+      - "QUnit" # JavaScript Unit Testing Framework
       - "RequireJS"
+      - "Sigstore" # Project for signing software artifacts
       - "Symposion" # Django library for conference management
       - "Stylelint"
       - "Tensorflow"
+      - "Terraform"
+      - "TinyMCE" # JavaScript WYSIWYG editor
       - "XeLaTeX"
       - "Zizmor"
       - "cgroup" # control groups
@@ -183,15 +271,19 @@ rules:
       - "Redmine" # project management tool
       - "RequireJS" # JavaScript module loader
       - "Riak" # distributed NoSQL database
+      - "Sinon" # JavaScript test spies, stubs, and mocks
       - "SpiderMonkey" # JavaScript engine
       - "Stylelint" # CSS linter
       - "Tensorflow"
       - "Tipfy" # App Engine Python web framework
       - "TortoiseHg" # Mercurial client
+      - "TortoiseMerge" # Merge tool
       - "XeLaTeX" # LaTeX engine
       - "Zizmor"
       - "Webapp" # App Engine WebApp framework
       - "WebGL" # Web Graphics Library
+      - "Werkzeug" # Python WSGI utility library
+      - "containerd" # container runtime
       - "cgroup" # control groups
       - "etcd" # etcd.io
       - "npm" # Node Package Manager
@@ -210,6 +302,7 @@ rules:
       - "AJN" # App Engine Java/Japan Night
       - "BPStudy" # BeProud Study
       - "BPStyle" # BeProud internal study
+      - "PyCon"
       - "PyFes" # Python Festival
       - "PyLadies" # Python Ladies
       - "NSStudy"
@@ -222,9 +315,12 @@ rules:
       - "Autoscaling"
       - "Dockerfile"
       - "Googler" # Google employee
+      - "Googley" # Google-like, characteristic of Google
       - "TrueType"
       - "Vagrantfile"
+      - "iGoogle" # (old) Google personalized portal services
       - "dotfiles"
+      - "/[Aa]ddon/"
       - "/[Aa]cyclic/" # not displaying or forming part of a cycle.
       - "/[Aa]utoscaler/"
       - "/[Aa]utoscaling/"
@@ -263,7 +359,9 @@ rules:
       - "BUSL" # Business Source License
       - "CFP" # Call for Papers/Proposals
       - "CNCF" # Cloud Native Computing Foundation
+      - "CPU" # Central Processing Unit
       - "CFP" # Call for Papers/Proposals
+      - "CRI" # Container Runtime Interface
       - "CSV" # Comma-Separated Values
       - "CSR" # Certificate Signing Request
       - "CSV" # Comma-Separated Values
@@ -285,6 +383,7 @@ rules:
       - "Gb" # Gigabyte
       - "HDFS" # Hadoop Distributed File System
       - "HTTPS" # Hypertext Transfer Protocol Secure
+      - "IPC" # Inter-Process Communication
       - "JSON" # JavaScript Object Notation
       - "KVS" # Key-Value Store
       - "LDAP" # Lightweight Directory Access Protocol
@@ -295,22 +394,30 @@ rules:
       - "NoSQL" # Not Only SQL
       - "OSS" # Open Source Software
       - "QPS" # Queries Per Second
+      - "PKI" # Public Key Infrastructure
       - "PaaS" # Platform as a Service
       - "PID" # Process ID
       - "QPS" # Query Per Second
       - "RDBMS" # Relational Database Management System
       - "RPC" # Remote Procedure Call
+      - "RSS" # Really Simple Syndication
       - "SDK" # Software Development Kit
       - "SES" # AWS Simple Email Service
       - "SLA" # Service Level Agreement
+      - "SLO" # Service Level Objective
       - "SLSA" # Supply Chain Levels for Software Artifacts
       - "SMTP" # Simple Mail Transfer Protocol
       - "SSL" # Secure Sockets Layer
+      - "TLS" # Transport Layer Security
+      - "TTY" # Teletypewriter
+      - "TUF" # The Update Framework
       - "VC" # Venture Capital
       - "VM" # Virtual Machine
       - "WASM" # WebAssembly
+      - "WSDL" # Web Services Description Language
       - "WSGI" # Web Server Gateway Interface
       - "XMPP" # Extensible Messaging and Presence Protocol
+      - "XSS" # Cross-Site Scripting
       - "YAML" # YAML Ain't Markup Language
       - "yaml" # YAML Ain't Markup Language
 
@@ -325,6 +432,8 @@ rules:
       # https://dictionary.cambridge.org/dictionary/english/dumbing-down
       - "dumbed-down"
       - "Houthi" # Houthi movement
+      - "Shinagawa" # Shinagawa, a ward in Tokyo, Japan
+      - "Shibuya" # Shibuya, a ward in Tokyo, Japan
 
       - "CHANGELOG"
       - "CODEOWNER"
@@ -364,23 +473,17 @@ rules:
       - "_"
       - "abranches"
       - "acbuild"
-      - "Accense"
       - "accessable"
       - "ACI"
       - "adb"
-      - "addon"
-      - "Addon"
-      - "addons"
       - "Adi"
       - "admin_update_feeds"
       - "Ahh"
       - "AHISWKBwT"
       - "Ahlstr"
-      - "Ahmet"
       - "ajax"
       - "Ajaxian"
       - "alpinelinux"
-      - "Anchorlab"
       - "ansible"
       - "ansible's"
       - "aodag"
@@ -394,7 +497,6 @@ rules:
       - "approachability"
       - "AppStats"
       - "AppStatsMiddleware"
-      - "Aptana"
       - "apt's"
       - "aquaintance"
       - "aquire"
@@ -404,15 +506,12 @@ rules:
       - "ascii"
       - "async"
       - "asyncio"
-      - "Atamel"
       - "Atlassian"
       - "atnd"
       - "atproto"
       - "atproto's"
       - "ats"
-      - "Atsuo"
       - "atsuoishimoto"
-      - "Atsushi"
       - "auth"
       - "AuthenticationMiddleware"
       - "auth's"
@@ -432,7 +531,6 @@ rules:
       - "Berryman"
       - "BigTable"
       - "bitbucket"
-      - "Blauzvern"
       - "blogspot"
       - "Blogvent"
       - "bluegreen"
@@ -481,17 +579,12 @@ rules:
       - "confd"
       - "config"
       - "conncurrent"
-      - "containerd"
-      - "Containerd"
-      - "containerd's"
       - "ContentType"
       - "contrib"
       - "Contrib"
       - "cp"
-      - "CPUs"
       - "CreateSocketRequest"
       - "cri"
-      - "CRI"
       - "crictl"
       - "cryptographic"
       - "cryptographically"
@@ -505,8 +598,6 @@ rules:
       - "cwKpduDdpQBb"
       - "cygpath"
       - "cygwin"
-      - "Cygwin"
-      - "Cython"
       - "daemonize"
       - "daemontools"
       - "Daemontools"
@@ -532,7 +623,6 @@ rules:
       - "direct_to_pdf"
       - "dispite"
       - "disqus"
-      - "Disqus"
       - "disqus_plugin"
       - "django"
       - "DjangoGraphviz"
@@ -543,7 +633,6 @@ rules:
       - "dockerd"
       - "DockerFile"
       - "Docker's"
-      - "Docomo"
       - "docstrings"
       - "dodads"
       - "doesn"
@@ -558,9 +647,6 @@ rules:
       - "eco"
       - "EdLbBLvb"
       - "eg"
-      - "Eiji"
-      - "Eldarion"
-      - "Elon"
       - "emacs"
       - "Emporer's"
       - "encodings"
@@ -599,8 +685,6 @@ rules:
       - "Forthought"
       - "FsMy"
       - "ftester"
-      - "Fulcio"
-      - "Gageot"
       - "gcc"
       - "gcloud"
       - "GDATA"
@@ -608,7 +692,6 @@ rules:
       - "GenericForeignKeys"
       - "Gengo"
       - "geodjango"
-      - "GeoDjango"
       - "GeoManager"
       - "get's"
       - "get_urls"
@@ -621,9 +704,7 @@ rules:
       - "gofmt"
       - "golang"
       - "Googleplex"
-      - "Googley"
       - "gopath"
-      - "GoReleaser"
       - "goverened"
       - "Graff"
       - "graphviz"
@@ -662,11 +743,7 @@ rules:
       - "HttpResponseRedirect"
       - "https"
       - "HUP"
-      - "ianlewis"
-      - "IanLewis"
       - "iAudio"
-      - "iGoogle"
-      - "Ikeda"
       - "image_tooltip"
       - "IME"
       - "importjs"
@@ -679,18 +756,14 @@ rules:
       - "interative"
       - "IOMachine"
       - "ipc"
-      - "IPC"
       - "iphone"
       - "iPods"
-      - "Ippolito"
       - "ips"
       - "IPs"
       - "iptables"
       - "ipython"
       - "iQJUBBMBCgA"
       - "ish"
-      - "Ishikawa"
-      - "Ishimoto"
       - "isn"
       - "isnt"
       - "iso"
@@ -698,21 +771,15 @@ rules:
       - "istio"
       - "iTHome"
       - "iwashi"
-      - "Iwashi"
       - "ja"
       - "jaiku"
-      - "Jaiku"
       - "javascript"
       - "Javascript"
-      - "jbking"
       - "Jens"
       - "jessie"
-      - "JetBrains"
       - "Jindal"
       - "JIT"
       - "JNtSWF"
-      - "Johansson"
-      - "Joyent"
       - "jp"
       - "jpg"
       - "jq"
@@ -729,19 +796,12 @@ rules:
       - "jsonschema"
       - "JS's"
       - "Jumpstart"
-      - "JUnit"
-      - "Jxck"
-      - "Jxck's"
       - "KabePy"
-      - "Kaczorowski"
-      - "Kamaelia"
       - "Kata"
       - "kay"
       - "Kaz"
       - "kCLgNQ"
-      - "Kinomiya"
       - "Kita"
-      - "Kitamura"
       - "kombu"
       - "Kougakuin"
       - "kp"
@@ -752,7 +812,6 @@ rules:
       - "kubelet"
       - "Kubelet"
       - "kubernetes"
-      - "Lacasse"
       - "Lala"
       - "latherrinserepeat"
       - "libcontainer"
@@ -768,7 +827,6 @@ rules:
       - "loadbalancer"
       - "localhost"
       - "logicless"
-      - "LonelyBob"
       - "lookups"
       - "Lorenc"
       - "lru"
@@ -779,20 +837,12 @@ rules:
       - "mailto"
       - "maintenance_check"
       - "Makeleaps"
-      - "Makoto"
-      - "Manabe"
-      - "Manabu"
-      - "Mandel"
       - "margaret"
       - "Marinich"
       - "maru"
-      - "Maru"
-      - "Masuda"
       - "matcher"
       - "matchers"
       - "matsuo"
-      - "Matsuo"
-      - "Meiert"
       - "menubar"
       - "Menubar"
       - "mercurial's"
@@ -813,7 +863,6 @@ rules:
       - "Mochibot"
       - "mochikit"
       - "Mochikit"
-      - "MochiKit"
       - "mockup"
       - "ModelA"
       - "ModelB"
@@ -837,7 +886,6 @@ rules:
       - "Nakai"
       - "NAMESPACE"
       - "naninani"
-      - "Naoki"
       - "natively"
       - "natured"
       - "neato"
@@ -845,7 +893,6 @@ rules:
       - "newauth"
       - "Newauth"
       - "new_method"
-      - "Nikhil"
       - "nikomi"
       - "nitty"
       - "noglobals"
@@ -854,7 +901,6 @@ rules:
       - "Numba"
       - "numpy"
       - "nunjucks"
-      - "Nunjucks"
       - "nytimes"
       - "OCI"
       - "oebfare"
@@ -865,7 +911,6 @@ rules:
       - "OIDC"
       - "ok"
       - "Ok"
-      - "Okano"
       - "omnibox"
       - "Omnibox"
       - "Onsen"
@@ -890,7 +935,6 @@ rules:
       - "Pennarun"
       - "performant"
       - "Peteris"
-      - "Petgrave"
       - "PetSet"
       - "phantomjs"
       - "PhantomJS"
@@ -902,8 +946,6 @@ rules:
       - "PIP_DOWNLOAD_CACHE"
       - "pixabay"
       - "pkgs"
-      - "PKI"
-      - "Plone"
       - "pluggable"
       - "polloi"
       - "postgis"
@@ -923,7 +965,6 @@ rules:
       - "Pycon"
       - "PyconJP"
       - "PyconJP's"
-      - "Pyflakes"
       - "pygments"
       - "pykube"
       - "pynotify"
@@ -954,7 +995,6 @@ rules:
       - "redirect_to"
       - "redis"
       - "ReferenceProperties"
-      - "Reiko"
       - "reimplement"
       - "replicaset"
       - "ReplicaSets"
@@ -966,12 +1006,8 @@ rules:
       - "rkt's"
       - "rml"
       - "roadsign"
-      - "Rokicki"
       - "rootfs"
-      - "Rosner's"
-      - "Rossum"
       - "rss"
-      - "RSS"
       - "rsync"
       - "run_appli"
       - "runc"
@@ -979,11 +1015,8 @@ rules:
       - "run_migration"
       - "runnable"
       - "Ryokan"
-      - "Ryosuke"
       - "saba"
       - "san"
-      - "Sandeep"
-      - "Sato"
       - "Satruday"
       - "scala"
       - "scaleable"
@@ -998,28 +1031,16 @@ rules:
       - "SEO"
       - "ses"
       - "setuidgid"
-      - "Shibata"
       - "shibukawa"
-      - "Shibukawa"
-      - "Shibuya"
       - "ShiftJIS"
-      - "Shimizukawa"
-      - "Shinagawa"
-      - "Shinya"
       - "Shouln't"
       - "sig"
       - "sigstore"
-      - "Sigstore"
-      - "Sigstore's"
       - "simeji"
-      - "Simeji"
       - "simplejson"
-      - "Sinon"
       - "Skidgel"
       - "Slatkin"
-      - "SLOs"
       - "slsa"
-      - "Smipple"
       - "Smipple's"
       - "Snipplr"
       - "somesuch"
@@ -1054,46 +1075,30 @@ rules:
       - "systemd"
       - "Systemd"
       - "tag_name"
-      - "Tailscale"
-      - "Takanori"
       - "takashi"
-      - "Takashi"
-      - "Takayuki"
       - "takonory"
-      - "Takuto"
-      - "Tarek"
       - "taskqueue"
       - "Tasuku"
       - "TCP"
       - "tearDown"
       - "templating"
       - "tenntenn"
-      - "Terada"
       - "terraform"
-      - "Terraform"
       - "TestCase"
-      - "Tetsuya"
       - "textarea"
       - "thdbJnyAQARAQAB"
       - "TheAmyCode"
       - "theathletic"
       - "thiserror"
       - "Tictok"
-      - "TinyMCE"
       - "tipfy"
       - "Titlebar"
-      - "TLS"
       - "TMergePath"
-      - "tokibito"
       - "tokyotyrant"
-      - "TortoiseMerge"
       - "Tqzm"
       - "tracebacks"
       - "transformative"
       - "tremendious"
-      - "Tsuyuki"
-      - "TTY"
-      - "TUF"
       - "Uche"
       - "UFJ"
       - "UMoz"
@@ -1138,7 +1143,6 @@ rules:
       - "vimeo"
       - "virtualize"
       - "voluntas"
-      - "Voluntas"
       - "vorbis"
       - "vr"
       - "vTScqV"
@@ -1154,35 +1158,22 @@ rules:
       - "webservers"
       - "Wendelin"
       - "weren"
-      - "Werkzeug"
       - "whitespace"
       - "Wilber"
       - "WORKON_HOME"
-      - "WSDL"
       - "wsgi"
       - "www"
       - "Xen"
       - "xml"
       - "xmlsoap"
-      - "XSS"
-      - "Yamaguchi"
-      - "Yasushi"
       - "yau"
       - "Yii"
       - "Yk"
       - "yml"
       - "yoichiro"
-      - "Yongfook"
-      - "Yoshi"
-      - "Yoshiki"
-      - "Yosuke"
       - "youtube"
       - "Youtube"
       - "yuroyoro"
-      - "Zaide"
-      - "Zaide's"
-      - "Ziad"
-      - "Ziade"
       - "zip_all"
       - "zipimport"
       - "zsh"

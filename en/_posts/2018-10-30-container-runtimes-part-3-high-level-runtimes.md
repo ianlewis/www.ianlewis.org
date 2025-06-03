@@ -40,7 +40,7 @@ Docker originally implemented both high-level and low-level runtime features, bu
 
 [containerd](https://containerd.io/) is a high-level runtime that was split off from Docker. Like runc, which was broken off as the low-level runtime piece, containerd was broken off as the high-level runtime piece of Docker. `containerd` implements downloading images, managing them, and running containers from images. When it needs to run a container it unpacks the image into an OCI runtime bundle and shells out to `runc` to run it.
 
-Containerd also provides an API and client application that can be used to interact with it. The containerd command line client is `ctr`.
+containerd also provides an API and client application that can be used to interact with it. The containerd command line client is `ctr`.
 
 `ctr` can be used to tell `containerd` to pull a container image:
 

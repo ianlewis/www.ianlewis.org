@@ -36,7 +36,7 @@ Ryosuke is the organizer of Python Onsen (PySpa) and Python Developers Festa (Py
 
 ## Manabu Terada (terapyon)
 
-![Manabu with Tarek Zaide at PyCon JP 2011](/assets/images/691/pycon-japan_big.jpeg)
+![Manabu with Tarek Ziadé at PyCon JP 2011](/assets/images/691/pycon-japan_big.jpeg)
 
 Manabu is the chair of the PyCon JP management team, and long-time Plone community leader. Manabu has been indispensable as the PyCon JP chair in doing the nitty-gritty organizing of the conference. A job I do not envy. He also runs his own development/consulting company focusing on Plone and Python development.
 
@@ -62,7 +62,7 @@ Takanori is the leader of the Python Bouldering (KabePy) event. KabePy is an ind
 
 ![Yoshiki Shibukawa](/assets/images/691/shibukawa_big.jpg)
 
-Yoshiki helped form the [Sphinx users group in Japan](http://sphinx-users.jp/) and has been active in the study meetup culture in Tokyo. He co-authored the translation of Tarek Zaide's _Expert Python Programming_ with Takayuki Shimizukawa, Inada Naoki, and Tetsuya Morimoto.
+Yoshiki helped form the [Sphinx users group in Japan](http://sphinx-users.jp/) and has been active in the study meetup culture in Tokyo. He co-authored the translation of Tarek Ziadé's _Expert Python Programming_ with Takayuki Shimizukawa, Inada Naoki, and Tetsuya Morimoto.
 
 - Twitter [@shibukawa](http://twitter.com/shibukawa)
 
