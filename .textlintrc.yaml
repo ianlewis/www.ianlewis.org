@@ -468,6 +468,8 @@ rules:
       - "Shibuya" # Shibuya, a ward in Tokyo, Japan
       - "Ryokan" # Ryokan, a type of traditional Japanese inn
 
+      - "Yeeaaah" # Exaggerated "Yeah" often used in informal contexts
+
       - "CHANGELOG"
       - "CODEOWNER"
       - "CLI"

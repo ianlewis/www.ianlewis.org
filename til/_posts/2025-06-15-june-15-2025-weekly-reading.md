@@ -25,21 +25,18 @@ render_with_liquid: false
 
 - [GenAI Criticism and Moral Quandaries](https://lucumr.pocoo.org/2025/6/10/genai-criticism/) - _Armin Ronacher_
 
-    This is a follow-up post by Armin in in response to a [post by
-    Glyph](https://blog.glyph.im/2025/06/i-think-im-done-thinking-about-genai-for-now.html).
+    This is a follow-up post by Armin in in response to a [post by Glyph](https://blog.glyph.im/2025/06/i-think-im-done-thinking-about-genai-for-now.html).
     While Glyph is skeptical, Armin sees significant potential AI code
-    generation when used properly.
-
-    Armin seems to think that code review with AI is enjoyable and programming
-    with AI assistance is still satisfying but I'm not so sure. I think
-    programming will be totally different and we'll see a lot of churn with
-    programmers as many who don't enjoy the new paradigm switch out to other
-    jobs.
+    generation when used properly. Armin seems to think that code review with AI
+    is enjoyable and programming with AI assistance is still satisfying but I'm
+    not so sure. I think programming will be totally different and we'll see a
+    lot of churn with programmers as many who don't enjoy the new paradigm
+    switch out to other jobs.
 
 - [Using Claude Code to Migrate Wyvern Management Scripts](https://www.youtube.com/watch?v=HtqxI53h7zM) - _Steve Yegge, Gene Kim_
 
-    Steve Yegge and Gene Kim have a vibe-coding sessions of Steve's game Wyvern.
-    They use Claude to migrate the game's management scripts to Kotlin.
+    Steve Yegge and Gene Kim have a vibe-coding sessions of Steve's game
+    Wyvernn. They use Claude to migrate the game's management scripts to Kotlin.
 
     While I think that many folks will feel like they are in control during
     vibe-coding sessions, much like folks using auto-pilot mode in a Tesla,
@@ -50,7 +47,7 @@ render_with_liquid: false
     Steve responds "Oh yeah, I know my code really well... I am reading all this
     code as we talk" like he understands everything that's going on, but then
     like a second later Claude asks if it should run the `kwyvern` command that
-    just wrote and he's like "do you want to proceed? eh, I don't know what
+    just wrote and he's like "do you want to proceed? Yeeaaah, I don't know what
     this means but sure!". But Steve! I thought you were reading all that code!
 
 ## Programming
@@ -73,11 +70,9 @@ render_with_liquid: false
     in the past. One example that stood out was where the AI agent got confused
     at how used a non-standard way of encoding JSON in PostgreSQL database
     tables. Their solution was to add comments to the code to help the AI agent
-    but that programmers would likely skip over.
-
-    I feel like we'll see a lot more code that includes instructions for AI
-    agents in the future, which will make comments even more likely to be
-    ignored by actual human programmers.
+    but that programmers would likely skip over. I feel like we'll see a lot
+    more code that includes instructions for AI agents in the future, which will
+    make comments even more likely to be ignored by actual human programmers.
 
 ## Personal Development
 
