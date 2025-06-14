@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TIL: June 15, 2025 - Weekly Reading: AI, Programming, and Life Lessons"
+title: "TIL: June 15, 2025 - Weekly Reading: AI, Programming with agents, and Personal Development"
 date: "2025-06-15 00:00:00 +0900"
 blog: til
 tags: AI programming learning
