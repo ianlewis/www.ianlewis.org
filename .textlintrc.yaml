@@ -29,6 +29,7 @@ rules:
       - "Aoife"
       - "Armin"
       - "Atamel"
+      - "Atharva"
       - "Atsuo"
       - "Atsushi"
       - "Balahan"
@@ -37,6 +38,7 @@ rules:
       - "Collison"
       - "/[Cc]osentino/"
       - "Cramer"
+      - "Crawshaw"
       - "Daskalou"
       - "Dougherty"
       - "Eiji"
@@ -88,6 +90,7 @@ rules:
       - "Petgrave"
       - "Reiko"
       - "Rokicki"
+      - "Raykar"
       - "Ronacher"
       - "Rosner"
       - "Rossum"
@@ -200,6 +203,7 @@ rules:
       - "NATS.io"
       - "Netlify"
       - "Photoshop"
+      - "PostgreSQL" # PostgreSQL database
       - "PyPI"
       - "Jaiku" # Old social networking service
       - "JetBrains"
@@ -235,6 +239,7 @@ rules:
       - "DvorakJP" # Dvorak Japanese Keyboard Layout
       - "FastCGI"
       - "Funktion"
+      - "GenAI" # Generative AI
       - "GoReleaser" # Go release tool
       - "GeoDjango" # Django geographic web framework
       - "Gunicorn" # Python WSGI HTTP Server (Green Unicorn)
