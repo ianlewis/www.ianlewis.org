@@ -163,6 +163,7 @@ rules:
       - "yuroyoro"
       - "yudppp"
       - "/[Ff]eiz/"
+      - "/[Ww]eboo/"
 
       # Company/Product Names
       ##########################################################################
@@ -192,6 +193,7 @@ rules:
       - "ElasticSearch"
       - "Eldarion"
       - "Elon"
+      - "FriendFeed" # Social networking service (acquired by Facebook)
       - "Fulcio"
       - "Gmail"
       - "Gree"
@@ -340,6 +342,7 @@ rules:
 
       # Tech Terminology
       - "Autoscaling"
+      - "Connectability" # Ability to connect
       - "Dockerfile"
       - "Googler" # Google employee
       - "Googley" # Google-like, characteristic of Google
