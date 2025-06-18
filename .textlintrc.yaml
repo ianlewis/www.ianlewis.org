@@ -187,7 +187,7 @@ rules:
       - "CoreOS"
       - "Datastore"
       - "Deis"
-      - "Disqus"
+      - "Disqus" # Comment hosting service
       - "Docomo"
       - "EuroPython"
       - "ElasticSearch"
@@ -653,7 +653,6 @@ rules:
       - "Dinesh"
       - "direct_to_pdf"
       - "dispite"
-      - "disqus"
       - "disqus_plugin"
       - "django"
       - "DjangoGraphviz"
