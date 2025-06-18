@@ -653,6 +653,7 @@ rules:
       - "Dinesh"
       - "direct_to_pdf"
       - "dispite"
+      - "disqus-api-client"
       - "disqus_plugin"
       - "django"
       - "DjangoGraphviz"
