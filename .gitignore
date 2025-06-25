@@ -13,6 +13,5 @@ node_modules/
 # Jekyll build files.
 _site
 .sass-cache
-.bundle
 .jekyll-cache
 .jekyll-metadata
