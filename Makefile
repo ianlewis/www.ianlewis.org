@@ -486,12 +486,20 @@ yamllint: .venv/.installed ## Runs the yamllint linter.
 ## Maintenance
 #####################################################################
 
+Gemfile.lock: Gemfile
+	@bundle lock --update
+
+.PHONY: bundle-install
+bundle-install: Gemfile.lock
+	@# NOTE: Bundler deployment mode is activated.
+	@bundle check || bundle install
+
 .PHONY: build
-build: ## Build the site with Jekyll
+build: bundle-install ## Build the site with Jekyll
 	@bundle exec jekyll build
 
 .PHONY: serve
-serve: ## Run Jekyll test server.
+serve: bundle-install ## Run Jekyll test server.
 	@bundle exec jekyll serve --future --drafts -H $(JEKYLL_SERVE_HOST)
 
 .PHONY: clean
