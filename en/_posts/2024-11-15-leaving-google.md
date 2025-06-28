@@ -117,7 +117,7 @@ If you haven't already, you can connect with me on
 [Linkedin](https://www.linkedin.com/in/ianmlewis/),
 [X/Twitter](https://x.com/ianmlewis),
 [BlueSky](https://bsky.app/profile/ianlewis.bsky.social), and, as always, via
-email at [ianmlewis@gmail.com](mailto:ianmlewis@gmail.com).
+email at [`ian@ianlewis.org`](mailto:ian@ianlewis.org).
 
 Thanks to all the folks I worked with along the way! I feel most grateful for
 your support.
