@@ -16,7 +16,7 @@
 
 title: Ian Lewis
 tagline: Engineer in Tokyo
-email: ianmlewis@gmail.com
+email: ian@ianlewis.org
 description: >- # this means to ignore newlines until "baseurl:"
   Ian Lewis is an engineer based in Tokyo, Japan. His current interests are
   in Container Native Security, Supply Chain Security, Containers, and Kubernetes.
@@ -75,7 +75,7 @@ plainwhite:
     github: ianlewis
     mastodon: https://hachyderm.io/@ianlewis
     linkedin: ianmlewis
-    email: ianmlewis@gmail.com
+    email: ian@ianlewis.org
 
   navigation:
     - title: English Blog
