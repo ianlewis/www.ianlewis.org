@@ -25,3 +25,9 @@ blockquote {
 .dark blockquote {
   background: #00080a;
 }
+
+// Word wrap Japanese text using contextual analysis.
+// See https://developers-jp.googleblog.com/2023/09/budoux-adobe.html
+.post-container {
+  word-break: auto-phrase;
+}
