@@ -50,7 +50,7 @@ render_with_liquid: false
 - [Go 1.25 Release Notes](https://tip.golang.org/doc/go1.25) - _Go Team_
 
     I recently attended
-    [Shubuya.go](https://shibuya-go.connpass.com/event/357939/). Only a few
+    [Shibuya.go](https://shibuya-go.connpass.com/event/357939/). Only a few
     joined but it's an where attendees work on a project and share their
     progress etc. In Japanese this is a called もくもく会 (mokumoku-kai).
 

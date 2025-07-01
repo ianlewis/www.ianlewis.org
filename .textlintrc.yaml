@@ -36,21 +36,25 @@ rules:
       - "Blauzvern"
       - "Branchaud"
       - "Collison"
-      - "/[Cc]osentino/"
+      - "Cosentino"
       - "Cramer"
       - "Crawshaw"
       - "Daskalou"
       - "Dougherty"
       - "Eiji"
+      - "Elin"
       - "Enamoto"
       - "Eno"
       - "Fikes"
       - "Fumi"
       - "Gageot"
+      - "Gergely"
       - "Ghemawat"
       - "Godbolt"
       - "Graeme"
       - "Hightower"
+      - "Hockin"
+      - "Hochstein"
       - "IanLewis"
       - "IanMLewis"
       - "Ikeda"
@@ -67,6 +71,8 @@ rules:
       - "Klabnik"
       - "Krumins"
       - "Lacasse"
+      - "Lorin"
+      - "Lifland"
       - "LonelyBob"
       - "Makabi"
       - "McKayla"
@@ -86,7 +92,9 @@ rules:
       - "Naoki"
       - "Nghia"
       - "Nikhil"
+      - "Nilsson"
       - "Okano"
+      - "Orosz"
       - "Petgrave"
       - "Reiko"
       - "Rokicki"
@@ -126,6 +134,12 @@ rules:
       - "Yosuke"
       - "Zach"
       - "Ziadé"
+
+      # Place Names
+      ##########################################################################
+
+      - "Shinagawa" # Shinagawa, a ward in Tokyo, Japan
+      - "Shibuya" # Shibuya, a ward in Tokyo, Japan
 
       # User handles
       ##########################################################################
@@ -364,11 +378,13 @@ rules:
       - "/[Ll]iveness/"
       - "/[Mm]ixin/"
       - "/[Nn]amespace/"
+      - "/[Pp]aywall/"
       - "/[Pp]laintext/"
       - "/[Ii]mpactful/" # impact + -ful
       - "/[Ii]ntegrations/" # irregular plural-form
       - "/[Rr]evset/" # Revision Set (Mercurial)
       - "/[Ss]erverless/"
+      - "/[Ss]uperintelligence/" # super + intelligence (stupid AI terms)
       - "/[Ss]tylesheet/"
       - "/[Tt]estbed/"
       - "/[Tt]radeoff/" # trade + off
@@ -418,6 +434,7 @@ rules:
       - "JSON" # JavaScript Object Notation
       - "KVS" # Key-Value Store
       - "LDAP" # Lightweight Directory Access Protocol
+      - "LLM" # Large Language Model
       - "LSP" # Language Server Protocol
       - "MCP" # Model Context Protocol
       - "MNIST" # Modified National Institute of Standards and Technology DB
@@ -467,9 +484,8 @@ rules:
       # https://dictionary.cambridge.org/dictionary/english/dumbing-down
       - "dumbed-down"
       - "Houthi" # Houthi movement
-      - "Shinagawa" # Shinagawa, a ward in Tokyo, Japan
-      - "Shibuya" # Shibuya, a ward in Tokyo, Japan
-      - "Ryokan" # Ryokan, a type of traditional Japanese inn
+      - "/[Mm]okumoku-kai/" # Mokumoku-kai, a Japanese term for a gathering
+      - "/[Rr]yokan/" # Ryokan, a type of traditional Japanese inn
 
       - "Yeeaaah" # Exaggerated "Yeah" often used in informal contexts
 
