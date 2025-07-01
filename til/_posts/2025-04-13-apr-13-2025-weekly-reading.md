@@ -3,7 +3,7 @@ layout: post
 title: "TIL: Apr 13, 2025 - Weekly Reading"
 date: "2025-04-13 00:00:00 +0900"
 blog: til
-tags: learning programming
+tags: learning programming weekly-reading
 render_with_liquid: false
 ---
 
