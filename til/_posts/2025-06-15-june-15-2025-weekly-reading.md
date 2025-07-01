@@ -3,7 +3,7 @@ layout: post
 title: "TIL: June 15, 2025 - Weekly Reading: AI, Programming with agents, and Personal Development"
 date: "2025-06-15 00:00:00 +0900"
 blog: til
-tags: AI programming learning
+tags: AI programming learning weekly-reading
 render_with_liquid: false
 ---
 
