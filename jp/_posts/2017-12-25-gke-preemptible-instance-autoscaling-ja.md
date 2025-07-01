@@ -13,31 +13,21 @@ locale: ja
 
 Google Compute Engine (GCE)ではPreemptible Instanceを作ることができます。Preemptible Instanceを使うと変動するようなワークロードにかなりコストを削減できます。
 
-Google Kubernetes Engine (GKE)は標準にクラスターオートスケーラーがついています。
-クラスターオートスケーラーを有効にするとクラスターの要求されているワークロードに
-対してクラスターを自動的にスケールできます。GKEクラスターのノードはGCEのVMに
-なっているので
-[preemptible instanceのノードプール](https://cloud.google.com/kubernetes-engine/docs/concepts/preemptible-vm)の
-作成にサポートしています。
+Google Kubernetes Engine (GKE)は標準にクラスターオートスケーラーがついています。クラスターオートスケーラーを有効にするとクラスターの要求されているワークロードに対してクラスターを自動的にスケールできます。GKEクラスターのノードはGCEのVMになっているので[preemptible instanceのノードプール](https://cloud.google.com/kubernetes-engine/docs/concepts/preemptible-vm)の作成にサポートしています。
 
-この記事ではこの２つの機能を組み合わせて安くて自動的にスケールするリソースの作成をやってみたい。
-一緒にやってみたい方はGCPの[$300無料トライアル](https://cloud.google.com/free/)を使うといいと思います。
+この記事ではこの２つの機能を組み合わせて安くて自動的にスケールするリソースの作成をやってみたい。一緒にやってみたい方はGCPの[$300無料トライアル](https://cloud.google.com/free/)を使うといいと思います。
 
 ## Preemptible Instances
 
-[Preemptible instance](https://cloud.google.com/compute/docs/instances/preemptible)はGCEの単価が
-安く一時的なVMを作成できる機能です。GCEゾーンのデータセンターの余裕キャパを買うような感じですので、
-かなり安く提供できるけど、VMのアベイラビリティが普段より低い。
+[Preemptible instance](https://cloud.google.com/compute/docs/instances/preemptible)はGCEの単価が安く一時的なVMを作成できる機能です。GCEゾーンのデータセンターの余裕キャパを買うような感じですので、かなり安く提供できるけど、VMのアベイラビリティが普段より低い。
 
 例えば、普通のn1-standard-1のインスタンスは東京リージョンですと$0.0610ですが、 Preemptibleですと$0.01325で、1/4以下の値段。
 
-Preemptible Instanceの欠点はいくつかある。その一つはVMがいつでも停止される可能性があることです。GCEのシステム状況によって
-ACPI G2 Soft OffメッセージをVMに送ってきます。そのあと、VMに動いているアプリケーションが安全に停止する時間があります。
+Preemptible Instanceの欠点はいくつかある。その一つはVMがいつでも停止される可能性があることです。GCEのシステム状況によってACPI G2 Soft OffメッセージをVMに送ってきます。そのあと、VMに動いているアプリケーションが安全に停止する時間があります。
 
-もう一つの欠点は、Preemptible VMが最大24時間で停止される。そして、新しいインスタンスを作るには必要なリソースを確保できない
-可能性は普通のインスタンスより低い。VMを作れないゔ可能性は低いけれど、たまに作れない時がある。
+もう一つの欠点は、Preemptible VMが最大24時間で停止される。そして、新しいインスタンスを作るには必要なリソースを確保できない可能性は普通のインスタンスより低い。VMを作れないゔ可能性は低いけれど、たまに作れない時がある。
 
-欠点がありますが、たくさんのユースケースをローコストで満たせます。Preemptible instanceを`--preemptibleフラグで作れます：`
+欠点がありますが、たくさんのユースケースをローコストで満たせます。Preemptible instanceを`--preemptible`フラグで作れます：
 
 ```shell
 gcloud compute instances create preemptible-instance --preemptible
@@ -49,7 +39,7 @@ GKEはクラスターノードを動的にスケールする[cluster autoscaler]
 
 クラスターオートスケーラーはスケジュールされてなく、リソースの確保を待っているPodを監視し、スケールすれば、スケジュールできるようになったら、VMノードを追加して、クラスターをスケールアップします。
 
-オートスケーラーを有効にするには`--enable-autoscalingをクラスター作成時に指定します。最大と最低のPod数を指定できます。このコマンドはオートスケーラーを有効にしたノードプールが含まれるクラスターを作ります：`
+オートスケーラーを有効にするには`--enable-autoscaling`をクラスター作成時に指定します。最大と最低のPod数を指定できます。このコマンドはオートスケーラーを有効にしたノードプールが含まれるクラスターを作ります：
 
 ```shell
 gcloud container clusters create autoscaled-cluster \
