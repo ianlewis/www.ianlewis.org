@@ -246,6 +246,7 @@ rules:
       - "Appstats" # App Engine Appstats
       - "BeautifulSoup"
       - "Blobstore" # App Engine Blobstore
+      - "BudouX" # Japanese morphological analyzer
       - "Buildout" # Python build system
       - "Buildbot" # Python continuous integration tool
       - "CloudFront" # AWS CloudFront
@@ -404,6 +405,7 @@ rules:
       - "BQ" # BigQuery
       - "BUSL" # Business Source License
       - "CFP" # Call for Papers/Proposals
+      - "CJK" # Chinese, Japanese, and Korean
       - "CNCF" # Cloud Native Computing Foundation
       - "CPU" # Central Processing Unit
       - "CFP" # Call for Papers/Proposals
