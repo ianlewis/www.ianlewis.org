@@ -408,7 +408,6 @@ rules:
       - "CJK" # Chinese, Japanese, and Korean
       - "CNCF" # Cloud Native Computing Foundation
       - "CPU" # Central Processing Unit
-      - "CFP" # Call for Papers/Proposals
       - "CRI" # Container Runtime Interface
       - "CSV" # Comma-Separated Values
       - "CSR" # Certificate Signing Request
