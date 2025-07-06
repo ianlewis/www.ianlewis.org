@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TIL: July 6, 2025 - Weekly Reading: AI, Go's greentea GC, and OSS Security"
+title: "TIL: July 6, 2025 - Weekly Reading: AI, Go's `greentea` GC, and OSS Security"
 date: "2025-07-06 00:00:00 +0900"
 blog: til
 tags: AI go security weekly-reading
@@ -64,10 +64,10 @@ render_with_liquid: false
 
     This is a cool podcast which is new to me. It features Michael Knyszek and
     Michael Pratt discussing development of the Go runtime and a performance bug
-    in the new experimental "greentea" garbage collector. Due to some esoteric
-    issues the new runtime caused a large number of pagefaults for new memory and
-    greatly decreased performance for programs that allocate a lot of new memory
-    and throw it away.
+    in the new experimental `greentea` garbage collector. Due to some esoteric
+    issues the new runtime caused a large number of page faults for new memory
+    and greatly decreased performance for programs that allocate a lot of new
+    memory and throw it away.
 
 ## OSS Security
 

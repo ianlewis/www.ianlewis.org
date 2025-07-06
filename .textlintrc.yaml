@@ -34,6 +34,7 @@ rules:
       - "Atsushi"
       - "Balahan"
       - "Blauzvern"
+      - "Bleecher"
       - "Branchaud"
       - "Collison"
       - "Cosentino"
@@ -69,6 +70,7 @@ rules:
       - "Kinomiya"
       - "Kitamura"
       - "Klabnik"
+      - "Knyszek"
       - "Krumins"
       - "Lacasse"
       - "Lorin"
@@ -133,6 +135,7 @@ rules:
       - "Yoshiki"
       - "Yosuke"
       - "Zach"
+      - "Zeyliger"
       - "Ziadé"
 
       # Place Names
@@ -373,6 +376,8 @@ rules:
       - "/[Cc]omparator/" # compare + ator
       - "/[Dd]eclarative/"
       - "/[Dd]ev/" # Development/Developer
+      - "/[Ee]xfiltrate/" # To steal data from a system
+      - "/[Ee]xfiltrating/" # gerund or present participle of exfiltrate
       - "/[Ff]iletype/" # file + type
       - "/[Gg]oroutine/"
       - "/[Hh]ackathon/"
@@ -389,6 +394,7 @@ rules:
       - "/[Ss]tylesheet/"
       - "/[Tt]estbed/"
       - "/[Tt]radeoff/" # trade + off
+      - "/[Uu]ntrusted/" # used to describe code in a security context
       - "[Ww]ifi" # Wi-Fi
       - "µsec" # microsecond
       - "usec" # microsecond
@@ -489,6 +495,7 @@ rules:
       - "/[Rr]yokan/" # Ryokan, a type of traditional Japanese inn
 
       - "Yeeaaah" # Exaggerated "Yeah" often used in informal contexts
+      - "willy-nilly" # Meaning "in a disorganized manner"
 
       - "CHANGELOG"
       - "CODEOWNER"
@@ -710,7 +717,6 @@ rules:
       - "everes"
       - "execc"
       - "executables"
-      - "exfiltrate"
       - "exim"
       - "facto"
       - "fastcgi"
