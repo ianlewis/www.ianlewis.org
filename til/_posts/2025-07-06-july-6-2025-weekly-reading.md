@@ -22,7 +22,7 @@ render_with_liquid: false
 
     While I think that MCP servers should probably be run with strict network
     policies to prevent them from exfiltrating data or interfering with each
-    other, they are generally aren't LLMs themselves and are just regular API
+    other, they aren't generally LLMs themselves and are just regular API
     servers. So far many of the attacks [rely on running untrusted MCP servers
     alongside trusted
     ones](https://invariantlabs.ai/blog/whatsapp-mcp-exploited). Very little,
