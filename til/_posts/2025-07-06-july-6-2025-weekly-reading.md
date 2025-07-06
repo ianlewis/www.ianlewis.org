@@ -37,7 +37,7 @@ render_with_liquid: false
 
     Armin discusses how he's not a fan of MCP (Model Context Protocol) servers
     because they rely on the LLM to filter large amounts of information down to
-    produce the right result. He seems to propose that the agent the generate
+    produce the right result. He seems to propose that the agent generate
     one-off code and presumably run it to accomplish the task. He compares this
     to the old adage "replace yourself with a shell script" with the caveat that
     previously you would automate things you did all the time, whereas now LLMs
