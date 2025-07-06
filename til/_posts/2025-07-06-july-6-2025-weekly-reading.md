@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TIL: July 6, 2025 - Weekly Reading: AI, Go's `greentea` GC, and OSS Security"
+title: "TIL: July 6, 2025 - Weekly Reading: AI, Go's greentea GC, and OSS Security"
 date: "2025-07-06 00:00:00 +0900"
 blog: til
 tags: AI go security weekly-reading
