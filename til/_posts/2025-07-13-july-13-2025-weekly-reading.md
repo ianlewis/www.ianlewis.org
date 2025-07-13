@@ -96,5 +96,5 @@ render_with_liquid: false
     framework that might be useful for creating some bespoke tools.
 
     Outside of some very specialized tooling, I think that agents should not be
-    given access to anything and should be required to go though specifically
+    given access to anything and should be required to go through specifically
     registered and authorized MCP servers for all outside interaction.
