@@ -44,6 +44,7 @@ rules:
       - "Dougherty"
       - "Eiji"
       - "Elin"
+      - "Elon"
       - "Enamoto"
       - "Eno"
       - "Fikes"
@@ -97,6 +98,7 @@ rules:
       - "Nilsson"
       - "Okano"
       - "Orosz"
+      - "Osorio"
       - "Petgrave"
       - "Reiko"
       - "Rokicki"
@@ -125,6 +127,7 @@ rules:
       - "Trong"
       - "Tsuyuki"
       - "Wada"
+      - "Warmerdam"
       - "Wilber"
       - "Willison"
       - "Vella"
@@ -209,7 +212,6 @@ rules:
       - "EuroPython"
       - "ElasticSearch"
       - "Eldarion"
-      - "Elon"
       - "FriendFeed" # Social networking service (acquired by Facebook)
       - "Fulcio"
       - "Gmail"
@@ -221,6 +223,7 @@ rules:
       - "Mixi"
       - "NATS.io"
       - "Netlify"
+      - "Palo" # e.g. Palo Alto Networks
       - "Photoshop"
       - "PostgreSQL" # PostgreSQL database
       - "PyPI"
