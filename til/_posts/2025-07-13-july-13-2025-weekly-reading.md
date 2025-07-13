@@ -58,7 +58,7 @@ render_with_liquid: false
   (MCP)](https://www.pillar.security/blog/the-security-risks-of-model-context-protocol-mcp)
   -- _Pillar Security_
 
-    This is a article from a few months ago that talks about some of the
+    This is an article from a few months ago that talks about some of the
     security issues with MCP servers. It highlights some of the issues that some
     tools like ToolHive and Docker are trying to solve. Unfortunately, many of
     the issues aren't easily solved. Prompt/Command injection is going to
