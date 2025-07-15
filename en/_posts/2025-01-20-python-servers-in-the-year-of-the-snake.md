@@ -9,7 +9,7 @@ render_with_liquid: false
 image: /assets/images/2025-01-20-python-servers-in-the-year-of-the-snake/python_snake.png
 ---
 
-![](/assets/images/2025-01-20-python-servers-in-the-year-of-the-snake/python_snake.png){:style="width: 40%; display:block; margin-left:auto; margin-right:auto"}
+![An image of a Python curled around the Python programming language logo](/assets/images/2025-01-20-python-servers-in-the-year-of-the-snake/python_snake.png){: .center}{:style="width: 40%"}
 
 This year is the [year of the snake in the Chinese
 Zodiac](<https://en.wikipedia.org/wiki/Snake_(zodiac)>). Every 12th year is a
