@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Why I Left Twitter"
-date: 2025-04-22 00:00:00 +0000
+date: 2025-07-16 00:00:00 +0000
 permalink: /en/why-i-left-twitter
 blog: en
 tags: tech
