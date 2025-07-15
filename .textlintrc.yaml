@@ -247,6 +247,7 @@ rules:
       # Tech Names
       ##########################################################################
 
+      - "ActivityPub" # ActivityPub protocol
       - "Appc"
       - "Ansible"
       - "Appstats" # App Engine Appstats
@@ -520,6 +521,7 @@ rules:
       - "e2e"
       - "/[Ff]ormatter/"
       - "/[Ll]inter/"
+      - "/[Pp]ositivity/" # The practice of being positive in attitude.
       - "/[Pp]re/"
       - "/[Rr]untime/"
       - "/[Ss]exualized/"
