@@ -42,7 +42,7 @@ A Kubernetes deployment specifies a group of instances of an application. Behind
 the scenes it creates a ReplicaSet which is responsible for keeping the
 specified number of instances up and running.
 
-![A diagram showing a Deployment named "MyApp" comprised of one ReplicaSet and three replica Pods.](/assets/images/765/deployments.png){: .align-center }
+![A diagram showing a Deployment comprised of one ReplicaSet and three replica Pods.](/assets/images/765/deployments.png){: .align-center }
 
 We can create our "blue" deployment by saving the following YAML to a file
 `blue.yaml`.
@@ -190,7 +190,9 @@ kubectl apply -f service.yaml
 
 Now we have something that looks like this.
 
-![A diagram showing three "blue" deployment Pods and three "green" Pods. The three "blue" pods are still running but are inaccessible. The "green pods are accesible by the user.](/assets/images/765/green.png){: .align-center }
+![A diagram showing three "blue" deployment Pods and three "green" Pods. The
+three "blue" pods are still running but are inaccessible. The "green pods are
+accessible by the user.](/assets/images/765/green.png){: .align-center }
 
 Updating the selector for the service is applied immediately and so you should
 see that the new version of Nginx is serving traffic.

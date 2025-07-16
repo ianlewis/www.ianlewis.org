@@ -99,11 +99,11 @@ With that in mind you can see that the container runtime space is fairly
 complicated. Each runtime covers different parts of this low-level to high-level
 spectrum. Here is a very subjective diagram:
 
-![A diagram of showing container runtimes on a specrum from "low level" on the
+![A diagram of showing container runtimes on a spectrum from "low level" on the
 left, to "high level" on the right. lxc and runc spans from "low level" to about
 half way to "high level". lmctfy spans slightly farther right towards "high
-level". cri-o spans from mid-way to "high-level". containerd is slightly higher
-level than cri-io. rkt spans most of the way from "low level" to "high level".
+level". CRI-O spans from mid-way to "high-level". containerd is slightly higher
+level than CRI-O. rkt spans most of the way from "low level" to "high level".
 ](/assets/images/768/runtimes.png){: .align-center }
 
 So for practical purposes, actual container runtimes that focus on just running

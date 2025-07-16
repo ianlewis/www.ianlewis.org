@@ -13,7 +13,7 @@ locale: ja
 
 ほとんどid:tokibitoと同じやり方でPDFを吐き出したけど、問題点が二つあった。
 
-`rst2pdf`をたたくと`ja.json`を指定する上、font-directoryも指定しないと日本語が化ける。Ubuntuの場合VL-Gothicで充分なので、
+`rst2pdf`をたたくと`ja.json`を指定する上、`--font-folder`も指定しないと日本語が化ける。Ubuntuの場合`VL-Gothic`で充分なので、
 
 ```bash
 rst2pdf \
