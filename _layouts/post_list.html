@@ -5,6 +5,12 @@ layout: default
   <h1 class="page-heading">{{ page.title }}</h1>
 {%- endif -%}
 
+{%- if paginator.page == 1 -%}
+  <div>
+    {{ site.blogs[page.blog].description }}
+  </div>
+{%- endif -%}
+
 {%- if paginator.posts.size > 0 -%}
   <ul class="posts">
     <li class="posts-labelgroup" id="posts-labelgroup">
@@ -46,7 +52,7 @@ layout: default
           {%- endif -%}
         </div>
         <div class="post">
-          {%- if post.blog == 'jp' -%}
+          {%- if post.blog == 'jp' or post.lang == 'ja' -%}
             {%- comment -%}
               TODO(#315): Truncating text can cut off html entities
             {%- endcomment -%}

@@ -35,14 +35,23 @@ plugins:
 blogs:
   en:
     title: English Blog
+    description: |
+      All of my English posts. I write about technology, programming, and
+      containers, Kubernetes, and more.
     url: /en
     lang: en
   jp:
     title: 日本語ブログ
+    description: |
+      私の日本語の投稿。技術、プログラミング、コンテナ、Kubernetesなどについて書いています。
     url: /jp
     lang: ja
   til:
     title: Today I Learned
+    description: |
+      A collection of short posts about things I learned recently. Inspired by
+      the idea of &quot;<a href="https://www.swyx.io/learn-in-public/">Learn in
+      Public</a>&quot;.
     url: /til
     lang: en
 
