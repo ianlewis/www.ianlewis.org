@@ -256,6 +256,7 @@ rules:
       - "BudouX" # Japanese morphological analyzer
       - "Buildout" # Python build system
       - "Buildbot" # Python continuous integration tool
+      - "CRI-O" # Container Runtime Interface implementation for Kubernetes
       - "CloudFront" # AWS CloudFront
       - "/[Cc]ron/"
       - "Cygwin"
@@ -368,6 +369,7 @@ rules:
       - "Dockerfile"
       - "Googler" # Google employee
       - "Googley" # Google-like, characteristic of Google
+      - "ReplicaSet" # Kubernetes ReplicaSet
       - "TrueType"
       - "Vagrantfile"
       - "iGoogle" # (old) Google personalized portal services

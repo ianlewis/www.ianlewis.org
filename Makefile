@@ -243,7 +243,7 @@ yaml-format: node_modules/.installed ## Format YAML files.
 #####################################################################
 
 .PHONY: lint
-lint: actionlint eslint markdownlint renovate-config-validator stylelint textlint todos yamllint zizmor ## Run all linters.
+lint: actionlint eslint html-validate markdownlint renovate-config-validator stylelint textlint todos yamllint zizmor ## Run all linters.
 
 .PHONY: actionlint
 actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
@@ -299,6 +299,13 @@ eslint: node_modules/.installed ## Runs eslint.
 		else \
 			./node_modules/.bin/eslint --max-warnings 0 $${files}; \
 		fi
+
+
+.PHONY: html-validate
+html-validate: build node_modules/.installed ## Runs the html-validate linter.
+	@./node_modules/.bin/html-validate \
+		--config=$(REPO_ROOT)/.htmlvalidate.mjs \
+		$(REPO_ROOT)/_site
 
 .PHONY: stylelint
 stylelint: node_modules/.installed ## Runs the stylelint linter.

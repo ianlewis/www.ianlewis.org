@@ -9,7 +9,7 @@ render_with_liquid: false
 image: /assets/images/2025-02-03-rust-first-impressions-error-handling/Gemini_Generated_Image_61aptz61aptz61ap.png
 ---
 
-![A cartoon image of a crab that was alerted to some danger, showing an exclamation point above the crab's head](/assets/images/2025-02-03-rust-first-impressions-error-handling/Gemini_Generated_Image_61aptz61aptz61ap.png){: .center}{:style="width: 50%;"}
+![A cartoon image of a crab that was alerted to some danger, showing an exclamation point above the crab's head](/assets/images/2025-02-03-rust-first-impressions-error-handling/Gemini_Generated_Image_61aptz61aptz61ap.png){: .align-center}
 
 For the 2024 edition of Advent of Code I decided to finally give Rust a try and
 implement the puzzle solutions in the language. Rust has been pretty stable for

@@ -9,18 +9,22 @@ render_with_liquid: false
 locale: ja
 ---
 
-<p><a href="http://d.hatena.ne.jp/nullpobug/" title="岡野真也">id:tokibito</a>が<a href="http://d.hatena.ne.jp/nullpobug/20090424">見つけてくれた</a> <a href="">rst2pdf</a> を使って<a href="http://takashi-matsuo.blogspot.com/" title="松尾 貴史">id:tmatsuo</a> と<a href="http://www.djangoproject.com/" title="Django">Django</a>勉強会Disc.8 ハンズオンC の資料をPDFにした。</p>
+[id:tokibito](http://d.hatena.ne.jp/nullpobug/ "岡野真也")が[見つけてくれた](http://d.hatena.ne.jp/nullpobug/20090424)[`rst2pdf`](https://rst2pdf.org/)を使って[id:tmatsuo](http://takashi-matsuo.blogspot.com/ "松尾貴史")とDjango勉強会Disc.8 ハンズオンC の資料をPDFにした。
 
-<p>ほとんど <a href="http://d.hatena.ne.jp/nullpobug/" title="岡野真也">id:tokibito</a>と同じやり方でPDFを吐き出したけど、問題点が二つあった。</p>
+ほとんどid:tokibitoと同じやり方でPDFを吐き出したけど、問題点が二つあった。
 
-<p>rst2pdf をたたくと ja.jsonを指定する上、font-directoryも指定しないと日本語が化ける。<a href="http://www.ubuntu.com/" title="Ubuntu">Ubuntu</a>の場合 VL-Gothicで充分なので、</p>
+`rst2pdf`をたたくと`ja.json`を指定する上、`--font-folder`も指定しないと日本語が化ける。Ubuntuの場合`VL-Gothic`で充分なので、
 
-<blockquote>rst2pdf -s ja.json,perldoc.json --font-folder="/usr/share/fonts/truetype/vlgothic" django-hack-a-thon-get-handson.part2.rst</blockquote>
+```bash
+rst2pdf \
+    -s ja.json,perldoc.json \
+    --font-folder="/usr/share/fonts/truetype/vlgothic" \
+    django-hack-a-thon-get-handson.part2.rst
+```
 
-<p>問題点の二つ目は、rst2pdfの wordWrapが段落に対して、一つのフラグメント(?)しか扱えないようで、エラーが出た。</p>
+問題点の二つ目は、`rst2pdf`の`wordWrap`が段落に対して、一つのフラグメント(?)しか扱えないようで、エラーが出た。
 
-<blockquote>
-<pre>
+```bash
 [ERROR] styles.py L191 Error processing font VL-Gothic-Regular: Can't open file "ipam.otf"
 [ERROR] styles.py L192 Registering VL-Gothic-Regular as Helvetica alias
 Traceback (most recent call last):
@@ -41,38 +45,45 @@ Traceback (most recent call last):
   File "/usr/lib/python2.5/site-packages/Reportlab-2.1-py2.5.egg/reportlab/platypus/paragraph.py", line 819, in breakLinesCJK
     raise ValueError('CJK Wordwrap can only handle one fragment per paragraph for now')
 ValueError: CJK Wordwrap can only handle one fragment per paragraph for now
-</module></pre>
-</blockquote>
+```
 
-<p>なので、面倒くさいから、wordWrapを無効にした。</p>
+なので、面倒くさいから、`wordWrap`を無効にした。
 
-<blockquote>
-<pre>
+```json
 {
-  "embeddedFonts" :
-[["VL-Gothic-Regular.ttf","VL-PGothic-Regular.ttf","ipam.otf","verdanaz.ttf"]],
-  "fontsAlias" : {
-    "stdFont": "VL-PGothic-Regular",
-    "stdBold": "VL-PGothic-Regular",
-    "stdItalic": "VL-PGothic-Regular",
-    "stdMono": "VL-Gothic-Regular"
-  },
-  "styles" : [
-    ["base" , {
-      "wordWrap": "<strong>None</strong>"
-    }],
-    ["literal" , {
-      "wordWrap": "None"
-    }]
-  ]
+    "embeddedFonts": [
+        [
+            "VL-Gothic-Regular.ttf",
+            "VL-PGothic-Regular.ttf",
+            "ipam.otf",
+            "verdanaz.ttf"
+        ]
+    ],
+    "fontsAlias": {
+        "stdFont": "VL-PGothic-Regular",
+        "stdBold": "VL-PGothic-Regular",
+        "stdItalic": "VL-PGothic-Regular",
+        "stdMono": "VL-Gothic-Regular"
+    },
+    "styles": [
+        [
+            "base",
+            {
+                "wordWrap": "<strong>None</strong>"
+            }
+        ],
+        [
+            "literal",
+            {
+                "wordWrap": "None"
+            }
+        ]
+    ]
 }
-</pre>
-</blockquote>
+```
 
-<p><a href="http://bitbucket.org/tmatsuo/gae-handson/src/">bitbucket</a>に保存してる。
-<h4>PDF</h4>
-<ul>
-<li><a href="http://bitbucket.org/tmatsuo/gae-handson/raw/12bccec0295a/django-hack-a-thon-get-handson.pdf">Part 1</a></li>
-<li><a href="http://bitbucket.org/tmatsuo/gae-handson/raw/12bccec0295a/django-hack-a-thon-get-handson.part2.pdf">Part 2</a></li>
-</ul>
-</p>
+[Bitbucket](http://bitbucket.org/tmatsuo/gae-handson/src/)に保存してる。
+
+- **PDF**
+    - [Part 1](http://bitbucket.org/tmatsuo/gae-handson/raw/12bccec0295a/django-hack-a-thon-get-handson.pdf)
+    - [Part 2](http://bitbucket.org/tmatsuo/gae-handson/raw/12bccec0295a/django-hack-a-thon-get-handson.part2.pdf)

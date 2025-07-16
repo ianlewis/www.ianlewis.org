@@ -17,31 +17,19 @@ first people to receive one.
 
 Bluesky verified themselves.
 
-[![here is the PDS record of Bluesky verifying
-itself](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20103142.png){:style="max-width:
-50%; display:block; margin-left:auto;
-margin-right:auto"}](https://bsky.app/profile/dame.is/post/3lndqd7fx6c2q)
+[![here is the PDS record of Bluesky verifying itself](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20103142.png){: .align-center}](https://bsky.app/profile/dame.is/post/3lndqd7fx6c2q)
 
 Kelsey Hightower was doped out.
 
-[![Extra
-dope!](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20103304.png){:style="max-width:
-50%; display:block; margin-left:auto;
-margin-right:auto"}](https://bsky.app/profile/kelseyhightower.com/post/3lndulltmys2u)
+[![Extra dope!](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20103304.png){: .align-center}](https://bsky.app/profile/kelseyhightower.com/post/3lndulltmys2u)
 
 Steve Klabnik was tongue in cheek but got to the heart of the matter.
 
-[![it's true: my posts are real, and
-true](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20103552.png){:style="max-width:
-50%; display:block; margin-left:auto;
-margin-right:auto"}](https://bsky.app/profile/steveklabnik.com/post/3lndqq5ykgc2g)
+[![it's true: my posts are real, and true](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20103552.png){: .align-center}](https://bsky.app/profile/steveklabnik.com/post/3lndqq5ykgc2g)
 
 A [verification bot](https://bsky.app/profile/verified.pds.mmatt.net) was created in record time.
 
-[![Good morning everyone, sorry for the pings, and congrats on your Blue
-Checks!](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20104827.png){:style="max-width:
-50%; display:block; margin-left:auto;
-margin-right:auto"}](https://bsky.app/profile/verified.pds.mmatt.net/post/3lndqgaqj6s2j)
+[![Good morning everyone, sorry for the pings, and congrats on your Blue Checks!](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20104827.png){: .align-center}](https://bsky.app/profile/verified.pds.mmatt.net/post/3lndqgaqj6s2j)
 
 Most folks who received one are pretty happy about receiving their check mark
 and folks in general seem to be pretty receptive and happy about the new
@@ -78,20 +66,11 @@ post](https://steveklabnik.com/writing/thoughts-on-bluesky-verification/) or
 read more on the [atproto
 wiki](https://wiki.atprotocol.community/en/wiki/reference/verification).
 
-[![In atproto – the open network we're built on – anybody can publish
-verifications. In the Bluesky app, Bluesky chooses whose verifications to show.
-This means that other apps could choose a different set of trusted verifiers, or
-use a different model
-entirely.](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20111837.png){:style="max-width:
-50%; display:block; margin-left:auto;
-margin-right:auto"}](https://bsky.app/profile/jay.bsky.team/post/3lnem7rmx3k24)
+[![In atproto – the open network we're built on – anybody can publish verifications. In the Bluesky app, Bluesky chooses whose verifications to show. This means that other apps could choose a different set of trusted verifiers, or use a different model entirely.](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20111837.png){: .align-center}](https://bsky.app/profile/jay.bsky.team/post/3lnem7rmx3k24)
 
 Bluesky has only a few trusted verifiers so far, but one can assume that there will be more very soon.
 
-[![@bsky.app @nytimes.com @wired.com
-@theathletic.bsky.social](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20122137.png){:style="max-width:
-50%; display:block; margin-left:auto;
-margin-right:auto"}](https://bsky.app/profile/samuel.bsky.team/post/3lndyqyyr4k2k)
+[![@bsky.app @nytimes.com @wired.com @theathletic.bsky.social](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20122137.png){: .align-center}](https://bsky.app/profile/samuel.bsky.team/post/3lndyqyyr4k2k)
 
 On its face, it seems like a decentralized verification scheme would be an
 improvement from what we used to have on Twitter. Individual Bluesky/atproto
@@ -124,13 +103,7 @@ marks but it was opened up to other users later. The rarity of the check mark
 and association with the value of the account made it highly sought after and
 many people viewed getting a checkmark as a kind of accomplishment.
 
-[![I'm fine with verification by domain (obviously) but not everyone has a
-domain or wants to get one. I just hope any new Bluesky verification works like
-it's supposed to: a simple, widely-accessible verification of personal identity
-rather than a
-"prize."](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20104411.png){:style="max-width:
-50%; display:block; margin-left:auto;
-margin-right:auto"}](https://bsky.app/profile/scalzi.com/post/3ln624egpp226)
+[![I'm fine with verification by domain (obviously) but not everyone has a domain or wants to get one. I just hope any new Bluesky verification works like it's supposed to: a simple, widely-accessible verification of personal identity rather than a "prize."](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20104411.png){: .align-center}](https://bsky.app/profile/scalzi.com/post/3ln624egpp226)
 
 At Twitter this formed a kind of class system of haves and have-nots. The check
 mark was a highly visible way to stand out on the platform. By being deemed
@@ -157,10 +130,7 @@ bitter that I'm not likely to get a check mark myself. However, the fact that I
 feel that way just kind of reinforces the idea that the check mark is more of a
 status symbol than a verification mechanism.
 
-[![bluesky adding verification is only good if they verify me otherwise it's
-bad](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20121800.png){:style="max-width:
-50%; display:block; margin-left:auto;
-margin-right:auto"}](https://bsky.app/profile/crimew.gay/post/3lndrium5dk24)
+[![bluesky adding verification is only good if they verify me otherwise it's bad](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20121800.png){: .align-center}](https://bsky.app/profile/crimew.gay/post/3lndrium5dk24)
 
 So if it's just going to be a status symbol, is this verification really
 needed? Given
