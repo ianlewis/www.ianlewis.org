@@ -19,6 +19,11 @@ export default defineConfig({
   extends: ["html-validate:recommended"],
   root: true,
   rules: {
+    // DOCTYPE is case-insensitive. prettier-plugin-liquid formats it to
+    // lowercase.
+    // https://html.spec.whatwg.org/multipage/syntax.html#the-doctype
+    "doctype-style": "off",
+
     // TODO(#320): Don't use inline style in blog posts.
     "no-inline-style": "off",
 

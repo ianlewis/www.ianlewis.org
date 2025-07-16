@@ -52,7 +52,7 @@ layout: default
             {%- endcomment -%}
             {{ post.content | strip_html | truncate: 150 }}
           {% else %}
-            {{ post.content | strip_html | truncatewords: 25 }}
+            {{ post.content | strip_html | truncatewords: 35 }}
           {% endif %}
         </div>
       </li>
