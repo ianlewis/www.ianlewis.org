@@ -10,9 +10,11 @@ These are some of the projects I have worked on.
 
 ---
 
-<img align="left" class="light" src="/assets/images/ianlewis/{{ project.image_light }}" height="80" style="margin-right: 10px">
+{% if project.image_light %}
+![{{ project.name }} logo](/assets/images/ianlewis/{{ project.image_light }}){: .light}{:style="float: left; margin-right: 10px; max-width: 25%;"}
+{% endif %}
 {% if project.image_dark and site.plainwhite.dark_mode %}
-<img align="left" class="dark" src="/assets/images/ianlewis/{{ project.image_dark }}" height="80" style="margin-right: 10px">
+![{{ project.name }} logo](/assets/images/ianlewis/{{ project.image_dark }}){: .dark}{:style="float:left; margin-right: 10px; max-width: 25%;"}
 {% endif %}
 
 {{ project.description }}
