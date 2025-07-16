@@ -14,7 +14,7 @@
 {%- assign icon_image_64x64 = site.plainwhite.favicon.default_64x64 -%}
 {%- assign icon_image_96x96 = site.plainwhite.favicon.default_96x96 -%}
 
-{% if today >= valentines_start and today <= valentines_end -%}
+{%- if today >= valentines_start and today <= valentines_end -%}
   {%- if site.plainwhite.favicon.valentines_day_16x16 -%}
     {%- assign icon_image_16x16 = site.plainwhite.favicon.valentines_day_16x16 -%}
   {%- endif -%}
@@ -27,7 +27,7 @@
   {%- if site.plainwhite.favicon.valentines_day_96x96 -%}
     {%- assign icon_image_96x96 = site.plainwhite.favicon.valentines_day_96x96 -%}
   {%- endif -%}
-{% elsif today >= xmas_start and today <= xmas_end %}
+{%- elsif today >= xmas_start and today <= xmas_end -%}
   {%- if site.plainwhite.favicon.xmas_16x16 -%}
     {%- assign icon_image_16x16 = site.plainwhite.favicon.xmas_16x16 -%}
   {%- endif -%}
@@ -42,30 +42,45 @@
   {%- endif -%}
 {%- endif -%}
 
-{%- if icon_image_16x16 %}
+{%- if icon_image_16x16 -%}
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/{{ icon_image_16x16 }}" sizes="16x16">
-{%- endif %}
-{%- if icon_image_32x32 %}
+{%- endif -%}
+{%- if icon_image_32x32 -%}
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/{{ icon_image_32x32 }}" sizes="32x32">
-{%- endif %}
-{%- if icon_image_64x64 %}
+{%- endif -%}
+{%- if icon_image_64x64 -%}
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/{{ icon_image_64x64 }}" sizes="64x64">
-{%- endif %}
-{%- if icon_image_96x96 %}
+{%- endif -%}
+{%- if icon_image_96x96 -%}
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/{{ icon_image_96x96 }}" sizes="96x96">
-{%- endif %}
+{%- endif -%}
 <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 {%- seo -%}
-{%- if page.feeds contains 'en' %}
-  <link rel="alternate" type="application/rss+xml" title="English Blog" href="/en/feed.xml">
-{%- endif %}
-{%- if page.feeds contains 'jp' %}
-  <link rel="alternate" type="application/rss+xml" title="日本語ブログ" href="/jp/feed.xml">
-{%- endif %}
-{%- if page.feeds contains 'til' %}
-  <link rel="alternate" type="application/rss+xml" title="Today I Learned" href="/til/feed.xml">
-{%- endif %}
-{%- if site.plainwhite.dark_mode %}
+{%- if page.feeds contains 'en' -%}
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="{{ site.title }} | {{ site.blogs.en.title }}"
+    href="/en/feed.xml"
+  >
+{%- endif -%}
+{%- if page.feeds contains 'jp' -%}
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="{{ site.title }} | {{ site.blogs.jp.title }}"
+    href="/jp/feed.xml"
+  >
+{%- endif -%}
+{%- if page.feeds contains 'til' -%}
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="{{ site.title }} | {{ site.blogs.til.title }}"
+    href="/til/feed.xml"
+  >
+{%- endif -%}
+{%- if site.plainwhite.dark_mode -%}
   <script type="text/javascript" src="{{ "/assets/js/darkmode.js" | relative_url }}"></script>
 {%- endif -%}
 {% comment %}
