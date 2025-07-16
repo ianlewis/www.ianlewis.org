@@ -256,8 +256,13 @@ main {
   }
 }
 
-main img.center:not(.dark, .light),
-body:not(.dark) main img.center:not(.dark) {
+main .post img {
+  max-width: 80%;
+  height: auto;
+}
+
+main img.align-center:not(.dark, .light),
+body:not(.dark) main img.align-center:not(.dark) {
   display: block;
   margin-left: auto;
   margin-right: auto;

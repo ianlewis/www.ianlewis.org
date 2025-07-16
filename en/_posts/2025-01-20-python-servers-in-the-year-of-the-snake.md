@@ -9,7 +9,7 @@ render_with_liquid: false
 image: /assets/images/2025-01-20-python-servers-in-the-year-of-the-snake/python_snake.png
 ---
 
-![An image of a Python curled around the Python programming language logo](/assets/images/2025-01-20-python-servers-in-the-year-of-the-snake/python_snake.png){: .center}{:style="width: 40%"}
+![An image of a Python curled around the Python programming language logo](/assets/images/2025-01-20-python-servers-in-the-year-of-the-snake/python_snake.png){: .align-center}
 
 This year is the [year of the snake in the Chinese
 Zodiac](<https://en.wikipedia.org/wiki/Snake_(zodiac)>). Every 12th year is a
@@ -29,8 +29,8 @@ In 2025 the Python community has largely moved on but in 2013 the latest
 version of Python was 3.3 and the migration from Python 2 to Python 3 was very
 much in full swing. Many library authors spent a good deal of effort to make
 their libraries usable on both 2 and 3 using
-[2to3](https://docs.python.org/3.12/library/2to3.html) or
-[six](https://pypi.org/project/six/). When Python 3.0 was released in 2008 it
+[`2to3`](https://docs.python.org/3.12/library/2to3.html) or
+[`six`](https://pypi.org/project/six/). When Python 3.0 was released in 2008 it
 was said that it would take a decade to migrate.
 
 In the end it took 12 painful years before the final version of Python 2

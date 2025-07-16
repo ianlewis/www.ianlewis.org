@@ -8,23 +8,44 @@ tags: tech containers kubernetes
 render_with_liquid: false
 ---
 
-> For those that want to dive right in, I have put up a tutorial and some sample manifests on github. Check it out at [https://github.com/IanLewis/kubernetes-bluegreen-deployment-tutorial](https://github.com/IanLewis/kubernetes-bluegreen-deployment-tutorial)
+> For those that want to dive right in, I have put up a tutorial and some sample
+> manifests on GitHub. Check it out at
+> [https://github.com/IanLewis/kubernetes-bluegreen-deployment-tutorial](https://github.com/IanLewis/kubernetes-bluegreen-deployment-tutorial)
 
-Kubernetes has a really awesome built-in feature called [Deployments](https://github.com/kubernetes/kubernetes/tree/master/pkg/controller/deployment). Deployments come with the ability to do rolling updates of containers when you update your application to a new version. Rolling updates are a great way to update applications because your app uses about the same amount of resources during an update as it does when not updating, all with minimal impact to performance and availability.
+Kubernetes has a really awesome built-in feature called
+[Deployments](https://github.com/kubernetes/kubernetes/tree/master/pkg/controller/deployment).
+Deployments come with the ability to do rolling updates of containers when you
+update your application to a new version. Rolling updates are a great way to
+update applications because your app uses about the same amount of resources
+during an update as it does when not updating, all with minimal impact to
+performance and availability.
 
-However, there are many legacy applications out there that don't work well with rolling updates. Some applications simply need to deploy a new version and cut over to it right away. For this, we need to perform a [blue/green deployment](https://martinfowler.com/bliki/BlueGreenDeployment.html). With blue/green deployments a new copy of the application (green) is deployed alongside the existing version (blue). Then the ingress/router to the app is updated to switch to the new version (green). You then need to wait for the old (blue) version to finish the requests sent to it, but for the most part traffic to the app changes to the new version all at once.
+However, there are many legacy applications out there that don't work well with
+rolling updates. Some applications simply need to deploy a new version and cut
+over to it right away. For this, we need to perform a [blue/green
+deployment](https://martinfowler.com/bliki/BlueGreenDeployment.html). With
+blue/green deployments a new copy of the application (green) is deployed
+alongside the existing version (blue). Then the ingress/router to the app is
+updated to switch to the new version (green). You then need to wait for the old
+(blue) version to finish the requests sent to it, but for the most part traffic
+to the app changes to the new version all at once.
 
-<img class="align-center" src="/assets/images/765/bg.gif" />
+![An animation depicting the transition from users accessing the "blue" deployment to accessing the "green" deployment.](/assets/images/765/bg.gif){: .align-center }
 
-Kubernetes doesn't have support for blue/green deployments built in. Currently the best way to do it is create a new deployment and then update the service for the application to point to the new deployment. Let's look at what that means.
+Kubernetes doesn't have support for blue/green deployments built-in. Currently
+the best way to do it is create a new deployment and then update the service for
+the application to point to the new deployment. Let's look at what that means.
 
 ## The Blue Deployment
 
-A Kubernetes deployment specifies a group of instances of an application. Behind the scenes it creates a replicaset which is responsible for keeping the specified number of instances up and running.
+A Kubernetes deployment specifies a group of instances of an application. Behind
+the scenes it creates a ReplicaSet which is responsible for keeping the
+specified number of instances up and running.
 
-<img class="align-center" src="/assets/images/765/deployments.png" width="80%" />
+![A diagram showing a Deployment named "MyApp" comprised of one ReplicaSet and three replica Pods.](/assets/images/765/deployments.png){: .align-center }
 
-We can create our "blue" deployment by saving the following yaml to a file `blue.yaml`.
+We can create our "blue" deployment by saving the following YAML to a file
+`blue.yaml`.
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -47,15 +68,23 @@ spec:
                         containerPort: 80
 ```
 
-You can then create the deployment using the kubectl command.
+You can then create the deployment using the `kubectl` command.
 
 ```shell
 kubectl apply -f blue.yaml
 ```
 
-Once we have a deployment we can provide a way to access the instances of the deployment by creating a [Service](https://kubernetes.io/docs/concepts/services-networking/service/). Services are decoupled from deployments so that means that you don't explicitly point a service at a deployment. What you do instead is specify a [label selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) which is used to list the pods that make up the service. When using deployments, this is typically set up so that it matches the pods for a deployment.
+Once we have a deployment we can provide a way to access the instances of the
+deployment by creating a
+[Service](https://kubernetes.io/docs/concepts/services-networking/service/).
+Services are decoupled from deployments so that means that you don't explicitly
+point a service at a deployment. What you do instead is specify a [label
+selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
+which is used to list the pods that make up the service. When using deployments,
+this is typically set up so that it matches the pods for a deployment.
 
-In this case we have two labels, `name=nginx` and `version=1.10`. We will set these as the label selector for the service below. Save this to `service.yaml`.
+In this case we have two labels, `name=nginx` and `version=1.10`. We will set
+these as the label selector for the service below. Save this to `service.yaml`.
 
 ```yaml
 apiVersion: v1
@@ -75,7 +104,8 @@ spec:
     type: LoadBalancer
 ```
 
-Creating the service will create a load balancer that is accessible outside the cluster.
+Creating the service will create a load balancer that is accessible outside the
+cluster.
 
 ```shell
 kubectl apply -f service.yaml
@@ -83,7 +113,7 @@ kubectl apply -f service.yaml
 
 Now we have something that looks like this.
 
-<img class="align-center" src="/assets/images/765/blue.png" />
+![A diagram showing users able to access all three "blue" deployment Pods.](/assets/images/765/blue.png){: .align-center }
 
 You can test that the service is accessible and get the version.
 
@@ -94,7 +124,8 @@ curl -s http://$EXTERNAL_IP/version | grep nginx
 
 ## Creating Green Deployment
 
-For the "green" deployment we will deploy a new deployment in parallel wit the "blue" deployment. If the following is in `green.yaml`...
+For the "green" deployment we will deploy a new deployment in parallel wit the
+"blue" deployment. If the following is in `green.yaml`...
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -125,11 +156,13 @@ kubectl apply -f green.yaml
 
 Now I have two deployments but the service is still pointing to the "blue" one.
 
-<img class="align-center" src="/assets/images/765/bg_progress.png" />
+![A diagram showing users able to access all three "blue" deployment Pods. Three new "green have also started but are not accessible yet.](/assets/images/765/bg_progress.png){: .align-center }
 
 ## Updating the App
 
-To cut over to the "green" deployment we will update the selector for the service. Edit the `service.yaml` and change the selector version to "1.11". That will make it so that it matches the pods on the "green" deployment.
+To cut over to the "green" deployment we will update the selector for the
+service. Edit the `service.yaml` and change the selector version to "1.11". That
+will make it so that it matches the pods on the "green" deployment.
 
 ```yaml
 apiVersion: v1
@@ -157,9 +190,10 @@ kubectl apply -f service.yaml
 
 Now we have something that looks like this.
 
-<img class="align-center" src="/assets/images/765/green.png" />
+![A diagram showing three "blue" deployment Pods and three "green" Pods. The three "blue" pods are still running but are inaccessible. The "green pods are accesible by the user.](/assets/images/765/green.png){: .align-center }
 
-Updating the selector for the service is applied immediately and so you should see that the new version of nginx is serving traffic.
+Updating the selector for the service is applied immediately and so you should
+see that the new version of Nginx is serving traffic.
 
 ```shell
 EXTERNAL_IP=$(kubectl get svc nginx -o jsonpath="{.status.loadBalancer.ingress[*].ip}")
@@ -168,9 +202,18 @@ curl -s http://$EXTERNAL_IP/version | grep nginx
 
 ## Automating
 
-You can automate your blue/green deployment a bit with some scripting. The following script takes the name of the service, the version you want to deploy, and the path to the green deployment's yaml file and runs through a full blue/green deployment using kubectl to output raw JSON from the API and parsing it with jq. It waits for the green deployment to become ready by inspecting the `status.conditions` on the deployment object before updating the service definition.
+You can automate your blue/green deployment a bit with some scripting. The
+following script takes the name of the service, the version you want to deploy,
+and the path to the green deployment's yaml file and runs through a full
+blue/green deployment using kubectl to output raw JSON from the API and parsing
+it with jq. It waits for the green deployment to become ready by inspecting the
+`status.conditions` on the deployment object before updating the service
+definition.
 
-The script makes some assumptions for simplicity's sake, such as expecting the deployment's name to be of the form <service>-<version> and that there are `name` and `version` labels that are used for the selector. `kubectl` is super flexible you can imagine writing something like this for your own needs.
+The script makes some assumptions for simplicity's sake, such as expecting the
+deployment's name to be of the form `<service>-<version>` and that there are
+`name` and `version` labels that are used for the selector. `kubectl` is super
+flexible you can imagine writing something like this for your own needs.
 
 ```bash
 #!/bin/bash
@@ -198,4 +241,7 @@ kubectl patch svc $SERVICE -p "{\"spec\":{\"selector\": {\"name\": \"${SERVICE}\
 echo "Done."
 ```
 
-Hopefully Kubernetes will support blue/green deployments natively but until then you can get by with some automation like this. To connect with folks who care about how applications are deployed on Kubernetes check out the `#sig-apps` channel in the [Kubernetes Slack](http://slack.kubernetes.io/).
+Hopefully Kubernetes will support blue/green deployments natively but until then
+you can get by with some automation like this. To connect with folks who care
+about how applications are deployed on Kubernetes check out the `#sig-apps`
+channel in the [Kubernetes Slack](http://slack.kubernetes.io/).

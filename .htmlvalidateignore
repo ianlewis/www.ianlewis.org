@@ -1,0 +1,4 @@
+# vim: ft=gitignore
+
+# Ignore assets files.
+_site/assets

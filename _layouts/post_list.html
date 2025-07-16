@@ -47,9 +47,12 @@ layout: default
         </div>
         <div class="post">
           {%- if post.blog == 'jp' -%}
+            {%- comment -%}
+              TODO(#315): Truncating text can cut off html entities
+            {%- endcomment -%}
             {{ post.content | strip_html | truncate: 150 }}
           {% else %}
-            {{ post.content | strip_html | truncate: 250 }}
+            {{ post.content | strip_html | truncatewords: 25 }}
           {% endif %}
         </div>
       </li>

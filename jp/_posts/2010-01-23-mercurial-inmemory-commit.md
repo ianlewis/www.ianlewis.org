@@ -9,21 +9,21 @@ render_with_liquid: false
 locale: ja
 ---
 
-<p>mercurial はpythonで書かれて、わかりやすいAPIを用意しているので、触りたいと思って、インメモリでコミットをしようとするとどうすればいいかというのを調べてみた。</p>
+MercurialはPythonで書かれて、わかりやすいAPIを用意しているので、触りたいと思って、インメモリでコミットをしようとするとどうすればいいかというのを調べてみた。
 
-<p>mercurialは、リポジトリオブジェクト(localrepository)があって、そのしたに、チェンジコンテキスト(changectx)がって、その下に、ファイルコンテキスト(filectx)があると言う仕組みになる。触るのが意外と簡単です。</p>
+Mercurialは、リポジトリオブジェクト(`localrepository`)があって、そのしたに、チェンジコンテキスト(`changectx`)がって、その下に、ファイルコンテキスト(`filectx`)があると言う仕組みになる。触るのが意外と簡単です。
 
-<p>普段のmercurialはディスクにあるファイルの処理をするんですけども、インメモリの処理をするために、memctxと、memfilectx のインメモリチェンジコンテキストとファイルコンテキストが用意してあります。</p>
+普段のMercurialはディスクにあるファイルの処理をするんですけども、インメモリの処理をするために、`memctx`と、`memfilectx` のインメモリチェンジコンテキストとファイルコンテキストが用意してあります。
 
-<p>勝手コミットをするとこうなります。</p>
+勝手コミットをするとこうなります。
 
-<script type="text/javascript" src="http://www.smipple.net/embed/KoInZvRSofE2qQIm"></script>
+> **Update:** ここに書いてあったコードはアクセスできなくなりました。
 
-<p>それで、hg update たたくと、新しいファイルができました。</p>
+それで、`hg update`たたくと、新しいファイルができました。
 
-<div class="highlight notranslate">
-<pre>$ hg update
-1 files updated, 0 files merged, 0 files removed, 0 files unresolved</pre>
-</div>
+```bash
+$ hg update
+1 files updated, 0 files merged, 0 files removed, 0 files unresolved
+```
 
-<p>ファイルの更新は同じく新しいファイルの内容を渡せば、勝手にdiffしてくれます。</p>
+ファイルの更新は同じく新しいファイルの内容を渡せば、勝手にdiffしてくれます。

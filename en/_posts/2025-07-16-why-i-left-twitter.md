@@ -16,8 +16,8 @@ fairly quickly after I started using it.
 
 <!-- textlint-disable spelling -->
 
-![A screenshot of my first tweet on February 6, 2008: "Somehow by watching google's super tuesday results I ended up with a twitter account. What a waste of time the internet is"](/assets/images/2025-07-16-why-i-left-twitter/first_tweet_light.png "February 6, 2008: Somehow by watching google's super tuesday results I ended up with a twitter account. What a waste of time the internet is."){: .light.center}
-![A screenshot of my first tweet on February 6, 2008: "Somehow by watching google's super tuesday results I ended up with a twitter account. What a waste of time the internet is"](/assets/images/2025-07-16-why-i-left-twitter/first_tweet_dark.png "February 6, 2008: Somehow by watching google's super tuesday results I ended up with a twitter account. What a waste of time the internet is."){: .dark.center}
+![A screenshot of my first tweet on February 6, 2008: "Somehow by watching google's super tuesday results I ended up with a twitter account. What a waste of time the internet is"](/assets/images/2025-07-16-why-i-left-twitter/first_tweet_light.png "February 6, 2008: Somehow by watching google's super tuesday results I ended up with a twitter account. What a waste of time the internet is."){: .light.align-center}
+![A screenshot of my first tweet on February 6, 2008: "Somehow by watching google's super tuesday results I ended up with a twitter account. What a waste of time the internet is"](/assets/images/2025-07-16-why-i-left-twitter/first_tweet_dark.png "February 6, 2008: Somehow by watching google's super tuesday results I ended up with a twitter account. What a waste of time the internet is."){: .dark.align-center}
 
 <!-- textlint-enable spelling -->
 
