@@ -4,27 +4,26 @@ layout: null
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
- <title>日本語ブログ</title>
- <description>{{ site.description | xml_escape }}</description>
- <link>{{ site.url }}/jp/</link>
- <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
- <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
- <ttl>1800</ttl>
+  <title>{{ site.title }} | {{ site.blogs.jp.title }}</title>
+  <description>{{ site.description | xml_escape }}</description>
+  <link>{{ site.url }}/jp/</link>
+  <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+  <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+  <ttl>1800</ttl>
 
- {% for post in site.categories.jp %}
- <item>
-  <title>{{ post.title | xml_escape }}</title>
-  {% if post.excerpt %}
-  <description>{{ post.excerpt | xml_escape }}</description>
-  {% else %}
-  <description>{{ post.content | xml_escape }}</description>
-  {% endif %}
-  <description>{{ post.description | xml_escape }}</description>
-  <link>{{ site.url }}{{ post.url }}</link>
-  <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
-  <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
- </item>
- {% endfor %}
-
+  {% for post in site.categories.jp %}
+  <item>
+    <title>{{ post.title | xml_escape }}</title>
+    {% if post.excerpt %}
+    <description>{{ post.excerpt | xml_escape }}</description>
+    {% else %}
+    <description>{{ post.content | xml_escape }}</description>
+    {% endif %}
+    <description>{{ post.description | xml_escape }}</description>
+    <link>{{ site.url }}{{ post.url }}</link>
+    <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+    <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+  </item>
+  {% endfor %}
 </channel>
 </rss>

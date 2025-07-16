@@ -32,6 +32,20 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate-v2
 
+blogs:
+  en:
+    title: English Blog
+    url: /en
+    lang: en
+  jp:
+    title: 日本語ブログ
+    url: /jp
+    lang: ja
+  til:
+    title: Today I Learned
+    url: /til
+    lang: en
+
 # Theme
 plainwhite:
   name: Ian Lewis
