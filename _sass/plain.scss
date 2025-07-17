@@ -26,6 +26,26 @@
 @use "ext/normalize";
 @use "syntax";
 
+// This is the main font pairing.
+$primary-font-family: "Montserrat", "Noto Sans JP", sans-serif;
+$secondary-font-family: "Noto Sans", "Noto Sans JP", sans-serif;
+
+@mixin primary-font-normal {
+  font-family: $primary-font-family;
+  font-weight: 400;
+}
+
+@mixin primary-font-title {
+  font-family: $primary-font-family;
+  font-weight: 800;
+}
+
+@mixin secondary-font-normal {
+  font-family: $secondary-font-family;
+  font-weight: 400;
+}
+
+// Link color is the color of links in posts.
 $link-color: #0a59b0;
 
 // small-mobile-width is the max width of small mobile devices. Small mobile
@@ -52,12 +72,22 @@ $left-width: 280px;
 }
 
 body {
-  font-family: Raleway, sans-serif;
+  @include primary-font-normal;
+
   font-size: 16px;
   line-height: 1.2em;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include primary-font-title;
 }
 
 img,
@@ -103,8 +133,9 @@ h2 {
 }
 
 .post {
-  font-family: Merriweather, sans-serif;
-  font-weight: 300;
+  @include secondary-font-normal;
+
+  // font-weight: 300;
   color: #222;
   line-height: 1.9em;
 
@@ -121,15 +152,6 @@ h2 {
       border-bottom: 0.5px solid $link-color;
     }
   }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: Raleway, sans-serif;
-  }
 }
 
 .navigation {
@@ -144,8 +166,9 @@ h2 {
      * specificity than `.post a` */
     /* stylelint-disable-next-line no-descending-specificity */
     a {
+      @include secondary-font-normal;
+
       display: block;
-      font-family: Merriweather, serif;
       text-align: center;
       padding: 1rem 0;
       text-decoration: none;
@@ -230,6 +253,8 @@ main {
     }
 
     .tagline {
+      @include primary-font-title;
+
       text-align: center;
       font-size: 22px;
       margin-top: 0;
@@ -270,6 +295,7 @@ body:not(.dark) main img.align-center:not(.dark) {
 
 #title {
   a {
+    font-size: 1.4em;
     text-decoration: none;
   }
 }
@@ -300,6 +326,8 @@ body:not(.dark) main img.align-center:not(.dark) {
 }
 
 .post-date {
+  @include primary-font-title;
+
   margin-right: 10px;
   color: #555;
   min-width: 150px;
@@ -327,7 +355,6 @@ body:not(.dark) main img.align-center:not(.dark) {
 
 .post-title {
   line-height: 1.2em;
-  font-size: 28px;
   margin-bottom: 10px;
 }
 
@@ -371,8 +398,9 @@ table {
   }
 
   th {
+    @include primary-font-title;
+
     background-color: #eee;
-    font-family: Raleway, sans-serif;
   }
 }
 

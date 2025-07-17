@@ -8,10 +8,10 @@
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
  * subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
@@ -21,6 +21,9 @@
  */
 
 @use "ext/solarized-light";
+
+// monospace-font is used for code blocks and inline code.
+$monospace-font: "Noto Sans Mono", "M PLUS 1 Code", monospace;
 
 .highlight {
   background-color: #f4f4f4;
@@ -32,7 +35,7 @@ div.highlight {
 
 pre.highlight,
 code {
-  font-family: Consolas, Menlo, monospace;
+  font-family: $monospace-font;
   line-height: 1.4em;
   tab-size: 4;
 }
