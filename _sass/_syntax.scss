@@ -21,9 +21,7 @@
  */
 
 @use "ext/solarized-light";
-
-// monospace-font is used for code blocks and inline code.
-$monospace-font: "Noto Sans Mono", "M PLUS 1 Code", monospace;
+@use "vars";
 
 .highlight {
   background-color: #f4f4f4;
@@ -35,7 +33,7 @@ div.highlight {
 
 pre.highlight,
 code {
-  font-family: $monospace-font;
+  font-family: vars.$monospace-font;
   line-height: 1.4em;
   tab-size: 4;
 }
