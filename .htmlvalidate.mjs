@@ -29,7 +29,6 @@ export default defineConfig({
 
     // TODO(#315): Enable these rules once the issues are resolved.
     "attribute-boolean-style": "off",
-    deprecated: "off",
     "element-permitted-content": "off",
     "element-permitted-parent": "off",
     "element-required-attributes": "off",
