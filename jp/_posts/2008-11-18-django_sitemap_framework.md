@@ -9,20 +9,67 @@ render_with_liquid: false
 locale: ja
 ---
 
-<p><a href="http://www.djangoproject.com/" title="Django">Django</a> <a href="http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/">sitemap framework</a>を使うのが簡単過ぎる。下記のようにサイトマップクラスを作って、urls.pyに登録するだけ。サイトマップに載るURLを取るのに、サイトマップフレームワークが自分が作ったクラスのitems()を呼び出して、アイテムのget_absolute_url()を順番に呼び出す感じ。</p>
+[Django sitemap framework](http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/)を使うのが簡単過ぎる。下記のようにサイトマップクラスを作って、`urls.py`に登録するだけ。サイトマップに載るURLを取るのに、サイトマップフレームワークが自分が作ったクラスの`items()`を呼び出して、アイテムの`get_absolute_url()`を順番に呼び出す感じ。
 
-<h4>models.py</h4>
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> django.<span style="color: black;">db</span> <span style="color: #ff7700;font-weight:bold;">import</span> models<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>...<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><span style="color: #ff7700;font-weight:bold;">class</span> Entry<span style="color: black;">&#40;</span>models.<span style="color: black;">Model</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>...<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td>&nbsp; &nbsp; @permalink<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td>&nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">def</span> get_absolute_url<span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> ...<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>...</td></tr></table></div>
+#### `models.py`
 
-<h4>sitemap.py</h4>
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> django.<span style="color: black;">contrib</span>.<span style="color: black;">sitemaps</span> <span style="color: #ff7700;font-weight:bold;">import</span> Sitemap<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> mysite.<span style="color: black;">blog</span>.<span style="color: black;">models</span> <span style="color: #ff7700;font-weight:bold;">import</span> Entry<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> django.<span style="color: black;">contrib</span>.<span style="color: black;">sitemaps</span> <span style="color: #ff7700;font-weight:bold;">import</span> Sitemap<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> mysite.<span style="color: black;">blog</span>.<span style="color: black;">models</span> <span style="color: #ff7700;font-weight:bold;">import</span> Entry<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td><span style="color: #ff7700;font-weight:bold;">class</span> BlogSitemap<span style="color: black;">&#40;</span>Sitemap<span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>&nbsp; &nbsp; priority = <span style="color: #ff4500;">0.5</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc9"></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc0"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">def</span> items<span style="color: black;">&#40;</span><span style="color: #008000;">self</span><span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> Entry.<span style="color: black;">objects</span>.<span style="color: #008000;">filter</span><span style="color: black;">&#40;</span>is_draft=<span style="color: #008000;">False</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"><div class="amc1"></div></div></td><td><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">def</span> lastmod<span style="color: black;">&#40;</span><span style="color: #008000;">self</span>, obj<span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> obj.<span style="color: black;">pub_date</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"><div class="amc1"></div></div></td><td><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; <span style="color: #808080; font-style: italic;"># changefreq can be callable too</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">def</span> changefreq<span style="color: black;">&#40;</span><span style="color: #008000;">self</span>, obj<span style="color: black;">&#41;</span>:<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"><div class="amc1"></div></div></td><td>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #483d8b;">&quot;daily&quot;</span> <span style="color: #ff7700;font-weight:bold;">if</span> obj.<span style="color: black;">comments_open</span><span style="color: black;">&#40;</span><span style="color: black;">&#41;</span> <span style="color: #ff7700;font-weight:bold;">else</span> <span style="color: #483d8b;">&quot;never&quot;</span></td></tr></table></div>
+```python
+from django.db import models
+...
+class Entry(models.Model):
+...
+    @permalink
+    def get_absolute_url(self):
+        return ...
+...
+```
 
-<h4>urls.py</h4>
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> mysite.<span style="color: black;">blog</span>.<span style="color: black;">sitemap</span> <span style="color: #ff7700;font-weight:bold;">import</span> BlogSitemap<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>...<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><span style="color: black;">sitemaps</span> = <span style="color: black;">&#123;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; &nbsp; <span style="color: #483d8b;">&quot;blog&quot;</span>: BlogSitemap<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td><span style="color: black;">&#125;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td><span style="color: black;">&#40;</span>r<span style="color: #483d8b;">'^sitemap.xml$'</span>, <span style="color: #483d8b;">'django.contrib.sitemaps.views.sitemap'</span>, <span style="color: black;">&#123;</span><span style="color: #483d8b;">'sitemaps'</span>: sitemaps<span style="color: black;">&#125;</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td>...</td></tr></table></div>
-<p><a href="http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/#creating-a-sitemap-index">サイトマップインデクス</a>も作れる。<a href="http://www.google.com/" title="Google">Google</a>のURL 50,000件の制限があるため、サイトマップをPagenatorで自動的にURLを振り分けてくれる。urls.pyをこう変えるだけ</p>
+#### `sitemap.py`
 
-<div class="codeblock amc_python amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td><span style="color: #ff7700;font-weight:bold;">from</span> mysite.<span style="color: black;">blog</span>.<span style="color: black;">sitemap</span> <span style="color: #ff7700;font-weight:bold;">import</span> BlogSitemap<br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc2"></div></td><td>...<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc3"></div></td><td><span style="color: black;">sitemaps</span> = <span style="color: black;">&#123;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc4"></div></td><td>&nbsp; &nbsp; <span style="color: #483d8b;">&quot;blog&quot;</span>: BlogSitemap<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc5"></div></td><td><span style="color: black;">&#125;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc6"></div></td><td><span style="color: black;">&#40;</span>r<span style="color: #483d8b;">'^sitemap.xml$'</span>, <span style="color: #483d8b;">'django.contrib.sitemaps.views.index'</span>, <span style="color: black;">&#123;</span><span style="color: #483d8b;">'sitemaps'</span>: sitemaps<span style="color: black;">&#125;</span><span style="color: black;">&#41;</span>,<br /></td></tr><tr class="amc_code_odd"><td class="amc_line"><div class="amc7"></div></td><td><span style="color: black;">&#40;</span>r<span style="color: #483d8b;">'^sitemap-(?P&amp;amp;amp;lt;section&amp;amp;amp;gt;.+)<span style="color: #000099; font-weight: bold;">\.</span>xml$'</span>, <span style="color: #483d8b;">'django.contrib.sitemaps.views.sitemap'</span>, <span style="color: black;">&#123;</span><span style="color: #483d8b;">'sitemaps'</span>:sitemaps<span style="color: black;">&#125;</span><span style="color: black;">&#41;</span><br /></td></tr><tr class="amc_code_even"><td class="amc_line"><div class="amc8"></div></td><td>...</td></tr></table></div>
-<p>素敵だな。</p>
-<p>後、サイトのコンテンツが変更された時、<a href="http://www.google.com/" title="Google">Google</a>が新しいコンテンツをインデクスするために ping_googleというmanage.pyコマンドが用意してある。</p>
-<span class="codespan">python manage.py ping_google</span>
-<p>でも、<a href="http://d.hatena.ne.jp/mstn/20080425">他の検索エンジンが同じようなサービスがある</a>のに、ping_googleしかないので、上記のようなコマンドをいくつも作っていた。</p>
+```python
+from django.contrib.sitemaps import Sitemap
+from mysite.blog.models import Entry
+
+from django.contrib.sitemaps import Sitemap
+from mysite.blog.models import Entry
+
+class BlogSitemap(Sitemap):
+    priority = 0.5
+
+    def items(self):
+        return Entry.objects.filter(is_draft=False)
+
+    def lastmod(self, obj):
+        return obj.pub_date
+
+    # changefreq can be callable too
+    def changefreq(self, obj):
+        return "daily" if obj.comments_open() else "never"
+```
+
+#### `urls.py`
+
+```python
+from mysite.blog.sitemap import BlogSitemap
+...
+sitemaps = {
+    "blog": BlogSitemap
+}
+(r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps})
+...
+```
+
+[サイトマップインデクス](http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/#creating-a-sitemap-index)も作れる。GoogleのURL 50,000件の制限があるため、サイトマップを`Paginator`で自動的にURLを振り分けてくれる。`urls.py`をこう変えるだけ
+
+```python
+from mysite.blog.sitemap import BlogSitemap
+...
+sitemaps = {
+    "blog": BlogSitemap
+}
+(r'^sitemap.xml$', 'django.contrib.sitemaps.views.index', {'sitemaps': sitemaps}),
+(r'^sitemap-(?P<section>.+)\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps':sitemaps})
+...
+```
+
+素敵だな。後、サイトのコンテンツが変更された時、Googleが新しいコンテンツをインデクスするために `ping_google`という`manage.py`コマンドが用意してある。`python manage.py ping_google`でも、[他の検索エンジンが同じようなサービスがある](http://d.hatena.ne.jp/mstn/20080425)のに、`ping_google`しかないので、上記のようなコマンドをいくつも作っていた。
