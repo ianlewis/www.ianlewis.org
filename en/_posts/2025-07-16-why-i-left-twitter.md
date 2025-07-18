@@ -94,9 +94,10 @@ make it grow.
 ## Don’t be a stranger
 
 I’m on Bluesky at [`ianlewis.org`](https://bsky.app/profile/ianlewis.org) and on
-Mastodon at [`ianlewis@hachyderm.io`](https://hachyderm.io/@ianlewis). If you are
-one of those platforms please connect with me there. If not, I hope you’ll give
-either of them (or both!) a try.
+Mastodon at [`ianlewis@hachyderm.io`](https://hachyderm.io/@ianlewis). If you
+are one of those platforms please connect with me there. I hope you’ll give
+either of them (or both!) a try. If not, you can still reach me at
+[`ian@ianlewis.org`](mailto:ian@ianlewis.org).
 
 Though I left Twitter, it was a long time coming. I know some folks are still on
 Twitter and don’t have a presence on other platforms yet. I do miss interacting
