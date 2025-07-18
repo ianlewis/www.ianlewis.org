@@ -214,7 +214,7 @@ main {
     }
 
     .tagline {
-      @include vars.primary-font-extra-extra-bold;
+      @include vars.primary-font-black;
 
       text-align: center;
       font-size: 22px;
