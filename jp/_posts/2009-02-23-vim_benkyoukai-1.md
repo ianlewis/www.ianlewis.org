@@ -9,71 +9,45 @@ render_with_liquid: false
 locale: ja
 ---
 
-<p>昨日、VIM勉強会に参加してきた。いろな話があったのだが、screenの使い方が大きな話題になりました。僕はsshや、コンソールでvimをほぼ使ってないので、screenに得意じゃないけど、リモートサーバに接続するときによく使う。以下は<a href="http://twitter.com/shin_no_suke">id:shin_no_suke</a>のプレゼンの資料になります。</p>
+昨日、VIM勉強会に参加してきた。いろな話があったのだが、screenの使い方が大きな話題になりました。僕はsshや、コンソールでvimをほぼ使ってないので、screenに得意じゃないけど、リモートサーバに接続するときによく使う。以下は[id:shin_no_suke](http://twitter.com/shin_no_suke)のプレゼンの資料になります。
 
-<div style="width:425px;text-align:left" id="__ss_1056088"><a style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="http://www.slideshare.net/bpstudy/gnu-screen-vim-study-1?type=powerpoint" title="GNU screen (vim study #1)">GNU screen (vim study #1)</a><object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slideshare.net/swf/ssplayer2.swf?doc=vim_study01_screen-090222022852-phpapp02&amp;stripped_title=gnu-screen-vim-study-1" /><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><embed src="http://static.slideshare.net/swf/ssplayer2.swf?doc=vim_study01_screen-090222022852-phpapp02&amp;stripped_title=gnu-screen-vim-study-1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View more <a style="text-decoration:underline;" href="http://www.slideshare.net/">presentations</a> from <a style="text-decoration:underline;" href="http://www.slideshare.net/bpstudy">bpstudy</a>. (tags: <a style="text-decoration:underline;" href="http://slideshare.net/tag/gnu">gnu</a> <a style="text-decoration:underline;" href="http://slideshare.net/tag/screen">screen</a>)</div></div>
+- [GNU screen](https://www.slideshare.net/slideshow/gnu-screen-vim-study-1/1056088)
+- [vim入門](https://www.slideshare.net/slideshow/vim-vim-study-1/1056087)
 
-<div style="width:425px;text-align:left" id="__ss_1056087"><a style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="http://www.slideshare.net/bpstudy/vim-vim-study-1?type=presentation" title="vim入門 (vim study #1)">vim入門 (vim study #1)</a><object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slideshare.net/swf/ssplayer2.swf?doc=vim_study01-090222022859-phpapp02&amp;stripped_title=vim-vim-study-1" /><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><embed src="http://static.slideshare.net/swf/ssplayer2.swf?doc=vim_study01-090222022859-phpapp02&amp;stripped_title=vim-vim-study-1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View more <a style="text-decoration:underline;" href="http://www.slideshare.net/">presentations</a> from <a style="text-decoration:underline;" href="http://www.slideshare.net/bpstudy">bpstudy</a>. (tags: <a style="text-decoration:underline;" href="http://slideshare.net/tag/vim">vim</a> <a style="text-decoration:underline;" href="http://slideshare.net/tag/使い方">使い方</a>)</div></div>
+僕は vim に初心者なので、結構Vimを充実してないと思いますが、以下の便利な技法を手に入れました。
 
-<p>僕は vim に初心者なので、結構Vimを充実してないと思いますが、以下の便利な技法を手に入れました。</p>
+たとえ、以下のテキストがあってVisual Block Modeで２行目から４行目までの`123`をハイライトするとして
 
-<ul>
-<li><em>Visual Block Modeで挿入</em><br />
-I&lt;text&gt;&lt;ESC&gt;<br />
-ブロックの前に挿入
-<table style="border:1px solid black;">
-<tbody>
-<tr>
-<td style="padding:10px;">
-01234<br />
-0<font style="background-color: rgb(255, 229, 136);">123</font>4<br />
-0<font style="background-color: rgb(255, 229, 136);">123</font>4<br />
-0<font style="background-color: rgb(255, 229, 136);">123</font>4<br />
-01234<br />
-</td>
-<td>
-=>
-</td>
-<td style="padding:10px;">
-01234<br />
-0&lt;text&gt;1234<br />
-0&lt;text&gt;1234<br />
-0&lt;text&gt;1234<br />
-01234<br />
-</td>
-</tr>
-</tbody>
-</table>
-</li>
+```text
+01234
+01234
+01234
+01234
+01234
+```
 
-<li><em>Visual Block Modeで</em><br />
-A&lt;/text&gt;&lt;ESC&gt;<br />
-ブロックの後に追加
-<table style="border:1px solid black;">
-<tbody>
-<tr>
-<td style="padding:10px;">
-01234<br />
-0<font style="background-color: rgb(255, 229, 136);">&lt;text&gt;123</font>4<br />
-0<font style="background-color: rgb(255, 229, 136);">&lt;text&gt;123</font>4<br />
-0<font style="background-color: rgb(255, 229, 136);">&lt;text&gt;123</font>4<br />
-01234<br />
-</td>
-<td>
-=>
-</td>
-<td style="padding:10px;">
-01234<br />
-0&lt;text&gt;123&lt;/text&gt;4<br />
-0&lt;text&gt;123&lt;/text&gt;4<br />
-0&lt;text&gt;123&lt;/text&gt;4<br />
-01234<br />
-</td>
-</tr>
-</tbody>
-</table>
-</li>
+Visual Block Modeで挿入 `I<text><ESC>` ブロックの前に挿入
 
-<li>qbuf.vimを使い、.vimrcで設定すると、&quot;;;&quot;だけでバッファーリストを開ける<br />
-<div class="codeblock amc_vim amc_short"><table><tr class="amc_code_odd"><td class="amc_line"><div class="amc1"></div></td><td>let g:qb_hotkey = &quot;;;&quot;</td></tr></table></div>
-</li></ul>
+```text
+01234
+0<text>1234
+0<text>1234
+0<text>1234
+01234
+```
+
+Visual Block Modeで `A</text><ESC>` ブロックの後に追加
+
+```text
+01234
+0<text>123</text>4
+0<text>123</text>4
+0<text>123</text>4
+01234
+```
+
+[`qbuf.vim`](https://www.vim.org/scripts/script.php?script_id=1910)を使い、`.vimrc`で設定すると、`;;`だけでバッファーリストを開ける
+
+```vim
+let g:qb_hotkey = ";;"
+```
