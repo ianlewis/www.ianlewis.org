@@ -20,7 +20,9 @@
  * ONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+@use "plain";
 @use "sass:meta";
+@use "vars";
 
 .dark {
   background-color: #171717;
@@ -28,10 +30,7 @@
 
 .dark,
 .dark * {
-  $dark-text-color: #f6f6f6;
-  $dark-link-color: #4da3ff;
-
-  color: $dark-text-color;
+  color: vars.$dark-text-color;
   border-color: #e6e6e6;
 
   img.light {
@@ -53,11 +52,11 @@
   }
 
   .social [class^="icon-"] {
-    color: $dark-text-color;
+    color: vars.$dark-text-color;
   }
 
   #posts-label {
-    color: $dark-text-color;
+    color: vars.$dark-text-color;
     border-bottom: 1px solid #272727;
   }
 
@@ -74,7 +73,7 @@
 
   pre.highlight-dark,
   code {
-    font-family: Consolas, Menlo, monospace;
+    font-family: vars.$monospace-font;
     line-height: 1.4em;
     tab-size: 4;
     color: seagreen;
@@ -88,7 +87,7 @@
   }
 
   a {
-    color: $dark-link-color;
+    color: vars.$dark-link-color;
   }
 
   .posts-labelgroup {
@@ -115,7 +114,7 @@
     color: #fff;
 
     &:hover {
-      color: $dark-link-color;
+      color: vars.$dark-link-color;
     }
   }
 
@@ -135,7 +134,7 @@
     }
 
     input {
-      color: $dark-text-color;
+      color: vars.$dark-text-color;
     }
 
     i {
