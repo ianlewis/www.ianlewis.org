@@ -25,7 +25,9 @@ c4e998ec4d5d        gcr.io/google_containers/pause-amd64:3.0    "/pause" ...
 
 What are these "pause" containers and why are there so many of them? What's going on?
 
-<a href="https://twitter.com/IanMLewis/status/913554746115424256" target="_blank"><img class="align-center" src="/assets/images/767/pause_pod.png" alt="Sorry to be pedantic but it's not a pod. It's a container." title="Sorry to be pedantic but it's not a pod. It's a container." /></a>
+![Screenshot of a retweet by Ian Lewis. The original tweet says "Enter the Pause
+Pod". Ian responds by saying "Sorry to be pedantic but it's not a pod. It's a
+container."](/assets/images/767/pause_pod.png){: .align-center}
 
 In order to answer these questions, we need to take a step back and look at how pods in Kubernetes are implemented, particularly with the Docker/containerd runtime. If you haven't already done so, please read my [previous post](https://www.ianlewis.org/en/what-are-kubernetes-pods-anyway) on Kubernetes pods.
 

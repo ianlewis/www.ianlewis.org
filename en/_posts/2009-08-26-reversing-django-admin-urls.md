@@ -10,7 +10,7 @@ render_with_liquid: false
 
 I recently used the new feature in Django 1.1 for [reversing django
 admin
-urls](http://docs.djangoproject.com/en/dev/ref/contrib/admin/#reversing-admin-urls)
+URLs](http://docs.djangoproject.com/en/dev/ref/contrib/admin/#reversing-admin-urls)
 and [specifying custom admin
 views](http://docs.djangoproject.com/en/dev/ref/contrib/admin/#adding-views-to-admin-sites)
 in my project
