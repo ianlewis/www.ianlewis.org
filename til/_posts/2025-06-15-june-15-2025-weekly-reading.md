@@ -86,7 +86,6 @@ render_with_liquid: false
     wish I was this self-aware when I was 25. I may not be now.
 
     Some of the lessons I wish I was better at:
-
     - _When trying to fix your health, start with fixing your sleep_: I think I
       need a lot more sleep than is really practical. I've been working on this
       for a while but it remains elusive.

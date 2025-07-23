@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+name: Deploy to Netlify
+
 on:
   workflow_dispatch:
   schedule:
@@ -21,9 +23,11 @@ permissions: {}
 
 jobs:
   netlify-deploy:
+    name: Deploy to Netlify
     runs-on: ubuntu-latest
     steps:
-      - env:
+      - name: Request deployment
+        env:
           NETLIFY_BUILD_HOOK_URL: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
         run: |
           curl -X POST -d '{}' "${NETLIFY_BUILD_HOOK_URL}"
