@@ -15,7 +15,6 @@
 uname_s := $(shell uname -s)
 uname_m := $(shell uname -m)
 arch.x86_64 := amd64
-arch.aarch64 := arm64
 arch = $(arch.$(uname_m))
 kernel.Linux := linux
 kernel = $(kernel.$(uname_s))
@@ -27,8 +26,7 @@ REPO_NAME = $(shell basename "$(REPO_ROOT)")
 
 AQUA_VERSION ?= 2.53.6
 AQUA_REPO ?= github.com/aquaproj/aqua
-AQUA_CHECKSUM.Linux.x86_64 = 17db2da427bde293b1942e3220675ef796a67f1207daf89e6e80fea8d2bb8c22
-AQUA_CHECKSUM.Linux.aarch64 = b3f0d573e762ce9d104c671b8224506c4c4a32eedd1e6d7ae1e1e39983cdb6a8
+AQUA_CHECKSUM.Linux.x86_64 = 3e191bb2939ae55fffe770bfa54a6dfc25a3a05cce869670a03c4b0c53b62def
 AQUA_CHECKSUM ?= $(AQUA_CHECKSUM.$(uname_s).$(uname_m))
 AQUA_URL = https://$(AQUA_REPO)/releases/download/v$(AQUA_VERSION)/aqua_$(kernel)_$(arch).tar.gz
 AQUA_ROOT_DIR = $(REPO_ROOT)/.aqua
