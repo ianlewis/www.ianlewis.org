@@ -71,7 +71,7 @@ render_with_liquid: false
     importance of security. Security teams can provide resources and tools to
     engineering teams to help build that trust.
 
-    Security indicators can to help teams improve their security posture and
+    Security indicators can help teams improve their security posture and
     help the security team prioritize where to allocate resources.
 
     I'm a bit upset that Rami didn't include anything on Open Source development
