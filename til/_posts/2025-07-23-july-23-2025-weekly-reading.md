@@ -15,7 +15,7 @@ render_with_liquid: false
     I felt very weird watching this talk. It suggests a lot of things that are
     very unproductive like storing prompts in source control instead of code. Sean
     says that code is a lossy projection of the specification, but I'd suggest
-    it's actually the other way around. The specification is necessarily omits
+    it's actually the other way around. The specification necessarily omits
     details that are important, but not relevant at the specification level. If
     you did include that granularity, then prompts would be no different than
     code, and AI would be a terrible way to turn it into an executable format.
