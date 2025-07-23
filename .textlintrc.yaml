@@ -100,6 +100,7 @@ rules:
       - "Orosz"
       - "Osorio"
       - "Petgrave"
+      - "Rami"
       - "Reiko"
       - "Rokicki"
       - "Raykar"
@@ -115,6 +116,7 @@ rules:
       - "Shimizukawa"
       - "Shinya"
       - "Slatkin"
+      - "Sota"
       - "Stapelberg"
       - "Suenaga"
       - "Takanori"
@@ -360,10 +362,9 @@ rules:
       - "NSStudy"
       - "/[Pp]y[Ss]pa/" # Python Onsen
 
-      # Tech Terminology
+      # Tech Terminology/Jargon
       ##########################################################################
 
-      # Tech Terminology
       - "Autoscaling"
       - "Connectability" # Ability to connect
       - "Dockerfile"
@@ -372,8 +373,9 @@ rules:
       - "ReplicaSet" # Kubernetes ReplicaSet
       - "TrueType"
       - "Vagrantfile"
-      - "iGoogle" # (old) Google personalized portal services
       - "dotfiles"
+      - "iGoogle" # (old) Google personalized portal services
+      - "nosplit" # Go compiler directive
       - "/[Aa]ddon/"
       - "/[Aa]cyclic/" # not displaying or forming part of a cycle.
       - "/[Aa]utoscaler/"
@@ -388,6 +390,7 @@ rules:
       - "/[Gg]oroutine/"
       - "/[Hh]ackathon/"
       - "/[Ll]iveness/"
+      - "/[Ll]ossy/" # process that loses information (e.g. compression)
       - "/[Mm]ixin/"
       - "/[Nn]amespace/"
       - "/[Pp]aywall/"
@@ -395,6 +398,7 @@ rules:
       - "/[Ii]mpactful/" # impact + -ful
       - "/[Ii]ntegrations/" # irregular plural-form
       - "/[Rr]evset/" # Revision Set (Mercurial)
+      - "/[Ss]corecarding/" # Scorecarding (process of evaluating)
       - "/[Ss]erverless/"
       - "/[Ss]uperintelligence/" # super + intelligence (stupid AI terms)
       - "/[Ss]tylesheet/"
@@ -494,14 +498,16 @@ rules:
       # Other
       ##########################################################################
 
+      # https://www.merriam-webster.com/dictionary/amirite
+      - "/[Aa]mirite/" # Slang for "am I right?"
       # https://dictionary.cambridge.org/dictionary/english/dumbing-down
-      - "dumbed-down"
+      - "/[Dd]umbed-down/"
       - "Houthi" # Houthi movement
       - "/[Mm]okumoku-kai/" # Mokumoku-kai, a Japanese term for a gathering
       - "/[Rr]yokan/" # Ryokan, a type of traditional Japanese inn
 
       - "Yeeaaah" # Exaggerated "Yeah" often used in informal contexts
-      - "willy-nilly" # Meaning "in a disorganized manner"
+      - "/[Ww]illy-nilly/" # Meaning "in a disorganized manner"
 
       - "CHANGELOG"
       - "CODEOWNER"
