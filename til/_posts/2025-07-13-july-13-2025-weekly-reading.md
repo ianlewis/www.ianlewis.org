@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TIL: July 13, 2025 - Weekly Reading, MCP Server security, Bespoke Agents"
+title: "TIL: July 13, 2025 - Weekly Reading: MCP Server security, Bespoke Agents"
 date: "2025-07-13 00:00:00 +0900"
 blog: til
 tags: ai weekly-reading
