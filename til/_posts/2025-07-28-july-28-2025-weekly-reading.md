@@ -19,7 +19,7 @@ render_with_liquid: false
     halting issues, and an inability to block without tying up the entire
     control loop.
 
-    I think the issues pointed out here is a some of the reasons why I really
+    I think the issues pointed out here are some of the reasons why I really
     like Go's concurrency model. It has a lot of the same issues with halting
     and backpressure, but does it in an imperative way that is much easier to
     reason about.
