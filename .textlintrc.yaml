@@ -580,7 +580,7 @@ rules:
       - "Arg"
       - "aru"
       - "ascii"
-      - "async"
+      - "/[Aa]sync/"
       - "asyncio"
       - "atproto"
       - "atproto's"
