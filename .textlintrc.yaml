@@ -37,6 +37,7 @@ rules:
       - "Bleecher"
       - "Branchaud"
       - "Collison"
+      - "Colton"
       - "Cosentino"
       - "Cramer"
       - "Crawshaw"
@@ -76,6 +77,7 @@ rules:
       - "Lacasse"
       - "Lorin"
       - "Lifland"
+      - "Litt"
       - "LonelyBob"
       - "Makabi"
       - "McKayla"
@@ -133,6 +135,7 @@ rules:
       - "Wilber"
       - "Willison"
       - "Vella"
+      - "Voege"
       - "Yamaguchi"
       - "Yasushi"
       - "Yongfook"
@@ -235,6 +238,7 @@ rules:
       - "Simeji" # Japanese input method editor (bought by Baidu)
       - "Smipple" # Code snippet sharing service (defunct)
       - "SoftBank"
+      - "StockApp"
       - "Synadia"
       - "Tailscale"
       - "TeleMessage"
@@ -413,6 +417,7 @@ rules:
       # Acronyms
       ##########################################################################
 
+      - "ACAS" # Airborne Collision Avoidance System
       - "ACL" # Access Control List
       - "ACPI" # Advanced Configuration and Power Interface
       - "APAC" # Asia-Pacific
@@ -446,6 +451,7 @@ rules:
       - "Gb" # Gigabyte
       - "HDFS" # Hadoop Distributed File System
       - "HTTPS" # Hypertext Transfer Protocol Secure
+      - "HUD" # Heads-Up Display
       - "IP" # Internet Protocol
       - "IPC" # Inter-Process Communication
       - "JSON" # JavaScript Object Notation
@@ -473,6 +479,7 @@ rules:
       - "SLSA" # Supply Chain Levels for Software Artifacts
       - "SMTP" # Simple Mail Transfer Protocol
       - "SSL" # Secure Sockets Layer
+      - "TCAS" # Traffic Collision Avoidance System
       - "TCP" # Transmission Control Protocol
       - "TLS" # Transport Layer Security
       - "TTY" # Teletypewriter
@@ -508,6 +515,8 @@ rules:
 
       - "Yeeaaah" # Exaggerated "Yeah" often used in informal contexts
       - "/[Ww]illy-nilly/" # Meaning "in a disorganized manner"
+
+      - "unfixable" # Not able to be fixed or repaired
 
       - "CHANGELOG"
       - "CODEOWNER"
