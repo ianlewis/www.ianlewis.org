@@ -520,8 +520,6 @@ rules:
 
       - "CHANGELOG"
       - "CODEOWNER"
-      - "CHANGELOG"
-      - "CODEOWNER"
       - "CLA"
       - "CLI"
       - "CVSS"
