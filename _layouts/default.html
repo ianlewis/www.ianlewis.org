@@ -1,3 +1,6 @@
+{%- comment -%}
+  vim: ft=liquid
+{%- endcomment -%}
 <!doctype html>
 <html lang="{% if page.locale %}{{ page.locale }}{% else %}{{ site.plainwhite.html_lang }}{% endif %}">
   <head>
@@ -215,6 +218,3 @@
     {% endif %}
   </body>
 </html>
-{% comment %}
-  vim: ft=liquid
-{% endcomment %}
