@@ -13,6 +13,8 @@ feeds: [en, jp, til]
 
 {% include_relative third_party/ianlewis/ianlewis/README.md %}
 
+<!-- markdownlint-enable MD041 -->
+
 ---
 
 My public key can be downloaded at
