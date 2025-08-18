@@ -23,7 +23,7 @@ gem "http_parser.rb", "= 0.6.0", :platforms => [:jruby]
 # Lock `ffi` gem to `< v1.17.0` on because it requires a higher version of
 # rubygems than is available on Ubuntu 22.04.
 # TODO(#207): Remove pinned version of ffi.
-gem "ffi", "= 1.17.0"
+gem "ffi", "= 1.17.2"
 
 group :jekyll_plugins do
   gem "jekyll-seo-tag", "= 2.8.0"
