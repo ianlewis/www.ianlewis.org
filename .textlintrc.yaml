@@ -41,6 +41,7 @@ rules:
       - "Cosentino"
       - "Cramer"
       - "Crawshaw"
+      - "Daisuke"
       - "Daskalou"
       - "Dougherty"
       - "Eiji"
@@ -81,6 +82,7 @@ rules:
       - "LonelyBob"
       - "Makabi"
       - "McKayla"
+      - "Maki"
       - "Makoto"
       - "Manabe"
       - "Manabu"
@@ -246,9 +248,10 @@ rules:
       - "Stunlock"
       - "Oakveil"
       - "Unoh"
-      - "UStream"
-      - "Vimeo"
-      - "YouTube"
+      - "UStream" # Live video streaming service (acquired by IBM)
+      - "Vimeo" # Video hosting platform
+      - "Windsurf" # Windsurf, AI IDE
+      - "YouTube" # Video sharing platform
 
       # Tech Names
       ##########################################################################
