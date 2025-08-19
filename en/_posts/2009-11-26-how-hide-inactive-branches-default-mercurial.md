@@ -38,5 +38,5 @@ hoge                        1661:62d737e7146e
 
 This way though there isn't a good way to show all branches if you have
 set up an alias so you might want to give the alias a different name
-like "abranches" for "active branches" so that you can show all branches
+like `abranches` for "active branches" so that you can show all branches
 by using "hg branches".

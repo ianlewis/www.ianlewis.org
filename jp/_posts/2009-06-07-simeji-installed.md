@@ -16,9 +16,7 @@ IME [simeji](http://www.adamrocker.com/blog/236/simeji_android_japanese_input.ht
 Marketでsimejiが出てるけど、最新版ではなく、日本語キーボードがついてないバージョンです。
 インストールしたいのが[これ](http://www.adamrocker.com/blog/257/simeji-for-android-bell-input.html)。
 
-[このブログ](http://www.android-unleashed.com/2008/11/howto-install-non-market-apk-apps-on.html") によると、
-3rd partyをアプリをインストールするには SDK の toolsに入ってる adbアプリを使います。じゃ、まず、
-[SDK 1.5](http://developer.android.com/sdk/1.5_r2/index.html) をインストールします。
+[このブログ](http://www.android-unleashed.com/2008/11/howto-install-non-market-apk-apps-on.html") によると、3rd partyをアプリをインストールするには SDK の toolsに入ってる `adb`アプリを使います。じゃ、まず、[SDK 1.5](http://developer.android.com/sdk/1.5_r2/index.html) をインストールします。
 
 SDKのインストールが簡単。自分のOSのSDKのzipを解凍しておしまい。でも、USBでつなぐには、ちょっと手続きが必要。
 [このページ](http://developer.android.com/guide/developing/device.html)を読む。
@@ -37,8 +35,7 @@ chmodはいらないとは思うけど、一応ドキュメントに入ってる
 
 Macの場合は特に何も必要がない。
 
-そして、adbを実行する。初めて実行する時にdaemonを立ち上げるので、rootでやります。
-ユーザで普通に実行できるけど、usb読めないみたいので、デバイスを認識できない。
+そして、`adb`を実行する。初めて実行する時にdaemonを立ち上げるので、rootでやります。ユーザで普通に実行できるけど、usb読めないみたいので、デバイスを認識できない。
 
 ```shell
 # ./adb devices

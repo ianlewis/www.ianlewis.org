@@ -111,7 +111,7 @@ Or they can be managed via a custom Admin page:
 
 You can read the [Live Settings documentation here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.live_settings)
 
-## AppStatsMiddleware
+## `AppStatsMiddleware`
 
 Kay 1.1 adds a new `AppStatsMiddleware` that allows you to easily enable [Appstats](http://code.google.com/intl/en/appengine/docs/python/tools/appstats.html). You simply add the middleware to your `MIDDLEWARE_CLASSES` in order to enable Appstats.
 

@@ -24,6 +24,7 @@ rules:
       # Person Names
       ##########################################################################
 
+      - "Ahlström"
       - "Ahmet"
       - "Andreessen"
       - "Aoife"
@@ -159,6 +160,8 @@ rules:
 
       - "TheAmyCode"
       - "akisute"
+      - "aodag"
+      - "atsuoishimoto"
       - "deeet"
       - "ae35"
       - "akisute"
@@ -176,6 +179,7 @@ rules:
       - "monjudoh"
       - "moriyoshi"
       - "shimizukawa"
+      - "shin_no_suke"
       - "shoma"
       - "surgo"
       - "takanory"
@@ -256,7 +260,9 @@ rules:
       # Tech Names
       ##########################################################################
 
+      - "ATProto" # AT Protocol, a decentralized social protocol
       - "ActivityPub" # ActivityPub protocol
+      - "AppStats" # App Engine AppStats
       - "Appc"
       - "Ansible"
       - "Appstats" # App Engine Appstats
@@ -273,17 +279,18 @@ rules:
       - "DvorakJP" # Dvorak Japanese Keyboard Layout
       - "FastCGI"
       - "Funktion"
+      - "Gaim" # Old name for Pidgin, an instant messaging client
       - "GenAI" # Generative AI
+      - "GnuCash" # Personal finance software
       - "GoReleaser" # Go release tool
       - "GeoDjango" # Django geographic web framework
       - "Gunicorn" # Python WSGI HTTP Server (Green Unicorn)
-      - "Jubatus"
+      - "JUnit" # Java Unit Testing Framework
+      - "Jubatus" # Distributed machine learning framework
       - "/[Kk]eychain/"
-      - "Kubernetes"
-      - "JUnit"
-      - "Jubatus"
-      - "LuaLaTeX"
-      - "MapReduce"
+      - "Kubernetes" # Kubernetes container orchestration platform
+      - "LuaLaTeX" # Lua-based LaTeX engine
+      - "MapReduce" # Programming model for processing large data sets
       - "Matcher API" # App Engine Matcher API
       - "Maturin"
       - "/[Mm]emcached/"
@@ -312,13 +319,6 @@ rules:
       - "TinyMCE" # JavaScript WYSIWYG editor
       - "XeLaTeX"
       - "Zizmor"
-      - "cgroup" # control groups
-      - "dotfiles"
-      - "etcd" # etcd.io
-      - "npm" # Node Package Manager
-      - "pprof" # Go profiler
-      - "rebuild.fm" # rebuild.fm podcast
-      - "supervisord"
       - "Noto" # Noto fonts
       - "OpenShift"
       - "OpenStack"
@@ -343,13 +343,18 @@ rules:
       - "Webapp" # App Engine WebApp framework
       - "WebGL" # Web Graphics Library
       - "Werkzeug" # Python WSGI utility library
+      - "cgroup" # control groups
       - "containerd" # container runtime
       - "cgroup" # control groups
+      - "dotfiles"
       - "etcd" # etcd.io
+      - "gorbital" # molecular orbital visualization tool
+      - "gtkmm" # C++ bindings for GTK
       - "npm" # Node Package Manager
       - "pprof" # Go profiler
       - "reST" # reStructuredText
       - "reStructuredText" # reST
+      - "rebuild.fm" # rebuild.fm podcast
       - "supervisord"
       - "/[Cc]ron/"
       - "/[Mm]emcached/"
@@ -421,10 +426,13 @@ rules:
       ##########################################################################
 
       - "ACAS" # Airborne Collision Avoidance System
+      - "ACI" # Application Container Image
       - "ACL" # Access Control List
       - "ACPI" # Advanced Configuration and Power Interface
       - "APAC" # Asia-Pacific
       - "API" # Application Programming Interface
+      - "APK" # Android Package
+      - "APT" # Advanced Package Tool
       - "BPBP" # BeProud Book Purchase
       - "BQ" # BigQuery
       - "BUSL" # Business Source License
@@ -519,7 +527,10 @@ rules:
       - "Yeeaaah" # Exaggerated "Yeah" often used in informal contexts
       - "/[Ww]illy-nilly/" # Meaning "in a disorganized manner"
 
+      - "approachability" # The quality of being approachable
       - "unfixable" # Not able to be fixed or repaired
+
+      - "Adiós" # Spanish for "Goodbye"
 
       - "CHANGELOG"
       - "CODEOWNER"
@@ -561,41 +572,9 @@ rules:
       # TODO(#285): Handle or fix the following words.
       ##########################################################################
 
-      - "_"
-      - "abranches"
-      - "acbuild"
-      - "accessable"
-      - "ACI"
-      - "adb"
-      - "Adi"
-      - "admin_update_feeds"
-      - "Ahh"
-      - "AHISWKBwT"
-      - "Ahlstr"
-      - "ajax"
-      - "alpinelinux"
-      - "ansible"
-      - "ansible's"
-      - "aodag"
-      - "api"
-      - "APK"
-      - "appc"
-      - "approachability"
-      - "AppStats"
-      - "AppStatsMiddleware"
-      - "apt's"
-      - "aquaintance"
-      - "aquire"
-      - "aquired"
-      - "Arg"
-      - "aru"
       - "ascii"
       - "/[Aa]sync/"
-      - "asyncio"
-      - "atproto"
-      - "atproto's"
       - "ats"
-      - "atsuoishimoto"
       - "auth"
       - "AuthenticationMiddleware"
       - "auth's"
@@ -662,7 +641,6 @@ rules:
       - "commenter"
       - "confd"
       - "config"
-      - "conncurrent"
       - "ContentType"
       - "contrib"
       - "Contrib"
@@ -702,7 +680,6 @@ rules:
       - "deserialization"
       - "dialogs"
       - "didn"
-      - "diffent"
       - "Dinesh"
       - "direct_to_pdf"
       - "dispite"
@@ -787,7 +764,6 @@ rules:
       - "golang"
       - "Googleplex"
       - "gopath"
-      - "goverened"
       - "Graff"
       - "graphviz"
       - "Graphviz"
@@ -972,7 +948,6 @@ rules:
       - "nikomi"
       - "nitty"
       - "noglobals"
-      - "notifyAll"
       - "nots"
       - "Numba"
       - "numpy"
@@ -1103,7 +1078,6 @@ rules:
       - "ses"
       - "setuidgid"
       - "shibukawa"
-      - "Shouln't"
       - "sig"
       - "sigstore"
       - "simeji"
@@ -1146,11 +1120,9 @@ rules:
       - "takonory"
       - "taskqueue"
       - "Tasuku"
-      - "tearDown"
       - "templating"
       - "tenntenn"
       - "terraform"
-      - "TestCase"
       - "textarea"
       - "thdbJnyAQARAQAB"
       - "theathletic"

@@ -18,4 +18,4 @@ easily make a machine that was in the shape of the familiar Google logo
 so I went about trying to figure out how. I think I got something that's
 represents the Google logo pretty well. What do you think? ;-)
 
-![IOMachine](/assets/images/675/io_machine.png)\_
+![IOMachine](/assets/images/675/io_machine.png)

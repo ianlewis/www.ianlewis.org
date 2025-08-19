@@ -34,9 +34,7 @@ Traceback (most recent call last):
 TypeError: new_method() takes exactly 2 arguments (1 given)
 ```
 
-Arg\!
-
-The new_method() function is added to the class as a property which is
+The `new_method()` function is added to the class as a property which is
 a function that takes two arguments. So how do we add a method that can
 use self? The answer is that we use the `types` module's `MethodType`.
 
@@ -47,7 +45,7 @@ use self? The answer is that we use the `types` module's `MethodType`.
 8
 ```
 
-Ok, so now we can use self. The `MethodType` type actually binds the
+OK, so now we can use self. The `MethodType` type actually binds the
 method to the instance and creates a "bound method".
 
 ```python

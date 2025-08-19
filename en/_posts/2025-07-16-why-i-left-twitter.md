@@ -85,7 +85,7 @@ genuine connections.
 
 Things can change quickly though. Social media should be built on a more open
 foundation that gives users more control over their data and experience. Both
-Bluesky’s [AT protocol](https://atproto.com/) and Mastodon’s
+Bluesky’s [ATProto](https://atproto.com/) and Mastodon’s
 [ActivityPub](https://activitypub.rocks/) are more open and transparent APIs with
 ecosystems around them. We don’t have to rely on the good intentions of one
 company. Now feels like an opportunity to try out an alternative to Twitter and
