@@ -16,7 +16,7 @@ render_with_liquid: false
     that is well understood. Essentially, vibe code became legacy code the
     instant it's written.
 
-    I mostly agree with the idea, but I'd add that that legacy code is a bit more
+    I mostly agree with the idea, but I'd add that legacy code is a bit more
     nuanced in that it is code where maintaining it is not worth the cost. Even
     then I agree with his point because vibe code is basically not worth the cost
     of maintaining it the moment it's created.
@@ -41,7 +41,7 @@ render_with_liquid: false
     the reason they can't do a lot of reasoning tasks. They are just basically
     predicting the next word over and over again. They have a model but it's
     built around the next word prediction task, not any kind of conceptual or
-    spacial model.
+    spatial model.
 
 - [AIにはAI原則が必要](https://lestrrat.medium.com/ai%E3%81%AB%E3%81%AFai%E5%8E%9F%E5%89%87%E3%81%8C%E5%BF%85%E8%A6%81-cfe3429618d7)
   -- _Daisuke Maki_
