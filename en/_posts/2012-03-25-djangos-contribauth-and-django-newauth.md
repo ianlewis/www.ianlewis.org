@@ -16,7 +16,9 @@ Recently there have been a lot of conversations on the Django mailing list about
 
 Originally the topic came up because of the fact that you can't really authenticate effectively using the email address as a username. The username field is currently required and only allows for 30 characters which is too short for an email. Developers can put a unique dummy value in the username field and just use the email field to authenticate the user but it's really a work around.
 
-However one fixes this though there will be many unhappy people because everyone wants something different. It's a problem ripe for customization, but there is a really hard dependency on contrib.auth's current api.
+However, one fixes this though there will be many unhappy people because everyone
+wants something different. It's a problem ripe for customization, but there is a
+really hard dependency on the current API of `contrib.auth`.
 
 ## contrib.auth sucks
 

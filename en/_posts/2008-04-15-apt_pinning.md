@@ -109,7 +109,7 @@ E: Problem with MergeList /var/lib/apt/lists/ftp.us.debian.org_debian_dists_wood
 E: The package lists or status file could not be parsed or opened.
 ```
 
-This is caused because apt's cache is too small to handle all of the packages
+This is caused because APT's cache is too small to handle all the packages
 that are included with stable, testing, and unstable. This is also very easy to
 fix. Add the following line to `/etc/apt/apt.conf`:
 
@@ -117,7 +117,7 @@ fix. Add the following line to `/etc/apt/apt.conf`:
 APT::Cache-Limit &quot;8388608&quot;;
 ```
 
-Now that that is taken care of, lets say you have a particular package you want
+Now that is taken care of, let's say you have a particular package you want
 to install the newest version of, but the newest version of that packages isn't
 in stable yet. Synaptic will show you the version that's in stable because we
 set that as the highest priority. But you know there is a newer version out

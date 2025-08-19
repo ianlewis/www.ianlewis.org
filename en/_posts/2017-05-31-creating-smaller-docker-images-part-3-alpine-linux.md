@@ -69,4 +69,5 @@ RUN apk add --update git && \
 CMD ['/myrepo/myapp']
 ```
 
-You can view the available packages for Alpine at [https://pkgs.alpinelinux.org/](https://pkgs.alpinelinux.org/)
+You can view the available packages for Alpine at
+[`https://pkgs.alpinelinux.org/`](https://pkgs.alpinelinux.org/)

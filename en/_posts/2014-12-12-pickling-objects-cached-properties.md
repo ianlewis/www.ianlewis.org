@@ -28,7 +28,7 @@ Werkzeug, and by extension Flask, has
 [Django has one](https://docs.djangoproject.com/en/1.7/ref/utils/#django.utils.functional.cached_property).
 These implementations all rely on the fact that if you add a value to the
 `__dict__` of an object, that value has precedence over descriptors and so you
-can use it as a quickly accessable place to store cached data.
+can use it as a quickly accessible place to store cached data.
 
 This has a downside however in that this cached data will be pickled
 along with your object when serializing it to disk or to a caching layer

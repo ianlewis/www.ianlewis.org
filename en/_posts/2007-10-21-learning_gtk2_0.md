@@ -8,8 +8,23 @@ tags: tech programming projects mercurial
 render_with_liquid: false
 ---
 
-<p>Today I've been playing around with writing programs in <a href="http://www.gtk.org/">GTK2.0</a>. This has been on my todo list for a really long time, almost since college, but I've never got around to it. I've revived my old project <a href="http://gorbital.sourceforge.net/">gorbital</a> and decided to rewrite it using GTK2.0. I originally wrote it in C++ using <a href="http://www.gtkmm.org/">gtkmm</a> for GTK1.0. But GTK1.0 is long since dead. Even my beloved <a href="http://www.gnucash.org/">Gnucash</a> has finally made it to the world of GTK2.0 making it the last application I use that has made the switch (<a href="http://www.pidgin.im/">gaim</a> being the first).</p>
+Today I've been playing around with writing programs in
+[GTK2.0](http://www.gtk.org/). This has been on my TODO list for a really long
+time, almost since college, but I've never got around to it. I've revived my old
+project [gorbital](http://gorbital.sourceforge.net/) and decided to rewrite it
+using GTK2.0. I originally wrote it in C++ using [gtkmm](http://www.gtkmm.org/)
+for GTK1.0. But GTK1.0 is long since dead. Even my beloved
+[GnuCash](http://www.gnucash.org/) has finally made it to the world of GTK2.0
+making it the last application I use that has made the switch
+([Gaim](http://www.pidgin.im/) being the first).
 
-<p>The documentation <a href="http://www.gtk.org/api/">here</a> and the tutorial <a href="http://www.gtk.org/tutorial/">here</a> are pretty complete and straitforward.</p>
+The [documentation](http://www.gtk.org/api/) and the
+[tutorial](http://www.gtk.org/tutorial/) are pretty complete and
+strait forward.
 
-<p>I've also taken the opportunity to get more accustomed with <a href="http://www.selenic.com/mercurial/">Mercurial</a> and I followed the instructions on <a href="http://www.selenic.com/mercurial/wiki/index.cgi/MercurialOnSourceforge">how to set up hg on sourceforge</a> and got that working pretty well. You can check it out <a href="http://gorbital.sourceforge.net/hg/">here</a>.</p>
+I've also taken the opportunity to get more accustomed with
+[Mercurial](http://www.selenic.com/mercurial/) and I followed the instructions
+on [how to set up Mercurial on
+SourceForge](http://www.selenic.com/mercurial/wiki/index.cgi/MercurialOnSourceforge)
+and got that working pretty well. The source code is available on
+[SourceForge](http://gorbital.sourceforge.net/hg/).

@@ -231,20 +231,20 @@ high-level runtimes. Here I'll describe the low-level features of rkt and leave
 the high-level features for the next post.
 
 rkt originally used the [Application
-Container](https://coreos.com/rkt/docs/latest/app-container.html) (appc)
+Container](https://coreos.com/rkt/docs/latest/app-container.html) (`appc`)
 standard, which was developed as an open alternative standard to alternative to
 Docker's container format. Appc never achieved widespread adoption as a
-container format and appc is no longer being actively developed bit achieved its
-goals to ensure open standards are available to the community. Instead of appc,
-rkt will use OCI container formats in the future.
+container format and is no longer being actively developed bit achieved its
+goals to ensure open standards are available to the community. Instead of
+`appc`, `rkt` will use OCI container formats in the future.
 
 Application Container Image (ACI) is the image format for Appc. Images are a
 tar.gz containing a manifest directory and a rootfs directory for the root
 filesystem. You can read more about ACI in the [`appc` GitHub
 repository](https://github.com/appc/spec/blob/master/spec/aci.md).
 
-You can build a container image using the `acbuild` tool. You can use acbuild in
-shell scripts that can be executed much like Dockerfiles are run.
+You can build a container image using the `acbuild` tool. You can use `acbuild`
+in shell scripts that can be executed much like Dockerfiles are run.
 
 ```shell
 acbuild begin

@@ -125,7 +125,7 @@ ianlewis@test:~$ docker run hello
 standard_init_linux.go:187: exec user process caused "no such file or directory"
 ```
 
-This "no such file or directory" error isn't very descriptive but it's the same error as we saw earlier. The application is saying it couldn't find one of it's dynamically linked dependencies.
+This "no such file or directory" error isn't very descriptive but it's the same error as we saw earlier. The application is saying it couldn't find one of its dynamically linked dependencies.
 
 With containers we want to make our images as small as possible, but managing dependencies for dynamically linked applications is a lot of work and requires a good amount of tooling, like well built package managers that themselves have dependencies. It places a lot of burden on our runtime environment, when all we want to do it run a single application. How do we solve this problem?
 
@@ -133,9 +133,11 @@ With containers we want to make our images as small as possible, but managing de
 
 <img style="width: 75%;" class="align-center" src="/assets/images/763/lightning.jpg" />
 
-_[Creative Commons Attribution](https://creativecommons.org/licenses/by/2.0/deed.en) by [John Fowler](<https://commons.wikimedia.org/wiki/File:Lightning_(3762193048).jpg>)\_
+> [Creative Commons
+> Attribution](https://creativecommons.org/licenses/by/2.0/deed.en) by [John
+> Fowler](<https://commons.wikimedia.org/wiki/File:Lightning_(3762193048).jpg>)
 
-Statically linking allows us to bundle all of the libraries our application relies on into a single binary. This will allow us to copy the application code and all of it's dependencies around in a single binary while still being runnable. Let's try it out.
+Statically linking allows us to bundle all the libraries our application relies on into a single binary. This will allow us to copy the application code and all of its dependencies around in a single binary while still being runnable. Let's try it out.
 
 ```shell
 ianlewis@test:~$ g++ -o hello -static hello.cpp
@@ -174,7 +176,7 @@ ianlewis@test:~$ docker run hello
 Hello World!
 ```
 
-As was said earlier, the application now contains all of it's dependencies so it can essentially run on any other Linux machine! A few caveats exist, such as the application needs to be run on a server with the same CPU architecture that it was compiled for, but for the most part we can just copy it around!
+As was said earlier, the application now contains all of its dependencies so it can essentially run on any other Linux machine! A few caveats exist, such as the application needs to be run on a server with the same CPU architecture that it was compiled for, but for the most part we can just copy it around!
 
 ## Image Size
 

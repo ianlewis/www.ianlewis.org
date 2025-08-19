@@ -47,7 +47,7 @@ Usually I read source code on github/bitbucket. I don't really read blog posts b
 
 ## What are the top three things you want to learn next year?
 
-- [asyncio](http://docs.python.org/3.4/library/asyncio.html)
+- [`asyncio`](http://docs.python.org/3.4/library/asyncio.html)
 - [Numba](http://numba.pydata.org/)
 - [Haskell](http://www.haskell.org/)
 - More [Go](http://www.golang.org/)

@@ -63,17 +63,17 @@ serve as a trust root. One key difference is that there doesn't seem to be a
 delegation scheme; at least for now. That's getting into the weeds a bit, but
 if you want to learn a bit more about how it works you can read [Steve's
 post](https://steveklabnik.com/writing/thoughts-on-bluesky-verification/) or
-read more on the [atproto
+read more on the [ATProto
 wiki](https://wiki.atprotocol.community/en/wiki/reference/verification).
 
-[![In atproto – the open network we're built on – anybody can publish verifications. In the Bluesky app, Bluesky chooses whose verifications to show. This means that other apps could choose a different set of trusted verifiers, or use a different model entirely.](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20111837.png){: .align-center}](https://bsky.app/profile/jay.bsky.team/post/3lnem7rmx3k24)
+[![In ATProto – the open network we're built on – anybody can publish verifications. In the Bluesky app, Bluesky chooses whose verifications to show. This means that other apps could choose a different set of trusted verifiers, or use a different model entirely.](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20111837.png){: .align-center}](https://bsky.app/profile/jay.bsky.team/post/3lnem7rmx3k24)
 
 Bluesky has only a few trusted verifiers so far, but one can assume that there will be more very soon.
 
 [![@bsky.app @nytimes.com @wired.com @theathletic.bsky.social](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20122137.png){: .align-center}](https://bsky.app/profile/samuel.bsky.team/post/3lndyqyyr4k2k)
 
 On its face, it seems like a decentralized verification scheme would be an
-improvement from what we used to have on Twitter. Individual Bluesky/atproto
+improvement from what we used to have on Twitter. Individual Bluesky/ATProto
 clients can decide which root accounts they want to trust. Theoretically,
 individual users could decide which verifiers they want to trust and which they
 don't.
@@ -81,7 +81,7 @@ don't.
 In practical terms though, I think that it won't matter a whole lot. For
 HTTPS, browsers do [occasionally
 distrust](https://security.googleblog.com/2024/06/sustaining-digital-certificate-security.html)
-root CAs and this can have an impact but in atproto's case there is a de-facto
+root CAs and this can have an impact but in ATProto's case there is a de-facto
 client that controls the protocol and its evolution. While I applaud Bluesky
 for picking the decentralized route, the set of verifiers that Bluesky trusts
 will be a strong gold standard. And that is to say nothing of what individual
@@ -121,7 +121,7 @@ of who are the winners and losers in social media will drive more engagement
 overall. Everyone will be hustling to be noticed enough to get their check
 mark. Some organizations might be hustling to be let into the exclusive club of
 verifiers trusted by Bluesky. This elevates Bluesky's standing and prestige in
-atproto and on their own platform.
+ATProto and on their own platform.
 
 ## Final Thoughts
 

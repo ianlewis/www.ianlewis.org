@@ -58,14 +58,14 @@ class ItemAdmin(admin.ModelAdmin):
 admin.site.register(Item, ItemAdmin)
 ```
 
-The key parts are the get_urls function and the admin_update_feeds
-view. The get_urls method returns the urls for this admin to which we
+The key parts are the `get_urls` function and the `admin_update_feeds`
+view. The `get_urls` method returns the URLs for this admin to which we
 are adding our custom view. The custom view does the updating of the
 lifestream feeds and returns the user to the Item model's changelist
-view. We get the url for that view by calling reverse with the pattern
-"\<namespace\>:\<app\>\_\<model\>\_changelist" which in our case is
-"admin:lifestream_item_changelist" since the django admin uses the
-admin namespace.
+view. We get the URL for that view by calling reverse with the pattern
+`<namespace>:<app>*<model>_changelist`which in our case is
+`admin:lifestream_item_changelist` since the Django admin uses the admin
+namespace.
 
 I created the button for updating the feeds by overriding the default
 admin template with my own [subclassed
@@ -86,6 +86,6 @@ The template like the following:
 {% endblock %}
 ```
 
-Here I'm getting the url for my custom admin view with the code {% url
-admin:admin\_update\_feeds %}, "admin_update_feeds" being the name I
-supplied in the get_urls method above.
+Here I'm getting the URL for my custom admin view with the code `{% url
+admin:admin_update_feeds %}`, `admin_update_feeds` being the name I supplied in
+the `get_urls` method above.

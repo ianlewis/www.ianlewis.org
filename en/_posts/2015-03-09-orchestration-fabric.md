@@ -15,15 +15,15 @@ about how I used Fabric to achieve that.
 
 Tools like [Vagrant](https://www.vagrantup.com/) can be used to create servers
 and provision them, but deploying an app using a provisioning tool like chef,
-puppet, or ansible is less than ideal. Vagrant also can only get you so
+puppet, or Ansible is less than ideal. Vagrant also can only get you so
 far, when you need to set up disks and networking so it's not great and,
 indeed, not intended for production use.
 
 [Terraform](https://www.terraform.io/) is another tool that does orchestration better,
 but it's not obvious to me how to avoid writing config for the servers, disks,
 and networking, and then again from scratch for provisioning/deployment
-tools. It may be worth investigating whether I can use terraform and apply labels
-to VMs that can later be provisioned using something like ansible's dynamic
+tools. It may be worth investigating whether I can use Terraform and apply labels
+to VMs that can later be provisioned using something like Ansible's dynamic
 inventory.
 
 ## Fabric
@@ -46,7 +46,7 @@ to have a way to run a VM locally for development/testing. I settled on using
 Vagrant to do that.
 
 Vagrant is a tool to start up and provision a VM but what I did was have Fabric
-run vagrant, and use it only for starting/stopping the VMs. Afterwards I would
+run vagrant, and use it only for starting/stopping the VMs. Afterward I would
 just continue and run [Ansible](http://www.ansible.com/) from Fabric to
 provision and use Fabric's native functionality to deploy the app. Usually you
 run, fabric from vagrant but I did it the other way around so it's a bit like
@@ -116,7 +116,7 @@ def _config_ssh(warn_only=False):
 
 Now I create some tasks to start, stop, and delete VMs. After creating
 an instance I call the `_config_ssh()` function again so that the VM's
-configuration get's added to the SSH config.
+configuration gets added to the SSH config.
 
 ```python
 from fabric.api import task, local

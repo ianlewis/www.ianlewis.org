@@ -8,9 +8,9 @@ tags: tech programming python django sql
 render_with_liquid: false
 ---
 
-I came across a little annoyance in Django today. I found that
-ForeignKeys that reference 'self', i.e. they point to the same table,
-always result in a join in a filter.
+I came across a little annoyance in Django today. I found that a `ForeignKey`
+that reference `self`, i.e. points to the same table, always results in a join
+in a filter.
 
 Take this normal foreign key reference.
 
@@ -35,13 +35,13 @@ class Customer(models.Models):
 ())
 ```
 
-Hmm, yuck. That little extra JOIN is going to kill performance if the
-table is big. Let's do it the right way.
+Hmm, yuck. That little extra join is going to kill performance if the table is
+big. Let's do it the right way.
 
 ```python
 >>> Customer.objects.extra(where=["other_cust_id IS NULL"])
 ('SELECT U0."id" FROM "accounts_customer" U0 WHERE other_cust_id IS NULL', ())
 ```
 
-Ahh, that's better. I don't really like using extra() but in situations
-like these I'm glad it's there.
+Ah, that's better. I don't really like using `extra()` but in situations like
+these I'm glad it's there.
