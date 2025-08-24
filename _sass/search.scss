@@ -23,11 +23,6 @@ main {
 }
 
 .posts-labelgroup {
-  /* Firefox Flex Hack */
-  @document url-prefix() {
-    align-items: center;
-  }
-
   .search-section {
     display: flex;
     flex-grow: 1;
