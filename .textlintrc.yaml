@@ -45,6 +45,7 @@ rules:
       - "Daisuke"
       - "Daskalou"
       - "Dougherty"
+      - "Duan"
       - "Eiji"
       - "Elin"
       - "Elon"
@@ -67,16 +68,19 @@ rules:
       - "Ishikawa"
       - "Ishimoto"
       - "Iwashi"
+      - "Jiayi"
       - "Johansson"
       - "Jxck"
       - "Kaczorowski"
       - "Kamaelia"
+      - "Karuppasamy"
       - "Kinomiya"
       - "Kitamura"
       - "Klabnik"
       - "Knyszek"
       - "Krumins"
       - "Lacasse"
+      - "Longhui"
       - "Lorin"
       - "Lifland"
       - "Litt"
@@ -120,10 +124,12 @@ rules:
       - "Shibukawa"
       - "Shimizukawa"
       - "Shinya"
+      - "Shu"
       - "Slatkin"
       - "Sota"
       - "Stapelberg"
       - "Suenaga"
+      - "Sundar"
       - "Takanori"
       - "Takashi"
       - "Takayuki"
@@ -132,11 +138,14 @@ rules:
       - "Terada"
       - "Tetsuya"
       - "Trong"
+      - "Tsinghua"
       - "Tsuyuki"
       - "Wada"
       - "Warmerdam"
       - "Wilber"
       - "Willison"
+      - "Xiao"
+      - "Xinkai"
       - "Vella"
       - "Voege"
       - "Yamaguchi"
@@ -476,6 +485,7 @@ rules:
       - "NoSQL" # Not Only SQL
       - "OSS" # Open Source Software
       - "QPS" # Queries Per Second
+      - "QoS" # Quality of Service
       - "PKI" # Public Key Infrastructure
       - "PaaS" # Platform as a Service
       - "PID" # Process ID
