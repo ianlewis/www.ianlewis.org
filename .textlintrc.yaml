@@ -296,7 +296,7 @@ rules:
       - "Gunicorn" # Python WSGI HTTP Server (Green Unicorn)
       - "JUnit" # Java Unit Testing Framework
       - "Jubatus" # Distributed machine learning framework
-      - "/[Kk]eychain/"
+      - "Kiro" # AI Editor by AWS
       - "Kubernetes" # Kubernetes container orchestration platform
       - "LuaLaTeX" # Lua-based LaTeX engine
       - "MapReduce" # Programming model for processing large data sets
@@ -326,6 +326,7 @@ rules:
       - "Tensorflow"
       - "Terraform"
       - "TinyMCE" # JavaScript WYSIWYG editor
+      - "Trae" # AI IDE
       - "XeLaTeX"
       - "Zizmor"
       - "Noto" # Noto fonts
@@ -399,6 +400,7 @@ rules:
       - "nosplit" # Go compiler directive
       - "/[Aa]ddon/"
       - "/[Aa]cyclic/" # not displaying or forming part of a cycle.
+      - "/[Aa]utocomplete/"
       - "/[Aa]utoscaler/"
       - "/[Aa]utoscaling/"
       - "/[Bb]ackend/"
@@ -410,6 +412,7 @@ rules:
       - "/[Ff]iletype/" # file + type
       - "/[Gg]oroutine/"
       - "/[Hh]ackathon/"
+      - "/[Kk]eychain/"
       - "/[Ll]iveness/"
       - "/[Ll]ossy/" # process that loses information (e.g. compression)
       - "/[Mm]ixin/"
