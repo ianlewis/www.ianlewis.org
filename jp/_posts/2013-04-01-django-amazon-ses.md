@@ -13,12 +13,9 @@ Amazon さんが、Amazon Web Services の下にメール送信サービス[Simp
 
 [Connpass](http://connpass.com/) ではメール送信にSESを使っている。その事実がユーザーさんに判明されていたので、Djangoではどう使えばいいかを説明したいなと思った。
 
-<!-- TODO: Add Twitter screenshot for tweet below -->
-
 <!-- textlint-disable spelling -->
 
-> connpass が AWS SES 使ってる。SES結構便利だからもっといろんなところで使えるケースあると思うんだけどなぁ。
-> &mdash; TATSUYA (@tatsuya_info)
+[![connpass が AWS SES 使ってる。SES結構便利だからもっといろんなところで使えるケースあると思うんだけどなぁ。](/assets/images/2013/04/01/django-amazon-ses/tatsuya_info-311118030593720320.png)](https://twitter.com/tatsuya_info/status/311118030593720320)
 
 <!-- textlint-enable spelling -->
 
