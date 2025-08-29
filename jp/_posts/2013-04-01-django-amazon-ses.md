@@ -15,7 +15,7 @@ Amazon さんが、Amazon Web Services の下にメール送信サービス[Simp
 
 <!-- textlint-disable spelling -->
 
-[![connpass が AWS SES 使ってる。SES結構便利だからもっといろんなところで使えるケースあると思うんだけどなぁ。](/assets/images/2013/04/01/django-amazon-ses/tatsuya_info-311118030593720320.png)](https://twitter.com/tatsuya_info/status/311118030593720320)
+[![connpass が AWS SES 使ってる。SES結構便利だからもっといろんなところで使えるケースあると思うんだけどなぁ。](/assets/images/2013-04-01-django-amazon-ses/tatsuya_info-311118030593720320.png){: .align-center}](https://twitter.com/tatsuya_info/status/311118030593720320)
 
 <!-- textlint-enable spelling -->
 
