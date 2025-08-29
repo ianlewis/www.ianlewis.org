@@ -10,17 +10,37 @@ render_with_liquid: false
 
 ![image](/assets/images/690/phantomjs+qunit.png)
 
-I have been using [PhantomJS](http://phantomjs.org/) and [QUnit](http://qunitjs.com/) for a while now to run JavaScript automated tests. I like QUnit because has a decent in-browser UI but also has a nice extension API so you can create plugins and output in different formats if you like.
+I have been using [PhantomJS](http://phantomjs.org/) and
+[QUnit](http://qunitjs.com/) for a while now to run JavaScript automated tests.
+I like QUnit because has a decent in-browser UI but also has a nice extension
+API so you can create plugins and output in different formats if you like.
 
-However, I've been spoiled by test runners like the Python test runners that create output that is easy to parse with the eyes, shows you tracebacks, and lets you specify filters to limit which tests get run. Most JavaScript test runners aren't very flexable. QUnit allows you to filter tests, and this can be done easily by adding a simple filter parameter to the URL of your test html page. But the test runners people have written for the console aren't that friendly.
+However, I've been spoiled by test runners like the Python test runners that
+create output that is easy to parse with the eyes, shows you tracebacks, and
+lets you specify filters to limit which tests get run. Most JavaScript test
+runners aren't very flexable. QUnit allows you to filter tests, and this can be
+done easily by adding a simple filter parameter to the URL of your test html
+page. But the test runners people have written for the console aren't that
+friendly.
 
-I would also like to do is output test results in different formats like JUnit. Most QUnit test runners I've seen only output in one format and aren't very flexible.
+I would also like to do is output test results in different formats like JUnit.
+Most QUnit test runners I've seen only output in one format and aren't very
+flexible.
 
-Another problem I've found with other test runners, is that they don't handle errors in a robust way. PhantomJS allows you to set an error handler by passing a function to the `page.onError()` method. But if you modify the `window.onerror` callback like QUnit does, the `page.onError()` handler doesn't get called. This can be annoying because your test runner may not be able to know when something has gone wrong and it needs to quit.
+Another problem I've found with other test runners, is that they don't handle
+errors in a robust way. PhantomJS allows you to set an error handler by passing
+a function to the `page.onError()` method. But if you modify the
+`window.onerror` callback like QUnit does, the `page.onError()` handler doesn't
+get called. This can be annoying because your test runner may not be able to
+know when something has gone wrong and it needs to quit.
 
-Given all these problems I thought that, as with many other things in JavaScript land, the only get all the things I wanted was to write it myself. So I wrote a nice little PhantomJS QUnit test runner script.
+Given all these problems I thought that, as with many other things in JavaScript
+land, the only get all the things I wanted was to write it myself. So I wrote a
+nice little PhantomJS QUnit test runner script.
 
-Because phantomjs' command line interface isn't terribly friendly I included a simple python wrapper that is a bit easier to use. It takes the URL or path to your QUnit HTML file and accepts a number of options:
+Because phantomjs' command line interface isn't terribly friendly I included a
+simple python wrapper that is a bit easier to use. It takes the URL or path to
+your QUnit HTML file and accepts a number of options:
 
 ```shell
 $ ./runner.py --help
@@ -40,7 +60,9 @@ Options:
 
 ## Console Output
 
-The default console output takes inspiration from [mocha.js](http://visionmedia.github.com/mocha/) test runner and the Python test runner. Console output for a test run looks like the this:
+The default console output takes inspiration from
+[mocha.js](http://visionmedia.github.com/mocha/) test runner and the Python test
+runner. Console output for a test run looks like the this:
 
 ```shell
 $ ./runner.py example/index.html
@@ -155,7 +177,9 @@ OK
 
 ## QUnit Tests
 
-The test runner doesn't require you to include any extra code in order to work. Any QUnit test HTML should do. Simply create your test page and save it to an file. You can then give the path to this file to the test runner.
+The test runner doesn't require you to include any extra code in order to work.
+Any QUnit test HTML should do. Simply create your test page and save it to an
+file. You can then give the path to this file to the test runner.
 
 Your HTML may look as follows
 
@@ -184,10 +208,15 @@ Your HTML may look as follows
 
 ## Code
 
-The code is up on Github here: <https://github.com/IanLewis/phantomjs-qunit>
+The code is up on Github here:
+[`https://github.com/IanLewis/phantomjs-qunit`](https://github.com/IanLewis/phantomjs-qunit)
 
-The JUnit output is based on [this gist](https://gist.github.com/1363104) by [Eric Wendelin](https://gist.github.com/eriwen). The TAP output is based off of [qunit-tap](https://github.com/twada/qunit-tap) by [Takuto Wada](https://github.com/twada).
+The JUnit output is based on [this gist](https://gist.github.com/1363104) by
+[Eric Wendelin](https://gist.github.com/eriwen). The TAP output is based off of
+[qunit-tap](https://github.com/twada/qunit-tap) by [Takuto
+Wada](https://github.com/twada).
 
 ## Future
 
-Some things to think about for the future are getting saving coverage information using [JSCoverage](http://siliconforks.com/jscoverage/).
+Some things to think about for the future are getting saving coverage
+information using [JSCoverage](http://siliconforks.com/jscoverage/).

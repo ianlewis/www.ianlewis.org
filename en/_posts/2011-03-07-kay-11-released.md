@@ -8,13 +8,23 @@ tags: tech programming python cloud google-cloud appengine
 render_with_liquid: false
 ---
 
-The Kay team just just released Kay 1.1\! I want to thank Takashi Matsuo, Nickolas Daskalou, Tasuku Suenaga, and Yosuke Suzuki for their hard work on this release.
+The Kay team just just released Kay 1.1\! I want to thank Takashi Matsuo,
+Nickolas Daskalou, Tasuku Suenaga, and Yosuke Suzuki for their hard work on this
+release.
 
-_Kay is a web framework made specifically for Google App Engine. The basic design of Kay is based on the Django framework, such as middleware, settings, pluggable applications, etc. Kay uses Werkzeug as lower level framework, Jinja2 as template engine, and babel for handling language translations._
+_Kay is a web framework made specifically for Google App Engine. The basic
+design of Kay is based on the Django framework, such as middleware, settings,
+pluggable applications, etc. Kay uses Werkzeug as lower level framework, Jinja2
+as template engine, and babel for handling language translations._
 
-Kay 1.1 contains a number of new features and bug fixes. You can see the [Release Notes here](http://code.google.com/p/kay-framework/wiki/ReleaseNotes#Kay-1.1.0rc2_-_March_3rd_2011) and can [download the release here](http://code.google.com/p/kay-framework/downloads/list).
+Kay 1.1 contains a number of new features and bug fixes. You can see the
+[Release Notes
+here](http://code.google.com/p/kay-framework/wiki/ReleaseNotes#Kay-1.1.0rc2_-_March_3rd_2011)
+and can [download the release
+here](http://code.google.com/p/kay-framework/downloads/list).
 
-We're excited about this release so I would like to introduce a few of Kay's new features.
+We're excited about this release so I would like to introduce a few of Kay's new
+features.
 
 ## cron_only
 
@@ -28,11 +38,13 @@ def my_cron_view(request):
     return response
 ```
 
-You can see the [documentation for the cron_only decorator here](http://kay-docs.shehas.net/decorators.html#kay.utils.decorators.cron_only).
+You can see the [documentation for the cron_only decorator
+here](http://kay-docs.shehas.net/decorators.html#kay.utils.decorators.cron_only).
 
 ## Pagination API
 
-We added a new Pagination API which will allow developers to quickly and easily implement pagination in their views.
+We added a new Pagination API which will allow developers to quickly and easily
+implement pagination in their views.
 
 ```python
 from kay.utils.paginator import Paginator, InvalidPage, EmptyPage
@@ -57,7 +69,8 @@ def listing(request):
     return render_to_response('list.html', {"contacts": contacts})
 ```
 
-Page objects can be used in views to display information about the current page and item indexes.
+Page objects can be used in views to display information about the current page
+and item indexes.
 
 ```django
 {% for contact in contacts.object_list %}
@@ -83,15 +96,23 @@ Page objects can be used in views to display information about the current page 
 </div>
 ```
 
-The Pagination API is designed to make as few Datastore RPC calls as possible. For instance, if you don't use the `num_pages` or `count` properties, the Pagination API will not make a count() RPC call.
+The Pagination API is designed to make as few Datastore RPC calls as possible.
+For instance, if you don't use the `num_pages` or `count` properties, the
+Pagination API will not make a count() RPC call.
 
-You can view the [Pagination API documentation here](http://kay-docs.shehas.net/pagination.html).
+You can view the [Pagination API documentation
+here](http://kay-docs.shehas.net/pagination.html).
 
 ## Live Settings
 
-Redeploying applications can create latency spikes in your application because it requires stopping and restarting all of your application instances. Kay 1.1 adds a new `kay.ext.live_settings` application which provides an API for storing global settings that can be changed without redeploying your application.
+Redeploying applications can create latency spikes in your application because
+it requires stopping and restarting all of your application instances. Kay 1.1
+adds a new `kay.ext.live_settings` application which provides an API for storing
+global settings that can be changed without redeploying your application.
 
-Live Settings are stored with a unicode key to unicode value, and work much like memcached, but provide a fast, persistent, and eventually consistent way of storing and getting settings. Live Settings can be changed programmatically:
+Live Settings are stored with a unicode key to unicode value, and work much like
+memcached, but provide a fast, persistent, and eventually consistent way of
+storing and getting settings. Live Settings can be changed programmatically:
 
 ```python
 from kay.ext.live_settings import live_settings
@@ -105,11 +126,12 @@ Or they can be managed via a custom Admin page:
 
 ---
 
-![image](/assets/images/652/live_settings.png)
+![](/assets/images/652/live_settings.png)
 
 ---
 
-You can read the [Live Settings documentation here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.live_settings)
+You can read the [Live Settings documentation
+here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.live_settings)
 
 ## `AppStatsMiddleware`
 
@@ -123,7 +145,10 @@ MIDDLEWARE_CLASSES = (
 )
 ```
 
-The `AppStatsMiddleware` can work with the Live Settings API and can be enabled and disabled without redeploying your application. You can read the [documentation for the AppStats extension here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.appstats)
+The `AppStatsMiddleware` can work with the Live Settings API and can be enabled
+and disabled without redeploying your application. You can read the
+[documentation for the AppStats extension
+here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.appstats)
 
 ## EReporter
 
@@ -140,19 +165,20 @@ integrates with Kay's `ADMINS` and email related settings.
 
 ---
 
-You can read the [documentation for the EReporter extension here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.ereporter).
+You can read the [documentation for the EReporter extension
+here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.ereporter).
 
 ## Conclusion
 
 Kay 1.1 adds a number of new features which we hope will make development and
 management of applications on App Engine easier.
 
-As always we would love to hear from you\! Please check out [Kay's project
+As always we would love to hear from you! Please check out [Kay's project
 page](http://code.google.com/p/kay-framework/). We encourage you to send us bug
 reports and feature requests via our [issues
 page](http://code.google.com/p/kay-framework/issues/list) as well as give us
 feedback on the [mailing list](https://groups.google.com/group/kay-users). We
 are also looking forward to Kay 2.0 so if you have any suggestions about any
-large new features now is the time to let us know\!
+large new features now is the time to let us know!
 
-We look forward to hearing feedback about Kay\!
+We look forward to hearing feedback about Kay!

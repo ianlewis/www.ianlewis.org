@@ -17,11 +17,9 @@ servers are [Go](http://golang.org), [Rust](http://www.rust-lang.org/) and
 [Dart](https://www.dartlang.org/) are targeting the client side as well as
 server side applications.
 
-<div>
-<img src="/assets/images/715/gopher_thumbnail.jpg" />
-<img src="/assets/images/715/rust-logo-128x128-blk-v2_thumbnail.png" />
-<img src="/assets/images/715/haskell-logo_thumbnail.png" />
-</div>
+![A Gopher character. The Go language mascot.](/assets/images/715/gopher_thumbnail.jpg)
+![The Rust language logo.](/assets/images/715/rust-logo-128x128-blk-v2_thumbnail.png)
+![The Haskell language logo.](/assets/images/715/haskell-logo_thumbnail.png)
 
 There are some common threads in these new languages here that I don't really
 see talked about much but I think are useful to talk about because they

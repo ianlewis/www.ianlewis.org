@@ -8,6 +8,15 @@ tags: tech python pycon
 render_with_liquid: false
 ---
 
-<p>Google docs wouldn't let me share the presentation publicly with people outside our company's domain and it gave me an error when I tried to download it as a Powerpoint file or PDF so I was forced to recreate my presentation locally. Anyway, I placed the slides to my talk at <a href="http://pycon.sit.rp.sg/">PyCon Asia</a> online please check it out on slideshare.</p>
+Google docs wouldn't let me share the presentation publicly with people outside
+our company's domain and it gave me an error when I tried to download it as a
+PowerPoint file or PDF so I was forced to recreate my presentation locally.
+Anyway, I placed the slides to my talk at [PyCon Asia](http://pycon.sit.rp.sg/)
+online please check it out on Slideshare.
 
-<div style="width:425px" id="__ss_4503000"><strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/IanMLewis/key-value-4503000" title="Key Value Storage Systems ... and Beyond ... with Python">Key Value Storage Systems ... and Beyond ... with Python</a></strong><object id="__sse4503000" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=key-value-100615000044-phpapp02&stripped_title=key-value-4503000" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse4503000" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=key-value-100615000044-phpapp02&stripped_title=key-value-4503000" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/IanMLewis">Ian Lewis</a>.</div></div>
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/jWbLwzJMBFbw2M?startSlide=1" width="597" height="486" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border: var(--border-1) solid #CCC; border-width:1px; margin-bottom:5px;max-width: 100%;" allowfullscreen></iframe>
+<div style="margin-bottom:5px"><strong>
+<a href="https://www.slideshare.net/slideshow/key-value-4503000/4503000" title="Key Value Storage Systems ... and Beyond ... with Python" target="_blank">Key Value Storage Systems ... and Beyond ... with Python</a>
+</strong> from <strong>
+<a href="https://www.slideshare.net/IanMLewis" target="_blank">Ian Lewis</a>
+</strong></div>
