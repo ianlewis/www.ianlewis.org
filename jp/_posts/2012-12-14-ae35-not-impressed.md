@@ -9,11 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
-僕が作ったApp Engineアプリ
-
 [`http://ae35notimpressed.ian-test-hr.appspot.com/`](http://ae35notimpressed.ian-test-hr.appspot.com/)
 
-はもう見ているかもしれませんが、何で作ったか、どういう意味なのかがわからない人が多くて、ちょっとブログで説明しようかなと思って、書いてみた。
+私が作った、上記のアプリはもう見ているかもしれませんが、何で作ったか、どういう意味なのかがわからない人が多くて、ちょっとブログで説明しようかなと思って、書いてみた。
 
 > **Update(2025-08-28): アプリを落としました**
 
