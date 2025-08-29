@@ -247,6 +247,17 @@ main .post img {
   height: auto;
 }
 
+main iframe.youtube-video {
+  width: 840px;
+  height: 473px;
+}
+
+main .speakerdeck-embed-wrapper {
+  width: 840px;
+}
+
+main div.align-center,
+main .align-center,
 main img.align-center:not(.dark, .light),
 body:not(.dark) main img.align-center:not(.dark) {
   display: block;
