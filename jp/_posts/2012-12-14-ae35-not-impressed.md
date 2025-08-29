@@ -53,7 +53,11 @@ locale: ja
 
 僕はこれが伝説的なツイートだと思って、すぐ、App Engine のアプリを作り始めた。数時間後このツイートをしました。
 
+<!-- textlint-disable spelling -->
+
 [![お待たせしました。面白い投稿をお待ちしております -AE35 IS NOT IMPRESSED https://ae35notimpressed.ian-test-hr.appspot.com/](/assets/images/2012-12-14-ae35-not-impressed/ianmlewis_274081177239945216.png){: .align-center}](https://x.com/IanMLewis/status/274081177239945216)
+
+<!-- textlint-enable spelling -->
 
 新しい meme が生まれた。。
 
