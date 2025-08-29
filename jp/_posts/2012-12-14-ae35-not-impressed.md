@@ -9,11 +9,11 @@ render_with_liquid: false
 locale: ja
 ---
 
-僕が作ったApp Engineアプリ
-
 [`http://ae35notimpressed.ian-test-hr.appspot.com/`](http://ae35notimpressed.ian-test-hr.appspot.com/)
 
-(**Update: 落としました**)はもう見ているかもしれませんが、何で作ったか、どういう意味なのかがわからない人が多くて、ちょっとブログで説明しようかなと思って、書いてみた。
+私が作った、上記のアプリはもう見ているかもしれませんが、何で作ったか、どういう意味なのかがわからない人が多くて、ちょっとブログで説明しようかなと思って、書いてみた。
+
+> **Update(2025-08-28): アプリを落としました**
 
 ## PyFesから始まる
 
@@ -51,9 +51,11 @@ locale: ja
 
 僕はこれが伝説的なツイートだと思って、すぐ、App Engine のアプリを作り始めた。数時間後このツイートをしました。
 
-> お待たせしました。面白い投稿をお待ちしております -AE35 IS NOT IMPRESSED [`…5notimpressed.ian-test-hr.appspot.com`](http://ae35notimpressed.ian-test-hr.appspot.com/)
->
-> &mdash; Ian Lewis (@IanMLewis)
+<!-- textlint-disable spelling -->
+
+[![お待たせしました。面白い投稿をお待ちしております -AE35 IS NOT IMPRESSED https://ae35notimpressed.ian-test-hr.appspot.com/](/assets/images/2012-12-14-ae35-not-impressed/ianmlewis_274081177239945216.png){: .align-center}](https://x.com/IanMLewis/status/274081177239945216)
+
+<!-- textlint-enable spelling -->
 
 新しい meme が生まれた。。
 
