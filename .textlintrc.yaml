@@ -52,12 +52,14 @@ rules:
       - "Enamoto"
       - "Eno"
       - "Fikes"
+      - "Foppe"
       - "Fumi"
       - "Gageot"
       - "Gergely"
       - "Ghemawat"
       - "Godbolt"
       - "Graeme"
+      - "Hemminga"
       - "Hightower"
       - "Hockin"
       - "Hochstein"
@@ -185,6 +187,8 @@ rules:
       - "kaz"
       - "markhammonds"
       - "mcyoung"
+      - "MiCHiLU" # Person/handle name
+      - "miwaza"
       - "monjudoh"
       - "moriyoshi"
       - "shimizukawa"
@@ -197,7 +201,7 @@ rules:
       - "toruot"
       - "troter"
       - "whosaysni"
-      - "voluntas"
+      - "/[Vv]oluntas/"
       - "yoichiro"
       - "yuanying"
       - "yuroyoro"
@@ -312,6 +316,7 @@ rules:
       - "Noto" # Noto fonts
       - "Nunjucks" # JavaScript templating engine
       - "OpenShift" # Red Hat's container platform
+      - "OpenSocial" # Social networking protocol
       - "OpenStack" # OpenStack cloud computing platform
       - "Picasa" # Old Google photo management software for App Engine
       - "Plone" # Python content management system
@@ -321,6 +326,7 @@ rules:
       - "RequireJS"
       - "ShiftJIS" # Japanese character encoding
       - "Sigstore" # Project for signing software artifacts
+      - "Stardict" # StarDict dictionary software
       - "Symposion" # Django library for conference management
       - "Stylelint"
       - "Tensorflow"
@@ -333,6 +339,7 @@ rules:
       - "OpenShift"
       - "OpenStack"
       - "PIL" # Python Imaging Library
+      - "Plagger" # Perl RSS/Atom aggregator (proper capitalization)
       - "Postfix" # mail server
       - "PySerial" # Python Serial port library
       - "Pygments" # Python syntax highlighting library
@@ -389,14 +396,15 @@ rules:
 
       - "Autoscaling"
       - "Connectability" # Ability to connect
-      - "Dockerfile"
+      - "Dockerfile" # Docker configuration file
       - "Googler" # Google employee
       - "Googley" # Google-like, characteristic of Google
       - "ReplicaSet" # Kubernetes ReplicaSet
-      - "TrueType"
-      - "Vagrantfile"
-      - "dotfiles"
+      - "TrueType" # TrueType font
+      - "Vagrantfile" # Vagrant configuration file
+      - "dotfiles" # configuration files
       - "iGoogle" # (old) Google personalized portal services
+      - "iPhones" # plural of iPhone
       - "nosplit" # Go compiler directive
       - "/[Aa]ddon/"
       - "/[Aa]cyclic/" # not displaying or forming part of a cycle.
@@ -417,7 +425,9 @@ rules:
       - "/[Ll]ossy/" # process that loses information (e.g. compression)
       - "/[Mm]ixin/"
       - "/[Nn]amespace/"
+      - "/[Nn]-gram/" # N-gram text analysis
       - "/[Pp]aywall/"
+      - "/[Pp]ermalink/"
       - "/[Pp]laintext/"
       - "/[Ii]mpactful/" # impact + -ful
       - "/[Ii]ntegrations/" # irregular plural-form
@@ -427,6 +437,7 @@ rules:
       - "/[Ss]uperintelligence/" # super + intelligence (stupid AI terms)
       - "/[Ss]tylesheet/"
       - "/[Tt]estbed/"
+      - "/[Tt]raceback/" # Error trace information
       - "/[Tt]radeoff/" # trade + off
       - "/[Uu]ntrusted/" # used to describe code in a security context
       - "[Ww]ifi" # Wi-Fi
@@ -451,6 +462,7 @@ rules:
       - "CFP" # Call for Papers/Proposals
       - "CJK" # Chinese, Japanese, and Korean
       - "CNCF" # Cloud Native Computing Foundation
+      - "CPAN" # Comprehensive Perl Archive Network
       - "CPU" # Central Processing Unit
       - "CRI" # Container Runtime Interface
       - "CSV" # Comma-Separated Values
@@ -496,6 +508,7 @@ rules:
       - "RDBMS" # Relational Database Management System
       - "RPC" # Remote Procedure Call
       - "RSS" # Really Simple Syndication
+      - "SCM" # Source Code Management
       - "SDK" # Software Development Kit
       - "SES" # AWS Simple Email Service
       - "SLA" # Service Level Agreement
@@ -529,8 +542,11 @@ rules:
       # Other
       ##########################################################################
 
+      # Internet slang/terms
       # https://www.merriam-webster.com/dictionary/amirite
       - "/[Aa]mirite/" # Slang for "am I right?"
+      - "/[Ff]lamebait/" # Something intended to provoke angry responses online
+
       # https://dictionary.cambridge.org/dictionary/english/dumbing-down
       - "/[Dd]umbed-down/"
       - "Houthi" # Houthi movement
@@ -540,8 +556,9 @@ rules:
       - "Yeeaaah" # Exaggerated "Yeah" often used in informal contexts
       - "/[Ww]illy-nilly/" # Meaning "in a disorganized manner"
 
-      - "approachability" # The quality of being approachable
-      - "unfixable" # Not able to be fixed or repaired
+      - "/[Aa]pproachability/" # The quality of being approachable
+      - "/[Rr]omanization/" # Converting text to Roman alphabet
+      - "/[Uu]nfixable/" # Not able to be fixed or repaired
 
       - "Adiós" # Spanish for "Goodbye"
 
@@ -1145,7 +1162,6 @@ rules:
       - "TMergePath"
       - "tokyotyrant"
       - "Tqzm"
-      - "tracebacks"
       - "transformative"
       - "tremendious"
       - "Uche"
@@ -1215,3 +1231,52 @@ rules:
       - "zipimport"
       - "zsh"
       - "Zyp"
+
+      - "cProfile" # Python profiler
+      - "doctest" # Python testing framework
+      - "bugfix" # Bug fix
+      - "Req" # Request abbreviation
+      - "gae" # Google App Engine abbreviation
+
+      - "Ohloh" # Software development statistics website
+      - "ALSA" # Advanced Linux Sound Architecture
+      - "Alsa" # ALSA variant
+      - "aculo" # Part of script.aculo.us library
+      - "favicons" # Favorite icons
+      - "stardict" # StarDict dictionary format
+      - "epwing" # EPWING dictionary format
+      - "plagger" # Perl RSS/Atom aggregator
+      - "HTMLScrubber" # HTML cleaning library
+      - "additionalProperties" # JSON Schema property
+      - "readonly" # Read-only attribute
+      - "PyObjC" # Python Objective-C bridge
+      - "AnchorLab" # Company name
+      - "EUCJP" # Japanese character encoding (Extended Unix Code for Japanese)
+      - "DOCOMO" # Japanese mobile operator NTT DOCOMO
+      - "FOMA" # Freedom of Mobile multimedia Access (DOCOMO's 3G service)
+      - "PNG" # Portable Network Graphics
+      - "JPG" # JPEG image format
+      - "BMP" # Bitmap image format
+      - "OSPN" # Open Source People Network
+      - "SumiTomohiko" # Person name
+      - "KDE" # K Desktop Environment
+      - "OSC" # Open Source Conference
+      - "Hasweb" # Web hosting service
+      - "cgi" # Common Gateway Interface (lowercase)
+      - "Webfaction" # Web hosting service
+      - "Shoutout" # Acknowledgment or mention
+      - "au" # Japanese mobile carrier
+      - "api" # Application Programming Interface (lowercase)
+      - "_blank" # HTML target attribute
+      - "digg" # Social news aggregation website
+      - "wierd" # Common misspelling of "weird" (should be fixed in content)
+      - "accessablity" # Misspelling of "accessibility" (should be fixed in content)
+      - "Connectablity" # Misspelling of "Connectivity" (should be fixed in content)
+      - "connectability" # Ability to connect (should use "connectivity")
+      - "changelog" # Change log (should be fixed in content)
+      - "mybranch" # Branch name (should be fixed in content)
+      - "extract_addrs" # Function name
+      - "tt" # HTML element or abbreviation
+      - "oss" # Open Source Software (lowercase)
+      - "ot" # Could be initials, abbreviation, or typo
+      - "Config" # Configuration

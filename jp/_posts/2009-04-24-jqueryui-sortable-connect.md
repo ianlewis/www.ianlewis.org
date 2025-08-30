@@ -47,4 +47,4 @@ $("#my-other-list").sortable({
 });
 ```
 
-<a href="/assets/demos/files/sortables/index.html" target="_blank">DEMO &gt;&gt;</a>
+[DEMO >>](/assets/demos/files/sortables/index.html){: target="blank"}
