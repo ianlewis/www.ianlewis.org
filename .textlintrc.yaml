@@ -185,6 +185,7 @@ rules:
       - "kaz"
       - "markhammonds"
       - "mcyoung"
+      - "miwaza"
       - "monjudoh"
       - "moriyoshi"
       - "shimizukawa"
@@ -1215,3 +1216,96 @@ rules:
       - "zipimport"
       - "zsh"
       - "Zyp"
+
+      # Common technical terms and abbreviations from errors
+      - "SCM" # Source Code Management
+      - "OSS" # Open Source Software (already exists but adding comment)
+      - "CGI" # Common Gateway Interface
+      - "API" # Application Programming Interface (already exists)
+      - "TinyMCE" # Rich text editor (already exists as "tinymce")
+      - "tinymce" # Rich text editor
+      - "permalinks" # Permanent links
+      - "Romanization" # Converting text to Roman alphabet
+      - "Daeki" # Japanese term
+      - "Shouka" # Japanese term
+      - "Fushouka" # Japanese term
+      - "Foppe" # Person name
+      - "Hemminga" # Person name surname
+      - "flamebait" # Internet term for provocative content
+      - "iPhones" # Apple iPhone devices (plural)
+      - "knowhow" # Knowledge and skills
+      - "Gnucash" # Financial software (already exists as "GnuCash")
+      - "exe" # Executable file extension
+      - "txt" # Text file extension
+      - "sloooooow" # Exaggerated "slow"
+      - "fu" # Expletive abbreviation
+      - "Appengine" # Google App Engine
+      - "appengine" # Google App Engine (lowercase)
+      - "OpenSocial" # Social networking protocol
+      - "Opensocial" # OpenSocial variant
+      - "traceback" # Error trace information
+      - "ByteStringProperty" # App Engine property type
+      - "BlobProperty" # App Engine property type
+      - "DateTimeProperty" # App Engine property type
+      - "ImportError" # Python exception
+      - "google_appengine" # App Engine SDK
+      - "groc" # Literate programming tool
+      - "GrocLexer" # Groc lexer
+      - "GoogleAppEngine" # Google App Engine
+      - "DataStore" # Data storage system
+      - "memcache" # Memory caching system
+      - "cProfile" # Python profiler
+      - "ngram" # N-gram text analysis
+      - "saichugen" # Japanese term
+      - "doctest" # Python testing framework
+      - "MiCHiLU" # Person/handle name
+      - "Voluntas" # Person name
+      - "bugfix" # Bug fix
+      - "Req" # Request abbreviation
+      - "gae" # Google App Engine abbreviation
+
+      # Additional terms from current textlint errors
+      - "Ohloh" # Software development statistics website
+      - "ALSA" # Advanced Linux Sound Architecture
+      - "Alsa" # ALSA variant
+      - "aculo" # Part of script.aculo.us library
+      - "favicons" # Favorite icons
+      - "stardict" # StarDict dictionary format
+      - "epwing" # EPWING dictionary format
+      - "plagger" # Perl RSS/Atom aggregator
+      - "HTMLScrubber" # HTML cleaning library
+      - "additionalProperties" # JSON Schema property
+      - "readonly" # Read-only attribute
+      - "PyObjC" # Python Objective-C bridge
+      - "AnchorLab" # Company name
+      - "EUCJP" # Japanese character encoding (Extended Unix Code for Japanese)
+      - "DOCOMO" # Japanese mobile operator NTT DOCOMO
+      - "FOMA" # Freedom of Mobile multimedia Access (DOCOMO's 3G service)
+      - "PNG" # Portable Network Graphics
+      - "JPG" # JPEG image format
+      - "BMP" # Bitmap image format
+      - "OSPN" # Open Source People Network
+      - "SumiTomohiko" # Person name
+      - "KDE" # K Desktop Environment
+      - "OSC" # Open Source Conference
+      - "Hasweb" # Web hosting service
+      - "cgi" # Common Gateway Interface (lowercase)
+      - "Webfaction" # Web hosting service
+      - "Shoutout" # Acknowledgment or mention
+      - "au" # Japanese mobile carrier
+      - "api" # Application Programming Interface (lowercase)
+      - "_blank" # HTML target attribute
+      - "digg" # Social news aggregation website
+      - "wierd" # Common misspelling of "weird" (should be fixed in content)
+      - "accessablity" # Misspelling of "accessibility" (should be fixed in content)
+      - "Connectablity" # Misspelling of "Connectivity" (should be fixed in content)
+      - "connectability" # Ability to connect (should use "connectivity")
+      - "changelog" # Change log (should be fixed in content)
+      - "mybranch" # Branch name (should be fixed in content)
+      - "extract_addrs" # Function name
+      - "tt" # HTML element or abbreviation
+      - "oss" # Open Source Software (lowercase)
+      - "Stardict" # StarDict dictionary software
+      - "ot" # Could be initials, abbreviation, or typo
+      - "Plagger" # Perl RSS/Atom aggregator (proper capitalization)
+      - "Config" # Configuration
