@@ -9,8 +9,8 @@ render_with_liquid: false
 locale: ja
 ---
 
-<p><img src="http://planetpythonjp.ianlewis.org/images/python-logo.gif" alt="Python" width="211" height="71" /></p>
-<p>今日、<a href="http://pyspa.org/">Python温泉</a>に参加したメンバーたちや、<a href="http://www.python.org/" title="Python">Python</a>が好きな皆様のブログポストを集める<a href="http://www.planetplanet.org/">Planet</a>ホームページがあれば、いいなということで、作ってみました。</p>
-<p>では、<a href="http://planetpythonjp.ianlewis.org/">Planet Python Japan</a><a href="http://planetpythonjp.ianlewis.org/"></a>を登場します。</p>
-<p><a href="http://www.python.org/" title="Python">Python</a>が好きな皆様へ、<a href="http://www.python.org/" title="Python">Python</a> Planet Japanのメンバー募集中です。<a href="http://www.python.org/" title="Python">Python</a>テーマなんですということで、ウェブ系や、IT系のボスとでも、おっけですけど、<a href="http://www.python.org/" title="Python">Python</a>に関するポストを作るようにしましょう。応募の方は RSSフィードのURLを頂ければいいと思います。</p>
-<p>よろしくです。</p>
+![Python](http://planetpythonjp.ianlewis.org/images/python-logo.gif)
+今日、[Python温泉](http://pyspa.org/)に参加したメンバーたちや、[Python](http://www.python.org/ "Python")が好きな皆様のブログポストを集める[Planet](http://www.planetplanet.org/)ホームページがあれば、いいなということで、作ってみました。
+では、[Planet Python Japan](http://planetpythonjp.ianlewis.org/)を登場します。
+[Python](http://www.python.org/ "Python")が好きな皆様へ、[Python](http://www.python.org/ "Python") Planet Japanのメンバー募集中です。[Python](http://www.python.org/ "Python")テーマなんですということで、ウェブ系や、IT系のボスとでも、おっけですけど、[Python](http://www.python.org/ "Python")に関するポストを作るようにしましょう。応募の方は RSSフィードのURLを頂ければいいと思います。
+よろしくです。

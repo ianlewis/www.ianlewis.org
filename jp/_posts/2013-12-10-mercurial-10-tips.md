@@ -9,7 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-<img src="/assets/images/mercurial/mercurial_medium.png" class="align-center" />
+![Mercurial](/assets/images/mercurial/mercurial_medium.png)
 
 _この記事は [Mercurial Advent Calendar 2013](http://connpass.com/event/3950/)
 の第３目の記事 (なのに 10日に公開しています。。。)。前の記事は @cointoss1973 さんの「 [TortoiseHg のワークベンチから快適なターミナルを起動する(Windows)](http://cointoss.hatenablog.com/entry/2013/12/02/182618)」。次の記事は @toruot さんの「 [Mercurialの`extdiff`ツールを自作する](http://toruot.hatenablog.jp/entry/2013/12/04/231914) 」という記事です。_
