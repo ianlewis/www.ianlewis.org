@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Go! Appengine"
+title: "Go! App Engine"
 date: 2011-06-07 10:22:34 +0000
 permalink: /jp/go-appengine
 blog: jp
@@ -62,7 +62,7 @@ if (len(body) > 0) {
         {.end}
     </div>
 
-    <h1>Appengine Go! Guestbook <img src="/static/img/appengine-go.png" /></h1>
+    <h1>App Engine Go! Guestbook <img src="/static/img/appengine-go.png" /></h1>
     <a href="https://bitbucket.org/IanLewis/golang_guestbook/">Source Code</a>
     <form action="/save" method="POST" style="margin-bottom: 50px">
         <div><textarea name="body" rows="10" cols="80"></textarea></div>

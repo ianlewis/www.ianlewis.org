@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Google Appengine SDK 1.4.0 がリリースされました！"
+title: "Google App Engine SDK 1.4.0 がリリースされました！"
 date: 2010-12-03 09:16:18 +0000
 permalink: /jp/google-appengine-sdk-140
 blog: jp

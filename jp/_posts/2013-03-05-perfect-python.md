@@ -9,7 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-![](/assets/images/698/2013-02-27_23.08.01_medium.jpg)
+![パーフェクトPythonの本が３つ重なっている](/assets/images/698/2013-02-27_23.08.01_medium.jpg)
 
 僕が執筆に参加していた「[パーフェクトPython](http://gihyo.jp/book/2013/978-4-7741-5539-5)」は本日から発売されます！
 
@@ -21,8 +21,12 @@ locale: ja
 
 ## Buy Me
 
-<div style="float:left;padding-right:10px;"><iframe src="http://rcm-jp.amazon.co.jp/e/cm?lt1=_blank&bc1=000000&IS2=1&nou=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=ianmlewis-22&o=9&p=8&l=as1&m=amazon&f=ifr&ref=qf_sp_asin_til&asins=477415539X" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe></div>
+[![パーフェクトPythonの画像](/assets/images/2013-03-05-perfect-python/perfect-python.jpg)](https://amzn.asia/d/bH7mBZA)
 
 今年中はPythonコミュニティーのマインと考えられるバージョンがPython3になるので、今のうちにPython3の勉強を始めるとちょうどいいタイミングではないかと思っています\!
 
 パーフェクトPythonは[技術評論社](http://www.gihyo.jp)で出版されます。もちろん、Amazonでオンラインで購入できますし、本屋さんでも購入できます。
+
+> Update: ２０２０年６月１日: パーフェクトPython改訂2版も発売されました!
+>
+> [![Perfect Python 改訂2版の画像](/assets/images/2013-03-05-perfect-python/perfect-python-2.jpg)](https://amzn.asia/d/bH7mBZA)
