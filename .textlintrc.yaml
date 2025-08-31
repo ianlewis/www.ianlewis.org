@@ -242,6 +242,7 @@ rules:
       - "Gree"
       - "Gumi"
       - "Joyent"
+      - "LinkedIn" # Professional networking platform
       - "MacBook"
       - "Mesosphere"
       - "Mixi"
@@ -282,8 +283,9 @@ rules:
       - "BeautifulSoup"
       - "Blobstore" # App Engine Blobstore
       - "BudouX" # Japanese morphological analyzer
-      - "Buildout" # Python build system
       - "Buildbot" # Python continuous integration tool
+      - "Buildout" # Python build system
+      - "Bundler" # Ruby dependency manager
       - "CRI-O" # Container Runtime Interface implementation for Kubernetes
       - "CloudFront" # AWS CloudFront
       - "/[Cc]ron/"
@@ -411,13 +413,14 @@ rules:
       - "/[Aa]utocomplete/"
       - "/[Aa]utoscaler/"
       - "/[Aa]utoscaling/"
-      - "/[Bb]ackend/"
+      - "/[Bb]ackend/" # the server side of a client-server system
       - "/[Cc]omparator/" # compare + ator
       - "/[Dd]eclarative/"
       - "/[Dd]ev/" # Development/Developer
       - "/[Ee]xfiltrate/" # To steal data from a system
       - "/[Ee]xfiltrating/" # gerund or present participle of exfiltrate
       - "/[Ff]iletype/" # file + type
+      - "/[Ff]rontend/" # the client side of a client-server system
       - "/[Gg]oroutine/"
       - "/[Hh]ackathon/"
       - "/[Kk]eychain/"
