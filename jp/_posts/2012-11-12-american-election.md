@@ -58,11 +58,9 @@ locale: ja
 
 ま、事前に分かったわけがないのですが、可能性としてはわかりました。マスコミでは、どっちも勝つ可能性が同じように聞かれますが、実際にはそういうわけではない。
 
-参考: [Triumph of the Nerds: Nate Silver Wins in 50
-States](http://mashable.com/2012/11/07/nate-silver-wins/)
+参考: [Triumph of the Nerds: Nate Silver Wins in 50 States](http://mashable.com/2012/11/07/nate-silver-wins/)
 
-世論調査や、色な情報を使って、統計で候補者の選出可能性を出した、New York Times の Nate Silver
-が完璧に選挙の結果を推定しました。
+世論調査や、色な情報を使って、統計で候補者の選出可能性を出した、New York TimesのNate Silverが完璧に選挙の結果を推定しました。
 
 > For the Nate-haters, here’s the 538 prediction and actual results side by side
 >
@@ -70,19 +68,15 @@ States](http://mashable.com/2012/11/07/nate-silver-wins/)
 
 ま、それだけじゃ、完璧に推定した人は数人いたんですが、 Nate Silverさんは大統領の選挙を完璧に推定しただけでなく、国会の上院、衆議院も完璧に推定し、知事の選挙を一つだけ間違えたという素晴らしすぎる推定力でした。
 
-ま、統計学者じゃなきゃわからないよねって思うとそうでもないですね。 [New York Times: Paths to the White
-House](http://elections.nytimes.com/2012/results/president/scenarios)
-というアプリを少しいじれば、州ごとの結果はわからないけど、このシミュレーションで、選挙の結果は自分でも大体わかると思います。
+ま、統計学者じゃなきゃわからないよねって思うとそうでもないですね。 [New York Times: Paths to the White House](http://elections.nytimes.com/2012/results/president/scenarios)というアプリを少しいじれば、州ごとの結果はわからないけど、このシミュレーションで、選挙の結果は自分でも大体わかると思います。
 
-このアプリは、Swing State
-でロムニーさんかオバマさんかどっちが勝ったら、こうなるって決定経路を表しています。表の上に州が大きい順で並んでいます。オバマさんかロムニーさんのボタンを押したら、その人が勝ったような状況を確定して、表がかわります。そもそもオバマさんが勝つパスが
-431 ケースがあって、ロムニーサンが勝つケースは 76 あるってこれだけで、オバマさんが有利ってわかります。
+このアプリは、Swing Stateでロムニーさんかオバマさんかどっちが勝ったら、こうなるって決定経路を表しています。表の上に州が大きい順で並んでいます。オバマさんかロムニーさんのボタンを押したら、その人が勝ったような状況を確定して、表がかわります。そもそもオバマさんが勝つパスが４３１ケースがあって、ロムニーサンが勝つケースは 76 あるってこれだけで、オバマさんが有利ってわかります。
 
-<a href="/assets/images/683/paths.png"><img src="/assets/images/683/paths_big.png" /></a>
+[![](/assets/images/683/paths.png)](/assets/images/683/paths_big.png)
 
 Swing State の中、Florida と Ohio が一番でかい。ロムニーさんはそもそもFloridaとOhioを両方勝ってないと、平等にならないのが現実だった。North Carolinaはロムニーさんがほぼ確実に勝つので、それはいいんですが、ロムニーさんはFlorida, Ohio, North Carolinaで勝ったとしても、オバマさんはその後の Virginia州で勝ったら、大体平等的な状況に戻る。つまり、ロムニーさんは選出のためにFloridaとOhioはマストです。オバマさんは負けたらいたいんけど、確実にアウトではないという状況でした。
 
-<a href="/assets/images/683/paths2.png"><img src="/assets/images/683/paths2_big.png" /></a>
+[![](/assets/images/683/paths2.png)](/assets/images/683/paths2_big.png)
 
 つまり、ロムニーさんは最初からもっと厳しい目に見られたはずです。
 
@@ -104,20 +98,17 @@ Swing State の中、Florida と Ohio が一番でかい。ロムニーさんは
 
 今年の選挙は、結果のデータが簡単に頂けるので、ネット上で色な面白いビジュアライゼーションが出来上がり、結構盛り上がりました。
 
-例えば、 [What The 2012 Election Would Have Looked Like Without Universal Suffrage](http://www.buzzfeed.com/buzzfeedpolitics/what-the-2012-election-would-have-looked-like-with)
-ですと、1850年のアメリカだと今年の選挙はこういう結果になったでしょう。1850年では、白人の男性しか投票できなかった。女性や、少数民族の重要性を伝えるビジュアライゼーション。男性だけの場合とか、白人(男女)だけだとか、いろな地図が見れるので、是非見てみてください。
+例えば、[What The 2012 Election Would Have Looked Like Without Universal Suffrage](http://www.buzzfeed.com/buzzfeedpolitics/what-the-2012-election-would-have-looked-like-with)ですと、1850年のアメリカだと今年の選挙はこういう結果になったでしょう。1850年では、白人の男性しか投票できなかった。女性や、少数民族の重要性を伝えるビジュアライゼーション。男性だけの場合とか、白人(男女)だけだとか、いろな地図が見れるので、是非見てみてください。
 
-![image](/assets/images/683/sufferage_big.jpg)
+![](/assets/images/683/sufferage_big.jpg)
 
 普通の地図だと、アメリカの面積がみれるだけで、ある場所の人口が見えない。郡(County)の地図を見ると、非常に赤い。これだけじゃ、選挙の結果がちゃんと見えるかされてない。
 
-![image](/assets/images/683/countymaprb512_big.png)
+![](/assets/images/683/countymaprb512_big.png)
 
-それで、 Michigan大学の Mark Newman教授が、 [Maps of the 2012 US presidential
-election results](http://www-personal.umich.edu/~mejn/election/2012/)
-という地図編を作りました。青と赤の間の色で選挙の結果を表して、そして、人口が多い場所を大きくして、少ないところを小さくするようなビジュアライゼーションを作りました。これで、オバマさんに投票した人たちは、都市圏に集中していて、ロムニーさんに投票した人たちは、あまり集中する場所がなく、田舎に幅広く拡散されているという全体的な状況がわかる。
+それで、Michigan大学のMark Newman教授が、[Maps of the 2012 US presidential election results](http://www-personal.umich.edu/~mejn/election/2012/)という地図編を作りました。青と赤の間の色で選挙の結果を表して、そして、人口が多い場所を大きくして、少ないところを小さくするようなビジュアライゼーションを作りました。これで、オバマさんに投票した人たちは、都市圏に集中していて、ロムニーさんに投票した人たちは、あまり集中する場所がなく、田舎に幅広く拡散されているという全体的な状況がわかる。
 
-![image](/assets/images/683/countycartpurple512_big.png)
+![](/assets/images/683/countycartpurple512_big.png)
 
 他に州単位とか、人口ではなく、Electoral College の投票を使った地図とかもあるので、是非見てみてください。
 
