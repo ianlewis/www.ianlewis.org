@@ -89,4 +89,4 @@ not be installed manually. These dependencies include:
 - HTML output is validated after Jekyll builds with `make html-validate`
 - GitHub Actions workflow enforces all linting rules
 - The site supports both light and dark themes
-- Social media links includes Bluesky, Mastodon, GitHub, LinkedIn
+- Social media links include Bluesky, Mastodon, GitHub, LinkedIn
