@@ -28,6 +28,8 @@ rules:
       - "Ahmet"
       - "Andreessen"
       - "Aoife"
+      - "André"
+      - "Arko"
       - "Armin"
       - "Atamel"
       - "Atharva"
@@ -46,6 +48,8 @@ rules:
       - "Daskalou"
       - "Dougherty"
       - "Duan"
+      - "Drapper"
+      - "Edinger"
       - "Eiji"
       - "Elin"
       - "Elon"
@@ -59,6 +63,8 @@ rules:
       - "Ghemawat"
       - "Godbolt"
       - "Graeme"
+      - "Hansson"
+      - "Heinemeier"
       - "Hemminga"
       - "Hightower"
       - "Hockin"
@@ -82,6 +88,7 @@ rules:
       - "Knyszek"
       - "Krumins"
       - "Lacasse"
+      - "Liao"
       - "Longhui"
       - "Lorin"
       - "Lifland"
@@ -146,8 +153,10 @@ rules:
       - "Warmerdam"
       - "Wilber"
       - "Willison"
+      - "Woodruff"
       - "Xiao"
       - "Xinkai"
+      - "Xu"
       - "Vella"
       - "Voege"
       - "Yamaguchi"
@@ -169,11 +178,13 @@ rules:
       # User handles
       ##########################################################################
 
+      - "DHH"
       - "TheAmyCode"
       - "akisute"
       - "aodag"
       - "atsuoishimoto"
       - "deeet"
+      - "dhh"
       - "ae35"
       - "akisute"
       - "bucho"
@@ -255,6 +266,7 @@ rules:
       - "Jaiku" # Old social networking service
       - "JetBrains"
       - "Jupyter"
+      - "Shopify" # E-commerce platform
       - "Simeji" # Japanese input method editor (bought by Baidu)
       - "Smipple" # Code snippet sharing service (defunct)
       - "SoftBank"
@@ -317,6 +329,7 @@ rules:
       - "NixOS"
       - "Noto" # Noto fonts
       - "Nunjucks" # JavaScript templating engine
+      - "OAuth" # Open standard for access delegation
       - "OpenShift" # Red Hat's container platform
       - "OpenSocial" # Social networking protocol
       - "OpenStack" # OpenStack cloud computing platform
@@ -326,6 +339,7 @@ rules:
       - "Pyflakes" # Python static code analysis tool
       - "QUnit" # JavaScript Unit Testing Framework
       - "RequireJS"
+      - "RubyGems" # Ruby package manager
       - "ShiftJIS" # Japanese character encoding
       - "Sigstore" # Project for signing software artifacts
       - "Stardict" # StarDict dictionary software
@@ -375,6 +389,7 @@ rules:
       - "reStructuredText" # reST
       - "rebuild.fm" # rebuild.fm podcast
       - "supervisord"
+      - "uv" # Python packaging tool
       - "/[Cc]ron/"
       - "/[Mm]emcached/"
       - "/[Nn]ginx/"
@@ -387,10 +402,11 @@ rules:
       - "AJN" # App Engine Java/Japan Night
       - "BPStudy" # BeProud Study
       - "BPStyle" # BeProud internal study
-      - "PyCon"
+      - "PyCon" # Python Conference
       - "PyFes" # Python Festival
       - "PyLadies" # Python Ladies
       - "NSStudy"
+      - "RailsConf" # Ruby on Rails Conference
       - "/[Pp]y[Ss]pa/" # Python Onsen
 
       # Tech Terminology/Jargon
@@ -472,6 +488,7 @@ rules:
       - "CSR" # Certificate Signing Request
       - "CSV" # Comma-Separated Values
       - "CTO" # Chief Technology Officer
+      - "CVE" # Common Vulnerabilities and Exposures
       - "DAG" # Directed Acyclic Graph
       - "DNS" # Domain Name System
       - "DSL" # Domain-Specific Language
