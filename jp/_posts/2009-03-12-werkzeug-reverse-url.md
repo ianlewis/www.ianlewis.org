@@ -22,6 +22,6 @@ def reverse(**kwargs):
   return wredirect(c.build(**kwargs))
 
   # ...
-  
+
   return reverse('form', dict(key=key, slug=slug))
 ```
