@@ -32,14 +32,17 @@ REPO_ROOT = $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 REPO_NAME = $(shell basename "$(REPO_ROOT)")
 
 # renovate: datasource=github-releases depName=aquaproj/aqua versioning=loose
-AQUA_VERSION ?= v2.53.9
+AQUA_VERSION ?= v2.55.0
 AQUA_REPO ?= github.com/aquaproj/aqua
-AQUA_CHECKSUM.Linux.x86_64 = 697d8e69bda13f30bb8d9f76ee5eeb67004cba93022148a20e7ffff8f7edee29
+AQUA_CHECKSUM.Linux.x86_64 = cb7780962ca651c4e025a027b7bfc82c010af25c5c150fe89ad72f4058d46540
 AQUA_CHECKSUM ?= $(AQUA_CHECKSUM.$(uname_s).$(uname_m))
 AQUA_URL = https://$(AQUA_REPO)/releases/download/$(AQUA_VERSION)/aqua_$(kernel)_$(arch).tar.gz
-AQUA_ROOT_DIR = $(REPO_ROOT)/.aqua
+export AQUA_ROOT_DIR = $(REPO_ROOT)/.aqua
 
 JEKYLL_SERVE_HOST ?= 127.0.0.1
+
+# Ensure that aqua and aqua installed tools are in the PATH.
+export PATH := $(REPO_ROOT)/.bin/aqua-$(AQUA_VERSION):$(AQUA_ROOT_DIR)/bin:$(PATH)
 
 # The help command prints targets in groups. Help documentation in the Makefile
 # uses comments with double hash marks (##). Documentation is printed by the
@@ -81,13 +84,36 @@ help: ## Print all Makefile targets (this message).
 				} \
 			}'
 
-package-lock.json: package.json
+package-lock.json: package.json $(AQUA_ROOT_DIR)/.installed
 	@# bash \
-	loglevel="silent"; \
+	loglevel="notice"; \
 	if [ -n "$(DEBUG_LOGGING)" ]; then \
 		loglevel="verbose"; \
 	fi; \
-	npm --loglevel="$${loglevel}" install --package-lock-only --no-audit --no-fund
+	# NOTE: npm install will happily ignore the fact that integrity hashes are \
+	# missing in the package-lock.json. We need to check for missing integrity \
+	# fields ourselves. If any are missing, then we need to regenerate the \
+	# package-lock.json from scratch. \
+	nointegrity=""; \
+	noresolved=""; \
+	if [ -f "$@" ]; then \
+		nointegrity=$$(jq '.packages | del(."") | .[] | select(has("integrity") | not)' < $@); \
+		noresolved=$$(jq '.packages | del(."") | .[] | select(has("resolved") | not)' < $@); \
+	fi; \
+	if [ ! -f "$@" ] || [ -n "$${nointegrity}" ] || [ -n "$${noresolved}" ]; then \
+		# NOTE: package-lock.json is removed to ensure that npm includes the \
+		# integrity field. npm install will not restore this field if \
+		# missing in an existing package-lock.json file. \
+		rm -f $@; \
+		npm --loglevel="$${loglevel}" install \
+			--no-audit \
+			--no-fund; \
+	else \
+		npm --loglevel="$${loglevel}" install \
+			--package-lock-only \
+			--no-audit \
+			--no-fund; \
+	fi; \
 
 node_modules/.installed: package-lock.json
 	@# bash \
@@ -105,7 +131,7 @@ node_modules/.installed: package-lock.json
 
 .venv/.installed: requirements-dev.txt .venv/bin/activate
 	@# bash \
-	./.venv/bin/pip install -r $< --require-hashes; \
+	$(REPO_ROOT)/.venv/bin/pip install -r $< --require-hashes; \
 	touch $@
 
 .bin/aqua-$(AQUA_VERSION)/aqua:
@@ -122,7 +148,7 @@ $(AQUA_ROOT_DIR)/.installed: .aqua.yaml .bin/aqua-$(AQUA_VERSION)/aqua
 	if [ -n "$(DEBUG_LOGGING)" ]; then \
 		loglevel="debug"; \
 	fi; \
-	AQUA_ROOT_DIR="$(AQUA_ROOT_DIR)" ./.bin/aqua-$(AQUA_VERSION)/aqua \
+	$(REPO_ROOT)/.bin/aqua-$(AQUA_VERSION)/aqua \
 		--log-level "$${loglevel}" \
 		--config .aqua.yaml \
 		install; \
@@ -135,49 +161,33 @@ $(AQUA_ROOT_DIR)/.installed: .aqua.yaml .bin/aqua-$(AQUA_VERSION)/aqua
 til: ## Start a new TIL entry.
 	@./til.sh
 
-## Tools
+## Build
 #####################################################################
 
-.PHONY: license-headers
-license-headers: ## Update license headers.
-	@# bash \
-	files=$$( \
-		git ls-files --deduplicate \
-			'*.c' \
-			'*.cpp' \
-			'*.go' \
-			'*.h' \
-			'*.hpp' \
-			'*.js' \
-			'*.lua' \
-			'*.py' \
-			'*.rb' \
-			'*.rs' \
-			'*.toml' \
-			'*.yaml' \
-			'*.yml' \
-			'Makefile' \
-			':!:assets/demos' \
-			':!:_sass/ext' \
-			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
-	); \
-	name=$$(git config user.name); \
-	if [ "$${name}" == "" ]; then \
-		>&2 echo "git user.name is required."; \
-		>&2 echo "Set it up using:"; \
-		>&2 echo "git config user.name \"John Doe\""; \
-	fi; \
-	for filename in $${files}; do \
-		if ! ( head "$${filename}" | grep -iL "Copyright" > /dev/null ); then \
-			./third_party/mbrukman/autogen/autogen.sh \
-				--in-place \
-				--no-code \
-				--no-tlc \
-				--copyright "$${name}" \
-				--license apache \
-				"$${filename}"; \
-		fi; \
-	done
+.PHONY: all
+all: test build ## Run tests and build the site.
+
+Gemfile.lock: Gemfile
+	@bundle lock --update
+
+.PHONY: bundle-install
+bundle-install: Gemfile.lock
+	@# NOTE: Bundler deployment mode is activated.
+	@bundle check || bundle install
+
+.PHONY: build
+build: bundle-install ## Build the site with Jekyll
+	@bundle exec jekyll build
+
+.PHONY: serve
+serve: bundle-install ## Run Jekyll test server.
+	@bundle exec jekyll serve --future --drafts -H $(JEKYLL_SERVE_HOST)
+
+## Testing
+#####################################################################
+
+.PHONY: test
+test: lint ## Run all tests.
 
 ## Formatting
 #####################################################################
@@ -230,6 +240,7 @@ js-format: node_modules/.installed ## Format Javascript files.
 		--write \
 		$${files}
 
+
 .PHONY: json-format
 json-format: node_modules/.installed ## Format JSON files.
 	@# bash \
@@ -246,11 +257,52 @@ json-format: node_modules/.installed ## Format JSON files.
 	if [ "$${files}" == "" ]; then \
 		exit 0; \
 	fi; \
-	./node_modules/.bin/prettier \
+	$(REPO_ROOT)/node_modules/.bin/prettier \
 		--log-level "$${loglevel}" \
 		--no-error-on-unmatched-pattern \
 		--write \
 		$${files}
+
+.PHONY: license-headers
+license-headers: ## Update license headers.
+	@# bash \
+	files=$$( \
+		git ls-files --deduplicate \
+			'*.c' \
+			'*.cpp' \
+			'*.go' \
+			'*.h' \
+			'*.hpp' \
+			'*.js' \
+			'*.lua' \
+			'*.py' \
+			'*.rb' \
+			'*.rs' \
+			'*.toml' \
+			'*.yaml' \
+			'*.yml' \
+			'Makefile' \
+			':!:assets/demos' \
+			':!:_sass/ext' \
+			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
+	); \
+	name=$$(git config user.name); \
+	if [ "$${name}" == "" ]; then \
+		>&2 echo "git user.name is required."; \
+		>&2 echo "Set it up using:"; \
+		>&2 echo "git config user.name \"John Doe\""; \
+	fi; \
+	for filename in $${files}; do \
+		if ! ( head "$${filename}" | grep -iL "Copyright" > /dev/null ); then \
+			$(REPO_ROOT)/third_party/mbrukman/autogen/autogen.sh \
+				--in-place \
+				--no-code \
+				--no-tlc \
+				--copyright "$${name}" \
+				--license apache \
+				"$${filename}"; \
+		fi; \
+	done
 
 .PHONY: md-format
 md-format: node_modules/.installed ## Format Markdown files.
@@ -268,7 +320,7 @@ md-format: node_modules/.installed ## Format Markdown files.
 		exit 0; \
 	fi; \
 	# NOTE: prettier uses .editorconfig for tab-width. \
-	./node_modules/.bin/prettier \
+	$(REPO_ROOT)/node_modules/.bin/prettier \
 		--log-level "$${loglevel}" \
 		--no-error-on-unmatched-pattern \
 		--write \
@@ -325,7 +377,7 @@ yaml-format: node_modules/.installed ## Format YAML files.
 	if [ "$${files}" == "" ]; then \
 		exit 0; \
 	fi; \
-	./node_modules/.bin/prettier \
+	$(REPO_ROOT)/node_modules/.bin/prettier \
 		--log-level "$${loglevel}" \
 		--no-error-on-unmatched-pattern \
 		--write \
@@ -335,7 +387,7 @@ yaml-format: node_modules/.installed ## Format YAML files.
 #####################################################################
 
 .PHONY: lint
-lint: actionlint commitlint eslint fixme html-validate markdownlint renovate-config-validator stylelint textlint yamllint zizmor ## Run all linters.
+lint: actionlint checkmake commitlint eslint fixme format-check html-validate markdownlint renovate-config-validator stylelint textlint yamllint zizmor ## Run all linters.
 
 .PHONY: actionlint
 actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
@@ -350,15 +402,38 @@ actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
 	if [ "$${files}" == "" ]; then \
 		exit 0; \
 	fi; \
-	PATH="$(REPO_ROOT)/.bin/aqua-$(AQUA_VERSION):$(AQUA_ROOT_DIR)/bin:$${PATH}"; \
-	AQUA_ROOT_DIR="$(AQUA_ROOT_DIR)"; \
 	if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 		actionlint \
 			-format '{{range $$err := .}}::error file={{$$err.Filepath}},line={{$$err.Line}},col={{$$err.Column}}::{{$$err.Message}}%0A```%0A{{replace $$err.Snippet "\\n" "%0A"}}%0A```\n{{end}}' \
 			-ignore 'SC2016:' \
 			$${files}; \
 	else \
-		actionlint $${files}; \
+		actionlint \
+			-ignore 'SC2016:' \
+			$${files}; \
+	fi
+
+.PHONY: checkmake
+checkmake: $(AQUA_ROOT_DIR)/.installed ## Runs the checkmake linter.
+	@# bash \
+	files=$$( \
+		git ls-files --deduplicate \
+			'Makefile' \
+			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
+	); \
+	if [ "$${files}" == "" ]; then \
+		exit 0; \
+	fi; \
+	if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
+		# TODO: Remove newline from the format string after updating checkmake. \
+		checkmake \
+			--config .checkmake.ini \
+			--format '::error file={{.FileName}},line={{.LineNumber}}::{{.Rule}}: {{.Violation}}'$$'\n' \
+			$${files}; \
+	else \
+		checkmake \
+			--config .checkmake.ini \
+			$${files}; \
 	fi
 
 .PHONY: commitlint
@@ -367,18 +442,25 @@ commitlint: node_modules/.installed ## Run commitlint linter.
 	commitlint_from=$(COMMITLINT_FROM_REF); \
 	commitlint_to=$(COMMITLINT_TO_REF); \
 	if [ "$${commitlint_from}" == "" ]; then \
-		commitlint_from=$$(git remote show origin | grep 'HEAD branch' | awk '{print $$NF}'); \
+		# Try to get the default branch without hitting the remote server \
+		if git symbolic-ref --short refs/remotes/origin/HEAD >/dev/null 2>&1; then \
+			commitlint_from=$$(git symbolic-ref --short refs/remotes/origin/HEAD); \
+		elif git show-ref refs/remotes/origin/master >/dev/null 2>&1; then \
+			commitlint_from="origin/master"; \
+		else \
+			commitlint_from="origin/main"; \
+		fi; \
 	fi; \
 	if [ "$${commitlint_to}" == "" ]; then \
 		# if head is on the commitlint_from branch, then we will lint the \
 		# last commit by default. \
 		current_branch=$$(git rev-parse --abbrev-ref HEAD); \
 		if [ "$${commitlint_from}" == "$${current_branch}" ]; then \
-			commintlint_from="HEAD~1"; \
+			commitlint_from="HEAD~1"; \
 		fi; \
 		commitlint_to="HEAD"; \
 	fi; \
-	./node_modules/.bin/commitlint \
+	$(REPO_ROOT)/node_modules/.bin/commitlint \
 		--config commitlint.config.mjs \
 		--from "$${commitlint_from}" \
 		--to "$${commitlint_to}" \
@@ -425,8 +507,6 @@ eslint: node_modules/.installed ## Runs eslint.
 .PHONY: fixme
 fixme: $(AQUA_ROOT_DIR)/.installed ## Check for outstanding FIXMEs.
 	@# bash \
-	PATH="$(REPO_ROOT)/.bin/aqua-$(AQUA_VERSION):$(AQUA_ROOT_DIR)/bin:$${PATH}"; \
-	AQUA_ROOT_DIR="$(AQUA_ROOT_DIR)"; \
 	output="default"; \
 	if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 		output="github"; \
@@ -437,6 +517,23 @@ fixme: $(AQUA_ROOT_DIR)/.installed ## Check for outstanding FIXMEs.
 	todos \
 		--output "$${output}" \
 		--todo-types="FIXME,Fixme,fixme,BUG,Bug,bug,XXX,COMBAK"
+
+.PHONY: format-check
+format-check: ## Check that files are properly formatted.
+	@# bash \
+	if [ -n "$$(git diff)" ]; then \
+		>&2 echo "The working directory is dirty. Please commit, stage, or stash changes and try again."; \
+		exit 1; \
+	fi; \
+	make format; \
+	exit_code=0; \
+	if [ -n "$$(git diff)" ]; then \
+		>&2 echo "Some files need to be formatted. Please run 'make format' and try again."; \
+		git --no-pager diff; \
+		exit_code=1; \
+	fi; \
+	git restore .; \
+	exit "$${exit_code}"
 
 .PHONY: html-validate
 html-validate: build node_modules/.installed ## Runs the html-validate linter.
@@ -479,8 +576,6 @@ markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the ma
 	if [ "$${files}" == "" ]; then \
 		exit 0; \
 	fi; \
-	PATH="$(REPO_ROOT)/.bin/aqua-$(AQUA_VERSION):$(AQUA_ROOT_DIR)/bin:$${PATH}"; \
-	AQUA_ROOT_DIR="$(AQUA_ROOT_DIR)"; \
 	if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 		exit_code=0; \
 		while IFS="" read -r p && [ -n "$$p" ]; do \
@@ -490,12 +585,12 @@ markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the ma
 			message=$$(echo "$$p" | jq -cr '.ruleNames[0] + "/" + .ruleNames[1] + " " + .ruleDescription + " [Detail: \"" + .errorDetail + "\", Context: \"" + .errorContext + "\"]"'); \
 			exit_code=1; \
 			echo "::error file=$${file},line=$${line},endLine=$${endline}::$${message}"; \
-		done <<< "$$(./node_modules/.bin/markdownlint --config .markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
+		done <<< "$$($(REPO_ROOT)/node_modules/.bin/markdownlint --config .markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
 		if [ "$${exit_code}" != "0" ]; then \
 			exit "$${exit_code}"; \
 		fi; \
 	else \
-		./node_modules/.bin/markdownlint \
+		$(REPO_ROOT)/node_modules/.bin/markdownlint \
 			--config .markdownlint.yaml \
 			--dot \
 			$${files}; \
@@ -522,12 +617,12 @@ markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the ma
 			message=$$(echo "$$p" | jq -cr '.ruleNames[0] + "/" + .ruleNames[1] + " " + .ruleDescription + " [Detail: \"" + .errorDetail + "\", Context: \"" + .errorContext + "\"]"'); \
 			exit_code=1; \
 			echo "::error file=$${file},line=$${line},endLine=$${endline}::$${message}"; \
-		done <<< "$$(./node_modules/.bin/markdownlint --config .github/template.markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
+		done <<< "$$($(REPO_ROOT)/node_modules/.bin/markdownlint --config .github/template.markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
 		if [ "$${exit_code}" != "0" ]; then \
 			exit "$${exit_code}"; \
 		fi; \
 	else \
-		./node_modules/.bin/markdownlint \
+		$(REPO_ROOT)/node_modules/.bin/markdownlint \
 			--config .github/template.markdownlint.yaml \
 			--dot \
 			$${files}; \
@@ -536,7 +631,8 @@ markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the ma
 .PHONY: renovate-config-validator
 renovate-config-validator: node_modules/.installed ## Validate Renovate configuration.
 	@# bash \
-	./node_modules/.bin/renovate-config-validator --strict
+	$(REPO_ROOT)/node_modules/.bin/renovate-config-validator \
+		--strict
 
 .PHONY: textlint
 textlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textlint linter.
@@ -556,8 +652,6 @@ textlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textli
 	if [ "$${files}" == "" ]; then \
 		exit 0; \
 	fi; \
-	PATH="$(REPO_ROOT)/.bin/aqua-$(AQUA_VERSION):$(AQUA_ROOT_DIR)/bin:$${PATH}"; \
-	AQUA_ROOT_DIR="$(AQUA_ROOT_DIR)"; \
 	if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 		exit_code=0; \
 		while IFS="" read -r p && [ -n "$$p" ]; do \
@@ -572,10 +666,10 @@ textlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textli
 				exit_code=1; \
 				echo "::error file=$${file},line=$${line},endLine=$${endline},col=$${col},endColumn=$${endcol}::$${message}"; \
 			done <<<"$$(echo "$$p" | jq -cr '.messages[] // empty')"; \
-		done <<< "$$(./node_modules/.bin/textlint -c .textlintrc.yaml --format json $${files} 2>&1 | jq -c '.[]')"; \
+		done <<< "$$($(REPO_ROOT)/node_modules/.bin/textlint -c .textlintrc.yaml --format json $${files} 2>&1 | jq -c '.[]')"; \
 		exit "$${exit_code}"; \
 	else \
-		./node_modules/.bin/textlint \
+		$(REPO_ROOT)/node_modules/.bin/textlint \
 			--config .textlintrc.yaml \
 			$${files}; \
 	fi
@@ -634,27 +728,9 @@ zizmor: .venv/.installed ## Runs the zizmor linter.
 ## Maintenance
 #####################################################################
 
-Gemfile.lock: Gemfile
-	@bundle lock --update
-
-.PHONY: bundle-install
-bundle-install: Gemfile.lock
-	@# NOTE: Bundler deployment mode is activated.
-	@bundle check || bundle install
-
-.PHONY: build
-build: bundle-install ## Build the site with Jekyll
-	@bundle exec jekyll build
-
-.PHONY: serve
-serve: bundle-install ## Run Jekyll test server.
-	@bundle exec jekyll serve --future --drafts -H $(JEKYLL_SERVE_HOST)
-
 .PHONY: todos
 todos: $(AQUA_ROOT_DIR)/.installed ## Print outstanding TODOs.
 	@# bash \
-	PATH="$(REPO_ROOT)/.bin/aqua-$(AQUA_VERSION):$(AQUA_ROOT_DIR)/bin:$${PATH}"; \
-	AQUA_ROOT_DIR="$(AQUA_ROOT_DIR)"; \
 	output="default"; \
 	if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 		output="github"; \
@@ -668,11 +744,9 @@ todos: $(AQUA_ROOT_DIR)/.installed ## Print outstanding TODOs.
 
 .PHONY: clean
 clean: ## Delete temporary files.
-	@# bash \
-	rm -rf \
-		.bin \
-		$(AQUA_ROOT_DIR) \
-		.venv \
-		node_modules \
-		*.sarif.json \
-		_site
+	@$(RM) -r .bin
+	@$(RM) -r $(AQUA_ROOT_DIR)
+	@$(RM) -r .venv
+	@$(RM) -r node_modules
+	@$(RM) *.sarif.json
+	@$(RM) -r _site
