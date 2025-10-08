@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TIL: October 8, 2025 - Weekly Reading: Programming and Kubernetes"
-date: "2025-10-08 00:00:00 +0900"
+date: "2025-10-08 09:00:00 +0900"
 blog: til
 tags: weekly-reading programming kubernetes
 render_with_liquid: false
