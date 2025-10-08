@@ -39,6 +39,7 @@ rules:
       - "Blauzvern"
       - "Bleecher"
       - "Branchaud"
+      - "Calabro"
       - "Collison"
       - "Colton"
       - "Cosentino"
@@ -46,11 +47,13 @@ rules:
       - "Crawshaw"
       - "Daisuke"
       - "Daskalou"
+      - "Dicken"
       - "Dougherty"
       - "Duan"
       - "Drapper"
       - "Edinger"
       - "Eiji"
+      - "Elayoty"
       - "Elin"
       - "Elon"
       - "Enamoto"
@@ -64,6 +67,7 @@ rules:
       - "Godbolt"
       - "Graeme"
       - "Hansson"
+      - "Heba"
       - "Heinemeier"
       - "Hemminga"
       - "Hightower"
@@ -189,7 +193,7 @@ rules:
       - "akisute"
       - "bucho"
       - "deeet"
-      - "feiz"
+      - "/[Ff]eiz/"
       - "hiyosi"
       - "ianlewis"
       - "ianmlewis"
@@ -217,7 +221,6 @@ rules:
       - "yuanying"
       - "yuroyoro"
       - "yudppp"
-      - "/[Ff]eiz/"
       - "/[Ww]eboo/"
 
       # Company/Product Names
@@ -288,6 +291,7 @@ rules:
 
       - "ATProto" # AT Protocol, a decentralized social protocol
       - "ActivityPub" # ActivityPub protocol
+      - "AgentCore" # AWS AgentCore
       - "AppStats" # App Engine AppStats
       - "Appc"
       - "Ansible"
@@ -298,6 +302,7 @@ rules:
       - "Buildbot" # Python continuous integration tool
       - "Buildout" # Python build system
       - "Bundler" # Ruby dependency manager
+      - "/[Cc][Gg][Oo]/" # Go tool for interfacing with C code
       - "CRI-O" # Container Runtime Interface implementation for Kubernetes
       - "CloudFront" # AWS CloudFront
       - "/[Cc]ron/"
@@ -334,6 +339,7 @@ rules:
       - "OpenSocial" # Social networking protocol
       - "OpenStack" # OpenStack cloud computing platform
       - "Picasa" # Old Google photo management software for App Engine
+      - "PlanetScale" # PlanetScale database platform
       - "Plone" # Python content management system
       - "PyCharm" # Python IDE by JetBrains
       - "Pyflakes" # Python static code analysis tool
@@ -372,7 +378,8 @@ rules:
       - "TortoiseHg" # Mercurial client
       - "TortoiseMerge" # Merge tool
       - "XeLaTeX" # LaTeX engine
-      - "Zizmor"
+      - "Zig" # Zig programming language
+      - "Zizmor" # GitHub Actions linter
       - "Webapp" # App Engine WebApp framework
       - "WebGL" # Web Graphics Library
       - "Werkzeug" # Python WSGI utility library
@@ -433,6 +440,8 @@ rules:
       - "/[Cc]omparator/" # compare + ator
       - "/[Dd]eclarative/"
       - "/[Dd]ev/" # Development/Developer
+      - "/[Ee]xecutables/" # plural of executable
+      - "/[Ee]xfiltrated/" # past tense of exfiltrate
       - "/[Ee]xfiltrate/" # To steal data from a system
       - "/[Ee]xfiltrating/" # gerund or present participle of exfiltrate
       - "/[Ff]iletype/" # file + type
@@ -467,6 +476,7 @@ rules:
       # Acronyms
       ##########################################################################
 
+      - "ABI" # Application Binary Interface
       - "ACAS" # Airborne Collision Avoidance System
       - "ACI" # Application Container Image
       - "ACL" # Access Control List
@@ -503,6 +513,7 @@ rules:
       - "GFS" # Google File System
       - "GMP" # Goroutine, Mutex, and Channel (GMP)
       - "GKE" # Google Kubernetes Engine
+      - "GPU" # Graphics Processing Unit
       - "Gb" # Gigabyte
       - "HDFS" # Hadoop Distributed File System
       - "HTTPS" # Hypertext Transfer Protocol Secure
