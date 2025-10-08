@@ -21,9 +21,9 @@ Google Kubernetes Engine (GKE)は標準にクラスターオートスケーラ�
 
 [Preemptible instance](https://cloud.google.com/compute/docs/instances/preemptible)はGCEの単価が安く一時的なVMを作成できる機能です。GCEゾーンのデータセンターの余裕キャパを買うような感じですので、かなり安く提供できるけど、VMのアベイラビリティが普段より低い。
 
-例えば、普通のn1-standard-1のインスタンスは東京リージョンですと$0.0610ですが、 Preemptibleですと$0.01325で、1/4以下の値段。
+例えば、普通の`n1-standard-1`のインスタンスは東京リージョンですと$0.0610ですが、 Preemptibleですと$0.01325で、1/4以下の値段。
 
-Preemptible Instanceの欠点はいくつかある。その一つはVMがいつでも停止される可能性があることです。GCEのシステム状況によってACPI G2 Soft OffメッセージをVMに送ってきます。そのあと、VMに動いているアプリケーションが安全に停止する時間があります。
+Preemptible Instanceの欠点はいくつかある。その一つはVMがいつでも停止される可能性があることです。GCEのシステム状況によってACPI `G2` Soft OffメッセージをVMに送ってきます。そのあと、VMに動いているアプリケーションが安全に停止する時間があります。
 
 もう一つの欠点は、Preemptible VMが最大24時間で停止される。そして、新しいインスタンスを作るには必要なリソースを確保できない可能性は普通のインスタンスより低い。VMを作れないゔ可能性は低いけれど、たまに作れない時がある。
 
@@ -144,7 +144,7 @@ gcloud container clusters delete autoscaled-cluster
 gcloud container clusters delete burstable-cluster
 ```
 
-GKEの高度な機能を組み合わせることで、低コストとアプリケーションアベイラビリティのバランスをとった構成が作れます。ベータ機能なのでクラスターを作れば、誰でもオートスケーラーとPreemtibleノードプールが利用できます。
+GKEの高度な機能を組み合わせることで、低コストとアプリケーションアベイラビリティのバランスをとった構成が作れます。ベータ機能なのでクラスターを作れば、誰でもオートスケーラーとPreemptibleノードプールが利用できます。
 
 もっとKubernetes知りたい方は、以下のアイテムをどうぞ:
 

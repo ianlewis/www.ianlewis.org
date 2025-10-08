@@ -59,7 +59,7 @@ render_with_liquid: false
     changes and not much that will affect most users.
 
     One change that I already knew about was the [Container-aware
-    GOMAXPROCS](https://tip.golang.org/doc/go1.25#container-aware-gomaxprocs).
+    `GOMAXPROCS`](https://tip.golang.org/doc/go1.25#container-aware-gomaxprocs).
     This change automatically sets and updates the `GOMAXPROCS` value based on
     the CPU limits imposed on the container by cgroups. While this helps for
     some workloads like those on Kubernetes, it will only work when you set
@@ -103,7 +103,7 @@ render_with_liquid: false
     and how to deal with it. Current research shows happiness follows a sort of
     U-curve over the course of your life. Most people gain (or retain) happiness
     until around age 30, then it starts to decline until around age 50 when it
-    starts to improve again until around age 70 (After 70 it's less predictible
+    starts to improve again until around age 70 (After 70 it's less predictable
     and men especially plummet in happiness).
 
     One thing the article brings up is that it might be hard to give up on long

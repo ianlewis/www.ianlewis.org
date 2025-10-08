@@ -31,6 +31,7 @@ rules:
 
       - "/\\b[0-9]+x\\b/g" # e.g. 2x, 4x, 8x (times)
       - "/\\b[0-9]+s\\b/g" # e.g. 90s, 2000s (decades)
+      - "/\\b[0-9]+MB\\b/g" # e.g. 16MB, 32MB (megabytes)
 
       # Person Names
       ##########################################################################
@@ -105,6 +106,7 @@ rules:
       - "/\\bKitamura\\b/g"
       - "/\\bKlabnik\\b/g"
       - "/\\bKnyszek\\b/g"
+      - "/\\bKokotajlo\\b/g"
       - "/\\bKrouse\\b/g"
       - "/\\bKrumins\\b/g"
       - "/\\bLacasse\\b/g"
@@ -181,6 +183,7 @@ rules:
       - "/\\bVoege\\b/g"
       - "/\\bYamaguchi\\b/g"
       - "/\\bYasushi\\b/g"
+      - "/\\bYegge\\b/g"
       - "/\\bYongfook\\b/g"
       - "/\\bYoshi\\b/g"
       - "/\\bYoshiki\\b/g"
@@ -266,6 +269,7 @@ rules:
       - "/\\bEuroPython\\b/g"
       - "/\\bElasticSearch\\b/g"
       - "/\\bEldarion\\b/g"
+      - "/\\bFabric8\\b/g" # Kubernetes platform
       - "/\\bFriendFeed\\b/g" # Social networking service (acquired by Facebook)
       - "/\\bFulcio\\b/g"
       - "/\\bGmail\\b/g"
@@ -402,6 +406,7 @@ rules:
       - "/\\bWebapp\\b/g" # App Engine WebApp framework
       - "/\\bWebGL\\b/g" # Web Graphics Library
       - "/\\bWerkzeug\\b/g" # Python WSGI utility library
+      - "/\\bWyvern\\b/g" # Game name
       - "/\\b[Cc]groups?\\b/g" # control groups
       - "/\\bcontainerd\\b/g" # container runtime
       - "/\\bdotfiles\\b/g"
@@ -457,12 +462,13 @@ rules:
       - "/\\b[Aa]utoscaler\\b/g"
       - "/\\b[Aa]utoscaling\\b/g"
       - "/\\b[Bb]ackend\\b/g" # the server side of a client-server system
+      - "/\\b[Bb]ackpressure\\b/g" # pressure that opposes the desired flow
       - "/\\b[Cc]omparator\\b/g" # compare + ator
-      - "/\\b[Dd]eclarative\\b/g"
+      - "/\\b[Dd]eclarative(ly)?\\b/g"
       - "/\\b[Dd]ev\\b/g" # Development/Developer
       - "/\\b[Ee]xecutables\\b/g" # plural of executable
       - "/\\b[Ee]xfiltrated\\b/g" # past tense of exfiltrate
-      - "/\\b[Ee]xfiltrate\\b/g" # To steal data from a system
+      - "/\\b[Ee]xfiltrate((d?)|(ing)?)\\b/g" # To steal data from a system
       - "/\\b[Ee]xfiltrating\\b/g" # gerund or present participle of exfiltrate
       - "/\\b[Ff]iletype\\b/g" # file + type
       - "/\\b[Ff]rontend\\b/g" # the client side of a client-server system
@@ -474,9 +480,10 @@ rules:
       - "/\\b[Mm]ixin\\b/g"
       - "/\\b[Nn]amespace\\b/g"
       - "/\\b[Nn]-gram\\b/g" # N-gram text analysis
-      - "/\\b[Pp]aywall\\b/g"
+      - "/\\b[Pp]aywall(ed)?\\b/g"
       - "/\\b[Pp]ermalink\\b/g"
       - "/\\b[Pp]laintext\\b/g"
+      - "/\\b[Pp]reempt(ible)?\\b/g"
       - "/\\b[Ii]mpactful\\b/g" # impact + -ful
       - "/\\b[Ii]ntegrations\\b/g" # irregular plural-form
       - "/\\b[Rr]evset\\b/g" # Revision Set (Mercurial)
@@ -484,11 +491,12 @@ rules:
       - "/\\b[Ss]corecarding\\b/g" # Scorecarding (process of evaluating)
       - "/\\b[Ss]erverless\\b/g"
       - "/\\b[Ss]uperintelligence\\b/g" # super + intelligence (stupid AI terms)
-      - "/\\b[Ss]tylesheet\\b/g"
+      - "/\\b[Ss]tylesheets?\\b/g"
       - "/\\b[Tt]estbed\\b/g"
       - "/\\b[Tt]raceback\\b/g" # Error trace information
-      - "/\\b[Tt]radeoff\\b/g" # trade + off
+      - "/\\b[Tt]radeoffs?\\b/g" # trade + off
       - "/\\b[Uu]ntrusted\\b/g" # used to describe code in a security context
+      - "/\\b[Uu]nimpactful\\b/g" # un + impactful
       - "/\\b[Ww]ifi\\b/g" # Wi-Fi
       - "/\\bµsec\\b/g" # microsecond
       - "/\\busec\\b/g" # microsecond
@@ -568,6 +576,7 @@ rules:
       - "/\\bSLSA\\b/g" # Supply Chain Levels for Software Artifacts
       - "/\\bSMTP\\b/g" # Simple Mail Transfer Protocol
       - "/\\bSSL\\b/g" # Secure Sockets Layer
+      - "/\\bTBQH\\b/g" # To Be Quite Honest
       - "/\\bTCAS\\b/g" # Traffic Collision Avoidance System
       - "/\\bTCP\\b/g" # Transmission Control Protocol
       - "/\\bTLS\\b/g" # Transport Layer Security
@@ -601,7 +610,7 @@ rules:
 
       # https://dictionary.cambridge.org/dictionary/english/dumbing-down
       - "/\\b[Dd]umbed-down\\b/g"
-      - "/\\bHouthi\\b/g" # Houthi movement
+      - "/\\bHouthis?\\b/g" # Houthi movement
       - "/\\b[Mm]okumoku-kai\\b/g" # Mokumoku-kai, a Japanese term for a gathering
       - "/\\b[Rr]yokan\\b/g" # Ryokan, a type of traditional Japanese inn
 
@@ -614,13 +623,15 @@ rules:
 
       - "/\\bAdiós\\b/g" # Spanish for "Goodbye"
 
+      # inherited from repo-template
+
       - "/\\bCHANGELOG\\b/g"
       - "/\\bCODEOWNER\\b/g"
       - "/\\bCLA\\b/g"
       - "/\\bCLI\\b/g"
       - "/\\bCVSS\\b/g"
       - "/\\bDCO\\b/g"
-      - "/\\bPR\\b/g"
+      - "/\\bPRs?\\b/g"
       - "/\\bUI\\b/g"
       - "/\\bYAML\\b/g"
       - "/\\bChangelog\\b/g"
@@ -640,7 +651,7 @@ rules:
       - "/\\b[Rr]ebase\\b/g"
       - "/\\b[Rr]eproducibility\\b/g"
       - "/\\b[Rr]uleset\\b/g"
-      - "/\\b[Rr]untime\\b/g"
+      - "/\\b[Rr]untimes?\\b/g"
       - "/\\b[Ss]exualized\\b/g"
       - "/\\b[Ss]ocio-economic\\b/g"
       - "/\\b[Uu]serspace\\b/g"

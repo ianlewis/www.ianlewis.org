@@ -102,7 +102,7 @@ render_with_liquid: false
     prevents it from reporting scanning results.
 
     The main issue I have with this solution and others that merge
-    dependabot/renovate PRs is that it requires giving GitHub Actions jobs the
+    Dependabot or Renovate PRs is that it requires giving GitHub Actions jobs the
     `contents: write` permission allowing it automatically push **any** changes
     to a repository. I think it might be satisfactory for jobs where you
     strictly control all of the code, but I don't think it's a good practice to

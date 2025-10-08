@@ -11,7 +11,8 @@ These are some of the things I was reading this last week or so.
 
 ## Programming
 
-- [Cheating the Reaper in Go - mcyoung](https://mcyoung.xyz/2025/04/21/go-arenas/)
+- [Cheating the Reaper in Go](https://mcyoung.xyz/2025/04/21/go-arenas/) --
+  _Miguel Young de la Sota_
 
     This is an good post that build's on Miguel's previous post [Things You
     Never Wanted To Know About Go
@@ -25,7 +26,9 @@ These are some of the things I was reading this last week or so.
 
 ## Model Context Protocol
 
-- [Introducing the Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) - Anthropic
+- [Introducing the Model Context
+  Protocol](https://www.anthropic.com/news/model-context-protocol) --
+  _Anthropic_
 
     This is a blog post introducing Anthropic's Model Context Protocol (MCP).
     It's used to allow you to set up data sources that can then be used to
@@ -39,7 +42,7 @@ These are some of the things I was reading this last week or so.
     servers in how they could be used; at least by programmers for coding.
 
 - [pprofの結果を出力するMCPサーバーを作って自律的にパフォーマンス改善を行う](https://blog.yudppp.com/posts/pprof-mcp-agent)
-  (Japanese) - yudppp
+  (Japanese) -- _yudppp_
 
     One related project that caught my eye was
     [`pprof-mcp-agent`](https://github.com/yudppp/pprof-mcp-agent) which is a
@@ -47,7 +50,7 @@ These are some of the things I was reading this last week or so.
     pprof profiles to AI models.
 
 - [A Deep Dive Into MCP and the Future of AI
-  Tooling](https://a16z.com/a-deep-dive-into-mcp-and-the-future-of-ai-tooling/) - Yoko Li (a16z).
+  Tooling](https://a16z.com/a-deep-dive-into-mcp-and-the-future-of-ai-tooling/) -- _Yoko Li (Andreesen Horowitz)_.
 
     I'm not a big fan of Andreessen Horowitz, but this is a good overview of MCP
     and how it was indeed inspired by LSP. It does a much better job than the
@@ -59,7 +62,8 @@ These are some of the things I was reading this last week or so.
     model company could hoover up from MCP servers seems pretty scary to me.
 
 - [AI Model Context Protocol (MCP) and
-  Security](https://community.cisco.com/t5/security-blogs/ai-model-context-protocol-mcp-and-security/ba-p/5274394a) - Omar Santos (Cisco)
+  Security](https://community.cisco.com/t5/security-blogs/ai-model-context-protocol-mcp-and-security/ba-p/5274394a)
+  -- _Omar Santos (Cisco)_
 
     This post outlines some of the security risks of using MCP servers. Since
     MCP servers can do just about anything there is a real risk of inadvertently
