@@ -29,10 +29,14 @@ rules:
       # Common
       ##########################################################################
 
+      - "/\\bµsec\\b/g" # microsecond
+      - "/\\busec\\b/g" # microsecond
+      - "/\\bmsec\\b/g" # millisecond
       - "/\\b[0-9]+x\\b/g" # e.g. 2x, 4x, 8x (times)
       - "/\\b[0-9]+s\\b/g" # e.g. 90s, 2000s (decades)
       - "/\\b[0-9]+MB\\b/g" # e.g. 16MB, 32MB (megabytes)
       - "/\\b[0-9]+GB\\b/g" # e.g. 16GB, 32GB (gigabytes)
+      - "/\\b[0-9]+ms\\b/g" # e.g. 10ms, 500ms (milliseconds)
 
       # Person Names
       ##########################################################################
@@ -215,6 +219,7 @@ rules:
       - "/\\bakisute\\b/g"
       - "/\\bbucho\\b/g"
       - "/\\bcointoss1973\\b/g"
+      - "/\\bcosentino\\b/g"
       - "/\\bdeeet\\b/g"
       - "/\\b[Ff]eiz\\b/g"
       - "/\\bhiyosi\\b/g"
@@ -223,15 +228,16 @@ rules:
       - "/\\bjbking\\b/g"
       - "/\\bjoehewitt\\b/g"
       - "/\\bkaz\\b/g"
+      - "/\\bkazunori279\\b/g"
       - "/\\bmarkhammonds\\b/g"
       - "/\\bmcyoung\\b/g"
-      - "/\\bMiCHiLU\\b/g" # Person/handle name
+      - "/\\bMiCHiLU\\b/g"
       - "/\\bmiwaza\\b/g"
       - "/\\bmonjudoh\\b/g"
       - "/\\bmoriyoshi\\b/g"
       - "/\\bshimizukawa\\b/g"
       - "/\\bshin_no_suke\\b/g"
-      - "/\\bshoma\\b/g"
+      - "/\\bshoma(4a)?\\b/g"
       - "/\\bsurgo\\b/g"
       - "/\\btakanory\\b/g"
       - "/\\bterapyon\\b/g"
@@ -418,11 +424,13 @@ rules:
       - "/\\betcd\\b/g" # etcd.io
       - "/\\bgorbital\\b/g" # molecular orbital visualization tool
       - "/\\bgtkmm\\b/g" # C++ bindings for GTK
+      - "/\\bk8s\\b/g" # Kubernetes shorthand
       - "/\\bnpm\\b/g" # Node Package Manager
       - "/\\bpprof\\b/g" # Go profiler
       - "/\\breST\\b/g" # reStructuredText
       - "/\\breStructuredText\\b/g" # reST
       - "/\\brebuild.fm\\b/g" # rebuild.fm podcast
+      - "/\\bsha1\\b/g" # SHA-1 hashing algorithm
       - "/\\bsupervisord\\b/g"
       - "/\\buv\\b/g" # Python packaging tool
       - "/\\b[Cc]ron\\b/g"
@@ -448,6 +456,8 @@ rules:
 
       # Tech Terminology/Jargon
       ##########################################################################
+
+      - "/\\bp[0-9]+\\b/g" # e.g. p1 (priority levels), p95, p99 (percentiles)
 
       - "/\\bAutoscaling\\b/g"
       - "/\\bConnectability\\b/g" # Ability to connect
@@ -503,9 +513,6 @@ rules:
       - "/\\b[Uu]ntrusted\\b/g" # used to describe code in a security context
       - "/\\b[Uu]nimpactful\\b/g" # un + impactful
       - "/\\b[Ww]ifi\\b/g" # Wi-Fi
-      - "/\\bµsec\\b/g" # microsecond
-      - "/\\busec\\b/g" # microsecond
-      - "/\\bmsec\\b/g" # millisecond
 
       # Acronyms
       ##########################################################################

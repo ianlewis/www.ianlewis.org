@@ -57,7 +57,7 @@ u'<a href="http://example.com/">&lt;span&gt;hoge&lt;/div&gt;</a>'
 u'<input type="submit" name="submit" value="\u691c\u7d22">'
 ```
 
-次は上の例を見てみよう。これもいい感じでパースしてくれた。html5lib は結構優秀そう。
+次は上の例を見てみよう。これもいい感じでパースしてくれた。`html5lib`は結構優秀そう。
 
 ## CSSサニタイズ
 

@@ -50,7 +50,8 @@ These are some of the things I was reading this last week or so.
     pprof profiles to AI models.
 
 - [A Deep Dive Into MCP and the Future of AI
-  Tooling](https://a16z.com/a-deep-dive-into-mcp-and-the-future-of-ai-tooling/) -- _Yoko Li (Andreesen Horowitz)_.
+  Tooling](https://a16z.com/a-deep-dive-into-mcp-and-the-future-of-ai-tooling/)
+  -- _Yoko Li (Andreessen Horowitz)_.
 
     I'm not a big fan of Andreessen Horowitz, but this is a good overview of MCP
     and how it was indeed inspired by LSP. It does a much better job than the

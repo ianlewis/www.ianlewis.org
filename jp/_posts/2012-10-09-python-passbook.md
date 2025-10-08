@@ -9,7 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-最近、iPhoneのiOS6でPassbookという機能が出ました。Passbookはイベントのチケットや、飛行機や船の搭乗券や、クーポンや、ポイントカードを管理出来る地味に便利なアプリ。
+最近、iPhoneのiOS 6でPassbookという機能が出ました。Passbookはイベントのチケットや、飛行機や船の搭乗券や、クーポンや、ポイントカードを管理出来る地味に便利なアプリ。
 
 僕は興味があって、Pythonでどう作るかを調べてみたので、ここで共有しようと思っている。Passbookはパスの更新の仕組みもありますが、とりあえず、パスを作るとところまで説明しようと。まずは、Appleの日本語ドキュメントの[「Passbook プログラミングガイド」](https://developer.apple.com/jp/devcenter/ios/library/japanese.html)をざっと見たほうがいいかもしれない。
 
@@ -42,7 +42,7 @@ Pass Type IDs画面で、「New Pass Type ID」ボタンをクリックしてく
 
 次は、[Apple のルート証明書](http://developer.apple.com/certificationauthority/AppleWWDRCA.cer)をダウンロードして、キーチェーンアシスタントにインポートします。
 
-その手順が終わったら、Keychain Accessから鍵を.p12ファイルとして、エクスポートする(以降、cert.p12というファイル名とする)。エクスポートするときに、以前に作った秘密鍵ではなく、「Pass Type ID: ほげほげ」という証明書を選択して、右クリックして、「ほげほげを書き出す」というオプションを選びます。ここにパスワードを指定出来ます。パスワードを後で使いますので、覚えておいてください。
+その手順が終わったら、Keychain Accessから鍵を`.p12`ファイルとして、エクスポートする(以降、`cert.p12`というファイル名とする)。エクスポートするときに、以前に作った秘密鍵ではなく、「Pass Type ID: ほげほげ」という証明書を選択して、右クリックして、「ほげほげを書き出す」というオプションを選びます。ここにパスワードを指定出来ます。パスワードを後で使いますので、覚えておいてください。
 
 [![](/assets/images/681/export_cert_small.png)](/assets/images/681/export_cert_big.png)
 
@@ -61,7 +61,7 @@ $ openssl pkcs12 -in cert.p12 -nocerts -out key.pem
 
 ## ライブラリー
 
-Passbookの`signature`ファイルを作成するために、M2Crypto というライブラリが必要です。Python virtualenvを作って、インストールします。
+Passbookの`signature`ファイルを作成するために、`M2Crypto`というライブラリが必要です。Python virtualenvを作って、インストールします。
 
 ```text
 $ mkvirtualenv passbook-test

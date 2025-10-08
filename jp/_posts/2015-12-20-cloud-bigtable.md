@@ -18,7 +18,7 @@ locale: ja
 
 Bigtableは分散データベースでスケーラービリティが高い...というところまではわかりやすいのですが、実際にどれだけスケールできるのかはGoogleの外ではあまり知られていないと思います。
 
-Googleの検索インデクスは [100,000,000 Gb 以上の容量があります](https://www.google.com/insidesearch/howsearchworks/crawling-indexing.html)。つまり **100 Petabyte** ！　しかも実際の内部的な数字はこれよりかなり大きく(おそらく何倍か)。100Petabyteは現在公開されているひかえめな数字に過ぎません。
+Googleの検索インデクスは [100,000,000 Gb 以上の容量があります](https://www.google.com/insidesearch/howsearchworks/crawling-indexing.html)。つまり **100 Petabyte** ！　しかも実際の内部的な数字はこれよりかなり大きく(おそらく何倍か)。100 Petabyteは現在公開されているひかえめな数字に過ぎません。
 
 GoogleではBigtableを約10年前から使っていますが、2006年にその設計について書かれた[ホワイトペーパー](http://research.google.com/archive/bigtable.html)を公開しました。このホワイトペーパーの著者はGoogleの**レジェンド級開発者** Jeff Dean, Sanjay Ghemawat, Andrew Fikes など、自分と同じ会社に勤めていると思えない超人たち。このホワイトペーパーからオープンソースのbig Dataエコシステムが生まれました。具体的には、MapReduceを実装するHadoopや、GFS(Google File System)をインスパイアしたHDFSがIT産業を変えています。Bigtableの設計を元にしたHBaseも利用者を集めました。
 

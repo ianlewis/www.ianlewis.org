@@ -38,8 +38,8 @@ Djangoの設定はこんな感じで、JavaScriptに渡せる。
 </script>
 ```
 
-そうすると、JavaScriptの `settings` モジュールで、 'module' という特別なモジュールを
-requireする。
+そうすると、JavaScriptの `settings` モジュールで、 `module` という特別なモジュールを
+`require`する。
 
 ```javascript
 define(["module", "jquery"], function (module, $) {
@@ -59,7 +59,7 @@ define(["module", "jquery"], function (module, $) {
 });
 ```
 
-これで、Djangoのsettingsモジュールと同じようにRequireJSでsettingsをインポートできる。
+これで、Djangoの`settings`モジュールと同じようにRequireJSで`settings`をインポートできる。
 
 ```javascript
 define(["jquery", "settings"], function ($, settings) {
