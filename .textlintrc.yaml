@@ -32,6 +32,7 @@ rules:
       - "/\\b[0-9]+x\\b/g" # e.g. 2x, 4x, 8x (times)
       - "/\\b[0-9]+s\\b/g" # e.g. 90s, 2000s (decades)
       - "/\\b[0-9]+MB\\b/g" # e.g. 16MB, 32MB (megabytes)
+      - "/\\b[0-9]+GB\\b/g" # e.g. 16GB, 32GB (gigabytes)
 
       # Person Names
       ##########################################################################
@@ -201,6 +202,8 @@ rules:
       # User handles
       ##########################################################################
 
+      - "/\\ba2c\\b/g"
+      - "/\\b[Aa][Ee]35\\b/g" # AE35
       - "/\\bDHH\\b/g"
       - "/\\bTheAmyCode\\b/g"
       - "/\\bakisute\\b/g"
@@ -211,6 +214,7 @@ rules:
       - "/\\bae35\\b/g"
       - "/\\bakisute\\b/g"
       - "/\\bbucho\\b/g"
+      - "/\\bcointoss1973\\b/g"
       - "/\\bdeeet\\b/g"
       - "/\\b[Ff]eiz\\b/g"
       - "/\\bhiyosi\\b/g"
@@ -297,6 +301,7 @@ rules:
       - "/\\bSynadia\\b/g"
       - "/\\bTailscale\\b/g"
       - "/\\bTeleMessage\\b/g"
+      - "/\\bS3\\b/g" # Amazon S3
       - "/\\bSoftBank\\b/g"
       - "/\\bStacklok\\b/g" # Stacklok, Security company
       - "/\\bStunlock\\b/g"
@@ -486,7 +491,7 @@ rules:
       - "/\\b[Pp]reempt(ible)?\\b/g"
       - "/\\b[Ii]mpactful\\b/g" # impact + -ful
       - "/\\b[Ii]ntegrations\\b/g" # irregular plural-form
-      - "/\\b[Rr]evset\\b/g" # Revision Set (Mercurial)
+      - "/\\b[Rr]evsets?\\b/g" # Revision Set (Mercurial)
       - "/\\b[Ss]andboxing\\b/g" # process of isolating
       - "/\\b[Ss]corecarding\\b/g" # Scorecarding (process of evaluating)
       - "/\\b[Ss]erverless\\b/g"
