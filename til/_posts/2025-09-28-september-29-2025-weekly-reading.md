@@ -58,7 +58,7 @@ render_with_liquid: false
     where `n` is the number of methods in the target interface.
 
     I think this is a good point to consider when designing APIs in Go.
-    Overreliance on interfaces can lead to performance issues and code that's
+    Over-reliance on interfaces can lead to performance issues and code that's
     difficult to maintain. Since the Go community generally prefers to maintain
     backwards compatibility it's a good idea to think about the long-term
     implications of interface design up front.
@@ -67,7 +67,7 @@ render_with_liquid: false
   takeover](https://joel.drapper.me/p/rubygems-takeover/) -- _Joel Drapper_
 
     After David Heinemeier Hansson (DHH) was given a keynote slot at RailsConf
-    2025, Sideqik withdrew their $250k/year sponsorship of Ruby Central. That
+    2025, Sideqik withdrew their $250,000/year sponsorship of Ruby Central. That
     left Ruby Central heavily reliant on Shopify for funding. Shopify smelled
     blood in the water and decided to leverage their position to instigate a
     takeover of Ruby Central as well as the RubyGems and Bundler projects. Long

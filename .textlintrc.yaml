@@ -20,1294 +20,1311 @@ filters:
 rules:
   spelling:
     language: "en"
+    # Allow accented characters and apostrophes in words
+    wordDefinitionRegexp: "[\\w\u00C0-\u017F']+"
+
+    # NOTE: Skip patterns must be enclosed by word boundaries (\b) to avoid
+    #       partial matches within other words.
     skipPatterns:
+      # Common
+      ##########################################################################
+
+      - "/\\b[0-9]+x\\b/g" # e.g. 2x, 4x, 8x (times)
+      - "/\\b[0-9]+s\\b/g" # e.g. 90s, 2000s (decades)
+
       # Person Names
       ##########################################################################
 
-      - "Ahlström"
-      - "Ahmet"
-      - "Andreessen"
-      - "Aoife"
-      - "André"
-      - "Arko"
-      - "Armin"
-      - "Atamel"
-      - "Atharva"
-      - "Atsuo"
-      - "Atsushi"
-      - "Balahan"
-      - "Blauzvern"
-      - "Bleecher"
-      - "Branchaud"
-      - "Calabro"
-      - "Collison"
-      - "Colton"
-      - "Cosentino"
-      - "Cramer"
-      - "Crawshaw"
-      - "Daisuke"
-      - "Daskalou"
-      - "Dicken"
-      - "Dougherty"
-      - "Duan"
-      - "Drapper"
-      - "Edinger"
-      - "Eiji"
-      - "Elayoty"
-      - "Elin"
-      - "Elon"
-      - "Enamoto"
-      - "Eno"
-      - "Fikes"
-      - "Foppe"
-      - "Fumi"
-      - "Gageot"
-      - "Gergely"
-      - "Ghemawat"
-      - "Godbolt"
-      - "Graeme"
-      - "Hansson"
-      - "Heba"
-      - "Heinemeier"
-      - "Hemminga"
-      - "Hightower"
-      - "Hockin"
-      - "Hochstein"
-      - "IanLewis"
-      - "IanMLewis"
-      - "Ikeda"
-      - "Ippolito"
-      - "Ishikawa"
-      - "Ishimoto"
-      - "Iwashi"
-      - "Jiayi"
-      - "Johansson"
-      - "Jxck"
-      - "Kaczorowski"
-      - "Kamaelia"
-      - "Karuppasamy"
-      - "Kinomiya"
-      - "Kitamura"
-      - "Klabnik"
-      - "Knyszek"
-      - "Krumins"
-      - "Lacasse"
-      - "Liao"
-      - "Longhui"
-      - "Lorin"
-      - "Lifland"
-      - "Litt"
-      - "LonelyBob"
-      - "Makabi"
-      - "McKayla"
-      - "Maki"
-      - "Makoto"
-      - "Manabe"
-      - "Manabu"
-      - "Mandel"
-      - "Maru"
-      - "Masuda"
-      - "Matsuo"
-      - "Meiert"
-      - "Moraes"
-      - "Morimoto"
-      - "Moriyoshi"
-      - "Maroney"
-      - "Moscone"
-      - "Naoki"
-      - "Nghia"
-      - "Nikhil"
-      - "Nilsson"
-      - "Okano"
-      - "Orosz"
-      - "Osorio"
-      - "Petgrave"
-      - "Rami"
-      - "Reiko"
-      - "Rokicki"
-      - "Raykar"
-      - "Ronacher"
-      - "Rosner"
-      - "Rossum"
-      - "Ryosuke"
-      - "Sandeep"
-      - "Sato"
-      - "Sanjay"
-      - "Shibata"
-      - "Shibukawa"
-      - "Shimizukawa"
-      - "Shinya"
-      - "Shu"
-      - "Slatkin"
-      - "Sota"
-      - "Stapelberg"
-      - "Suenaga"
-      - "Sundar"
-      - "Takanori"
-      - "Takashi"
-      - "Takayuki"
-      - "Takuto"
-      - "Tarek"
-      - "Terada"
-      - "Tetsuya"
-      - "Trong"
-      - "Tsinghua"
-      - "Tsuyuki"
-      - "Wada"
-      - "Warmerdam"
-      - "Wilber"
-      - "Willison"
-      - "Woodruff"
-      - "Xiao"
-      - "Xinkai"
-      - "Xu"
-      - "Vella"
-      - "Voege"
-      - "Yamaguchi"
-      - "Yasushi"
-      - "Yongfook"
-      - "Yoshi"
-      - "Yoshiki"
-      - "Yosuke"
-      - "Zach"
-      - "Zeyliger"
-      - "Ziadé"
+      - "/\\bAhlström\\b/g"
+      - "/\\bAhmet\\b/g"
+      - "/\\bAjay\\b/g"
+      - "/\\bAndreessen\\b/g"
+      - "/\\bAoife\\b/g"
+      - "/\\bAndré(?:^|\\s)/g"
+      - "/\\bArko\\b/g"
+      - "/\\bArmin\\b/g"
+      - "/\\bAtamel\\b/g"
+      - "/\\bAtharva\\b/g"
+      - "/\\bAtsuo\\b/g"
+      - "/\\bAtsushi\\b/g"
+      - "/\\bBalahan\\b/g"
+      - "/\\bBlauzvern\\b/g"
+      - "/\\bBleecher\\b/g"
+      - "/\\bBranchaud\\b/g"
+      - "/\\bBrooker\\b/g"
+      - "/\\bCalabro\\b/g"
+      - "/\\bCayden\\b/g"
+      - "/\\bCollison\\b/g"
+      - "/\\bColton\\b/g"
+      - "/\\bCosentino\\b/g"
+      - "/\\bCramer\\b/g"
+      - "/\\bCrawshaw\\b/g"
+      - "/\\bDaisuke\\b/g"
+      - "/\\bDaskalou\\b/g"
+      - "/\\bDicken\\b/g"
+      - "/\\bDougherty\\b/g"
+      - "/\\bDuan\\b/g"
+      - "/\\bDrapper\\b/g"
+      - "/\\bEdinger\\b/g"
+      - "/\\bEiji\\b/g"
+      - "/\\bElayoty\\b/g"
+      - "/\\bElin\\b/g"
+      - "/\\bElon\\b/g"
+      - "/\\bEnamoto\\b/g"
+      - "/\\bEno\\b/g"
+      - "/\\bFikes\\b/g"
+      - "/\\bFoppe\\b/g"
+      - "/\\bFumi\\b/g"
+      - "/\\bGageot\\b/g"
+      - "/\\bGergely\\b/g"
+      - "/\\bGhemawat\\b/g"
+      - "/\\bGodbolt\\b/g"
+      - "/\\bGraeme\\b/g"
+      - "/\\bHansson\\b/g"
+      - "/\\bHeba\\b/g"
+      - "/\\bHeinemeier\\b/g"
+      - "/\\bHemminga\\b/g"
+      - "/\\bHightower\\b/g"
+      - "/\\bHockin\\b/g"
+      - "/\\bHochstein\\b/g"
+      - "/\\bIanLewis\\b/g"
+      - "/\\bIanMLewis\\b/g"
+      - "/\\bIkeda\\b/g"
+      - "/\\bIppolito\\b/g"
+      - "/\\bIshikawa\\b/g"
+      - "/\\bIshimoto\\b/g"
+      - "/\\bIwashi\\b/g"
+      - "/\\bJayden\\b/g"
+      - "/\\bJiayi\\b/g"
+      - "/\\bJohansson\\b/g"
+      - "/\\bJxck\\b/g"
+      - "/\\bKaczorowski\\b/g"
+      - "/\\bKamaelia\\b/g"
+      - "/\\bKaruppasamy\\b/g"
+      - "/\\bKinomiya\\b/g"
+      - "/\\bKitamura\\b/g"
+      - "/\\bKlabnik\\b/g"
+      - "/\\bKnyszek\\b/g"
+      - "/\\bKrouse\\b/g"
+      - "/\\bKrumins\\b/g"
+      - "/\\bLacasse\\b/g"
+      - "/\\bLiao\\b/g"
+      - "/\\bLonghui\\b/g"
+      - "/\\bLorin\\b/g"
+      - "/\\bLifland\\b/g"
+      - "/\\bLitt\\b/g"
+      - "/\\bLonelyBob\\b/g"
+      - "/\\bMakabi\\b/g"
+      - "/\\bMcKayla\\b/g"
+      - "/\\bMaki\\b/g"
+      - "/\\bMakoto\\b/g"
+      - "/\\bManabe\\b/g"
+      - "/\\bManabu\\b/g"
+      - "/\\bMandel\\b/g"
+      - "/\\bMaru\\b/g"
+      - "/\\bMasuda\\b/g"
+      - "/\\bMatsuo\\b/g"
+      - "/\\bMeiert\\b/g"
+      - "/\\bMoraes\\b/g"
+      - "/\\bMorimoto\\b/g"
+      - "/\\bMoriyoshi\\b/g"
+      - "/\\bMaroney\\b/g"
+      - "/\\bMoscone\\b/g"
+      - "/\\bNaoki\\b/g"
+      - "/\\bNghia\\b/g"
+      - "/\\bNikhil\\b/g"
+      - "/\\bNilsson\\b/g"
+      - "/\\bOkano\\b/g"
+      - "/\\bOrosz\\b/g"
+      - "/\\bOsorio\\b/g"
+      - "/\\bPetgrave\\b/g"
+      - "/\\bRami\\b/g"
+      - "/\\bReiko\\b/g"
+      - "/\\bRokicki\\b/g"
+      - "/\\bRaykar\\b/g"
+      - "/\\bRonacher\\b/g"
+      - "/\\bRosner\\b/g"
+      - "/\\bRossum\\b/g"
+      - "/\\bRyosuke\\b/g"
+      - "/\\bSandeep\\b/g"
+      - "/\\bSato\\b/g"
+      - "/\\bSanjay\\b/g"
+      - "/\\bShibata\\b/g"
+      - "/\\bShibukawa\\b/g"
+      - "/\\bShimizukawa\\b/g"
+      - "/\\bShinya\\b/g"
+      - "/\\bShu\\b/g"
+      - "/\\bSlatkin\\b/g"
+      - "/\\bSota\\b/g"
+      - "/\\bStapelberg\\b/g"
+      - "/\\bSuenaga\\b/g"
+      - "/\\bSundar\\b/g"
+      - "/\\bTakanori\\b/g"
+      - "/\\bTakashi\\b/g"
+      - "/\\bTakayuki\\b/g"
+      - "/\\bTakuto\\b/g"
+      - "/\\bTarek\\b/g"
+      - "/\\bTerada\\b/g"
+      - "/\\bTetsuya\\b/g"
+      - "/\\bTrong\\b/g"
+      - "/\\bTsinghua\\b/g"
+      - "/\\bTsuyuki\\b/g"
+      - "/\\bWada\\b/g"
+      - "/\\bWarmerdam\\b/g"
+      - "/\\bWilber\\b/g"
+      - "/\\bWillison\\b/g"
+      - "/\\bWoodruff\\b/g"
+      - "/\\bXiao\\b/g"
+      - "/\\bXinkai\\b/g"
+      - "/\\bXu\\b/g"
+      - "/\\bVella\\b/g"
+      - "/\\bVoege\\b/g"
+      - "/\\bYamaguchi\\b/g"
+      - "/\\bYasushi\\b/g"
+      - "/\\bYongfook\\b/g"
+      - "/\\bYoshi\\b/g"
+      - "/\\bYoshiki\\b/g"
+      - "/\\bYosuke\\b/g"
+      - "/\\bZach\\b/g"
+      - "/\\bZeyliger\\b/g"
+      - "/\\bZiadé\\b/g"
 
       # Place Names
       ##########################################################################
 
-      - "Shinagawa" # Shinagawa, a ward in Tokyo, Japan
-      - "Shibuya" # Shibuya, a ward in Tokyo, Japan
+      - "/\\bShinagawa\\b/g" # Shinagawa, a ward in Tokyo, Japan
+      - "/\\bShibuya\\b/g" # Shibuya, a ward in Tokyo, Japan
 
       # User handles
       ##########################################################################
 
-      - "DHH"
-      - "TheAmyCode"
-      - "akisute"
-      - "aodag"
-      - "atsuoishimoto"
-      - "deeet"
-      - "dhh"
-      - "ae35"
-      - "akisute"
-      - "bucho"
-      - "deeet"
-      - "/[Ff]eiz/"
-      - "hiyosi"
-      - "ianlewis"
-      - "ianmlewis"
-      - "jbking"
-      - "joehewitt"
-      - "kaz"
-      - "markhammonds"
-      - "mcyoung"
-      - "MiCHiLU" # Person/handle name
-      - "miwaza"
-      - "monjudoh"
-      - "moriyoshi"
-      - "shimizukawa"
-      - "shin_no_suke"
-      - "shoma"
-      - "surgo"
-      - "takanory"
-      - "terapyon"
-      - "tokibito"
-      - "toruot"
-      - "troter"
-      - "whosaysni"
-      - "/[Vv]oluntas/"
-      - "yoichiro"
-      - "yuanying"
-      - "yuroyoro"
-      - "yudppp"
-      - "/[Ww]eboo/"
-
-      # Company/Product Names
+      - "/\\bDHH\\b/g"
+      - "/\\bTheAmyCode\\b/g"
+      - "/\\bakisute\\b/g"
+      - "/\\baodag\\b/g"
+      - "/\\batsuoishimoto\\b/g"
+      - "/\\bdeeet\\b/g"
+      - "/\\bdhh\\b/g"
+      - "/\\bae35\\b/g"
+      - "/\\bakisute\\b/g"
+      - "/\\bbucho\\b/g"
+      - "/\\bdeeet\\b/g"
+      - "/\\b[Ff]eiz\\b/g"
+      - "/\\bhiyosi\\b/g"
+      - "/\\bianlewis\\b/g"
+      - "/\\bianmlewis\\b/g"
+      - "/\\bjbking\\b/g"
+      - "/\\bjoehewitt\\b/g"
+      - "/\\bkaz\\b/g"
+      - "/\\bmarkhammonds\\b/g"
+      - "/\\bmcyoung\\b/g"
+      - "/\\bMiCHiLU\\b/g" # Person/handle name
+      - "/\\bmiwaza\\b/g"
+      - "/\\bmonjudoh\\b/g"
+      - "/\\bmoriyoshi\\b/g"
+      - "/\\bshimizukawa\\b/g"
+      - "/\\bshin_no_suke\\b/g"
+      - "/\\bshoma\\b/g"
+      - "/\\bsurgo\\b/g"
+      - "/\\btakanory\\b/g"
+      - "/\\bterapyon\\b/g"
+      - "/\\btokibito\\b/g"
+      - "/\\btoruot\\b/g"
+      - "/\\btroter\\b/g"
+      - "/\\bwhosaysni\\b/g"
+      - "/\\b[Vv]oluntas\\b/g"
+      - "/\\byoichiro\\b/g"
+      - "/\\byuanying\\b/g"
+      - "/\\byuroyoro\\b/g"
+      - "/\\byudppp\\b/g"
+      - "/\\b[Ww]eboo\\b/g" # Company/Product Names
       ##########################################################################
 
-      - "ATND" # Japanese event platform (atnd.org)
-      - "Accense"
-      - "Anchorlab"
-      - "Anthropic"
-      - "Apcera"
-      - "Aptana"
-      - "Appc"
-      - "Atlassian"
-      - "Basho"
-      - "BeProud"
-      - "Bigtable"
-      - "Bluesky"
-      - "Bitbucket"
-      - "ChromeOS"
-      - "Connpass" # Japanese event platform (connpass.com)
-      - "CoreOS"
-      - "CoreOS"
-      - "Datastore"
-      - "Deis"
-      - "Disqus" # Comment hosting service
-      - "Docomo"
-      - "EuroPython"
-      - "ElasticSearch"
-      - "Eldarion"
-      - "FriendFeed" # Social networking service (acquired by Facebook)
-      - "Fulcio"
-      - "Gmail"
-      - "Gree"
-      - "Gumi"
-      - "Joyent"
-      - "LinkedIn" # Professional networking platform
-      - "MacBook"
-      - "Mesosphere"
-      - "Mixi"
-      - "NATS.io"
-      - "Netlify"
-      - "Palo" # e.g. Palo Alto Networks
-      - "Photoshop"
-      - "PostgreSQL" # PostgreSQL database
-      - "PyPI"
-      - "Jaiku" # Old social networking service
-      - "JetBrains"
-      - "Jupyter"
-      - "Shopify" # E-commerce platform
-      - "Simeji" # Japanese input method editor (bought by Baidu)
-      - "Smipple" # Code snippet sharing service (defunct)
-      - "SoftBank"
-      - "StockApp"
-      - "Synadia"
-      - "Tailscale"
-      - "TeleMessage"
-      - "SoftBank"
-      - "Stunlock"
-      - "Oakveil"
-      - "Unoh"
-      - "UStream" # Live video streaming service (acquired by IBM)
-      - "Vimeo" # Video hosting platform
-      - "Windsurf" # Windsurf, AI IDE
-      - "YouTube" # Video sharing platform
+      - "/\\bATND\\b/g" # Japanese event platform (atnd.org)
+      - "/\\bAccense\\b/g"
+      - "/\\bAnchorlab\\b/g"
+      - "/\\bAnthropic\\b/g"
+      - "/\\bApcera\\b/g"
+      - "/\\bAptana\\b/g"
+      - "/\\bAppc\\b/g"
+      - "/\\bAtlassian\\b/g"
+      - "/\\bBasho\\b/g"
+      - "/\\bBeProud\\b/g"
+      - "/\\bBigtable\\b/g"
+      - "/\\bBluesky\\b/g"
+      - "/\\bBitbucket\\b/g"
+      - "/\\bChromeOS\\b/g"
+      - "/\\bConnpass\\b/g" # Japanese event platform (connpass.com)
+      - "/\\bCoreOS\\b/g"
+      - "/\\bCoreOS\\b/g"
+      - "/\\bDatastore\\b/g"
+      - "/\\bDeis\\b/g"
+      - "/\\bDisqus\\b/g" # Comment hosting service
+      - "/\\bDocomo\\b/g"
+      - "/\\bEuroPython\\b/g"
+      - "/\\bElasticSearch\\b/g"
+      - "/\\bEldarion\\b/g"
+      - "/\\bFriendFeed\\b/g" # Social networking service (acquired by Facebook)
+      - "/\\bFulcio\\b/g"
+      - "/\\bGmail\\b/g"
+      - "/\\bGree\\b/g"
+      - "/\\bGumi\\b/g"
+      - "/\\bJoyent\\b/g"
+      - "/\\bLinkedIn\\b/g" # Professional networking platform
+      - "/\\bMacBook\\b/g"
+      - "/\\bMesosphere\\b/g"
+      - "/\\bMixi\\b/g"
+      - "/\\bNATS.io\\b/g"
+      - "/\\bNetlify\\b/g"
+      - "/\\bPalo\\b/g" # e.g. Palo Alto Networks
+      - "/\\bPhotoshop\\b/g"
+      - "/\\bPostgreSQL\\b/g" # PostgreSQL database
+      - "/\\bPyPI\\b/g"
+      - "/\\bJaiku\\b/g" # Old social networking service
+      - "/\\bJetBrains\\b/g"
+      - "/\\bJupyter\\b/g"
+      - "/\\bShopify\\b/g" # E-commerce platform
+      - "/\\bSimeji\\b/g" # Japanese input method editor (bought by Baidu)
+      - "/\\bSmipple\\b/g" # Code snippet sharing service (defunct)
+      - "/\\bSoftBank\\b/g"
+      - "/\\bStockApp\\b/g"
+      - "/\\bSynadia\\b/g"
+      - "/\\bTailscale\\b/g"
+      - "/\\bTeleMessage\\b/g"
+      - "/\\bSoftBank\\b/g"
+      - "/\\bStunlock\\b/g"
+      - "/\\bOakveil\\b/g"
+      - "/\\bUnoh\\b/g"
+      - "/\\bUStream\\b/g" # Live video streaming service (acquired by IBM)
+      - "/\\bVimeo\\b/g" # Video hosting platform
+      - "/\\bWindsurf\\b/g" # Windsurf, AI IDE
+      - "/\\bYouTube\\b/g" # Video sharing platform
 
       # Tech Names
       ##########################################################################
 
-      - "ATProto" # AT Protocol, a decentralized social protocol
-      - "ActivityPub" # ActivityPub protocol
-      - "AgentCore" # AWS AgentCore
-      - "AppStats" # App Engine AppStats
-      - "Appc"
-      - "Ansible"
-      - "Appstats" # App Engine Appstats
-      - "BeautifulSoup"
-      - "Blobstore" # App Engine Blobstore
-      - "BudouX" # Japanese morphological analyzer
-      - "Buildbot" # Python continuous integration tool
-      - "Buildout" # Python build system
-      - "Bundler" # Ruby dependency manager
-      - "/[Cc][Gg][Oo]/" # Go tool for interfacing with C code
-      - "CRI-O" # Container Runtime Interface implementation for Kubernetes
-      - "CloudFront" # AWS CloudFront
-      - "/[Cc]ron/"
-      - "Cygwin"
-      - "Cython" # C-Extensions for Python
-      - "DvorakJP" # Dvorak Japanese Keyboard Layout
-      - "FastCGI"
-      - "Funktion"
-      - "Gaim" # Old name for Pidgin, an instant messaging client
-      - "GenAI" # Generative AI
-      - "GnuCash" # Personal finance software
-      - "GoReleaser" # Go release tool
-      - "GeoDjango" # Django geographic web framework
-      - "Gunicorn" # Python WSGI HTTP Server (Green Unicorn)
-      - "JUnit" # Java Unit Testing Framework
-      - "Jubatus" # Distributed machine learning framework
-      - "Kiro" # AI Editor by AWS
-      - "Kubernetes" # Kubernetes container orchestration platform
-      - "LuaLaTeX" # Lua-based LaTeX engine
-      - "MapReduce" # Programming model for processing large data sets
-      - "Matcher API" # App Engine Matcher API
-      - "Maturin"
-      - "/[Mm]emcached/"
-      - "Mesos"
-      - "MochiKit"
-      - "NATS" # NATS.io
-      - "NATS.io" # NATS.io
-      - "Neovim"
-      - "NixOS"
-      - "Noto" # Noto fonts
-      - "Nunjucks" # JavaScript templating engine
-      - "OAuth" # Open standard for access delegation
-      - "OpenShift" # Red Hat's container platform
-      - "OpenSocial" # Social networking protocol
-      - "OpenStack" # OpenStack cloud computing platform
-      - "Picasa" # Old Google photo management software for App Engine
-      - "PlanetScale" # PlanetScale database platform
-      - "Plone" # Python content management system
-      - "PyCharm" # Python IDE by JetBrains
-      - "Pyflakes" # Python static code analysis tool
-      - "QUnit" # JavaScript Unit Testing Framework
-      - "RequireJS"
-      - "RubyGems" # Ruby package manager
-      - "ShiftJIS" # Japanese character encoding
-      - "Sigstore" # Project for signing software artifacts
-      - "Stardict" # StarDict dictionary software
-      - "Symposion" # Django library for conference management
-      - "Stylelint"
-      - "Tensorflow"
-      - "Terraform"
-      - "TinyMCE" # JavaScript WYSIWYG editor
-      - "Trae" # AI IDE
-      - "XeLaTeX"
-      - "Zizmor"
-      - "Noto" # Noto fonts
-      - "OpenShift"
-      - "OpenStack"
-      - "PIL" # Python Imaging Library
-      - "Plagger" # Perl RSS/Atom aggregator (proper capitalization)
-      - "Postfix" # mail server
-      - "PySerial" # Python Serial port library
-      - "Pygments" # Python syntax highlighting library
-      - "QUnit" # JavaScript testing framework
-      - "Redis" # in-memory data structure store
-      - "Redmine" # project management tool
-      - "RequireJS" # JavaScript module loader
-      - "Riak" # distributed NoSQL database
-      - "Sinon" # JavaScript test spies, stubs, and mocks
-      - "SpiderMonkey" # JavaScript engine
-      - "Stylelint" # CSS linter
-      - "Tensorflow"
-      - "Tipfy" # App Engine Python web framework
-      - "TortoiseHg" # Mercurial client
-      - "TortoiseMerge" # Merge tool
-      - "XeLaTeX" # LaTeX engine
-      - "Zig" # Zig programming language
-      - "Zizmor" # GitHub Actions linter
-      - "Webapp" # App Engine WebApp framework
-      - "WebGL" # Web Graphics Library
-      - "Werkzeug" # Python WSGI utility library
-      - "cgroup" # control groups
-      - "containerd" # container runtime
-      - "cgroup" # control groups
-      - "dotfiles"
-      - "etcd" # etcd.io
-      - "gorbital" # molecular orbital visualization tool
-      - "gtkmm" # C++ bindings for GTK
-      - "npm" # Node Package Manager
-      - "pprof" # Go profiler
-      - "reST" # reStructuredText
-      - "reStructuredText" # reST
-      - "rebuild.fm" # rebuild.fm podcast
-      - "supervisord"
-      - "uv" # Python packaging tool
-      - "/[Cc]ron/"
-      - "/[Mm]emcached/"
-      - "/[Nn]ginx/"
-      - "/[Ww]i-?[Ff]i/"
-      - "/[Nn]ginx/"
+      - "/\\bATProto\\b/g" # AT Protocol, a decentralized social protocol
+      - "/\\bActivityPub\\b/g" # ActivityPub protocol
+      - "/\\bAgentCore\\b/g" # AWS AgentCore
+      - "/\\bAppStats\\b/g" # App Engine AppStats
+      - "/\\bAppc\\b/g"
+      - "/\\bAnsible\\b/g"
+      - "/\\bAppstats\\b/g" # App Engine Appstats
+      - "/\\bBeautifulSoup\\b/g"
+      - "/\\bBlobstore\\b/g" # App Engine Blobstore
+      - "/\\bBudouX\\b/g" # Japanese morphological analyzer
+      - "/\\bBuildbot\\b/g" # Python continuous integration tool
+      - "/\\bBuildout\\b/g" # Python build system
+      - "/\\bBundler\\b/g" # Ruby dependency manager
+      - "/\\b[Cc][Gg][Oo]\\b/g" # Go tool for interfacing with C code
+      - "/\\bCRI-O\\b/g" # Container Runtime Interface implementation for Kubernetes
+      - "/\\bCloudFront\\b/g" # AWS CloudFront
+      - "/\\b[Cc]ron\\b/g"
+      - "/\\bCygwin\\b/g"
+      - "/\\bCython\\b/g" # C-Extensions for Python
+      - "/\\bDvorakJP\\b/g" # Dvorak Japanese Keyboard Layout
+      - "/\\bFastCGI\\b/g"
+      - "/\\bFunktion\\b/g"
+      - "/\\bGaim\\b/g" # Old name for Pidgin, an instant messaging client
+      - "/\\bGenAI\\b/g" # Generative AI
+      - "/\\bGnuCash\\b/g" # Personal finance software
+      - "/\\bGoReleaser\\b/g" # Go release tool
+      - "/\\bGeoDjango\\b/g" # Django geographic web framework
+      - "/\\bGunicorn\\b/g" # Python WSGI HTTP Server (Green Unicorn)
+      - "/\\bJUnit\\b/g" # Java Unit Testing Framework
+      - "/\\bJubatus\\b/g" # Distributed machine learning framework
+      - "/\\bKiro\\b/g" # AI Editor by AWS
+      - "/\\bKubernetes\\b/g" # Kubernetes container orchestration platform
+      - "/\\bLuaLaTeX\\b/g" # Lua-based LaTeX engine
+      - "/\\bMapReduce\\b/g" # Programming model for processing large data sets
+      - "/\\bMatcher API\\b/g" # App Engine Matcher API
+      - "/\\bMaturin\\b/g"
+      - "/\\b[Mm]emcached\\b/g"
+      - "/\\bMesos\\b/g"
+      - "/\\bMochiKit\\b/g"
+      - "/\\bNATS\\b/g" # NATS.io
+      - "/\\bNATS.io\\b/g" # NATS.io
+      - "/\\bNeovim\\b/g"
+      - "/\\bNixOS\\b/g"
+      - "/\\bNoto\\b/g" # Noto fonts
+      - "/\\bNunjucks\\b/g" # JavaScript templating engine
+      - "/\\bOAuth\\b/g" # Open standard for access delegation
+      - "/\\bOpenShift\\b/g" # Red Hat's container platform
+      - "/\\bOpenSocial\\b/g" # Social networking protocol
+      - "/\\bOpenStack\\b/g" # OpenStack cloud computing platform
+      - "/\\bPicasa\\b/g" # Old Google photo management software for App Engine
+      - "/\\bPlanetScale\\b/g" # PlanetScale database platform
+      - "/\\bPlone\\b/g" # Python content management system
+      - "/\\bPyCharm\\b/g" # Python IDE by JetBrains
+      - "/\\bPyflakes\\b/g" # Python static code analysis tool
+      - "/\\bQUnit\\b/g" # JavaScript Unit Testing Framework
+      - "/\\bRequireJS\\b/g"
+      - "/\\bRubyGems\\b/g" # Ruby package manager
+      - "/\\bShiftJIS\\b/g" # Japanese character encoding
+      - "/\\bSideqik\\b/g" # Ruby task queue
+      - "/\\bSigstore\\b/g" # Project for signing software artifacts
+      - "/\\bStardict\\b/g" # StarDict dictionary software
+      - "/\\bSymposion\\b/g" # Django library for conference management
+      - "/\\bStylelint\\b/g"
+      - "/\\bTensorflow\\b/g"
+      - "/\\bTerraform\\b/g"
+      - "/\\bTinyMCE\\b/g" # JavaScript WYSIWYG editor
+      - "/\\bTrae\\b/g" # AI IDE
+      - "/\\bXeLaTeX\\b/g"
+      - "/\\bZizmor\\b/g"
+      - "/\\bNoto\\b/g" # Noto fonts
+      - "/\\bOpenShift\\b/g"
+      - "/\\bOpenStack\\b/g"
+      - "/\\bPIL\\b/g" # Python Imaging Library
+      - "/\\bPlagger\\b/g" # Perl RSS/Atom aggregator (proper capitalization)
+      - "/\\bPostfix\\b/g" # mail server
+      - "/\\bPySerial\\b/g" # Python Serial port library
+      - "/\\bPygments\\b/g" # Python syntax highlighting library
+      - "/\\bQUnit\\b/g" # JavaScript testing framework
+      - "/\\bRedis\\b/g" # in-memory data structure store
+      - "/\\bRedmine\\b/g" # project management tool
+      - "/\\bRequireJS\\b/g" # JavaScript module loader
+      - "/\\bRiak\\b/g" # distributed NoSQL database
+      - "/\\bSinon\\b/g" # JavaScript test spies, stubs, and mocks
+      - "/\\bSpiderMonkey\\b/g" # JavaScript engine
+      - "/\\bStylelint\\b/g" # CSS linter
+      - "/\\bTensorflow\\b/g"
+      - "/\\bTipfy\\b/g" # App Engine Python web framework
+      - "/\\bTortoiseHg\\b/g" # Mercurial client
+      - "/\\bTortoiseMerge\\b/g" # Merge tool
+      - "/\\bXeLaTeX\\b/g" # LaTeX engine
+      - "/\\bZig\\b/g" # Zig programming language
+      - "/\\bZizmor\\b/g" # GitHub Actions linter
+      - "/\\bWebapp\\b/g" # App Engine WebApp framework
+      - "/\\bWebGL\\b/g" # Web Graphics Library
+      - "/\\bWerkzeug\\b/g" # Python WSGI utility library
+      - "/\\b[Cc]groups?\\b/g" # control groups
+      - "/\\bcontainerd\\b/g" # container runtime
+      - "/\\bdotfiles\\b/g"
+      - "/\\betcd\\b/g" # etcd.io
+      - "/\\bgorbital\\b/g" # molecular orbital visualization tool
+      - "/\\bgtkmm\\b/g" # C++ bindings for GTK
+      - "/\\bnpm\\b/g" # Node Package Manager
+      - "/\\bpprof\\b/g" # Go profiler
+      - "/\\breST\\b/g" # reStructuredText
+      - "/\\breStructuredText\\b/g" # reST
+      - "/\\brebuild.fm\\b/g" # rebuild.fm podcast
+      - "/\\bsupervisord\\b/g"
+      - "/\\buv\\b/g" # Python packaging tool
+      - "/\\b[Cc]ron\\b/g"
+      - "/\\b[Mm]emcached\\b/g"
+      - "/\\b[Nn]ginx\\b/g"
+      - "/\\b[Ww]i-?[Ff]i\\b/g"
+      - "/\\b[Nn]ginx\\b/g"
 
       # Websites/Organizations/Events
-      - "Ajaxian" # Ajaxian.com, a web development blog
-      - "appengine ja night" # App Engine Java/Japan Night
-      - "AJN" # App Engine Java/Japan Night
-      - "BPStudy" # BeProud Study
-      - "BPStyle" # BeProud internal study
-      - "PyCon" # Python Conference
-      - "PyFes" # Python Festival
-      - "PyLadies" # Python Ladies
-      - "NSStudy"
-      - "RailsConf" # Ruby on Rails Conference
-      - "/[Pp]y[Ss]pa/" # Python Onsen
+      ##########################################################################
+
+      - "/\\bAjaxian\\b/g" # Ajaxian.com, a web development blog
+      - "/\\bappengine ja night\\b/g" # App Engine Java/Japan Night
+      - "/\\bAJN\\b/g" # App Engine Java/Japan Night
+      - "/\\bBPStudy\\b/g" # BeProud Study
+      - "/\\bBPStyle\\b/g" # BeProud internal study
+      - "/\\bPyCon\\b/g" # Python Conference
+      - "/\\bPyFes\\b/g" # Python Festival
+      - "/\\bPyLadies\\b/g" # Python Ladies
+      - "/\\bNSStudy\\b/g"
+      - "/\\bRailsConf\\b/g" # Ruby on Rails Conference
+      - "/\\b[Pp]y[Ss]pa\\b/g" # Python Onsen
 
       # Tech Terminology/Jargon
       ##########################################################################
 
-      - "Autoscaling"
-      - "Connectability" # Ability to connect
-      - "Dockerfile" # Docker configuration file
-      - "Googler" # Google employee
-      - "Googley" # Google-like, characteristic of Google
-      - "ReplicaSet" # Kubernetes ReplicaSet
-      - "TrueType" # TrueType font
-      - "Vagrantfile" # Vagrant configuration file
-      - "dotfiles" # configuration files
-      - "iGoogle" # (old) Google personalized portal services
-      - "iPhones" # plural of iPhone
-      - "nosplit" # Go compiler directive
-      - "/[Aa]ddon/"
-      - "/[Aa]cyclic/" # not displaying or forming part of a cycle.
-      - "/[Aa]utocomplete/"
-      - "/[Aa]utoscaler/"
-      - "/[Aa]utoscaling/"
-      - "/[Bb]ackend/" # the server side of a client-server system
-      - "/[Cc]omparator/" # compare + ator
-      - "/[Dd]eclarative/"
-      - "/[Dd]ev/" # Development/Developer
-      - "/[Ee]xecutables/" # plural of executable
-      - "/[Ee]xfiltrated/" # past tense of exfiltrate
-      - "/[Ee]xfiltrate/" # To steal data from a system
-      - "/[Ee]xfiltrating/" # gerund or present participle of exfiltrate
-      - "/[Ff]iletype/" # file + type
-      - "/[Ff]rontend/" # the client side of a client-server system
-      - "/[Gg]oroutine/"
-      - "/[Hh]ackathon/"
-      - "/[Kk]eychain/"
-      - "/[Ll]iveness/"
-      - "/[Ll]ossy/" # process that loses information (e.g. compression)
-      - "/[Mm]ixin/"
-      - "/[Nn]amespace/"
-      - "/[Nn]-gram/" # N-gram text analysis
-      - "/[Pp]aywall/"
-      - "/[Pp]ermalink/"
-      - "/[Pp]laintext/"
-      - "/[Ii]mpactful/" # impact + -ful
-      - "/[Ii]ntegrations/" # irregular plural-form
-      - "/[Rr]evset/" # Revision Set (Mercurial)
-      - "/[Ss]corecarding/" # Scorecarding (process of evaluating)
-      - "/[Ss]erverless/"
-      - "/[Ss]uperintelligence/" # super + intelligence (stupid AI terms)
-      - "/[Ss]tylesheet/"
-      - "/[Tt]estbed/"
-      - "/[Tt]raceback/" # Error trace information
-      - "/[Tt]radeoff/" # trade + off
-      - "/[Uu]ntrusted/" # used to describe code in a security context
-      - "[Ww]ifi" # Wi-Fi
-      - "µsec" # microsecond
-      - "usec" # microsecond
-      - "msec" # millisecond
+      - "/\\bAutoscaling\\b/g"
+      - "/\\bConnectability\\b/g" # Ability to connect
+      - "/\\bDockerfile\\b/g" # Docker configuration file
+      - "/\\bGoogler\\b/g" # Google employee
+      - "/\\bGoogley\\b/g" # Google-like, characteristic of Google
+      - "/\\bReplicaSet\\b/g" # Kubernetes ReplicaSet
+      - "/\\bTrueType\\b/g" # TrueType font
+      - "/\\bVagrantfile\\b/g" # Vagrant configuration file
+      - "/\\bdotfiles\\b/g" # configuration files
+      - "/\\biGoogle\\b/g" # (old) Google personalized portal services
+      - "/\\biPhones\\b/g" # plural of iPhone
+      - "/\\bnosplit\\b/g" # Go compiler directive
+      - "/\\b[Aa]ddon\\b/g"
+      - "/\\b[Aa]cyclic\\b/g" # not displaying or forming part of a cycle.
+      - "/\\b[Aa]utocomplete\\b/g"
+      - "/\\b[Aa]utoscaler\\b/g"
+      - "/\\b[Aa]utoscaling\\b/g"
+      - "/\\b[Bb]ackend\\b/g" # the server side of a client-server system
+      - "/\\b[Cc]omparator\\b/g" # compare + ator
+      - "/\\b[Dd]eclarative\\b/g"
+      - "/\\b[Dd]ev\\b/g" # Development/Developer
+      - "/\\b[Ee]xecutables\\b/g" # plural of executable
+      - "/\\b[Ee]xfiltrated\\b/g" # past tense of exfiltrate
+      - "/\\b[Ee]xfiltrate\\b/g" # To steal data from a system
+      - "/\\b[Ee]xfiltrating\\b/g" # gerund or present participle of exfiltrate
+      - "/\\b[Ff]iletype\\b/g" # file + type
+      - "/\\b[Ff]rontend\\b/g" # the client side of a client-server system
+      - "/\\b[Gg]oroutine\\b/g"
+      - "/\\b[Hh]ackathon\\b/g"
+      - "/\\b[Kk]eychain\\b/g"
+      - "/\\b[Ll]iveness\\b/g"
+      - "/\\b[Ll]ossy\\b/g" # process that loses information (e.g. compression)
+      - "/\\b[Mm]ixin\\b/g"
+      - "/\\b[Nn]amespace\\b/g"
+      - "/\\b[Nn]-gram\\b/g" # N-gram text analysis
+      - "/\\b[Pp]aywall\\b/g"
+      - "/\\b[Pp]ermalink\\b/g"
+      - "/\\b[Pp]laintext\\b/g"
+      - "/\\b[Ii]mpactful\\b/g" # impact + -ful
+      - "/\\b[Ii]ntegrations\\b/g" # irregular plural-form
+      - "/\\b[Rr]evset\\b/g" # Revision Set (Mercurial)
+      - "/\\b[Ss]andboxing\\b/g" # process of isolating
+      - "/\\b[Ss]corecarding\\b/g" # Scorecarding (process of evaluating)
+      - "/\\b[Ss]erverless\\b/g"
+      - "/\\b[Ss]uperintelligence\\b/g" # super + intelligence (stupid AI terms)
+      - "/\\b[Ss]tylesheet\\b/g"
+      - "/\\b[Tt]estbed\\b/g"
+      - "/\\b[Tt]raceback\\b/g" # Error trace information
+      - "/\\b[Tt]radeoff\\b/g" # trade + off
+      - "/\\b[Uu]ntrusted\\b/g" # used to describe code in a security context
+      - "/\\b[Ww]ifi\\b/g" # Wi-Fi
+      - "/\\bµsec\\b/g" # microsecond
+      - "/\\busec\\b/g" # microsecond
+      - "/\\bmsec\\b/g" # millisecond
 
       # Acronyms
       ##########################################################################
 
-      - "ABI" # Application Binary Interface
-      - "ACAS" # Airborne Collision Avoidance System
-      - "ACI" # Application Container Image
-      - "ACL" # Access Control List
-      - "ACPI" # Advanced Configuration and Power Interface
-      - "APAC" # Asia-Pacific
-      - "API" # Application Programming Interface
-      - "APK" # Android Package
-      - "APT" # Advanced Package Tool
-      - "BPBP" # BeProud Book Purchase
-      - "BQ" # BigQuery
-      - "BUSL" # Business Source License
-      - "CFP" # Call for Papers/Proposals
-      - "CJK" # Chinese, Japanese, and Korean
-      - "CNCF" # Cloud Native Computing Foundation
-      - "CPAN" # Comprehensive Perl Archive Network
-      - "CPU" # Central Processing Unit
-      - "CRI" # Container Runtime Interface
-      - "CSV" # Comma-Separated Values
-      - "CSR" # Certificate Signing Request
-      - "CSV" # Comma-Separated Values
-      - "CTO" # Chief Technology Officer
-      - "CVE" # Common Vulnerabilities and Exposures
-      - "DAG" # Directed Acyclic Graph
-      - "DNS" # Domain Name System
-      - "DSL" # Domain-Specific Language
-      - "FaaS" # Function as a Service
-      - "GAE" # Google App Engine
-      - "GC" # Garbage Collector/Collection
-      - "GCE" # Google Compute Engine
-      - "GDE" # Google Developer Expert
-      - "GCP" # Google Cloud Platform
-      - "GCPUG" # Google Cloud Platform User Group
-      - "GDG" # Google Developer Group
-      - "GFS" # Google File System
-      - "GMP" # Goroutine, Mutex, and Channel (GMP)
-      - "GKE" # Google Kubernetes Engine
-      - "GPU" # Graphics Processing Unit
-      - "Gb" # Gigabyte
-      - "HDFS" # Hadoop Distributed File System
-      - "HTTPS" # Hypertext Transfer Protocol Secure
-      - "HUD" # Heads-Up Display
-      - "IP" # Internet Protocol
-      - "IPC" # Inter-Process Communication
-      - "JSON" # JavaScript Object Notation
-      - "KVS" # Key-Value Store
-      - "LDAP" # Lightweight Directory Access Protocol
-      - "LLM" # Large Language Model
-      - "LSP" # Language Server Protocol
-      - "MCP" # Model Context Protocol
-      - "MNIST" # Modified National Institute of Standards and Technology DB
-      - "MQ" # Message Queue
-      - "NoSQL" # Not Only SQL
-      - "OSS" # Open Source Software
-      - "QPS" # Queries Per Second
-      - "QoS" # Quality of Service
-      - "PKI" # Public Key Infrastructure
-      - "PaaS" # Platform as a Service
-      - "PID" # Process ID
-      - "QPS" # Query Per Second
-      - "RDBMS" # Relational Database Management System
-      - "RPC" # Remote Procedure Call
-      - "RSS" # Really Simple Syndication
-      - "SCM" # Source Code Management
-      - "SDK" # Software Development Kit
-      - "SES" # AWS Simple Email Service
-      - "SLA" # Service Level Agreement
-      - "SLO" # Service Level Objective
-      - "SLSA" # Supply Chain Levels for Software Artifacts
-      - "SMTP" # Simple Mail Transfer Protocol
-      - "SSL" # Secure Sockets Layer
-      - "TCAS" # Traffic Collision Avoidance System
-      - "TCP" # Transmission Control Protocol
-      - "TLS" # Transport Layer Security
-      - "TTY" # Teletypewriter
-      - "TUF" # The Update Framework
-      - "UTF" # Unicode Transformation Format
-      - "UTS" # Unix Time-Sharing
-      - "UX" # User Experience
-      - "VC" # Venture Capital
-      - "VM" # Virtual Machine
-      - "WASM" # WebAssembly
-      - "WSDL" # Web Services Description Language
-      - "WSGI" # Web Server Gateway Interface
-      - "XMPP" # Extensible Messaging and Presence Protocol
-      - "XSS" # Cross-Site Scripting
-      - "YAML" # YAML Ain't Markup Language
-      - "yaml" # YAML Ain't Markup Language
+      - "/\\bABI\\b/g" # Application Binary Interface
+      - "/\\bACAS\\b/g" # Airborne Collision Avoidance System
+      - "/\\bACI\\b/g" # Application Container Image
+      - "/\\bACL\\b/g" # Access Control List
+      - "/\\bACPI\\b/g" # Advanced Configuration and Power Interface
+      - "/\\bAPAC\\b/g" # Asia-Pacific
+      - "/\\bAPIs?\\b/g" # Application Programming Interface
+      - "/\\bAPK\\b/g" # Android Package
+      - "/\\bAPT\\b/g" # Advanced Package Tool
+      - "/\\bBPBP\\b/g" # BeProud Book Purchase
+      - "/\\bBQ\\b/g" # BigQuery
+      - "/\\bBUSL\\b/g" # Business Source License
+      - "/\\bCFP\\b/g" # Call for Papers/Proposals
+      - "/\\bCJK\\b/g" # Chinese, Japanese, and Korean
+      - "/\\bCNCF\\b/g" # Cloud Native Computing Foundation
+      - "/\\bCPAN\\b/g" # Comprehensive Perl Archive Network
+      - "/\\bCPU\\b/g" # Central Processing Unit
+      - "/\\bCRI\\b/g" # Container Runtime Interface
+      - "/\\bCSV\\b/g" # Comma-Separated Values
+      - "/\\bCSR\\b/g" # Certificate Signing Request
+      - "/\\bCSV\\b/g" # Comma-Separated Values
+      - "/\\bCTO\\b/g" # Chief Technology Officer
+      - "/\\bCVE\\b/g" # Common Vulnerabilities and Exposures
+      - "/\\bDAG\\b/g" # Directed Acyclic Graph
+      - "/\\bDNS\\b/g" # Domain Name System
+      - "/\\bDSL\\b/g" # Domain-Specific Language
+      - "/\\bFaaS\\b/g" # Function as a Service
+      - "/\\bGAE\\b/g" # Google App Engine
+      - "/\\bGC\\b/g" # Garbage Collector/Collection
+      - "/\\bGCE\\b/g" # Google Compute Engine
+      - "/\\bGDE\\b/g" # Google Developer Expert
+      - "/\\bGCP\\b/g" # Google Cloud Platform
+      - "/\\bGCPUG\\b/g" # Google Cloud Platform User Group
+      - "/\\bGDG\\b/g" # Google Developer Group
+      - "/\\bGFS\\b/g" # Google File System
+      - "/\\bGMP\\b/g" # Goroutine, Mutex, and Channel (GMP)
+      - "/\\bGKE\\b/g" # Google Kubernetes Engine
+      - "/\\bGPUs?\\b/g" # Graphics Processing Unit
+      - "/\\bGb\\b/g" # Gigabyte
+      - "/\\bHDFS\\b/g" # Hadoop Distributed File System
+      - "/\\bHTTPS\\b/g" # Hypertext Transfer Protocol Secure
+      - "/\\bHUDs?\\b/g" # Heads-Up Display
+      - "/\\bIP\\b/g" # Internet Protocol
+      - "/\\bIPC\\b/g" # Inter-Process Communication
+      - "/\\bJSON\\b/g" # JavaScript Object Notation
+      - "/\\bKVS\\b/g" # Key-Value Store
+      - "/\\bLDAP\\b/g" # Lightweight Directory Access Protocol
+      - "/\\bLLMs?\\b/g" # Large Language Model
+      - "/\\bLSP\\b/g" # Language Server Protocol
+      - "/\\bMCP\\b/g" # Model Context Protocol
+      - "/\\bMNIST\\b/g" # Modified National Institute of Standards and Technology DB
+      - "/\\bMQ\\b/g" # Message Queue
+      - "/\\bNoSQL\\b/g" # Not Only SQL
+      - "/\\bOSS\\b/g" # Open Source Software
+      - "/\\bQPS\\b/g" # Queries Per Second
+      - "/\\bQoS\\b/g" # Quality of Service
+      - "/\\bPKI\\b/g" # Public Key Infrastructure
+      - "/\\bPaaS\\b/g" # Platform as a Service
+      - "/\\bPID\\b/g" # Process ID
+      - "/\\bQPS\\b/g" # Query Per Second
+      - "/\\bRDBMS\\b/g" # Relational Database Management System
+      - "/\\bRPC\\b/g" # Remote Procedure Call
+      - "/\\bRSS\\b/g" # Really Simple Syndication
+      - "/\\bSCM\\b/g" # Source Code Management
+      - "/\\bSDK\\b/g" # Software Development Kit
+      - "/\\bSES\\b/g" # AWS Simple Email Service
+      - "/\\bSLA\\b/g" # Service Level Agreement
+      - "/\\bSLO\\b/g" # Service Level Objective
+      - "/\\bSLSA\\b/g" # Supply Chain Levels for Software Artifacts
+      - "/\\bSMTP\\b/g" # Simple Mail Transfer Protocol
+      - "/\\bSSL\\b/g" # Secure Sockets Layer
+      - "/\\bTCAS\\b/g" # Traffic Collision Avoidance System
+      - "/\\bTCP\\b/g" # Transmission Control Protocol
+      - "/\\bTLS\\b/g" # Transport Layer Security
+      - "/\\bTTY\\b/g" # Teletypewriter
+      - "/\\bTUF\\b/g" # The Update Framework
+      - "/\\bUTF\\b/g" # Unicode Transformation Format
+      - "/\\bUTS\\b/g" # Unix Time-Sharing
+      - "/\\bUX\\b/g" # User Experience
+      - "/\\bVC\\b/g" # Venture Capital
+      - "/\\bVM\\b/g" # Virtual Machine
+      - "/\\bWASM\\b/g" # WebAssembly
+      - "/\\bWSDL\\b/g" # Web Services Description Language
+      - "/\\bWSGI\\b/g" # Web Server Gateway Interface
+      - "/\\bXMPP\\b/g" # Extensible Messaging and Presence Protocol
+      - "/\\bXSS\\b/g" # Cross-Site Scripting
+      - "/\\bYAML\\b/g" # YAML Ain't Markup Language
+      - "/\\byaml\\b/g" # YAML Ain't Markup Language
 
       # Emoji
       ##########################################################################
 
-      - "orz" # Japanese emoticon for despair or frustration
+      - "/\\borz\\b/g" # Japanese emoticon for despair or frustration
 
       # Other
       ##########################################################################
 
       # Internet slang/terms
       # https://www.merriam-webster.com/dictionary/amirite
-      - "/[Aa]mirite/" # Slang for "am I right?"
-      - "/[Ff]lamebait/" # Something intended to provoke angry responses online
+      - "/\\b[Aa]mirite\\b/g" # Slang for "am I right?"
+      - "/\\b[Ff]lamebait\\b/g" # Something intended to provoke angry responses online
 
       # https://dictionary.cambridge.org/dictionary/english/dumbing-down
-      - "/[Dd]umbed-down/"
-      - "Houthi" # Houthi movement
-      - "/[Mm]okumoku-kai/" # Mokumoku-kai, a Japanese term for a gathering
-      - "/[Rr]yokan/" # Ryokan, a type of traditional Japanese inn
+      - "/\\b[Dd]umbed-down\\b/g"
+      - "/\\bHouthi\\b/g" # Houthi movement
+      - "/\\b[Mm]okumoku-kai\\b/g" # Mokumoku-kai, a Japanese term for a gathering
+      - "/\\b[Rr]yokan\\b/g" # Ryokan, a type of traditional Japanese inn
 
-      - "Yeeaaah" # Exaggerated "Yeah" often used in informal contexts
-      - "/[Ww]illy-nilly/" # Meaning "in a disorganized manner"
+      - "/\\bYeeaaah\\b/g" # Exaggerated "Yeah" often used in informal contexts
+      - "/\\b[Ww]illy-nilly\\b/g" # Meaning "in a disorganized manner"
 
-      - "/[Aa]pproachability/" # The quality of being approachable
-      - "/[Rr]omanization/" # Converting text to Roman alphabet
-      - "/[Uu]nfixable/" # Not able to be fixed or repaired
+      - "/\\b[Aa]pproachability\\b/g" # The quality of being approachable
+      - "/\\b[Rr]omanization\\b/g" # Converting text to Roman alphabet
+      - "/\\b[Uu]nfixable\\b/g" # Not able to be fixed or repaired
 
-      - "Adiós" # Spanish for "Goodbye"
+      - "/\\bAdiós\\b/g" # Spanish for "Goodbye"
 
-      - "CHANGELOG"
-      - "CODEOWNER"
-      - "CLA"
-      - "CLI"
-      - "CVSS"
-      - "DCO"
-      - "PR"
-      - "UI"
-      - "YAML"
-      - "Changelog"
-      - "CodeQL"
-      - "Dependabot"
-      - "JavaScript"
-      - "MacOS"
-      - "Makefile"
-      - "Node.js"
-      - "OpenSSF"
-      - "TODO"
-      - "e2e"
-      - "/[Ff]ormatter/"
-      - "/[Ll]inter/"
-      - "/[Pp]ositivity/" # The practice of being positive in attitude.
-      - "/[Pp]re/"
-      - "/[Rr]ebase/"
-      - "/[Rr]eproducibility/"
-      - "/[Rr]uleset/"
-      - "/[Rr]untime/"
-      - "/[Ss]exualized/"
-      - "/[Ss]ocio-economic/"
-      - "/[Uu]serspace/"
-      - "/[Vv]endored/"
-      - "/[Vv]irtualenv/"
+      - "/\\bCHANGELOG\\b/g"
+      - "/\\bCODEOWNER\\b/g"
+      - "/\\bCLA\\b/g"
+      - "/\\bCLI\\b/g"
+      - "/\\bCVSS\\b/g"
+      - "/\\bDCO\\b/g"
+      - "/\\bPR\\b/g"
+      - "/\\bUI\\b/g"
+      - "/\\bYAML\\b/g"
+      - "/\\bChangelog\\b/g"
+      - "/\\bCodeQL\\b/g"
+      - "/\\bDependabot\\b/g"
+      - "/\\bJavaScript\\b/g"
+      - "/\\bMacOS\\b/g"
+      - "/\\bMakefile\\b/g"
+      - "/\\bNode.js\\b/g"
+      - "/\\bOpenSSF\\b/g"
+      - "/\\bTODO\\b/g"
+      - "/\\be2e\\b/g"
+      - "/\\b[Ff]ormatter\\b/g"
+      - "/\\b[Ll]inter\\b/g"
+      - "/\\b[Pp]ositivity\\b/g" # The practice of being positive in attitude.
+      - "/\\b[Pp]re\\b/g"
+      - "/\\b[Rr]ebase\\b/g"
+      - "/\\b[Rr]eproducibility\\b/g"
+      - "/\\b[Rr]uleset\\b/g"
+      - "/\\b[Rr]untime\\b/g"
+      - "/\\b[Ss]exualized\\b/g"
+      - "/\\b[Ss]ocio-economic\\b/g"
+      - "/\\b[Uu]serspace\\b/g"
+      - "/\\b[Vv]endored\\b/g"
+      - "/\\b[Vv]irtualenv\\b/g"
       - "/v[0-9]+/"
-      - "/[0-9]+/"
-      - ":white_check_mark:"
+      - "/\\b[0-9]+\\b/g"
+      - "/\\b:white_check_mark:\\b/g"
 
       # Extra patterns
       # TODO(#285): Handle or fix the following words.
       ##########################################################################
 
-      - "ascii"
-      - "/[Aa]sync/"
-      - "ats"
-      - "auth"
-      - "AuthenticationMiddleware"
-      - "auth's"
-      - "balancer"
-      - "Balancer"
-      - "balancers"
-      - "Balancers"
-      - "barcamp"
-      - "Barcamp"
-      - "BarCamp"
-      - "BaseClass"
-      - "BaseTest"
-      - "bashrc"
-      - "behaviour"
-      - "benifit"
-      - "Benno's"
-      - "Berryman"
-      - "BigTable"
-      - "bitbucket"
-      - "blogspot"
-      - "Blogvent"
-      - "bluegreen"
-      - "bluesky"
-      - "BlueSky"
-      - "BOF"
-      - "Boing"
-      - "bouldering"
-      - "Bouldering"
-      - "bpssl"
-      - "bsky"
-      - "bufio"
-      - "buildout"
-      - "busybox"
-      - "bytecode"
-      - "callables"
-      - "callLater"
-      - "cancelled"
-      - "capabalities"
-      - "CapabilitiesError"
-      - "CAs"
-      - "Cereling"
-      - "cgcreate"
-      - "cgexec"
-      - "Cgroups"
-      - "cgset"
-      - "Chainguard"
-      - "_changelist"
-      - "changelist"
-      - "checkmark"
-      - "chinese"
-      - "chmod"
-      - "chroot"
-      - "chrooting"
-      - "cloudbuild"
-      - "Cloudflare"
-      - "CloudNativeSecurityCon"
-      - "CMD"
-      - "CNI"
-      - "codebase"
-      - "codec"
-      - "colleage"
-      - "colums"
-      - "commandline"
-      - "commenter"
-      - "confd"
-      - "config"
-      - "ContentType"
-      - "contrib"
-      - "Contrib"
-      - "cp"
-      - "CreateSocketRequest"
-      - "cri"
-      - "crictl"
-      - "cryptographic"
-      - "cryptographically"
-      - "csrf"
-      - "CsrfViewMiddleware"
-      - "css"
-      - "Ctrl"
-      - "customizable"
-      - "customizations"
-      - "cuz"
-      - "cwKpduDdpQBb"
-      - "cygpath"
-      - "cygwin"
-      - "daemonize"
-      - "daemontools"
-      - "Daemontools"
-      - "Daito"
-      - "datacenter"
-      - "Datasette"
-      - "datastore"
-      - "datetime"
-      - "datetimes"
-      - "de"
-      - "Deacalion"
-      - "debian"
-      - "debuggy"
-      - "deferreds"
-      - "deferredupdate"
-      - "denormalize"
-      - "der"
-      - "deserialization"
-      - "dialogs"
-      - "didn"
-      - "Dinesh"
-      - "direct_to_pdf"
-      - "dispite"
-      - "disqus-api-client"
-      - "disqus_plugin"
-      - "django"
-      - "DjangoGraphviz"
-      - "DjangoGraphViz"
-      - "djangosnippets"
-      - "dlife"
-      - "DM"
-      - "dockerd"
-      - "DockerFile"
-      - "Docker's"
-      - "docstrings"
-      - "dodads"
-      - "doesn"
-      - "dom"
-      - "DOM"
-      - "dotCloud"
-      - "doxygen"
-      - "draggable"
-      - "dropdown"
-      - "DTD"
-      - "ebs"
-      - "eco"
-      - "EdLbBLvb"
-      - "eg"
-      - "emacs"
-      - "Emporer's"
-      - "encodings"
-      - "entrypoint"
-      - "ENTRYPOINT"
-      - "eol"
-      - "EReporter"
-      - "Ericsson"
-      - "erlang"
-      - "EswDAAAKCRAE"
-      - "eval"
-      - "evals"
-      - "everes"
-      - "execc"
-      - "executables"
-      - "exim"
-      - "facto"
-      - "fastcgi"
-      - "Fastcgi"
-      - "feedparser"
-      - "feedparser's"
-      - "feedparsers"
-      - "Festa"
-      - "FFChrome"
-      - "filesystem"
-      - "firefox"
-      - "flatpages"
-      - "flexable"
-      - "flickr"
-      - "fm"
-      - "ForeignKeys"
-      - "FormSet"
-      - "FormSets"
-      - "Forthought"
-      - "FsMy"
-      - "ftester"
-      - "gcc"
-      - "gcloud"
-      - "GDATA"
-      - "GenericForeignKey"
-      - "GenericForeignKeys"
-      - "Gengo"
-      - "geodjango"
-      - "GeoManager"
-      - "get's"
-      - "get_urls"
-      - "github"
-      - "Github"
-      - "globals"
-      - "gmail"
-      - "gobou"
-      - "Gobou"
-      - "gofmt"
-      - "golang"
-      - "Googleplex"
-      - "gopath"
-      - "Graff"
-      - "graphviz"
-      - "Graphviz"
-      - "growlnotify"
-      - "growltestrunner"
-      - "Growltestrunner"
-      - "grpc"
-      - "gumi"
-      - "Gundotra"
-      - "gVisor"
-      - "gz"
-      - "Hachyderm"
-      - "hackerspace"
-      - "Hackerspace"
-      - "Hackerspaces"
-      - "hacky"
-      - "haml"
-      - "harvard"
-      - "hasn"
-      - "Healthcheck"
-      - "Healthchecks"
-      - "heffernan"
-      - "hg"
-      - "hgrc"
-      - "highschool"
-      - "Hj"
-      - "hoi"
-      - "homerun"
-      - "hostname"
-      - "Hostname"
-      - "HotSpot"
-      - "HTC"
-      - "html"
-      - "http"
-      - "HttpResponseRedirect"
-      - "https"
-      - "HUP"
-      - "iAudio"
-      - "image_tooltip"
-      - "IME"
-      - "importjs"
-      - "impove"
-      - "Inada"
-      - "init"
-      - "initializer"
-      - "inputStream"
-      - "IntelliJ"
-      - "interative"
-      - "IOMachine"
-      - "iphone"
-      - "iPods"
-      - "iptables"
-      - "ipython"
-      - "iQJUBBMBCgA"
-      - "ish"
-      - "isn"
-      - "isnt"
-      - "iso"
-      - "is_secure"
-      - "istio"
-      - "iTHome"
-      - "iwashi"
-      - "ja"
-      - "jaiku"
-      - "javascript"
-      - "Javascript"
-      - "Jens"
-      - "jessie"
-      - "Jindal"
-      - "JIT"
-      - "JNtSWF"
-      - "jp"
-      - "jpg"
-      - "jq"
-      - "jqmClose"
-      - "jqModal"
-      - "jquery"
-      - "jQuery"
-      - "js"
-      - "JS"
-      - "JSCoverage"
-      - "jslint"
-      - "json"
-      - "jsonp"
-      - "jsonschema"
-      - "JS's"
-      - "Jumpstart"
-      - "KabePy"
-      - "Kata"
-      - "kay"
-      - "Kaz"
-      - "kCLgNQ"
-      - "Kita"
-      - "kombu"
-      - "Kougakuin"
-      - "kp"
-      - "kubeadm"
-      - "KubeCon"
-      - "kubectl"
-      - "kubelet"
-      - "Kubelet"
-      - "kubernetes"
-      - "Lala"
-      - "latherrinserepeat"
-      - "libcontainer"
-      - "libnotify"
-      - "lifecycle"
-      - "lifestream"
-      - "Lifestream"
-      - "lifestream_item_changelist"
-      - "lighttpd"
-      - "Linkedin"
-      - "linux"
-      - "lmctfy"
-      - "loadbalancer"
-      - "localhost"
-      - "logicless"
-      - "lookups"
-      - "Lorenc"
-      - "lru"
-      - "LRU"
-      - "lru_test"
-      - "lxc"
-      - "MacMillan"
-      - "mailto"
-      - "maintenance_check"
-      - "Makeleaps"
-      - "margaret"
-      - "Marinich"
-      - "maru"
-      - "matcher"
-      - "matchers"
-      - "matsuo"
-      - "menubar"
-      - "Menubar"
-      - "mercurial's"
-      - "merucurial"
-      - "messsages"
-      - "middleware"
-      - "Middleware"
-      - "mikael's"
-      - "milage"
-      - "milli"
-      - "minifying"
-      - "minimalistic"
-      - "Minna"
-      - "miso"
-      - "Miso"
-      - "mixi"
-      - "Mochi"
-      - "Mochibot"
-      - "mochikit"
-      - "Mochikit"
-      - "mockup"
-      - "ModelA"
-      - "ModelB"
-      - "ModelForm"
-      - "modipyd"
-      - "Modipyd"
-      - "Monotaro"
-      - "mq"
-      - "Mq"
-      - "MUFG"
-      - "multibyte"
-      - "Multiprocess"
-      - "MVar"
-      - "myapp"
-      - "MyClass"
-      - "MyModel"
-      - "mysql"
-      - "Nabla"
-      - "Nakai"
-      - "NAMESPACE"
-      - "naninani"
-      - "natively"
-      - "natured"
-      - "neato"
-      - "NetBeans"
-      - "newauth"
-      - "Newauth"
-      - "new_method"
-      - "nikomi"
-      - "nitty"
-      - "noglobals"
-      - "nots"
-      - "Numba"
-      - "numpy"
-      - "nunjucks"
-      - "nytimes"
-      - "OCI"
-      - "oebfare"
-      - "Ogbuji"
-      - "ogg"
-      - "Ogg"
-      - "OID"
-      - "OIDC"
-      - "ok"
-      - "Ok"
-      - "omnibox"
-      - "Omnibox"
-      - "Onsen"
-      - "OpenAI"
-      - "OpenId"
-      - "openvcdiff"
-      - "o's"
-      - "outyet"
-      - "oWfym"
-      - "pagenate"
-      - "pageslide"
-      - "Pageslide"
-      - "pageslides"
-      - "pageupdate"
-      - "params"
-      - "parseInt"
-      - "parsers"
-      - "PATH_INFO"
-      - "pdf"
-      - "PDS"
-      - "pem"
-      - "Pennarun"
-      - "performant"
-      - "Peteris"
-      - "PetSet"
-      - "phantomjs"
-      - "PhantomJS"
-      - "PhJH"
-      - "photozou"
-      - "php"
-      - "pingbacks"
-      - "PIP_DOWNLOAD_CACHE"
-      - "pixabay"
-      - "pkgs"
-      - "pluggable"
-      - "polloi"
-      - "postgis"
-      - "proc"
-      - "profiler"
-      - "programatically"
-      - "programmatically"
-      - "protobuf"
-      - "ps"
-      - "pstats"
-      - "psycological"
-      - "pullqueue"
-      - "py"
-      - "pyautotest"
-      - "pyaws"
-      - "Pycon"
-      - "PyconJP"
-      - "PyconJP's"
-      - "pygments"
-      - "pykube"
-      - "pynotify"
-      - "pypy"
-      - "PyRex"
-      - "PYTHONPATH"
-      - "pytyrant"
-      - "qbase"
-      - "qfinish"
-      - "QNdDGoEDQ"
-      - "qnew"
-      - "qpop"
-      - "qpush"
-      - "qrefresh"
-      - "qtip"
-      - "QueryDict"
-      - "qunit"
-      - "Qunit"
-      - "Quora"
-      - "rc"
-      - "README"
-      - "readproctitle"
-      - "recieve"
-      - "recieved"
-      - "recieving"
-      - "redirect_to"
-      - "redis"
-      - "ReferenceProperties"
-      - "reimplement"
-      - "replicaset"
-      - "ReplicaSets"
-      - "repo"
-      - "reprioritize"
-      - "RequestFactory"
-      - "rhythmbox"
-      - "rkt"
-      - "rkt's"
-      - "rml"
-      - "roadsign"
-      - "rootfs"
-      - "rss"
-      - "rsync"
-      - "run_appli"
-      - "runc"
-      - "runc's"
-      - "run_migration"
-      - "runnable"
-      - "saba"
-      - "san"
-      - "Satruday"
-      - "scala"
-      - "scaleable"
-      - "sched"
-      - "schemas"
-      - "Schema's"
-      - "screencast"
-      - "SCRIPT_NAME"
-      - "sdk"
-      - "se"
-      - "sendmail"
-      - "SEO"
-      - "ses"
-      - "setuidgid"
-      - "shibukawa"
-      - "sig"
-      - "sigstore"
-      - "simeji"
-      - "simplejson"
-      - "Skidgel"
-      - "slsa"
-      - "Snipplr"
-      - "somesuch"
-      - "SOPA"
-      - "sortable"
-      - "sortables"
-      - "sourcecode"
-      - "SourceForge"
-      - "Spotify"
-      - "sqlite"
-      - "ssl"
-      - "ssl_view"
-      - "statusbar"
-      - "stdin"
-      - "stdout"
-      - "stop_server"
-      - "storages"
-      - "straitforward"
-      - "streched"
-      - "StringIO"
-      - "stunnel"
-      - "subclassed"
-      - "svc"
-      - "svn"
-      - "svnsync"
-      - "svscan"
-      - "svstat"
-      - "syncdb"
-      - "syscall"
-      - "syscalls"
-      - "systemd"
-      - "Systemd"
-      - "tag_name"
-      - "takashi"
-      - "takonory"
-      - "taskqueue"
-      - "Tasuku"
-      - "templating"
-      - "tenntenn"
-      - "terraform"
-      - "textarea"
-      - "thdbJnyAQARAQAB"
-      - "theathletic"
-      - "thiserror"
-      - "Tictok"
-      - "Titlebar"
-      - "TMergePath"
-      - "tokyotyrant"
-      - "Tqzm"
-      - "transformative"
-      - "tremendious"
-      - "Uche"
-      - "UFJ"
-      - "UMoz"
-      - "unapplies"
-      - "unapply"
-      - "unencrypted"
-      - "unicode"
-      - "unifier"
-      - "unix"
-      - "unmerged"
-      - "unmount"
-      - "Unported"
-      - "unshare"
-      - "Unshare"
-      - "unsharing"
-      - "unweildy"
-      - "uptime"
-      - "url"
-      - "Url"
-      - "urlencode"
-      - "urlquote"
-      - "urls"
-      - "usb"
-      - "usb_driver"
-      - "USER_AGENT"
-      - "usless"
-      - "ustream"
-      - "utc"
-      - "validator"
-      - "vcdiff"
-      - "ve"
-      - "VeOsHHlGkCI"
-      - "verifications"
-      - "verifier"
-      - "verifiers"
-      - "Verifiers"
-      - "vfat"
-      - "virtualize"
-      - "vorbis"
-      - "vr"
-      - "vTScqV"
-      - "warmup"
-      - "Warmup"
-      - "wCeESkKGj"
-      - "wearables"
-      - "webapp"
-      - "webapps"
-      - "webpages"
-      - "webserver"
-      - "webservers"
-      - "Wendelin"
-      - "weren"
-      - "whitespace"
-      - "WORKON_HOME"
-      - "wsgi"
-      - "www"
-      - "Xen"
-      - "xml"
-      - "xmlsoap"
-      - "yau"
-      - "Yii"
-      - "Yk"
-      - "yml"
-      - "zip_all"
-      - "zipimport"
-      - "zsh"
-      - "Zyp"
+      - "/\\bascii\\b/g"
+      - "/\\b[Aa]sync\\b/g"
+      - "/\\bats\\b/g"
+      - "/\\bauth\\b/g"
+      - "/\\bAuthenticationMiddleware\\b/g"
+      - "/\\bauth's\\b/g"
+      - "/\\bbalancer\\b/g"
+      - "/\\bBalancer\\b/g"
+      - "/\\bbalancers\\b/g"
+      - "/\\bBalancers\\b/g"
+      - "/\\bbarcamp\\b/g"
+      - "/\\bBarcamp\\b/g"
+      - "/\\bBarCamp\\b/g"
+      - "/\\bBaseClass\\b/g"
+      - "/\\bBaseTest\\b/g"
+      - "/\\bbashrc\\b/g"
+      - "/\\bbehaviour\\b/g"
+      - "/\\bbenifit\\b/g"
+      - "/\\bBenno's\\b/g"
+      - "/\\bBerryman\\b/g"
+      - "/\\bBigTable\\b/g"
+      - "/\\bbitbucket\\b/g"
+      - "/\\bblogspot\\b/g"
+      - "/\\bBlogvent\\b/g"
+      - "/\\bbluegreen\\b/g"
+      - "/\\bbluesky\\b/g"
+      - "/\\bBlueSky\\b/g"
+      - "/\\bBOF\\b/g"
+      - "/\\bBoing\\b/g"
+      - "/\\bbouldering\\b/g"
+      - "/\\bBouldering\\b/g"
+      - "/\\bbpssl\\b/g"
+      - "/\\bbsky\\b/g"
+      - "/\\bbufio\\b/g"
+      - "/\\bbuildout\\b/g"
+      - "/\\bbusybox\\b/g"
+      - "/\\bbytecode\\b/g"
+      - "/\\bcallables\\b/g"
+      - "/\\bcallLater\\b/g"
+      - "/\\bcancelled\\b/g"
+      - "/\\bcapabalities\\b/g"
+      - "/\\bCapabilitiesError\\b/g"
+      - "/\\bCAs\\b/g"
+      - "/\\bCereling\\b/g"
+      - "/\\bcgcreate\\b/g"
+      - "/\\bcgexec\\b/g"
+      - "/\\bCgroups\\b/g"
+      - "/\\bcgset\\b/g"
+      - "/\\bChainguard\\b/g"
+      - "/\\b_changelist\\b/g"
+      - "/\\bchangelist\\b/g"
+      - "/\\bcheckmark\\b/g"
+      - "/\\bchinese\\b/g"
+      - "/\\bchmod\\b/g"
+      - "/\\bchroot\\b/g"
+      - "/\\bchrooting\\b/g"
+      - "/\\bcloudbuild\\b/g"
+      - "/\\bCloudflare\\b/g"
+      - "/\\bCloudNativeSecurityCon\\b/g"
+      - "/\\bCMD\\b/g"
+      - "/\\bCNI\\b/g"
+      - "/\\bcodebase\\b/g"
+      - "/\\bcodec\\b/g"
+      - "/\\bcolleage\\b/g"
+      - "/\\bcolums\\b/g"
+      - "/\\bcommandline\\b/g"
+      - "/\\bcommenter\\b/g"
+      - "/\\bconfd\\b/g"
+      - "/\\bconfig\\b/g"
+      - "/\\bContentType\\b/g"
+      - "/\\bcontrib\\b/g"
+      - "/\\bContrib\\b/g"
+      - "/\\bcp\\b/g"
+      - "/\\bCreateSocketRequest\\b/g"
+      - "/\\bcri\\b/g"
+      - "/\\bcrictl\\b/g"
+      - "/\\bcryptographic\\b/g"
+      - "/\\bcryptographically\\b/g"
+      - "/\\bcsrf\\b/g"
+      - "/\\bCsrfViewMiddleware\\b/g"
+      - "/\\bcss\\b/g"
+      - "/\\bCtrl\\b/g"
+      - "/\\bcustomizable\\b/g"
+      - "/\\bcustomizations\\b/g"
+      - "/\\bcuz\\b/g"
+      - "/\\bcwKpduDdpQBb\\b/g"
+      - "/\\bcygpath\\b/g"
+      - "/\\bcygwin\\b/g"
+      - "/\\bdaemonize\\b/g"
+      - "/\\bdaemontools\\b/g"
+      - "/\\bDaemontools\\b/g"
+      - "/\\bDaito\\b/g"
+      - "/\\bdatacenter\\b/g"
+      - "/\\bDatasette\\b/g"
+      - "/\\bdatastore\\b/g"
+      - "/\\bdatetime\\b/g"
+      - "/\\bdatetimes\\b/g"
+      - "/\\bde\\b/g"
+      - "/\\bDeacalion\\b/g"
+      - "/\\bdebian\\b/g"
+      - "/\\bdebuggy\\b/g"
+      - "/\\bdeferreds\\b/g"
+      - "/\\bdeferredupdate\\b/g"
+      - "/\\bdenormalize\\b/g"
+      - "/\\bder\\b/g"
+      - "/\\bdeserialization\\b/g"
+      - "/\\bdialogs\\b/g"
+      - "/\\bdidn\\b/g"
+      - "/\\bDinesh\\b/g"
+      - "/\\bdirect_to_pdf\\b/g"
+      - "/\\bdispite\\b/g"
+      - "/\\bdisqus-api-client\\b/g"
+      - "/\\bdisqus_plugin\\b/g"
+      - "/\\bdjango\\b/g"
+      - "/\\bDjangoGraphviz\\b/g"
+      - "/\\bDjangoGraphViz\\b/g"
+      - "/\\bdjangosnippets\\b/g"
+      - "/\\bdlife\\b/g"
+      - "/\\bDM\\b/g"
+      - "/\\bdockerd\\b/g"
+      - "/\\bDockerFile\\b/g"
+      - "/\\bDocker's\\b/g"
+      - "/\\bdocstrings\\b/g"
+      - "/\\bdodads\\b/g"
+      - "/\\bdoesn\\b/g"
+      - "/\\bdom\\b/g"
+      - "/\\bDOM\\b/g"
+      - "/\\bdotCloud\\b/g"
+      - "/\\bdoxygen\\b/g"
+      - "/\\bdraggable\\b/g"
+      - "/\\bdropdown\\b/g"
+      - "/\\bDTD\\b/g"
+      - "/\\bebs\\b/g"
+      - "/\\beco\\b/g"
+      - "/\\bEdLbBLvb\\b/g"
+      - "/\\beg\\b/g"
+      - "/\\bemacs\\b/g"
+      - "/\\bEmporer's\\b/g"
+      - "/\\bencodings\\b/g"
+      - "/\\bentrypoint\\b/g"
+      - "/\\bENTRYPOINT\\b/g"
+      - "/\\beol\\b/g"
+      - "/\\bEReporter\\b/g"
+      - "/\\bEricsson\\b/g"
+      - "/\\berlang\\b/g"
+      - "/\\bEswDAAAKCRAE\\b/g"
+      - "/\\beval\\b/g"
+      - "/\\bevals\\b/g"
+      - "/\\beveres\\b/g"
+      - "/\\bexecc\\b/g"
+      - "/\\bexecutables\\b/g"
+      - "/\\bexim\\b/g"
+      - "/\\bfacto\\b/g"
+      - "/\\bfastcgi\\b/g"
+      - "/\\bFastcgi\\b/g"
+      - "/\\bfeedparser\\b/g"
+      - "/\\bfeedparser's\\b/g"
+      - "/\\bfeedparsers\\b/g"
+      - "/\\bFesta\\b/g"
+      - "/\\bFFChrome\\b/g"
+      - "/\\bfilesystem\\b/g"
+      - "/\\bfirefox\\b/g"
+      - "/\\bflatpages\\b/g"
+      - "/\\bflexable\\b/g"
+      - "/\\bflickr\\b/g"
+      - "/\\bfm\\b/g"
+      - "/\\bForeignKeys\\b/g"
+      - "/\\bFormSet\\b/g"
+      - "/\\bFormSets\\b/g"
+      - "/\\bForthought\\b/g"
+      - "/\\bFsMy\\b/g"
+      - "/\\bftester\\b/g"
+      - "/\\bgcc\\b/g"
+      - "/\\bgcloud\\b/g"
+      - "/\\bGDATA\\b/g"
+      - "/\\bGenericForeignKey\\b/g"
+      - "/\\bGenericForeignKeys\\b/g"
+      - "/\\bGengo\\b/g"
+      - "/\\bgeodjango\\b/g"
+      - "/\\bGeoManager\\b/g"
+      - "/\\bget's\\b/g"
+      - "/\\bget_urls\\b/g"
+      - "/\\bgithub\\b/g"
+      - "/\\bGithub\\b/g"
+      - "/\\bglobals\\b/g"
+      - "/\\bgmail\\b/g"
+      - "/\\bgobou\\b/g"
+      - "/\\bGobou\\b/g"
+      - "/\\bgofmt\\b/g"
+      - "/\\bgolang\\b/g"
+      - "/\\bGoogleplex\\b/g"
+      - "/\\bgopath\\b/g"
+      - "/\\bGraff\\b/g"
+      - "/\\bgraphviz\\b/g"
+      - "/\\bGraphviz\\b/g"
+      - "/\\bgrowlnotify\\b/g"
+      - "/\\bgrowltestrunner\\b/g"
+      - "/\\bGrowltestrunner\\b/g"
+      - "/\\bgrpc\\b/g"
+      - "/\\bgumi\\b/g"
+      - "/\\bGundotra\\b/g"
+      - "/\\bgVisor\\b/g"
+      - "/\\bgz\\b/g"
+      - "/\\bHachyderm\\b/g"
+      - "/\\bhackerspace\\b/g"
+      - "/\\bHackerspace\\b/g"
+      - "/\\bHackerspaces\\b/g"
+      - "/\\bhacky\\b/g"
+      - "/\\bhaml\\b/g"
+      - "/\\bharvard\\b/g"
+      - "/\\bhasn\\b/g"
+      - "/\\bHealthcheck\\b/g"
+      - "/\\bHealthchecks\\b/g"
+      - "/\\bheffernan\\b/g"
+      - "/\\bhg\\b/g"
+      - "/\\bhgrc\\b/g"
+      - "/\\bhighschool\\b/g"
+      - "/\\bHj\\b/g"
+      - "/\\bhoi\\b/g"
+      - "/\\bhomerun\\b/g"
+      - "/\\bhostname\\b/g"
+      - "/\\bHostname\\b/g"
+      - "/\\bHotSpot\\b/g"
+      - "/\\bHTC\\b/g"
+      - "/\\bhtml\\b/g"
+      - "/\\bhttp\\b/g"
+      - "/\\bHttpResponseRedirect\\b/g"
+      - "/\\bhttps\\b/g"
+      - "/\\bHUP\\b/g"
+      - "/\\biAudio\\b/g"
+      - "/\\bimage_tooltip\\b/g"
+      - "/\\bIME\\b/g"
+      - "/\\bimportjs\\b/g"
+      - "/\\bimpove\\b/g"
+      - "/\\bInada\\b/g"
+      - "/\\binit\\b/g"
+      - "/\\binitializer\\b/g"
+      - "/\\binputStream\\b/g"
+      - "/\\bIntelliJ\\b/g"
+      - "/\\binterative\\b/g"
+      - "/\\bIOMachine\\b/g"
+      - "/\\biphone\\b/g"
+      - "/\\biPods\\b/g"
+      - "/\\biptables\\b/g"
+      - "/\\bipython\\b/g"
+      - "/\\biQJUBBMBCgA\\b/g"
+      - "/\\bish\\b/g"
+      - "/\\bisn\\b/g"
+      - "/\\bisnt\\b/g"
+      - "/\\biso\\b/g"
+      - "/\\bis_secure\\b/g"
+      - "/\\bistio\\b/g"
+      - "/\\biTHome\\b/g"
+      - "/\\biwashi\\b/g"
+      - "/\\bja\\b/g"
+      - "/\\bjaiku\\b/g"
+      - "/\\bjavascript\\b/g"
+      - "/\\bJavascript\\b/g"
+      - "/\\bJens\\b/g"
+      - "/\\bjessie\\b/g"
+      - "/\\bJindal\\b/g"
+      - "/\\bJIT\\b/g"
+      - "/\\bJNtSWF\\b/g"
+      - "/\\bjp\\b/g"
+      - "/\\bjpg\\b/g"
+      - "/\\bjq\\b/g"
+      - "/\\bjqmClose\\b/g"
+      - "/\\bjqModal\\b/g"
+      - "/\\bjquery\\b/g"
+      - "/\\bjQuery\\b/g"
+      - "/\\bjs\\b/g"
+      - "/\\bJS\\b/g"
+      - "/\\bJSCoverage\\b/g"
+      - "/\\bjslint\\b/g"
+      - "/\\bjson\\b/g"
+      - "/\\bjsonp\\b/g"
+      - "/\\bjsonschema\\b/g"
+      - "/\\bJS's\\b/g"
+      - "/\\bJumpstart\\b/g"
+      - "/\\bKabePy\\b/g"
+      - "/\\bKata\\b/g"
+      - "/\\bkay\\b/g"
+      - "/\\bKaz\\b/g"
+      - "/\\bkCLgNQ\\b/g"
+      - "/\\bKita\\b/g"
+      - "/\\bkombu\\b/g"
+      - "/\\bKougakuin\\b/g"
+      - "/\\bkp\\b/g"
+      - "/\\bkubeadm\\b/g"
+      - "/\\bKubeCon\\b/g"
+      - "/\\bkubectl\\b/g"
+      - "/\\bkubelet\\b/g"
+      - "/\\bKubelet\\b/g"
+      - "/\\bkubernetes\\b/g"
+      - "/\\bLala\\b/g"
+      - "/\\blatherrinserepeat\\b/g"
+      - "/\\blibcontainer\\b/g"
+      - "/\\blibnotify\\b/g"
+      - "/\\blifecycle\\b/g"
+      - "/\\blifestream\\b/g"
+      - "/\\bLifestream\\b/g"
+      - "/\\blifestream_item_changelist\\b/g"
+      - "/\\blighttpd\\b/g"
+      - "/\\bLinkedin\\b/g"
+      - "/\\blinux\\b/g"
+      - "/\\blmctfy\\b/g"
+      - "/\\bloadbalancer\\b/g"
+      - "/\\blocalhost\\b/g"
+      - "/\\blogicless\\b/g"
+      - "/\\blookups\\b/g"
+      - "/\\bLorenc\\b/g"
+      - "/\\blru\\b/g"
+      - "/\\bLRU\\b/g"
+      - "/\\blru_test\\b/g"
+      - "/\\blxc\\b/g"
+      - "/\\bMacMillan\\b/g"
+      - "/\\bmailto\\b/g"
+      - "/\\bmaintenance_check\\b/g"
+      - "/\\bMakeleaps\\b/g"
+      - "/\\bmargaret\\b/g"
+      - "/\\bMarinich\\b/g"
+      - "/\\bmaru\\b/g"
+      - "/\\bmatcher\\b/g"
+      - "/\\bmatchers\\b/g"
+      - "/\\bmatsuo\\b/g"
+      - "/\\bmenubar\\b/g"
+      - "/\\bMenubar\\b/g"
+      - "/\\bmercurial's\\b/g"
+      - "/\\bmerucurial\\b/g"
+      - "/\\bmesssages\\b/g"
+      - "/\\bmiddleware\\b/g"
+      - "/\\bMiddleware\\b/g"
+      - "/\\bmikael's\\b/g"
+      - "/\\bmilage\\b/g"
+      - "/\\bmilli\\b/g"
+      - "/\\bminifying\\b/g"
+      - "/\\bminimalistic\\b/g"
+      - "/\\bMinna\\b/g"
+      - "/\\bmiso\\b/g"
+      - "/\\bMiso\\b/g"
+      - "/\\bmixi\\b/g"
+      - "/\\bMochi\\b/g"
+      - "/\\bMochibot\\b/g"
+      - "/\\bmochikit\\b/g"
+      - "/\\bMochikit\\b/g"
+      - "/\\bmockup\\b/g"
+      - "/\\bModelA\\b/g"
+      - "/\\bModelB\\b/g"
+      - "/\\bModelForm\\b/g"
+      - "/\\bmodipyd\\b/g"
+      - "/\\bModipyd\\b/g"
+      - "/\\bMonotaro\\b/g"
+      - "/\\bmq\\b/g"
+      - "/\\bMq\\b/g"
+      - "/\\bMUFG\\b/g"
+      - "/\\bmultibyte\\b/g"
+      - "/\\bMultiprocess\\b/g"
+      - "/\\bMVar\\b/g"
+      - "/\\bmyapp\\b/g"
+      - "/\\bMyClass\\b/g"
+      - "/\\bMyModel\\b/g"
+      - "/\\bmysql\\b/g"
+      - "/\\bNabla\\b/g"
+      - "/\\bNakai\\b/g"
+      - "/\\bNAMESPACE\\b/g"
+      - "/\\bnaninani\\b/g"
+      - "/\\bnatively\\b/g"
+      - "/\\bnatured\\b/g"
+      - "/\\bneato\\b/g"
+      - "/\\bNetBeans\\b/g"
+      - "/\\bnewauth\\b/g"
+      - "/\\bNewauth\\b/g"
+      - "/\\bnew_method\\b/g"
+      - "/\\bnikomi\\b/g"
+      - "/\\bnitty\\b/g"
+      - "/\\bnoglobals\\b/g"
+      - "/\\bnots\\b/g"
+      - "/\\bNumba\\b/g"
+      - "/\\bnumpy\\b/g"
+      - "/\\bnunjucks\\b/g"
+      - "/\\bnytimes\\b/g"
+      - "/\\bOCI\\b/g"
+      - "/\\boebfare\\b/g"
+      - "/\\bOgbuji\\b/g"
+      - "/\\bogg\\b/g"
+      - "/\\bOgg\\b/g"
+      - "/\\bOID\\b/g"
+      - "/\\bOIDC\\b/g"
+      - "/\\bok\\b/g"
+      - "/\\bOk\\b/g"
+      - "/\\bomnibox\\b/g"
+      - "/\\bOmnibox\\b/g"
+      - "/\\bOnsen\\b/g"
+      - "/\\bOpenAI\\b/g"
+      - "/\\bOpenId\\b/g"
+      - "/\\bopenvcdiff\\b/g"
+      - "/\\bo's\\b/g"
+      - "/\\boutyet\\b/g"
+      - "/\\boWfym\\b/g"
+      - "/\\bpagenate\\b/g"
+      - "/\\bpageslide\\b/g"
+      - "/\\bPageslide\\b/g"
+      - "/\\bpageslides\\b/g"
+      - "/\\bpageupdate\\b/g"
+      - "/\\bparams\\b/g"
+      - "/\\bparseInt\\b/g"
+      - "/\\bparsers\\b/g"
+      - "/\\bPATH_INFO\\b/g"
+      - "/\\bpdf\\b/g"
+      - "/\\bPDS\\b/g"
+      - "/\\bpem\\b/g"
+      - "/\\bPennarun\\b/g"
+      - "/\\bperformant\\b/g"
+      - "/\\bPeteris\\b/g"
+      - "/\\bPetSet\\b/g"
+      - "/\\bphantomjs\\b/g"
+      - "/\\bPhantomJS\\b/g"
+      - "/\\bPhJH\\b/g"
+      - "/\\bphotozou\\b/g"
+      - "/\\bphp\\b/g"
+      - "/\\bpingbacks\\b/g"
+      - "/\\bPIP_DOWNLOAD_CACHE\\b/g"
+      - "/\\bpixabay\\b/g"
+      - "/\\bpkgs\\b/g"
+      - "/\\bpluggable\\b/g"
+      - "/\\bpolloi\\b/g"
+      - "/\\bpostgis\\b/g"
+      - "/\\bproc\\b/g"
+      - "/\\bprofiler\\b/g"
+      - "/\\bprogramatically\\b/g"
+      - "/\\bprogrammatically\\b/g"
+      - "/\\bprotobuf\\b/g"
+      - "/\\bps\\b/g"
+      - "/\\bpstats\\b/g"
+      - "/\\bpsycological\\b/g"
+      - "/\\bpullqueue\\b/g"
+      - "/\\bpy\\b/g"
+      - "/\\bpyautotest\\b/g"
+      - "/\\bpyaws\\b/g"
+      - "/\\bPycon\\b/g"
+      - "/\\bPyconJP\\b/g"
+      - "/\\bPyconJP's\\b/g"
+      - "/\\bpygments\\b/g"
+      - "/\\bpykube\\b/g"
+      - "/\\bpynotify\\b/g"
+      - "/\\bpypy\\b/g"
+      - "/\\bPyRex\\b/g"
+      - "/\\bPYTHONPATH\\b/g"
+      - "/\\bpytyrant\\b/g"
+      - "/\\bqbase\\b/g"
+      - "/\\bqfinish\\b/g"
+      - "/\\bQNdDGoEDQ\\b/g"
+      - "/\\bqnew\\b/g"
+      - "/\\bqpop\\b/g"
+      - "/\\bqpush\\b/g"
+      - "/\\bqrefresh\\b/g"
+      - "/\\bqtip\\b/g"
+      - "/\\bQueryDict\\b/g"
+      - "/\\bqunit\\b/g"
+      - "/\\bQunit\\b/g"
+      - "/\\bQuora\\b/g"
+      - "/\\brc\\b/g"
+      - "/\\bREADME\\b/g"
+      - "/\\breadproctitle\\b/g"
+      - "/\\brecieve\\b/g"
+      - "/\\brecieved\\b/g"
+      - "/\\brecieving\\b/g"
+      - "/\\bredirect_to\\b/g"
+      - "/\\bredis\\b/g"
+      - "/\\bReferenceProperties\\b/g"
+      - "/\\breimplement\\b/g"
+      - "/\\breplicaset\\b/g"
+      - "/\\bReplicaSets\\b/g"
+      - "/\\brepo\\b/g"
+      - "/\\breprioritize\\b/g"
+      - "/\\bRequestFactory\\b/g"
+      - "/\\brhythmbox\\b/g"
+      - "/\\brkt\\b/g"
+      - "/\\brkt's\\b/g"
+      - "/\\brml\\b/g"
+      - "/\\broadsign\\b/g"
+      - "/\\brootfs\\b/g"
+      - "/\\brss\\b/g"
+      - "/\\brsync\\b/g"
+      - "/\\brun_appli\\b/g"
+      - "/\\brunc\\b/g"
+      - "/\\brunc's\\b/g"
+      - "/\\brun_migration\\b/g"
+      - "/\\brunnable\\b/g"
+      - "/\\bsaba\\b/g"
+      - "/\\bsan\\b/g"
+      - "/\\bSatruday\\b/g"
+      - "/\\bscala\\b/g"
+      - "/\\bscaleable\\b/g"
+      - "/\\bsched\\b/g"
+      - "/\\bschemas\\b/g"
+      - "/\\bSchema's\\b/g"
+      - "/\\bscreencast\\b/g"
+      - "/\\bSCRIPT_NAME\\b/g"
+      - "/\\bsdk\\b/g"
+      - "/\\bse\\b/g"
+      - "/\\bsendmail\\b/g"
+      - "/\\bSEO\\b/g"
+      - "/\\bses\\b/g"
+      - "/\\bsetuidgid\\b/g"
+      - "/\\bshibukawa\\b/g"
+      - "/\\bsig\\b/g"
+      - "/\\bsigstore\\b/g"
+      - "/\\bsimeji\\b/g"
+      - "/\\bsimplejson\\b/g"
+      - "/\\bSkidgel\\b/g"
+      - "/\\bslsa\\b/g"
+      - "/\\bSnipplr\\b/g"
+      - "/\\bsomesuch\\b/g"
+      - "/\\bSOPA\\b/g"
+      - "/\\bsortable\\b/g"
+      - "/\\bsortables\\b/g"
+      - "/\\bsourcecode\\b/g"
+      - "/\\bSourceForge\\b/g"
+      - "/\\bSpotify\\b/g"
+      - "/\\bsqlite\\b/g"
+      - "/\\bssl\\b/g"
+      - "/\\bssl_view\\b/g"
+      - "/\\bstatusbar\\b/g"
+      - "/\\bstdin\\b/g"
+      - "/\\bstdout\\b/g"
+      - "/\\bstop_server\\b/g"
+      - "/\\bstorages\\b/g"
+      - "/\\bstraitforward\\b/g"
+      - "/\\bstreched\\b/g"
+      - "/\\bStringIO\\b/g"
+      - "/\\bstunnel\\b/g"
+      - "/\\bsubclassed\\b/g"
+      - "/\\bsvc\\b/g"
+      - "/\\bsvn\\b/g"
+      - "/\\bsvnsync\\b/g"
+      - "/\\bsvscan\\b/g"
+      - "/\\bsvstat\\b/g"
+      - "/\\bsyncdb\\b/g"
+      - "/\\bsyscall\\b/g"
+      - "/\\bsyscalls\\b/g"
+      - "/\\bsystemd\\b/g"
+      - "/\\bSystemd\\b/g"
+      - "/\\btag_name\\b/g"
+      - "/\\btakashi\\b/g"
+      - "/\\btakonory\\b/g"
+      - "/\\btaskqueue\\b/g"
+      - "/\\bTasuku\\b/g"
+      - "/\\btemplating\\b/g"
+      - "/\\btenntenn\\b/g"
+      - "/\\bterraform\\b/g"
+      - "/\\btextarea\\b/g"
+      - "/\\bthdbJnyAQARAQAB\\b/g"
+      - "/\\btheathletic\\b/g"
+      - "/\\bthiserror\\b/g"
+      - "/\\bTictok\\b/g"
+      - "/\\bTitlebar\\b/g"
+      - "/\\bTMergePath\\b/g"
+      - "/\\btokyotyrant\\b/g"
+      - "/\\bTqzm\\b/g"
+      - "/\\btransformative\\b/g"
+      - "/\\btremendious\\b/g"
+      - "/\\bUche\\b/g"
+      - "/\\bUFJ\\b/g"
+      - "/\\bUMoz\\b/g"
+      - "/\\bunapplies\\b/g"
+      - "/\\bunapply\\b/g"
+      - "/\\bunencrypted\\b/g"
+      - "/\\bunicode\\b/g"
+      - "/\\bunifier\\b/g"
+      - "/\\bunix\\b/g"
+      - "/\\bunmerged\\b/g"
+      - "/\\bunmount\\b/g"
+      - "/\\bUnported\\b/g"
+      - "/\\bunshare\\b/g"
+      - "/\\bUnshare\\b/g"
+      - "/\\bunsharing\\b/g"
+      - "/\\bunweildy\\b/g"
+      - "/\\buptime\\b/g"
+      - "/\\burl\\b/g"
+      - "/\\bUrl\\b/g"
+      - "/\\burlencode\\b/g"
+      - "/\\burlquote\\b/g"
+      - "/\\burls\\b/g"
+      - "/\\busb\\b/g"
+      - "/\\busb_driver\\b/g"
+      - "/\\bUSER_AGENT\\b/g"
+      - "/\\busless\\b/g"
+      - "/\\bustream\\b/g"
+      - "/\\butc\\b/g"
+      - "/\\bvalidator\\b/g"
+      - "/\\bvcdiff\\b/g"
+      - "/\\bve\\b/g"
+      - "/\\bVeOsHHlGkCI\\b/g"
+      - "/\\bverifications\\b/g"
+      - "/\\bverifier\\b/g"
+      - "/\\bverifiers\\b/g"
+      - "/\\bVerifiers\\b/g"
+      - "/\\bvfat\\b/g"
+      - "/\\bvirtualize\\b/g"
+      - "/\\bvorbis\\b/g"
+      - "/\\bvr\\b/g"
+      - "/\\bvTScqV\\b/g"
+      - "/\\bwarmup\\b/g"
+      - "/\\bWarmup\\b/g"
+      - "/\\bwCeESkKGj\\b/g"
+      - "/\\bwearables\\b/g"
+      - "/\\bwebapp\\b/g"
+      - "/\\bwebapps\\b/g"
+      - "/\\bwebpages\\b/g"
+      - "/\\bwebserver\\b/g"
+      - "/\\bwebservers\\b/g"
+      - "/\\bWendelin\\b/g"
+      - "/\\bweren\\b/g"
+      - "/\\bwhitespace\\b/g"
+      - "/\\bWORKON_HOME\\b/g"
+      - "/\\bwsgi\\b/g"
+      - "/\\bwww\\b/g"
+      - "/\\bXen\\b/g"
+      - "/\\bxml\\b/g"
+      - "/\\bxmlsoap\\b/g"
+      - "/\\byau\\b/g"
+      - "/\\bYii\\b/g"
+      - "/\\bYk\\b/g"
+      - "/\\byml\\b/g"
+      - "/\\bzip_all\\b/g"
+      - "/\\bzipimport\\b/g"
+      - "/\\bzsh\\b/g"
+      - "/\\bZyp\\b/g"
 
-      - "cProfile" # Python profiler
-      - "doctest" # Python testing framework
-      - "bugfix" # Bug fix
-      - "Req" # Request abbreviation
-      - "gae" # Google App Engine abbreviation
+      - "/\\bcProfile\\b/g" # Python profiler
+      - "/\\bdoctest\\b/g" # Python testing framework
+      - "/\\bbugfix\\b/g" # Bug fix
+      - "/\\bReq\\b/g" # Request abbreviation
+      - "/\\bgae\\b/g" # Google App Engine abbreviation
 
-      - "Ohloh" # Software development statistics website
-      - "ALSA" # Advanced Linux Sound Architecture
-      - "Alsa" # ALSA variant
-      - "aculo" # Part of script.aculo.us library
-      - "favicons" # Favorite icons
-      - "stardict" # StarDict dictionary format
-      - "epwing" # EPWING dictionary format
-      - "plagger" # Perl RSS/Atom aggregator
-      - "HTMLScrubber" # HTML cleaning library
-      - "additionalProperties" # JSON Schema property
-      - "readonly" # Read-only attribute
-      - "PyObjC" # Python Objective-C bridge
-      - "AnchorLab" # Company name
-      - "EUCJP" # Japanese character encoding (Extended Unix Code for Japanese)
-      - "DOCOMO" # Japanese mobile operator NTT DOCOMO
-      - "FOMA" # Freedom of Mobile multimedia Access (DOCOMO's 3G service)
-      - "PNG" # Portable Network Graphics
-      - "JPG" # JPEG image format
-      - "BMP" # Bitmap image format
-      - "OSPN" # Open Source People Network
-      - "SumiTomohiko" # Person name
-      - "KDE" # K Desktop Environment
-      - "OSC" # Open Source Conference
-      - "Hasweb" # Web hosting service
-      - "cgi" # Common Gateway Interface (lowercase)
-      - "Webfaction" # Web hosting service
-      - "Shoutout" # Acknowledgment or mention
-      - "au" # Japanese mobile carrier
-      - "api" # Application Programming Interface (lowercase)
-      - "_blank" # HTML target attribute
-      - "digg" # Social news aggregation website
-      - "wierd" # Common misspelling of "weird" (should be fixed in content)
-      - "accessablity" # Misspelling of "accessibility" (should be fixed in content)
-      - "Connectablity" # Misspelling of "Connectivity" (should be fixed in content)
-      - "connectability" # Ability to connect (should use "connectivity")
-      - "changelog" # Change log (should be fixed in content)
-      - "mybranch" # Branch name (should be fixed in content)
-      - "extract_addrs" # Function name
-      - "tt" # HTML element or abbreviation
-      - "oss" # Open Source Software (lowercase)
-      - "ot" # Could be initials, abbreviation, or typo
-      - "Config" # Configuration
+      - "/\\bOhloh\\b/g" # Software development statistics website
+      - "/\\bALSA\\b/g" # Advanced Linux Sound Architecture
+      - "/\\bAlsa\\b/g" # ALSA variant
+      - "/\\baculo\\b/g" # Part of script.aculo.us library
+      - "/\\bfavicons\\b/g" # Favorite icons
+      - "/\\bstardict\\b/g" # StarDict dictionary format
+      - "/\\bepwing\\b/g" # EPWING dictionary format
+      - "/\\bplagger\\b/g" # Perl RSS/Atom aggregator
+      - "/\\bHTMLScrubber\\b/g" # HTML cleaning library
+      - "/\\badditionalProperties\\b/g" # JSON Schema property
+      - "/\\breadonly\\b/g" # Read-only attribute
+      - "/\\bPyObjC\\b/g" # Python Objective-C bridge
+      - "/\\bAnchorLab\\b/g" # Company name
+      - "/\\bEUCJP\\b/g" # Japanese character encoding (Extended Unix Code for Japanese)
+      - "/\\bDOCOMO\\b/g" # Japanese mobile operator NTT DOCOMO
+      - "/\\bFOMA\\b/g" # Freedom of Mobile multimedia Access (DOCOMO's 3G service)
+      - "/\\bPNG\\b/g" # Portable Network Graphics
+      - "/\\bJPG\\b/g" # JPEG image format
+      - "/\\bBMP\\b/g" # Bitmap image format
+      - "/\\bOSPN\\b/g" # Open Source People Network
+      - "/\\bSumiTomohiko\\b/g" # Person name
+      - "/\\bKDE\\b/g" # K Desktop Environment
+      - "/\\bOSC\\b/g" # Open Source Conference
+      - "/\\bHasweb\\b/g" # Web hosting service
+      - "/\\bcgi\\b/g" # Common Gateway Interface (lowercase)
+      - "/\\bWebfaction\\b/g" # Web hosting service
+      - "/\\bShoutout\\b/g" # Acknowledgment or mention
+      - "/\\bau\\b/g" # Japanese mobile carrier
+      - "/\\bapi\\b/g" # Application Programming Interface (lowercase)
+      - "/\\b_blank\\b/g" # HTML target attribute
+      - "/\\bdigg\\b/g" # Social news aggregation website
+      - "/\\bwierd\\b/g" # Common misspelling of "weird" (should be fixed in content)
+      - "/\\baccessablity\\b/g" # Misspelling of "accessibility" (should be fixed in content)
+      - "/\\bConnectablity\\b/g" # Misspelling of "Connectivity" (should be fixed in content)
+      - "/\\bconnectability\\b/g" # Ability to connect (should use "connectivity")
+      - "/\\bchangelog\\b/g" # Change log (should be fixed in content)
+      - "/\\bmybranch\\b/g" # Branch name (should be fixed in content)
+      - "/\\bextract_addrs\\b/g" # Function name
+      - "/\\btt\\b/g" # HTML element or abbreviation
+      - "/\\boss\\b/g" # Open Source Software (lowercase)
+      - "/\\bot\\b/g" # Could be initials, abbreviation, or typo
+      - "/\\bConfig\\b/g" # Configuration
