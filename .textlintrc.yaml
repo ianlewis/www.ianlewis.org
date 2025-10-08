@@ -237,7 +237,9 @@ rules:
       - "/\\byuanying\\b/g"
       - "/\\byuroyoro\\b/g"
       - "/\\byudppp\\b/g"
-      - "/\\b[Ww]eboo\\b/g" # Company/Product Names
+      - "/\\b[Ww]eboo\\b/g"
+
+      # Company/Product Names
       ##########################################################################
 
       - "/\\bATND\\b/g" # Japanese event platform (atnd.org)
@@ -292,6 +294,7 @@ rules:
       - "/\\bTailscale\\b/g"
       - "/\\bTeleMessage\\b/g"
       - "/\\bSoftBank\\b/g"
+      - "/\\bStacklok\\b/g" # Stacklok, Security company
       - "/\\bStunlock\\b/g"
       - "/\\bOakveil\\b/g"
       - "/\\bUnoh\\b/g"
@@ -348,7 +351,7 @@ rules:
       - "/\\bNixOS\\b/g"
       - "/\\bNoto\\b/g" # Noto fonts
       - "/\\bNunjucks\\b/g" # JavaScript templating engine
-      - "/\\bOAuth\\b/g" # Open standard for access delegation
+      - "/\\bOAuth2?\\b/g" # Open standard for access delegation
       - "/\\bOpenShift\\b/g" # Red Hat's container platform
       - "/\\bOpenSocial\\b/g" # Social networking protocol
       - "/\\bOpenStack\\b/g" # OpenStack cloud computing platform
@@ -369,6 +372,7 @@ rules:
       - "/\\bTensorflow\\b/g"
       - "/\\bTerraform\\b/g"
       - "/\\bTinyMCE\\b/g" # JavaScript WYSIWYG editor
+      - "/\\bToolHive\\b/g" # ToolHive AI security tool
       - "/\\bTrae\\b/g" # AI IDE
       - "/\\bXeLaTeX\\b/g"
       - "/\\bZizmor\\b/g"
