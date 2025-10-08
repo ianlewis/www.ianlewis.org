@@ -36,7 +36,7 @@ rules:
       - "/\\b[0-9]+s\\b/g" # e.g. 90s, 2000s (decades)
       - "/\\b[0-9]+MB\\b/g" # e.g. 16MB, 32MB (megabytes)
       - "/\\b[0-9]+GB\\b/g" # e.g. 16GB, 32GB (gigabytes)
-      - "/\\b[0-9]+ms\\b/g" # e.g. 10ms, 500ms (milliseconds)
+      - "/\\b[0-9]+ms(ec)?\\b/g" # e.g. 10ms, 500ms (milliseconds)
 
       # Person Names
       ##########################################################################
@@ -237,7 +237,7 @@ rules:
       - "/\\bmoriyoshi\\b/g"
       - "/\\bshimizukawa\\b/g"
       - "/\\bshin_no_suke\\b/g"
-      - "/\\bshoma(4a)?\\b/g"
+      - "/\\bshoma(h4a)?\\b/g"
       - "/\\bsurgo\\b/g"
       - "/\\btakanory\\b/g"
       - "/\\bterapyon\\b/g"
@@ -255,6 +255,7 @@ rules:
       # Company/Product Names
       ##########################################################################
 
+      - "/\\b37signals\\b/g" # Company that makes Basecamp
       - "/\\bATND\\b/g" # Japanese event platform (atnd.org)
       - "/\\bAccense\\b/g"
       - "/\\bAnchorlab\\b/g"
