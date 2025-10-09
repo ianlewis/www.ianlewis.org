@@ -8,9 +8,9 @@ tags: tech devops cloud aws
 render_with_liquid: false
 ---
 
-Over the weekend we had some some problems with EC2 in which some
+Over the weekend we had some problems with EC2 in which some
 instances could not be connected to via a network. This happened to us
-for a nginx load balancing server on Friday and a database master on
+for a Nginx load balancing server on Friday and a database master on
 Saturday for two different web services. Several posts in the forums
 also indicated
 [similar](http://developer.amazonwebservices.com/connect/thread.jspa?threadID=35468&tstart=30)
@@ -31,8 +31,8 @@ never restored to the network.
 We ultimately decided to replace our instances with new ones using the
 same image and migrating the data on them to the new instance. This
 required several hours of downtime for both sites. Migrating the data
-and getting mysql replication restarted for the database master was
-particularly annoying. The ebs volume holding the data could not be
+and getting MySQL replication restarted for the database master was
+particularly annoying. The EBS volume holding the data could not be
 detached (I assume) because it was still mounted to the offending
 instance. I attempted to shut down the instance to get it to unmount the
 drive but this didn't work either as the instance got stuck (and is
@@ -40,8 +40,8 @@ still stuck as of this writing) in a "shutting down" state. This meant
 that I couldn't reattach the volume to another instance.
 
 I was eventually able to take a consistent snapshot from the master
-since it only held mysql data and wasn't being written to at the time.
-If it had log data or other data on it I probably wouldn't have been
+since it only held MySQL data and wasn't being written to at the time.
+If it had log data or other data on it, I probably wouldn't have been
 able to take a consistent snapshot. If I wasn't able to take a snapshot
 I would have had to take data from one of the slaves which were in
 different stages of replication (their replication log positions were
@@ -55,7 +55,7 @@ them, ran RESET MASTER to reset the binary log data, ran CHANGE MASTER
 on the slaves to reset the binary log position and master server host,
 and then eventually SLAVE START to restart replication.
 
-This episode makes me rethink ec2 as a provider. They still provide the
+This episode makes me rethink EC2 as a provider. They still provide the
 best virtualization service for the money but not being able to connect
 to the instances directly via a console in emergencies like you would be
 able to if you had your own Xen server is frustrating. There is no way

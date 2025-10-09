@@ -42,8 +42,8 @@ guile>
 
 Anyway you can run guile with the right paths on Ubuntu by running
 `guile-gnome-0`. After getting that running I made use of the Guile-Glib module
-to do some operations of utf8 data. I did this from a utf8 console. Beware. The
-terminal was not to friendly with me about things like arrow keys and
+to do some operations of UTF-8 data. I did this from a UTF-8 console. Beware.
+The terminal was not to friendly with me about things like arrow keys and
 backspaces over multibyte characters etc.
 
 ```shell
