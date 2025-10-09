@@ -129,7 +129,7 @@ urlpatterns = patterns('',
 )
 ```
 
-## Create the wordpress application
+## Create the `wordpress` application
 
 Next we'll create a `wordpress` application to hold our Django models. Let's do
 that now:
@@ -325,7 +325,7 @@ python manage.py runserver
 
 You'll need to login to view the admin. One thing to note is that for the Django
 admin we authenticate with the Django user we created when running `syncdb` for
-the first time and not WordPress' users.
+the first time and not WordPress's users.
 
 ![](/assets/images/697/wp_admin_big.png)
 

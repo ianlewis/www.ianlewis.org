@@ -244,6 +244,7 @@ rules:
       - "/\\b(DHH|dhh)\\b/g" # David Heinemeier Hansson
       - "/\\bKubernetesio\\b/g" # Kubernetes Twitter handle
       - "/\\bTheAmyCode\\b/g"
+      - "/\\ba13x\\b/g"
       - "/\\ba2c\\b/g"
       - "/\\bakisute\\b/g"
       - "/\\b[Aa]kisute(sama)?\\b/g"
@@ -342,6 +343,7 @@ rules:
       # Product Names
       ##########################################################################
 
+      - "/\\b3GS\\b/g" # iPhone 3GS
       - "/\\bATND\\b/g" # Japanese event platform (atnd.org)
       - "/\\bBigtable\\b/g"
       - "/\\bChromeOS\\b/g"
@@ -402,6 +404,7 @@ rules:
       - "/\\bKubernetes\\b/g" # Kubernetes container orchestration platform
       - "/\\bLLVM\\b/g" # LLVM compiler infrastructure
       - "/\\bLuaLaTeX\\b/g" # Lua-based LaTeX engine
+      - "/\\bMP3\\b/g" # MP3 audio format
       - "/\\bMapReduce\\b/g" # Programming model for processing large data sets
       - "/\\bMatcher API\\b/g" # App Engine Matcher API
       - "/\\bMaturin\\b/g"
@@ -460,6 +463,7 @@ rules:
       - "/\\bTipfy\\b/g" # App Engine Python web framework
       - "/\\bTortoiseHg\\b/g" # Mercurial client
       - "/\\bTortoiseMerge\\b/g" # Merge tool
+      - "/\\bVorbis\\b/g" # Ogg Vorbis audio codec
       - "/\\bXeLaTeX\\b/g" # LaTeX engine
       - "/\\bZig\\b/g" # Zig programming language
       - "/\\bZizmor\\b/g" # GitHub Actions linter
@@ -541,7 +545,7 @@ rules:
       - "/\\b[Ll]inters?\\b/g" # static code analysis tools
       - "/\\b[Ll]iveness\\b/g"
       - "/\\b[Ll]ossy\\b/g" # process that loses information (e.g. compression)
-      - "/\\b[Mm]ixin\\b/g"
+      - "/\\b[Mm]ixins?\\b/g"
       - "/\\b[Nn]amespaces?\\b/g"
       - "/\\b[Nn]-gram\\b/g" # N-gram text analysis
       - "/\\b[Pp]aywall(ed)?\\b/g"
@@ -557,7 +561,7 @@ rules:
       - "/\\b[Ss]uperintelligence\\b/g" # super + intelligence (stupid AI terms)
       - "/\\b[Ss]tylesheets?\\b/g"
       - "/\\b[Tt]estbed\\b/g"
-      - "/\\b[Tt]raceback\\b/g" # Error trace information
+      - "/\\b[Tt]racebacks?\\b/g" # Error trace information
       - "/\\b[Tt]radeoffs?\\b/g" # trade + off
       - "/\\b[Uu]ntrusted\\b/g" # used to describe code in a security context
       - "/\\b[Uu]nimpactful\\b/g" # un + impactful
@@ -609,6 +613,7 @@ rules:
       - "/\\bGPUs?\\b/g" # Graphics Processing Unit
       - "/\\bGb\\b/g" # Gigabyte
       - "/\\bHDFS\\b/g" # Hadoop Distributed File System
+      - "/\\bHTML5\\b/g" # HyperText Markup Language version 5
       - "/\\bHTTPS\\b/g" # Hypertext Transfer Protocol Secure
       - "/\\bHUDs?\\b/g" # Heads-Up Display
       - "/\\bIPs?\\b/g" # Internet Protocol
@@ -634,7 +639,7 @@ rules:
       - "/\\bRPCs?\\b/g" # Remote Procedure Call
       - "/\\bRSS\\b/g" # Really Simple Syndication
       - "/\\bSCM\\b/g" # Source Code Management
-      - "/\\bSDK\\b/g" # Software Development Kit
+      - "/\\bSDKs?\\b/g" # Software Development Kit
       - "/\\bSES\\b/g" # AWS Simple Email Service
       - "/\\bSLA\\b/g" # Service Level Agreement
       - "/\\bSLOs?\\b/g" # Service Level Objective
@@ -1293,6 +1298,7 @@ rules:
       - "verifiers"
       - "Verifiers"
       - "vfat"
+      - "virtualenvs"
       - "virtualize"
       - "vorbis"
       - "vr"
