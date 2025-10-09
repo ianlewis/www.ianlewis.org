@@ -75,7 +75,7 @@ Next we’ll create a Backend Service. A backend-service object defines the
 backend VMs that actually serve the requests. The Backend Service contains a
 number of Backends. Each Backend is essentially a link to an instance group but
 has some other options attached like which port numbers to use and load
-balancing mode. The prefered way to set the port is via named ports on the
+balancing mode. The preferred way to set the port is via named ports on the
 instance group. You can set a named port for port 80 called `http-port` using
 the following command. I’m assuming you already have an instance group called
 `my-instance-group` set up. You can find out more about creating managed

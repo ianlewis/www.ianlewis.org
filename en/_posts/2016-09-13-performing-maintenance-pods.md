@@ -20,7 +20,7 @@ Each service has a list of endpoints for the service which correspond to the
 pods for that service. This list of endpoints is updated automatically with the
 IPs and ports for the pods based on a label selector defined on the service.
 This allows the service to be loosely coupled to the pods themselves. You can
-see the selector pattern used in many other kubernetes components like
+see the selector pattern used in many other Kubernetes components like
 [Deployments](http://kubernetes.io/docs/user-guide/deployments/) and
 [ReplicaSets](http://kubernetes.io/docs/user-guide/replicasets/).
 
@@ -220,7 +220,7 @@ things you need to keep in mind though.
 Because Services and Deployments often both use label selectors it is possible
 to take a pod out for maintenance but leave it as part of the Deployment. This
 is fine in many circumstances, but if you have a Deployment with a
-[HorizontalPodAutoscaler](http://kubernetes.io/docs/user-guide/horizontal-pod-autoscaling/),
+[`HorizontalPodAutoscaler`](http://kubernetes.io/docs/user-guide/horizontal-pod-autoscaling/),
 the Deployment could scale down and delete your pod at any time. Also, while a
 single pod taken out of service isn't much, it still may have a performance
 impact on your application. For these reasons I would suggest taking it out of
@@ -238,7 +238,7 @@ pod "nginx-1802606028-1posu" labeled
 ```
 
 This is great if your pod is part of a
-[PetSet](http://kubernetes.io/docs/user-guide/petset/) or restarting it is hard.
+[`PetSet`](http://kubernetes.io/docs/user-guide/petset/) or restarting it is hard.
 But if we are using Deployments, and since the pod was acting flaky to begin
 with, and pods in a Deployment are by definition replaceable, we should probably
 just delete the pod. Even if we added it back to the Deployment, the Deployment

@@ -8,29 +8,53 @@ tags: tech programming python wordpress django
 render_with_liquid: false
 ---
 
-I recently came across one feature of Django that seemed pretty useful for one off projects and customizations and was startled because it's one of Django's least mentioned features. In fact, I've been using Django at work for over 5 years now and didn't hear of it until this last week.
+I recently came across one feature of Django that seemed pretty useful for one
+off projects and customizations and was startled because it's one of Django's
+least mentioned features. In fact, I've been using Django at work for over 5
+years now and didn't hear of it until this last week.
 
-This feature is the `manage.py` command `inspectdb` which inspects the tables in an existing database and creates Python code defining the Django models for those tables. We had a use case at work where we had a database table that was not managed as a Django model, but we wanted to create tests interacting with that table. The solution was to use `inspectdb` to create a `models.py` file in a test application and add that application to `INSTALLED_APPS` when running tests. That way the table is created via syncdb when the tests are run, and we can use the model to create/check test data.
+This feature is the `manage.py` command `inspectdb` which inspects the tables in
+an existing database and creates Python code defining the Django models for
+those tables. We had a use case at work where we had a database table that was
+not managed as a Django model, but we wanted to create tests interacting with
+that table. The solution was to use `inspectdb` to create a `models.py` file in
+a test application and add that application to `INSTALLED_APPS` when running
+tests. That way the table is created via `syncdb` when the tests are run, and we
+can use the model to create/check test data.
 
-One of my other co-workers mentioned that `inspectdb` could be used to create Django models for an entirely different system not written in Python, say [WordPress](http://wordpress.org/), and very easily create Django admin for that system. So I decided to try just that. I would create a WordPress database, use `inspectdb` on that database, and create a very simple alternative admin for WordPress.
+One of my other co-workers mentioned that `inspectdb` could be used to create
+Django models for an entirely different system not written in Python, say
+[WordPress](http://wordpress.org/), and very easily create Django admin for that
+system. So I decided to try just that. I would create a WordPress database, use
+`inspectdb` on that database, and create a very simple alternative admin for
+WordPress.
 
 Let's get started.
 
 ## Initializing the Project
 
-> I'm going to assume you have WordPress installed and the database set up so I won't provide any instructions on how to install WordPress here. You can check out how to install the latest WordPress on WordPress' homepage: [Installing WordPress](http://codex.wordpress.org/Installing_WordPress)
+> I'm going to assume you have WordPress installed and the database set up so I
+> won't provide any instructions on how to install WordPress here. You can check
+> out how to install the latest WordPress on the WordPress homepage: [Installing
+> WordPress](http://codex.wordpress.org/Installing_WordPress)
 >
-> Also, I've created a repository on github so that you can try out this code without having to copy and paste everything. It's located here: <https://github.com/IanLewis/wordpress_django_admin>
+> Also, I've created a repository on github so that you can try out this code
+> without having to copy and paste everything. It's located here:
+> <https://github.com/IanLewis/wordpress_django_admin>
 
-First we are going to create a Django project for our WordPress admin. Django 1.5 will be released soon but this project is going to use 1.4, which is the latest stable version as of this writing.
+First we are going to create a Django project for our WordPress admin. Django
+1.5 will be released soon but this project is going to use 1.4, which is the
+latest stable version as of this writing.
 
-First we'll install Django (As we should be doing with all Python projects, you'll want to be using virtualenv):
+First we'll install Django (As we should be doing with all Python projects,
+you'll want to be using virtualenv):
 
 ```shell
 pip install Django
 ```
 
-We'll also need to install the appropriate database driver library. For MySQL it's mysql-python:
+We'll also need to install the appropriate database driver library. For MySQL
+it's `mysql-python`:
 
 ```shell
 pip install mysql-python
@@ -42,7 +66,10 @@ After that we'll start a project using `django-admin.py`:
 django-admin.py startproject wordpress_admin
 ```
 
-Next, let's edit the `settings.py`. We'll need to add settings for how to connect to the database. You'll need to set this correctly so that Django can connect to your wordpress database. We will be putting the Django tables that we need in a separate database so you'll need to create that database separately.
+Next, let's edit the `settings.py`. We'll need to add settings for how to
+connect to the database. You'll need to set this correctly so that Django can
+connect to your `wordpress` database. We will be putting the Django tables that we
+need in a separate database so you'll need to create that database separately.
 
 ```python
 DATABASES = {
@@ -65,7 +92,8 @@ DATABASES = {
 }
 ```
 
-Set up your `INSTALLED_APPS` to include the Django admin and our `wordpress` app that we'll create in a few moments:
+Set up your `INSTALLED_APPS` to include the Django admin and our `wordpress` app
+that we'll create in a few moments:
 
 ```python
 INSTALLED_APPS = (
@@ -103,19 +131,22 @@ urlpatterns = patterns('',
 
 ## Create the wordpress application
 
-Next we'll create a `wordpress` application to hold our Django models. Let's do that now:
+Next we'll create a `wordpress` application to hold our Django models. Let's do
+that now:
 
 ```shell
 python manage.py startapp wordpress
 ```
 
-Now, here's the fun part. We're going to use the real WordPress database to create our Django models.
+Now, here's the fun part. We're going to use the real WordPress database to
+create our Django models.
 
 ```shell
 python manage.py inspectdb --database=wordpress > wordpress/models.py
 ```
 
-You can now inspect the `wordpress/models.py` and take a look at the generated models. It will look something like the following:
+You can now inspect the `wordpress/models.py` and take a look at the generated
+models. It will look something like the following:
 
 ```python
 # This is an auto-generated Django model module.
@@ -159,7 +190,8 @@ class WpComments(models.Model):
 # <snip>
 ```
 
-Next, we need to register the models with Django's admin. This is a bit of a pain as it requires some hand coding. Save this in `wordpress/admin.py`:
+Next, we need to register the models with Django's admin. This is a bit of a
+pain as it requires some hand coding. Save this in `wordpress/admin.py`:
 
 ```python
 from django.contrib import admin
@@ -192,7 +224,10 @@ admin.site.register(WpUsers)
 
 ## Database Routing
 
-We're going to be using multiple databases so let's create a database router to tell Django which tables live it which database. We'll be lifting this code strait from an example from the Django docs (See: [Multiple databases](https://docs.djangoproject.com/en/1.3/topics/db/multi-db/#an-example))
+We're going to be using multiple databases so let's create a database router to
+tell Django which tables live it which database. We'll be lifting this code
+strait from an example from the Django docs (See: [Multiple
+databases](https://docs.djangoproject.com/en/1.3/topics/db/multi-db/#an-example))
 
 Let's put this in `wordpress_admin/router.py`:
 
@@ -232,7 +267,8 @@ DATABASE_ROUTERS = ('wordpress_admin.router.WordPressRouter',)
 
 ## Create the Django Database
 
-We'll need to create a database on the Django side of things so we'll do something like this:
+We'll need to create a database on the Django side of things so we'll do
+something like this:
 
 ```shell
 echo "CREATE DATABASE wordpress_admin CHARACTER SET utf8;" | mysql -u root
@@ -249,7 +285,9 @@ wordpress.wpposts: "id": You can't use "id" as a field name, because each model 
 wordpress.wpterms: "slug": CharField cannot have a "max_length" greater than 255 when using "unique=True".
 ```
 
-You'll notice that a couple models didn't validate. So we'll need to update them. The first `WpPosts` needs it's `id` field updated. Since it's the primary key we can just add the `primary_key` keyword to it:
+You'll notice that a couple of models didn't validate. So we'll need to update
+them. The first `WpPosts` needs it's `id` field updated. Since it's the primary
+key we can just add the `primary_key` keyword to it:
 
 ```python
 class WpPosts(models.Model):
@@ -257,7 +295,9 @@ class WpPosts(models.Model):
     # <snip>
 ```
 
-The `WpTerms` model's `slug` field can't have a `unique=True` index with a field larger than 255 in Django. Since we aren't really doing that much with the field we can simply remove the `unique` keyword.
+The `WpTerms` model's `slug` field can't have a `unique=True` index with a field
+larger than 255 in Django. Since we aren't really doing that much with the field
+we can simply remove the `unique` keyword.
 
 ```python
 class WpTerms(models.Model):
@@ -267,7 +307,8 @@ class WpTerms(models.Model):
     # <snip>
 ```
 
-Now we'll run `syncdb` again and this time it should create our Django tables for us:
+Now we'll run `syncdb` again and this time it should create our Django tables
+for us:
 
 ```shell
 python manage.py syncdb
@@ -275,20 +316,30 @@ python manage.py syncdb
 
 ## Start the Server
 
-Now we can start the server and view our admin at <http://localhost:8000/admin/>:
+Now we can start the server and view our admin at
+`http://localhost:8000/admin/`:
 
 ```shell
 python manage.py runserver
 ```
 
-You'll need to login to view the admin. One thing to note is that for the Django admin we authenticate with the Django user we created when running syncdb for the first time and not WordPress' users.
+You'll need to login to view the admin. One thing to note is that for the Django
+admin we authenticate with the Django user we created when running `syncdb` for
+the first time and not WordPress' users.
 
-![image](/assets/images/697/wp_admin_big.png)
+![](/assets/images/697/wp_admin_big.png)
 
 Here's what editing a post looks like:
 
-![image](/assets/images/697/wp_posts_big.png)
+![](/assets/images/697/wp_posts_big.png)
 
 ## Conclusion
 
-I hope you realized some of the interesting things you can do with the `inspectdb` command. We didn't really have to use WordPress. We could just as easily have used any database application, like [Redmine](http://www.redmine.org/) or [Bugzilla](http://www.bugzilla.org/). There's also an endless amount of customization you could do using the Django admin to provide a richer experience. You can get started by reading the Django docs for the admin: [The Django admin site](https://docs.djangoproject.com/en/1.4/ref/contrib/admin/). Have fun\!
+I hope you realized some of the interesting things you can do with the
+`inspectdb` command. We didn't really have to use WordPress. We could just as
+easily have used any database application, like
+[Redmine](http://www.redmine.org/) or [Bugzilla](http://www.bugzilla.org/).
+There's also an endless amount of customization you could do using the Django
+admin to provide a richer experience. You can get started by reading the Django
+docs for the admin: [The Django admin
+site](https://docs.djangoproject.com/en/1.4/ref/contrib/admin/). Have fun\!

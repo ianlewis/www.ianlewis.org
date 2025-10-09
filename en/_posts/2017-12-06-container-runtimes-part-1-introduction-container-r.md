@@ -142,7 +142,7 @@ another, so it still makes sense to call it a runtime from that perspective.
 Even though containerd and cri-o both use runc, they are very different projects
 that have very different feature support.
 
-## 'Til Next Time
+## Until Next Time
 
 I hope that helped explain container runtimes and why they are so hard to
 understand. Feel free to leave me comments below or [on

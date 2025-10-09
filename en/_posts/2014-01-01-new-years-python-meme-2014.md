@@ -21,7 +21,7 @@ Not much learning of new programming techniques per se, but I did learn some oth
 
 I've been out of Java development for a while and took a look at Android to get up to speed.
 
-- Android App Developent
+- Android App Development
 - Dependency Injection
 - Java Generics
 - Java > 1.4 language changes.
@@ -30,16 +30,24 @@ I've been out of Java development for a while and took a look at Android to get 
 
 Not much contributing to open source this year. Mostly just bug fixes and merging pull requests.
 
-- [django-storages](https://bitbucket.org/david/django-storages): Mostly testing, commenting on and merging pull requests.
-- [django-ses](https://github.com/hmarr/django-ses/pull/52): An as of yet unmerged pull request for bounce message processing
-- [Sinon.js](https://github.com/cjohansen/Sinon.JS): A small bug fix in timer mocking
-- [redis-mock](https://github.com/connpass/redis-mock): An in memory mock for a Redis server that acts as a drop in replacement for [redis-py](https://github.com/andymccurdy/redis-py). Currently implements a subset of redis operations.
+- [`django-storages`](https://bitbucket.org/david/django-storages): Mostly
+  testing, commenting on and merging pull requests.
+- [`django-ses`](https://github.com/hmarr/django-ses/pull/52): An as of yet
+  unmerged pull request for bounce message processing
+- [`Sinon.js`](https://github.com/cjohansen/Sinon.JS): A small bug fix in timer
+  mocking
+- [`redis-mock`](https://github.com/connpass/redis-mock): An in-memory mock for
+  a Redis server that acts as a drop in replacement for
+  [redis-py](https://github.com/andymccurdy/redis-py). Currently implements a
+  subset of Redis operations.
 
-- [Perfect Python](http://gihyo.jp/book/2013/978-4-7741-5539-5?ard=1388556176) (Japanese): A book I helped write was also released in 2013
+- [Perfect Python](http://gihyo.jp/book/2013/978-4-7741-5539-5?ard=1388556176)
+  (Japanese): A book I helped write was also released in 2013
 
 ## Which Python blogs, websites, or mailing lists did you read the most this year?
 
-Usually I read source code on github/bitbucket. I don't really read blog posts but when I do it's usually:
+Usually I read source code on GitHub/Bitbucket. I don't really read blog posts
+but when I do it's usually:
 
 - [Tarek Ziadé](http://ziade.org/)
 - [tokibito](http://d.hatena.ne.jp/nullpobug/)

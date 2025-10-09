@@ -67,13 +67,13 @@ runtimes via something called a "runtime handler" starting in version 1.2. The
 runtime handler is passed via a field in CRI and based on that runtime handler
 `containerd` runs an application called a shim to start the container. This can
 be used to run containers using low-level runtimes other than runc, like
-[gVisor](https://github.com/google/gvisor),
-[Kata Containers](https://katacontainers.io/), or
-[Nabla Containers](https://nabla-containers.github.io/). The runtime handler is
-exposed in the Kubernetes API using the
-[RuntimeClass object](https://kubernetes.io/docs/concepts/containers/runtime-class/)
-which is alpha in Kubernetes 1.12. There is more on containerd's shim concept
-on [PR #2434](https://github.com/containerd/containerd/pull/2434).
+[gVisor](https://github.com/google/gvisor), [Kata
+Containers](https://katacontainers.io/), or [Nabla
+Containers](https://nabla-containers.github.io/). The runtime handler is exposed
+in the Kubernetes API using the [`RuntimeClass`
+object](https://kubernetes.io/docs/concepts/containers/runtime-class/) which is
+alpha in Kubernetes 1.12. There is more on the shim concept on [PR
+#2434](https://github.com/containerd/containerd/pull/2434).
 
 ### Docker
 
@@ -82,7 +82,7 @@ shim between the `kubelet` and Docker. Docker has since broken out many of its
 features into `containerd` and now supports CRI through `containerd`. When
 modern versions of Docker are installed, `containerd` is installed along with
 it and CRI talks directly to `containerd`. For that reason, Docker itself isn't
-necessary to support CRI. So you can install containerd directly or via Docker
+necessary to support CRI. So you can install `containerd` directly or via Docker
 depending on your use case.
 
 ### cri-o
@@ -94,7 +94,7 @@ from any OCI compatible image registry. It supports `runc` and Clear Containers
 as low-level runtimes. It supports other OCI compatible low-level runtimes in
 theory, but relies on compatibility with the `runc`
 [OCI command line interface](https://github.com/opencontainers/runtime-tools/blob/master/docs/command-line-interface.md),
-so in practice it isn't as flexible as `containerd`'s shim API.
+so in practice it isn't as flexible as the `containerd` shim API.
 
 cri-o's endpoint is at `/var/run/crio/crio.sock` by default so you can
 configure `crictl` like so.

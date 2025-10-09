@@ -142,22 +142,22 @@ different aspects of containerization.
 ### lmctfy
 
 Though not in wide use, one container runtime of note is
-[lmctfy](https://github.com/google/lmctfy). lmctfy is a project by Google, based
-on the internal container runtime that
+[`lmctfy`](https://github.com/google/lmctfy). `lmctfy` is a project by Google,
+based on the internal container runtime that
 [Borg](https://research.google.com/pubs/pub43438.html) uses. One of its most
 interesting features is that it supports container hierarchies that use cgroup
 hierarchies via the container names. For example, a root container called
-"busybox" could create sub-containers under the name "busybox/sub1" or
-"busybox/sub2" where the names form a kind of path structure. As a result each
+`busybox` could create sub-containers under the name `busybox/sub1` or
+`busybox/sub2` where the names form a kind of path structure. As a result each
 sub-container can have its own cgroups that are then limited by the parent
-container's cgroup. This is inspired by Borg and gives containers in lmctfy the
-ability to run sub-task containers under a pre-allocated set of resources on a
-server, and thus achieve more stringent SLOs than could be provided by the
+container's cgroup. This is inspired by Borg and gives containers in `lmctfy`
+the ability to run sub-task containers under a pre-allocated set of resources on
+a server, and thus achieve more stringent SLOs than could be provided by the
 runtime itself.
 
-While lmctfy provides some interesting features and ideas, other runtimes were
+While `lmctfy` provides some interesting features and ideas, other runtimes were
 more usable so Google decided it would be better for the community to focus
-worked on Docker's libcontainer instead of lmctfy.
+worked on Docker's `libcontainer` instead of `lmctfy`.
 
 ### runc
 

@@ -21,22 +21,15 @@ virtualenv に対応していないわけです。 ipython をグローバルじ
 
 ## ipython と virtualenv を使う方法第一
 
-ということで、第一方法は PIP_DOWNLOAD_CACHE を設定して、virtualenv
-を作る時に、virtualenvwrapper (
-[virtualenvwrapperも使うべきだぞ](/jp/virtualenv-pip-fabric) )
-のフックを使って ipython を自動的にインストールする。自分の virtualenv ディレクトリ
-(WORKON_HOME) に `postmkvirtualenv`
-というスクリプトを入れると、環境を作った後に実行してくれます。それで、作るときに、毎回
-ipython 入れます。
+ということで、第一方法は `PIP_DOWNLOAD_CACHE` を設定して、virtualenvを作る時に、`virtualenvwrapper` ([`virtualenvwrapper`も使うべきだぞ](/jp/virtualenv-pip-fabric))のフックを使って`ipython`を自動的にインストールする。自分の virtualenvディレクトリ(`WORKON_HOME`) に `postmkvirtualenv`というスクリプトを入れると、環境を作った後に実行してくれます。それで、作るときに、毎回`ipython`入れます。
 
-自分の .bashrc かどこかで、 PIP_DOWNLOAD_CACHE
-を設定する。これで、一回ダウンロードしたら、毎回ダウンロードしなくてもいい。
+自分の`.bashrc`かどこかで、`PIP_DOWNLOAD_CACHE`を設定する。これで、一回ダウンロードしたら、毎回ダウンロードしなくてもいい。
 
 ```text
 PIP_DOWNLOAD_CACHE=~/.pip_cache
 ```
 
-それから、$WORKON_HOME/postmkvirtualenv にこう書きます。
+それから、`${WORKON_HOME}/postmkvirtualenv` にこう書きます。
 
 ```text
 # virtualenv毎に pip をインストールする場合
@@ -48,14 +41,11 @@ pip install ipython
 #pip install pudb
 ```
 
-それで、mkvirtualenv naninani を実行するときに virtualenv をちゃんと使う ipython
-をインストールしてくれます。
+それで、`mkvirtualenv hogehoge` を実行するときにvirtualenvをちゃんと使う`ipython`をインストールしてくれます。
 
-## ipython と virtualenv を使う方法第二
+## `ipython` と virtualenv を使う方法第二
 
-ipython はpython
-で書くユーザ設定ファイル機能があります。それを使えば、PYTHONPATHをいじれたりすることができるので、それで
-virtualenv を使うこともできます。 ユーザ設定は `~/.ipython/ipy_user_conf.py` に入っています。
+`ipython`はPythonで書くユーザ設定ファイル機能があります。それを使えば、`PYTHONPATH`をいじれたりすることができるので、それでvirtualenvを使うこともできます。ユーザ設定は `~/.ipython/ipy_user_conf.py`に入っています。
 
 こう書きます。
 
@@ -101,8 +91,7 @@ def execf(fname):
 main()
 ```
 
-main() の中、 `virtualenv.py` という設定ファイルを呼び出す。 `virtualenv.py`
-というファイルはこう書きます。
+`main()`の中、`virtualenv.py`という設定ファイルを呼び出す。`virtualenv.py`というファイルはこう書きます。
 
 ```python
 import site
@@ -121,9 +110,9 @@ if 'VIRTUAL_ENV' in environ:
 del site, environ, join, version_info
 ```
 
-これで、 `VIRTUAL_ENV` という環境変数が設定してある場合、それを python のサイトディレクトリとして登録する。
+これで、`VIRTUAL_ENV`という環境変数が設定してある場合、それをPythonのサイトディレクトリとして登録する。
 
-これで、ipython を実行するときに こうなるはず。
+これで、`ipython`を実行するときに こうなるはず。
 
 ```text
 土  5月 08 10:22:57
@@ -143,8 +132,6 @@ object?   -> Details about 'object'. ?object also works, ?? prints more.
 In [1]:
 ```
 
-ここに、 `VIRTUAL_ENV ->
-/home/ian/.virtualenvs/django-hgwebproxy/lib/python2.6/site-packages`
-が出て、virtualenv を使っていることが確認できる。
+ここに、`VIRTUAL_ENV -> /home/ian/.virtualenvs/django-hgwebproxy/lib/python2.6/site-packages`が出て、virtualenv を使っていることが確認できる。
 
 それでは、それでは、
