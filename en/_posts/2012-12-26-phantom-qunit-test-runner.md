@@ -38,7 +38,7 @@ Given all these problems I thought that, as with many other things in JavaScript
 land, the only get all the things I wanted was to write it myself. So I wrote a
 nice little PhantomJS QUnit test runner script.
 
-Because phantomjs' command line interface isn't terribly friendly I included a
+Because PhantomJS's command line interface isn't terribly friendly I included a
 simple python wrapper that is a bit easier to use. It takes the URL or path to
 your QUnit HTML file and accepts a number of options:
 
@@ -62,7 +62,7 @@ Options:
 
 The default console output takes inspiration from
 [mocha.js](http://visionmedia.github.com/mocha/) test runner and the Python test
-runner. Console output for a test run looks like the this:
+runner. Console output for a test run looks like this:
 
 ```shell
 $ ./runner.py example/index.html
@@ -208,7 +208,7 @@ Your HTML may look as follows
 
 ## Code
 
-The code is up on Github here:
+The code is up on GitHub here:
 [`https://github.com/IanLewis/phantomjs-qunit`](https://github.com/IanLewis/phantomjs-qunit)
 
 The JUnit output is based on [this gist](https://gist.github.com/1363104) by

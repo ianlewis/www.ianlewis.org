@@ -15,7 +15,7 @@ the [Python Onsen](http://www.ianlewis.org/index.php/en/python-onsen). It's a
 validator for [JSON Schema](https://json-schema.org/) written
 in Python. It's based on the JSON Schema Proposal Second Draft.
 
-The source tarball is ~~jsonschema-0.1a.tar.gz~~. The source itself is on
+The source tarball is ~~`jsonschema-0.1a.tar.gz`~~. The source itself is on
 Bitbucket.
 
 JSON Schema's purpose is to allow validation of JSON documents much like XML

@@ -28,7 +28,7 @@ artwork as well. Art hacking if you will. Of course software also falls in this
 category. Anything having to do with "making things".
 
 There is already a hackerspace in Tokyo called [4ncho5la6](http://456.im/)
-(AnchorLab) which is fairly famous but it isn't an open communal space. It's
+(Anchorlab) which is fairly famous but it isn't an open communal space. It's
 currently run by 4 guys who run their own companies, but they do have events and
 create all kinds of nifty stuff which they open up to the public. They event
 wrote a [blog about us](http://456.im/wp/2009/06/tokyohackerspace/). Here are

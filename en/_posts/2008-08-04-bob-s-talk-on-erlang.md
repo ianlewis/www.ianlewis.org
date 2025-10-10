@@ -12,10 +12,10 @@ render_with_liquid: false
 
 I just watched this video of [Bob](http://bob.pythonmac.org/) giving a
 presentation at [C4[1]](http://c4.rentzsch.com/1/) about
-[erlang](http://www.erlang.org/). It's about a year old and Bob had been using
-erlang for almost a year at that point. Bob always seems to have his hands in
+[Erlang](http://www.erlang.org/). It's about a year old and Bob had been using
+Erlang for almost a year at that point. Bob always seems to have his hands in
 things just before they become super popular. Erlang seems to be one of those
-things. [JSON](http://www.json.org/) was another. He's even the guy that
-[coined the term jsonp](http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/)
-before that was really popular. Anyway, highly informative. I might give
-erlang a try a little later on.
+things. [JSON](http://www.json.org/) was another. He's even the guy that [coined
+the term JSONP](http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/)
+before that was really popular. Anyway, highly informative. I might give Erlang
+a try a little later on.

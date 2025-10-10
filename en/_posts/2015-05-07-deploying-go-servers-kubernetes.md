@@ -27,13 +27,13 @@ Make sure you run through building the Docker image.
 
 ## Pushing the Docker Image to Google Container Registry
 
-You will need the gcloud tool so make sure you have the [Google Cloud
+You will need the `gcloud` tool so make sure you have the [Google Cloud
 SDK](https://cloud.google.com/sdk/#Quick_Start) installed. Next you'll need to
 [create a project on the Google Developers
 Console](https://developers.google.com/console/help/#creatingdeletingprojects).
 Make note of the project id.
 
-Set up your gcloud tool with the right config. Replace `<project-id>` below
+Set up your `gcloud` tool with the right config. Replace `<project-id>` below
 with your project id. Replace `<zone>` with the zone of your choosing:
 
 ```shell
@@ -41,16 +41,15 @@ gcloud config set project <project-id>
 gcloud config set compute/zone <zone>
 ```
 
-Once you have that done you will need to tag the
-image using docker.
+Once you have that done you will need to tag the image using Docker.
 
 ```shell
 docker tag outyet gcr.io/<project-id>/outyet:v1
 ```
 
-This will set the repository and tag it with the version 'v1'. Next push the
+This will set the repository and tag it with the version `v1`. Next push the
 image to the registry. You may get warnings about installing the `preview`
-components. Just say 'yes' to install them when asked.
+components. Just say `yes` to install them when asked.
 
 ```shell
 gcloud preview docker push gcr.io/<project-id>/outyet:v1
@@ -65,8 +64,8 @@ controller](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/r
 and [service](https://github.com/GoogleCloudPlatform/kubernetes/blob/master/docs/services.md) for our app.
 
 The replication controller configures how our app will be run and maintained in
-Kubernetes and the service allows our containers to be accessed as one logical service/app.
-Create a `outyet-rc.yml` file with the contents below. We will use
+Kubernetes and the service allows our containers to be accessed as one logical
+service/app. Create a `outyet-rc.yml` file with the contents below. We will use
 the new `v1` version of the API:
 
 ```yaml
@@ -116,8 +115,9 @@ spec:
 
 ## Deploy the Container Engine Cluster
 
-Next we'll deploy our container engine cluster. We'll use the gcloud tool again. You may get
-warnings about installing the `alpha` components. Just say 'yes' to install them when asked.
+Next we'll deploy our container engine cluster. We'll use the `gcloud` tool
+again. You may get warnings about installing the `alpha` components. Just say
+`yes` to install them when asked.
 
 ```shell
 gcloud alpha container clusters create outyet
@@ -126,7 +126,8 @@ gcloud config set container/cluster outyet
 
 ## Create the Replication Controller
 
-After the cluster is created we can deploy the app. First we will create the replication controllers:
+After the cluster is created we can deploy the app. First we will create the
+replication controllers:
 
 ```shell
 gcloud alpha container kubectl create -f outyet-rc.yml
@@ -158,7 +159,7 @@ gcloud alpha container kubectl get services
 ```
 
 The service uses the `LoadBalancer` feature of Container Engine to set up a
-network loadbalancer to our service. We can get the external IP of the service
+network load balancer to our service. We can get the external IP of the service
 using the following command:
 
 ```shell
@@ -179,7 +180,8 @@ Now we can view the app at `http://<IP Address>/`
 ## Upgrading the App
 
 Go 1.4 is already out yet so app isn't really exciting. Let's update it so it
-checks for Go 1.5. Lets override the CMD for the Dockerfile so it looks like this:
+checks for Go 1.5. Let's override the `CMD` for the Dockerfile so it looks like
+this:
 
 ```dockerfile
 FROM golang:onbuild
@@ -187,7 +189,7 @@ CMD ["go-wrapper", "run", "-version=1.5"]
 EXPOSE 8080
 ```
 
-Next we will build, tag and push the updated docker image:
+Next we will build, tag, and push the updated Docker image:
 
 ```shell
 docker build -t outyet .
@@ -195,7 +197,8 @@ docker tag outyet gcr.io/<project-id>/outyet:v2
 gcloud preview docker push gcr.io/<project-id>/outyet:v2
 ```
 
-Next lets update all the places it says v1 in our outyet-rc.yml and change it to v2.
+Next let's update all the places it says `v1` in our `outyet-rc.yml` and change
+it to `v2`.
 
 ```yaml
 kind: ReplicationController
@@ -249,5 +252,6 @@ gcloud alpha container clusters delete outyet
 I really think containers are the way everyone will be developing apps in the
 future so hopefully that gave you an idea of how you can deploy a Go app and
 upgrade it using Container Engine. As a next step try out some of the many
-[example apps](https://github.com/GoogleCloudPlatform/kubernetes/tree/master/examples)
+[example
+apps](https://github.com/GoogleCloudPlatform/kubernetes/tree/master/examples)
 available in the Kubernetes repo.

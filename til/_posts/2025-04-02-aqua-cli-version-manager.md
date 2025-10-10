@@ -7,9 +7,13 @@ tags: tools
 render_with_liquid: false
 ---
 
-When I worked on the [SLSA](https://slsa.dev/) project I came across the [Aqua](https://aquaproj.github.io/) CLI version manager. It's a pretty cool tool that acts sort of like a package manager for CLI binaries.
+When I worked on the [SLSA](https://slsa.dev/) project I came across the
+[Aqua](https://aquaproj.github.io/) CLI version manager. It's a pretty cool tool
+that acts sort of like a package manager for CLI binaries.
 
-The `aqua generate -i` command allows you to search for commands via the [Aqua registry](https://github.com/aquaproj/aqua-registry) and saves the tool dependency in `aqua.yaml`.
+The `aqua generate -i` command allows you to search for commands via the [Aqua
+registry](https://github.com/aquaproj/aqua-registry) and saves the tool
+dependency in `aqua.yaml`.
 
 ```yaml
 checksum:
@@ -34,4 +38,4 @@ Another thing that's cool is that it can keep a checksum of the dependency in
 downloaded binary tools. There are a lot of features like managing tool versions
 per project as well. The only downside I've found so far is that it can only
 really support tools that can be compiled to a binary so it can't really manage
-tools written in interpretet languages like JavaScript, or Python.
+tools written in interpreted languages like JavaScript, or Python.

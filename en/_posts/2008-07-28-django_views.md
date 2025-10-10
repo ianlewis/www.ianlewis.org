@@ -9,11 +9,10 @@ render_with_liquid: false
 ---
 
 I was thinking about using [Django](http://www.djangoproject.com) for one of my
-projects on [GAE](http://code.google.com/appengine/) because it seems like a
+projects on [App Engine](https://cloud.google.com/appengine) because it seems like a
 popular project and somewhat easy to use, but I'm not quite understanding yet
 why it's better to have helper functions rather than controller/handler classes
-like [Pylons](http://pylonshq.com/) or
-[GAE](http://code.google.com/appengine/)'s normal WSGI handling has. With
+like [Pylons](http://pylonshq.com/) or GAE's normal WSGI handling has. With
 handler classes my controller might look like:
 
 ```python
@@ -31,7 +30,7 @@ class MainHandler(webapp.RequestHandler):
     self.redirect(self.request.url)
 ```
 
-Whereas the django helper function might look like:
+Whereas the Django helper function might look like:
 
 ```python
 from django.http import HttpResponse, HttpResponseRedirect
@@ -47,10 +46,9 @@ def mainview(request):
 
 While the [Django](http://www.djangoproject.com/) method might have the
 potential to have be a bit less verbose it feels like it would be harder to do
-things correctly, like factor code etc. I also don't really like the
-conditional checks to see what kind of HTTP method was used. So either I would
-need to split GETs and POSTs to separate urls or just live with the conditional
-checks.
+things correctly, like factor code etc. I also don't really like the conditional
+checks to see what kind of HTTP method was used. So either I would need to split
+GETs and POSTs to separate URLs or just live with the conditional checks.
 
 Personally I feel better with the [Pylons](http://pylonshq.com/)-ish
 controller/handler approach. Anyone have an opinion?

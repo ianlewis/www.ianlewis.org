@@ -9,12 +9,12 @@ render_with_liquid: false
 ---
 
 Today I've been playing around with writing programs in
-[GTK2.0](http://www.gtk.org/). This has been on my TODO list for a really long
+[GTK 2.0](http://www.gtk.org/). This has been on my TODO list for a really long
 time, almost since college, but I've never got around to it. I've revived my old
 project [gorbital](http://gorbital.sourceforge.net/) and decided to rewrite it
-using GTK2.0. I originally wrote it in C++ using [gtkmm](http://www.gtkmm.org/)
-for GTK1.0. But GTK1.0 is long since dead. Even my beloved
-[GnuCash](http://www.gnucash.org/) has finally made it to the world of GTK2.0
+using GTK 2.0. I originally wrote it in C++ using [gtkmm](http://www.gtkmm.org/)
+for GTK 1.0. But GTK 1.0 is long since dead. Even my beloved
+[GnuCash](http://www.gnucash.org/) has finally made it to the world of GTK 2.0
 making it the last application I use that has made the switch
 ([Gaim](http://www.pidgin.im/) being the first).
 

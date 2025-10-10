@@ -11,7 +11,7 @@ locale: ja
 
 あるプロジェクトの依存は特定なバージョンじゃないとダメな場合が結構多いと思いますけど、最近、pythonの仮想環境を簡単に作れるようになりました。`virtualenv`と`virtualenvwrapper`と`pip`の組み合わせを紹介します。
 
-virtualenvは環境を作ってくれるライブラリで、virtualenvwrapperはその作った環境を簡単に管理してくれるツールになります。
+virtualenvは環境を作ってくれるライブラリで、`virtualenvwrapper`はその作った環境を簡単に管理してくれるツールになります。
 
 ## まず、`virtualenv`と`virtualenvwrapper`をインストール
 
@@ -27,7 +27,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper_bashrc
 ```
 
-> **Update**: virtualenvwrapper 2.0+の場合ですと、Bash意外の端末シェルにも対応しているので、`virtualenvwrapper_bashrc`は`virtualenvwrapper.sh`にかわりました。`PATH`には入るので、
+> **Update**: `virtualenvwrapper` 2.0+の場合ですと、Bash意外の端末シェルにも対応しているので、`virtualenvwrapper_bashrc`は`virtualenvwrapper.sh`にかわりました。`PATH`には入るので、
 
 以下を`.bashrc`に追加してください。
 

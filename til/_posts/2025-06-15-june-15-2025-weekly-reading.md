@@ -36,7 +36,7 @@ render_with_liquid: false
 - [Using Claude Code to Migrate Wyvern Management Scripts](https://www.youtube.com/watch?v=HtqxI53h7zM) - _Steve Yegge, Gene Kim_
 
     Steve Yegge and Gene Kim have a vibe-coding sessions of Steve's game
-    Wyvernn. They use Claude to migrate the game's management scripts to Kotlin.
+    Wyvern. They use Claude to migrate the game's management scripts to Kotlin.
 
     While I think that many folks will feel like they are in control during
     vibe-coding sessions, much like folks using auto-pilot mode in a Tesla,

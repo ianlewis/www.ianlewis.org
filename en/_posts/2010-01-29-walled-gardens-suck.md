@@ -8,7 +8,7 @@ tags: tech musings
 render_with_liquid: false
 ---
 
-I recently read a couple posts on the openness of the iPad and the
+I recently read a couple of posts on the openness of the iPad and the
 effect it will have on tinkering and computer hacking. One was a
 [post](http://al3x.net/2010/01/28/ipad.html) by [al3x](http://al3x.net/)
 of twitter fame and one was a

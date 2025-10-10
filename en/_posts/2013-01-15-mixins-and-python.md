@@ -30,13 +30,12 @@ class MyClass(BaseClass, Mixin1, Mixin2):
     pass
 ```
 
-However, in Python the class hierarchy is defined right to left, so in
-this case the `Mixin2` class is the base class, extended by `Mixin1` and
-finally by `BaseClass`. This is usually fine because many times the
-mixin classes don't override each other's, or the base class' methods.
-But if you do override methods or properties in your mixins this can
-lead to unexpected results because the priority of how methods are
-resolved is from left to right.
+However, in Python the class hierarchy is defined right to left, so in this case
+the `Mixin2` class is the base class, extended by `Mixin1` and finally by
+`BaseClass`. This is usually fine because many times the mixin classes don't
+override each other's, or the base class's methods. But if you do override
+methods or properties in your mixins this can lead to unexpected results because
+the priority of how methods are resolved is from left to right.
 
 ```python
 >>> obj = MyClass()
@@ -54,7 +53,7 @@ class MyClass(Mixin2, Mixin1, BaseClass):
 This kind of looks counter-intuitive at first because most people would
 read a top-down class hierarchy from left to right but if you include
 the class you are defining, you can read correctly up the class
-hierarchy (MyClass =\> Mixin2 =\> Mixin1 =\> BaseClass. If you define
+hierarchy (`MyClass` =\> `Mixin2` =\> `Mixin1` =\> `BaseClass`. If you define
 your classes this way you won't have to many conflicts and run into too
 many bugs.
 

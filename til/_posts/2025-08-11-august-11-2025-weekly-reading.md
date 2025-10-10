@@ -68,8 +68,8 @@ render_with_liquid: false
     while](https://portswigger.net/research/http-desync-attacks-request-smuggling-reborn)
     but James Kettle argues that the protocol is inherently insecure and should
     be deprecated. He released more novel attacks for HTTP/1.1 this week in the
-    white paper [_HTTP/1.1 must die: the desync
-    endgame_](https://portswigger.net/research/http1-must-die).
+    white paper [<!-- textlint-disable spelling -->_HTTP/1.1 must die: the desync
+    endgame_<!--textlint-enable spelling -->](https://portswigger.net/research/http1-must-die).
 
     I'm not sure I agree that it's totally unfixable, but I do think these
     kind of attacks should be taken more seriously.

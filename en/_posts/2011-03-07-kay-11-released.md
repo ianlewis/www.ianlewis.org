@@ -26,7 +26,7 @@ here](http://code.google.com/p/kay-framework/downloads/list).
 We're excited about this release so I would like to introduce a few of Kay's new
 features.
 
-## cron_only
+## `cron_only`
 
 Kay has a new utility decorator for securing cron views so they can only be run
 by the cron system on App Engine.
@@ -38,7 +38,7 @@ def my_cron_view(request):
     return response
 ```
 
-You can see the [documentation for the cron_only decorator
+You can see the [documentation for the `cron_only` decorator
 here](http://kay-docs.shehas.net/decorators.html#kay.utils.decorators.cron_only).
 
 ## Pagination API

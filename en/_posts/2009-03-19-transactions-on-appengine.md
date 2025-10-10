@@ -9,10 +9,9 @@ render_with_liquid: false
 ---
 
 The way to store data on [App Engine](http://code.google.com/appengine/) is with
-[Google](http://www.google.com/)'s
-[BigTable Datastore](http://code.google.com/appengine/docs/python/datastore/)
-which has support for transactions. However, the transactions are quite limited
-in that,
+Google's [BigTable
+Datastore](http://code.google.com/appengine/docs/python/datastore/) which has
+support for transactions. However, the transactions are quite limited in that,
 
 1. You can only execute callables inside transactions. Which means you
    basically call `run_in_transaction()` on a function. This can sometimes be a
