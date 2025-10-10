@@ -47,15 +47,14 @@ than my plugin or isn't present at all in my plugin.
   while sticking as much to the embedded api as possible.
 - The WordPress plugin adds a button to TinyMCE automatically. Currently with my
   plugin you have to [jump through some
-  hoops](http://manual.b2evolution.net/Plugins/gallery2_plugin#Using_the_Gallery%202_Plugin_with_the_TinyMCE_Plugin).
+  hoops](https://plugins.b2evolution.net/plugins-gallery2-plugin#using-the-gallery2-plugin-with-the-tinymce-plugin).
   I would like to work with the author of the [TinyMCE
   plugin](http://manual.b2evolution.net/Tinymce_plugin) for b2evolution to allow
   me to integrate seamlessly.
-- The WordPress plugin creates a page automatically that puts [your gallery
-  inside
-  WordPress](http://wpg2.galleryembedded.com/index.php?title=WPG2:Screenshots_of_a_Gallery%202_Embedded_Page_1).
-  This is pretty cool and allows users to more easily integrate their blog with
-  gallery. I'd like to do something similar in b2evolution.
+- The WordPress plugin creates a page automatically that puts your gallery
+  inside WordPress. This is pretty cool and allows users to more easily
+  integrate their blog with gallery. I'd like to do something similar in
+  b2evolution.
 - The WordPress plugin has some url rewrite options which seem to allow you to
   create nice permalinks inside your embedded Gallery 2 page. This might be used
   somehow to preserve previous Gallery 2 permalinks, or just to make nice new
