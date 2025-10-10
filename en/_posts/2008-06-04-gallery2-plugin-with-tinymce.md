@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Gallery2 plugin with TinyMCE"
+title: "Gallery 2 plugin with TinyMCE"
 date: 2008-06-04 18:18:21 +0000
 permalink: /en/gallery2-plugin-with-tinymce
 blog: en
@@ -12,21 +12,21 @@ I made some changes to the [TinyMCE
 plugin](http://manual.b2evolution.net/Plugins/tinymce_plugin) for
 [b2evolution](http://www.b2evolution.net/) to support some callbacks which will
 allow other b2evolution plugins to register TinyMCE plugins automatically. This
-is especially useful for the
-[Gallery2 plugin](http://manual.b2evolution.net/Plugins/gallery2_plugin) because
-it will allow me to add a button that allows users to add photos from Gallery2
-to their blog posts to TinyMCE automatically when the Gallery2 plugin is
-installed. Currently
-[it's a pain to get it to work](http://manual.b2evolution.net/Plugins/gallery2_plugin#Using_the_Gallery2_Plugin_with_the_TinyMCE_Plugin)
-because the standard gallery2 image chooser button doesn't work with TinyMCE
-and installing it requires you to copy the g2image directory to another
+is especially useful for the [Gallery 2
+plugin](http://manual.b2evolution.net/Plugins/gallery2_plugin) because it will
+allow me to add a button that allows users to add photos from Gallery 2 to their
+blog posts to TinyMCE automatically when the Gallery 2 plugin is installed.
+Currently [it's a pain to get it to
+work](http://manual.b2evolution.net/Plugins/gallery2_plugin#Using_the_Gallery2_Plugin_with_the_TinyMCE_Plugin)
+because the standard Gallery 2 image chooser button doesn't work with TinyMCE
+and installing it requires you to copy the `g2image` directory to another
 location.
 
-Fortunately these sorts of callbacks are implemented in the
-[b2evolution Plugin API](http://doc.b2evolution.net/v-2-4/plugins/Plugin.html)
-already. I just needed to specify that the TinyMCE plugin has some extra
-callbacks and then fire the associated events at the right time. The code is a
-bit awkward but it serves it's purpose.
+Fortunately these sorts of callbacks are implemented in the [b2evolution Plugin
+API](http://doc.b2evolution.net/v-2-4/plugins/Plugin.html) already. I just
+needed to specify that the TinyMCE plugin has some extra callbacks and then fire
+the associated events at the right time. The code is a bit awkward but it serves
+its purpose.
 
 The first part is specifying the extra events.
 
@@ -52,7 +52,7 @@ $tmce_plugins_array =
       "tinymce_plugins");
 ```
 
-The plugins list is modified on the Gallery2 plugin side by adding an
+The plugins list is modified on the Gallery 2 plugin's side by adding an
 implementation of the event hook. In this case the `tinymce_plugins` key in the
 $params array is a reference that can be modified and passed back to the
 TinyMCE plugin.

@@ -32,20 +32,20 @@ less +G <file>
 ```
 
 will open the file from the end and allow you to scroll backwards through it. In
-this context, like vi, using a slash '/' followed by a string can help you
+this context, like vi, using a slash (`/`) followed by a string can help you
 search forward through a file but going backward, I learned, is achieved with
-the question mark '?' character.
+the question mark (`?`) character.
 
 Another command that is pretty useful is grep, and when searching log files you
 might want to find a particular part of the file, like an error message but also
-some text before or after the error. You can do this with the -A and -B
-commands, meaning 'After' and 'Before' respectively.
+some text before or after the error. You can do this with the `-A` (After) and
+`-B` (Before) options.
 
 ```bash
 grep -A 5 -B 10 error <file>
 ```
 
-The above command will give print the lines matching the string 'error' in the
+The above command will give print the lines matching the string `"error"` in the
 given file, but also give 5 lines of context after and 10 lines of context
 before the matched line. This is pretty useful when searching log files but can
 get confusing sorting out what is context and what is a match when it matches

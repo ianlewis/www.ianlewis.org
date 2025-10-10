@@ -68,15 +68,17 @@ rules:
       # Common
       ##########################################################################
 
-      - "/\\bµsec\\b/g" # microsecond
-      - "/\\busec\\b/g" # microsecond
-      - "/\\bmsec\\b/g" # millisecond
       - "/\\b[0-9]+k\\b/g" # e.g. 10k, 100k (thousands)
       - "/\\b[0-9]+x\\b/g" # e.g. 2x, 4x, 8x (times)
-      - "/\\b[0-9]+s\\b/g" # e.g. 90s, 2000s (decades)
+
+      - "/\\b[0-9]+s\\b/g" # e.g. seconds, 90s, 2000s (decades)
+      - "/\\b[0-9]+ms(ec)?\\b/g" # e.g. 10ms, 500ms (milliseconds)
+      - "/\\b[0-9]+(µ|u)sec\\b/g" # microseconds
+
+      # See: https://en.wikipedia.org/wiki/Byte#Multiple-byte_units
+      - "/\\b[0-9]+kB\\b/g" # e.g. 16KB, 32KB (kilobytes)
       - "/\\b[0-9]+MB\\b/g" # e.g. 16MB, 32MB (megabytes)
       - "/\\b[0-9]+GB\\b/g" # e.g. 16GB, 32GB (gigabytes)
-      - "/\\b[0-9]+ms(ec)?\\b/g" # e.g. 10ms, 500ms (milliseconds)
 
       # Person Names
       ##########################################################################
@@ -133,8 +135,6 @@ rules:
       - "/\\bHightower\\b/g"
       - "/\\bHockin\\b/g"
       - "/\\bHochstein\\b/g"
-      - "/\\bIanLewis\\b/g"
-      - "/\\bIanMLewis\\b/g"
       - "/\\bIkeda\\b/g"
       - "/\\bIppolito\\b/g"
       - "/\\bIshikawa\\b/g"
@@ -244,23 +244,20 @@ rules:
       - "/\\b(DHH|dhh)\\b/g" # David Heinemeier Hansson
       - "/\\bKubernetesio\\b/g" # Kubernetes Twitter handle
       - "/\\bTheAmyCode\\b/g"
-      - "/\\ba13x\\b/g"
+      - "/\\bal3x\\b/g" # Alex Payne
       - "/\\ba2c\\b/g"
-      - "/\\bakisute\\b/g"
       - "/\\b[Aa]kisute(sama)?\\b/g"
       - "/\\baodag\\b/g"
       - "/\\batsuoishimoto\\b/g"
       - "/\\bdeeet\\b/g"
       - "/\\bae35\\b/g"
-      - "/\\bakisute\\b/g"
       - "/\\bbucho\\b/g"
       - "/\\bcointoss1973\\b/g"
       - "/\\bcosentino\\b/g"
       - "/\\bdeeet\\b/g"
       - "/\\b[Ff]eiz\\b/g"
       - "/\\bhiyosi\\b/g"
-      - "/\\bianlewis\\b/g"
-      - "/\\bianmlewis\\b/g"
+      - "/\\b[Ii]an[Mm]?[Ll]ewis\\b/g"
       - "/\\bjbking\\b/g"
       - "/\\bjoehewitt\\b/g"
       - "/\\bkaz\\b/g"
@@ -311,30 +308,30 @@ rules:
       - "/\\bBitbucket\\b/g"
       - "/\\bCoreOS\\b/g"
       - "/\\bDeis\\b/g"
+      - "/\\bDigg\\b/g" # Social news website
       - "/\\bDisqus\\b/g" # Comment hosting service
       - "/\\bDocomo\\b/g"
       - "/\\bElasticSearch\\b/g"
       - "/\\bEldarion\\b/g"
       - "/\\bFabric8\\b/g" # Kubernetes platform
       - "/\\bFriendFeed\\b/g" # Social networking service (acquired by Facebook)
-      - "/\\bGree\\b/g"
-      - "/\\bGumi\\b/g"
+      - "/\\bGree\\b/g" # Japanese social networking service
+      - "/\\bGumi\\b/g" # Japanese mobile game developer
       - "/\\bJoyent\\b/g"
       - "/\\bLinkedIn\\b/g" # Professional networking platform
       - "/\\bMesosphere\\b/g"
-      - "/\\bMixi\\b/g"
-      - "/\\bNetlify\\b/g"
-      - "/\\bPalo\\b/g" # e.g. Palo Alto Networks
+      - "/\\bMixi\\b/g" # Japanese social networking service
+      - "/\\bNetlify\\b/g" # Web hosting service
+      - "/\\bPalo Alto Networks\\b/g" # Cybersecurity company
       - "/\\bPlanetScale\\b/g" # PlanetScale database platform
       - "/\\bShopify\\b/g" # E-commerce platform
-      - "/\\bSoftBank\\b/g"
-      - "/\\bStockApp\\b/g"
-      - "/\\bSynadia\\b/g"
-      - "/\\bTailscale\\b/g"
-      - "/\\bTeleMessage\\b/g"
-      - "/\\bSoftBank\\b/g"
+      - "/\\bSoftBank\\b/g" # Japanese multinational conglomerate
       - "/\\bStacklok\\b/g" # Stacklok, Security company
-      - "/\\bStunlock\\b/g"
+      - "/\\bStockApp\\b/g"
+      - "/\\bStunlock\\b/g" # Stunlock Studios, game developer
+      - "/\\bSynadia\\b/g"
+      - "/\\bTailscale\\b/g" # VPN service
+      - "/\\bTeleMessage\\b/g"
       - "/\\bUnoh\\b/g"
       - "/\\bUStream\\b/g" # Live video streaming service (acquired by IBM)
       - "/\\bVimeo\\b/g" # Video hosting platform
@@ -455,6 +452,7 @@ rules:
       - "/\\bRedmine\\b/g" # project management tool
       - "/\\bRequireJS\\b/g" # JavaScript module loader
       - "/\\bRiak\\b/g" # distributed NoSQL database
+      - "/\\bShift JIS\\b/g" # Japanese character encoding
       - "/\\bSinon\\b/g" # JavaScript test spies, stubs, and mocks
       - "/\\bSpiderMonkey\\b/g" # JavaScript engine
       - "/\\bStylelint\\b/g" # CSS linter
@@ -470,10 +468,12 @@ rules:
       - "/\\bWebGL\\b/g" # Web Graphics Library
       - "/\\bWerkzeug\\b/g" # Python WSGI utility library
       - "/\\bWyvern\\b/g" # Game name
+      - "/\\bb2evolution?\\b/g" # b2evolution blogging software
       - "/\\b[Cc]groups?\\b/g" # control groups
       - "/\\bcontainerd\\b/g" # container runtime
       - "/\\bdotfiles\\b/g"
       - "/\\betcd\\b/g" # etcd.io
+      - "/\\bext3\\b/g" # Third extended file system
       - "/\\bgRPC\\b/g" # gRPC remote procedure call framework
       - "/\\bgorbital\\b/g" # molecular orbital visualization tool
       - "/\\bgtkmm\\b/g" # C++ bindings for GTK
@@ -498,7 +498,8 @@ rules:
       - "/\\b(appengine ja night|AJN)\\b/g" # App Engine Java/Japan Night
       - "/\\bBPStudy\\b/g" # BeProud Study
       - "/\\bBPStyle\\b/g" # BeProud internal study
-      - "/\\bEuroPython\\b/g"
+      - "/\\bC4\\b/g" # C4 Macintosh software developers conference
+      - "/\\bEuroPython\\b/g" # European Python Conference
       - "/\\bPyCon\\b/g" # Python Conference
       - "/\\bPyFes\\b/g" # Python Festival
       - "/\\bPyLadies\\b/g" # Python Ladies
@@ -548,7 +549,7 @@ rules:
       - "/\\b[Nn]amespaces?\\b/g"
       - "/\\b[Nn]-gram\\b/g" # N-gram text analysis
       - "/\\b[Pp]aywall(ed)?\\b/g"
-      - "/\\b[Pp]ermalink\\b/g"
+      - "/\\b[Pp]ermalinks?\\b/g"
       - "/\\b[Pp]laintext\\b/g"
       - "/\\b[Pp]reempt(ible)?\\b/g"
       - "/\\b[Ii]mpactful\\b/g" # impact + -ful
@@ -612,6 +613,7 @@ rules:
       - "/\\bGMP\\b/g" # Goroutine, Mutex, and Channel (GMP)
       - "/\\bGKE\\b/g" # Google Kubernetes Engine
       - "/\\bGPUs?\\b/g" # Graphics Processing Unit
+      - "/\\bGTK\\b/g" # GIMP Toolkit
       - "/\\bGb\\b/g" # Gigabyte
       - "/\\bHDFS\\b/g" # Hadoop Distributed File System
       - "/\\bHTML5\\b/g" # HyperText Markup Language version 5
@@ -628,6 +630,7 @@ rules:
       - "/\\bMCP\\b/g" # Model Context Protocol
       - "/\\bMNIST\\b/g" # Modified National Institute of Standards and Technology DB
       - "/\\bMQ\\b/g" # Message Queue
+      - "/\\bMVC\\b/g" # Model-View-Controller
       - "/\\bNoSQL\\b/g" # Not Only SQL
       - "/\\bOSS\\b/g" # Open Source Software
       - "/\\bQPS\\b/g" # Queries Per Second
@@ -657,6 +660,7 @@ rules:
       - "/\\bUTS\\b/g" # Unix Time-Sharing
       - "/\\bUX\\b/g" # User Experience
       - "/\\bVC\\b/g" # Venture Capital
+      - "/\\bVFAT\\b/g" # Virtual File Allocation Table
       - "/\\bVMs?\\b/g" # Virtual Machine
       - "/\\bWASM\\b/g" # WebAssembly
       - "/\\bWSDL\\b/g" # Web Services Description Language

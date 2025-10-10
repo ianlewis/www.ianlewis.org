@@ -19,7 +19,7 @@ I am using `rhythmbox` so the following packages are required if using
 - `rhythmbox`
 - `rhythmbox-plugins` - Without these pretty much nothing but playback works.
 - `gstreamer0.10-plugins-good`
-- `gstreamer0.10-plugins-ugly `- for MP3 playback
+- `gstreamer0.10-plugins-ugly` - for MP3 playback
 - `gstreamer0.10-plugins` - for on the fly Ogg -\> MP3 encoding (this is good
   since iPod doesn't support Vorbis)
 

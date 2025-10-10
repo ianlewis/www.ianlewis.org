@@ -72,8 +72,8 @@ Containers](https://katacontainers.io/), or [Nabla
 Containers](https://nabla-containers.github.io/). The runtime handler is exposed
 in the Kubernetes API using the [`RuntimeClass`
 object](https://kubernetes.io/docs/concepts/containers/runtime-class/) which is
-alpha in Kubernetes 1.12. There is more on the shim concept on [PR
-#2434](https://github.com/containerd/containerd/pull/2434).
+alpha in Kubernetes 1.12. There is more on the shim concept on
+[PR #2434](https://github.com/containerd/containerd/pull/2434).
 
 ### Docker
 
