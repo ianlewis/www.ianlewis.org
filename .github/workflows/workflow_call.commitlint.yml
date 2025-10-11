@@ -62,6 +62,7 @@ jobs:
 
       - name: commitlint
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMITLINT_FROM_REF: ${{ inputs.from_ref }}
           COMMITLINT_TO_REF: ${{ inputs.to_ref }}
         run: make commitlint
