@@ -9,11 +9,22 @@ render_with_liquid: false
 locale: ja
 ---
 
-Python Hackathon 2011.02 に参加しに行ってきました。今回は、ちょっと遅く着いたが、楽しかった。
+Python Hackathon 2011.02に参加しに行ってきました。今回は、ちょっと遅く着いたが、楽しかった。
 
 やったことはほとんどプレゼンの準備でした。発表したのは、[Twisted](http://twistedmatrix.com/)で作られたロングポーリングチャットサーバの作り方についてでした。
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/xrp8u56T9XPIn0" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/IanMLewis/twisted" title="Twisted ロングポーリング チャット サーバ" target="_blank">Twisted ロングポーリング チャット サーバ</a> </strong> from <strong><a href="https://www.slideshare.net/IanMLewis" target="_blank">Ian Lewis</a></strong> </div>
+<iframe
+    title="Slideshare viewer"
+    src="https://www.slideshare.net/slideshow/embed_code/key/xrp8u56T9XPIn0"
+    width="610"
+    height="515"
+    frameborder="0"
+    marginwidth="0"
+    marginheight="0"
+    scrolling="no"
+    style="border: var(--border-1) solid #CCC; border-width:1px; margin-bottom:5px; max-width:100%;"
+    allowfullscreen>
+</iframe>
 
 チャットサーバ自体のコードはこんな感じ
 

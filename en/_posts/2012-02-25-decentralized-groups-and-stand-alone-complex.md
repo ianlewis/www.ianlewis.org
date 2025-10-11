@@ -12,7 +12,16 @@ The other day I watched the talk "The coming war on general computation" by
 [Boing Boing](http://boingboing.net/) editor [Cory
 Doctorow](http://boingboing.net/about#cory).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HUEvRyemKSg#t=45m36s" frameborder="0" allowfullscreen></iframe>
+<iframe
+    width="560"
+    height="315"
+    src="https://www.youtube-nocookie.com/embed/HUEvRyemKSg?si=6HK-VFnUMSF8_HAL&amp;start=2736"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+</iframe>
 
 The talk itself was very interesting and I encourage anyone interested in the
 recent attempts to pass laws like SOPA to listen to the talk. Cory makes a lot

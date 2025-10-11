@@ -17,7 +17,18 @@ locale: ja
 
 Python コミュニティの中により楽しくなるのであれば、何でもいいと思いますが、「お前、誰よ」というのをこれからも使ってくれれば嬉しいなと思います。 Python コミュニティは楽しいよ！ Python 初心者でも歓迎ですよ！という環境をこれからも作って生きたいと思います。
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/rgsX3l0ePS28Da" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/IanMLewis/sphinx-11-i18n" title="Sphinx 1.1 i18n 機能紹介" target="_blank">Sphinx 1.1 i18n 機能紹介</a> </strong> from <strong><a href="https://www.slideshare.net/IanMLewis" target="_blank">Ian Lewis</a></strong> </div>
+<iframe
+    title="Slideshare viewer"
+    src="https://www.slideshare.net/slideshow/embed_code/key/rgsX3l0ePS28Da"
+    width="610"
+    height="515"
+    frameborder="0"
+    marginwidth="0"
+    marginheight="0"
+    scrolling="no"
+    style="border: var(--border-1) solid #CCC; border-width:1px; margin-bottom:5px; max-width:100%;"
+    allowfullscreen>
+</iframe>
 
 ## 「お前、誰よ」写真まとめ
 

@@ -56,9 +56,9 @@ layout: default
             {%- comment -%}
               TODO(#315): Truncating text can cut off html entities
             {%- endcomment -%}
-            {{ post.content | strip_html | truncate: 500 }}
+            {{ post.content | strip_html | truncate: 500 | escape }}
           {% else %}
-            {{ post.content | strip_html | truncatewords: 100 }}
+            {{ post.content | strip_html | truncatewords: 100 | escape }}
           {% endif %}
         </div>
       </li>

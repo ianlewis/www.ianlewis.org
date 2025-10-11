@@ -28,15 +28,10 @@ export default defineConfig({
     "no-inline-style": "off",
 
     // TODO(#315): Enable these rules once the issues are resolved.
-    "element-permitted-parent": "off",
-    "element-required-attributes": "off",
     "long-title": "off",
     "no-deprecated-attr": "off",
-    "no-raw-characters": "off",
     "no-trailing-whitespace": "off",
-    "prefer-tbody": "off",
     "unique-landmark": "off",
-    "unrecognized-char-ref": "off",
     "valid-id": "off",
     "void-style": "off",
     "wcag/h30": "off",
