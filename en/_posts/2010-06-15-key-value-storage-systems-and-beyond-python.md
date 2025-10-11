@@ -14,9 +14,15 @@ PowerPoint file or PDF so I was forced to recreate my presentation locally.
 Anyway, I placed the slides to my talk at [PyCon Asia](http://pycon.sit.rp.sg/)
 online please check it out on Slideshare.
 
-<iframe src="https://www.slideshare.net/slideshow/embed_code/key/jWbLwzJMBFbw2M?startSlide=1" width="597" height="486" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border: var(--border-1) solid #CCC; border-width:1px; margin-bottom:5px;max-width: 100%;" allowfullscreen></iframe>
-<div style="margin-bottom:5px"><strong>
-<a href="https://www.slideshare.net/slideshow/key-value-4503000/4503000" title="Key Value Storage Systems ... and Beyond ... with Python" target="_blank">Key Value Storage Systems ... and Beyond ... with Python</a>
-</strong> from <strong>
-<a href="https://www.slideshare.net/IanMLewis" target="_blank">Ian Lewis</a>
-</strong></div>
+<iframe
+    title="Slideshare viewer"
+    src="https://www.slideshare.net/slideshow/embed_code/key/jWbLwzJMBFbw2M"
+    width="610"
+    height="515"
+    frameborder="0"
+    marginwidth="0"
+    marginheight="0"
+    scrolling="no"
+    style="border: var(--border-1) solid #CCC; border-width:1px; margin-bottom:5px; max-width:100%;"
+    allowfullscreen>
+</iframe>
