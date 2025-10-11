@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Django redirect_to はnon-ascii URLに対応してない"
+title: "Django redirect_to はnon-ASCII URLに対応してない"
 date: 2009-09-22 12:19:28 +0000
 permalink: /jp/django-redirect_to-non-ascii-url
 blog: jp
@@ -22,11 +22,7 @@ urlpatterns = patterns('django.views.generic.simple',
 )
 ```
 
-そうした場合、redirect_to は
-tag_nameに入ったデータをリダイレクト先にURLに入れてくれます。が、そのデータはasciiでない場合、redirect_to
-の中にtag_nameのデータに入れたURLを
-urlquoteに特に渡すなど、特に何もしないで、HttpResponseRedirectに渡す。redirect_toはDjango
-1.1でこの通り
+そうした場合、`redirect_to`は`tag_name`に入ったデータをリダイレクト先にURLに入れてくれます。が、そのデータはASCIIでない場合、`redirect_to`の中に`tag_name`のデータに入れたURLを`urlquote`に特に渡すなど、特に何もしないで、`HttpResponseRedirect`に渡す。`redirect_to`はDjango 1.1でこの通り
 
 ```python
 def redirect_to(request, url, permanent=True, **kwargs):
@@ -60,7 +56,7 @@ UnicodeEncodeError: 'ascii' codec can't encode characters in position 8-11: ordi
   range(128), HTTP response headers must be in US-ASCII format
 ```
 
-実際は下バグが既にあって、HttpResponseRedirectの中で、asciiでないURLをちゃんとエンコードするはず。
+実際は下バグが既にあって、`HttpResponseRedirect`の中で、ASCIIでないURLをちゃんとエンコードするはず。
 
 [\#11522 Crash on redirect to a relative URL if request.path is
 unicode](http://code.djangoproject.com/ticket/11522)

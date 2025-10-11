@@ -105,7 +105,7 @@ ways in the hardest to work at in others.
 The people at Google are great. They are really, really smart thoughtful people
 that are great to work with. No place is perfect, and there are still frictions
 here and there but, by in large, the interactions I have at Google are
-overwhelmingly positive. The benifit of working with smart, thoughtful people
+overwhelmingly positive. The benefit of working with smart, thoughtful people
 cannot be overstated. In this way it's one of the nicest places to work.
 
 ### Systems & Policies

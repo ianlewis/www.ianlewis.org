@@ -96,6 +96,7 @@ rules:
       - "/\\bAtsuo\\b/g"
       - "/\\bAtsushi\\b/g"
       - "/\\bBalahan\\b/g"
+      - "/\\bBerryman\\b/g"
       - "/\\bBlauzvern\\b/g"
       - "/\\bBleecher\\b/g"
       - "/\\bBranchaud\\b/g"
@@ -248,6 +249,7 @@ rules:
       - "/\\ba2c\\b/g"
       - "/\\b[Aa]kisute(sama)?\\b/g"
       - "/\\baodag\\b/g"
+      - "/\\bats\\b/g"
       - "/\\batsuoishimoto\\b/g"
       - "/\\bdeeet\\b/g"
       - "/\\bae35\\b/g"
@@ -377,6 +379,7 @@ rules:
       - "/\\bBudouX\\b/g" # Japanese morphological analyzer
       - "/\\bBuildbot\\b/g" # Python continuous integration tool
       - "/\\bBuildout\\b/g" # Python build system
+      - "/\\bBusyBox\\b/g" # Unix utilities in a single executable
       - "/\\bBundler\\b/g" # Ruby dependency manager
       - "/\\b(CGO|cgo)\\b/g" # Go tool for interfacing with C code
       - "/\\bCRI-O\\b/g" # Container Runtime Interface implementation for Kubernetes
@@ -498,6 +501,8 @@ rules:
       - "/\\b(appengine ja night|AJN)\\b/g" # App Engine Java/Japan Night
       - "/\\bBPStudy\\b/g" # BeProud Study
       - "/\\bBPStyle\\b/g" # BeProud internal study
+      - "/\\bBarCamp\\b/g"
+      - "/\\bBoing Boing\\b/g" # Boing Boing website
       - "/\\bC4\\b/g" # C4 Macintosh software developers conference
       - "/\\bEuroPython\\b/g" # European Python Conference
       - "/\\bPyCon\\b/g" # Python Conference
@@ -530,6 +535,7 @@ rules:
       - "/\\b[Aa]utoscaling\\b/g"
       - "/\\b[Bb]ackends?\\b/g" # the server side of a client-server system
       - "/\\b[Bb]ackpressure\\b/g" # pressure that opposes the desired flow
+      - "/\\b[Bb]alancers?\\b/g" # e.g. load balancer
       - "/\\b[Cc]omparator\\b/g" # compare + ator
       - "/\\b[Dd]eclarative(ly)?\\b/g"
       - "/\\b[Dd]ev\\b/g" # Development/Developer
@@ -579,6 +585,7 @@ rules:
       - "/\\bAPIs?\\b/g" # Application Programming Interface
       - "/\\bAPK\\b/g" # Android Package
       - "/\\bAPT\\b/g" # Advanced Package Tool
+      - "/\\bBOF\\b/g" # Birds of a Feather
       - "/\\bBPBP\\b/g" # BeProud Book Purchase
       - "/\\bBQ\\b/g" # BigQuery
       - "/\\bBUSL\\b/g" # Business Source License
@@ -705,42 +712,6 @@ rules:
       # TODO(#285): Handle or fix the following words.
       ##########################################################################
 
-      - "ascii"
-      - "ats"
-      - "auth"
-      - "AuthenticationMiddleware"
-      - "auth's"
-      - "balancer"
-      - "Balancer"
-      - "balancers"
-      - "Balancers"
-      - "barcamp"
-      - "Barcamp"
-      - "BarCamp"
-      - "BaseClass"
-      - "BaseTest"
-      - "bashrc"
-      - "behaviour"
-      - "benifit"
-      - "Benno's"
-      - "Berryman"
-      - "BigTable"
-      - "bitbucket"
-      - "blogspot"
-      - "Blogvent"
-      - "bluegreen"
-      - "bluesky"
-      - "BlueSky"
-      - "BOF"
-      - "Boing"
-      - "bouldering"
-      - "Bouldering"
-      - "bpssl"
-      - "bsky"
-      - "bufio"
-      - "buildout"
-      - "busybox"
-      - "bytecode"
       - "callables"
       - "callLater"
       - "cancelled"
