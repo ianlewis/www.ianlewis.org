@@ -152,11 +152,8 @@ include:
 exclude:
   - .sass-cache/
   - .jekyll-cache/
-  - aqua-checksums.json
-  - aqua.yaml
-  - gemfiles/
-  - node_modules/
-  - tools/
+  - AGENTS.md
+  - CLAUDE.md
   - CODE_OF_CONDUCT.md
   - CODEOWNERS
   - CONTRIBUTING.md
@@ -166,8 +163,14 @@ exclude:
   - LICENSE
   - Gemfile
   - Gemfile.lock
+  - commitlint.config.mjs
+  - eslint.config.mjs
+  - gemfiles/
+  - node_modules/
+  - third_party/
   - package.json
   - package-lock.json
   - renovate.json5
-  - requirements.txt
+  - requirements-dev.txt
+  - stylelint.config.mjs
   - til.sh
