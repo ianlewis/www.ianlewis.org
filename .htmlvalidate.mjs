@@ -28,8 +28,6 @@ export default defineConfig({
     "no-inline-style": "off",
 
     // TODO(#315): Enable these rules once the issues are resolved.
-    "attribute-boolean-style": "off",
-    "element-permitted-content": "off",
     "element-permitted-parent": "off",
     "element-required-attributes": "off",
     "long-title": "off",

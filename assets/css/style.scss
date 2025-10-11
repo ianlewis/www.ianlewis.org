@@ -27,13 +27,3 @@
   @use "toggle";
   @use "dark";
 {%- endif -%}
-
-ul.pager {
-    text-align: center;
-
-    li {
-        list-style: none;
-        display: inline-block;
-        padding: 1em;
-    }
-}
