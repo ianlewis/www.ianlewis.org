@@ -27,7 +27,8 @@ Steve Klabnik was tongue in cheek but got to the heart of the matter.
 
 [![it's true: my posts are real, and true](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20103552.png){: .align-center}](https://bsky.app/profile/steveklabnik.com/post/3lndqq5ykgc2g)
 
-A [verification bot](https://bsky.app/profile/verified.pds.mmatt.net) was created in record time.
+A [verification bot](https://bsky.app/profile/verified.pds.mmatt.net) was
+created in record time.
 
 [![Good morning everyone, sorry for the pings, and congrats on your Blue Checks!](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20104827.png){: .align-center}](https://bsky.app/profile/verified.pds.mmatt.net/post/3lndqgaqj6s2j)
 
@@ -66,11 +67,19 @@ post](https://steveklabnik.com/writing/thoughts-on-bluesky-verification/) or
 read more on the [ATProto
 wiki](https://wiki.atprotocol.community/en/wiki/reference/verification).
 
+<!-- textlint-disable spelling -->
+
 [![In ATProto – the open network we're built on – anybody can publish verifications. In the Bluesky app, Bluesky chooses whose verifications to show. This means that other apps could choose a different set of trusted verifiers, or use a different model entirely.](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20111837.png){: .align-center}](https://bsky.app/profile/jay.bsky.team/post/3lnem7rmx3k24)
+
+<!-- textlint-enable spelling -->
 
 Bluesky has only a few trusted verifiers so far, but one can assume that there will be more very soon.
 
+<!-- textlint-disable spelling -->
+
 [![@bsky.app @nytimes.com @wired.com @theathletic.bsky.social](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20122137.png){: .align-center}](https://bsky.app/profile/samuel.bsky.team/post/3lndyqyyr4k2k)
+
+<!-- textlint-enable spelling -->
 
 On its face, it seems like a decentralized verification scheme would be an
 improvement from what we used to have on Twitter. Individual Bluesky/ATProto
@@ -130,7 +139,11 @@ bitter that I'm not likely to get a check mark myself. However, the fact that I
 feel that way just kind of reinforces the idea that the check mark is more of a
 status symbol than a verification mechanism.
 
+<!-- textlint-disable spelling -->
+
 [![bluesky adding verification is only good if they verify me otherwise it's bad](/assets/images/2025-04-22-a-new-blue-check-mark-just-like-the-old-one/Screenshot%202025-04-22%20121800.png){: .align-center}](https://bsky.app/profile/crimew.gay/post/3lndrium5dk24)
+
+<!-- textlint-enable spelling -->
 
 So if it's just going to be a status symbol, is this verification really
 needed? Given

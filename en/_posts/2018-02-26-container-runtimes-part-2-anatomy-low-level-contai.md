@@ -61,9 +61,9 @@ perform the steps using the standard Linux
 [unshare](http://man7.org/linux/man-pages/man1/unshare.1.html) commands. You'll
 need to run most of the commands below as root.
 
-First let's set up a root filesystem for our container. We'll use the busybox
+First let's set up a root filesystem for our container. We'll use the BusyBox
 Docker container as our base. Here we create a temporary directory and extract
-busybox into it. Most of these commands need to be run as root.
+BusyBox into it. Most of these commands need to be run as root.
 
 ```shell
 CID=$(docker create busybox)
@@ -174,7 +174,7 @@ spec](https://github.com/opencontainers/runtime-spec) on GitHub. You can learn
 how to install runc from the [runc GitHub
 project](https://github.com/opencontainers/runc).
 
-First create the root filesystem. Here we'll use busybox again.
+First create the root filesystem. Here we'll use BusyBox again.
 
 ```shell
 mkdir rootfs

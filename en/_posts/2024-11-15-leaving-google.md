@@ -116,7 +116,7 @@ in the Tokyo area so I won’t be far from all of my local friends.
 If you haven't already, you can connect with me on
 [Linkedin](https://www.linkedin.com/in/ianmlewis/),
 [X/Twitter](https://x.com/ianmlewis),
-[BlueSky](https://bsky.app/profile/ianlewis.bsky.social), and, as always, via
+[Bluesky](https://bsky.app/profile/ianlewis.bsky.social), and, as always, via
 email at [`ian@ianlewis.org`](mailto:ian@ianlewis.org).
 
 Thanks to all the folks I worked with along the way! I feel most grateful for

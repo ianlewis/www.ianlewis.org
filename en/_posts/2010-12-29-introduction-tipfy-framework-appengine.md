@@ -16,14 +16,14 @@ I usually use the [kay framework](http://code.google.com/p/kay-framework/) for
 App Engine development as I am a developer for the framework, but recently I
 have been playing with the [Tipfy](http://www.tipfy.org/) framework written by
 Rodrigo Moraes. Like Kay, Tipfy is a framework made specifically for Google App
-Engine. While Kay has drawn a lot of it's functionality from
+Engine. While Kay has drawn a lot of its functionality from
 [Django](http://www.djangoproject.com), Tipfy attempts to be as close to the App
 Engine SDK's [Webapp
 Framework](http://code.google.com/intl/en/appengine/docs/python/gettingstarted/usingwebapp.html).
 
 ## Install
 
-Tipfy uses the [buildout](http://www.buildout.org/) framework to manage
+Tipfy uses the [Buildout](http://www.buildout.org/) framework to manage
 dependencies and deployment. Installation is covered in the [Tipfy Guide's
 Installation Page](http://www.tipfy.org/wiki/guide/installation/).
 
@@ -35,7 +35,7 @@ wget http://www.tipfy.org/tipfy.zip
 unzip tipfy.zip
 ```
 
-Next, you will need to create the buildout environment. Buildout will download
+Next, you will need to create the Buildout environment. Buildout will download
 and install the App Engine SDK and everything you need to get started from
 [PyPI](http://pypi.python.org/).
 
@@ -214,7 +214,7 @@ The use of mixins, standard python packaging and idioms might be a bit hard to
 understand for newcomers to Python (There are many who are using python for the
 first time on App Engine). However, given that App Engine projects require all
 the needed python code to be contained within the project directory, the use of
-buildout to allow developers to distribute and add packages is one of Tipfy's
+Buildout to allow developers to distribute and add packages is one of Tipfy's
 strengths. Tipfy's use of mixins also allows code to be divided and reused based
 on functionality, allowing developers to add only the required code and modules
 to their project.
