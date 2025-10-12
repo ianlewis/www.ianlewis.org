@@ -15,6 +15,7 @@
   "devDependencies": {
     "@commitlint/cli": "20.1.0",
     "@commitlint/config-conventional": "20.0.0",
+    "@netlify/plugin-csp-nonce": "1.5.2",
     "@shopify/prettier-plugin-liquid": "1.10.0",
     "dictionary-en": "4.0.0",
     "eslint": "9.37.0",
@@ -22,6 +23,7 @@
     "eslint-plugin-prettier": "5.5.4",
     "html-validate": "10.1.1",
     "markdownlint-cli": "0.45.0",
+    "netlify-cli": "23.9.1",
     "prettier": "3.6.2",
     "renovate": "41.138.1",
     "stylelint": "16.25.0",

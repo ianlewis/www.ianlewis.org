@@ -39,7 +39,10 @@ AQUA_CHECKSUM ?= $(AQUA_CHECKSUM.$(uname_s).$(uname_m))
 AQUA_URL = https://$(AQUA_REPO)/releases/download/$(AQUA_VERSION)/aqua_$(kernel)_$(arch).tar.gz
 export AQUA_ROOT_DIR = $(REPO_ROOT)/.aqua
 
-JEKYLL_SERVE_HOST ?= 127.0.0.1
+# Default port for `make serve`.
+SERVE_PORT ?= 8888
+# Default build context for `make build` and `make serve`.
+BUILD_CONTEXT ?= dev
 
 # Ensure that aqua and aqua installed tools are in the PATH.
 export PATH := $(REPO_ROOT)/.bin/aqua-$(AQUA_VERSION):$(AQUA_ROOT_DIR)/bin:$(PATH)
@@ -176,12 +179,31 @@ bundle-install: Gemfile.lock
 	@bundle check || bundle install
 
 .PHONY: build
-build: bundle-install ## Build the site with Jekyll
-	@bundle exec jekyll build
+build: node_modules/.installed bundle-install ## Build the site.
+	@# bash \
+	debug_options=""; \
+	if [ -n "$(DEBUG_LOGGING)" ]; then \
+		debug_options="--debug"; \
+	fi; \
+	$(REPO_ROOT)/node_modules/.bin/netlify build \
+		--context "$(BUILD_CONTEXT)" \
+		--offline \
+		$${debug_options}
 
 .PHONY: serve
-serve: bundle-install ## Run Jekyll test server.
-	@bundle exec jekyll serve --future --drafts -H $(JEKYLL_SERVE_HOST)
+serve: node_modules/.installed bundle-install ## Run local development server.
+	@# bash \
+	debug_options=""; \
+	if [ -n "$(DEBUG_LOGGING)" ]; then \
+		debug_options="--debug"; \
+	fi; \
+	$(REPO_ROOT)/node_modules/.bin/netlify dev \
+		--skip-gitignore \
+		--no-open \
+		--context "$(BUILD_CONTEXT)" \
+		--offline \
+		--port "$(SERVE_PORT)" \
+		$${debug_options}
 
 ## Testing
 #####################################################################
@@ -750,3 +772,4 @@ clean: ## Delete temporary files.
 	@$(RM) -r node_modules
 	@$(RM) *.sarif.json
 	@$(RM) -r _site
+	@$(RM) -r .netlify
