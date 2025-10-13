@@ -4,7 +4,7 @@ title: "株式会社ビープラウドを退社しました"
 date: 2015-01-06 16:00:00 +0000
 permalink: /jp/beproud-wo-taisha-shimashita
 blog: jp
-tags: beproud
+tags: personal work
 render_with_liquid: false
 locale: ja
 ---

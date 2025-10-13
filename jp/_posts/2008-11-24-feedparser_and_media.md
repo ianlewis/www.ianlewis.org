@@ -4,7 +4,7 @@ title: "feedparserで、media コンテンツを取る"
 date: 2008-11-24 21:12:30 +0000
 permalink: /jp/feedparser_and_media
 blog: jp
-tags: media python rss
+tags: tech programming python
 render_with_liquid: false
 locale: ja
 ---

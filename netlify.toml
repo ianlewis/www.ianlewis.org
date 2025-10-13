@@ -101,7 +101,7 @@ environment = { NODE_VERSION = "22" }
   to = "/en/tag/tech/"
   status = 301
 
-# Old Tags
+# Old English Tags
 ############################
 
 [[redirects]]
@@ -128,6 +128,8 @@ environment = { NODE_VERSION = "22" }
   from = "/en/tag/google-container-engine/"
   to = "/en/tag/gke/"
   status = 301
+
+# Tech
 
 [[redirects]]
   from = "/en/tag/internet%20explorer/"
@@ -760,12 +762,422 @@ environment = { NODE_VERSION = "22" }
   to = "/en/tag/programming/"
   status = 301
 
+# Old Japanese Tags
+############################
+
+# Cloud
+
+[[redirects]]
+  from = "/jp/tag/appengine/"
+  to = "/jp/tag/cloud/"
+  status = 301
+
 [[redirects]]
   from = "/jp/tag/cloud%20bigtable/"
-  to = "/jp/tag/cloud-bigtable/"
+  to = "/jp/tag/cloud/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/gcp/"
+  to = "/jp/tag/cloud/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/aws/"
+  to = "/jp/tag/cloud/"
+  status = 301
+
+# Django
+
+[[redirects]]
+  from = "/jp/tag/redirect/"
+  to = "/jp/tag/django/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/redirect_to/"
+  to = "/jp/tag/django/"
+  status = 301
+
+# Events
+
+[[redirects]]
+  from = "/jp/tag/イベント/"
+  to = "/jp/tag/events/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/デブサミ/"
+  to = "/jp/tag/events/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/勉強会/"
+  to = "/jp/tag/events/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/python温泉/"
+  to = "/jp/tag/events/"
+  status = 301
+
+# JavaScript
+
+[[redirects]]
+  from = "/jp/tag/mochikit/"
+  to = "/jp/tag/javascript/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/jquery/"
+  to = "/jp/tag/javascript/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/jqueryui/"
+  to = "/jp/tag/javascript/"
+  status = 301
+
+# Meta
+
+[[redirects]]
+  from = "/jp/tag/webfaction/"
+  to = "/jp/tag/meta/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/ホスティング/"
+  to = "/jp/tag/meta/"
+  status = 301
+
+# Musings
+
+[[redirects]]
+  from = "/jp/tag/日本語、伝え方、話し方/"
+  to = "/jp/tag/musings/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/日本語/"
+  to = "/jp/tag/musings/"
+  status = 301
+
+# Personal
+
+[[redirects]]
+  from = "/jp/tag/日本/"
+  to = "/jp/tag/personal/"
+  status = 301
+
+# Programming
+
+[[redirects]]
+  from = "/jp/tag/mercurial/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/hg/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/mq/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/patch/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/モバイル/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/ソフトウエア開発/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/json/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/rst/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/restructured/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/vim/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/graphviz/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/model/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/sitemap/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/media/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/rss/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/svn/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/開発サーバ/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/java/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/scala/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/ブランチ/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/null/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/変数/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/例外/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/unicode/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/test/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+# Projects
+
+[[redirects]]
+  from = "/jp/tag/jsonschema/"
+  to = "/jp/tag/projects/"
+  status = 301
+
+# Python
+
+[[redirects]]
+  from = "/jp/tag/pip/"
+  to = "/jp/tag/python/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/pylons/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/virtualenv/"
+  to = "/jp/tag/python/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/virtualenvwrapper/"
+  to = "/jp/tag/python/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/werkzeug/"
+  to = "/jp/tag/python/"
+  status = 301
+
+# Tech
+
+[[redirects]]
+  from = "/jp/tag/pdf/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/ドキュメント/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/全文検索/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/text/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/search/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/opensocial/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/オクセンス/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/絵文字/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/オープンソース/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/google/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/analytics/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/planet/"
+  to = "/jp/tag/tech/"
   status = 301
 
 [[redirects]]
   from = "/jp/tag/machine%20learning/"
-  to = "/jp/tag/machine-learning/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/データベース/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/sqlite/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/コラム/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/型/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/x5/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/電池、ハンダ付け、ハンダ、秋葉原、iaudio/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/simeji/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/android/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/open/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/social/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/mixi/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/フォント/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/stunnel/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/disqus/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/tokyotyrant/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/仮想化/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/メンテナンス/"
+  to = "/jp/tag/tech/"
   status = 301

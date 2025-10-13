@@ -4,7 +4,7 @@ title: "あの人の話が長い理由"
 date: 2009-01-29 22:49:26 +0000
 permalink: /jp/hanashi_ga_nagai_riyuu
 blog: jp
-tags: 日本語、伝え方、話し方
+tags: musings
 render_with_liquid: false
 locale: ja
 ---

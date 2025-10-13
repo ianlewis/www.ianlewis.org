@@ -4,6 +4,7 @@ title: "Google Developer Day 2008"
 date: 2008-06-11 12:20:24 +0000
 permalink: /jp/limg-src-http-code-google-com-intl-ja-ev-1
 blog: jp
+tags: events tech
 render_with_liquid: false
 locale: ja
 ---

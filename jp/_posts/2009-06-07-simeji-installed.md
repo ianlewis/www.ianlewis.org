@@ -4,7 +4,7 @@ title: "Androidで日本語入力 simeji の最新版をインストールして
 date: 2009-06-07 21:34:26 +0000
 permalink: /jp/simeji-installed
 blog: jp
-tags: 日本語 simeji android
+tags: tech
 render_with_liquid: false
 locale: ja
 ---

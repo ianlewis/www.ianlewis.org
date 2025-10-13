@@ -4,7 +4,7 @@ title: "Google App Engine SDK 1.1.8がリリースされました"
 date: 2009-01-18 11:45:59 +0000
 permalink: /jp/google-appengine-sdk-1-1-8
 blog: jp
-tags: python appengine django
+tags: tech python django
 render_with_liquid: false
 locale: ja
 ---

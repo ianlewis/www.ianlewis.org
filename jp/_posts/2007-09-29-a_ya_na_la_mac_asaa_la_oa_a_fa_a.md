@@ -4,7 +4,7 @@ title: "日本には一年になりました"
 date: 2007-09-29 01:22:55 +0000
 permalink: /jp/a_ya_na_la_mac_asaa_la_oa_a_fa_a
 blog: jp
-tags: 日本
+tags: personal
 render_with_liquid: false
 locale: ja
 ---

@@ -4,7 +4,7 @@ title: "DjangoGraphviz"
 date: 2008-11-08 11:40:03 +0000
 permalink: /jp/djangographviz
 blog: jp
-tags: python django graphviz model
+tags: tech programming python django
 render_with_liquid: false
 locale: ja
 ---
@@ -18,7 +18,7 @@ PYTHONPATH=$PYTHONPATH:. DJANGO_SETTINGS_MODULE=appmodule.settings python modelv
 dot app.dot -Tpng app.png
 ```
 
-最近作った[django-lifestream](http://www.bitbucket.org/IanLewis/django-lifestream/overview/)のモデル構成イメージを作るとこれがでる。
+最近作った[`django-lifestream`](http://www.bitbucket.org/IanLewis/django-lifestream/overview/)のモデル構成イメージを作るとこれがでる。
 
 ![](/assets/images/gallery/dlife.png){:style="width: 40%; display:block; margin-left:auto; margin-right:auto"}
 
