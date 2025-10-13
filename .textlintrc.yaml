@@ -388,6 +388,7 @@ rules:
       - "/\\bCygwin\\b/g"
       - "/\\bCython\\b/g" # C-Extensions for Python
       - "/\\bDvorakJP\\b/g" # Dvorak Japanese Keyboard Layout
+      - "/\\bEUC-JP\\b/g" # Japanese character encoding
       - "/\\bFastCGI\\b/g"
       - "/\\bFulcio\\b/g" # Sigstore's Fulcio
       - "/\\bFunktion\\b/g"
@@ -571,6 +572,7 @@ rules:
       - "/\\b[Tt]radeoffs?\\b/g" # trade + off
       - "/\\b[Uu]ntrusted\\b/g" # used to describe code in a security context
       - "/\\b[Uu]nimpactful\\b/g" # un + impactful
+      - "/\\b[Vv]alidators?\\b/g" # e.g. JSON Schema validator
       - "/\\b[Ww]ifi\\b/g" # Wi-Fi
 
       # Acronyms & Abbreviations
@@ -1265,7 +1267,6 @@ rules:
       - "usless"
       - "ustream"
       - "utc"
-      - "validator"
       - "vcdiff"
       - "ve"
       - "VeOsHHlGkCI"
@@ -1324,7 +1325,6 @@ rules:
       - "additionalProperties" # JSON Schema property
       - "readonly" # Read-only attribute
       - "PyObjC" # Python Objective-C bridge
-      - "EUCJP" # Japanese character encoding (Extended Unix Code for Japanese)
       - "DOCOMO" # Japanese mobile operator NTT DOCOMO
       - "FOMA" # Freedom of Mobile multimedia Access (DOCOMO's 3G service)
       - "PNG" # Portable Network Graphics

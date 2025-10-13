@@ -4,7 +4,7 @@ title: "Django redirect_to はnon-ASCII URLに対応してない"
 date: 2009-09-22 12:19:28 +0000
 permalink: /jp/django-redirect_to-non-ascii-url
 blog: jp
-tags: django redirect redirect_to
+tags: tech programming python django
 render_with_liquid: false
 locale: ja
 ---

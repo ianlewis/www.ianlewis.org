@@ -4,7 +4,7 @@ title: "Debian 勉強会 @ Google Japan"
 date: 2008-03-17 01:40:37 +0000
 permalink: /jp/debian_benkyoukai_at_google
 blog: jp
-tags: google イベント オープンソース debian
+tags: events tech
 render_with_liquid: false
 locale: ja
 ---

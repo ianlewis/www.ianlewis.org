@@ -4,7 +4,7 @@ title: "BPStudy: VIM勉強会"
 date: 2009-02-23 11:20:18 +0000
 permalink: /jp/vim_benkyoukai-1
 blog: jp
-tags: 勉強会 vim
+tags: tech programming events
 render_with_liquid: false
 locale: ja
 ---

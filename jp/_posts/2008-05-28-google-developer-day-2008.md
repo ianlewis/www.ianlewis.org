@@ -4,6 +4,7 @@ title: "Google Developer Day 2008"
 date: 2008-05-28 20:19:47 +0000
 permalink: /jp/google-developer-day-2008
 blog: jp
+tags: events tech
 render_with_liquid: false
 locale: ja
 ---

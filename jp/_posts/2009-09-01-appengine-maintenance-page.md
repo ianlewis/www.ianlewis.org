@@ -4,7 +4,7 @@ title: "App Engine メンテナンスが行われる時にメンテナンスペ�
 date: 2009-09-01 23:23:46 +0000
 permalink: /jp/appengine-maintenance-page
 blog: jp
-tags: appengine メンテナンス
+tags: tech programming python cloud
 render_with_liquid: false
 locale: ja
 ---

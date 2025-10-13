@@ -4,7 +4,7 @@ title: "daemontoolsを使ってdjango fastcgiのデーモンを設定する"
 date: 2009-12-13 22:01:54 +0000
 permalink: /jp/daemontools-with-django
 blog: jp
-tags: django
+tags: tech programming django
 render_with_liquid: false
 locale: ja
 ---

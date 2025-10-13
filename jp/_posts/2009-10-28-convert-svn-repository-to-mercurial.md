@@ -4,7 +4,7 @@ title: "svn リポジトリをmercurialに変換"
 date: 2009-10-28 09:52:43 +0000
 permalink: /jp/convert-svn-repository-to-mercurial
 blog: jp
-tags: mercurial hg svn
+tags: tech programming
 render_with_liquid: false
 locale: ja
 ---

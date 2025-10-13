@@ -4,7 +4,7 @@ title: "携帯プログラミングの注意すること"
 date: 2007-11-08 19:16:06 +0000
 permalink: /jp/a_oacma_a_sa_da_ca_a_sa_da_rasua_a_a_a_a
 blog: jp
-tags: 日本 モバイル ソフトウエア開発
+tags: tech programming
 render_with_liquid: false
 locale: ja
 ---
@@ -13,9 +13,9 @@ locale: ja
 
 ## 第一：**エンコーディング**について
 
-最近でた携帯ブラウザはUTF-8や、ShiftJISや、EUCJPや、ISO-2022-JPや、日本語の多くのエンコディングを対応するけども、ShiftJISしか対応していない携帯もあります。古い携帯はShiftJISだけを対応するものはあるけど、EUCJPや、ISO-2022-JPだけを対応する携帯はほとんどないと言います。古い携帯上で、UTF-8のサイトに行けば、文字化けになります。ですから、古い携帯も新しい携帯も対応するには、ShiftJISじゃないHTMLを出すことを注意するべし。
+最近でた携帯ブラウザはUTF-8や、Shift JISや、EUC-JPや、ISO-2022-JPや、日本語の多くのエンコディングを対応するけども、Shift JISしか対応していない携帯もあります。古い携帯はShift JISだけを対応するものはあるけど、EUC-JPや、ISO-2022-JPだけを対応する携帯はほとんどないと言います。古い携帯上で、UTF-8のサイトに行けば、文字化けになります。ですから、古い携帯も新しい携帯も対応するには、Shift JISじゃないHTMLを出すことを注意するべし。
 
-HTMLではShiftJISしかサポートしていない携帯は多いけども、メールの方はISO-2022-JPを使うべし。
+HTMLではShift JISしかサポートしていない携帯は多いけども、メールの方はISO-2022-JPを使うべし。
 
 ## 第二：テーブルについて
 

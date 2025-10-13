@@ -4,7 +4,7 @@ title: "jsonschema ヴァリデーター 0.1a"
 date: 2008-07-31 15:29:07 +0000
 permalink: /jp/jsonschema-0-1a
 blog: jp
-tags: projects python json jsonschema
+tags: tech programming projects python
 render_with_liquid: false
 locale: ja
 ---

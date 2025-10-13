@@ -4,7 +4,7 @@ title: "jQueryUIのsortableウィジェット接続の仕方"
 date: 2009-04-24 13:10:48 +0000
 permalink: /jp/jqueryui-sortable-connect
 blog: jp
-tags: jquery jqueryui
+tags: tech programming javascript
 render_with_liquid: false
 locale: ja
 ---

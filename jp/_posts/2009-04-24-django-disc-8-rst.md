@@ -4,7 +4,7 @@ title: "Django勉強会Disc.8の資料をRSTにした"
 date: 2009-04-24 13:22:58 +0000
 permalink: /jp/django-disc-8-rst
 blog: jp
-tags: django 勉強会 rst restructured text pdf ドキュメント
+tags: tech programming events python django
 render_with_liquid: false
 locale: ja
 ---
