@@ -9,7 +9,7 @@ render_with_liquid: false
 
 ## AI
 
-- [I am disappointed in the AI discourse](I am disappointed in the AI discourse) - _Steve Klabnik_
+- [I am disappointed in the AI discourse](https://steveklabnik.com/writing/i-am-disappointed-in-the-ai-discourse/) -- _Steve Klabnik_
 
     This post from Steve Klabnik has been popular on Bluesky recently. I
     personally didn't get a lot out of it though. I am pretty skeptical about AI
@@ -27,7 +27,7 @@ render_with_liquid: false
     want quickly that I'm not patient enough to go back and forth with an AI to
     get what I want?
 
-- [The Software Engineering Identity Crisis](https://annievella.com/posts/the-software-engineering-identity-crisis/) - _Annie Vella_
+- [The Software Engineering Identity Crisis](https://annievella.com/posts/the-software-engineering-identity-crisis/) -- _Annie Vella_
 
     This is an article linked from Steve's blog post. I found this to be pretty
     close to how I've felt about AI. What I love most about coding is the craft.
@@ -45,7 +45,7 @@ render_with_liquid: false
 
 ## NixOS
 
-- [How I like to install NixOS (declaratively)](https://michael.stapelberg.ch/posts/2025-06-01-nixos-installation-declarative/) - _Michael Stapelberg_
+- [How I like to install NixOS (declaratively)](https://michael.stapelberg.ch/posts/2025-06-01-nixos-installation-declarative/) -- _Michael Stapelberg_
 
     Michael describes how he installs NixOS. He describes how to build a NixOS
     install ISO image which is pretty cool since you can customize and build it
@@ -59,7 +59,7 @@ render_with_liquid: false
 
 ## Web Development
 
-- [Compiler Explorer and the Promise of URLs That Last Forever](https://xania.org/202505/compiler-explorer-urls-forever) - _Matt Godbolt_
+- [Compiler Explorer and the Promise of URLs That Last Forever](https://xania.org/202505/compiler-explorer-urls-forever) -- _Matt Godbolt_
 
     Matt Godbolt describes how the Compiler Explorer is handling `goog.gl` links
     that are now going away. Previously they used `goog.gl` to create short
