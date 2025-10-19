@@ -126,7 +126,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/google-container-builder/"
-  to = "/en/tag/cloud"
+  to = "/en/tag/cloud/"
   status = 301
 
 [[redirects]]
