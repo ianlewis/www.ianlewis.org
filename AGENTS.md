@@ -90,3 +90,7 @@ not be installed manually. These dependencies include:
 - GitHub Actions workflow enforces all linting rules
 - The site supports both light and dark themes
 - Social media links include Bluesky, Mastodon, GitHub, LinkedIn
+- All commits should follow the Conventional Commits specification following the
+  `@commitlint/config-conventional` `commitlint` preset. This includes the
+  following types: `build`, `chore`, `ci`, `docs`, `feat`, `fix`, `perf`,
+  `refactor`, `revert`, `style`, and `test`.
