@@ -333,6 +333,11 @@ environment = { NODE_VERSION = "22" }
   status = 301
 
 [[redirects]]
+  from = "/en/tag/orchestration/"
+  to = "/en/tag/tech/"
+  status = 301
+
+[[redirects]]
   from = "/en/tag/pdf/"
   to = "/en/tag/tech/"
   status = 301
