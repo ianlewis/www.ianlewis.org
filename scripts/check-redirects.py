@@ -20,20 +20,28 @@ import sys
 from pathlib import Path
 from typing import Dict, List, Tuple
 
+# Maximum length of redirect chain to detect before considering it an infinite loop
+MAX_CHAIN_LENGTH = 10
+
 
 def parse_redirects(filename: str) -> Dict[str, str]:
     """Parse netlify.toml and extract redirect mappings."""
     redirects = {}
 
-    with open(filename, "r") as f:
+    with open(filename, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Find all redirect blocks
-    pattern = r'\[\[redirects\]\]\s+from\s*=\s*"([^"]+)"\s+to\s*=\s*"([^"]+)"'
-    matches = re.findall(pattern, content)
-
-    for from_path, to_path in matches:
-        redirects[from_path] = to_path
+    # Find all redirect blocks (supports both 'from' before 'to' and vice versa)
+    # This pattern captures both field orders within [[redirects]] sections
+    redirect_blocks = re.split(r'\[\[redirects\]\]', content)[1:]  # Split and skip first empty part
+    
+    for block in redirect_blocks:
+        # Extract from and to values regardless of order
+        from_match = re.search(r'from\s*=\s*"([^"]+)"', block)
+        to_match = re.search(r'to\s*=\s*"([^"]+)"', block)
+        
+        if from_match and to_match:
+            redirects[from_match.group(1)] = to_match.group(1)
 
     return redirects
 
@@ -53,7 +61,7 @@ def find_chains(redirects: Dict[str, str]) -> List[Tuple[str, List[str]]]:
             current = next_hop
 
             # Prevent infinite loops
-            if len(chain) > 10:
+            if len(chain) > MAX_CHAIN_LENGTH:
                 break
 
         # If we have a chain (more than 2 hops), record it
