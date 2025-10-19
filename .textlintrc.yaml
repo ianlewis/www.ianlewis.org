@@ -142,6 +142,7 @@ rules:
       - "/\\bIshimoto\\b/g"
       - "/\\bIwashi\\b/g"
       - "/\\bJayden\\b/g"
+      - "/\\bJessy\\b/g"
       - "/\\bJiayi\\b/g"
       - "/\\bJohansson\\b/g"
       - "/\\bJxck\\b/g"
