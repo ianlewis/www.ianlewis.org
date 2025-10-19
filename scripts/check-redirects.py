@@ -23,6 +23,10 @@ from typing import Dict, List, Tuple
 # Maximum length of redirect chain to detect before considering it an infinite loop
 MAX_CHAIN_LENGTH = 10
 
+# Regex patterns for parsing redirect fields
+FROM_PATTERN = r'from\s*=\s*"([^"]+)"'
+TO_PATTERN = r'to\s*=\s*"([^"]+)"'
+
 
 def parse_redirects(filename: str) -> Dict[str, str]:
     """Parse netlify.toml and extract redirect mappings."""
@@ -32,13 +36,13 @@ def parse_redirects(filename: str) -> Dict[str, str]:
         content = f.read()
 
     # Find all redirect blocks (supports both 'from' before 'to' and vice versa)
-    # This pattern captures both field orders within [[redirects]] sections
-    redirect_blocks = re.split(r'\[\[redirects\]\]', content)[1:]  # Split and skip first empty part
+    # Split on redirect blocks and skip content before first block
+    redirect_blocks = re.split(r'\[\[redirects\]\]', content)[1:]
     
     for block in redirect_blocks:
         # Extract from and to values regardless of order
-        from_match = re.search(r'from\s*=\s*"([^"]+)"', block)
-        to_match = re.search(r'to\s*=\s*"([^"]+)"', block)
+        from_match = re.search(FROM_PATTERN, block)
+        to_match = re.search(TO_PATTERN, block)
         
         if from_match and to_match:
             redirects[from_match.group(1)] = to_match.group(1)
