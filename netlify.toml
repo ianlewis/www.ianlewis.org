@@ -111,7 +111,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/google%20analytics/"
-  to = "/en/tag/google-analytics/"
+  to = "/en/tag/tech/"
   status = 301
 
 [[redirects]]
@@ -148,7 +148,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/jquery%20ui/"
-  to = "/en/tag/jquery-ui/"
+  to = "/en/tag/javascript/"
   status = 301
 
 [[redirects]]
@@ -158,17 +158,17 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/protocol%20buffers/"
-  to = "/en/tag/protocol-buffers/"
+  to = "/en/tag/programming/"
   status = 301
 
 [[redirects]]
   from = "/en/tag/san%20francisco/"
-  to = "/en/tag/san-francisco/"
+  to = "/en/tag/tech/"
   status = 301
 
 [[redirects]]
   from = "/en/tag/stand%20alone%20complex/"
-  to = "/en/tag/stand-alone-complex/"
+  to = "/en/tag/musings/"
   status = 301
 
 [[redirects]]
@@ -183,7 +183,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/walled%20garden/"
-  to = "/en/tag/walled-garden/"
+  to = "/en/tag/musings/"
   status = 301
 
 
