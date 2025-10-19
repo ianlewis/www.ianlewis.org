@@ -8,4 +8,4 @@ These scripts receive only minimal maintenance and are primarily intended for us
 
 ## Contents
 
-- `check-redirects.py` - Validates netlify.toml to detect and prevent chained redirects
+- `check-redirects.py` - Validates `netlify.toml` to detect and prevent chained redirects
