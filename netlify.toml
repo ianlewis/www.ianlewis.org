@@ -125,6 +125,11 @@ environment = { NODE_VERSION = "22" }
   status = 301
 
 [[redirects]]
+  from = "/en/tag/google-container-builder/"
+  to = "/en/tag/cloud"
+  status = 301
+
+[[redirects]]
   from = "/en/tag/google-container-engine/"
   to = "/en/tag/gke/"
   status = 301
