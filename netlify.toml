@@ -116,12 +116,12 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/google%20cloud%20platform/"
-  to = "/en/tag/google-cloud/"
+  to = "/en/tag/cloud/"
   status = 301
 
 [[redirects]]
   from = "/en/tag/google-cloud-platform/"
-  to = "/en/tag/google-cloud/"
+  to = "/en/tag/cloud/"
   status = 301
 
 [[redirects]]
@@ -131,7 +131,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/google-container-engine/"
-  to = "/en/tag/gke/"
+  to = "/en/tag/kubernetes/"
   status = 301
 
 # Tech
@@ -249,7 +249,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/tipfy/"
-  to = "/en/tag/appengine/"
+  to = "/en/tag/cloud/"
   status = 301
 
 [[redirects]]
@@ -394,7 +394,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/hg/"
-  to = "/en/tag/mercurial/"
+  to = "/en/tag/programming/"
   status = 301
 
 [[redirects]]
@@ -459,7 +459,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/ec2/"
-  to = "/en/tag/aws/"
+  to = "/en/tag/cloud/"
   status = 301
 
 [[redirects]]
@@ -469,12 +469,12 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/mq/"
-  to = "/en/tag/mercurial/"
+  to = "/en/tag/programming/"
   status = 301
 
 [[redirects]]
   from = "/en/tag/patch/"
-  to = "/en/tag/mercurial/"
+  to = "/en/tag/programming/"
   status = 301
 
 [[redirects]]
@@ -534,7 +534,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/wave/"
-  to = "/en/tag/google/"
+  to = "/en/tag/tech/"
   status = 301
 
 [[redirects]]
@@ -589,7 +589,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/guile/"
-  to = "/en/tag/scheme/"
+  to = "/en/tag/programming/"
   status = 301
 
 [[redirects]]
@@ -714,7 +714,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/tortoisehg/"
-  to = "/en/tag/mercurial/"
+  to = "/en/tag/programming/"
   status = 301
 
 [[redirects]]

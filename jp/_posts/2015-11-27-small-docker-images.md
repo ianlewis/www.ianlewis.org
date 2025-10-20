@@ -4,7 +4,7 @@ title: "(より)小さいDockerイメージを作ろう"
 date: 2015-11-27 14:30:00 +0000
 permalink: /jp/small-docker-images
 blog: jp
-tags: containers
+tags: tech containers
 render_with_liquid: false
 locale: ja
 ---

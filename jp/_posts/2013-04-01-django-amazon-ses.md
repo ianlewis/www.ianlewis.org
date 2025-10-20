@@ -4,7 +4,7 @@ title: "Django で Amazon SES を使う"
 date: 2013-04-01 13:00:00 +0000
 permalink: /jp/django-amazon-ses
 blog: jp
-tags: python django cloud
+tags: tech python django cloud
 render_with_liquid: false
 locale: ja
 ---
