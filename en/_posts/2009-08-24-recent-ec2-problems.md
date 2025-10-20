@@ -4,7 +4,7 @@ title: "Recent EC2 Problems"
 date: 2009-08-24 15:33:36 +0000
 permalink: /en/recent-ec2-problems
 blog: en
-tags: tech devops cloud aws
+tags: tech devops cloud
 render_with_liquid: false
 ---
 

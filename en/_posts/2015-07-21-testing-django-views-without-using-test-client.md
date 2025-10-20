@@ -4,7 +4,7 @@ title: "Testing Django Views Without Using the Test Client"
 date: 2015-07-21 16:00:00 +0000
 permalink: /en/testing-django-views-without-using-test-client
 blog: en
-tags: tech programming python django testing
+tags: tech programming python django
 render_with_liquid: false
 ---
 

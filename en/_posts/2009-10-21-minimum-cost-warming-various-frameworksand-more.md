@@ -4,7 +4,7 @@ title: "Minimum cost for warming-up various frameworks(and more)"
 date: 2009-10-21 13:16:31 +0000
 permalink: /en/minimum-cost-warming-various-frameworksand-more
 blog: en
-tags: tech cloud google-cloud appengine
+tags: tech cloud
 render_with_liquid: false
 ---
 

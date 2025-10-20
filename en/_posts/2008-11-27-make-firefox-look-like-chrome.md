@@ -4,7 +4,7 @@ title: "Make Firefox look like Chrome"
 date: 2008-11-27 14:02:52 +0000
 permalink: /en/make-firefox-look-like-chrome
 blog: en
-tags: tech google
+tags: tech
 render_with_liquid: false
 ---
 

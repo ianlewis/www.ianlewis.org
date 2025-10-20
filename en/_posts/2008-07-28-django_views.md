@@ -4,7 +4,7 @@ title: "Django Views"
 date: 2008-07-28 01:15:30 +0000
 permalink: /en/django_views
 blog: en
-tags: tech programming python cloud google-cloud appengine django
+tags: tech programming python cloud django
 render_with_liquid: false
 ---
 

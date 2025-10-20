@@ -4,7 +4,7 @@ title: "Javascript Templating Languages"
 date: 2014-12-22 00:00:00 +0000
 permalink: /en/javascript-templating-languages
 blog: en
-tags: tech programming javascript templates
+tags: tech programming javascript
 render_with_liquid: false
 ---
 

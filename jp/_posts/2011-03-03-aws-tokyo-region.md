@@ -4,7 +4,7 @@ title: "AWS 東京地域きた～～～～～ ヽ(･∀･)ノ"
 date: 2011-03-03 09:53:02 +0000
 permalink: /jp/aws-tokyo-region
 blog: jp
-tags: ec2 aws s3
+tags: ec2 cloud s3
 render_with_liquid: false
 locale: ja
 ---

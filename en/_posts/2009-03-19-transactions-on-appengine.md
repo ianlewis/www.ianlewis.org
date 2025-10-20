@@ -4,7 +4,7 @@ title: "Transactions on App Engine"
 date: 2009-03-19 01:44:52 +0000
 permalink: /en/transactions-on-appengine
 blog: en
-tags: tech programming python google appengine
+tags: tech programming python cloud
 render_with_liquid: false
 ---
 

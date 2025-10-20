@@ -4,7 +4,7 @@ title: "Google App Engine SDK 1.4.0 がリリースされました！"
 date: 2010-12-03 09:16:18 +0000
 permalink: /jp/google-appengine-sdk-140
 blog: jp
-tags: python google appengine
+tags: python tech cloud
 render_with_liquid: false
 locale: ja
 ---

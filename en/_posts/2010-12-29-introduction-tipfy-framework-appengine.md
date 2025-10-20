@@ -4,7 +4,7 @@ title: "An introduction to the Tipfy Framework for App Engine"
 date: 2010-12-29 10:31:34 +0000
 permalink: /en/introduction-tipfy-framework-appengine
 blog: en
-tags: tech programming python cloud google-cloud appengine
+tags: tech programming python cloud
 render_with_liquid: false
 ---
 

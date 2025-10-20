@@ -4,7 +4,7 @@ title: "Python Onsen"
 date: 2008-06-29 10:36:21 +0000
 permalink: /en/python-onsen
 blog: en
-tags: tech events python google-cloud appengine python
+tags: tech events python cloud
 render_with_liquid: false
 ---
 

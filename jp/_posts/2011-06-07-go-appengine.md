@@ -4,7 +4,7 @@ title: "Go! App Engine"
 date: 2011-06-07 10:22:34 +0000
 permalink: /jp/go-appengine
 blog: jp
-tags: appengine golang
+tags: cloud golang
 render_with_liquid: false
 locale: ja
 ---

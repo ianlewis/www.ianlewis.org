@@ -4,7 +4,7 @@ title: "Creating Smaller Docker Images Part #4: Static Binaries"
 date: 2017-07-11 16:25:00 +0000
 permalink: /en/creating-smaller-docker-images-static-binaries
 blog: en
-tags: tech programming golang containers docker smaller-docker-images-series
+tags: tech programming golang containers smaller-docker-images-series
 render_with_liquid: false
 ---
 
