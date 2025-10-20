@@ -863,11 +863,6 @@ environment = { NODE_VERSION = "22" }
   status = 301
 
 [[redirects]]
-  from = "/en/tag/testing/"
-  to = "/en/tag/programming/"
-  status = 301
-
-[[redirects]]
   from = "/en/tag/twitter/"
   to = "/en/tag/tech/"
   status = 301
@@ -1293,28 +1288,8 @@ environment = { NODE_VERSION = "22" }
   status = 301
 
 [[redirects]]
-  from = "/jp/tag/appengine/"
-  to = "/jp/tag/cloud/"
-  status = 301
-
-[[redirects]]
-  from = "/jp/tag/aws/"
-  to = "/jp/tag/cloud/"
-  status = 301
-
-[[redirects]]
   from = "/jp/tag/docker/"
   to = "/jp/tag/containers/"
-  status = 301
-
-[[redirects]]
-  from = "/jp/tag/google/"
-  to = "/jp/tag/tech/"
-  status = 301
-
-[[redirects]]
-  from = "/jp/tag/mercurial/"
-  to = "/jp/tag/programming/"
   status = 301
 
 [[redirects]]
