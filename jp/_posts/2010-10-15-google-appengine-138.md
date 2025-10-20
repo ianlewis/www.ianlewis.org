@@ -4,7 +4,7 @@ title: "Google App Engine 1.3.8リリースされました！"
 date: 2010-10-15 19:44:31 +0000
 permalink: /jp/google-appengine-138
 blog: jp
-tags: python google appengine
+tags: python tech cloud
 render_with_liquid: false
 locale: ja
 ---

@@ -4,7 +4,7 @@ title: "Google App Engine 公認API エキスパートになりました！"
 date: 2010-11-23 12:06:39 +0000
 permalink: /jp/google-appengine-api-expert
 blog: jp
-tags: python google appengine
+tags: python tech cloud
 render_with_liquid: false
 locale: ja
 ---

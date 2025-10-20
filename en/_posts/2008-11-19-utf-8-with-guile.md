@@ -4,7 +4,7 @@ title: "UTF-8 with guile"
 date: 2008-11-19 23:03:47 +0000
 permalink: /en/utf-8-with-guile
 blog: en
-tags: tech programming scheme
+tags: tech programming
 render_with_liquid: false
 ---
 

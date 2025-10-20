@@ -4,7 +4,7 @@ title: "Looking Back At My First Year at Google"
 date: 2016-01-19 17:00:00 +0000
 permalink: /en/looking-back-my-first-year-google
 blog: en
-tags: work tech google
+tags: work tech
 render_with_liquid: false
 ---
 

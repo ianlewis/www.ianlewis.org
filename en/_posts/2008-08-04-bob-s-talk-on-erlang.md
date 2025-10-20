@@ -4,7 +4,7 @@ title: "Bob's Talk on Erlang"
 date: 2008-08-04 20:20:37 +0000
 permalink: /en/bob-s-talk-on-erlang
 blog: en
-tags: tech events programming erlang
+tags: tech events programming
 render_with_liquid: false
 ---
 

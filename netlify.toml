@@ -116,12 +116,12 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/google%20cloud%20platform/"
-  to = "/en/tag/google-cloud/"
+  to = "/en/tag/cloud/"
   status = 301
 
 [[redirects]]
   from = "/en/tag/google-cloud-platform/"
-  to = "/en/tag/google-cloud/"
+  to = "/en/tag/cloud/"
   status = 301
 
 [[redirects]]
@@ -131,7 +131,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/google-container-engine/"
-  to = "/en/tag/gke/"
+  to = "/en/tag/kubernetes/"
   status = 301
 
 # Tech
@@ -249,7 +249,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/tipfy/"
-  to = "/en/tag/appengine/"
+  to = "/en/tag/cloud/"
   status = 301
 
 [[redirects]]
@@ -394,7 +394,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/hg/"
-  to = "/en/tag/mercurial/"
+  to = "/en/tag/programming/"
   status = 301
 
 [[redirects]]
@@ -459,7 +459,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/ec2/"
-  to = "/en/tag/aws/"
+  to = "/en/tag/cloud/"
   status = 301
 
 [[redirects]]
@@ -469,12 +469,12 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/mq/"
-  to = "/en/tag/mercurial/"
+  to = "/en/tag/programming/"
   status = 301
 
 [[redirects]]
   from = "/en/tag/patch/"
-  to = "/en/tag/mercurial/"
+  to = "/en/tag/programming/"
   status = 301
 
 [[redirects]]
@@ -534,7 +534,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/wave/"
-  to = "/en/tag/google/"
+  to = "/en/tag/tech/"
   status = 301
 
 [[redirects]]
@@ -589,7 +589,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/guile/"
-  to = "/en/tag/scheme/"
+  to = "/en/tag/programming/"
   status = 301
 
 [[redirects]]
@@ -714,7 +714,7 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/en/tag/tortoisehg/"
-  to = "/en/tag/mercurial/"
+  to = "/en/tag/programming/"
   status = 301
 
 [[redirects]]
@@ -770,6 +770,101 @@ environment = { NODE_VERSION = "22" }
 [[redirects]]
   from = "/en/tag/soap/"
   to = "/en/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/appengine/"
+  to = "/en/tag/cloud/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/aws/"
+  to = "/en/tag/cloud/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/css/"
+  to = "/en/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/dart/"
+  to = "/en/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/docker/"
+  to = "/en/tag/containers/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/erlang/"
+  to = "/en/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/gke/"
+  to = "/en/tag/kubernetes/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/google/"
+  to = "/en/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/google-cloud/"
+  to = "/en/tag/cloud/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/haskell/"
+  to = "/en/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/japan/"
+  to = "/en/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/java/"
+  to = "/en/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/mercurial/"
+  to = "/en/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/preview/"
+  to = "/en/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/scheme/"
+  to = "/en/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/slsa/"
+  to = "/en/tag/security/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/svn/"
+  to = "/en/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/templates/"
+  to = "/en/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/en/tag/twitter/"
+  to = "/en/tag/tech/"
   status = 301
 
 # Old Japanese Tags
@@ -1190,4 +1285,19 @@ environment = { NODE_VERSION = "22" }
 [[redirects]]
   from = "/jp/tag/メンテナンス/"
   to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/docker/"
+  to = "/jp/tag/containers/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/source/"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/testing/"
+  to = "/jp/tag/programming/"
   status = 301

@@ -4,7 +4,7 @@ title: "Jaiku on App Engine"
 date: 2009-03-16 00:52:31 +0000
 permalink: /en/jaiku-on-appengine-1
 blog: en
-tags: tech cloud google-cloud appengine
+tags: tech cloud
 render_with_liquid: false
 ---
 

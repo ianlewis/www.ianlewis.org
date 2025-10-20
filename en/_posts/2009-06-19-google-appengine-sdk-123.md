@@ -4,7 +4,7 @@ title: "Google App Engine SDK 1.2.3"
 date: 2009-06-19 10:04:46 +0000
 permalink: /en/google-appengine-sdk-123
 blog: en
-tags: tech programming python django cloud google-cloud appengine
+tags: tech programming python django cloud
 render_with_liquid: false
 ---
 

@@ -4,7 +4,7 @@ title: "Writing Schema migrations for App Engine using the Mapper Class and the 
 date: 2009-12-27 13:59:03 +0000
 permalink: /en/writing-schema-migrations-appengine-using-mapper-c
 blog: en
-tags: tech programming python cloud google-cloud appengine
+tags: tech programming python cloud
 render_with_liquid: false
 ---
 

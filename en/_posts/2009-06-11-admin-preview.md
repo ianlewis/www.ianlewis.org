@@ -4,7 +4,7 @@ title: "Preview blog posts within the django admin."
 date: 2009-06-11 23:12:48 +0000
 permalink: /en/admin-preview
 blog: en
-tags: django preview
+tags: django programming
 render_with_liquid: false
 ---
 

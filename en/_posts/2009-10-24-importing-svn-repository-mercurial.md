@@ -4,7 +4,7 @@ title: "Importing an svn repository into mercurial"
 date: 2009-10-24 11:09:58 +0000
 permalink: /en/importing-svn-repository-mercurial
 blog: en
-tags: tech mercurial svn
+tags: tech programming
 render_with_liquid: false
 ---
 

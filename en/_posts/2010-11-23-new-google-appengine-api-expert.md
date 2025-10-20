@@ -4,7 +4,7 @@ title: "New Google App Engine API Expert "
 date: 2010-11-23 12:31:13 +0000
 permalink: /en/new-google-appengine-api-expert
 blog: en
-tags: tech python cloud google-cloud appengine
+tags: tech python cloud
 render_with_liquid: false
 ---
 
