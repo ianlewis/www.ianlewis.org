@@ -174,11 +174,13 @@ rules:
       - "/\\bMasuda\\b/g"
       - "/\\bMatsuo\\b/g"
       - "/\\bMeiert\\b/g"
+      - "/\\bMowshowitz\\b/g"
       - "/\\bMoraes\\b/g"
       - "/\\bMorimoto\\b/g"
       - "/\\bMoriyoshi\\b/g"
       - "/\\bMaroney\\b/g"
       - "/\\bMoscone\\b/g"
+      - "/\\bNeistat\\b/g" # Casey Neistat
       - "/\\bNaoki\\b/g"
       - "/\\bNghia\\b/g"
       - "/\\bNikhil\\b/g"
@@ -238,6 +240,7 @@ rules:
       - "/\\bZach\\b/g"
       - "/\\bZeyliger\\b/g"
       - "/\\bZiadé(?:^|\\s)?/g"
+      - "/\\bZvi\\b/g"
 
       # User handles
       ##########################################################################
@@ -305,6 +308,7 @@ rules:
       - "/\\bApcera\\b/g"
       - "/\\bAptana\\b/g"
       - "/\\bAtlassian\\b/g"
+      - "/\\bBain\\b/g" # Bain & Company
       - "/\\bBasho\\b/g"
       - "/\\bBeProud\\b/g"
       - "/\\bBluesky\\b/g"
@@ -324,6 +328,7 @@ rules:
       - "/\\bLinkedIn\\b/g" # Professional networking platform
       - "/\\bMesosphere\\b/g"
       - "/\\bMixi\\b/g" # Japanese social networking service
+      - "/\\bNasdaq\\b/g" # Nasdaq stock exchange (also stylized as NASDAQ)
       - "/\\bNetlify\\b/g" # Web hosting service
       - "/\\bPalo Alto Networks\\b/g" # Cybersecurity company
       - "/\\bPlanetScale\\b/g" # PlanetScale database platform
@@ -360,6 +365,7 @@ rules:
       - "/\\bS3\\b/g" # Amazon S3
       - "/\\bSimeji\\b/g" # Japanese input method editor (bought by Baidu)
       - "/\\bSmipple\\b/g" # Code snippet sharing service (defunct)
+      - "/\\bSora\\b/g" # OpenAI video generation model
       - "/\\bX5\\b/g" # iAudio X5 music player
       - "/\\bYouTube\\b/g" # Video sharing platform
       - "/\\biGoogle\\b/g" # (old) Google personalized portal services
@@ -708,6 +714,8 @@ rules:
       - "/\\b[Ww]illy-nilly\\b/g" # Meaning "in a disorganized manner"
 
       - "/\\b[Aa]pproachability\\b/g" # The quality of being approachable
+      # https://dictionary.cambridge.org/dictionary/english/grifter
+      - "/\\b[Gg]rifter\\b/g" # person who grifts
       - "/\\b[Rr]omanization\\b/g" # Converting text to Roman alphabet
       - "/\\b[Uu]nfixable\\b/g" # Not able to be fixed or repaired
 
