@@ -4,27 +4,35 @@ layout: default
 {%- assign date_format = site.plainwhite.date_format | default: '%b %-d, %Y' -%}
 {% assign category = page.path | split: '/' | first %}
 <div
-  class="post-container"
+  class="post-container h-entry"
   {% if page.lang %}
     lang="{{ page.lang }}"
   {% endif %}
 >
   <a class="post-link" href="{{ page.url | relative_url }}">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <h1 class="post-title p-name">{{ page.title | escape }}</h1>
   </a>
   <div class="post-meta">
-    <div class="post-date"><i class="icon-calendar"></i>{{ page.date | date: date_format }}</div>
+    <div class="post-date">
+      <i class="icon-calendar"></i
+      ><time
+        class="dt-published"
+        datetime="{{ page.date | date: "%Y-%m-%dT%H:%M:%S%z" }}"
+      >
+        {{- page.date | date: date_format -}}
+      </time>
+    </div>
     {%- if page.tags.size > 0 -%}
       <ul class="post-categories">
         {%- for tag in page.tags -%}
           <li>
-            <a href="/{{ category }}/tag/{{ tag | url_encode }}/">{{ tag }}</a>
+            <a href="/{{ category }}/tag/{{ tag | url_encode }}/" class="p-category">{{ tag }}</a>
           </li>
         {%- endfor -%}
       </ul>
     {%- endif -%}
   </div>
-  <div class="post">
+  <div class="post e-content">
     {{ content }}
   </div>
   {%- if site.plainwhite.disqus_shortname -%}
