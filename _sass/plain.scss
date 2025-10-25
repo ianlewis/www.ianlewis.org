@@ -245,13 +245,41 @@ main .post img {
   height: auto;
 }
 
-main iframe.youtube-video {
+main iframe {
+  border: none;
+  margin: 0;
+}
+
+main iframe.slideshare {
+  width: 610px;
+  height: 515px;
+  border: var(--border-1) solid #ccc;
+  border-width: 1px;
+  margin-bottom: 5px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+main iframe.youtube {
   width: 840px;
   height: 473px;
 }
 
-main .speakerdeck-embed-wrapper {
-  width: 840px;
+main iframe.gdrive-preso {
+  width: 960px;
+  height: 569px;
+}
+
+main iframe.speakerdeck {
+  border: 0;
+  background: padding-box padding-box rgb(0 0 0 / 10%);
+  margin: 0;
+  padding: 0;
+  border-radius: 6px;
+  box-shadow: rgb(0 0 0 / 20%) 0 5px 40px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 560 / 315;
 }
 
 main div.align-center,

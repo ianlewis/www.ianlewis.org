@@ -17,12 +17,6 @@ online please check it out on Slideshare.
 <iframe
     title="Slideshare viewer"
     src="https://www.slideshare.net/slideshow/embed_code/key/jWbLwzJMBFbw2M"
-    width="610"
-    height="515"
-    frameborder="0"
-    marginwidth="0"
-    marginheight="0"
-    scrolling="no"
-    style="border: var(--border-1) solid #CCC; border-width:1px; margin-bottom:5px; max-width:100%;"
+    class="slideshare"
     allowfullscreen>
 </iframe>
