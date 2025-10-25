@@ -867,6 +867,11 @@ environment = { NODE_VERSION = "22" }
   to = "/en/tag/tech/"
   status = 301
 
+[[redirects]]
+  from = "/en/tag/games/"
+  to = "/en/tag/tech/"
+  status = 301
+
 # Old Japanese Tags
 ############################
 
@@ -1284,6 +1289,11 @@ environment = { NODE_VERSION = "22" }
 
 [[redirects]]
   from = "/jp/tag/メンテナンス/"
+  to = "/jp/tag/tech/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/games/"
   to = "/jp/tag/tech/"
   status = 301
 
