@@ -21,9 +21,9 @@ As with the Google I/O keynote it was mentioned how
 have kind of flip-flopped over the years. In the mainframe era you had computing
 power but no accessibility, in the PC era you had accessibility but lost
 relative computing power, and now in the web era we are getting back computing
-power in the form of cloud computing but we are loosing accessablity to those
+power in the form of cloud computing but we are loosing accessibility to those
 resources. They plan on fixing this with the, so called, three Cs. Client,
-Connectablity and Cloud.
+Connectability, and Cloud.
 
 The first refers to the browser, so Google wants to
 make the browser richer in order to give us accessibility to the computing power

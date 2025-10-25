@@ -309,6 +309,8 @@ rules:
       - "/\\bBeProud\\b/g"
       - "/\\bBluesky\\b/g"
       - "/\\bBitbucket\\b/g"
+      - "/\\bChainguard\\b/g" # Supply chain security company
+      - "/\\bCloudflare\\b/g" # Web infrastructure and security company
       - "/\\bCoreOS\\b/g"
       - "/\\bDeis\\b/g"
       - "/\\bDigg\\b/g" # Social news website
@@ -384,6 +386,7 @@ rules:
       - "/\\bBundler\\b/g" # Ruby dependency manager
       - "/\\b(CGO|cgo)\\b/g" # Go tool for interfacing with C code
       - "/\\bCRI-O\\b/g" # Container Runtime Interface implementation for Kubernetes
+      - "/\\bCereling\\b/g" # A language parsing tool demoed at Tokyo Barcamp.
       - "/\\bCloudFront\\b/g" # AWS CloudFront
       - "/\\b[Cc]ron\\b/g"
       - "/\\bCygwin\\b/g"
@@ -508,6 +511,7 @@ rules:
       - "/\\bBarCamp\\b/g"
       - "/\\bBoing Boing\\b/g" # Boing Boing website
       - "/\\bC4\\b/g" # C4 Macintosh software developers conference
+      # - "/\\bCloudNativeSecurityCon\\b/g" # Cloud Native Security Conference
       - "/\\bEuroPython\\b/g" # European Python Conference
       - "/\\bPyCon\\b/g" # Python Conference
       - "/\\bPyFes\\b/g" # Python Festival
@@ -523,7 +527,6 @@ rules:
       - "/\\bL[0-9]+\\b/g" # e.g. L1, L2, L3 (levels, e.g. cache)
 
       - "/\\bAutoscaling\\b/g"
-      - "/\\bConnectability\\b/g" # Ability to connect
       - "/\\bDockerfiles?\\b/g" # Docker configuration file
       - "/\\bGooglers?\\b/g" # Google employee
       - "/\\bGoogley\\b/g" # Google-like, characteristic of Google
@@ -541,6 +544,7 @@ rules:
       - "/\\b[Bb]ackpressure\\b/g" # pressure that opposes the desired flow
       - "/\\b[Bb]alancers?\\b/g" # e.g. load balancer
       - "/\\b[Cc]omparator\\b/g" # compare + ator
+      - "/\\b[Cc]onnectability\\b/g" # Ability to connect
       - "/\\b[Dd]eclarative(ly)?\\b/g"
       - "/\\b[Dd]ev\\b/g" # Development/Developer
       - "/\\b[Ee]xecutables\\b/g" # plural of executable
@@ -720,15 +724,11 @@ rules:
       - "callables"
       - "callLater"
       - "cancelled"
-      - "capabalities"
-      - "CapabilitiesError"
       - "CAs"
-      - "Cereling"
       - "cgcreate"
       - "cgexec"
       - "Cgroups"
       - "cgset"
-      - "Chainguard"
       - "_changelist"
       - "changelist"
       - "checkmark"
@@ -737,8 +737,6 @@ rules:
       - "chroot"
       - "chrooting"
       - "cloudbuild"
-      - "Cloudflare"
-      - "CloudNativeSecurityCon"
       - "CMD"
       - "CNI"
       - "codebase"
@@ -1345,12 +1343,6 @@ rules:
       - "api" # Application Programming Interface (lowercase)
       - "_blank" # HTML target attribute
       - "digg" # Social news aggregation website
-      - "wierd" # Common misspelling of "weird" (should be fixed in content)
-      - "accessablity" # Misspelling of "accessibility" (should be fixed in content)
-      - "Connectablity" # Misspelling of "Connectivity" (should be fixed in content)
-      - "connectability" # Ability to connect (should use "connectivity")
-      - "changelog" # Change log (should be fixed in content)
-      - "mybranch" # Branch name (should be fixed in content)
       - "extract_addrs" # Function name
       - "tt" # HTML element or abbreviation
       - "oss" # Open Source Software (lowercase)
