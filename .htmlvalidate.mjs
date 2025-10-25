@@ -29,7 +29,6 @@ export default defineConfig({
 
     // TODO(#315): Enable these rules once the issues are resolved.
     "long-title": "off",
-    "no-deprecated-attr": "off",
     "no-trailing-whitespace": "off",
     "unique-landmark": "off",
     "valid-id": "off",

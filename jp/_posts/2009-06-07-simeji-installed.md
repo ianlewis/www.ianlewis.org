@@ -53,4 +53,11 @@ Success
 
 これでできた。`Settings`の`Locale & Text`で`Simeji`がでるはず。有効にしたら、上のビデオと同じようにsimejiのインプットメソッドが使える。iPhoneとほぼ同じで快適。こんな感じで
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F9cmA70cSiA?si=kUAJZ3TKDXCLTiM0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/F9cmA70cSiA?si=kUAJZ3TKDXCLTiM0"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+</iframe>

@@ -138,4 +138,10 @@ void loop() {
 
 これで余裕で音楽鳴らせるべ！ってもりよしさんともりあがって、もりよしさんが JavaScript からHTTPで叩きまくった。
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9X_8mkjM06M?si=LxQf3TctQ-VFtMt-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe
+    title="YouTube video player"
+    src="https://www.youtube-nocookie.com/embed/9X_8mkjM06M?si=LxQf3TctQ-VFtMt-"
+    class="youtube"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+</iframe>

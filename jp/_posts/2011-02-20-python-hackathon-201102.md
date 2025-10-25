@@ -16,13 +16,7 @@ Python Hackathon 2011.02に参加しに行ってきました。今回は、ち�
 <iframe
     title="Slideshare viewer"
     src="https://www.slideshare.net/slideshow/embed_code/key/xrp8u56T9XPIn0"
-    width="610"
-    height="515"
-    frameborder="0"
-    marginwidth="0"
-    marginheight="0"
-    scrolling="no"
-    style="border: var(--border-1) solid #CCC; border-width:1px; margin-bottom:5px; max-width:100%;"
+    class="slideshare"
     allowfullscreen>
 </iframe>
 

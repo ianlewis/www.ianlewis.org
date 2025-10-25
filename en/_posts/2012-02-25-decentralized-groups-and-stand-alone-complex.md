@@ -13,11 +13,9 @@ The other day I watched the talk "The coming war on general computation" by
 Doctorow](http://boingboing.net/about#cory).
 
 <iframe
-    width="560"
-    height="315"
-    src="https://www.youtube-nocookie.com/embed/HUEvRyemKSg?si=6HK-VFnUMSF8_HAL&amp;start=2736"
     title="YouTube video player"
-    frameborder="0"
+    src="https://www.youtube-nocookie.com/embed/HUEvRyemKSg?si=6HK-VFnUMSF8_HAL&amp;start=2736"
+    class="youtube"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen>
