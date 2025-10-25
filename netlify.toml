@@ -897,6 +897,11 @@ environment = { NODE_VERSION = "22" }
   to = "/jp/tag/cloud/"
   status = 301
 
+[[redirects]]
+  from = "/jp/tag/tipfy/"
+  to = "/jp/tag/cloud/"
+  status = 301
+
 # Django
 
 [[redirects]]
@@ -1311,3 +1316,4 @@ environment = { NODE_VERSION = "22" }
   from = "/jp/tag/testing/"
   to = "/jp/tag/programming/"
   status = 301
+
