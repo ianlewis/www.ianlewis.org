@@ -29,11 +29,14 @@ jobs:
         with:
           submodules: true
           persist-credentials: false
+
       # NOTE: ruby/setup-ruby automatically reads the .ruby-version file.
       - uses: ruby/setup-ruby@0481980f17b760ef6bca5e8c55809102a0af1e5a # v1.263.0
+
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version-file: ".node-version"
+
       - name: html-validate
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

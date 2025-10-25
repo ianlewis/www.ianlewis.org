@@ -9,13 +9,11 @@ render_with_liquid: false
 locale: ja
 ---
 
-Google App
-Engineのメンテナンス時間がある時、datastoreが読み込み専用になるのが多いと思いますが、データを書こうとする時に、CapabilitiesErrorと言う例外が起こる。それを自分のコードうまく処理しないと、500エラーがでて、ユーザには良くない表現になる。
+Google App Engineのメンテナンス時間がある時、Datastoreが読み込み専用になるのが多いと思いますが、データを書こうとする時に、`CapabilitiesError`と言う例外が起こる。それを自分のコードうまく処理しないと、500エラーがでて、ユーザには良くない表現になる。
 
-ドキュメントがないけども、実は、App Engine SDKでmaintenanceが行ってるかどうかをチェックできる
-[capabalities](http://code.google.com/p/googleappengine/source/browse/trunk/python/google/appengine/api/capabilities/__init__.py)
+ドキュメントがないけども、実は、App Engine SDKでmaintenanceが行ってるかどうかをチェックできる[capabilities](http://code.google.com/p/googleappengine/source/browse/trunk/python/google/appengine/api/capabilities/__init__.py)
 と言うAPIがあります。 メンテナンスがスケジュールされて、ある時間以内にメンテナンスを行うかをチェックします。僕は
-[django](http://djangoproject.jp/) を使ってるけど、capabilities API に特に依存がないですね。
+[Django](http://djangoproject.jp/) を使ってるけど、Capabilities APIに特に依存がないですね。
 
 ```python
 from google.appengine.api.capabilities import CapabilitySet
