@@ -43,7 +43,7 @@ rules:
       - "/\\bDependabot\\b/g"
       - "/\\bJavaScript\\b/g"
       - "/\\bMacOS\\b/g"
-      - "/\\bMakefile\\b/g"
+      - "/\\bMakefiles?\\b/g"
       - "/\\bNode.js\\b/g"
       - "/\\bOpenSSF\\b/g"
       - "/\\bTODO\\b/g"
@@ -402,6 +402,7 @@ rules:
       - "/\\bJUnit\\b/g" # Java Unit Testing Framework
       - "/\\bJubatus\\b/g" # Distributed machine learning framework
       - "/\\bKiro\\b/g" # AI Editor by AWS
+      - "/\\bKornShell\\b/g" # Korn Shell (ksh) Unix shell
       - "/\\bKubernetes\\b/g" # Kubernetes container orchestration platform
       - "/\\bLLVM\\b/g" # LLVM compiler infrastructure
       - "/\\bLuaLaTeX\\b/g" # Lua-based LaTeX engine
@@ -421,6 +422,7 @@ rules:
       - "/\\bOpenShift\\b/g" # Red Hat's container platform
       - "/\\bOpenSocial\\b/g" # Social networking protocol
       - "/\\bOpenStack\\b/g" # OpenStack cloud computing platform
+      - "/\\bPOSIX\\b/g" # POSIX standard
       - "/\\bPicasa\\b/g" # Old Google photo management software for App Engine
       - "/\\bPlone\\b/g" # Python content management system
       - "/\\bPostgreSQL\\b/g" # PostgreSQL database
