@@ -511,7 +511,6 @@ rules:
       - "/\\bBarCamp\\b/g"
       - "/\\bBoing Boing\\b/g" # Boing Boing website
       - "/\\bC4\\b/g" # C4 Macintosh software developers conference
-      # - "/\\bCloudNativeSecurityCon\\b/g" # Cloud Native Security Conference
       - "/\\bEuroPython\\b/g" # European Python Conference
       - "/\\bPyCon\\b/g" # Python Conference
       - "/\\bPyFes\\b/g" # Python Festival

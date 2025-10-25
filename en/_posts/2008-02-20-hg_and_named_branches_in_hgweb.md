@@ -9,7 +9,7 @@ render_with_liquid: false
 ---
 
 [Mercurial](http://www.selenic.com/mercurial/) is a nice distributed SCM system
-written in python which I have been using at work and at on oss projects for a
+written in Python which I have been using at work and at on OSS projects for a
 little while now. [Mercurial](http://www.selenic.com/mercurial/) allows three
 types of branching, cloning, named branches, and local branches. Each of these
 has it's uses but I have only really used cloning and named branches in my own
@@ -18,8 +18,8 @@ development.
 [Cloning](http://www.selenic.com/mercurial/wiki/index.cgi/TutorialClone) simply
 allows you to create a new branch of a repository by creating a copy of it.
 Simple. You make a copy of the repo, make changes in that copy, and you can
-merge the changes back into the original branch using **_push_** or merge
-changes in the original into your copy using **_pull_**. This is by far the
+merge the changes back into the original branch using `push` or merge
+changes in the original into your copy using `pull`. This is by far the
 simplest way to do branching. Each branch is self contained and easily
 managed/copied/deleted (which may or may not be a good thing depending on how
 you see things).
@@ -27,7 +27,7 @@ you see things).
 [Named branches](http://www.selenic.com/mercurial/wiki/index.cgi/NamedBranches)
 are branches that live in the same repo. You can create a new branch make a
 commit, and switch back to the original branch all within the same repo. This is
-achieved using the **_branch_** command in mercurial. You can switch your branch
+achieved using the `branch` command in mercurial. You can switch your branch
 like so:
 
 ```bash
@@ -38,7 +38,7 @@ Here we just created a branch off of the current version and called it
 `mybranch`. Now if we make a change and commit it this change will be marked as
 part of our new branch. This is kind of nice because we can switch between
 branches quickly and easily. Also, long lived branches can be split off within
-the same repo and merged easily using the **_merge_** command. You can switch
+the same repo and merged easily using the `merge` command. You can switch
 between branches by updating your local repo with the following command:
 
 ```bash
@@ -46,7 +46,7 @@ hg update -C mybranch
 ```
 
 This command figures out what changes need to be removed and what needs to be
-added to get you to the HEAD of the another branch.
+added to get you to the `HEAD` of the another branch.
 
 Unfortunately, this is where the good things about named branches end. Named
 branches live in the same repository so you can't selectively push or pull
@@ -61,7 +61,7 @@ repository in a easy to understand way simply fail to break changes out by named
 branch. This was the biggest problem for me because I lost track of what changes
 I had put in what branch so I had trouble compiling all the changes I wanted to
 for a release. I really wanted to look at the web interface and see the
-CHANGELOG for a particular branch but the hgweb interface simply shows all
+`CHANGELOG` for a particular branch but the hgweb interface simply shows all
 changesets in chronological order regardless of what branch you clicked on. It
 also doesn't show what branch a change was committed to so it's impossible to
 find out where a particular change was committed without looking at the parent
