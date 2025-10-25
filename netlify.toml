@@ -1307,11 +1307,3 @@ environment = { NODE_VERSION = "22" }
   to = "/jp/tag/programming/"
   status = 301
 
-# Old TIL Tags
-############################
-
-[[redirects]]
-  from = "/til/tag/tipfy/"
-  to = "/til/tag/cloud/"
-  status = 301
-
