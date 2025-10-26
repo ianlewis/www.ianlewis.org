@@ -62,9 +62,8 @@ video {
 a {
   color: #000;
   text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.2em;
-  transition: color 0.3s;
+  text-decoration-thickness: 0.15ex;
+  text-underline-offset: 0.2ex;
 
   &:hover {
     color: vars.$link-color;
