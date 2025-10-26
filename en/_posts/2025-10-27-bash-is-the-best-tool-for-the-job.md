@@ -6,6 +6,7 @@ permalink: /en/bash-is-the-best-tool-for-the-job
 blog: en
 tags: tech devops programming
 render_with_liquid: false
+published: false
 ---
 
 Bash is the black sheep of programming languages and yet every backend or DevOps
