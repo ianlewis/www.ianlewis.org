@@ -110,11 +110,6 @@ h2 {
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 0.2em;
-    transition: border-bottom 0.4s;
-
-    &:hover {
-      border-bottom: 0.5px solid vars.$link-color;
-    }
   }
 }
 
