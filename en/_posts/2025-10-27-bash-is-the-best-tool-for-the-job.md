@@ -6,7 +6,6 @@ permalink: /en/bash-is-the-best-tool-for-the-job
 blog: en
 tags: tech devops programming
 render_with_liquid: false
-published: false
 ---
 
 Bash is the black sheep of programming languages and yet every backend or DevOps
@@ -70,12 +69,18 @@ are extremely limited. This often leads to poorly written and fragile shell
 scripts as you're forced to use worse language constructs. If you think Bash
 scripts are bad, POSIX conforming shell scripts are even worse.
 
-Bash has extended the POSIX standard shell scripting language and smoothed over
-many of its deficiencies (e.g. `[[ ]]` vs `[ ]`). Bash is also available almost
-everywhere a standard POSIX shell is available, so there isn't a great advantage
-in portability on modern systems. On relatively modern systems, the upside to
-using Bash is large and the downside to using it is small when compared to
-standard POSIX scripting.
+Bash and other shells have extended the POSIX standard shell scripting language
+and smoothed over many of its deficiencies (e.g. `[[ ]]` vs `[ ]` for
+conditionals). So should we write scripts using other shells like `zsh` or
+`fish`? Using `zsh` or `fish` for your terminal shell is mostly a matter of
+personal preference. But for scripting, Bash is just going to be better. There
+are some nice things about scripting using `fish`, for example, but they don’t
+overcome the advantages of using Bash.
+
+Bash is available almost everywhere a standard POSIX shell is available, so
+there isn’t a great advantage in portability on modern systems. On relatively
+modern systems, the upside to using Bash is large and the downside to using it
+is small when compared to standard POSIX scripting or other shell languages.
 
 ## Bash is just another programming language
 
