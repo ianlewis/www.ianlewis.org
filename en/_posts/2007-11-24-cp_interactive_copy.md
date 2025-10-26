@@ -4,7 +4,7 @@ title: "cp interactive copy"
 date: 2007-11-24 18:50:40 +0000
 permalink: /en/cp_interactive_copy
 blog: en
-tags: tech
+tags: tech devops
 render_with_liquid: false
 ---
 
