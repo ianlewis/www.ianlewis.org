@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2019 Samarjeet
+ * Copyright 2025 Ian Lewis
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
@@ -7,10 +8,10 @@
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
  * subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
@@ -70,4 +71,66 @@ input:checked + .slider::before {
 
 .slider.round::before {
   border-radius: 50%;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  border-radius: 8px;
+}
+
+.theme-toggle button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #666;
+}
+
+.theme-toggle button:hover {
+  background-color: #f0f0f0;
+  border-color: #999;
+}
+
+.theme-toggle button.active {
+  background-color: #002b36;
+  border-color: #002b36;
+  color: #fff;
+}
+
+.theme-toggle button:focus {
+  outline: 2px solid #2196f3;
+  outline-offset: 2px;
+}
+
+.theme-toggle button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Dark mode styles for theme toggle */
+.dark .theme-toggle button {
+  border-color: #666;
+  color: #ddd;
+}
+
+.dark .theme-toggle button:hover {
+  background-color: #333;
+  border-color: #999;
+}
+
+.dark .theme-toggle button.active {
+  background-color: #4a9eff;
+  border-color: #4a9eff;
+  color: #000;
 }
