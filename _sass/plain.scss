@@ -61,7 +61,9 @@ video {
 
 a {
   color: #000;
-  transition: color 0.3s;
+  text-decoration: underline;
+  text-decoration-thickness: 0.2ex;
+  text-underline-offset: 0.5ex;
 
   &:hover {
     color: vars.$link-color;
@@ -104,12 +106,6 @@ h2 {
 
   a {
     color: vars.$link-color;
-    text-decoration: none;
-    transition: border-bottom 0.4s;
-
-    &:hover {
-      border-bottom: 0.5px solid vars.$link-color;
-    }
   }
 }
 
