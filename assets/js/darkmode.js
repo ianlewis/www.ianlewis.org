@@ -30,7 +30,7 @@ function setStoredTheme(theme) {
 }
 
 function getSystemTheme() {
-  if (window.matchMedia?.("(prefers-color-scheme: dark)")?.matches) {
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     return THEMES.DARK;
   }
   return THEMES.LIGHT;
