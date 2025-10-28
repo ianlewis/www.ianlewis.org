@@ -13,25 +13,89 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-function setDarkMode() {
-  const DARK_CLASS = "dark";
-  const body = document.querySelector("body");
+const DARK_CLASS = "dark";
+const THEME_STORAGE_KEY = "theme-preference";
+const THEMES = {
+  LIGHT: "light",
+  DARK: "dark",
+  AUTO: "auto",
+};
 
-  if (window.matchMedia?.("(prefers-color-scheme: dark)")?.matches) {
+function getStoredTheme() {
+  return localStorage.getItem(THEME_STORAGE_KEY) || THEMES.AUTO;
+}
+
+function setStoredTheme(theme) {
+  localStorage.setItem(THEME_STORAGE_KEY, theme);
+}
+
+function getSystemTheme() {
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    return THEMES.DARK;
+  }
+  return THEMES.LIGHT;
+}
+
+function applyTheme(theme) {
+  const body = document.querySelector("body");
+  const effectiveTheme = theme === THEMES.AUTO ? getSystemTheme() : theme;
+
+  if (effectiveTheme === THEMES.DARK) {
     body.classList.add(DARK_CLASS);
   } else {
     body.classList.remove(DARK_CLASS);
   }
 }
 
-// Attempt both requestAnimationFrame and DOMContentLoaded, whichever comes
-// first.
-if (window.requestAnimationFrame) {
-  window.requestAnimationFrame(setDarkMode);
+function updateThemeToggle(theme) {
+  const buttons = document.querySelectorAll(".theme-toggle button");
+  for (const button of buttons) {
+    if (button.getAttribute("data-theme") === theme) {
+      button.classList.add("active");
+      button.setAttribute("aria-pressed", "true");
+    } else {
+      button.classList.remove("active");
+      button.setAttribute("aria-pressed", "false");
+    }
+  }
 }
-window.addEventListener("DOMContentLoaded", setDarkMode);
 
-// Watch for changes to the preferred color scheme.
+function setTheme(theme) {
+  setStoredTheme(theme);
+  applyTheme(theme);
+  updateThemeToggle(theme);
+}
+
+function initializeTheme() {
+  const storedTheme = getStoredTheme();
+  applyTheme(storedTheme);
+  updateThemeToggle(storedTheme);
+}
+
+// Initialize theme as early as possible
+if (window.requestAnimationFrame) {
+  window.requestAnimationFrame(initializeTheme);
+}
+
+// Setup theme toggle buttons on DOMContentLoaded
+window.addEventListener("DOMContentLoaded", () => {
+  initializeTheme();
+
+  const buttons = document.querySelectorAll(".theme-toggle button");
+  for (const button of buttons) {
+    button.addEventListener("click", () => {
+      const theme = button.getAttribute("data-theme");
+      setTheme(theme);
+    });
+  }
+});
+
+// Watch for changes to system color scheme when in auto mode
 window
   .matchMedia("(prefers-color-scheme: dark)")
-  .addEventListener("change", setDarkMode);
+  .addEventListener("change", () => {
+    const storedTheme = getStoredTheme();
+    if (storedTheme === THEMES.AUTO) {
+      applyTheme(THEMES.AUTO);
+    }
+  });
