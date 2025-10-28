@@ -49,15 +49,15 @@ function applyTheme(theme) {
 
 function updateThemeToggle(theme) {
   const buttons = document.querySelectorAll(".theme-toggle button");
-  buttons.forEach((button) => {
-    if (button.dataset.theme === theme) {
+  for (const button of buttons) {
+    if (button.getAttribute("data-theme") === theme) {
       button.classList.add("active");
       button.setAttribute("aria-pressed", "true");
     } else {
       button.classList.remove("active");
       button.setAttribute("aria-pressed", "false");
     }
-  });
+  }
 }
 
 function setTheme(theme) {
@@ -82,12 +82,12 @@ window.addEventListener("DOMContentLoaded", () => {
   initializeTheme();
 
   const buttons = document.querySelectorAll(".theme-toggle button");
-  buttons.forEach((button) => {
+  for (const button of buttons) {
     button.addEventListener("click", () => {
-      const theme = button.dataset.theme;
+      const theme = button.getAttribute("data-theme");
       setTheme(theme);
     });
-  });
+  }
 });
 
 // Watch for changes to system color scheme when in auto mode
