@@ -15,13 +15,13 @@ This repository holds the contents for
 
 This project requires the following tools to be installed:
 
-- **Node.js** 22.20.0 (see [`.node-version`](.node-version))
-- **Ruby** 3.4.6 (see [`.ruby-version`](.ruby-version))
-- **Python** 3.13.7 (see [`.python-version`](.python-version))
-- **Make** (for running build commands)
+- **Node.js** (see [`.node-version`](.node-version))
+- **Ruby** (see [`.ruby-version`](.ruby-version))
+- **Python** (see [`.python-version`](.python-version))
+- **GNU Make** (for running build commands)
 
-You can use version managers like [nvm](https://github.com/nvm-sh/nvm),
-[rbenv](https://github.com/rbenv/rbenv), or [pyenv](https://github.com/pyenv/pyenv)
+You can use version managers like [`nvm`](https://github.com/nvm-sh/nvm),
+[`rbenv`](https://github.com/rbenv/rbenv), or [`pyenv`](https://github.com/pyenv/pyenv)
 to install the correct versions.
 
 ### Initial Setup
@@ -80,7 +80,7 @@ make test
 
 This runs:
 
-- All linters (actionlint, eslint, markdownlint, textlint, yamllint, etc.)
+- All linters (`actionlint`, `eslint`, `markdownlint`, `textlint`, `yamllint`, etc.)
 - Format checks
 - HTML validation (after building)
 
@@ -115,6 +115,5 @@ This will launch an interactive script to create a new TIL post.
 
 ### Additional Resources
 
-- See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines
-- See [AGENTS.md](AGENTS.md) for information about the project architecture
-- Run `make help` to see all available commands
+- See [`CONTRIBUTING.md`](CONTRIBUTING.md) for detailed contribution guidelines
+- See [`AGENTS.md`](AGENTS.md) for information about the project architecture
