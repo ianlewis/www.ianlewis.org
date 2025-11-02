@@ -83,6 +83,7 @@ rules:
       # Person Names
       ##########################################################################
 
+      - "/\\bAcer\\b/g"
       - "/\\bAhlström\\b/g"
       - "/\\bAhmet\\b/g"
       - "/\\bAjay\\b/g"
@@ -95,6 +96,7 @@ rules:
       - "/\\bAtharva\\b/g"
       - "/\\bAtsuo\\b/g"
       - "/\\bAtsushi\\b/g"
+      - "/\\bAyer\\b/g"
       - "/\\bBalahan\\b/g"
       - "/\\bBerryman\\b/g"
       - "/\\bBlauzvern\\b/g"
@@ -110,6 +112,7 @@ rules:
       - "/\\bCrawshaw\\b/g"
       - "/\\bDaisuke\\b/g"
       - "/\\bDaskalou\\b/g"
+      - "/\\bDeBlasio\\b/g"
       - "/\\bDicken\\b/g"
       - "/\\bDougherty\\b/g"
       - "/\\bDuan\\b/g"
@@ -119,6 +122,7 @@ rules:
       - "/\\bElayoty\\b/g"
       - "/\\bElin\\b/g"
       - "/\\bElon\\b/g"
+      - "/\\bEmre\\b/g"
       - "/\\bEnamoto\\b/g"
       - "/\\bEno\\b/g"
       - "/\\bFikes\\b/g"
@@ -180,6 +184,7 @@ rules:
       - "/\\bMoriyoshi\\b/g"
       - "/\\bMaroney\\b/g"
       - "/\\bMoscone\\b/g"
+      - "/\\bMustafa\\b/g"
       - "/\\bNeistat\\b/g" # Casey Neistat
       - "/\\bNaoki\\b/g"
       - "/\\bNghia\\b/g"
@@ -580,6 +585,7 @@ rules:
       - "/\\b[Ss]uperintelligence\\b/g" # super + intelligence (stupid AI terms)
       - "/\\b[Ss]tylesheets?\\b/g"
       - "/\\b[Tt]estbed\\b/g"
+      - "/\\b[Tt]oolchains?\\b/g"
       - "/\\b[Tt]racebacks?\\b/g" # Error trace information
       - "/\\b[Tt]radeoffs?\\b/g" # trade + off
       - "/\\b[Uu]ntrusted\\b/g" # used to describe code in a security context
@@ -652,6 +658,7 @@ rules:
       - "/\\bMNIST\\b/g" # Modified National Institute of Standards and Technology DB
       - "/\\bMQ\\b/g" # Message Queue
       - "/\\bMVC\\b/g" # Model-View-Controller
+      - "/\\bNUMA\\b/g" # Non-Uniform Memory Access
       - "/\\bNoSQL\\b/g" # Not Only SQL
       - "/\\bOSS\\b/g" # Open Source Software
       - "/\\bQPS\\b/g" # Queries Per Second
