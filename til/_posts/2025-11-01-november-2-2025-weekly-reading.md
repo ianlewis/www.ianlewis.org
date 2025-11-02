@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "TIL: November 2, 2025 - Weekly Reading: Go, Scripts, and Security"
-date: "2025-11-01 00:00:00 +0900"
+date: "2025-11-02 09:00:00 +0900"
 blog: til
-tags: weekly-reading
+tags: weekly-reading golang programming security
 render_with_liquid: false
 ---
 
