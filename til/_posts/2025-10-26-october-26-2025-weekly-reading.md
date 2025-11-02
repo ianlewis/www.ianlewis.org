@@ -3,7 +3,7 @@ layout: post
 title: "TIL: October 26, 2025 - Weekly Reading: Sora 2 and the AI Bubble"
 date: "2025-10-26 00:00:00 +0900"
 blog: til
-tags: weekly-reading
+tags: weekly-reading ai
 render_with_liquid: false
 ---
 

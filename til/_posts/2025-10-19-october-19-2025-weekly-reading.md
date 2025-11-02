@@ -3,7 +3,7 @@ layout: post
 title: "TIL: October 19, 2025 - Weekly Reading: Career and Vibe Engineering"
 date: "2025-10-19 00:00:00 +0900"
 blog: til
-tags: weekly-reading
+tags: weekly-reading ai programming
 render_with_liquid: false
 ---
 

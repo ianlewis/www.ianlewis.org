@@ -9,16 +9,13 @@ render_with_liquid: false
 
 ## Programming
 
-- [Processes and Threads](https://planetscale.com/blog/processes-and-threads) --
-  _Ben Dicken, PlanetScale_
+- [Processes and Threads](https://planetscale.com/blog/processes-and-threads) -- _Ben Dicken, PlanetScale_
 
     A simple overview of the processes, how they are multiplexed on a CPU, how
     they use memory, and how they differ from threads. It's a bit simplistic
     though and I didn't learn much I didn't already know.
 
-- [Seven Years of
-  Firecracker](https://brooker.co.za/blog/2025/09/18/firecracker.html) -- _Marc
-  Brooker, AWS_
+- [Seven Years of Firecracker](https://brooker.co.za/blog/2025/09/18/firecracker.html) -- _Marc Brooker, AWS_
 
     A retrospective on Firecracker, a lightweight virtualization technology
     developed by AWS for running serverless workloads. Marc mentions some areas
@@ -27,9 +24,7 @@ render_with_liquid: false
     it easier to provide the container with access to hardware features like
     GPUs.
 
-- [I replaced all my bash scripts with Python, and here’s what
-  happened](https://www.xda-developers.com/replaced-bash-scripts-python-what-happened/)
-  -- _Jeff Butts_
+- [I replaced all my bash scripts with Python, and here’s what happened](https://www.xda-developers.com/replaced-bash-scripts-python-what-happened/) -- _Jeff Butts_
 
     Jeff describes his experience replacing bash scripts with Python scripts. He
     found that Python scripts were more readable, maintainable, and easier to
@@ -43,8 +38,7 @@ render_with_liquid: false
     other hand, you should probably use a different language if you are actually
     writing business logic.
 
-- [Building Statically Linked Go Executables with CGO and
-  Zig](https://calabro.io/zig-cgo) -- _Jim Calabro_
+- [Building Statically Linked Go Executables with CGO and Zig](https://calabro.io/zig-cgo) -- _Jim Calabro_
 
     Apparently `cgo` does allow you to build statically linked Go binaries in some
     cases. You can statically link a Zig library that uses the C ABI into a Go
@@ -56,9 +50,7 @@ render_with_liquid: false
 
 ## Kubernetes
 
-- [<!-- textlint-disable spelling -->Inside kube-scheduler: The Plugin Framework That Powers Kubernetes
-  Scheduling<!-- textlint-enable spelling -->](https://medium.com/@helayoty/inside-kube-scheduler-the-plugin-framework-that-powers-kubernetes-scheduling-8452bee40c10)
-  -- _Heba Elayoty_
+- [<!-- textlint-disable spelling -->Inside kube-scheduler: The Plugin Framework That Powers Kubernetes Scheduling<!-- textlint-enable spelling -->](https://medium.com/@helayoty/inside-kube-scheduler-the-plugin-framework-that-powers-kubernetes-scheduling-8452bee40c10) -- _Heba Elayoty_
 
     A detailed overview of the Kubernetes scheduler and its plugin framework.
     The article covers the architecture of the scheduler, how plugins are
