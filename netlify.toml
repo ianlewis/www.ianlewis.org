@@ -23,6 +23,8 @@ environment = { NODE_VERSION = "22" }
 
 [context.deploy-preview]
   command = "bundle exec jekyll build --drafts --future"
+  # Skip deploy previews for Renovate PRs (branches starting with "renovate/")
+  ignore = "sh -c '[ \"${HEAD#renovate/}\" != \"$HEAD\" ]'"
 
 [[plugins]]
   package = "@netlify/plugin-csp-nonce"
