@@ -416,7 +416,7 @@ yaml-format: node_modules/.installed ## Format YAML files.
 #####################################################################
 
 .PHONY: lint
-lint: actionlint checkmake commitlint eslint fixme format-check html-validate markdownlint renovate-config-validator stylelint textlint yamllint zizmor ## Run all linters.
+lint: actionlint check-redirects checkmake commitlint eslint fixme format-check html-validate markdownlint renovate-config-validator stylelint textlint yamllint zizmor ## Run all linters.
 
 .PHONY: actionlint
 actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
@@ -441,6 +441,12 @@ actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
 			-ignore 'SC2016:' \
 			$${files}; \
 	fi
+
+.PHONY: check-redirects
+check-redirects: .venv/.installed ## Check for redirect loops.
+	@# bash \
+	$(REPO_ROOT)/.venv/bin/python \
+		$(REPO_ROOT)/scripts/check-redirects.py
 
 .PHONY: checkmake
 checkmake: $(AQUA_ROOT_DIR)/.installed ## Runs the checkmake linter.
