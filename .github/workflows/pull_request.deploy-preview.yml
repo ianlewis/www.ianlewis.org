@@ -106,7 +106,7 @@ jobs:
           gh pr comment "${PULL_REQUEST_NUM}" -R "${GITHUB_REPOSITORY}" \
             --create-if-none \
             --edit-last \
-            --body "### 👷 Build preview processing...
+            --body "### ✅ Build preview ready
 
           | Name | Link |
           |------|------|
