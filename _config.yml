@@ -24,6 +24,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.ianlewis.org" # the base hostname & protocol for your site, e.g. http://example.com
 timezone: UTC
 
+source: ./content
+destination: ./_site
+
 # Default permalink style
 permalink: /:categories/:year/:month/:day/:slug
 

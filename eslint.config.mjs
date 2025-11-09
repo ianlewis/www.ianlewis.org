@@ -13,7 +13,6 @@
 // limitations under the License.
 
 import globals from "globals";
-import tsParser from "@typescript-eslint/parser";
 import github from "eslint-plugin-github";
 
 export default [

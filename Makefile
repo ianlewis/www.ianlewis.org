@@ -52,8 +52,12 @@ MKTEMP := $(shell command -v gmktemp 2>/dev/null || command -v mktemp 2>/dev/nul
 
 # Default port for `make serve`.
 SERVE_PORT ?= 8888
+
+# Netlify authentication token for deploy previews.
+NETLIFY_AUTH_TOKEN ?= $(shell jq -r ".users.\"$$(jq -r '.userId' ~/.config/netlify/config.json)\".auth.token" $(HOME)/.config/netlify/config.json 2>/dev/null || true)
+
 # Default build context for `make build` and `make serve`.
-BUILD_CONTEXT ?= dev
+NETLIFY_BUILD_CONTEXT ?= dev
 
 # The help command prints targets in groups. Help documentation in the Makefile
 # uses comments with double hash marks (##). Documentation is printed by the
@@ -194,7 +198,7 @@ build: node_modules/.installed bundle-install ## Build the site.
 		debug_options="--debug"; \
 	fi; \
 	$(REPO_ROOT)/node_modules/.bin/netlify build \
-		--context "$(BUILD_CONTEXT)" \
+		--context "$(NETLIFY_BUILD_CONTEXT)" \
 		--offline \
 		$${debug_options}
 
@@ -208,10 +212,18 @@ serve: node_modules/.installed bundle-install ## Run local development server.
 	$(REPO_ROOT)/node_modules/.bin/netlify dev \
 		--skip-gitignore \
 		--no-open \
-		--context "$(BUILD_CONTEXT)" \
+		--context "$(NETLIFY_BUILD_CONTEXT)" \
 		--offline \
 		--port "$(SERVE_PORT)" \
 		$${debug_options}
+
+.PHONY: deploy
+deploy: ## Deploy a deploy preview to Netlify (requires login).
+	@# bash \
+	$(REPO_ROOT)/node_modules/.bin/netlify deploy \
+		--site "$(NETLIFY_SITE_ID)" \
+		--context "$(NETLIFY_BUILD_CONTEXT)" \
+		--json
 
 ## Testing
 #####################################################################
@@ -235,7 +247,7 @@ html-format: node_modules/.installed ## Format HTML files.
 	files=$$( \
 		git ls-files --deduplicate \
 			'*.html' \
-			':!:assets/demos' \
+			':!:content/assets/demos' \
 			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 	); \
 	if [ "$${files}" == "" ]; then \
@@ -258,7 +270,7 @@ js-format: node_modules/.installed ## Format Javascript files.
 		git ls-files --deduplicate \
 			'*.js' \
 			':!:*.min.js' \
-			':!:assets/demos' \
+			':!:content/assets/demos' \
 			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 	); \
 	if [ "$${files}" == "" ]; then \
@@ -310,8 +322,8 @@ license-headers: ## Update license headers.
 			'*.yaml' \
 			'*.yml' \
 			'Makefile' \
-			':!:assets/demos' \
-			':!:_sass/ext' \
+			':!:content/assets/demos' \
+			':!:content/_sass/ext' \
 			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 	); \
 	name=$$(git config user.name); \
@@ -365,8 +377,8 @@ sass-format: node_modules/.installed ## Format SASS files.
 	files=$$( \
 		git ls-files --deduplicate \
 			'*.scss' \
-			':!:assets/css/style.scss' \
-			':!:_sass/ext' \
+			':!:content/assets/css/style.scss' \
+			':!:content/_sass/ext' \
 			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 	); \
 	if [ "$${files}" == "" ]; then \
@@ -382,8 +394,8 @@ sass-format: node_modules/.installed ## Format SASS files.
 		files=$$( \
 			git ls-files --deduplicate \
 				'*.scss' \
-				':!:assets/css/style.scss' \
-				':!:_sass/ext' \
+				':!:content/assets/css/style.scss' \
+				':!:content/_sass/ext' \
 		); \
 		./node_modules/.bin/prettier \
 			--write \
@@ -509,7 +521,7 @@ eslint: node_modules/.installed ## Runs eslint.
 			git ls-files \
 				'*.js' \
 				':!:*.min.js' \
-				':!:assets/demos' \
+				':!:content/assets/demos' \
 		); \
 		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 			set -euo pipefail; \
@@ -588,8 +600,8 @@ stylelint: node_modules/.installed ## Runs the stylelint linter.
 		files=$$( \
 			git ls-files --deduplicate \
 				'*.scss' \
-				':!:assets/css/style.scss' \
-				':!:_sass/ext' \
+				':!:content/assets/css/style.scss' \
+				':!:content/_sass/ext' \
 		); \
 		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 			./node_modules/.bin/stylelint --formatter github $${files}; \
@@ -608,10 +620,10 @@ markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the ma
 			'*.md' \
 			':!:.github/pull_request_template.md' \
 			':!:.github/ISSUE_TEMPLATE/*.md' \
-			':!:projects.md' \
-			':!:en/_posts/*.md' \
-			':!:jp/_posts/*.md' \
-			':!:til/_posts/*.md' \
+			':!:content/projects.md' \
+			':!:content/en/_posts/*.md' \
+			':!:content/jp/_posts/*.md' \
+			':!:content/til/_posts/*.md' \
 			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 	); \
 	if [ "$${files}" == "" ]; then \
@@ -640,10 +652,10 @@ markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the ma
 		git ls-files --deduplicate \
 			'.github/pull_request_template.md' \
 			'.github/ISSUE_TEMPLATE/*.md' \
-			'projects.md' \
-			'en/_posts/*.md' \
-			'jp/_posts/*.md' \
-			'til/_posts/*.md' \
+			'content/projects.md' \
+			'content/en/_posts/*.md' \
+			'content/jp/_posts/*.md' \
+			'content/til/_posts/*.md' \
 			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 	); \
 	if [ "$${files}" == "" ]; then \
@@ -683,11 +695,11 @@ textlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textli
 			'*.md' \
 			'*.txt' \
 			':!:requirements*.txt' \
-			':!:robots.txt' \
-			':!:index.md' \
-			':!:projects.md' \
-			':!:.well-known' \
-			':!:*.pem.pub.txt' \
+			':!:content/robots.txt' \
+			':!:content/index.md' \
+			':!:content/projects.md' \
+			':!:content/.well-known' \
+			':!:content/*.pem.pub.txt' \
 			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 	); \
 	if [ "$${files}" == "" ]; then \
@@ -792,3 +804,4 @@ clean: ## Delete temporary files.
 	@$(RM) *.sarif.json
 	@$(RM) -r _site
 	@$(RM) -r .netlify
+	@$(RM) -r content/.jekyll-cache

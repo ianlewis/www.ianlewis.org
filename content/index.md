@@ -11,7 +11,7 @@ feeds: [en, jp, til]
 <!-- markdownlint-disable MD041 -->
 <!-- header is in include file -->
 
-{% include_relative third_party/ianlewis/ianlewis/README.md %}
+{% include ianlewis/README.md %}
 
 <!-- markdownlint-enable MD041 -->
 
