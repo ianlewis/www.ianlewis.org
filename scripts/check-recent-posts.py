@@ -19,13 +19,13 @@ import re
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 
 # Regex pattern for extracting date from front matter
 DATE_PATTERN = r'^date:\s*(.+)$'
 
 
-def parse_post_date(post_file: Path) -> datetime | None:
+def parse_post_date(post_file: Path) -> Optional[datetime]:
     """Extract and parse the date from a Jekyll post's front matter."""
     try:
         with open(post_file, 'r', encoding='utf-8') as f:
@@ -41,7 +41,7 @@ def parse_post_date(post_file: Path) -> datetime | None:
                         break
                 
                 if in_front_matter:
-                    match = re.match(DATE_PATTERN, line, re.MULTILINE)
+                    match = re.match(DATE_PATTERN, line)
                     if match:
                         date_str = match.group(1).strip()
                         # Remove quotes if present
@@ -73,7 +73,12 @@ def parse_post_date(post_file: Path) -> datetime | None:
 
 
 def find_recent_posts(repo_root: Path, hours: int = 24) -> List[Tuple[Path, datetime]]:
-    """Find posts with publish dates within the last N hours."""
+    """Find posts with publish dates within the last N hours.
+    
+    This checks if any posts have a publish date that falls between
+    (now - N hours) and now. This is useful for scheduled deploys
+    to only publish when there are posts that should now be visible.
+    """
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(hours=hours)
     recent_posts = []
@@ -92,7 +97,8 @@ def find_recent_posts(repo_root: Path, hours: int = 24) -> List[Tuple[Path, date
         for post_file in post_dir.glob('*.md'):
             post_date = parse_post_date(post_file)
             if post_date:
-                # Check if the post date is in the past but within the last N hours
+                # Check if the post date is between cutoff and now
+                # This means posts that have "come due" in the last N hours
                 if cutoff <= post_date <= now:
                     recent_posts.append((post_file, post_date))
     
