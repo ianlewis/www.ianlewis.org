@@ -53,9 +53,6 @@ MKTEMP := $(shell command -v gmktemp 2>/dev/null || command -v mktemp 2>/dev/nul
 # Default port for `make serve`.
 SERVE_PORT ?= 8888
 
-# Netlify authentication token for deploy previews.
-NETLIFY_AUTH_TOKEN ?= $(shell jq -r ".users.\"$$(jq -r '.userId' ~/.config/netlify/config.json)\".auth.token" $(HOME)/.config/netlify/config.json 2>/dev/null || true)
-
 # Default build context for `make build` and `make serve`.
 NETLIFY_BUILD_CONTEXT ?= dev
 
@@ -216,14 +213,6 @@ serve: node_modules/.installed bundle-install ## Run local development server.
 		--offline \
 		--port "$(SERVE_PORT)" \
 		$${debug_options}
-
-.PHONY: deploy
-deploy: ## Deploy a deploy preview to Netlify (requires login).
-	@# bash \
-	$(REPO_ROOT)/node_modules/.bin/netlify deploy \
-		--site "$(NETLIFY_SITE_ID)" \
-		--context "$(NETLIFY_BUILD_CONTEXT)" \
-		--json
 
 ## Testing
 #####################################################################
