@@ -7,6 +7,10 @@ node_modules/
 .venv/
 .aqua/
 
+# Python cache
+__pycache__/
+*.pyc
+
 # SARIF files
 *.sarif.json
 
