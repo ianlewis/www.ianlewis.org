@@ -8,6 +8,9 @@ tags: tech
 render_with_liquid: false
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 Recently [Google Chrome](http://www.google.com/chrome/intl/en/features.html)
 has been pretty popular with web folks and Google fans. It's fast and has only
 a little "chrome" or window trimmings which makes the overall screen bigger
@@ -66,3 +69,5 @@ When you put that all together it looks something like this:
 Now I have a much more usable and productive browser and still have access to
 all the nice Firefox plugins that I use regularly Firebug and Delicious
 bookmarks.
+
+<!-- markdownlint-enable MD045 -->

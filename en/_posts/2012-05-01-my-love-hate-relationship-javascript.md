@@ -8,6 +8,9 @@ tags: tech programming javascript
 render_with_liquid: false
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 I have a love-hate relationship with JavaScript. Well, more hate and less love
 but I find myself conflicted when I write it. JavaScript simply makes it hard
 for me to write good code. As a little background, the JavaScript I write is
@@ -157,3 +160,5 @@ and HTTP, and only to a lesser extent HTML and JavaScript.
 I don't know what that would look like but I have a feeling it would be
 radically different from what the environment is like today. The sooner we can
 radically improve HTML and JavaScript the better.
+
+<!-- markdownlint-enable MD045 -->

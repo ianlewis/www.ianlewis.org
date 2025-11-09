@@ -9,6 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 ![](/assets/images/mercurial/mercurial_medium.png)
 
 > この記事は [Mercurial Advent Calendar 2012](http://connpass.com/event/1431/)
@@ -196,3 +199,5 @@ $ hg log -r "sort(date('Nov 2012'), user)" | grep "ユーザ:" | awk 'BEGIN { FS
 ```
 
 おうふ、もうちょっと仕事すればいいんですね。はいはい
+
+<!-- markdownlint-enable MD045 -->

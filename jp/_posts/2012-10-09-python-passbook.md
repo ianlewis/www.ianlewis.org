@@ -9,6 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 最近、iPhoneのiOS 6でPassbookという機能が出ました。Passbookはイベントのチケットや、飛行機や船の搭乗券や、クーポンや、ポイントカードを管理出来る地味に便利なアプリ。
 
 僕は興味があって、Pythonでどう作るかを調べてみたので、ここで共有しようと思っている。Passbookはパスの更新の仕組みもありますが、とりあえず、パスを作るとところまで説明しようと。まずは、Appleの日本語ドキュメントの[「Passbook プログラミングガイド」](https://developer.apple.com/jp/devcenter/ios/library/japanese.html)をざっと見たほうがいいかもしれない。
@@ -187,3 +190,5 @@ response['Content-Disposition'] = 'attachment; filename=pass.pkpass'
 これで、zipファイルがダウンロードできて、iPhoneで見れるはず。
 
 ![](/assets/images/681/passbook_big.png)
+
+<!-- markdownlint-enable MD045 -->

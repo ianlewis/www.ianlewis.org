@@ -9,6 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 我々BeProudのRedmineのWikiやチケットの説明文やチケットのコメント文にはreStructuredTextを使っている。RedmineのデフォルトのTextileはPythonが好きな弊社で使うのは以ての外。なので、reSTを使うようにした。そして、生のreSTしか使わなければ、出来ることが少ないので、`blockdiag`や、コードの構文ハイライト（Pygments）を使っている。
 
 Redmineはテキストフォマッターを入れ換えるように作られている。プラグインを入れるとWikiやチケットの内容のフォーマットを変えることができます。BeProudではRedmine reStructuredText Formatterの`RbST`/`docutils`ブランチを使っている。
@@ -221,3 +224,5 @@ directives.register_directive("code-block", pygments_directive)
 とにかく、Redmineは大変だから、だけか、Python版を作ってほしい！
 
 それができるまでは、`rst2html.py`は普通のpythonプログラムなので、Pythonで対応出来る限り、何でもできます。実は僕達は[`blockdiag`](http://blockdiag.com/ja/blockdiag/index.html) もRedmineのWikiで書けます。[`seqdiag`](http://blockdiag.com/en/seqdiag/) もあって、可能性がいろいろあります。いろいろ試してみてください！
+
+<!-- markdownlint-enable MD045 -->

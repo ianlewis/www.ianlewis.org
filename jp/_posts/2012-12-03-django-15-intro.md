@@ -9,6 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 ![](/assets/images/django/django-logo-positive_medium.png)
 
 > この記事は[2012 Pythonアドベントカレンダー(Webフレームワーク)](http://connpass.com/event/1439/)の第３目の記事。昨日の記事は id:shomah4a の「 [2012 Python アドベントカレンダー (Web フレームワーク ) 二日目WSGIでなんか作ってみる](http://d.hatena.ne.jp/shomah4a/20121202) 」。明日は surgoさんが、Django 1.5以降とPython 3あたりの記事を書いてくれます。
@@ -142,3 +145,5 @@ future の書き方はまだ Django 1.5 でも動くので、多くのDjango
 
 Django 1.5 では、主に Python 3 の対応とユーザー認証のカスタマイズが一歩進んだ感じだね。　Django 1.5
 以降は非常に楽しみ
+
+<!-- markdownlint-enable MD045 -->

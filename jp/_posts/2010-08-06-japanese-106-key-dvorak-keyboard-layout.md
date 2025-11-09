@@ -9,6 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 私はQwerty配列でキーボードで打つのがあまりよくなくて、Dvorakを使ったほうが効率高いんじゃないかと考えて、ずっと前から
 [Dvorak配列](http://ja.wikipedia.org/wiki/Dvorak%E9%85%8D%E5%88%97)
 を使っています。 何かというと、キーポードの配列をソフトで切り替えるような仕組みを使っています。例えば、普通のキーポードの
@@ -144,3 +147,5 @@ kazrus          kz: Kazakh with Russian
 キーボード配列を選択できる。
 
 ![](/assets/images/621/jp160_dvorak.jpg)
+
+<!-- markdownlint-enable MD045 -->

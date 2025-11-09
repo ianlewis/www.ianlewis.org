@@ -8,6 +8,9 @@ tags: personal tech
 render_with_liquid: false
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 ![](/assets/images/702/twitter_archive_medium.png)
 
 Twitter now allows you to [download an archive of your
@@ -18,3 +21,5 @@ archive](https://storage.googleapis.com/static.ianlewis.org/prod/twitter_archive
 
 I'll periodically update this archive so that is somewhat up to date. I'll need
 to do it manually so I might be able to update it about once a month or so.
+
+<!-- markdownlint-enable MD045 -->

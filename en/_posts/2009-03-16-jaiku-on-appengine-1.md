@@ -8,6 +8,9 @@ tags: tech cloud
 render_with_liquid: false
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 ![](/assets/images/516/jaiku.png){:style="width: 60%; display:block; margin-left:auto; margin-right:auto"}
 
 Yesterday Google's Twitter-like service, [Jaiku](http://www.jaiku.com/) was
@@ -74,3 +77,5 @@ skip_files: |
 From there it should have worked but I got an error about the pstats module.
 That just happened to not be installed on my machine so installed
 python-profiler and Jaiku ran from there.
+
+<!-- markdownlint-enable MD045 -->

@@ -8,6 +8,9 @@ tags: tech devops
 render_with_liquid: false
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 Many people who are new to [Debian](http://www.debian.org/) might be thinking
 that Debian stable releases are slow. You are right. Many do look at this and
 turn to [Ubuntu](http://www.ubuntu.com/) because of their relatively quick
@@ -134,3 +137,5 @@ you can install from different repositories. You can then select which version
 to install by choosing Package -> Force version... or Package -> Versions...
 The name of the option might be slightly different as it changes a bit in
 different versions of synaptic.
+
+<!-- markdownlint-enable MD045 -->

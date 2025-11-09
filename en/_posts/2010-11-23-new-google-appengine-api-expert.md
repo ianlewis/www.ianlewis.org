@@ -8,6 +8,9 @@ tags: tech python cloud
 render_with_liquid: false
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 ![](/assets/images/643/python-powered-w-200x80.png)
 
 ![](/assets/images/appengine/appengine_lowres_thumbnail.png)
@@ -36,3 +39,5 @@ list](http://groups.google.com/group/google-app-engine-japan).
 
 I hope to let people in the US and elsewhere know about what's going on in Japan
 and introduce them to Japan and it's developers. Hope to talk to you soon\!
+
+<!-- markdownlint-enable MD045 -->
