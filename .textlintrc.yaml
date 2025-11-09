@@ -215,6 +215,7 @@ rules:
       - "/\\bSlatkin\\b/g"
       - "/\\bSota\\b/g"
       - "/\\bStapelberg\\b/g"
+      - "/\\bSu\\b/g"
       - "/\\bSuenaga\\b/g"
       - "/\\bSundar\\b/g"
       - "/\\bTakanori\\b/g"
@@ -602,6 +603,7 @@ rules:
       - "/\\bACI\\b/g" # Application Container Image
       - "/\\bACL\\b/g" # Access Control List
       - "/\\bACPI\\b/g" # Advanced Configuration and Power Interface
+      - "/\\bADD\\b/g" # Attention Deficit Disorder
       - "/\\bAPAC\\b/g" # Asia-Pacific
       - "/\\bAPIs?\\b/g" # Application Programming Interface
       - "/\\bAPK\\b/g" # Android Package
@@ -610,6 +612,7 @@ rules:
       - "/\\bBPBP\\b/g" # BeProud Book Purchase
       - "/\\bBQ\\b/g" # BigQuery
       - "/\\bBUSL\\b/g" # Business Source License
+      - "/\\bCBT\\b/g" # Cognitive Behavioral Therapy
       - "/\\bCC0\\b/g" # Creative Commons Zero
       - "/\\bCFP\\b/g" # Call for Papers/Proposals
       - "/\\bCJK\\b/g" # Chinese, Japanese, and Korean
@@ -729,8 +732,10 @@ rules:
       - "/\\b[Gg]rifter\\b/g" # person who grifts
       - "/\\b[Rr]omanization\\b/g" # Converting text to Roman alphabet
       - "/\\b[Uu]nfixable\\b/g" # Not able to be fixed or repaired
+      - "/\\b[Rr]efram(e|ed|ing)\\b/g" # To frame again or differently
 
       - "/\\bAdiós\\b/g" # Spanish for "Goodbye"
+      - "/\\bclicé(?:^|\\s)/g" # French for "clicked"
 
       - "/\\bFuturama\\b/g" # Animated science fiction sitcom
 
