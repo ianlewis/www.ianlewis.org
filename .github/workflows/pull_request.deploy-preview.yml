@@ -75,7 +75,9 @@ jobs:
       - name: Install dependencies
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: make node_modules/.installed
+        run: |
+          make node_modules/.installed
+          make bundle-install
 
       - name: Deploy preview
         id: deploy-preview
