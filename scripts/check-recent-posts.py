@@ -22,7 +22,7 @@ from pathlib import Path
 from typing import List, Optional, Tuple
 
 # Regex pattern for extracting date from front matter
-DATE_PATTERN = r'^date:\s*(.+)$'
+DATE_PATTERN = re.compile(r'^date:\s*(.+)$')
 
 
 def parse_post_date(post_file: Path) -> Optional[datetime]:
@@ -41,7 +41,7 @@ def parse_post_date(post_file: Path) -> Optional[datetime]:
                         break
                 
                 if in_front_matter:
-                    match = re.search(DATE_PATTERN, line)
+                    match = DATE_PATTERN.search(line)
                     if match:
                         date_str = match.group(1).strip()
                         # Remove quotes if present (both single and double)
@@ -78,6 +78,9 @@ def find_recent_posts(repo_root: Path, hours: int = 24) -> List[Tuple[Path, date
     This checks if any posts have a publish date that falls between
     (now - N hours) and now. This is useful for scheduled deploys
     to only publish when there are posts that should now be visible.
+    
+    Note: Posts with future dates (beyond now) are automatically excluded
+    by the upper bound check (post_date <= now).
     """
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(hours=hours)
@@ -97,8 +100,8 @@ def find_recent_posts(repo_root: Path, hours: int = 24) -> List[Tuple[Path, date
         for post_file in post_dir.glob('*.md'):
             post_date = parse_post_date(post_file)
             if post_date:
-                # Check if the post date is between cutoff and now
-                # This means posts that have "come due" in the last N hours
+                # Check if post date is in the range [cutoff, now]
+                # This excludes both old posts (before cutoff) and future posts (after now)
                 if cutoff <= post_date <= now:
                     recent_posts.append((post_file, post_date))
     
