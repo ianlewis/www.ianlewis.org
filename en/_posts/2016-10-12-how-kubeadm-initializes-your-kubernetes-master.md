@@ -16,7 +16,7 @@ The [documentation for kubeadm](http://kubernetes.io/docs/getting-started-guides
 
 The Kubernetes control plane consists of the Kubernetes API server (`kube-apiserver`), controller manager (`kube-controller-manager`), and scheduler (`kube-scheduler`). The API server depends on `etcd` so an etcd cluster is also required.
 
-<img class="align-center" src="/assets/images/755/kubernetes-arch.png" />
+<img class="align-center" src="/assets/images/755/kubernetes-arch.png" alt="Kubernetes control plane architecture diagram showing API server, controller manager, scheduler, and etcd" />
 
 These components need to be installed on your master and can be installed in a number of ways. But there are a number of things you have to think about, like how do you make sure each of them are always running? How do you update the components easily with as little impact to the system as possible? You could install them directly on the host machine by downloading them and running them but if they crash then you'd have to restart them manually.
 
@@ -60,7 +60,7 @@ So our Kubelet was started. But how? The Kubelet will monitor the control plane 
 
 We have a process architecture something like the following. It's important to note that this is not a diagram of the process tree but rather a diagram showing which components start and monitor each other.
 
-<img class="align-center" src="/assets/images/755/arch.png" />
+<img class="align-center" src="/assets/images/755/arch.png" alt="Process architecture diagram showing systemd managing kubelet which manages control plane containers" />
 
 So now we have our Kubelet running our control plane components and it is connected to the API server just like any other Kubelet node. We can verify that:
 

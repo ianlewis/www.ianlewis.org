@@ -8,7 +8,7 @@ tags: tech programming golang cloud
 render_with_liquid: false
 ---
 
-<img class="align-center" src="/assets/images/764/container-builder-go.png">
+<img class="align-center" src="/assets/images/764/container-builder-go.png" alt="Google Container Builder with Go gopher mascot">
 
 _Gopher image [Creative Commons Attribution 3.0 Unported (ja)](https://creativecommons.org/licenses/by/3.0/deed.ja) by [tenntenn](https://github.com/tenntenn/gopher-stickers)_
 

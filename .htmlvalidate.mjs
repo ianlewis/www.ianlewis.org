@@ -33,7 +33,7 @@ export default defineConfig({
     "unique-landmark": "off",
     "valid-id": "off",
     "void-style": "off",
-    "wcag/h30": "off",
+    "wcag/h30": "error",
     "wcag/h37": "off",
     "wcag/h67": "off",
   },

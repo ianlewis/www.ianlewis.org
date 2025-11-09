@@ -8,7 +8,7 @@ tags: musings
 render_with_liquid: false
 ---
 
-<img alt="/assets/images/707/0-utrb8piu3ltmh9d7_big.jpeg" class="align-center" src="/assets/images/707/0-utrb8piu3ltmh9d7_big.jpeg">
+<img alt="Keyboard with hands typing, representing muscle memory" class="align-center" src="/assets/images/707/0-utrb8piu3ltmh9d7_big.jpeg">
 
 > Note: This post is cross-posted from [my post on medium](https://medium.com/what-i-learned-today/16332f7c7666).
 

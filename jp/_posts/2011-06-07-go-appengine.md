@@ -62,7 +62,7 @@ if (len(body) > 0) {
         {.end}
     </div>
 
-    <h1>App Engine Go! Guestbook <img src="/static/img/appengine-go.png" /></h1>
+    <h1>App Engine Go! Guestbook <img src="/static/img/appengine-go.png" alt="Go gopher and App Engine logos" /></h1>
     <a href="https://bitbucket.org/IanLewis/golang_guestbook/">Source Code</a>
     <form action="/save" method="POST" style="margin-bottom: 50px">
         <div><textarea name="body" rows="10" cols="80"></textarea></div>

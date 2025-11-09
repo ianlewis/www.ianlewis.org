@@ -58,8 +58,8 @@ MD041:
   # Disable checking of YAML frontmatter.
   front_matter_title: ""
 
-# TODO(#339): Fix no-alt-text
-MD045: false
+# MD045/no-alt-text - Images should have alternate text
+MD045: true
 
 # MD046/code-block-style - Code block style
 MD046:
