@@ -45,6 +45,9 @@ jobs:
   actionlint:
     uses: ./.github/workflows/workflow_call.actionlint.yml
 
+  check-redirects:
+    uses: ./.github/workflows/workflow_call.check-redirects.yml
+
   checkmake:
     uses: ./.github/workflows/workflow_call.checkmake.yml
 

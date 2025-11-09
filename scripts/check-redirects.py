@@ -18,7 +18,6 @@
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
 
 # Maximum length of redirect chain to detect before considering it an infinite loop
 MAX_CHAIN_LENGTH = 10
@@ -28,29 +27,29 @@ FROM_PATTERN = r'from\s*=\s*"([^"]+)"'
 TO_PATTERN = r'to\s*=\s*"([^"]+)"'
 
 
-def parse_redirects(filename: str) -> Dict[str, str]:
+def parse_redirects(filename: str) -> dict[str, str]:
     """Parse netlify.toml and extract redirect mappings."""
     redirects = {}
 
-    with open(filename, "r", encoding="utf-8") as f:
+    with Path.open(filename, "r", encoding="utf-8") as f:
         content = f.read()
 
     # Find all redirect blocks (supports both 'from' before 'to' and vice versa)
     # Split on redirect blocks and skip content before first block
-    redirect_blocks = re.split(r'\[\[redirects\]\]', content)[1:]
-    
+    redirect_blocks = re.split(r"\[\[redirects\]\]", content)[1:]
+
     for block in redirect_blocks:
         # Extract from and to values regardless of order
         from_match = re.search(FROM_PATTERN, block)
         to_match = re.search(TO_PATTERN, block)
-        
+
         if from_match and to_match:
             redirects[from_match.group(1)] = to_match.group(1)
 
     return redirects
 
 
-def find_chains(redirects: Dict[str, str]) -> List[Tuple[str, List[str]]]:
+def find_chains(redirects: dict[str, str]) -> list[tuple[str, list[str]]]:
     """Find redirect chains where a redirect target is itself redirected."""
     chains = []
 
@@ -75,7 +74,7 @@ def find_chains(redirects: Dict[str, str]) -> List[Tuple[str, List[str]]]:
     return chains
 
 
-def main():
+def main() -> None:
     """Check for chained redirects and exit with error if any found."""
     repo_root = Path(__file__).parent.parent
     filename = repo_root / "netlify.toml"
@@ -87,13 +86,13 @@ def main():
         print(f"ERROR: Found {len(chains)} chained redirects:", file=sys.stderr)
         print("=" * 80, file=sys.stderr)
         for from_path, chain in chains:
-            print(f"\nChain starting from: {from_path}", file=sys.stderr)
+            print(f"Chain starting from: {from_path}", file=sys.stderr)
             for i, path in enumerate(chain):
                 prefix = "  -> " if i > 0 else "     "
                 print(f"{prefix}{path}", file=sys.stderr)
-        print("\n" + "=" * 80, file=sys.stderr)
+        print("=" * 80, file=sys.stderr)
         print(
-            "\nPlease update these redirects to point directly to their final destination.",
+            "Please update these redirects to point directly to their final destination.",
             file=sys.stderr,
         )
         sys.exit(1)
