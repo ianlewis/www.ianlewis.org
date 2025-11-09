@@ -9,6 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 ![PyCon JP](/assets/images/661/logo_small.png)
 
 スタッフとして、楽しい楽しいPyCon JP に参加しました。 今回、約200人の Python プログラマーを集めることを成功しました。 本当に
@@ -43,3 +46,5 @@ PyCon JP 2011 で始めて感じていました。海外の方もいらっしゃ
 私の発表のスライトはこちら: [`http://ianlewis.bitbucket.org/pyconjp_2011_slides/template/index.html`](http://ianlewis.bitbucket.org/pyconjp_2011_slides/template/index.html)
 
 皆さん、どうもありがとうございました！
+
+<!-- markdownlint-enable MD045 -->

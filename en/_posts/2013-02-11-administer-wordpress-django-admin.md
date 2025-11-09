@@ -8,6 +8,9 @@ tags: tech programming python wordpress django
 render_with_liquid: false
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 I recently came across one feature of Django that seemed pretty useful for one
 off projects and customizations and was startled because it's one of Django's
 least mentioned features. In fact, I've been using Django at work for over 5
@@ -343,3 +346,5 @@ There's also an endless amount of customization you could do using the Django
 admin to provide a richer experience. You can get started by reading the Django
 docs for the admin: [The Django admin
 site](https://docs.djangoproject.com/en/1.4/ref/contrib/admin/). Have fun\!
+
+<!-- markdownlint-enable MD045 -->

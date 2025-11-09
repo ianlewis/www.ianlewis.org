@@ -8,6 +8,9 @@ tags: tech programming python cloud
 render_with_liquid: false
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 The Kay team just just released Kay 1.1\! I want to thank Takashi Matsuo,
 Nickolas Daskalou, Tasuku Suenaga, and Yosuke Suzuki for their hard work on this
 release.
@@ -182,3 +185,5 @@ are also looking forward to Kay 2.0 so if you have any suggestions about any
 large new features now is the time to let us know!
 
 We look forward to hearing feedback about Kay!
+
+<!-- markdownlint-enable MD045 -->

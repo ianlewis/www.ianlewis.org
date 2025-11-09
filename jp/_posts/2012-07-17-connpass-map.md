@@ -9,6 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 最近、僕が作っているサイト、[Connpass](http://connpass.com/)では、関西や、札幌のイベントが増えって来て、Connpassのイベントは東京意外、どのくらいあるか、どこにあるかが見たかったのがきっかけ。
 
 ConnpassのAPIではイベントに緯度と経度を簡単に取れるので、Googleマップのマッシュアップは簡単に作れるのかた思って、[作ってみました](http://connpass-map.ian-test-hr.appspot.com/)。
@@ -118,3 +121,5 @@ function create_marker(event) {
 ![image](/assets/images/680/connpass_map_tooltip_big.png)
 
 こういうのはわりと簡単に出来るので、これからもっと作ってみたいなと思っている。
+
+<!-- markdownlint-enable MD045 -->

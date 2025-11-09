@@ -8,6 +8,9 @@ tags: tech programming golang rust typescript
 render_with_liquid: false
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 There are a number of next generation of languages that have come out and are
 becoming popular in recent years that are trying to use what has been learned
 from large development projects. Some of the more popular languages aimed at
@@ -154,5 +157,7 @@ will continue to be a trend in the future.
 
 So that's it. Just a few patterns I noticed in programming languages and
 environments. What do you think? I'm sure I missed something so if there is
-something on your mind just leave a comment below or get in touch on Twitter →
-[@IanMLewis](https://twitter.com/IanMLewis)
+something on your mind just leave a comment below or get in touch on ~~Twitter~~
+[Bluesky](https://bsky.app/profile/ianlewis.org)
+
+<!-- markdownlint-enable MD045 -->

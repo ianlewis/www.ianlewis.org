@@ -8,6 +8,9 @@ tags: tech containers kubernetes
 render_with_liquid: false
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 `kubeadm` is a new tool that is part of the Kubernetes distribution as of 1.4.0 which helps you to install and set up a Kubernetes cluster. One of the most frequent criticisms of Kubernetes is that it's hard to install. `kubeadm` really makes this easier so I suggest you give it a try.
 
 The [documentation for kubeadm](http://kubernetes.io/docs/getting-started-guides/kubeadm/) outlines how to set up a cluster but as I was doing that I found how `kubeadm` actually sets up the master to be really interesting so I wanted to share that here.
@@ -209,3 +212,5 @@ One of the most important things that `kubeadm` doesn't do yet is set up a multi
 `kubeadm` also doesn't yet install cloud provider integrations so things like [load balancers](http://kubernetes.io/docs/user-guide/load-balancer/) and [persistent volumes](http://kubernetes.io/docs/user-guide/persistent-volumes/walkthrough/) won't work.
 
 Hopefully that gave you an idea of what `kubeadm` is doing. Running the components using the Kubelet is a great practice that ensures the components are running and makes it easier to upgrade them later. When Kubernetes 1.5 comes out we can expect to see relatively painless upgrades for users of `kubeadm`.
+
+<!-- markdownlint-enable MD045 -->

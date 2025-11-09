@@ -9,6 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 今週末のPython温泉で、最近買った、Arduinoを初めて触った。[Arduino+Pythonハッキング勉強会](http://connpass.com/event/1107/)の[資料](http://kitagami.org/Study/arduinopy20120917.html)を見て、何か同じようなもの作れないかと思った。
 
 Starter Kitを買ったので、Arduinoだけじゃなくて、いろなものが付いてきた。そのなかの一つはピエゾバザー。バザーの動作を確認した後に、HTTPでbuzzerを操作できたらいいんじゃないかと思って、簡単なHTTP APIを作った。
@@ -145,3 +148,5 @@ void loop() {
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen>
 </iframe>
+
+<!-- markdownlint-enable MD045 -->

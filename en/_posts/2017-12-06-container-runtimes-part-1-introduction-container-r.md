@@ -24,7 +24,7 @@ This post will explain what container runtimes are and why there is so much
 confusion. I will then dive into different types of container runtimes, what
 they do, and how they are different from each other.
 
-![Not sure if this refers to Kubernetes container runtime, low-level container runtime, or movie runtime](/assets/images/768/notsure.png){: .align-center }
+![Futurama character Philip J. Fry squinting his eyes with the caption: "Not sure if this refers to Kubernetes container runtime, low-level container runtime, or movie runtime"](/assets/images/768/notsure.png){: .align-center }
 
 Traditionally, a computer programmer might know "runtime" as either the
 lifecycle phase when a program is running, or the specific implementation of a

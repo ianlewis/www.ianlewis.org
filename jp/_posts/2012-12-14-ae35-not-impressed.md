@@ -9,6 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 [`http://ae35notimpressed.ian-test-hr.appspot.com/`](http://ae35notimpressed.ian-test-hr.appspot.com/)
 
 私が作った、上記のアプリはもう見ているかもしれませんが、何で作ったか、どういう意味なのかがわからない人が多くて、ちょっとブログで説明しようかなと思って、書いてみた。
@@ -60,3 +63,5 @@ locale: ja
 新しい meme が生まれた。。
 
 ![](/assets/images/686/meme.png)
+
+<!-- markdownlint-enable MD045 -->

@@ -9,6 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 > この記事は BeProud ではどう仕事しているかの3部構成シリーズの2部目。GitHubのZach Holman さんが書いて頂いた 「[How GitHub Works](http://zachholman.com/posts/how-github-works/) 」シリーズのBeProud版。１部目は「[Hours are Bullshit](http://zachholman.com/posts/how-github-works-hours/)」の解説の「[BPで働くのがどうか (How BeProud Works)](/jp/bp-how-beproud-works) 」でした。今回は「[Be Asynchronous](http://zachholman.com/posts/how-github-works-asynchronous/)」という話の解説。
 
 ## Communication
@@ -62,3 +65,5 @@ Zachさんが書いていただいた内容はもともと[37signals](http://37s
 非同期コミュニケーションとミーティングを避けるのが時間の効率をアップするために、非常にいいアイディアと思います。ソフトウエア開発をする時に、時間がボトルネックになる場合が多いので、非同期コミュニケーションを使えば、効率があがって、仕事が全体的に速くなるのが間違いない。例の仕事Aは優先高くて、仕事Bと仕事Cがどんだけ遅くなっても、速く終わらせたいのであれば、非同期に合わないでしょう。非同期の考え方は短期で仕事が遅くなっても、長期で仕事が速くなればいいことだというのが大前提です。
 
 ミーティングを避けると喜ぶ開発者が多いでしょう。固定な時間で仕事を中断させると自分で時間の使い方をうまくコントロールできなくて、上に述べたことで無駄が多くなる。ただし、非同期なコミュニケーションや、ミーティングをやらないのが、次にどうするか、どういうものを作るんだなど、仕事が決まった限り働きます。何をするかというのがきちんと決まってないとうまく進まないと思います。クリエイティブなことをやったり、企画だったり、マネージメントをしている人はミーティングや、直接話す場面を避けることが出来ないでしょう。
+
+<!-- markdownlint-enable MD045 -->

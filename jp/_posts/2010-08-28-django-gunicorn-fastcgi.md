@@ -9,6 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 ![](/assets/images/624/large_gunicorn_big.png)
 
 ## 概要
@@ -127,3 +130,5 @@ FastCGIは思ったより頑張ってましたが、メモリが充分あれば�
 Gunicornの場合は処理時間がFastCGIの`prefork`と少し早く見えますけど、最低処理時間が少し高くなって、あんまりかわらないんですが、エラー数が`prefork`よりさらに半分くらいになりました。要するに、GunicornはFastCGI `prefork`より多くのユーザーを扱うことができました。ということは、本当の運用しているアプリケーションにGunicornがリソースをより効率的に使う可能性が高いですね。[BeProud](http://www.beproud.jp/)ではもうちょっと検討するのですが、非同期アプリケーションの仕事も増えていますし、将来にGunicornを使うのが良さそうに見えます。
 
 もし、誰かがこのテストを使ったら、他のハードウエア、環境などでは、どういう結果がでるかを聞きたいと思っています。もしくは、テストについてのコメントがあれば、ぜひ宜しくお願いします。
+
+<!-- markdownlint-enable MD045 -->

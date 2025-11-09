@@ -9,6 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 ![](/assets/images/python/python-powered.png)
 
 ![](/assets/images/appengine/appengine_lowres.png)
@@ -18,3 +21,5 @@ locale: ja
 僕は Python のエキスパートを務めますが、 Java に共有しているところ、App Engineのインフラ、APIなどの質問についても解答できます。ぜひ、[Twitter](http://twitter.com/IanMLewis/)でフォローしたり、 [App Engine Japanのメーリングリスト](http://groups.google.com/group/google-app-engine-japan)で質問したり、してください！
 
 僕は日本、日本人が大好きなので、日本のデベロッパーを応援しながら、日本に情報を持ってたり、日本から出来たものを世界中に紹介したり、世界中に広げげたりしていきたいと思っています。これからも、よろしくお願いします！！
+
+<!-- markdownlint-enable MD045 -->

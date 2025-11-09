@@ -512,7 +512,6 @@ rules:
       - "/\\b[Mm]emcached\\b/g"
       - "/\\b[Nn]ginx\\b/g"
       - "/\\b[Ww]i-?[Ff]i\\b/g"
-      - "/\\b[Nn]ginx\\b/g"
 
       # Websites/Organizations/Events
       ##########################################################################
@@ -732,6 +731,8 @@ rules:
       - "/\\b[Uu]nfixable\\b/g" # Not able to be fixed or repaired
 
       - "/\\bAdiós\\b/g" # Spanish for "Goodbye"
+
+      - "/\\bFuturama\\b/g" # Animated science fiction sitcom
 
       # Extra patterns
       # TODO(#285): Handle or fix the following words.

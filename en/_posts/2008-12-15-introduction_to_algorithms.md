@@ -8,6 +8,9 @@ tags: tech programming python
 render_with_liquid: false
 ---
 
+<!-- TODO(#339): Add alt text to images. -->
+<!-- markdownlint-disable MD045 -->
+
 ![](/assets/images/2008-12-15-introduction_to_algorithms/intro_to_algorithms.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
 Today my copy of Introduction to Algorithms came in the mail (a gift from the
@@ -66,3 +69,5 @@ def merge(array, start, pivot, end):
       array[k] = r[j]
       j += 1
 ```
+
+<!-- markdownlint-enable MD045 -->
