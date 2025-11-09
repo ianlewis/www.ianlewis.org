@@ -1,0 +1,114 @@
+# Copyright 2024 Ian Lewis
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: deploy-preview
+
+on:
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [main]
+    paths:
+      - "_config.yml"
+      - "netlify.toml"
+      - "content/**"
+
+permissions:
+  contents: read # Needed to check out the repo.
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+# NOTE: We use simple job names because these are used in branch rulesets and
+#       are matched by name. This makes the job names an identifier rather than
+#       just a human-readable label.
+
+jobs:
+  build-preview:
+    name: build-preview
+    runs-on: ubuntu-latest
+    # Only run this job if the PR is from a branch in this repository.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    permissions:
+      contents: read
+      pull-requests: write # Needed to write a comment to the PR.
+    steps:
+      - name: Write comment to PR
+        if: github.event_name == 'pull_request'
+        env:
+          PULL_REQUEST_NUM: ${{ github.event.pull_request.number }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr comment "${PULL_REQUEST_NUM}" -R "${GITHUB_REPOSITORY}" \
+            --create-if-none \
+            --edit-last \
+            --body "### 👷 Build preview processing...
+
+          | Name | Link |
+          |------|------|
+          | Deploy Preview | Building... |
+          | Deploy Logs | Building... |"
+
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          submodules: true
+          persist-credentials: false
+
+      # NOTE: ruby/setup-ruby automatically reads the .ruby-version file.
+      - uses: ruby/setup-ruby@d5126b9b3579e429dd52e51e68624dda2e05be25 # v1.267.0
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: ".node-version"
+
+      - name: Install dependencies
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          make node_modules/.installed
+          make bundle-install
+
+      - name: Deploy preview
+        id: deploy-preview
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          node_modules/.bin/netlify deploy \
+            --auth "${NETLIFY_AUTH_TOKEN}" \
+            --site "${NETLIFY_SITE_ID}" \
+            --context deploy-preview \
+            --json > deploy.json
+
+          echo "deploy_url=$(jq -r '.deploy_url' deploy.json)" >> "$GITHUB_OUTPUT"
+          echo "log_url=$(jq -r '.logs' deploy.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Update comment on PR
+        if: github.event_name == 'pull_request'
+        env:
+          PULL_REQUEST_NUM: ${{ github.event.pull_request.number }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEPLOY_URL: ${{ steps.deploy-preview.outputs.deploy_url }}
+          LOG_URL: ${{ steps.deploy-preview.outputs.log_url }}
+        run: |
+          gh pr comment "${PULL_REQUEST_NUM}" -R "${GITHUB_REPOSITORY}" \
+            --create-if-none \
+            --edit-last \
+            --body "### ✅ Build preview ready
+
+          | Name | Link |
+          |------|------|
+          | Deploy Preview | [${DEPLOY_URL}](${DEPLOY_URL}) |
+          | Deploy Log | [${LOG_URL}](${LOG_URL}) | "
