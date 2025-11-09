@@ -41,11 +41,11 @@ def parse_post_date(post_file: Path) -> Optional[datetime]:
                         break
                 
                 if in_front_matter:
-                    match = re.match(DATE_PATTERN, line)
+                    match = re.search(DATE_PATTERN, line)
                     if match:
                         date_str = match.group(1).strip()
-                        # Remove quotes if present
-                        date_str = date_str.strip('"').strip("'")
+                        # Remove quotes if present (both single and double)
+                        date_str = date_str.strip('\'"')
                         # Parse the date string
                         # Jekyll supports various date formats, common one is:
                         # "YYYY-MM-DD HH:MM:SS +/-TTTT"
