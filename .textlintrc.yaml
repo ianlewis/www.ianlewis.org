@@ -498,6 +498,7 @@ rules:
       - "/\\bdotfiles\\b/g"
       - "/\\betcd\\b/g" # etcd.io
       - "/\\bext3\\b/g" # Third extended file system
+      - "/\\bfx\\b/g" # JSON/YAML viewer (https://fx.wtf/)
       - "/\\bgRPC\\b/g" # gRPC remote procedure call framework
       - "/\\bgorbital\\b/g" # molecular orbital visualization tool
       - "/\\bgtkmm\\b/g" # C++ bindings for GTK
@@ -723,6 +724,7 @@ rules:
       - "/\\bHouthis?\\b/g" # Houthi movement
       - "/\\b[Mm]okumoku-kai\\b/g" # Mokumoku-kai, a Japanese term for a gathering
       - "/\\b[Rr]yokan\\b/g" # Ryokan, a type of traditional Japanese inn
+      - "/\\b[Ll]orem\\b/g" # Lorem Ipsum
 
       - "/\\bYeeaaah\\b/g" # Exaggerated "Yeah" often used in informal contexts
       - "/\\b[Ww]illy-nilly\\b/g" # Meaning "in a disorganized manner"
