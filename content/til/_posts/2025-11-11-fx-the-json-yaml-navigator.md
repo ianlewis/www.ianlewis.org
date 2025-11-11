@@ -22,4 +22,4 @@ $ kubectl get pods -o yaml | fx --yaml
 
 The GIF from their website shows what it looks like pretty well.
 
-![An animated GIF showing how fx can be used to collapse and expand various parts of a JSON file. The contents of the file are a lorem ipsum article sample with structured data for the auther and tags.](/assets/images/2025-11-10-fx-the-json-yaml-navigator/preview.gif)
+![An animated GIF showing how fx can be used to collapse and expand various parts of a JSON file. The contents of the file are a lorem ipsum article sample with structured data for the author and tags.](/assets/images/2025-11-10-fx-the-json-yaml-navigator/preview.gif)
