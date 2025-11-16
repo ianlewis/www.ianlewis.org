@@ -3,7 +3,7 @@ layout: post
 title: "TIL: July 1, 2025 - Weekly Reading: AI 2027, Go 1.25, and Career Development"
 date: "2025-07-01 00:00:00 +0900"
 blog: til
-tags: AI go learning weekly-reading
+tags: ai go learning weekly-reading
 render_with_liquid: false
 ---
 
@@ -72,7 +72,7 @@ render_with_liquid: false
     relative to other processes/containers on the same machine so the
     `GOMAXPROCS` change won't actually be all that helpful.
 
-    The new [encoding/json/v2](https://tip.golang.org/doc/go1.25#json_v2)
+    The new [`encoding/json/v2`](https://tip.golang.org/doc/go1.25#json_v2)
     package and the new [experimental garbage
     collector](https://tip.golang.org/doc/go1.25#new-experimental-garbage-collector)
     also look interesting but I haven't had a chance to look into them much yet.

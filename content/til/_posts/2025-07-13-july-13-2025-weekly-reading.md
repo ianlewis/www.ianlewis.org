@@ -3,7 +3,7 @@ layout: post
 title: "TIL: July 13, 2025 - Weekly Reading: MCP Server security, Bespoke Agents"
 date: "2025-07-13 00:00:00 +0900"
 blog: til
-tags: weekly-reading AI security
+tags: weekly-reading ai security
 render_with_liquid: false
 ---
 
@@ -25,7 +25,7 @@ render_with_liquid: false
 
     ToolHive's authorization system isn't what I initially expected. I expected
     that ToolHive would help manage OAuth2/OIDC tokens for MCP servers that need
-    to authenticate with OAuth2 APIs. Instead it seems to only really have
+    to authenticate with OAuth2 APIs. Instead, it seems to only really have
     support for storing secrets that can be [passed to MCP servers via
     environment
     variables](https://github.com/stacklok/toolhive/blob/8b7bbe06548128f3b0cec2c0876f1dfefe28cb6c/pkg/registry/data/registry.json#L19-L24).

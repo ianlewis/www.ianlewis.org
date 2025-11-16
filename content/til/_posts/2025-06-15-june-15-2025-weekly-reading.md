@@ -3,7 +3,7 @@ layout: post
 title: "TIL: June 15, 2025 - Weekly Reading: AI, Programming with agents, and Personal Development"
 date: "2025-06-15 00:00:00 +0900"
 blog: til
-tags: AI programming learning weekly-reading
+tags: ai programming learning weekly-reading
 render_with_liquid: false
 ---
 
@@ -25,7 +25,8 @@ render_with_liquid: false
 
 - [GenAI Criticism and Moral Quandaries](https://lucumr.pocoo.org/2025/6/10/genai-criticism/) - _Armin Ronacher_
 
-    This is a follow-up post by Armin in in response to a [post by Glyph](https://blog.glyph.im/2025/06/i-think-im-done-thinking-about-genai-for-now.html).
+    This is a follow-up post by Armin in response to a [post by
+    Glyph](https://blog.glyph.im/2025/06/i-think-im-done-thinking-about-genai-for-now.html).
     While Glyph is skeptical, Armin sees significant potential AI code
     generation when used properly. Armin seems to think that code review with AI
     is enjoyable and programming with AI assistance is still satisfying but I'm

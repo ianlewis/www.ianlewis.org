@@ -3,7 +3,7 @@ layout: post
 title: "TIL: August 10, 2025 - Weekly Reading: AI, HTTP/1.1 request smuggling, and Life Advice"
 date: "2025-08-10 00:00:00 +0900"
 blog: til
-tags: weekly-reading AI security
+tags: weekly-reading ai security
 render_with_liquid: false
 ---
 
@@ -82,8 +82,7 @@ render_with_liquid: false
 
 ## Life Advice
 
-- [40 Harsh Truths I Wish I Knew In My
-  20s](https://www.youtube.com/watch?v=w39A92UzTDY) -- _Daniel Pink_
+- [40 Harsh Truths I Wish I Knew In My 20s](https://www.youtube.com/watch?v=w39A92UzTDY) -- _Daniel Pink_
 
     I'm not in my 20s but I still found this video to be helpful. Most of the
     40 "truths" are short pithy statements, but are still worth thinking about
