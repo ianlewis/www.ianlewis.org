@@ -43,7 +43,7 @@ render_with_liquid: false
 
 ## Artificial Intelligence (Machine Learning)
 
-- MPI Tutorial for Machine Learning - [Part 1](https://medium.com/@thiwankajayasiri/mpi-tutorial-for-machine-learning-part-1-3-6b052abe3f29), [Part 2](https://medium.com/@thiwankachameerajayasiri/mpi-tutorial-for-machine-learning-part-2-3-ebe72d0a0b04), [Part 3](https://medium.com/@thiwankachameerajayasiri/mpi-tutorial-for-machine-learning-part-3-3-1a3f219ee6bc)-- _Thiwanka Chameera Jayasiri_
+- MPI Tutorial for Machine Learning - [Part 1](https://medium.com/@thiwankajayasiri/mpi-tutorial-for-machine-learning-part-1-3-6b052abe3f29), [Part 2](https://medium.com/@thiwankachameerajayasiri/mpi-tutorial-for-machine-learning-part-2-3-ebe72d0a0b04), [Part 3](https://medium.com/@thiwankachameerajayasiri/mpi-tutorial-for-machine-learning-part-3-3-1a3f219ee6bc) -- _Thiwanka Chameera Jayasiri_
 
     A nice tutorial series on using Message Passing Interface (MPI) for
     distributed machine learning. MPI is a protocol for message-passing in

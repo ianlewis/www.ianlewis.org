@@ -107,6 +107,7 @@ rules:
       - "/\\bBrooker\\b/g"
       - "/\\bCalabro\\b/g"
       - "/\\bCayden\\b/g"
+      - "/\\bChameera\\b/g"
       - "/\\bCollison\\b/g"
       - "/\\bColton\\b/g"
       - "/\\bCosentino\\b/g"
@@ -147,6 +148,7 @@ rules:
       - "/\\bIshikawa\\b/g"
       - "/\\bIshimoto\\b/g"
       - "/\\bIwashi\\b/g"
+      - "/\\bJayasiri\\b/g"
       - "/\\bJayden\\b/g"
       - "/\\bJessy\\b/g"
       - "/\\bJiayi\\b/g"
@@ -215,6 +217,7 @@ rules:
       - "/\\bSlatkin\\b/g"
       - "/\\bSota\\b/g"
       - "/\\bStapelberg\\b/g"
+      - "/\\bStoep\\b/g"
       - "/\\bSu\\b/g"
       - "/\\bSuenaga\\b/g"
       - "/\\bSundar\\b/g"
@@ -225,6 +228,7 @@ rules:
       - "/\\bTarek\\b/g"
       - "/\\bTerada\\b/g"
       - "/\\bTetsuya\\b/g"
+      - "/\\bThiwanka\\b/g"
       - "/\\bTrong\\b/g"
       - "/\\bTsinghua\\b/g"
       - "/\\bTsuyuki\\b/g"
@@ -661,6 +665,7 @@ rules:
       - "/\\bLSP\\b/g" # Language Server Protocol
       - "/\\bMCP\\b/g" # Model Context Protocol
       - "/\\bMNIST\\b/g" # Modified National Institute of Standards and Technology DB
+      - "/\\bMPI\\b/g" # Message Passing Interface
       - "/\\bMQ\\b/g" # Message Queue
       - "/\\bMVC\\b/g" # Model-View-Controller
       - "/\\bNUMA\\b/g" # Non-Uniform Memory Access
