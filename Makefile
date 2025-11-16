@@ -795,4 +795,5 @@ clean: ## Delete temporary files.
 	@$(RM) *.sarif.json
 	@$(RM) -r _site
 	@$(RM) -r .netlify
+	@$(RM) -r deno.lock
 	@$(RM) -r content/.jekyll-cache

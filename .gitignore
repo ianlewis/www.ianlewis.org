@@ -23,3 +23,6 @@ _site
 # Local Netlify folder
 .netlify
 vendor/
+
+# Deno lock file created by the netlify CLI
+deno.lock
