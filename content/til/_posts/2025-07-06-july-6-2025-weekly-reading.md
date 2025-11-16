@@ -3,7 +3,7 @@ layout: post
 title: "TIL: July 6, 2025 - Weekly Reading: AI, Go's greentea GC, and OSS Security"
 date: "2025-07-06 00:00:00 +0900"
 blog: til
-tags: AI go security weekly-reading
+tags: weekly-reading ai go security
 render_with_liquid: false
 ---
 
@@ -105,7 +105,7 @@ render_with_liquid: false
     Dependabot or Renovate PRs is that it requires giving GitHub Actions jobs the
     `contents: write` permission allowing it automatically push **any** changes
     to a repository. I think it might be satisfactory for jobs where you
-    strictly control all of the code, but I don't think it's a good practice to
+    strictly control all the code, but I don't think it's a good practice to
     give third party actions this permission. Another issue I have with this
     approach is that it requires you to bypass branch protection checks in your
     GitHub Actions workflow.
