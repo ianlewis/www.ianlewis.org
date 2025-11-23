@@ -89,6 +89,7 @@ rules:
       - "/\\bAhlström\\b/g"
       - "/\\bAhmet\\b/g"
       - "/\\bAjay\\b/g"
+      - "/\\bAmit\\b/g"
       - "/\\bAndreessen\\b/g"
       - "/\\bAoife\\b/g"
       - "/\\bAndré(?:^|\\s)/g"
@@ -119,6 +120,7 @@ rules:
       - "/\\bDicken\\b/g"
       - "/\\bDougherty\\b/g"
       - "/\\bDuan\\b/g"
+      - "/\\bDuberstein\\b/g"
       - "/\\bDrapper\\b/g"
       - "/\\bEdinger\\b/g"
       - "/\\bEiji\\b/g"
@@ -133,8 +135,10 @@ rules:
       - "/\\bFumi\\b/g"
       - "/\\bGageot\\b/g"
       - "/\\bGergely\\b/g"
+      - "/\\bGhanan\\b/g"
       - "/\\bGhemawat\\b/g"
       - "/\\bGodbolt\\b/g"
+      - "/\\bGowripalan\\b/g"
       - "/\\bGraeme\\b/g"
       - "/\\bHansson\\b/g"
       - "/\\bHeba\\b/g"
@@ -144,6 +148,7 @@ rules:
       - "/\\bHockin\\b/g"
       - "/\\bHochstein\\b/g"
       - "/\\bIkeda\\b/g"
+      - "/\\bInon\\b/g"
       - "/\\bIppolito\\b/g"
       - "/\\bIshikawa\\b/g"
       - "/\\bIshimoto\\b/g"
@@ -156,6 +161,7 @@ rules:
       - "/\\bJxck\\b/g"
       - "/\\bKaczorowski\\b/g"
       - "/\\bKamaelia\\b/g"
+      - "/\\bKaplan\\b/g"
       - "/\\bKaruppasamy\\b/g"
       - "/\\bKinomiya\\b/g"
       - "/\\bKitamura\\b/g"
@@ -198,6 +204,8 @@ rules:
       - "/\\bOrosz\\b/g"
       - "/\\bOsorio\\b/g"
       - "/\\bPetgrave\\b/g"
+      - "/\\bPopa\\b/g"
+      - "/\\bRaluca\\b/g"
       - "/\\bRami\\b/g"
       - "/\\bReiko\\b/g"
       - "/\\bRokicki\\b/g"
@@ -221,6 +229,7 @@ rules:
       - "/\\bSu\\b/g"
       - "/\\bSuenaga\\b/g"
       - "/\\bSundar\\b/g"
+      - "/\\bTamir\\b/g"
       - "/\\bTakanori\\b/g"
       - "/\\bTakashi\\b/g"
       - "/\\bTakayuki\\b/g"
@@ -274,6 +283,7 @@ rules:
       - "/\\bcosentino\\b/g"
       - "/\\bdeeet\\b/g"
       - "/\\b[Ff]eiz\\b/g"
+      - "/\\bghananigans\\b/g" # Ghanan Gowripalan
       - "/\\bhiyosi\\b/g"
       - "/\\b[Ii]an[Mm]?[Ll]ewis\\b/g"
       - "/\\bjbking\\b/g"
@@ -292,6 +302,7 @@ rules:
       - "/\\bshoma(h4a)?\\b/g"
       - "/\\bsurgo\\b/g"
       - "/\\btakanory\\b/g"
+      - "/\\btamird\\b/g" # Tamir Duberstein
       - "/\\bterapyon\\b/g"
       - "/\\btokibito\\b/g"
       - "/\\btoruot\\b/g"
@@ -328,6 +339,7 @@ rules:
       - "/\\bChainguard\\b/g" # Supply chain security company
       - "/\\bCloudflare\\b/g" # Web infrastructure and security company
       - "/\\bCoreOS\\b/g"
+      - "/\\bDeepMind\\b/g" # AI research lab
       - "/\\bDeis\\b/g"
       - "/\\bDigg\\b/g" # Social news website
       - "/\\bDisqus\\b/g" # Comment hosting service
@@ -436,6 +448,7 @@ rules:
       - "/\\bMochiKit\\b/g"
       - "/\\bNATS(\\.io)?\\b/g" # NATS.io
       - "/\\bNeovim\\b/g"
+      - "/\\bNetstack\\b/g" # Go networking stack
       - "/\\bNixOS\\b/g"
       - "/\\bNoto\\b/g" # Noto fonts
       - "/\\bNunjucks\\b/g" # JavaScript templating engine
@@ -530,6 +543,7 @@ rules:
       - "/\\bBoing Boing\\b/g" # Boing Boing website
       - "/\\bC4\\b/g" # C4 Macintosh software developers conference
       - "/\\bEuroPython\\b/g" # European Python Conference
+      - "/\\bNDSS\\b/g" # Network and Distributed System Security Symposium
       - "/\\bPyCon\\b/g" # Python Conference
       - "/\\bPyFes\\b/g" # Python Festival
       - "/\\bPyLadies\\b/g" # Python Ladies
@@ -655,7 +669,7 @@ rules:
       - "/\\bHTML5\\b/g" # HyperText Markup Language version 5
       - "/\\bHTTPS\\b/g" # Hypertext Transfer Protocol Secure
       - "/\\bHUDs?\\b/g" # Heads-Up Display
-      - "/\\bIPs?\\b/g" # Internet Protocol
+      - "/\\bIP(s|v4|v6)?\\b/g" # Internet Protocol
       - "/\\bIPC\\b/g" # Inter-Process Communication
       - "/\\bJSON\\b/g" # JavaScript Object Notation
       - "/\\bJVM\\b/g" # Java Virtual Machine
@@ -676,6 +690,7 @@ rules:
       - "/\\bPKI\\b/g" # Public Key Infrastructure
       - "/\\bPaaS\\b/g" # Platform as a Service
       - "/\\bPID\\b/g" # Process ID
+      - "/\\bPRNG\\b/g" # Pseudorandom Number Generator
       - "/\\bQPS\\b/g" # Query Per Second
       - "/\\bRDBMS\\b/g" # Relational Database Management System
       - "/\\bRPCs?\\b/g" # Remote Procedure Call
@@ -694,6 +709,7 @@ rules:
       - "/\\bTLS\\b/g" # Transport Layer Security
       - "/\\bTTY\\b/g" # Teletypewriter
       - "/\\bTUF\\b/g" # The Update Framework
+      - "/\\bUDP\\b/g" # User Datagram Protocol
       - "/\\bUTF\\b/g" # Unicode Transformation Format
       - "/\\bUTS\\b/g" # Unix Time-Sharing
       - "/\\bUX\\b/g" # User Experience
