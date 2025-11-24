@@ -246,9 +246,15 @@ main iframe {
   margin: 0;
 }
 
+%embed {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
 main iframe.slideshare {
-  width: 610px;
-  height: 515px;
+  @extend %embed;
+
   border: var(--border-1) solid #ccc;
   border-width: 1px;
   margin-bottom: 5px;
@@ -257,25 +263,22 @@ main iframe.slideshare {
 }
 
 main iframe.youtube {
-  width: 840px;
-  height: 473px;
+  @extend %embed;
 }
 
 main iframe.gdrive-preso {
-  width: 960px;
-  height: 569px;
+  @extend %embed;
 }
 
 main iframe.speakerdeck {
+  @extend %embed;
+
   border: 0;
   background: padding-box padding-box rgb(0 0 0 / 10%);
   margin: 0;
   padding: 0;
   border-radius: 6px;
   box-shadow: rgb(0 0 0 / 20%) 0 5px 40px;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 560 / 315;
 }
 
 main div.align-center,
