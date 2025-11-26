@@ -661,13 +661,13 @@ markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the ma
 			message=$$(echo "$$p" | jq -cr '.ruleNames[0] + "/" + .ruleNames[1] + " " + .ruleDescription + " [Detail: \"" + .errorDetail + "\", Context: \"" + .errorContext + "\"]"'); \
 			exit_code=1; \
 			echo "::error file=$${file},line=$${line},endLine=$${endline}::$${message}"; \
-		done <<< "$$($(REPO_ROOT)/node_modules/.bin/markdownlint --config .github/template.markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
+		done <<< "$$($(REPO_ROOT)/node_modules/.bin/markdownlint --config .github/.markdownlint.yaml --dot --json $${files} 2>&1 | jq -c '.[]')"; \
 		if [ "$${exit_code}" != "0" ]; then \
 			exit "$${exit_code}"; \
 		fi; \
 	else \
 		$(REPO_ROOT)/node_modules/.bin/markdownlint \
-			--config .github/template.markdownlint.yaml \
+			--config .github/.markdownlint.yaml \
 			--dot \
 			$${files}; \
 	fi
