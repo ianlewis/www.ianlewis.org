@@ -16,6 +16,11 @@ chips](https://developers.google.com/workspace/add-ons/guides/preview-links-smar
 using App Script. This seems like it would be really useful for private
 third-party links.
 
+I'm really surprised that someone hasn't written a good script for GitHub links
+that includes support for private repositories. I searched around but I couldn't
+find anything. I think it would be super useful for companies that use Google
+Docs and GitHub.
+
 <iframe
     title="YouTube video player"
     src="https://www.youtube-nocookie.com/embed/P69uyJYifMw?si=uWStlJZoMRe3YTd7"
@@ -24,8 +29,3 @@ third-party links.
     referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen>
 </iframe>
-
-I'm really surprised that someone hasn't written a good script for GitHub links
-that includes support for private repositories. I searched around but I couldn't
-find anything. I think it would be super useful for companies that use Google
-Docs and GitHub.
