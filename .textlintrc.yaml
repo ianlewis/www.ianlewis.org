@@ -735,16 +735,24 @@ rules:
       # Other
       ##########################################################################
 
+      # English words
+      # https://dictionary.cambridge.org/dictionary/english/dumbing-down
+      - "/\\b[Dd]umbed-down\\b/g"
+      # https://dictionary.cambridge.org/dictionary/english/varyingly
+      - "/\\b[Vv]aryingly\\b/g"
+
       # Internet slang/terms
       # https://www.merriam-webster.com/dictionary/amirite
       - "/\\b[Aa]mirite\\b/g" # Slang for "am I right?"
       - "/\\b[Ff]lamebait\\b/g" # Something intended to provoke angry responses online
 
-      # https://dictionary.cambridge.org/dictionary/english/dumbing-down
-      - "/\\b[Dd]umbed-down\\b/g"
-      - "/\\bHouthis?\\b/g" # Houthi movement
+      # Japanese words
       - "/\\b[Mm]okumoku-kai\\b/g" # Mokumoku-kai, a Japanese term for a gathering
       - "/\\b[Rr]yokan\\b/g" # Ryokan, a type of traditional Japanese inn
+      - "/\\b[Ss]hoji\\b/g" # Shoji, traditional Japanese sliding paper doors
+      - "/\\b[Yy]ukata\\b/g" # Yukata, a casual summer kimono
+
+      - "/\\bHouthis?\\b/g" # Houthi movement
       - "/\\b[Ll]orem\\b/g" # Lorem Ipsum
 
       - "/\\bYeeaaah\\b/g" # Exaggerated "Yeah" often used in informal contexts
