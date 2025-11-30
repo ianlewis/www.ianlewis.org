@@ -8,9 +8,6 @@ tags: tech devops
 render_with_liquid: false
 ---
 
-<!-- TODO(#339): Add alt text to images. -->
-<!-- markdownlint-disable MD045 -->
-
 Many people who are new to [Debian](http://www.debian.org/) might be thinking
 that Debian stable releases are slow. You are right. Many do look at this and
 turn to [Ubuntu](http://www.ubuntu.com/) because of their relatively quick
@@ -128,7 +125,7 @@ there. You can check [packages.debian.org](http://packages.debian.org/) to see
 if the package you want is included in either testing or unstable but the
 quicker way is to check in synaptic itself.
 
-![](/assets/images/gallery/wget.png){:style="width: 40%; display:block; margin-left:auto; margin-right:auto"}
+![The Gnome package manager showing an "unstable" and a "testing" version on the "versions" tab of a package.](/assets/images/gallery/wget.png){:style="width: 40%; display:block; margin-left:auto; margin-right:auto"}
 
 If there is a package that has a newer version in testing or unstable that you
 would like to install then you can do so by opening the properties for the
@@ -137,5 +134,3 @@ you can install from different repositories. You can then select which version
 to install by choosing Package -> Force version... or Package -> Versions...
 The name of the option might be slightly different as it changes a bit in
 different versions of synaptic.
-
-<!-- markdownlint-enable MD045 -->
