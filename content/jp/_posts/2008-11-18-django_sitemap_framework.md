@@ -11,9 +11,9 @@ locale: ja
 
 [Django sitemap framework](http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/)を使うのが簡単過ぎる。下記のようにサイトマップクラスを作って、`urls.py`に登録するだけ。サイトマップに載るURLを取るのに、サイトマップフレームワークが自分が作ったクラスの`items()`を呼び出して、アイテムの`get_absolute_url()`を順番に呼び出す感じ。
 
-#### `models.py`
-
 ```python
+# models.py
+
 from django.db import models
 ...
 class Entry(models.Model):
@@ -24,9 +24,9 @@ class Entry(models.Model):
 ...
 ```
 
-#### `sitemap.py`
-
 ```python
+# sitemap.py
+
 from django.contrib.sitemaps import Sitemap
 from mysite.blog.models import Entry
 
@@ -47,9 +47,9 @@ class BlogSitemap(Sitemap):
         return "daily" if obj.comments_open() else "never"
 ```
 
-#### `urls.py`
-
 ```python
+# urls.py
+
 from mysite.blog.sitemap import BlogSitemap
 ...
 sitemaps = {

@@ -29,7 +29,7 @@ could be made, and discuss how Artifact Attestations can be leveraged to
 achieve SLSA Build Level 3. But first we need to understand its architectural
 details and their relationship with SLSA levels.
 
-### Architecture
+## Architecture
 
 Generating attestations is done using the
 [`attest-build-provenance`](https://github.com/actions/attest-build-provenance)
@@ -190,7 +190,7 @@ certificate itself as the provenance.
 
 Next, let's discuss some of the trade-offs of this architecture.
 
-### A Good User Experience
+## A Good User Experience
 
 One of the positive aspects of Artifact Attestations is its user experience. By
 providing a GitHub Action, GitHub gives users flexibility when integrating this
@@ -208,7 +208,7 @@ Easy-to-use UX is really important for security because it increases adoption.
 This can’t be understated and is an often overlooked aspect of security
 software.
 
-### Why SLSA Build L2 and not L3?
+## Why SLSA Build L2 and not L3?
 
 One downside of the `attest-build-provenance` action is that it only meets the
 requirements of SLSA Build L2 when used on its own.
@@ -227,7 +227,7 @@ artifact and sign it with the key.
 
 However, as we’ll see, this kind of attack is somewhat mitigated by using Sigstore.
 
-### SLSA Build L2+?
+## SLSA Build L2+?
 
 By using Sigstore’s Fulcio, the certificate used to sign the provenance contains
 much of the SLSA predicate's information in its OID claims. These claims are
@@ -245,7 +245,7 @@ Some folks have colloquially referred to this combination of Sigstore and SLSA
 Build L2 as SLSA Build L2+ since it provides some of the benefits of SLSA Build
 L3 without actually fulfilling all of the requirements of L3.
 
-### The Limits of SLSA Build L2+
+## The Limits of SLSA Build L2+
 
 However, this comes with a few caveats.
 
@@ -271,7 +271,7 @@ Authority for mapping OID claims, making it difficult to use private PKI to sign
 and verify provenance. While this isn't necessarily a significant concern for
 open-source projects, some enterprises have such requirements.
 
-### Achieving SLSA Build L3 with GitHub Artifact Attestations
+## Achieving SLSA Build L3 with GitHub Artifact Attestations
 
 In the documentation [SLSA Build L3 is described as
 achievable](https://github.blog/2024-05-02-introducing-artifact-attestations-now-in-public-beta/#an-effortless-user-experience)
@@ -292,7 +292,7 @@ simple GitHub Action. Passing data, especially files, between jobs is more
 complicated and we are sometimes forced to expose that complexity to the user.
 Given that there are significant security improvements, I think it’s worth it.
 
-### Conclusion
+## Conclusion
 
 Trust in GitHub’s Artifact Attestations trust really lies in the Sigstore
 certificate and its OID claims so the certificate itself effectively functions
