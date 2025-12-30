@@ -15,9 +15,9 @@
 name: Deploy to Netlify
 
 on:
-  workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
+  workflow_dispatch:
 
 permissions: {}
 
@@ -50,7 +50,7 @@ jobs:
           fi
 
       - name: Request deployment
-        if: steps.check-posts.outputs.has_recent_posts == 'true'
+        if: github.event_name == 'workflow_dispatch' || steps.check-posts.outputs.has_recent_posts == 'true'
         env:
           NETLIFY_BUILD_HOOK_URL: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
         run: |
