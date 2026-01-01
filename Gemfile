@@ -10,7 +10,7 @@ gem "bigdecimal", "= 3.3.1"
 # gem and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", "= 2.0.6"
-  gem "tzinfo-data", "= 1.2025.2"
+  gem "tzinfo-data", "= 1.2025.3"
 end
 
 # Performance-booster for watching directories on Windows
