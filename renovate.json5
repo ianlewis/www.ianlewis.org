@@ -39,6 +39,11 @@
   // compromised releases.
   // https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns
   minimumReleaseAge: "14 days",
+  // These options suppress PR creation for dependencies that were released
+  // within minimumReleaseAge.
+  // https://docs.renovatebot.com/configuration-options/#suppress-branchpr-creation-for-x-days
+  prCreation: "not-pending",
+  internalChecksFilter: "strict",
 
   // Enable the lock file maintenance feature to keep transitive dependencies up
   // to date.
@@ -68,8 +73,18 @@
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
     {
+      matchUpdateTypes: ["major"],
+      matchFileNames: [".aqua.yaml", ".aqua-checksums.yaml"],
+      commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
+    },
+    {
       matchUpdateTypes: ["minor", "patch"],
       groupName: "makefile",
+      matchFileNames: ["Makefile"],
+      commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
+    },
+    {
+      matchUpdateTypes: ["major"],
       matchFileNames: ["Makefile"],
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
@@ -81,9 +96,20 @@
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
     {
+      matchManagers: ["github-actions"],
+      matchUpdateTypes: ["major"],
+      pinDigests: true,
+      commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
+    },
+    {
       matchManagers: ["pip_requirements"],
       matchUpdateTypes: ["minor", "patch"],
       groupName: "python",
+      commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
+    },
+    {
+      matchManagers: ["pip_requirements"],
+      matchUpdateTypes: ["major"],
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
     {
