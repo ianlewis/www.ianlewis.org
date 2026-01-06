@@ -917,23 +917,27 @@ command = "bundle exec jekyll build"
 
 # Events
 
+# /jp/tag/イベント/
 [[redirects]]
-  from = "/jp/tag/イベント/"
+  from = "/jp/tag/%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88/"
   to = "/jp/tag/events/"
   status = 301
 
+# /jp/tag/デブサミ/
 [[redirects]]
-  from = "/jp/tag/デブサミ/"
+  from = "/jp/tag/%E3%83%87%E3%83%96%E3%82%B5%E3%83%9F/"
   to = "/jp/tag/events/"
   status = 301
 
+# /jp/tag/勉強会/
 [[redirects]]
-  from = "/jp/tag/勉強会/"
+  from = "https://www.ianlewis.org/jp/tag/%E5%8B%89%E5%BC%B7%E4%BC%9A/"
   to = "/jp/tag/events/"
   status = 301
 
+# /jp/tag/python温泉/
 [[redirects]]
-  from = "/jp/tag/python温泉/"
+  from = "/jp/tag/python%E6%B8%A9%E6%B3%89/"
   to = "/jp/tag/events/"
   status = 301
 
@@ -961,27 +965,31 @@ command = "bundle exec jekyll build"
   to = "/jp/tag/meta/"
   status = 301
 
+# /jp/tag/ホスティング/
 [[redirects]]
-  from = "/jp/tag/ホスティング/"
+  from = "/jp/tag/%E3%83%9B%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0/"
   to = "/jp/tag/meta/"
   status = 301
 
 # Musings
 
+# /jp/tag/日本語、伝え方、話し方/
 [[redirects]]
-  from = "/jp/tag/日本語、伝え方、話し方/"
+  from = "/jp/tag/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%80%81%E4%BC%9D%E3%81%88%E6%96%B9%E3%80%81%E8%A9%B1%E3%81%97%E6%96%B9/"
   to = "/jp/tag/musings/"
   status = 301
 
+# /jp/tag/日本語/
 [[redirects]]
-  from = "/jp/tag/日本語/"
+  from = "/jp/tag/%E6%97%A5%E6%9C%AC%E8%AA%9E/"
   to = "/jp/tag/musings/"
   status = 301
 
 # Personal
 
+# /jp/tag/日本/
 [[redirects]]
-  from = "/jp/tag/日本/"
+  from = "/jp/tag/%E6%97%A5%E6%9C%AC/"
   to = "/jp/tag/personal/"
   status = 301
 
@@ -1007,13 +1015,15 @@ command = "bundle exec jekyll build"
   to = "/jp/tag/programming/"
   status = 301
 
+# /jp/tag/モバイル/
 [[redirects]]
-  from = "/jp/tag/モバイル/"
+  from = "/jp/tag/%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB/"
   to = "/jp/tag/programming/"
   status = 301
 
+# /jp/tag/ソフトウエア開発/
 [[redirects]]
-  from = "/jp/tag/ソフトウエア開発/"
+  from = "/jp/tag/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A8%E3%82%A2%E9%96%8B%E7%99%BA/"
   to = "/jp/tag/programming/"
   status = 301
 
@@ -1067,8 +1077,9 @@ command = "bundle exec jekyll build"
   to = "/jp/tag/programming/"
   status = 301
 
+# /jp/tag/開発サーバ/
 [[redirects]]
-  from = "/jp/tag/開発サーバ/"
+  from = "/jp/tag/%E9%96%8B%E7%99%BA%E3%82%B5%E3%83%BC%E3%83%90/"
   to = "/jp/tag/programming/"
   status = 301
 
@@ -1082,8 +1093,9 @@ command = "bundle exec jekyll build"
   to = "/jp/tag/programming/"
   status = 301
 
+# /jp/tag/ブランチ/
 [[redirects]]
-  from = "/jp/tag/ブランチ/"
+  from = "/jp/tag/%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81/"
   to = "/jp/tag/programming/"
   status = 301
 
@@ -1092,13 +1104,15 @@ command = "bundle exec jekyll build"
   to = "/jp/tag/programming/"
   status = 301
 
+# /jp/tag/変数/
 [[redirects]]
-  from = "/jp/tag/変数/"
+  from = "/jp/tag/%E5%A4%89%E6%95%B0/"
   to = "/jp/tag/programming/"
   status = 301
 
+# /jp/tag/例外/
 [[redirects]]
-  from = "/jp/tag/例外/"
+  from = "/jp/tag/%E4%BE%8B%E5%A4%96/"
   to = "/jp/tag/programming/"
   status = 301
 
@@ -1153,13 +1167,15 @@ command = "bundle exec jekyll build"
   to = "/jp/tag/tech/"
   status = 301
 
+# /jp/tag/ドキュメント/
 [[redirects]]
-  from = "/jp/tag/ドキュメント/"
+  from = "/jp/tag/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88"
   to = "/jp/tag/tech/"
   status = 301
 
+# /jp/tag/全文検索/
 [[redirects]]
-  from = "/jp/tag/全文検索/"
+  from = "/jp/tag/%E5%85%A8%E6%96%87%E6%A4%9C%E7%B4%A2/"
   to = "/jp/tag/tech/"
   status = 301
 
@@ -1178,18 +1194,22 @@ command = "bundle exec jekyll build"
   to = "/jp/tag/tech/"
   status = 301
 
+# /jp/tag/オクセンス/
+# Misspelling of アクセンス
 [[redirects]]
-  from = "/jp/tag/オクセンス/"
+  from = "/jp/tag/%E3%82%AA%E3%82%AF%E3%82%BB%E3%83%B3%E3%82%B9"
   to = "/jp/tag/tech/"
   status = 301
 
+# /jp/tag/絵文字/"
 [[redirects]]
-  from = "/jp/tag/絵文字/"
+  from = "/jp/tag/%E7%B5%B5%E6%96%87%E5%AD%97/"
   to = "/jp/tag/tech/"
   status = 301
 
+# /jp/tag/オプンソース/"
 [[redirects]]
-  from = "/jp/tag/オープンソース/"
+  from = "/jp/tag/%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%BD%E3%83%BC%E3%82%B9/"
   to = "/jp/tag/tech/"
   status = 301
 
@@ -1213,8 +1233,9 @@ command = "bundle exec jekyll build"
   to = "/jp/tag/tech/"
   status = 301
 
+# /jp/tag/データベース/
 [[redirects]]
-  from = "/jp/tag/データベース/"
+  from = "/jp/tag/%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9/"
   to = "/jp/tag/tech/"
   status = 301
 
@@ -1223,13 +1244,15 @@ command = "bundle exec jekyll build"
   to = "/jp/tag/tech/"
   status = 301
 
+# /jp/tag/%E3%82%B3%E3%83%A9%E3%83%A0/
 [[redirects]]
-  from = "/jp/tag/コラム/"
+  from = "/jp/tag/%E3%82%B3%E3%83%A9%E3%83%A0/"
   to = "/jp/tag/tech/"
   status = 301
 
+# /jp/tag/型/
 [[redirects]]
-  from = "/jp/tag/型/"
+  from = "https://www.ianlewis.org/jp/tag/%E5%9E%8B/"
   to = "/jp/tag/tech/"
   status = 301
 
@@ -1238,8 +1261,9 @@ command = "bundle exec jekyll build"
   to = "/jp/tag/tech/"
   status = 301
 
+# /jp/tag/電池、ハンダ付け、ハンダ、秋葉原、iaudio/
 [[redirects]]
-  from = "/jp/tag/電池、ハンダ付け、ハンダ、秋葉原、iaudio/"
+  from = "/jp/tag/%E9%9B%BB%E6%B1%A0%E3%80%81%E3%83%8F%E3%83%B3%E3%83%80%E4%BB%98%E3%81%91%E3%80%81%E3%83%8F%E3%83%B3%E3%83%80%E3%80%81%E7%A7%8B%E8%91%89%E5%8E%9F%E3%80%81iaudio/"
   to = "/jp/tag/tech/"
   status = 301
 
@@ -1268,8 +1292,9 @@ command = "bundle exec jekyll build"
   to = "/jp/tag/tech/"
   status = 301
 
+# /jp/tag/フォント/
 [[redirects]]
-  from = "/jp/tag/フォント/"
+  from = "/jp/tag/%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88/"
   to = "/jp/tag/tech/"
   status = 301
 
@@ -1288,13 +1313,15 @@ command = "bundle exec jekyll build"
   to = "/jp/tag/tech/"
   status = 301
 
+# /jp/tag/仮想化/
 [[redirects]]
-  from = "/jp/tag/仮想化/"
+  from = "https://www.ianlewis.org/jp/tag/%E4%BB%AE%E6%83%B3%E5%8C%96/"
   to = "/jp/tag/tech/"
   status = 301
 
+# /jp/tag/メンテナンス/
 [[redirects]]
-  from = "/jp/tag/メンテナンス/"
+  from = "/jp/tag/%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B9/"
   to = "/jp/tag/tech/"
   status = 301
 
