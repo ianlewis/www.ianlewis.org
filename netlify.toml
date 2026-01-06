@@ -15,13 +15,13 @@
 [build]
 base = "."
 publish = "_site/"  # relative to `base` directory
-command = "bundle exec jekyll build"
+command = "make jekyll-build"
 
 [context.dev]
-  command = "bundle exec jekyll build --drafts --future --unpublished"
+  command = "make jekyll-build"
 
 [context.deploy-preview]
-  command = "bundle exec jekyll build --drafts --future"
+  command = "make jekyll-build"
   # Skip deploy previews for Renovate PRs (branches starting with "renovate/")
   ignore = "sh -c '[ \"${HEAD#renovate/}\" != \"$HEAD\" ]'"
 

@@ -55,8 +55,14 @@ MKTEMP := $(shell command -v gmktemp 2>/dev/null || command -v mktemp 2>/dev/nul
 # Default port for `make serve`.
 SERVE_PORT ?= 8888
 
-# Default build context for `make build` and `make serve`.
-NETLIFY_BUILD_CONTEXT ?= dev
+# Default build context for `make build` and `make serve`. This is specified in
+# an environment variable by Netlify during builds.
+# See https://docs.netlify.com/build/configure-builds/environment-variables/#build-metadata
+CONTEXT ?= dev
+JEKYLL_BUILD_OPTIONS.dev := --drafts --future --unpublished
+JEKYLL_BUILD_OPTIONS.deploy-preview := --drafts --future
+JEKYLL_BUILD_OPTIONS.production :=
+JEKYLL_BUILD_OPTIONS ?= $(JEKYLL_BUILD_OPTIONS.$(CONTEXT))
 
 # The help command prints targets in groups. Help documentation in the Makefile
 # uses comments with double hash marks (##). Documentation is printed by the
@@ -189,15 +195,20 @@ bundle-install: Gemfile.lock
 	@# NOTE: Bundler deployment mode is activated.
 	@bundle check || bundle install
 
+.PHONY: jekyll-build
+jekyll-build: bundle-install
+	@# bash \
+	bundle exec jekyll build $(JEKYLL_BUILD_OPTIONS)
+
 .PHONY: build
-build: node_modules/.installed bundle-install ## Build the site.
+build: node_modules/.installed ## Build the site.
 	@# bash \
 	debug_options=""; \
 	if [ -n "$(DEBUG_LOGGING)" ]; then \
 		debug_options="--debug"; \
 	fi; \
 	$(REPO_ROOT)/node_modules/.bin/netlify build \
-		--context "$(NETLIFY_BUILD_CONTEXT)" \
+		--context "$(CONTEXT)" \
 		--offline \
 		$${debug_options}
 
@@ -211,7 +222,7 @@ serve: node_modules/.installed bundle-install ## Run local development server.
 	$(REPO_ROOT)/node_modules/.bin/netlify dev \
 		--skip-gitignore \
 		--no-open \
-		--context "$(NETLIFY_BUILD_CONTEXT)" \
+		--context "$(CONTEXT)" \
 		--offline \
 		--port "$(SERVE_PORT)" \
 		$${debug_options}
