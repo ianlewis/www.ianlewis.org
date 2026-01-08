@@ -43,7 +43,12 @@ jobs:
       - name: Check for posts with recent publish dates
         id: check-posts
         run: |
-          if python3 scripts/check-recent-posts.py 24; then
+          if python3 scripts/check-recent-posts.py \
+             --hours 24 \
+             content/en/_posts \
+             content/jp/_posts \
+             content/til/_posts; \
+          then
             echo "has_recent_posts=true" >> "$GITHUB_OUTPUT"
           else
             echo "has_recent_posts=false" >> "$GITHUB_OUTPUT"

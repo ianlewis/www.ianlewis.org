@@ -31,8 +31,8 @@ contrasted greatly with my expectations.
 I still look with a bit of envy at folks who lead large teams but I've mostly
 made peace with the fact that people don't really see me as a leader. I think
 I'm also happier just quietly writing code and not having a lot of attention on
-me. These days my career ambitions are a lot smaller. I'm choosing to focus more
-on my personal life and balance.
+me. These days my career ambitions are a lot smaller and I'm choosing to focus
+more on my personal life and balance.
 
 ### New Job
 
