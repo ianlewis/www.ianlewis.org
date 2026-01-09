@@ -21,7 +21,6 @@ labels:
 body:
   - type: dropdown
     id: topic
-    required: true
     attributes:
       label: Topic
       multiple: false
@@ -34,15 +33,18 @@ body:
         - "Work"
         - "Events"
         - "Other"
+    validations:
+      required: true
 
   - type: textarea
     id: description
-    required: true
     attributes:
       label: Description
       value: |
         Please provide a brief description of your blog post idea below. Please
         include links and references to other resources as needed.
+    validations:
+      required: true
 
   - type: input
     id: audience
