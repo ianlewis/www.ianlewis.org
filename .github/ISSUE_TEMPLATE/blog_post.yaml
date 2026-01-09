@@ -1,0 +1,59 @@
+# Copyright 2026 Ian Lewis
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: Blog Post Idea
+description: "Use this template to suggest a blog post idea."
+title: "[blog-post]: {{ title }}"
+labels:
+  - blog-post
+
+body:
+  - type: dropdown
+    id: topic
+    required: true
+    attributes:
+      label: Topic
+      multiple: false
+      options:
+        - "Programming"
+        - "AI"
+        - "Security"
+        - "Containers"
+        - "Personal"
+        - "Work"
+        - "Events"
+        - "Other"
+
+  - type: textarea
+    id: description
+    required: true
+    attributes:
+      label: Description
+      value: |
+        Please provide a brief description of your blog post idea below. Please
+        include links and references to other resources as needed.
+
+  - type: input
+    id: audience
+    attributes:
+      label: Target Audience
+      description: "Who is the intended audience for this blog post?"
+      placeholder: "e.g., Beginners, Developers, Security Professionals"
+
+  - type: textarea
+    id: value_proposition
+    attributes:
+      label: Value Proposition
+      value: |
+        Why would readers find this blog post valuable?
