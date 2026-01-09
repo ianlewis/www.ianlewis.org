@@ -179,6 +179,7 @@ rules:
       - "/\\bLifland\\b/g"
       - "/\\bLitt\\b/g"
       - "/\\bLonelyBob\\b/g"
+      - "/\\bMadoff\\b/g"
       - "/\\bMakabi\\b/g"
       - "/\\bMcKayla\\b/g"
       - "/\\bMaki\\b/g"
@@ -254,6 +255,7 @@ rules:
       - "/\\bVella\\b/g"
       - "/\\bVoege\\b/g"
       - "/\\bYamaguchi\\b/g"
+      - "/\\bYan\\b/g"
       - "/\\bYasushi\\b/g"
       - "/\\bYegge\\b/g"
       - "/\\bYongfook\\b/g"
@@ -544,6 +546,7 @@ rules:
       - "/\\bBPStyle\\b/g" # BeProud internal study
       - "/\\bBarCamp\\b/g"
       - "/\\bBoing Boing\\b/g" # Boing Boing website
+      - "/\\bComputerphile\\b/g" # Computerphile YouTube channel
       - "/\\bC4\\b/g" # C4 Macintosh software developers conference
       - "/\\bEuroPython\\b/g" # European Python Conference
       - "/\\bNDSS\\b/g" # Network and Distributed System Security Symposium
@@ -672,6 +675,7 @@ rules:
       - "/\\bHTML5\\b/g" # HyperText Markup Language version 5
       - "/\\bHTTPS\\b/g" # Hypertext Transfer Protocol Secure
       - "/\\bHUDs?\\b/g" # Heads-Up Display
+      - "/\\bICs?\\b/g" # Individual Contributor/Integrated Circuit
       - "/\\bIP(s|v4|v6)?\\b/g" # Internet Protocol
       - "/\\bIPC\\b/g" # Inter-Process Communication
       - "/\\bJLPT\\b/g" # Japanese Language Proficiency Test
@@ -697,6 +701,7 @@ rules:
       - "/\\bPID\\b/g" # Process ID
       - "/\\bPRNG\\b/g" # Pseudorandom Number Generator
       - "/\\bQPS\\b/g" # Query Per Second
+      - "/\\bRCE\\b/g" # Remote Code Execution
       - "/\\bRDBMS\\b/g" # Relational Database Management System
       - "/\\bRPCs?\\b/g" # Remote Procedure Call
       - "/\\bRSS\\b/g" # Really Simple Syndication
@@ -719,6 +724,7 @@ rules:
       - "/\\bUTS\\b/g" # Unix Time-Sharing
       - "/\\bUX\\b/g" # User Experience
       - "/\\bVC\\b/g" # Venture Capital
+      - "/\\bVPs?\\b/g" # Vice President
       - "/\\bVFAT\\b/g" # Virtual File Allocation Table
       - "/\\bVMs?\\b/g" # Virtual Machine
       - "/\\bWASM\\b/g" # WebAssembly
@@ -743,8 +749,12 @@ rules:
       # English words
       # https://dictionary.cambridge.org/dictionary/english/dumbing-down
       - "/\\b[Dd]umbed-down\\b/g"
+      # https://dictionary.cambridge.org/dictionary/english/explainer
+      - "/\\b[Ee]xplainer\\b/g" # One who explains
       # https://dictionary.cambridge.org/dictionary/english/varyingly
       - "/\\b[Vv]aryingly\\b/g"
+      # https://dictionary.cambridge.org/dictionary/english/incentivize
+      - "/\\b[Ii]ncentivized?\\b/g" # Provided with an incentive
 
       # Internet slang/terms
       # https://www.merriam-webster.com/dictionary/amirite
