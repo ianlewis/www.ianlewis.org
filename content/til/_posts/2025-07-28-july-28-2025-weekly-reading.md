@@ -3,7 +3,7 @@ layout: post
 title: "TIL: July 28, 2025 - Weekly Reading: Backpressure and Career Advice"
 date: "2025-07-28 00:00:00 +0900"
 blog: til
-tags: weekly-reading programming python
+tags: weekly-reading career programming python
 render_with_liquid: false
 ---
 
