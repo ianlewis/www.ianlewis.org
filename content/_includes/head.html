@@ -1,46 +1,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-{%- assign today = site.time | date: '%m-%d' -%}
+{%- assign today = site.time | date: '%m-%d' %}
 
-{%- assign valentines_start = '02-01' -%}
-{%- assign valentines_end = '02-14' -%}
-
-{%- assign xmas_start = '12-01' -%}
-{%- assign xmas_end = '12-25' -%}
-
-{%- assign icon_image_16x16 = site.plainwhite.favicon.default_16x16 -%}
-{%- assign icon_image_32x32 = site.plainwhite.favicon.default_32x32 -%}
-{%- assign icon_image_64x64 = site.plainwhite.favicon.default_64x64 -%}
-{%- assign icon_image_96x96 = site.plainwhite.favicon.default_96x96 -%}
-
-{%- if today >= valentines_start and today <= valentines_end -%}
-  {%- if site.plainwhite.favicon.valentines_day_16x16 -%}
-    {%- assign icon_image_16x16 = site.plainwhite.favicon.valentines_day_16x16 -%}
+{%- assign icon_image_16x16 = site.data.profile.default.favicon.16x16 -%}
+{%- assign icon_image_32x32 = site.data.profile.default.favicon.32x32 -%}
+{%- assign icon_image_64x64 = site.data.profile.default.favicon.64x64 -%}
+{%- assign icon_image_96x96 = site.data.profile.default.favicon.96x96 -%}
+{% for profile in site.data.profile.special %}
+  {%- if today >= profile.start and today < profile.end -%}
+    {%- assign icon_image_16x16 = profile.favicon.16x16 -%}
+    {%- assign icon_image_32x32 = profile.favicon.32x32 -%}
+    {%- assign icon_image_64x64 = profile.favicon.64x64 -%}
+    {%- assign icon_image_96x96 = profile.favicon.96x96 -%}
+    {%- break -%}
   {%- endif -%}
-  {%- if site.plainwhite.favicon.valentines_day_32x32 -%}
-    {%- assign icon_image_32x32 = site.plainwhite.favicon.valentines_day_32x32 -%}
-  {%- endif -%}
-  {%- if site.plainwhite.favicon.valentines_day_64x64 -%}
-    {%- assign icon_image_64x64 = site.plainwhite.favicon.valentines_day_64x64 -%}
-  {%- endif -%}
-  {%- if site.plainwhite.favicon.valentines_day_96x96 -%}
-    {%- assign icon_image_96x96 = site.plainwhite.favicon.valentines_day_96x96 -%}
-  {%- endif -%}
-{%- elsif today >= xmas_start and today <= xmas_end -%}
-  {%- if site.plainwhite.favicon.xmas_16x16 -%}
-    {%- assign icon_image_16x16 = site.plainwhite.favicon.xmas_16x16 -%}
-  {%- endif -%}
-  {%- if site.plainwhite.favicon.xmas_32x32 -%}
-    {%- assign icon_image_32x32 = site.plainwhite.favicon.xmas_32x32 -%}
-  {%- endif -%}
-  {%- if site.plainwhite.favicon.xmas_64x64 -%}
-    {%- assign icon_image_64x64 = site.plainwhite.favicon.xmas_64x64 -%}
-  {%- endif -%}
-  {%- if site.plainwhite.favicon.xmas_96x96 -%}
-    {%- assign icon_image_96x96 = site.plainwhite.favicon.xmas_96x96 -%}
-  {%- endif -%}
-{%- endif -%}
+{% endfor %}
 
 {%- if icon_image_16x16 -%}
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/{{ icon_image_16x16 }}" sizes="16x16">

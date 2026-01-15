@@ -14,27 +14,23 @@
     <main class="container">
       <section class="about">
         <div class="about-header {{condensed_class}}">
-          <div class="about-title">
+
+         <div class="about-title">
             {%- assign today = site.time | date: '%m-%d' %}
 
-            {%- assign valentines_start = '02-01' -%}
-            {%- assign valentines_end = '02-14' -%}
+            {%- assign portfolio_image = site.data.profile.default.light -%}
+            {%- assign portfolio_image_dark = site.data.profile.default.dark -%}
+            {% for profile in site.data.profile.special %}
+              {%- if today >= profile.start and today < profile.end -%}
+                {%- assign portfolio_image = profile.light -%}
+                {%- assign portfolio_image_dark = profile.dark -%}
+                {%- break -%}
+              {%- endif -%}
+            {% endfor %}
 
-            {%- assign xmas_start = '12-01' -%}
-            {%- assign xmas_end = '12-25' -%}
-
-            {%- assign portfolio_image = site.plainwhite.portfolio_image.default -%}
-            {%- assign portfolio_image_dark = site.plainwhite.portfolio_image_dark.default -%}
-            {%- if today >= valentines_start and today <= valentines_end -%}
-              {%- assign portfolio_image = site.plainwhite.portfolio_image.valentines_day -%}
-              {%- assign portfolio_image_dark = site.plainwhite.portfolio_image_dark.valentines_day -%}
-            {%- elsif today >= xmas_start and today <= xmas_end -%}
-              {%- assign portfolio_image = site.plainwhite.portfolio_image.xmas -%}
-              {%- assign portfolio_image_dark = site.plainwhite.portfolio_image_dark.xmas -%}
-            {%- endif %}
             <a href="{{ "/" | relative_url }}">
               <img class="light" src="{{ site.baseurl }}/{{ portfolio_image }}" alt="{{ site.plainwhite.name }}">
-              {%- if site.plainwhite.portfolio_image_dark and site.plainwhite.dark_mode %}
+              {%- if site.data.profile.default.dark and site.plainwhite.dark_mode %}
                 <img class="dark" src="{{ site.baseurl }}/{{ portfolio_image_dark }}" alt="{{ site.plainwhite.name }}">
               {%- endif %}
             </a>

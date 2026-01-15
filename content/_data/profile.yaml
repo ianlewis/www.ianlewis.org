@@ -1,0 +1,47 @@
+# Copyright 2025 Ian Lewis
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+default:
+  light: assets/images/profile.png
+  dark: assets/images/profile.png
+  favicon:
+    16x16: assets/images/profile_16x16.png
+    32x32: assets/images/profile_32x32.png
+    64x64: assets/images/profile_64x64.png
+    96x96: assets/images/profile_96x96.png
+
+special:
+  - name: "Valentine's Day"
+    start: "02-01"
+    end: "02-15" # not inclusive
+
+    light: assets/images/profile_valentines.png
+    dark: assets/images/profile_valentines.png
+    favicon:
+      16x16: assets/images/profile_valentines_16x16.png
+      32x32: assets/images/profile_valentines_32x32.png
+      64x64: assets/images/profile_valentines_64x64.png
+      96x96: assets/images/profile_valentines_96x96.png
+
+  - name: "Christmas"
+    start: "12-01"
+    end: "12-26" # not inclusive
+
+    light: assets/images/profile_xmas.png
+    dark: assets/images/profile_xmas.png
+    favicon:
+      16x16: assets/images/profile_xmas_16x16.png
+      32x32: assets/images/profile_xmas_32x32.png
+      64x64: assets/images/profile_xmas_64x64.png
+      96x96: assets/images/profile_xmas_96x96.png
