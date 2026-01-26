@@ -105,6 +105,7 @@ rules:
       - "/\\bBlauzvern\\b/g"
       - "/\\bBleecher\\b/g"
       - "/\\bBranchaud\\b/g"
+      - "/\\bBria\\b/g"
       - "/\\bBrooker\\b/g"
       - "/\\bCalabro\\b/g"
       - "/\\bCayden\\b/g"
@@ -225,6 +226,7 @@ rules:
       - "/\\bShimizukawa\\b/g"
       - "/\\bShinya\\b/g"
       - "/\\bShu\\b/g"
+      - "/\\bSkoredin\\b/g"
       - "/\\bSlatkin\\b/g"
       - "/\\bSota\\b/g"
       - "/\\bStapelberg\\b/g"
@@ -246,6 +248,7 @@ rules:
       - "/\\bTsuyuki\\b/g"
       - "/\\bWada\\b/g"
       - "/\\bWarmerdam\\b/g"
+      - "/\\bWiggum\\b/g"
       - "/\\bWilber\\b/g"
       - "/\\bWillison\\b/g"
       - "/\\bWoodruff\\b/g"
@@ -362,6 +365,7 @@ rules:
       - "/\\bNetlify\\b/g" # Web hosting service
       - "/\\bPalo Alto Networks\\b/g" # Cybersecurity company
       - "/\\bPlanetScale\\b/g" # PlanetScale database platform
+      - "/\\bPromptArmor\\b/g" # Security company
       - "/\\bShopify\\b/g" # E-commerce platform
       - "/\\bSoftBank\\b/g" # Japanese multinational conglomerate
       - "/\\bStacklok\\b/g" # Stacklok, Security company
@@ -383,6 +387,7 @@ rules:
       - "/\\bBigtable\\b/g"
       - "/\\bChromeOS\\b/g"
       - "/\\bConnpass\\b/g" # Japanese event platform (connpass.com)
+      - "/\\bCowork\\b/g" # Anthropic Claude Cowork
       - "/\\bDatastore\\b/g"
       - "/\\bGmail\\b/g"
       - "/\\bHT-03A\\b/g" # Android phone model by HTC and NTT Docomo
@@ -585,9 +590,7 @@ rules:
       - "/\\b[Dd]eclarative(ly)?\\b/g"
       - "/\\b[Dd]ev\\b/g" # Development/Developer
       - "/\\b[Ee]xecutables\\b/g" # plural of executable
-      - "/\\b[Ee]xfiltrated\\b/g" # past tense of exfiltrate
-      - "/\\b[Ee]xfiltrate((d?)|(ing)?)\\b/g" # To steal data from a system
-      - "/\\b[Ee]xfiltrating\\b/g" # gerund or present participle of exfiltrate
+      - "/\\b[Ee]xfiltrat((e(s|d)?)|(ing))\\b/g" # To steal data from a system
       - "/\\b[Ff]iletype\\b/g" # file + type
       - "/\\b[Ff]rontend\\b/g" # the client side of a client-server system
       - "/\\b[Gg]oroutines?\\b/g" # Go routines
@@ -615,6 +618,7 @@ rules:
       - "/\\b[Tt]oolchains?\\b/g"
       - "/\\b[Tt]racebacks?\\b/g" # Error trace information
       - "/\\b[Tt]radeoffs?\\b/g" # trade + off
+      - "/\\b[Uu]nbuffered\\b/g" # un + buffered
       - "/\\b[Uu]ntrusted\\b/g" # used to describe code in a security context
       - "/\\b[Uu]nimpactful\\b/g" # un + impactful
       - "/\\b[Vv]alidators?\\b/g" # e.g. JSON Schema validator
