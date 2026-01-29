@@ -1,11 +1,9 @@
-User-agent: GPTBot
-Disallow: /
+---
+layout:
+---
 
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
+{% include ai.robots.txt/robots.txt %}
 User-agent: *
 Allow: /
+
+Sitemap: {{ site.url }}/sitemap.xml
