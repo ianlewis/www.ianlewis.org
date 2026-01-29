@@ -4,3 +4,6 @@
 [submodule "third_party/ianlewis/ianlewis"]
 	path = third_party/ianlewis/ianlewis
 	url = https://github.com/ianlewis/ianlewis.git
+[submodule "third_party/ai-robots-txt/ai.robots.txt"]
+	path = third_party/ai-robots-txt/ai.robots.txt
+	url = https://github.com/ai-robots-txt/ai.robots.txt.git
