@@ -28,8 +28,10 @@ limitations under the License.
     {%- for translation in page.translations -%}
       {%- assign lang_code = translation[0] -%}
       {%- assign lang_url = translation[1] -%}
-      {%- assign lang_label = lang_code | upcase -%}
-       | <a href="{{ lang_url | relative_url }}">{{ lang_label }}</a>
+      {%- unless lang_code == current_locale -%}
+        {%- assign lang_label = lang_code | upcase -%}
+         | <a href="{{ lang_url | relative_url }}">{{ lang_label }}</a>
+      {%- endunless -%}
     {%- endfor -%}
   {%- endif -%}
   ]
