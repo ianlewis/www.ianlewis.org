@@ -4,16 +4,10 @@
     {%- include head.html -%}
   </head>
 
-  {%- if site.plainwhite.condensed_mobile contains page.layout -%}
-    {% assign condensed_class = 'condensed' -%}
-  {%- else -%}
-    {%- assign condensed_class = '' -%}
-  {%- endif -%}
-
   <body>
     <main class="container">
       <section class="about">
-        <div class="about-header {{condensed_class}}">
+        <div class="about-header condensed">
           <div class="about-title">
             {%- assign today = site.time | date: '%m-%d' %}
 
@@ -48,7 +42,7 @@
         </div>
         {%- capture footer -%}
       {%- if site.plainwhite.social_links != '' -%}
-      <ul class="social about-footer {{condensed_class}}">
+      <ul class="social about-footer condensed">
         {%- if site.plainwhite.social_links.github -%}
         <li>
           <a rel="me" href="https://github.com/{{ site.plainwhite.social_links.github }}" target="_blank">
@@ -171,7 +165,7 @@
       </ul>
       {%- endif -%}
       {%- if site.plainwhite.navigation -%}
-      <nav class="navigation about-footer {{condensed_class}}">
+      <nav class="navigation about-footer condensed">
         <ul>
           {% for link in site.plainwhite.navigation %}
           <li>
@@ -182,7 +176,7 @@
       </nav>
       {%- endif -%}
       {%- if site.plainwhite.dark_mode -%}
-      <div class="theme-toggle about-footer {{condensed_class}}">
+      <div class="theme-toggle about-footer condensed">
         <button type="button" data-theme="light" aria-label="Light mode" title="Light mode">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"></circle>
@@ -210,14 +204,14 @@
         </button>
       </div>
       {%- endif -%}
-      <p class="about-footer {{condensed_class}}">&copy; {{ "now" | date: "%Y" }} {{ site.plainwhite.name }}</p>
+      <p class="about-footer condensed">&copy; {{ "now" | date: "%Y" }} {{ site.plainwhite.name }}</p>
       {% endcapture %}
         {{ footer }}
       </section>
       <section class="content">
         {{ content }}
       </section>
-      <footer class="{{condensed_class}}">
+      <footer class="condensed">
         {{ footer }}
       </footer>
     </main>
