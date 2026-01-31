@@ -22,16 +22,18 @@ layout: default
         {{- page.date | date: date_format -}}
       </time>
     </div>
-    {%- include translation-links.html -%}
-    {%- if page.tags.size > 0 -%}
-      <ul class="post-categories">
-        {%- for tag in page.tags -%}
-          <li>
-            <a href="/{{ category }}/tag/{{ tag | url_encode }}/" class="p-category">{{ tag }}</a>
-          </li>
-        {%- endfor -%}
-      </ul>
-    {%- endif -%}
+    <div class="post-meta-right">
+      {%- include translation-links.html -%}
+      {%- if page.tags.size > 0 -%}
+        <ul class="post-categories">
+          {%- for tag in page.tags -%}
+            <li>
+              <a href="/{{ category }}/tag/{{ tag | url_encode }}/" class="p-category">{{ tag }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
   </div>
   <div class="post e-content">
     {{ content }}
