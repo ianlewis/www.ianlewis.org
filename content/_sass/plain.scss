@@ -89,7 +89,7 @@ h2 {
     margin-bottom: 0.5em;
 
     i {
-      font-size: 34px;
+      font-size: 28px;
     }
   }
 }
@@ -220,6 +220,8 @@ main {
 
     img {
       max-width: calc(#{vars.$left-width} - 50px);
+      max-height: 20vh;
+      min-height: 100px;
     }
 
     .about-header {
@@ -417,6 +419,7 @@ footer {
 
         img {
           max-height: 40px;
+          min-height: auto;
         }
 
         h2 {
