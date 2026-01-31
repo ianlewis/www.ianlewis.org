@@ -220,8 +220,8 @@ main {
 
     img {
       max-width: calc(#{vars.$left-width} - 50px);
-      min-height: 100px;
       max-height: 20vh;
+      min-height: 100px;
     }
 
     .about-header {
@@ -419,6 +419,7 @@ footer {
 
         img {
           max-height: 40px;
+          min-height: auto;
         }
 
         h2 {
