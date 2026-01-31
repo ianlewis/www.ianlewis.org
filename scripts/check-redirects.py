@@ -15,6 +15,11 @@
 
 """Check for chained redirects in netlify.toml."""
 
+# ruff: noqa: T201
+
+from __future__ import annotations
+
+import fnmatch
 import re
 import sys
 from pathlib import Path
@@ -49,17 +54,47 @@ def parse_redirects(filename: str) -> dict[str, str]:
     return redirects
 
 
+def find_matching_redirect(path: str, redirects: dict[str, str]) -> str | None:
+    """Find a redirect that matches the given path.
+
+    Handles both exact matches and splat patterns (wildcards).
+    Returns the target path if a match is found, None otherwise.
+    """
+    # First check for exact match
+    if path in redirects:
+        return redirects[path]
+
+    # Check for splat pattern matches
+    for from_path, to_path in redirects.items():
+        if "*" in from_path:
+            # Convert Netlify splat pattern to fnmatch pattern
+            # Netlify uses /* for splats, fnmatch uses * for wildcards
+            if fnmatch.fnmatch(path, from_path):
+                return to_path
+            # Also check if the path (potentially with trailing content) would match
+            # e.g., "/foo/bar/" should match "/foo/bar/*"
+            if from_path.endswith("/*"):
+                prefix = from_path[:-1]  # Remove the trailing *
+                if path.startswith(prefix) or path == prefix.rstrip("/"):
+                    return to_path
+
+    return None
+
+
 def find_chains(redirects: dict[str, str]) -> list[tuple[str, list[str]]]:
     """Find redirect chains where a redirect target is itself redirected."""
     chains = []
+    max_hops = 2  # Minimum hops to consider it a chain
 
     for from_path, to_path in redirects.items():
         chain = [from_path, to_path]
         current = to_path
 
         # Follow the chain
-        while current in redirects:
-            next_hop = redirects[current]
+        while True:
+            next_hop = find_matching_redirect(current, redirects)
+            if next_hop is None:
+                break
             chain.append(next_hop)
             current = next_hop
 
@@ -68,7 +103,7 @@ def find_chains(redirects: dict[str, str]) -> list[tuple[str, list[str]]]:
                 break
 
         # If we have a chain (more than 2 hops), record it
-        if len(chain) > 2:
+        if len(chain) > max_hops:
             chains.append((from_path, chain))
 
     return chains
@@ -92,7 +127,8 @@ def main() -> None:
                 print(f"{prefix}{path}", file=sys.stderr)
         print("=" * 80, file=sys.stderr)
         print(
-            "Please update these redirects to point directly to their final destination.",
+            "Please update these redirects to point directly to their final "
+            "destination.",
             file=sys.stderr,
         )
         sys.exit(1)
