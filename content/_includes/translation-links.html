@@ -23,13 +23,9 @@ limitations under the License.
   [ 
   {%- if current_locale == "en" -%}
     <span class="current-locale">EN</span>
-    {%- if page.translations.ja -%}
-       | <a href="{{ page.translations.ja | relative_url }}">JA</a>
-    {%- endif -%}
+    {%- if page.translations.ja %} | <a href="{{ page.translations.ja | relative_url }}">JA</a>{%- endif -%}
   {%- elsif current_locale == "ja" -%}
-    {%- if page.translations.en -%}
-      <a href="{{ page.translations.en | relative_url }}">EN</a> | 
-    {%- endif -%}
+    {%- if page.translations.en -%}<a href="{{ page.translations.en | relative_url }}">EN</a> | {% endif -%}
     <span class="current-locale">JA</span>
   {%- endif -%}
  ]
