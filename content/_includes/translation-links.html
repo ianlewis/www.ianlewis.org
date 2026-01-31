@@ -16,19 +16,23 @@ limitations under the License.
 {%- comment -%}
   Translation links component for blog posts.
   Shows language links for posts with translations.
-  Format: [ EN | JA ] with links to translations.
+  Format: [ EN | JA | ... ] with links to translations.
+  Works with any language codes defined in page.translations.
 {%- endcomment -%}
 {%- assign current_locale = page.locale | default: "en" -%}
+{%- assign current_label = current_locale | upcase -%}
 <div class="translation-links">
-  [ 
-  {%- if current_locale == "en" -%}
-    <span class="current-locale">EN</span>
-    {%- if page.translations.ja %} | <a href="{{ page.translations.ja | relative_url }}">JA</a>{%- endif -%}
-  {%- elsif current_locale == "ja" -%}
-    {%- if page.translations.en -%}<a href="{{ page.translations.en | relative_url }}">EN</a> | {% endif -%}
-    <span class="current-locale">JA</span>
+  [
+  <span class="current-locale">{{ current_label }}</span>
+  {%- if page.translations -%}
+    {%- for translation in page.translations -%}
+      {%- assign lang_code = translation[0] -%}
+      {%- assign lang_url = translation[1] -%}
+      {%- assign lang_label = lang_code | upcase -%}
+       | <a href="{{ lang_url | relative_url }}">{{ lang_label }}</a>
+    {%- endfor -%}
   {%- endif -%}
- ]
+  ]
 </div>
 {% comment %}
   vim: ft=liquid
