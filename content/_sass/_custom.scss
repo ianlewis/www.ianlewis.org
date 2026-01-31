@@ -68,6 +68,7 @@ ul.pager {
   font-family: "Montserrat", "Noto Sans JP", sans-serif;
   font-weight: 800;
 
+  margin-left: 10px;
   color: #555;
   white-space: nowrap;
   border: 2px solid #555;
@@ -89,10 +90,4 @@ ul.pager {
       text-decoration-thickness: 0.3ex;
     }
   }
-}
-
-.post-meta-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
