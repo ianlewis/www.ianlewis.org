@@ -19,10 +19,6 @@ limitations under the License.
   Format: [ EN | JA ] with links to translations.
 {%- endcomment -%}
 {%- assign current_locale = page.locale | default: "en" -%}
-{%- assign current_label = "EN" -%}
-{%- if current_locale == "ja" -%}
-  {%- assign current_label = "JA" -%}
-{%- endif -%}
 <div class="translation-links">
   [ 
   {%- if current_locale == "en" -%}
@@ -31,8 +27,8 @@ limitations under the License.
        | <a href="{{ page.translations.ja | relative_url }}">JA</a>
     {%- endif -%}
   {%- elsif current_locale == "ja" -%}
-    {%- if page.translations.permalink -%}
-      <a href="{{ page.translations.permalink | relative_url }}">EN</a> | 
+    {%- if page.translations.en -%}
+      <a href="{{ page.translations.en | relative_url }}">EN</a> | 
     {%- endif -%}
     <span class="current-locale">JA</span>
   {%- endif -%}
