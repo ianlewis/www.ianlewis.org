@@ -1,0 +1,43 @@
+{%- comment -%}
+Copyright 2025 Ian Lewis
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+{%- endcomment -%}
+{%- comment -%}
+  Translation links component for blog posts.
+  Shows language links for posts with translations.
+  Format: [ EN | JA ] with links to translations.
+{%- endcomment -%}
+{%- assign current_locale = page.locale | default: "en" -%}
+{%- assign current_label = "EN" -%}
+{%- if current_locale == "ja" -%}
+  {%- assign current_label = "JA" -%}
+{%- endif -%}
+<div class="translation-links">
+  [ 
+  {%- if current_locale == "en" -%}
+    <span class="current-locale">EN</span>
+    {%- if page.translations.ja -%}
+       | <a href="{{ page.translations.ja | relative_url }}">JA</a>
+    {%- endif -%}
+  {%- elsif current_locale == "ja" -%}
+    {%- if page.translations.permalink -%}
+      <a href="{{ page.translations.permalink | relative_url }}">EN</a> | 
+    {%- endif -%}
+    <span class="current-locale">JA</span>
+  {%- endif -%}
+ ]
+</div>
+{% comment %}
+  vim: ft=liquid
+{% endcomment %}
