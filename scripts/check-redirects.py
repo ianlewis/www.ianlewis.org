@@ -36,7 +36,7 @@ def parse_redirects(filename: str) -> dict[str, str]:
     """Parse netlify.toml and extract redirect mappings."""
     redirects = {}
 
-    with Path.open(filename, "r", encoding="utf-8") as f:
+    with Path(filename).open(mode="r", encoding="utf-8") as f:
         content = f.read()
 
     # Find all redirect blocks (supports both 'from' before 'to' and vice versa)

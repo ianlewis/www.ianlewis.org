@@ -237,7 +237,7 @@ test: lint ## Run all tests.
 #####################################################################
 
 .PHONY: format
-format: html-format js-format json-format md-format sass-format yaml-format ## Format all files
+format: html-format js-format json-format md-format py-format sass-format yaml-format ## Format all files
 
 .PHONY: html-format
 html-format: node_modules/.installed ## Format HTML files.
@@ -369,6 +369,20 @@ md-format: node_modules/.installed ## Format Markdown files.
 		--write \
 		$${files}
 
+.PHONY: py-format
+py-format: $(AQUA_ROOT_DIR)/.installed ## Format Python files.
+	@# bash \
+	files=$$( \
+		git ls-files --deduplicate \
+			'*.py' \
+			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
+	); \
+	if [ "$${files}" == "" ]; then \
+		exit 0; \
+	fi; \
+	ruff check --select I --fix $${files}; \
+	ruff format $${files}
+
 .PHONY: sass-format
 sass-format: node_modules/.installed ## Format SASS files.
 	@# bash \
@@ -418,7 +432,7 @@ yaml-format: node_modules/.installed ## Format YAML files.
 #####################################################################
 
 .PHONY: lint
-lint: actionlint check-redirects checkmake commitlint eslint fixme format-check html-validate markdownlint renovate-config-validator stylelint textlint yamllint zizmor ## Run all linters.
+lint: actionlint check-redirects checkmake commitlint eslint fixme format-check html-validate markdownlint mypy renovate-config-validator ruff stylelint textlint yamllint zizmor ## Run all linters.
 
 .PHONY: actionlint
 actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
@@ -616,11 +630,43 @@ markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the ma
 	fi; \
 	$(REPO_ROOT)/node_modules/.bin/markdownlint-cli2 $${files}
 
+.PHONY: mypy
+mypy: .venv/.installed ## Runs the mypy type checker.
+	@# bash \
+	files=$$( \
+		git ls-files --deduplicate \
+			'*.py' \
+			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
+	); \
+	if [ "$${files}" == "" ]; then \
+		exit 0; \
+	fi; \
+	${REPO_ROOT}/.venv/bin/mypy \
+		--config-file mypy.ini \
+		$${files}
+
 .PHONY: renovate-config-validator
 renovate-config-validator: node_modules/.installed ## Validate Renovate configuration.
 	@# bash \
 	$(REPO_ROOT)/node_modules/.bin/renovate-config-validator \
 		--strict
+
+.PHONY: ruff
+ruff: $(AQUA_ROOT_DIR)/.installed ## Runs the ruff linter.
+	@# bash \
+	files=$$( \
+		git ls-files --deduplicate \
+			'*.py' \
+			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
+	); \
+	if [ "$${files}" == "" ]; then \
+		exit 0; \
+	fi; \
+	if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
+		ruff check --output-format=github $${files}; \
+	else \
+		ruff check $${files}; \
+	fi
 
 .PHONY: textlint
 textlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textlint linter.
