@@ -3,7 +3,7 @@ layout: post
 title: "TIL: February 2, 2026 - Weekly Reading: AI and Security"
 date: "2026-02-02 09:00:00 +0900"
 blog: til
-tags: weekly-reading, ai, security
+tags: weekly-reading ai security
 render_with_liquid: false
 ---
 
