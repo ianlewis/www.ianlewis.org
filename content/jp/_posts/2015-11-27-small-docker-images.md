@@ -7,9 +7,13 @@ blog: jp
 tags: tech containers
 render_with_liquid: false
 locale: ja
+translations:
+    en: /en/creating-smaller-docker-images
 ---
 
-最近、コンテナ技術が流行っていていろなツールを興味深く触っている。その中の一番人気のはみんな大好きなDocker。Dockerは`docker run`でコンテナの実行環境を簡単に作ってくれる上、`docker build`でコンテナのイメージの構築も簡単にできる。Dockerのイメージ構築はDockerfileというMakefileのようなファイルを元にその中のコマンドを順番に実行して構築していくもの。
+![Dockerロゴ](/assets/images/docker/large_v-trans.png){: .align-center}
+
+最近、コンテナ技術が流行っていていろなツールを興味深く触っている。その中の一番人気のはみんな大好きなDocker。Dockerは`docker run`でコンテナの実行環境を簡単に作ってくれる上、`docker build`でコンテナのイメージの構築も簡単にできる。Dockerのイメージ構築は`Dockerfile`という`Makefile`のようなファイルを元にその中のコマンドを順番に実行して構築していくもの。
 
 例えば、
 
@@ -40,7 +44,7 @@ VIRTUAL SIZE
 
 ## なんで大きいんだ？
 
-上の`Dockerfile`の1行目は `FROM debian:jessie` って書いているんだけど、イメージが大きくなっているのは、Debian 8.x がまるまるイメージに入るわけです。さらに、Dockerfileの中に何かを`gcc`や`g++`をビルドする必要があれば、アプリを実行するのに必要ないのに、ビルドするたにツールやライブラリがイメージに入っていて、結構な量になる。
+上の`Dockerfile`の1行目は `FROM debian:jessie` って書いているんだけど、イメージが大きくなっているのは、Debian 8.x がまるまるイメージに入るわけです。さらに、`Dockerfile`の中に何かを`gcc`や`g++`をビルドする必要があれば、アプリを実行するのに必要ないのに、ビルドするたにツールやライブラリがイメージに入っていて、結構な量になる。
 
 じゃ、例えばRedisのイメージを作る場合はこうするのが一番わかりやすくて概念的にいいんだが
 
@@ -71,7 +75,7 @@ Dockerは`RUN`コマンドを実行するたびに、イメージの「レイヤ
 
 結局`RUN`を実行するたびにコミットするので、全部１個の`RUN`コマンドで実行しなければならない。
 
-以下、は[実際のRedisのDockerfile](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/3.0/Dockerfile) ([Docker BSD LICENSE](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/LICENSE))からとったスニペット
+以下、は[実際のRedisの`Dockerfile`](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/3.0/Dockerfile) ([Docker BSD LICENSE](https://github.com/docker-library/redis/blob/8929846148513a1e35e4212003965758112f8b55/LICENSE))からとったスニペット
 
 ```dockerfile
 ENV REDIS_VERSION 3.0.5

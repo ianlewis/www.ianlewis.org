@@ -7,6 +7,8 @@ blog: jp
 tags: kubernetes
 render_with_liquid: false
 locale: ja
+translations:
+    en: /en/using-kubernetes-health-checks
 ---
 
 最近、Kubernetesのヘルスチェックについての質問をよく見ています。ここでヘルスチェックの種類の違いや、どう使うか説明してみます。

@@ -6,6 +6,8 @@ permalink: /en/using-kubernetes-health-checks
 blog: en
 tags: tech containers kubernetes
 render_with_liquid: false
+translations:
+    ja: /jp/kubernetes-health-check
 ---
 
 I've seen a lot of questions about Kubernetes health checks recently and how
