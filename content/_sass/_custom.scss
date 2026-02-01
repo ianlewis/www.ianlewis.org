@@ -62,3 +62,23 @@ ul.pager {
     letter-spacing: -1px;
   }
 }
+
+// Translation links styling
+.translation-links {
+  font-weight: 800;
+  display: inline-block;
+  margin-left: 10px;
+  color: #555;
+  white-space: nowrap;
+  padding: 2px 8px;
+
+  .current-locale {
+    color: #555;
+  }
+
+  a {
+    color: #0a59b0;
+    text-decoration: underline;
+    font-weight: 400;
+  }
+}

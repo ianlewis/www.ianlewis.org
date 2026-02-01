@@ -6,6 +6,8 @@ permalink: /en/2026-new-year-reflections
 blog: en
 tags: work personal
 render_with_liquid: false
+translations:
+    ja: /jp/2026-new-year-reflections
 ---
 
 As many others have done, I'm going to write a blog post reflecting on the last

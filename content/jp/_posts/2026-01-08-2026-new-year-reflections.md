@@ -8,7 +8,7 @@ tags: work personal
 render_with_liquid: false
 locale: ja
 translations:
-    permalink: /en/2026-new-year-reflections
+    en: /en/2026-new-year-reflections
 ---
 
 多くの人がやっているように、昨年を振り返って新年を展望するブログ記事を書きます。これから、世の中がどうなるかがかなり心配ですが、2025年は個人的にはメンタルヘルスや全体的なバランスという面でより良い年だった。今年はそれを土台にして、将来の計画についてもっと意図的に取り組んでいきたい。
