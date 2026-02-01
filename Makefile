@@ -688,7 +688,6 @@ textlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textli
 	fi; \
 	if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
 		exit_code=0; \
-		textlint_out="$$($(REPO_ROOT)/node_modules/.bin/textlint --format json $${files} | jq -cr '.[]' || exit_code=\"$$?\")"; \
 		while IFS="" read -r p && [ -n "$$p" ]; do \
 			filePath=$$(echo "$$p" | jq -cr '.filePath // empty'); \
 			file=$$(realpath --relative-to="." "$${filePath}"); \
@@ -699,9 +698,10 @@ textlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textli
 				col=$$(echo "$${m}" | jq -cr '.loc.start.column // empty'); \
 				endcol=$$(echo "$${m}" | jq -cr '.loc.end.column // empty'); \
 				message=$$(echo "$$m" | jq -cr '.message // empty'); \
+				exit_code=1; \
 				echo "::error file=$${file},line=$${line},endLine=$${endline},col=$${col},endColumn=$${endcol}::$${message}"; \
-			done <<<"$${messages}"; \
-		done <<<"$${textlint_out}"; \
+			done <<<"$$(echo "$${p}" | jq -cr '.messages[] // empty')"; \
+		done <<< "$$($(REPO_ROOT)/node_modules/.bin/textlint --format json $${files} 2>&1 | jq -c '.[]')"; \
 		exit "$${exit_code}"; \
 	else \
 		$(REPO_ROOT)/node_modules/.bin/textlint \
