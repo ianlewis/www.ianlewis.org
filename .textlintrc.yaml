@@ -145,6 +145,8 @@ rules:
       - "/\\bHansson\\b/g"
       - "/\\bHeba\\b/g"
       - "/\\bHeinemeier\\b/g"
+      - "/\\bHeelan\\b/g"
+      - "/\\bHelton\\b/g"
       - "/\\bHemminga\\b/g"
       - "/\\bHightower\\b/g"
       - "/\\bHockin\\b/g"
@@ -182,6 +184,7 @@ rules:
       - "/\\bLonelyBob\\b/g"
       - "/\\bMadoff\\b/g"
       - "/\\bMakabi\\b/g"
+      - "/\\bMcCune\\b/g"
       - "/\\bMcKayla\\b/g"
       - "/\\bMaki\\b/g"
       - "/\\bMakoto\\b/g"
@@ -397,6 +400,7 @@ rules:
       - "/\\bMacBook\\b/g"
       - "/\\bOakveil\\b/g" # V Rising in-game location
       - "/\\bPhotoshop\\b/g"
+      - "/\\bReddit\\b/g" # Social news aggregation and discussion website
       - "/\\bS3\\b/g" # Amazon S3
       - "/\\bSimeji\\b/g" # Japanese input method editor (bought by Baidu)
       - "/\\bSmipple\\b/g" # Code snippet sharing service (defunct)
@@ -463,6 +467,7 @@ rules:
       - "/\\bNoto\\b/g" # Noto fonts
       - "/\\bNunjucks\\b/g" # JavaScript templating engine
       - "/\\bOAuth2?\\b/g" # Open standard for access delegation
+      - "/\\bOpenClaw\\b/g" # AI personal assistant (openclaw.ai)
       - "/\\bOpenShift\\b/g" # Red Hat's container platform
       - "/\\bOpenSocial\\b/g" # Social networking protocol
       - "/\\bOpenStack\\b/g" # OpenStack cloud computing platform
@@ -606,6 +611,7 @@ rules:
       - "/\\b[Pp]ermalinks?\\b/g"
       - "/\\b[Pp]laintext\\b/g"
       - "/\\b[Pp]reempt(ible)?\\b/g"
+      - "/\\b[Pp]roxied\\b/g" # proxy + -ed
       - "/\\b[Ii]mpactful\\b/g" # impact + -ful
       - "/\\b[Ii]ntegrations\\b/g" # irregular plural-form
       - "/\\b[Rr]evsets?\\b/g" # Revision Set (Mercurial)
@@ -685,6 +691,7 @@ rules:
       - "/\\bJLPT\\b/g" # Japanese Language Proficiency Test
       - "/\\bJSON\\b/g" # JavaScript Object Notation
       - "/\\bJVM\\b/g" # Java Virtual Machine
+      - "/\\bKEP\\b/g" # Kubernetes Enhancement Proposal
       - "/\\bKVS\\b/g" # Key-Value Store
       - "/\\bLDAP\\b/g" # Lightweight Directory Access Protocol
       - "/\\bLLMs?\\b/g" # Large Language Model
@@ -705,6 +712,7 @@ rules:
       - "/\\bPID\\b/g" # Process ID
       - "/\\bPRNG\\b/g" # Pseudorandom Number Generator
       - "/\\bQPS\\b/g" # Query Per Second
+      - "/\\bRBAC\\b/g" # Role-Based Access Control
       - "/\\bRCE\\b/g" # Remote Code Execution
       - "/\\bRDBMS\\b/g" # Relational Database Management System
       - "/\\bRPCs?\\b/g" # Remote Procedure Call

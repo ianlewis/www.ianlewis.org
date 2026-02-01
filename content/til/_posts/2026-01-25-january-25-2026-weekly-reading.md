@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TIL: January 25, 2026 - Weekly Reading"
+title: "TIL: January 25, 2026 - Weekly Reading: AI, Security, and Programming"
 date: "2026-01-25 09:00:00 +0900"
 blog: til
 tags: weekly-reading ai security programming golang
