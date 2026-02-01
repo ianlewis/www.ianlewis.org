@@ -20,19 +20,28 @@
   Works with any language codes defined in page.translations.
 {%- endcomment -%}
 {%- assign current_locale = page.locale | default: 'en' -%}
+
+{% comment %}
+  Collect all locales: those in translations plus current locale.
+  NOTE: "" | split: "," is used to create an empty array.
+{% endcomment %}
+{%- assign all_locales = '' | split: ',' -%}
+{%- for locale in page.translations -%}
+  {%- assign all_locales = all_locales | push: locale[0] -%}
+{%- endfor -%}
+{%- assign all_locales = all_locales | push: current_locale | uniq | sort -%}
+
 <div class="translation-links">
-  [
-  <span class="current-locale">{{ current_locale }}</span>
-  {%- if page.translations -%}
-    {%- for translation in page.translations -%}
-      {%- assign lang_code = translation[0] -%}
-      {%- assign lang_url = translation[1] -%}
-      {%- unless lang_code == current_locale %}
-        | <a href="{{ lang_url | relative_url }}">{{ lang_code }}</a>
-      {%- endunless -%}
-    {%- endfor -%}
-  {%- endif %}
-  ]
+  {{ '[ ' }}
+  {%- for locale in all_locales -%}
+    {%- if locale == current_locale -%}
+      <span class="current-locale">{{ current_locale }}</span>
+    {%- else -%}
+      <a href="{{ page.translations[locale] | relative_url }}">{{ locale }}</a>
+    {%- endif -%}
+    {%- unless forloop.last -%}{{ ' | ' }}{%- endunless -%}
+  {%- endfor -%}
+  {{ ' ]' }}
 </div>
 {% comment %}
   vim: ft=liquid

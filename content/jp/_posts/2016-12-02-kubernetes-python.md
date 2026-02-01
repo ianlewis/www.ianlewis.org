@@ -7,6 +7,8 @@ blog: jp
 tags: python kubernetes
 render_with_liquid: false
 locale: ja
+translations:
+    en: /en/quick-look-kubernetes-python-client
 ---
 
 > この記事は [pyspa Advent Calendar 2016](http://www.adventar.org/calendars/1435#list-2016-12-02) の第２日目の記事。第１目はakisuteさんの「[今年の話](http://akisute.com/2016/12/pyspa-advent-calendar-2016-1.html)」だった。

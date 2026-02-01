@@ -6,6 +6,8 @@ permalink: /en/creating-smaller-docker-images-part2
 blog: en
 tags: tech containers smaller-docker-images-series
 render_with_liquid: false
+translations:
+    ja: /jp/small-docker-images-part-2
 ---
 
 This is the second post in a series on making smaller Docker images. In my [previous blog post](https://www.ianlewis.org/en/creating-smaller-docker-images) I talked about how to create smaller Docker images but there were limits to

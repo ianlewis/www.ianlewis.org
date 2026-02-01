@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+@use "vars";
+
 blockquote {
   background: #f4f4f4;
   border-left: 10px solid #ccc;
@@ -65,20 +67,14 @@ ul.pager {
 
 // Translation links styling
 .translation-links {
-  font-weight: 800;
   display: inline-block;
   margin-left: 10px;
-  color: #555;
   white-space: nowrap;
   padding: 2px 8px;
 
-  .current-locale {
-    color: #555;
-  }
-
   a {
-    color: #0a59b0;
+    color: vars.$link-color;
     text-decoration: underline;
-    font-weight: 400;
+    font-weight: normal;
   }
 }
