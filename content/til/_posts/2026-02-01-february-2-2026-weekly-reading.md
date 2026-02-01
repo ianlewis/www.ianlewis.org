@@ -20,7 +20,7 @@ render_with_liquid: false
     email inboxes, calendars, and filesystems. And now, they give them the
     ability to publish what they're doing on the internet!
 
-    I can't imagine a world were we just give bots access to own own identity.
+    I can't imagine a world where we just give bots access to our own identity.
     It seems to me that we would treat it much like a human administrative
     assistant and include it on emails, meetings, and such. However, it would
     have its own identity and not have access to our personal accounts.
@@ -42,7 +42,7 @@ render_with_liquid: false
     where he asked agents to create exploits for a QuickJS vulnerability.
 
     It is interesting to see that they didn't invent novel techniques but did
-    combine existing techniques in novel ways. Other that the fact that it was
+    combine existing techniques in novel ways. Other than the fact that it was
     successful, it seems like a fairly boring experiment.
 
     It does make you think about the future where vulnerabilities could be
@@ -84,7 +84,7 @@ render_with_liquid: false
     make any assumptions about what those proxied requests do.
 
     I get that having supposedly read-only `GET` permissions potentially
-    allowing you to do potentially do write operations is confusing but I mostly
+    allowing you to potentially do write operations is confusing but I mostly
     agree with the response by the Kubernetes maintainers that
     [KEP-2862](https://github.com/kubernetes/enhancements/blob/master/keps/sig-node/2862-fine-grained-kubelet-authz/README.md)
     is the answer. Folks should have a separate role-based access control (RBAC)
