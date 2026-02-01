@@ -11,7 +11,7 @@ translations:
     ja: /jp/small-docker-images
 ---
 
-![Docker](/assets/images/docker/large_v-trans.png){: .align-center}
+![The Docker logo of a whale with containers on its back](/assets/images/docker/large_v-trans.png){: .align-center}
 
 Recently I've been working with containers a lot and the most popular technology
 out there is, of course, Docker. On top of allowing you to easily run containers
@@ -52,7 +52,7 @@ On the first line of the `Dockerfile` above you'll notice that it says `FROM
 debian:jessie`. This is significant because what this means is that we are
 basing our Docker image off of the `debian:jessie` image on Docker Hub. What
 makes it so big is that the image contains an entire Debian 8.x installation. If
-you then install things like gcc, g++ or other build tools the size will get
+you then install things like GCC, g++ or other build tools the size will get
 even bigger.
 
 OK, so let's take a look at how we might create a Docker image for Redis. The
@@ -85,7 +85,7 @@ Well, no. Whenever you have a RUN command in your Dockerfile, Docker will create
 an image layer in your image. Essentially, your image is a bunch of diffs where
 each layer contains information on the difference between each layer. So here
 even if we delete the build tools at the end, they are still contained in a
-prvious layer that Docker needs to built up the current layer. So all our work
+previous layer that Docker needs to built up the current layer. So all our work
 to make the image smaller makes no difference!
 
 ## How to Make it Smaller?
