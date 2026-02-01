@@ -25,22 +25,24 @@
   Collect all locales: those in translations plus current locale.
   NOTE: "" | split: "," is used to create an empty array.
 {% endcomment %}
-{%- assign all_locales = "" | split: "," -%}
+{%- assign all_locales = '' | split: ',' -%}
 {%- for locale in page.translations -%}
   {%- assign all_locales = all_locales | push: locale[0] -%}
 {%- endfor -%}
 {%- assign all_locales = all_locales | push: current_locale | uniq | sort -%}
 
-<div class="translation-links">{{ "[ " }}
+<div class="translation-links">
+  {{ '[ ' }}
   {%- for locale in all_locales -%}
     {%- if locale == current_locale -%}
       <span class="current-locale">{{ current_locale }}</span>
     {%- else -%}
       <a href="{{ page.translations[locale] | relative_url }}">{{ locale }}</a>
     {%- endif -%}
-    {%- unless forloop.last -%}{{ " | " }}{%- endunless -%}
+    {%- unless forloop.last -%}{{ ' | ' }}{%- endunless -%}
   {%- endfor -%}
-{{ " ]" }}</div>
+  {{ ' ]' }}
+</div>
 {% comment %}
   vim: ft=liquid
 {% endcomment %}
