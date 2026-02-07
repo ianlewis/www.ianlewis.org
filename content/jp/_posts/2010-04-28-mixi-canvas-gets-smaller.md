@@ -4,7 +4,7 @@ title: "mixi アプリのキャンバスが狭くなるぞ"
 date: 2010-04-28 16:52:22 +0000
 permalink: /jp/mixi-canvas-gets-smaller
 blog: jp
-tags: mixi
+tags: tech
 render_with_liquid: false
 locale: ja
 ---

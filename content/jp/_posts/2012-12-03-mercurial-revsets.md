@@ -4,7 +4,7 @@ title: "Mercurial revsets の紹介"
 date: 2012-12-03 13:00:00 +0000
 permalink: /jp/mercurial-revsets
 blog: jp
-tags: tech programming source-control
+tags: tech programming
 render_with_liquid: false
 locale: ja
 ---

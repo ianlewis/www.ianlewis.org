@@ -4,7 +4,7 @@ title: "Pycon JP 2011 開催しました！"
 date: 2011-08-29 14:18:48 +0000
 permalink: /jp/pycon-jp-2011-kaisai
 blog: jp
-tags: python pyconjp
+tags: python events
 render_with_liquid: false
 locale: ja
 ---

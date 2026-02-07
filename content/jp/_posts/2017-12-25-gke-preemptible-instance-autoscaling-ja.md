@@ -4,7 +4,7 @@ title: "Preemptible InstanceでGKEクラスターのオートスケーリング"
 date: 2017-12-25 15:30:00 +0000
 permalink: /jp/gke-preemptible-instance-autoscaling-ja
 blog: jp
-tags: kubernetes google-container-engine
+tags: kubernetes cloud
 render_with_liquid: false
 locale: ja
 ---

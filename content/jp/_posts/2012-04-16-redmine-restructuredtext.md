@@ -4,7 +4,7 @@ title: "Redmine で reStructuredText を使う方法"
 date: 2012-04-16 13:00:00 +0000
 permalink: /jp/redmine-restructuredtext
 blog: jp
-tags: python redmine restructuredtext ruby
+tags: python programming tech work
 render_with_liquid: false
 locale: ja
 ---

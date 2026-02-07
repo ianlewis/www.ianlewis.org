@@ -4,7 +4,7 @@ title: "Python StringIO と cStringIO のもう一つの違い"
 date: 2010-06-23 16:50:30 +0000
 permalink: /jp/python-stringio-cstringio
 blog: jp
-tags: python django stringio
+tags: python django programming
 render_with_liquid: false
 locale: ja
 ---

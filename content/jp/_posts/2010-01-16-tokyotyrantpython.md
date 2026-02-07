@@ -4,7 +4,7 @@ title: "pytyrantはpython-tokyotyrantよりずっと速い"
 date: 2010-01-16 20:27:37 +0000
 permalink: /jp/tokyotyrantpython
 blog: jp
-tags: python tokyotyrant python-tokyotyrant pytyrant
+tags: python tech programming
 render_with_liquid: false
 locale: ja
 ---

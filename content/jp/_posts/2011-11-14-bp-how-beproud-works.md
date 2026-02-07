@@ -4,7 +4,7 @@ title: "BPで働くのがどうか (How BeProud Works)"
 date: 2011-11-14 13:30:00 +0000
 permalink: /jp/bp-how-beproud-works
 blog: jp
-tags: work beproud
+tags: work musings
 render_with_liquid: false
 locale: ja
 ---

@@ -4,7 +4,7 @@ title: "ipython と virtualenv を同時に使う方法"
 date: 2010-05-08 10:26:32 +0000
 permalink: /jp/ipython-virtualenv
 blog: jp
-tags: python virtualenv
+tags: python programming
 render_with_liquid: false
 locale: ja
 ---

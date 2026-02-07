@@ -4,7 +4,7 @@ title: "App Engine Matcher API"
 date: 2010-11-08 09:33:06 +0000
 permalink: /jp/appengine-matcher-api
 blog: jp
-tags: tech python cloud mapper
+tags: tech python cloud programming
 render_with_liquid: false
 locale: ja
 ---
