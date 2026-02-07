@@ -4,7 +4,7 @@ title: "Django ドキュメント翻訳スプリント"
 date: 2010-10-13 10:19:00 +0000
 permalink: /jp/django-document-translation-sprint
 blog: jp
-tags: django events
+tags: django events tech
 render_with_liquid: false
 locale: ja
 ---

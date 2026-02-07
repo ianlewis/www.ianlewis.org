@@ -4,7 +4,7 @@ title: "仕事を非同期に"
 date: 2011-12-05 13:30:00 +0000
 permalink: /jp/async-work
 blog: jp
-tags: work musings
+tags: work musings tech
 render_with_liquid: false
 locale: ja
 ---

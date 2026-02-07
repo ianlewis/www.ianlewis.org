@@ -4,7 +4,7 @@ title: "require.js + Django 設定の組み合わせ"
 date: 2014-08-15 11:00:00 +0000
 permalink: /jp/requirejs-django-settings
 blog: jp
-tags: javascript django
+tags: django javascript python programming tech
 render_with_liquid: false
 locale: ja
 ---

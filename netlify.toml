@@ -404,7 +404,7 @@ command = "make jekyll-build"
 
 [[redirects]]
   from = "/en/tag/c/*"
-  to = "/jp/tag/programming/"
+  to = "/en/tag/programming/"
   status = 301
 
 [[redirects]]
@@ -1187,7 +1187,7 @@ command = "make jekyll-build"
 
 [[redirects]]
   from = "/jp/tag/pylons/*"
-  to = "/jp/tag/programming/"
+  to = "/jp/tag/python/"
   status = 301
 
 [[redirects]]
@@ -1504,7 +1504,7 @@ command = "make jekyll-build"
 # /jp/tag/ニート/
 [[redirects]]
   from = "/jp/tag/%E3%83%8B%E3%83%BC%E3%83%88/*"
-  to = "/jp/tag/personal/"
+  to = "/jp/tag/musings/"
   status = 301
 
 # Programming

@@ -4,7 +4,7 @@ title: "Googleのほとんどのサービスを支えるBigtableの誰でも使�
 date: 2015-12-20 16:00:00 +0000
 permalink: /jp/cloud-bigtable
 blog: jp
-tags: cloud
+tags: cloud tech
 render_with_liquid: false
 locale: ja
 ---

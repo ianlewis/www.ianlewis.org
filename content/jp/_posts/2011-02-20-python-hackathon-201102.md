@@ -4,7 +4,7 @@ title: "Python Hackathon 2011.02"
 date: 2011-02-20 21:24:03 +0000
 permalink: /jp/python-hackathon-201102
 blog: jp
-tags: python events programming
+tags: python events programming tech
 render_with_liquid: false
 locale: ja
 ---
