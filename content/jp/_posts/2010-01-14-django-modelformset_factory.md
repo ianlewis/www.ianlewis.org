@@ -4,7 +4,7 @@ title: "Django modelformset_factory便利"
 date: 2010-01-14 19:35:55 +0000
 permalink: /jp/django-modelformset_factory
 blog: jp
-tags: django modelform
+tags: tech django programming
 render_with_liquid: false
 locale: ja
 ---

@@ -4,7 +4,7 @@ title: "Riak を Python で使う"
 date: 2013-03-12 20:30:00 +0000
 permalink: /jp/riak-python
 blog: jp
-tags: python riak
+tags: programming python tech
 render_with_liquid: false
 locale: ja
 ---

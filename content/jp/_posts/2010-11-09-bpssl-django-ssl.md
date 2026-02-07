@@ -4,7 +4,7 @@ title: "bpssl のDjango SSL対応アプリをリリースしました"
 date: 2010-11-09 11:09:23 +0000
 permalink: /jp/bpssl-django-ssl
 blog: jp
-tags: python django ssl
+tags: python django security programming tech
 render_with_liquid: false
 locale: ja
 ---

@@ -4,7 +4,7 @@ title: "Python でPassbookファイルを作成する"
 date: 2012-10-09 10:25:51 +0000
 permalink: /jp/python-passbook
 blog: jp
-tags: python ios passbook
+tags: python tech events programming
 render_with_liquid: false
 locale: ja
 ---

@@ -4,7 +4,7 @@ title: "何でObjective-Cが好きじゃなくなったの？"
 date: 2010-03-01 16:02:31 +0000
 permalink: /jp/objective-c-like-python
 blog: jp
-tags: python iphone objective-c
+tags: python programming tech
 render_with_liquid: false
 locale: ja
 ---

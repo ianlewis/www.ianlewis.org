@@ -4,7 +4,7 @@ title: "HTMLサニタイズするライブラリbleachを試してみた"
 date: 2014-06-23 13:00:00 +0000
 permalink: /jp/htmlbleach
 blog: jp
-tags: python html
+tags: programming python tech
 render_with_liquid: false
 locale: ja
 ---
