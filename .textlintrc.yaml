@@ -403,6 +403,7 @@ rules:
       - "/\\bJupyter\\b/g"
       - "/\\bMacBook\\b/g"
       - "/\\bOakveil\\b/g" # V Rising in-game location
+      - "/\\bOhloh\\b/g" # Software development statistics website
       - "/\\bPhotoshop\\b/g"
       - "/\\bReddit\\b/g" # Social news aggregation and discussion website
       - "/\\bS3\\b/g" # Amazon S3
@@ -440,6 +441,7 @@ rules:
       - "/\\bCygwin\\b/g"
       - "/\\bCython\\b/g" # C-Extensions for Python
       - "/\\bDvorakJP\\b/g" # Dvorak Japanese Keyboard Layout
+      - "/\\bEPWING\\b/g" # Japanese electronic dictionary format
       - "/\\bEUC-JP\\b/g" # Japanese character encoding
       - "/\\bFastCGI\\b/g"
       - "/\\bFulcio\\b/g" # Sigstore's Fulcio
@@ -488,7 +490,7 @@ rules:
       - "/\\bShiftJIS\\b/g" # Japanese character encoding
       - "/\\bSideqik\\b/g" # Ruby task queue
       - "/\\bSigstore\\b/g" # Project for signing software artifacts
-      - "/\\bStardict\\b/g" # StarDict dictionary software
+      - "/\\bStarDict\\b/g" # StarDict dictionary software
       - "/\\bSweetcron\\b/g"
       - "/\\bSymposion\\b/g" # Django library for conference management
       - "/\\bStylelint\\b/g"
@@ -594,12 +596,15 @@ rules:
       - "/\\b[Bb]ackends?\\b/g" # the server side of a client-server system
       - "/\\b[Bb]ackpressure\\b/g" # pressure that opposes the desired flow
       - "/\\b[Bb]alancers?\\b/g" # e.g. load balancer
+      - "/\\b[Cc]allables?\\b/g" # e.g. functions
+      - "/\\b[Cc]hangelists?\\b/g" # sets of changes (version control)
       - "/\\b[Cc]omparator\\b/g" # compare + ator
       - "/\\b[Cc]onnectability\\b/g" # Ability to connect
       - "/\\b[Dd]eclarative(ly)?\\b/g"
       - "/\\b[Dd]ev\\b/g" # Development/Developer
       - "/\\b[Ee]xecutables\\b/g" # plural of executable
       - "/\\b[Ee]xfiltrat((e(s|d)?)|(ing))\\b/g" # To steal data from a system
+      - "/\\b[Ff]avicons?\\b/g" # Favorite icons
       - "/\\b[Ff]iletype\\b/g" # file + type
       - "/\\b[Ff]rontend\\b/g" # the client side of a client-server system
       - "/\\b[Gg]oroutines?\\b/g" # Go routines
@@ -643,6 +648,7 @@ rules:
       - "/\\bACL\\b/g" # Access Control List
       - "/\\bACPI\\b/g" # Advanced Configuration and Power Interface
       - "/\\bADD\\b/g" # Attention Deficit Disorder
+      - "/\\bALSA\\b/g" # Advanced Linux Sound Architecture
       - "/\\bAPAC\\b/g" # Asia-Pacific
       - "/\\bAPIs?\\b/g" # Application Programming Interface
       - "/\\bAPK\\b/g" # Android Package
@@ -651,6 +657,7 @@ rules:
       - "/\\bBPBP\\b/g" # BeProud Book Purchase
       - "/\\bBQ\\b/g" # BigQuery
       - "/\\bBUSL\\b/g" # Business Source License
+      - "/\\bCAs?\\b/g" # Certificate Authority
       - "/\\bCBT\\b/g" # Cognitive Behavioral Therapy
       - "/\\bCC0\\b/g" # Creative Commons Zero
       - "/\\bCFP\\b/g" # Call for Papers/Proposals
@@ -809,18 +816,6 @@ rules:
       # TODO(#285): Handle or fix the following words.
       ##########################################################################
 
-      - "callables"
-      - "callLater"
-      - "cancelled"
-      - "CAs"
-      - "cgcreate"
-      - "cgexec"
-      - "Cgroups"
-      - "cgset"
-      - "_changelist"
-      - "changelist"
-      - "checkmark"
-      - "chinese"
       - "chmod"
       - "chroot"
       - "chrooting"
@@ -1396,19 +1391,6 @@ rules:
       - "zsh"
       - "Zyp"
 
-      - "cProfile" # Python profiler
-      - "doctest" # Python testing framework
-      - "bugfix" # Bug fix
-      - "Req" # Request abbreviation
-      - "gae" # Google App Engine abbreviation
-
-      - "Ohloh" # Software development statistics website
-      - "ALSA" # Advanced Linux Sound Architecture
-      - "Alsa" # ALSA variant
-      - "aculo" # Part of script.aculo.us library
-      - "favicons" # Favorite icons
-      - "stardict" # StarDict dictionary format
-      - "epwing" # EPWING dictionary format
       - "plagger" # Perl RSS/Atom aggregator
       - "HTMLScrubber" # HTML cleaning library
       - "additionalProperties" # JSON Schema property
