@@ -40,11 +40,11 @@ than my plugin or isn't present at all in my plugin.
   PHP classes themselves rather than relying on the Embedded API. It also
   generates the sidebar image block itself instead of letting Gallery 2 do it. I
   need to test it but I'm not sure if this works with say, the Gallery 2
-  multi-language plugin. I think this kind of manuvering is what precipitated
+  multi-language plugin. I think this kind of maneuvering is what precipitated
   the need for a [release compatibility
   matrix](http://wpg2.galleryembedded.com/index.php?title=WPG2:Release_Matrix)
-  which I think might be a pain for users, so I plan to add some more options
-  while sticking as much to the embedded api as possible.
+  which I think might be a pain for users. So I plan to add some more options
+  while sticking as much to the embedded API as possible.
 - The WordPress plugin adds a button to TinyMCE automatically. Currently with my
   plugin you have to [jump through some
   hoops](https://plugins.b2evolution.net/plugins-gallery2-plugin#using-the-gallery2-plugin-with-the-tinymce-plugin).

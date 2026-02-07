@@ -282,6 +282,7 @@ rules:
       - "/\\b(AE35|ae35)\\b/g" # AE35
       - "/\\b(DHH|dhh)\\b/g" # David Heinemeier Hansson
       - "/\\bKubernetesio\\b/g" # Kubernetes Twitter handle
+      - "/\\bSumiTomohiko\\b/g"
       - "/\\bTheAmyCode\\b/g"
       - "/\\bal3x\\b/g" # Alex Payne
       - "/\\ba2c\\b/g"
@@ -363,6 +364,7 @@ rules:
       - "/\\bFriendFeed\\b/g" # Social networking service (acquired by Facebook)
       - "/\\bGree\\b/g" # Japanese social networking service
       - "/\\bGumi\\b/g" # Japanese mobile game developer
+      - "/\\bHasweb\\b/g" # Shared hosting provider
       - "/\\bJoyent\\b/g"
       - "/\\bLinkedIn\\b/g" # Professional networking platform
       - "/\\bMesosphere\\b/g"
@@ -383,6 +385,7 @@ rules:
       - "/\\bUnoh\\b/g"
       - "/\\bUStream\\b/g" # Live video streaming service (acquired by IBM)
       - "/\\bVimeo\\b/g" # Video hosting platform
+      - "/\\bWebFaction\\b/g" # Web hosting service
       - "/\\bWindsurf\\b/g" # Windsurf, AI IDE
 
       # Product Names
@@ -395,6 +398,7 @@ rules:
       - "/\\bChromeOS\\b/g"
       - "/\\bConnpass\\b/g" # Japanese event platform (connpass.com)
       - "/\\bCowork\\b/g" # Anthropic Claude Cowork
+      - "/\\bDOCOMO\\b/g" # Japanese mobile operator NTT DOCOMO
       - "/\\bDatastore\\b/g"
       - "/\\bGmail\\b/g"
       - "/\\bHT-03A\\b/g" # Android phone model by HTC and NTT Docomo
@@ -466,6 +470,7 @@ rules:
       - "/\\b[Mm]emcached\\b/g"
       - "/\\bMesos\\b/g"
       - "/\\bMochiKit\\b/g"
+      - "/\\bMoltbot\\b/g" # renamed to OpenClaw
       - "/\\bNATS(\\.io)?\\b/g" # NATS.io
       - "/\\bNeovim\\b/g"
       - "/\\bNetstack\\b/g" # Go networking stack
@@ -482,6 +487,7 @@ rules:
       - "/\\bPlone\\b/g" # Python content management system
       - "/\\bPostgreSQL\\b/g" # PostgreSQL database
       - "/\\bPyCharm\\b/g" # Python IDE by JetBrains
+      - "/\\bPyObjC\\b/g" # Python Objective-C bridge
       - "/\\bPyPI\\b/g"
       - "/\\bPyflakes\\b/g" # Python static code analysis tool
       - "/\\bQUnit\\b/g" # JavaScript Unit Testing Framework
@@ -653,6 +659,7 @@ rules:
       - "/\\bAPIs?\\b/g" # Application Programming Interface
       - "/\\bAPK\\b/g" # Android Package
       - "/\\bAPT\\b/g" # Advanced Package Tool
+      - "/\\bBMP\\b/g" # Bitmap image format
       - "/\\bBOF\\b/g" # Birds of a Feather
       - "/\\bBPBP\\b/g" # BeProud Book Purchase
       - "/\\bBQ\\b/g" # BigQuery
@@ -678,6 +685,7 @@ rules:
       - "/\\bEBS\\b/g" # Amazon Elastic Block Store
       - "/\\bEC2\\b/g" # Amazon Elastic Compute Cloud
       - "/\\bFaaS\\b/g" # Function as a Service
+      - "/\\bFOMA\\b/g" # Freedom of Mobile multimedia Access (DOCOMO)
       - "/\\bGAE\\b/g" # Google App Engine
       - "/\\bGC\\b/g" # Garbage Collector/Collection
       - "/\\bGCE\\b/g" # Google Compute Engine
@@ -700,8 +708,10 @@ rules:
       - "/\\bIP(s|v4|v6)?\\b/g" # Internet Protocol
       - "/\\bIPC\\b/g" # Inter-Process Communication
       - "/\\bJLPT\\b/g" # Japanese Language Proficiency Test
+      - "/\\bJPE?G\\b/g" # Joint Photographic Experts Group
       - "/\\bJSON\\b/g" # JavaScript Object Notation
       - "/\\bJVM\\b/g" # Java Virtual Machine
+      - "/\\bKDE4?\\b/g" # K Desktop Environment
       - "/\\bKEP\\b/g" # Kubernetes Enhancement Proposal
       - "/\\bKVS\\b/g" # Key-Value Store
       - "/\\bLDAP\\b/g" # Lightweight Directory Access Protocol
@@ -715,12 +725,15 @@ rules:
       - "/\\bNUMA\\b/g" # Non-Uniform Memory Access
       - "/\\bNoSQL\\b/g" # Not Only SQL
       - "/\\bOKRs?\\b/g" # Objectives and Key Results
+      - "/\\bOSC\\b/g" # Open Source Conference
+      - "/\\bOSPN\\b/g" # Open Source People Network
       - "/\\bOSS\\b/g" # Open Source Software
       - "/\\bQPS\\b/g" # Queries Per Second
       - "/\\bQoS\\b/g" # Quality of Service
       - "/\\bPKI\\b/g" # Public Key Infrastructure
       - "/\\bPaaS\\b/g" # Platform as a Service
       - "/\\bPID\\b/g" # Process ID
+      - "/\\bPNG\\b/g" # Portable Network Graphics
       - "/\\bPRNG\\b/g" # Pseudorandom Number Generator
       - "/\\bQPS\\b/g" # Query Per Second
       - "/\\bRBAC\\b/g" # Role-Based Access Control
@@ -776,6 +789,9 @@ rules:
       - "/\\b[Dd]umbed-down\\b/g"
       # https://dictionary.cambridge.org/dictionary/english/explainer
       - "/\\b[Ee]xplainer\\b/g" # One who explains
+      # https://www.merriam-webster.com/dictionary/per%20capita
+      - "/\\b[Pp]er\\scapita\\b/g" # per person
+
       # https://dictionary.cambridge.org/dictionary/english/varyingly
       - "/\\b[Vv]aryingly\\b/g"
       # https://dictionary.cambridge.org/dictionary/english/incentivize
@@ -1390,31 +1406,3 @@ rules:
       - "zipimport"
       - "zsh"
       - "Zyp"
-
-      - "plagger" # Perl RSS/Atom aggregator
-      - "HTMLScrubber" # HTML cleaning library
-      - "additionalProperties" # JSON Schema property
-      - "readonly" # Read-only attribute
-      - "PyObjC" # Python Objective-C bridge
-      - "DOCOMO" # Japanese mobile operator NTT DOCOMO
-      - "FOMA" # Freedom of Mobile multimedia Access (DOCOMO's 3G service)
-      - "PNG" # Portable Network Graphics
-      - "JPG" # JPEG image format
-      - "BMP" # Bitmap image format
-      - "OSPN" # Open Source People Network
-      - "SumiTomohiko" # Person name
-      - "KDE" # K Desktop Environment
-      - "OSC" # Open Source Conference
-      - "Hasweb" # Web hosting service
-      - "cgi" # Common Gateway Interface (lowercase)
-      - "Webfaction" # Web hosting service
-      - "Shoutout" # Acknowledgment or mention
-      - "au" # Japanese mobile carrier
-      - "api" # Application Programming Interface (lowercase)
-      - "_blank" # HTML target attribute
-      - "digg" # Social news aggregation website
-      - "extract_addrs" # Function name
-      - "tt" # HTML element or abbreviation
-      - "oss" # Open Source Software (lowercase)
-      - "ot" # Could be initials, abbreviation, or typo
-      - "Config" # Configuration

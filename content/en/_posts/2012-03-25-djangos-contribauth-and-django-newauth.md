@@ -9,11 +9,11 @@ render_with_liquid: false
 ---
 
 Recently there have been a lot of conversations on the Django mailing list about
-fixing the auth module. Here are some of the recent mailing list threads:
+fixing the `auth` module. Here are some of the recent mailing list threads:
 
 1. [authentication by email](https://groups.google.com/forum/?fromgroups#!topic/django-developers/YcFTAaidiL4)
-2. [auth.User refactor: reboot](https://groups.google.com/forum/?fromgroups#!topic/django-developers/ba21QMpffZs)
-3. [auth.User: The abstract base class idea](https://groups.google.com/forum/?fromgroups#!topic/django-developers/Na0AmIGSGQA)
+2. [`auth.User` refactor: reboot](https://groups.google.com/forum/?fromgroups#!topic/django-developers/ba21QMpffZs)
+3. [`auth.User`: The abstract base class idea](https://groups.google.com/forum/?fromgroups#!topic/django-developers/Na0AmIGSGQA)
 
 Originally the topic came up because of the fact that you can't really
 authenticate effectively using the email address as a username. The username
@@ -25,14 +25,14 @@ However, one fixes this though there will be many unhappy people because
 everyone wants something different. It's a problem ripe for customization, but
 there is a really hard dependency on the current API of `contrib.auth`.
 
-## contrib.auth sucks
+## `contrib.auth` sucks
 
-My company, BeProud, ran into problems with auth early on and really haven't
-ever used it. We used to implement an auth solution for every project we worked
-on but that was just simply wasted work and prone to security bugs. A reusable
-solution was needed, but since Django's auth was so tied to the admin and had
-concrete models we just couldn't expand on it. The high-level reasons we never
-used auth were as follows:
+My company, BeProud, ran into problems with `auth` early on and really haven't
+ever used it. We used to implement an `auth` solution for every project we
+worked on but that was just simply wasted work and prone to security bugs. A
+reusable solution was needed, but since Django's `auth` was so tied to the admin
+and had concrete models we just couldn't expand on it. The high-level reasons we
+never used `auth` were as follows:
 
 1. We do custom contract development. We don't often have the choice of
    designing the system around what is convenient to do with the framework. We
@@ -53,15 +53,15 @@ The detailed explanation:
    made it very difficult for us to use `contrib.auth`.
 2. **The `User` model from `contrib.auth` was set in stone and couldn't be
    changed**: Often we would make systems where users logged in only using
-   Twitter auth, or email or whatever. Django's `auth.User` came with lots of
-   cruft that just wasn't needed or wanted. The size and uniqueness of fields
-   often had to be worked around. We would get specific requirements for the
-   size of a username field which just wasn't modifiable with `auth.User`. We
-   wanted a solution where the fields on the user model were not set in stone
+   Twitter authentication, or email or whatever. Django's `auth.User` came with
+   lots of cruft that just wasn't needed or wanted. The size and uniqueness of
+   fields often had to be worked around. We would get specific requirements for
+   the size of a username field which just wasn't modifiable with `auth.User`.
+   We wanted a solution where the fields on the user model were not set in stone
    and could be decided by the developer. No working around the existing fields
    on `auth.User`. No `get_profile()` on every damn request because one field on
    the profile was needed every request.
-3. **Permissions are included with `contrib` auth but are pretty much useless to
+3. **Permissions are included with `contrib.auth` but are pretty much useless to
    us**: We never used them in a project and they pretty much just existed for
    the admin as far as we were concerned. Having authentication and
    authorization in the same module was annoying at best and we often had to
@@ -73,14 +73,14 @@ The detailed explanation:
    The registration process for both was different. You didn't need to be a site
    user to be an affiliate. It just didn't make sense to me that there needed to
    be only one user model. I thought that any model that met the user model
-   contract could use the auth machinery.
+   contract could use the authentication machinery.
 
 ## `django-newauth`
 
 Without a solution we could use we were forced to either implement a solution
 for every project or come up with something that met our requirements and could
-be reused. This led to be developing what became my proposal for a Django auth
-system, `django-newauth`.
+be reused. This led to me developing what became my proposal for a Django
+authentication system, `django-newauth`.
 
 ## Motivation + Future
 
