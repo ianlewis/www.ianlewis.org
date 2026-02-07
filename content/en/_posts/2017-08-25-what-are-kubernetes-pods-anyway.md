@@ -144,11 +144,12 @@ use shared volumes. They can even use IPC or send each other signals like HUP or
 TERM (With shared PID namespaces in Kubernetes 1.7, Docker >=1.13).
 
 Let's imagine now you want to run nginx and
-[`confd`](https://github.com/kelseyhightower/confd) have `confd` update the
-nginx configuration and restart nginx whenever you add/remove app servers. Let's
-say you have an etcd server that holds the IP addresses of your backend app
-servers. When that list changes `confd` can get a notification and write out a
-new nginx configuration and send a HUP signal to nginx to have nginx reload it.
+[`confd`](https://github.com/kelseyhightower/confd) where `confd` will update
+the nginx configuration and restart nginx whenever you add/remove app servers.
+Let's say you have an etcd server that holds the IP addresses of your backend
+app servers. When that list changes, `confd` can get a notification, write out a
+new nginx configuration, and send a HUP signal to nginx to have nginx reload the
+configuration.
 
 ![A diagram of multiple containers showing the flow of adding a new application server backend to a Nginx load balancer.](/assets/images/766/nginx.png){: .align-center }
 

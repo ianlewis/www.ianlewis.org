@@ -48,7 +48,7 @@ following:
 
 A robust low-level container runtime, however, would do a lot more, like allow
 for setting resource limits on the cgroup, setting up a root filesystem, and
-using `chroot` to set container process's root file system.
+using `chroot` to set the container process's root file system.
 
 ## Building a Sample Runtime
 

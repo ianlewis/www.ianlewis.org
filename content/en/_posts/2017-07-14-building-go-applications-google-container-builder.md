@@ -58,10 +58,10 @@ builds you can use a `cloudbuild.yaml` to define the steps. That way you can
 build your Go app, run tests, and finally build the image, and push it.
 
 There is a `gcr.io/cloud-builders/go` image that you can use to run the go
-compiler. Here is a `cloudbuild.yaml` for a app that I built. Based on the docs
-for the image, I specify the `PROJECT_ROOT` environment variable so that the
-image will link my project into the `GOPATH`. From there I can run any Go
-command. I can run go generate, go test, and finally go install to build the
+compiler. Here is a `cloudbuild.yaml` for an application that I built. Based on
+the docs for the image, I specify the `PROJECT_ROOT` environment variable so
+that the image will link my project into the `GOPATH`. From there I can run any
+Go command. I can run go generate, go test, and finally go install to build the
 binary.
 
 ```yaml
