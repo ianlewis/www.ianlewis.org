@@ -40,8 +40,8 @@ I know this really messes up Django's design and application philosophy. For
 instance, with the `contrib.auth` module you couldn't be logged into the admin
 and the site unless you could specify a session cookie on a per application
 basis. But isn't there something that could be done? I'm forced by other folks
-to basically reimplement the auth module for every project because there is only
-one users table.
+to basically reimplement the `auth` module for every project because there is
+only one users table.
 
 ## `GenericForeignKeys` Look Awful in the Admin
 

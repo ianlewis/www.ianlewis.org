@@ -56,7 +56,7 @@ that aren't ready to see the light of day, you can't selectively push the stuff
 in your main branch without pushing the stuff in your test branch. This is a big
 problem because it can clutter up your shared repo.
 
-Also, the hgweb and hgwebdir cgi scripts that show you changes to your
+Also, the hgweb and hgwebdir CGI scripts that show you changes to your
 repository in a easy to understand way simply fail to break changes out by named
 branch. This was the biggest problem for me because I lost track of what changes
 I had put in what branch so I had trouble compiling all the changes I wanted to
