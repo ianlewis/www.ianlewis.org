@@ -54,11 +54,11 @@ chrooting the container's process to the root file system.
 
 Let's walk through running a simple ad hoc runtime to set up a container. We can
 perform the steps using the standard Linux
-[cgcreate](https://linux.die.net/man/1/cgcreate),
-[cgset](https://linux.die.net/man/1/cgset),
-[cgexec](https://linux.die.net/man/1/cgexec),
-[chroot](http://man7.org/linux/man-pages/man2/chroot.2.html) and
-[unshare](http://man7.org/linux/man-pages/man1/unshare.1.html) commands. You'll
+[`cgcreate`](https://linux.die.net/man/1/cgcreate),
+[`cgset`](https://linux.die.net/man/1/cgset),
+[`cgexec`](https://linux.die.net/man/1/cgexec),
+[`chroot`](http://man7.org/linux/man-pages/man2/chroot.2.html) and
+[`unshare`](http://man7.org/linux/man-pages/man1/unshare.1.html) commands. You'll
 need to run most of the commands below as root.
 
 First let's set up a root filesystem for our container. We'll use the BusyBox
