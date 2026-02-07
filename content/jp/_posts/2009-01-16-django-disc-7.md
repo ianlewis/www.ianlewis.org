@@ -17,12 +17,12 @@ locale: ja
 最初は[松尾さん](https://x.com/tmatsuo)の[geodjango](http://geodjango.org/)の話。
 
 - GeoDjangoのDBサポートはpostgisが一番対応してます。
-- Adminで地形のエリア編集などは地図のJavascriptアプリで楽々
+- Adminで地形のエリア編集などは地図のJavaScriptアプリで楽々
 - GeoDjangoのGeoManagerで `filter(field__poly_contains=point)` ができる。
 
-## ContentType
+## `ContentType`
 
-次は増田さんのGenericForeignKeyの話と、次に岡野さんのContentTypeの話
+次は増田さんの`GenericForeignKey`の話と、次に岡野さんの`ContentType`の話
 
 - `GenericForeignKey`は`ContentType`と`object_id`のフィールドのラッパーに過ぎない
 - `ContentType`で`Model`の処理が結構一般的にできる([岡野さんのサンプルアプリ](http://bitbucket.org/tokibito/sample_nullpobug/src/tip/django/ct_sample/))

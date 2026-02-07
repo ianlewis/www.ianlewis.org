@@ -11,6 +11,8 @@ render_with_liquid: false
 Recently I saw a tweet from the awesome Amy Codes (I really hope that's her real
 name) about Kubernetes Pods:
 
+<!-- textlint-disable spelling -->
+
 > You know why containers in a pod are always scheduled together? It&#39;s cuz
 > they&#39;re nested containers.
 >
@@ -18,6 +20,8 @@ name) about Kubernetes Pods:
 >
 > &mdash; Amy Codes (@TheAmyCode) [August 21,
 > 2017](https://twitter.com/TheAmyCode/status/899462049184350208)
+
+<!-- textlint-enable spelling -->
 
 While it wasn't 100% accurate (Containers aren't really a thing. We'll get to
 that in a bit) it did point out the fact that Pods are amazing things. It's
@@ -140,22 +144,22 @@ use shared volumes. They can even use IPC or send each other signals like HUP or
 TERM (With shared PID namespaces in Kubernetes 1.7, Docker >=1.13).
 
 Let's imagine now you want to run nginx and
-[confd](https://github.com/kelseyhightower/confd) have confd update the nginx
-config and restart nginx whenever you add/remove app servers. Let's say you have
-an etcd server that holds the IP addresses of your backend app servers. When
-that list changes confd can get a notification and write out a new nginx config
-and send a HUP signal to nginx to have nginx reload it's config.
+[`confd`](https://github.com/kelseyhightower/confd) have `confd` update the
+nginx configuration and restart nginx whenever you add/remove app servers. Let's
+say you have an etcd server that holds the IP addresses of your backend app
+servers. When that list changes `confd` can get a notification and write out a
+new nginx configuration and send a HUP signal to nginx to have nginx reload it.
 
 ![A diagram of multiple containers showing the flow of adding a new application server backend to a Nginx load balancer.](/assets/images/766/nginx.png){: .align-center }
 
-With Docker the way you would do this is put both nginx and confd in a single
+With Docker the way you would do this is put both nginx and `confd` in a single
 container. Because Docker only has one entrypoint you need to keep both
-processes running with something like `supervisord`. This is not ideal because you
-need to run `supervisord` for every copy of nginx that you run. More importantly,
-Docker only "knows" about `supervisord` because that's the entrypoint. It doesn't
-have visibility into each process which means you and other tools can't get that
-info via the Docker API. Nginx might be crashing hard but Docker would have no
-idea.
+processes running with something like `supervisord`. This is not ideal because
+you need to run `supervisord` for every copy of nginx that you run. More
+importantly, Docker only "knows" about `supervisord` because that's the
+entrypoint. It doesn't have visibility into each process which means you and
+other tools can't get that info via the Docker API. Nginx might be crashing hard
+but Docker would have no idea.
 
 ![A diagram of a Docker container running confd and nginx with supervisord. The nginx application is in a Crash-Restart loop, however, Docker views the container as healthy because the supervisord entrypoint is still healthy.](/assets/images/766/supervisord.png){: .align-center }
 
@@ -172,12 +176,12 @@ containers that can be added to Pods as an "API" that others can consume. This
 isn't an API in the normal Web API sense, but rather an abstraction that other
 Pods can use.
 
-For instance, take our nginx + confd example. In this example, confd doesn't
+For instance, take our nginx + `confd` example. In this example, `confd` doesn't
 know anything about the nginx process. All it knows is that it needs to watch a
 value in etcd and send a HUP signal to a process or run a command. The app that
 it runs with doesn't have to be nginx. It could be any kind of application. In
-this way, you could use the confd container image and configuration and swap it
-in with any number of different types of Pods. Pods where you can do that are
+this way, you could use the `confd` container image and configuration and swap
+it in with any number of different types of Pods. Pods where you can do that are
 usually called "sidecar containers" invoking the image of a sidecar on a
 motorcycle.
 
@@ -187,7 +191,7 @@ routing, telemetry, policy enforcement without ever having to change the main
 application.
 
 You can also use multiple sidecars. There's nothing stopping you from using both
-the confd sidecar and istio sidecar at the same time. Applications can be
+the `confd` sidecar and istio sidecar at the same time. Applications can be
 combined in this way to build much more complex and reliable systems while
 keeping each individual app relatively simple.
 

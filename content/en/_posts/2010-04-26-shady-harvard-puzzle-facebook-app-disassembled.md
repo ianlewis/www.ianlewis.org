@@ -18,9 +18,9 @@ only 4% of Harvard grads can guess.
 
 ![image](http://farm5.static.flickr.com/4062/4554647376_5a38c707a8.jpg)
 
-But in order to see the answer it asks you to type "Ctrl-C" to copy some
-javascript, "Alt-D" to select your address bar, and "Ctrl-V Enter" to
-run the javascript.
+But in order to see the answer it asks you to type `Ctrl-C` to copy some
+JavaScript, "Alt-D" to select your address bar, and `Ctrl-V Enter` to run the
+JavaScript.
 
 Here is the beautified packed javascript.
 
@@ -71,7 +71,7 @@ javascript: (function () {
 })();
 ```
 
-Here we have some javascript code that is packed. The above code unpacks
+Here we have some JavaScript code that is packed. The above code unpacks
 the packed code and evals it. I replaced the above eval with console.log
 and ran the code to output the packed code. Here it is beautified.
 
@@ -111,8 +111,8 @@ This code hides the application's main block.
 d["getElementById"](a)["innerHTML"] = d["getElementById"](b)["value"];
 ```
 
-The contents of the textarea at id b ('app112010525500764_jode') is
-html for a dialog to suggest the application to your friends. The code
+The contents of the `textarea` at `id` `b` (`app112010525500764_jode`) is
+HTML for a dialog to suggest the application to your friends. The code
 inserts it into a block on the page.
 
 ```html
@@ -132,7 +132,7 @@ inserts it into a block on the page.
 ```
 
 The next code sets up a mouse click event and selects some elements from
-the suggest box.
+the suggestion box.
 
 ```javascript
 s = d["getElementById"]("suggest");
@@ -142,10 +142,9 @@ c["initEvent"]("click", true, true);
 s["dispatchEvent"](c);
 ```
 
-The code below is the shady part. It sets 5 second timers that will
-click items on the suggestion box, effectively selecting all of your
-friends and suggesting the application to them. It then likes the
-application.
+The code below is the shady part. It sets 5 second timers that will click items
+on the suggestion box, effectively selecting all of your friends and suggesting
+the application to them. It then likes the application.
 
 ```javascript
 setTimeout(function () {
@@ -163,8 +162,8 @@ setTimeout(function () {
 }, 5000);
 ```
 
-As of this writing 543 people had liked the application which I take to
-mean that 543 people followed the instructions on the application. The
-application itself doesn't do anything particularly bad besides spam all
-of your friends so I took it to be a security research application.
-Anyone else have a better take on it?
+As of this writing 543 people had liked the application which I take to mean
+that 543 people followed the instructions on the application. The application
+itself doesn't do anything particularly bad besides spam all of your friends so
+I took it to be a security research application. Anyone else have a better take
+on it?

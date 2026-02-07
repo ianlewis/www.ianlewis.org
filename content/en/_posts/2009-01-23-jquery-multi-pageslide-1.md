@@ -8,7 +8,8 @@ tags: tech programming javascript
 render_with_liquid: false
 ---
 
-Earlier this week I came across the [jQuery Pageslide](http://halobrite.com/blog/jquery-pageslide/) plugin via
+Earlier this week I came across the
+[jQuery Pageslide](http://halobrite.com/blog/jquery-pageslide/) plugin via
 [Ajaxian](http://www.ajaxian.com/) and was impressed with the design. I set
 about using it to display help messages to the user for a site I am working on.
 
@@ -18,7 +19,7 @@ slide but with different settings. So I made some changes to the plugin to
 allow multiple pageslides per page. The demo includes a version of page slide
 that allows multiple pageslide links per page and allows them all to have their
 own individual settings. These all point to the same secondary page but could
-just as well point to different pages. Currently they all share the same css
+just as well point to different pages. Currently they all share the same CSS
 styles.
 
 I made it so that only one pageslide can be open at a time. Clicking on a

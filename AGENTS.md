@@ -19,8 +19,8 @@ information.
     - `/en/_posts/` - English blog posts
     - `/jp/_posts/` - Japanese blog posts
     - `/til/_posts/` - Today I Learned posts
-- **Configuration**: `_config.yml` contains Jekyll settings, theme config, and
-  social links
+- **Configuration**: `_config.yml` contains Jekyll settings, theme
+  configuration, and social links
 - **Deployment**: Automatically deployed to Netlify via GitHub Actions
 
 ## Essential Commands

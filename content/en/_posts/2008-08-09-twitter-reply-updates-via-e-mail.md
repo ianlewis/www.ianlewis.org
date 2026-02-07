@@ -21,7 +21,7 @@ failed. I didn't need TLS for mail and it's an optional package so I'm not sure
 why I needed SSL in the first place.
 
 Once Plagger was installed there isn't a terribly large amount of info about how
-to set it up. You basically have to create a config.yaml file in the same
+to set it up. You basically have to create a `config.yaml` file in the same
 directory as the Plagger executable or create a YAML file with any name and
 specify the location with the `-c` flag.
 
@@ -40,14 +40,14 @@ feeds, email, html etc., and Filters are for parsing and/or modifying the data.
 
 I used three Plugins to achieve what I wanted to do which was to get e-mail sent
 to my Gmail account and my mobile. I used the `Subscription::Config`,
-`Filter::HTMLScrubber`, and `Publish::Gmail` plugins. The config plugin pulls
-from an RSS feed and caches the results. It only passes on changes to the feed
-to other plugins. The Gmail plugin is essentially a SMTP/SMTP TLS plugin which
-sends e-mails when it gets updates from the subscription plugins. Unfortunately
-the version of the plugin that installed with cpan had a bug as it called the
-`MIME::Lite::extract_addrs` function which is not present on the machine where I
-was running Plagger. I needed to update the
-Gmail.pm plugin file to the [newest
+`Filter::HTMLScrubber`, and `Publish::Gmail` plugins. The configuration plugin
+pulls from an RSS feed and caches the results. It only passes on changes to the
+feed to other plugins. The Gmail plugin is essentially a SMTP/SMTP TLS plugin
+which sends e-mails when it gets updates from the subscription plugins.
+Unfortunately the version of the plugin that installed with CPAN had a bug as it
+called the `MIME::Lite::extract_addrs` function which is not present on the
+machine where I was running Plagger. I needed to update the `Gmail.pm` plugin
+file to the [newest
 version](http://plagger.org/trac/browser/trunk/plagger/lib/Plagger/Plugin/Publish/Gmail.pm)
 in Plagger's SVN. That version includes a fix around like 214 to call the
 `extract_full_addrs` function if the `extract_addrs` function doesn't exist.
@@ -64,7 +64,7 @@ and I put it in my `.cpan/assets/common` directory and added that directory to t
 templates search path in my `config.yaml`. The contents of the template are also
 html so I needed to edit the template to remove all the HTML tags.
 
-After that I just put config.yaml in the same directory as my Plagger executable
+After that I just put `config.yaml` in the same directory as my Plagger executable
 and added a line to execute Plagger every 10 minutes to my `crontab`. This also
 had it's glitches as Plagger prints debug and info messages to standard error so
 you can't just do `plagger > /dev/null` you have to have something like `plagger

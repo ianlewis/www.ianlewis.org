@@ -127,8 +127,10 @@ http.ListenAndServe(":8080", nil)
 
 Liveness and Readiness probes really help with the stability of applications.
 They help to make sure that traffic only goes to instances that are ready for
-it, as well as self heal when apps become unresponsive. They are a better solution to what my colleage Kelsey Hightower called [12 Fractured Apps](https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c). With proper health
-checks in place you can deploy your applications in any order without having to
-worry about dependencies or complicated entrypoint scripts. And applications
-will start serving traffic when they are ready so auto-scaling and rolling
-updates work smoothly.
+it, as well as self heal when apps become unresponsive. They are a better
+solution to what my colleague Kelsey Hightower called
+[12 Fractured Apps](https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c).
+With proper health checks in place you can deploy your applications in any order
+without having to worry about dependencies or complicated entrypoint scripts.
+And applications will start serving traffic when they are ready so auto-scaling
+and rolling updates work smoothly.

@@ -51,7 +51,7 @@ Here we can do cool stuff like query for blog entries where the number of commen
 >>> Entry.objects.filter(n_pingbacks__lt=F('n_comments'))
 ```
 
-You can perform operations on colums or add columns together.
+You can perform operations on columns or add columns together.
 
 ```python
 >>> Entry.objects.filter(n_pingbacks__lt=F('n_comments') * 2)
