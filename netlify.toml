@@ -1344,3 +1344,18 @@ command = "make jekyll-build"
   from = "/jp/tag/testing/*"
   to = "/jp/tag/programming/"
   status = 301
+
+[[redirects]]
+  from = "/jp/tag/c/*"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/c++/*"
+  to = "/jp/tag/programming/"
+  status = 301
+
+[[redirects]]
+  from = "/jp/tag/sql/*"
+  to = "/jp/tag/programming/"
+  status = 301

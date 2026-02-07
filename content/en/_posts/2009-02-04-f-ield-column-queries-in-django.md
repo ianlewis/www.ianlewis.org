@@ -4,7 +4,7 @@ title: "Field/column Queries in Django"
 date: 2009-02-04 23:24:38 +0000
 permalink: /en/f-ield-column-queries-in-django
 blog: en
-tags: tech programming python django sql
+tags: tech programming python django
 render_with_liquid: false
 ---
 

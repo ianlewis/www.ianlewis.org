@@ -4,7 +4,7 @@ title: "'self' ForeignKeys always result in a JOIN"
 date: 2010-03-02 12:21:13 +0000
 permalink: /en/self-foreignkeys-always-result-join
 blog: en
-tags: tech programming python django sql
+tags: tech programming python django
 render_with_liquid: false
 ---
 
