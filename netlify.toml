@@ -1314,7 +1314,7 @@ command = "make jekyll-build"
   to = "/jp/tag/tech/"
   status = 301
 
-# /jp/tag/オプンソース/
+# /jp/tag/オープンソース/
 [[redirects]]
   from = "/jp/tag/%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%BD%E3%83%BC%E3%82%B9/*"
   to = "/jp/tag/tech/"
