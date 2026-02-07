@@ -973,7 +973,7 @@ command = "make jekyll-build"
 
 # /jp/tag/勉強会/
 [[redirects]]
-  from = "https://www.ianlewis.org/jp/tag/%E5%8B%89%E5%BC%B7%E4%BC%9A/*"
+  from = "/jp/tag/%E5%8B%89%E5%BC%B7%E4%BC%9A/*"
   to = "/jp/tag/events/"
   status = 301
 
