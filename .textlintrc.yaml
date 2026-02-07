@@ -128,6 +128,7 @@ rules:
       - "/\\bEiji\\b/g"
       - "/\\bElayoty\\b/g"
       - "/\\bElin\\b/g"
+      - "/\\bElmes\\b/g"
       - "/\\bElon\\b/g"
       - "/\\bEmre\\b/g"
       - "/\\bEnamoto\\b/g"
@@ -142,6 +143,7 @@ rules:
       - "/\\bGodbolt\\b/g"
       - "/\\bGowripalan\\b/g"
       - "/\\bGraeme\\b/g"
+      - "/\\bHailey\\b/g"
       - "/\\bHansson\\b/g"
       - "/\\bHeba\\b/g"
       - "/\\bHeinemeier\\b/g"
@@ -176,6 +178,7 @@ rules:
       - "/\\bKrouse\\b/g"
       - "/\\bKrumins\\b/g"
       - "/\\bLacasse\\b/g"
+      - "/\\bLal\\b/g" # Data's daughter
       - "/\\bLiao\\b/g"
       - "/\\bLonghui\\b/g"
       - "/\\bLorin\\b/g"
@@ -387,6 +390,7 @@ rules:
 
       - "/\\b3GS\\b/g" # iPhone 3GS
       - "/\\bATND\\b/g" # Japanese event platform (atnd.org)
+      - "/\\bAnkiHub\\b/g"
       - "/\\bBigtable\\b/g"
       - "/\\bChromeOS\\b/g"
       - "/\\bConnpass\\b/g" # Japanese event platform (connpass.com)
@@ -759,6 +763,8 @@ rules:
       ##########################################################################
 
       # English words
+      # https://dictionary.cambridge.org/dictionary/english/dogpile
+      - "/\\b[Dd]ogpile\\b/g"
       # https://dictionary.cambridge.org/dictionary/english/dumbing-down
       - "/\\b[Dd]umbed-down\\b/g"
       # https://dictionary.cambridge.org/dictionary/english/explainer
