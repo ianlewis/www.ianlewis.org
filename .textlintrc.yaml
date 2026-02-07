@@ -438,7 +438,7 @@ rules:
       - "/\\bBusyBox\\b/g" # Unix utilities in a single executable
       - "/\\bBundler\\b/g" # Ruby dependency manager
       - "/\\b(CGO|cgo)\\b/g" # Go tool for interfacing with C code
-      - "/\\bCRI-O\\b/g" # Container Runtime Interface implementation for Kubernetes
+      - "/\\b(CRI-O|cri-o)\\b/g" # Container Runtime Interface implementation for Kubernetes
       - "/\\bCereling\\b/g" # A language parsing tool demoed at Tokyo Barcamp.
       - "/\\bCloudFront\\b/g" # AWS CloudFront
       - "/\\b[Cc]ron\\b/g"
@@ -538,6 +538,7 @@ rules:
       - "/\\bWyvern\\b/g" # Game name
       - "/\\bb2evolution?\\b/g" # b2evolution blogging software
       - "/\\b[Cc]groups?\\b/g" # control groups
+      - "/\\bconfd\\b/g" # configuration management server
       - "/\\bcontainerd\\b/g" # container runtime
       - "/\\bdotfiles\\b/g"
       - "/\\betcd\\b/g" # etcd.io
@@ -606,6 +607,7 @@ rules:
       - "/\\b[Cc]hangelists?\\b/g" # sets of changes (version control)
       - "/\\b[Cc]omparator\\b/g" # compare + ator
       - "/\\b[Cc]onnectability\\b/g" # Ability to connect
+      - "/\\b[Cc]ryptographic(ally)?\\b/g" # relating to cryptography
       - "/\\b[Dd]eclarative(ly)?\\b/g"
       - "/\\b[Dd]ev\\b/g" # Development/Developer
       - "/\\b[Ee]xecutables\\b/g" # plural of executable
@@ -670,6 +672,7 @@ rules:
       - "/\\bCFP\\b/g" # Call for Papers/Proposals
       - "/\\bCJK\\b/g" # Chinese, Japanese, and Korean
       - "/\\bCNCF\\b/g" # Cloud Native Computing Foundation
+      - "/\\bCNI\\b/g" # Container Network Interface
       - "/\\bCPAN\\b/g" # Comprehensive Perl Archive Network
       - "/\\bCPUs?\\b/g" # Central Processing Unit
       - "/\\bCRI\\b/g" # Container Runtime Interface
@@ -783,6 +786,10 @@ rules:
       ##########################################################################
 
       # English words
+      # https://www.merriam-webster.com/dictionary/commenter
+      - "/\\b[Cc]ommenter\\b/g" # One who comments
+      - "/\\b[Cc]ustomizable\\b/g" # Able to be customized
+      - "/\\b[Cc]ustomizations\\b/g" # plural of customization
       # https://dictionary.cambridge.org/dictionary/english/dogpile
       - "/\\b[Dd]ogpile\\b/g"
       # https://dictionary.cambridge.org/dictionary/english/dumbing-down
@@ -832,39 +839,6 @@ rules:
       # TODO(#285): Handle or fix the following words.
       ##########################################################################
 
-      - "chmod"
-      - "chroot"
-      - "chrooting"
-      - "cloudbuild"
-      - "CMD"
-      - "CNI"
-      - "codebase"
-      - "codec"
-      - "colleage"
-      - "colums"
-      - "commandline"
-      - "commenter"
-      - "confd"
-      - "config"
-      - "ContentType"
-      - "contrib"
-      - "Contrib"
-      - "cp"
-      - "CreateSocketRequest"
-      - "cri"
-      - "crictl"
-      - "cryptographic"
-      - "cryptographically"
-      - "csrf"
-      - "CsrfViewMiddleware"
-      - "css"
-      - "Ctrl"
-      - "customizable"
-      - "customizations"
-      - "cuz"
-      - "cwKpduDdpQBb"
-      - "cygpath"
-      - "cygwin"
       - "daemonize"
       - "daemontools"
       - "Daemontools"

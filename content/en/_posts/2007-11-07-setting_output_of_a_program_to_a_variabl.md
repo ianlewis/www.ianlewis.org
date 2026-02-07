@@ -24,17 +24,17 @@ for /f &quot;tokens=1&quot; %%A in (
     '"cygpath -w %1"' ) do set TMergePath1=%%A
 ```
 
-It's kind of a hack using the [FOR
-/f](http://www.robvanderwoude.com/ntfortokens.html) but it basically allows you
-to set the output of a program to a variable. You can even parse the output to
-pull out a particular piece of the output to put in the variable. This is
-particularly useful with windows commandline programs which weren't really made
-to be piped and redirected.
+It's kind of a hack using the
+[`FOR /f`](http://www.robvanderwoude.com/ntfortokens.html) syntax but it
+basically allows you to set the output of a program to a variable. You can even
+parse the output to pull out a particular piece of the output to put in the
+variable. This is particularly useful with windows command-line programs which
+weren't really made to be piped and redirected.
 
-Anyway, in my case I'm setting the output of cygpath called on a cygwin path to
-convert it into a windows path and then set the output to the TMergePath
+Anyway, in my case I'm setting the output of `cygpath` called on a Cygwin path
+to convert it into a windows path and then set the output to the `TMergePath`
 variable. The `tokens=1` part tells the program that I only want to call the
 code after `do` for the first token. In my case there is only one anyway. You
 can set `tokens=1,2,4` if you want to loop for the first, second and forth
 tokens. You can also set the delimiter like `tokens=1,2,4 delims=;` if your
-output looks like token1;token2;token3;token4
+output looks like `token1;token2;token3;token4`

@@ -19,12 +19,12 @@ puppet, or Ansible is less than ideal. Vagrant also can only get you so
 far, when you need to set up disks and networking so it's not great and,
 indeed, not intended for production use.
 
-[Terraform](https://www.terraform.io/) is another tool that does orchestration better,
-but it's not obvious to me how to avoid writing config for the servers, disks,
-and networking, and then again from scratch for provisioning/deployment
-tools. It may be worth investigating whether I can use Terraform and apply labels
-to VMs that can later be provisioned using something like Ansible's dynamic
-inventory.
+[Terraform](https://www.terraform.io/) is another tool that does orchestration
+better, but it's not obvious to me how to avoid writing configuration for the
+servers, disks, and networking, and then again from scratch for
+provisioning/deployment tools. It may be worth investigating whether I can use
+Terraform and apply labels to VMs that can later be provisioned using something
+like Ansible's dynamic inventory.
 
 ## Fabric
 
@@ -116,7 +116,7 @@ def _config_ssh(warn_only=False):
 
 Now I create some tasks to start, stop, and delete VMs. After creating
 an instance I call the `_config_ssh()` function again so that the VM's
-configuration gets added to the SSH config.
+configuration gets added to the SSH configuration.
 
 ```python
 from fabric.api import task, local

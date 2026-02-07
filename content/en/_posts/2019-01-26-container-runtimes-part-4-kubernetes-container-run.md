@@ -54,7 +54,7 @@ Here are some CRI runtimes that can be used with Kubernetes.
 in Part 3. `containerd` is possibly the most popular CRI runtime currently. It
 implements CRI as a [plugin](https://github.com/containerd/cri) which is
 enabled by default. It listens on a unix socket by default so you can configure
-crictl to connect to containerd like this:
+`crictl` to connect to containerd like this:
 
 ```shell
 cat <<EOF | sudo tee /etc/crictl.yaml
@@ -143,11 +143,11 @@ RuntimeService.StartContainer({id: id2})
 ```
 
 We can interact with a CRI runtime directly using the
-[`crictl`](https://github.com/kubernetes-sigs/cri-tools) tool. 'crictl`lets us
+[`crictl`](https://github.com/kubernetes-sigs/cri-tools) tool. `crictl` lets us
 send gRPC messages to a CRI runtime directly from the command line. We can use
 this to debug and test out CRI implementations without starting up a
-full-blown`kubelet`or Kubernetes cluster.  You can get it by downloading
-a`crictl` binary from the cri-tools [releases
+full-blown `kubelet`or Kubernetes cluster. You can get it by downloading
+a `crictl` binary from the `cri-tools` [releases
 page](https://github.com/kubernetes-sigs/cri-tools/releases) on GitHub.
 
 You can configure `crictl` by creating a configuration file under

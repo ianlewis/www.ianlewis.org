@@ -48,7 +48,7 @@ following:
 
 A robust low-level container runtime, however, would do a lot more, like allow
 for setting resource limits on the cgroup, setting up a root filesystem, and
-chrooting the container's process to the root file system.
+using `chroot` to set the container process's root file system.
 
 ## Building a Sample Runtime
 
@@ -108,7 +108,7 @@ cgset -r cpu.cfs_quota_us=2000000 $UUID
 
 Next we can execute a command in the container. This will execute the command
 within the cgroup we created, unshare the specified namespaces, set the
-hostname, and chroot to our filesystem.
+hostname, and `chroot` to our filesystem.
 
 ```shell
 $ cgexec -g cpu,memory:$UUID \
@@ -167,7 +167,7 @@ library.
 
 Internally, runc runs containers similarly to how I described it above, but runc
 implements the OCI runtime spec. That means that it runs containers from a
-specific "OCI bundle" format. The format of the bundle has a config.json file
+specific "OCI bundle" format. The format of the bundle has a `config.json` file
 for some configuration and a root file system for the container. You can find
 out more by reading the [OCI runtime
 spec](https://github.com/opencontainers/runtime-spec) on GitHub. You can learn
@@ -181,13 +181,13 @@ mkdir rootfs
 docker export $(docker create busybox) | tar -xf - -C rootfs
 ```
 
-Next create a config.json file.
+Next create a `config.json` file.
 
 ```shell
 runc spec
 ```
 
-This command creates a template config.json for our container. It should look
+This command creates a template `config.json` for our container. It should look
 something like this:
 
 ```shell

@@ -13,7 +13,7 @@ and started using jQuery for a personal project of mine and I wanted to be able
 to show some modal dialog boxes using jQuery. As it turns out there is an easy
 to use plugin that does exactly this called
 [jqModal](http://dev.iceburg.net/jquery/jqModal/). jqModal makes it simple to
-create modal dialogs by simply setting a css class on the tag you want to open
+create modal dialogs by simply setting a CSS class on the tag you want to open
 the dialog and on the tag in the dialog that you want to close it.
 
 ```html

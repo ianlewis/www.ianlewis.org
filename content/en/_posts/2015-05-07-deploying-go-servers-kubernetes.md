@@ -33,8 +33,8 @@ SDK](https://cloud.google.com/sdk/#Quick_Start) installed. Next you'll need to
 Console](https://developers.google.com/console/help/#creatingdeletingprojects).
 Make note of the project id.
 
-Set up your `gcloud` tool with the right config. Replace `<project-id>` below
-with your project id. Replace `<zone>` with the zone of your choosing:
+Set up your `gcloud` tool with the right configuration. Replace `<project-id>`
+below with your project id. Replace `<zone>` with the zone of your choosing:
 
 ```shell
 gcloud config set project <project-id>
