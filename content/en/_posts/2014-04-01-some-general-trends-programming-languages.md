@@ -111,7 +111,7 @@ checking, and verification that code is correct.
 
 The authors of Go have made the Go compiler quite strict such that unused
 variables and imports cause compiler errors. The community also provides
-tools such as gofmt which is the de-facto standard style for Go code. Go
+tools such as gofmt which is the de facto standard style for Go code. Go
 was also meant to be easy to parse so that languages tools such as debuggers,
 linters, and verifiers could be easily written.
 

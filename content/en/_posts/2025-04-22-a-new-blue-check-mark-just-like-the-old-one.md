@@ -91,7 +91,7 @@ In practical terms though, I think that it won't matter a whole lot. For HTTPS,
 browsers do [occasionally
 distrust](https://security.googleblog.com/2024/06/sustaining-digital-certificate-security.html)
 root certificate authorities (CAs) and this can have an impact but in ATProto's
-case there is a de-facto client that controls the protocol and its evolution.
+case there is a de facto client that controls the protocol and its evolution.
 While I applaud Bluesky for picking the decentralized route, the set of
 verifiers that Bluesky trusts will be a strong gold standard. And that is to say
 nothing of what individual users trust. No individual users will be picking

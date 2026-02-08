@@ -116,8 +116,10 @@ rules:
       - "/\\bCramer\\b/g"
       - "/\\bCrawshaw\\b/g"
       - "/\\bDaisuke\\b/g"
+      - "/\\bDaito\\b/g"
       - "/\\bDaskalou\\b/g"
       - "/\\bDeBlasio\\b/g"
+      - "/\\bDeacalion\\b/g"
       - "/\\bDicken\\b/g"
       - "/\\bDougherty\\b/g"
       - "/\\bDuan\\b/g"
@@ -198,6 +200,7 @@ rules:
       - "/\\bMasuda\\b/g"
       - "/\\bMatsuo\\b/g"
       - "/\\bMeiert\\b/g"
+      - "/\\bMikael\\b/g"
       - "/\\bMowshowitz\\b/g"
       - "/\\bMoraes\\b/g"
       - "/\\bMorimoto\\b/g"
@@ -234,7 +237,6 @@ rules:
       - "/\\bShu\\b/g"
       - "/\\bSkoredin\\b/g"
       - "/\\bSlatkin\\b/g"
-      - "/\\bSota\\b/g"
       - "/\\bStapelberg\\b/g"
       - "/\\bStoep\\b/g"
       - "/\\bSu\\b/g"
@@ -261,6 +263,7 @@ rules:
       - "/\\bXiao\\b/g"
       - "/\\bXinkai\\b/g"
       - "/\\bXu\\b/g"
+      - "/\\bVander\\b/g"
       - "/\\bVella\\b/g"
       - "/\\bVoege\\b/g"
       - "/\\bYamaguchi\\b/g"
@@ -275,6 +278,8 @@ rules:
       - "/\\bZeyliger\\b/g"
       - "/\\bZiadé(?:^|\\s)?/g"
       - "/\\bZvi\\b/g"
+      - "/\\bde\\sla\\sSota\\b/g"
+      - "/\\bvan\\sder\\sGraff\\b/g"
 
       # User handles
       ##########################################################################
@@ -396,6 +401,7 @@ rules:
       - "/\\bAnkiHub\\b/g"
       - "/\\bBigtable\\b/g"
       - "/\\bChromeOS\\b/g"
+      - "/\\bCodeMender\\b/g" # AI agent for finding security vulnerabilities
       - "/\\bConnpass\\b/g" # Japanese event platform (connpass.com)
       - "/\\bCowork\\b/g" # Anthropic Claude Cowork
       - "/\\bDOCOMO\\b/g" # Japanese mobile operator NTT DOCOMO
@@ -405,6 +411,7 @@ rules:
       - "/\\bJaiku\\b/g" # Old social networking service
       - "/\\bJetBrains\\b/g"
       - "/\\bJupyter\\b/g"
+      - "/\\bKilo Code\\b/g" # AI IDE
       - "/\\bMacBook\\b/g"
       - "/\\bOakveil\\b/g" # V Rising in-game location
       - "/\\bOhloh\\b/g" # Software development statistics website
@@ -412,8 +419,10 @@ rules:
       - "/\\bReddit\\b/g" # Social news aggregation and discussion website
       - "/\\bS3\\b/g" # Amazon S3
       - "/\\bSimeji\\b/g" # Japanese input method editor (bought by Baidu)
+      - "/\\bSlideshare\\b/g" # Presentation sharing platform
       - "/\\bSmipple\\b/g" # Code snippet sharing service (defunct)
       - "/\\bSora\\b/g" # OpenAI video generation model
+      - "/\\bVSCode\\b/g" # Visual Studio Code
       - "/\\bX5\\b/g" # iAudio X5 music player
       - "/\\bYouTube\\b/g" # Video sharing platform
       - "/\\biGoogle\\b/g" # (old) Google personalized portal services
@@ -440,14 +449,16 @@ rules:
       - "/\\b(CGO|cgo)\\b/g" # Go tool for interfacing with C code
       - "/\\b(CRI-O|cri-o)\\b/g" # Container Runtime Interface implementation for Kubernetes
       - "/\\bCereling\\b/g" # A language parsing tool demoed at Tokyo Barcamp.
+      - "/\\bCodeIgniter\\b/g" # PHP web framework
       - "/\\bCloudFront\\b/g" # AWS CloudFront
-      - "/\\b[Cc]ron\\b/g"
-      - "/\\bCygwin\\b/g"
+      - "/\\b[Cc]ron\\b/g" # time-based job scheduler
+      - "/\\bCygwin\\b/g" # POSIX compatibility layer for Windows
       - "/\\bCython\\b/g" # C-Extensions for Python
       - "/\\bDvorakJP\\b/g" # Dvorak Japanese Keyboard Layout
       - "/\\bEPWING\\b/g" # Japanese electronic dictionary format
       - "/\\bEUC-JP\\b/g" # Japanese character encoding
       - "/\\bFastCGI\\b/g"
+      - "/\\bFreenode\\b/g" # IRC network
       - "/\\bFulcio\\b/g" # Sigstore's Fulcio
       - "/\\bFunktion\\b/g"
       - "/\\bGaim\\b/g" # Old name for Pidgin, an instant messaging client
@@ -540,6 +551,7 @@ rules:
       - "/\\b[Cc]groups?\\b/g" # control groups
       - "/\\bconfd\\b/g" # configuration management server
       - "/\\bcontainerd\\b/g" # container runtime
+      - "/\\bdaemontools\\b/g" # service management tools
       - "/\\bdotfiles\\b/g"
       - "/\\betcd\\b/g" # etcd.io
       - "/\\bext3\\b/g" # Third extended file system
@@ -605,10 +617,12 @@ rules:
       - "/\\b[Bb]alancers?\\b/g" # e.g. load balancer
       - "/\\b[Cc]allables?\\b/g" # e.g. functions
       - "/\\b[Cc]hangelists?\\b/g" # sets of changes (version control)
+      - "/\\b[Cc]odecs?\\b/g" # coder-decoder
       - "/\\b[Cc]omparator\\b/g" # compare + ator
       - "/\\b[Cc]onnectability\\b/g" # Ability to connect
       - "/\\b[Cc]ryptographic(ally)?\\b/g" # relating to cryptography
       - "/\\b[Dd]eclarative(ly)?\\b/g"
+      - "/\\b[Dd]enormalize\\b/g" # to convert from normalized form
       - "/\\b[Dd]ev\\b/g" # Development/Developer
       - "/\\b[Ee]xecutables\\b/g" # plural of executable
       - "/\\b[Ee]xfiltrat((e(s|d)?)|(ing))\\b/g" # To steal data from a system
@@ -786,10 +800,14 @@ rules:
       ##########################################################################
 
       # English words
+      # https://dictionary.cambridge.org/dictionary/english/bouldering
+      - "/\\b[Bb]ouldering\\b/g" # A form of rock climbing
       # https://www.merriam-webster.com/dictionary/commenter
       - "/\\b[Cc]ommenter\\b/g" # One who comments
       - "/\\b[Cc]ustomizable\\b/g" # Able to be customized
       - "/\\b[Cc]ustomizations\\b/g" # plural of customization
+      # https://www.merriam-webster.com/dictionary/de%20facto
+      - "/\\b[Dd]e\\sfacto\\b/g" # in fact, whether by right or not
       # https://dictionary.cambridge.org/dictionary/english/dogpile
       - "/\\b[Dd]ogpile\\b/g"
       # https://dictionary.cambridge.org/dictionary/english/dumbing-down
@@ -839,23 +857,6 @@ rules:
       # TODO(#285): Handle or fix the following words.
       ##########################################################################
 
-      - "daemonize"
-      - "daemontools"
-      - "Daemontools"
-      - "Daito"
-      - "datacenter"
-      - "Datasette"
-      - "datastore"
-      - "datetime"
-      - "datetimes"
-      - "de"
-      - "Deacalion"
-      - "debian"
-      - "debuggy"
-      - "deferreds"
-      - "deferredupdate"
-      - "denormalize"
-      - "der"
       - "deserialization"
       - "dialogs"
       - "didn"
@@ -943,7 +944,6 @@ rules:
       - "golang"
       - "Googleplex"
       - "gopath"
-      - "Graff"
       - "graphviz"
       - "Graphviz"
       - "growlnotify"

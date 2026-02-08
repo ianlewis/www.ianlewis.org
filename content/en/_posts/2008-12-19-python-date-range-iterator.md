@@ -10,7 +10,7 @@ render_with_liquid: false
 
 I couldn't find something that gave me quite what I wanted so I created
 a simple [Python](http://www.python.org/) generator to give me the dates
-between two datetimes.
+between two `datetime` objects.
 
 ```python
 def datetimeIterator(from_date, to_date):

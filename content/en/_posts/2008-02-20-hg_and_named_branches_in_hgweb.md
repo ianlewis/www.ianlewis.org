@@ -68,7 +68,7 @@ find out where a particular change was committed without looking at the parent
 changeset and backtracking to where it was split off from the main branch (this
 is not reasonably achievable.
 
-Named branches are also not deletable. Meaning once you figure out all of the
+Named branches are also immutable. Meaning once you figure out all of the
 downsides of using them your repository is already full of these named branches
 and you can't delete them. This also exasperates the push problem because you
 might push some changes in a test branch to a shared repo inadvertently but once

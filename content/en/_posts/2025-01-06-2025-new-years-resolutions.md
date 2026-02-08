@@ -42,7 +42,7 @@ the Google Open Source Security Team on open-source tooling for the [SLSA
 supply chain security framework](https://slsa.dev/). The
 [slsa-github-generator](https://github.com/slsa-framework/slsa-github-generator)
 and [slsa-verifier](https://github.com/slsa-framework/slsa-verifier) projects
-were (and, to some extent, still are) the de-facto tools for generating SLSA
+were (and, to some extent, still are) the de facto tools for generating SLSA
 provenance on GitHub. I was fortunate enough to be able to give a [talk on
 SLSA](https://www.youtube.com/watch?v=32IhwdAe0yI) at CloudNativeSecurityCon in
 Feb, 2023. GitHub eventually integrated SLSA provenance into

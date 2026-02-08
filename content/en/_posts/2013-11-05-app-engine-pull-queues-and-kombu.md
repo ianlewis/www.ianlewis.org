@@ -66,7 +66,7 @@ q.add([taskqueue.Task(payload=payload_str, method='PULL')])
 ```
 
 Or you can use kombu to add tasks. Here I'll assume you are on App Engine and
-are storing your credentials on a datastore entity:
+are storing your credentials on a Datastore entity:
 
 ```python
 from kombu import Connection

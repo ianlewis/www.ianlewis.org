@@ -117,13 +117,13 @@ fix. Add the following line to `/etc/apt/apt.conf`:
 APT::Cache-Limit &quot;8388608&quot;;
 ```
 
-Now that is taken care of, let's say you have a particular package you want
-to install the newest version of, but the newest version of that packages isn't
-in stable yet. Synaptic will show you the version that's in stable because we
-set that as the highest priority. But you know there is a newer version out
-there. You can check [packages.debian.org](http://packages.debian.org/) to see
-if the package you want is included in either testing or unstable but the
-quicker way is to check in synaptic itself.
+Now that is taken care of, let's say you have a particular package you want to
+install the newest version of, but the newest version of that packages isn't in
+stable yet. Synaptic will show you the version that's in stable because we set
+that as the highest priority. But you know there is a newer version out there.
+You can check [`packages.debian.org`](http://packages.debian.org/) to see if the
+package you want is included in either testing or unstable but the quicker way
+is to check in synaptic itself.
 
 ![The Gnome package manager showing an "unstable" and a "testing" version on the "versions" tab of a package.](/assets/images/gallery/wget.png){:style="width: 40%; display:block; margin-left:auto; margin-right:auto"}
 

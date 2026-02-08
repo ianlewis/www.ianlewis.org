@@ -36,12 +36,12 @@ he might have he seems to be successful and competent at consulting.
 His programming could be better though. I'm glad he made Sweetcron because it
 allowed me to do something I had been wanting to do for a while, but it required
 a bit of programming to get working properly. It has a few bugs and the default
-install is pretty unusable. It's written using codeigniter which is ok but
+install is pretty unusable. It's written using CodeIgniter which is ok but
 Sweetcron doesn't support some of its features properly. For instance, using
-the database table prefix causes Sweetcron to throw SQL errors. His codeigniter
+the database table prefix causes Sweetcron to throw SQL errors. His CodeIgniter
 templates are simply PHP code files which I don't like because they end up being
 programs themselves and don't separate logic and presentation very well.
-Codeigniter has it's [own
+CodeIgniter has it's [own
 templates](http://codeigniter.com/user_guide/libraries/parser.html) but they're
 lame so I kind of wish he used [Smarty](http://www.smarty.net/) which I've had
 good experience with.

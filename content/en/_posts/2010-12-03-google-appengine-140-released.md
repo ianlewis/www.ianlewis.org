@@ -8,22 +8,35 @@ tags: tech python cloud
 render_with_liquid: false
 ---
 
-[Google App Engine](http://code.google.com/appengine/) 1.4.0 was just released and has lots of interesting new features. Channel API, "Always On" (reserved instances), Improvements to background processing, Warm up requests, and Metadata queries just to name the big ones.
+[Google App Engine](http://code.google.com/appengine/) 1.4.0 was just released
+and has lots of interesting new features. Channel API, "Always On" (reserved
+instances), Improvements to background processing, Warm up requests, and
+Metadata queries just to name the big ones.
 
 ## Channel API
 
-The Channel API is a way for you to "push" data to the client browser. The Channel is a bit like a socket connection but it's implemented using Google's [XMPP](http://en.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol) infrastructure built for [Google Talk](http://www.google.com/talk/). So it will scale properly as needed.
+The Channel API is a way for you to "push" data to the client browser. The
+Channel is a bit like a socket connection but it's implemented using Google's
+[XMPP](http://en.wikipedia.org/wiki/Extensible_Messaging_and_Presence_Protocol)
+infrastructure built for [Google Talk](http://www.google.com/talk/). So it will
+scale properly as needed.
 
-The Channel API feature includes two parts, a server-side API for creating channels and sending messages, and a Javascript API for recieving and processing those messages.
+The Channel API feature includes two parts, a server-side API for creating
+channels and sending messages, and a JavaScript API for receiving and processing
+those messages.
 
-Let's take a look and what a simple application might look like to demonstrate the API.
+Let's take a look and what a simple application might look like to demonstrate
+the API.
 
 ### Server-Side
 
-First we need to create a channel. We give it a unique channel key and it will give us an ID that we can give to the client, who will in turn use the ID to connect to the channel to recieve messsages.
+First we need to create a channel. We give it a unique channel key and it will
+give us an ID that we can give to the client, who will in turn use the ID to
+connect to the channel to receive messages.
 
-Here we are passing the current `user` object to `channel.create_channel()` but any string will do. So you could have many clients listening to the same channel designated by an arbitrary
-key.
+Here we are passing the current `user` object to `channel.create_channel()` but
+any string will do. So you could have many clients listening to the same channel
+designated by an arbitrary key.
 
 ```python
 from google.appengine.ext import webapp
@@ -46,7 +59,7 @@ class MyHandler(BaseHandler):
         )
 ```
 
-On the client site we use javascript to connect to the channel.
+On the client site we use JavaScript to connect to the channel.
 
 ```javascript
 var channel = new goog.appengine.Channel("{{ channel_id }}");
@@ -84,7 +97,9 @@ class AjaxHandler(BaseHandler):
         channel.send_message(user, "Hello World!!")
 ```
 
-> The channel API is not a two-way channel. It is for pushing data to the client. If you want to send data to the server you can do so using normal AJAX POST requests.
+> The channel API is not a two-way channel. It is for pushing data to the
+> client. If you want to send data to the server you can do so using normal AJAX
+> POST requests.
 
 ## Always On
 
@@ -111,14 +126,18 @@ before serving user facing requests. This allows you to load heavy modules
 before serving user facing requests, allowing for a much better experience for
 users.
 
-In order to enable Warmup Requests, you need to add `warmup` to your `inbound_services` section of your `app.yaml` much like you would for mail or XMPP.
+In order to enable warmup Requests, you need to add `warmup` to your
+`inbound_services` section of your `app.yaml` much like you would for mail or
+XMPP.
 
 ```yaml
 inbound_services:
     - warmup
 ```
 
-The warmup request will be sent to `/_ah/warmup` so you can add a handler to your `app.yaml` to specifically handle the request or just use a catch all handler.
+The warmup request will be sent to `/_ah/warmup` so you can add a handler to
+your `app.yaml` to specifically handle the request or just use a catch all
+handler.
 
 Here we'll use our own handler.
 
@@ -167,10 +186,11 @@ few long running tasks or cron jobs at a time without backing things up.
 You can now do queries against App Engine Datastore metadata. The SDK now
 provides new `Namespace`, `Kind`, and `Property` Model classes that live in
 `google.appengine.ext.db.metadata`. You can query these like regular models but
-you won't be able to create new ones by saving them to the datastore like you
+you won't be able to create new ones by saving them to the Datastore like you
 would be with regular modules.
 
-Namespaces are pretty trivial. Kinds are parent objects of their properties so you can get the properties for a particular kind by doing an ancestor query.
+Namespaces are pretty trivial. Kinds are parent objects of their properties so
+you can get the properties for a particular kind by doing an ancestor query.
 
 ```python
 from google.appengine.ext.db.metadata import Namespace, Kind, Property
