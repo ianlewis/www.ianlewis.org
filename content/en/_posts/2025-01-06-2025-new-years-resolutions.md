@@ -35,7 +35,7 @@ the last few years.
 For work, I mostly spent the pandemic working at home. I had been traveling for
 work and going to events pretty often so the pandemic was quite a shock. Being
 unable to travel and working at a remote office in another country is pretty
-tough. I didn’t see many of my teammates for several years.
+tough. I didn't see many of my teammates for several years.
 
 I had been wanting to do more technical work so in 2022 I started to work with
 the Google Open Source Security Team on open-source tooling for the [SLSA
@@ -132,7 +132,7 @@ Also, please also reach out if you’re in Japan and you’d like to reconnect!
 
 ### Building Sustainable Self-Confidence
 
-The past few years have been challenging for various reasons. Things didn’t
+The past few years have been challenging for various reasons. Things didn't
 always turn out the way I wanted or expected them to. I’ve been led to compare
 myself to others and I tend to evaluate myself unfavorably (and perhaps
 unfairly). I let burn-out and other concerns go unaddressed for too long.

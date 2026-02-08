@@ -25,10 +25,10 @@ but I learned, much like [Yongfook
 did](http://yongfook.posterous.com/why-posterous-instead-of-sweetcron), that it
 wasn't a good way to engage with my readers. Though I didn't really realize and
 internalize it until much later. While it looked cool, and web 2.0, and had
-embedded YouTube movies and other dodads or whatever, people just didn't look at
-it or care very much. I sort of knew that it wasn't a good way to interact with
-readers because I read Jon's blog post and understood the idea and could verify
-it with my own access data, but it took a while to figure out what to do
+embedded YouTube movies and other doodads or whatever, people just didn't look
+at it or care very much. I sort of knew that it wasn't a good way to interact
+with readers because I read Jon's blog post and understood the idea and could
+verify it with my own access data, but it took a while to figure out what to do
 instead.
 
 The original content also ended up being a crawler sink. i.e. a bunch of pages

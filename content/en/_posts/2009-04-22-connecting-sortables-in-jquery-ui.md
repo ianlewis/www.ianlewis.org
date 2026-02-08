@@ -15,7 +15,7 @@ jQueryUI a fair bit for work recently and wanted to share a pretty cool feature
 that jQueryUI has.
 
 jQueryUI has a widget called a [sortable](http://jqueryui.com/demos/sortable/)
-which is just a list of sortable dom elements. It allows you to drag the items
+which is just a list of sortable DOM elements. It allows you to drag the items
 around and resort them in a list. Options are passed in an object that you give
 to the sortable constructor/initializer. You can initialize a sortable like so:
 
@@ -28,9 +28,9 @@ $("#my-list").sortable({
 In this case the options object and contained `axis` option are optional but it
 gives you a good idea what a widget initializer looks like.
 
-jQueryUI also has a draggable widget which allows you to easily create
-draggable items. This draggable can also be connected to a sortable object so
-you can drag an object onto a sortable widget.
+jQueryUI also has a `draggable` widget which allows you to easily create
+`draggable` items. This `draggable` can also be connected to a sortable object
+so you can drag an object onto a sortable widget.
 
 ```javascript
 $("#my-item").draggable({
@@ -38,8 +38,8 @@ $("#my-item").draggable({
 });
 ```
 
-jQueryUI also allows you to connect sortables to each other which creates the
-potential for some interesting user interfaces.
+jQueryUI also allows you to connect sortable objects to each other which creates
+the potential for some interesting user interfaces.
 
 ```javascript
 $("#my-list").sortable({
@@ -47,8 +47,8 @@ $("#my-list").sortable({
 });
 ```
 
-You can even connect the sortables together so you can drag items back and
-forth between the sortables:
+You can even connect the sortable objects together so you can drag items back
+and forth between the sortable objects:
 
 ```javascript
 $("#my-list").sortable({
@@ -60,4 +60,5 @@ $("#my-other-list").sortable({
 });
 ```
 
-You can check out a demo that connects two sortables together here: [DEMO >>](/assets/demos/files/sortables/index.html)
+You can check out a demo that connects two sortable objects together here:
+[DEMO >>](/assets/demos/files/sortables/index.html)

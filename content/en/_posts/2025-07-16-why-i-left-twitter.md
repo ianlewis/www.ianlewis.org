@@ -58,7 +58,7 @@ November 2024
 election](https://en.wikipedia.org/wiki/2024_United_States_presidential_election).
 The celebration of the various cruelties that make up who Donald Trump is were
 on full display. It seemed that the very cruel, ugly, and grotesque side of
-humanity was rearing its head. I didn’t want to be on a service that was owned
+humanity was rearing its head. I didn't want to be on a service that was owned
 by someone who enabled and encouraged that kind of behavior.
 
 Around the same time as the election, I was going through a [personal

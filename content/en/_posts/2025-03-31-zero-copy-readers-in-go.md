@@ -54,7 +54,7 @@ without making unnecessary copies.
 
 [`bytes.Reader`](https://pkg.go.dev/bytes#Reader) is a popular type which
 implements the `io.Reader` interface over a byte slice. Unfortunately, this
-doesn’t allow for zero copy reads from the underlying `[]byte` by directly using
+doesn't allow for zero copy reads from the underlying `[]byte` by directly using
 the methods. Instead, you have to take a more indirect route and use `WriteTo`
 in which `bytes.Reader` will pass a slice of the underlying `[]byte` to the
 given `io.Writer`. This allows us to read the underlying data without making

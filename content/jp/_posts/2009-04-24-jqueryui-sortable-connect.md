@@ -9,7 +9,7 @@ render_with_liquid: false
 locale: ja
 ---
 
-最近、[jQueryUI](http://jqueryui.com/)をバリバリ使ってて、[sortable](http://jqueryui.com/demos/sortable/)というウィジェットで簡単にできることがあまりにも面白い。
+最近、[jQueryUI](http://jqueryui.com/)をバリバリ使ってて、[`sortable`](http://jqueryui.com/demos/sortable/)というウィジェットで簡単にできることがあまりにも面白い。
 
 ```javascript
 $("#my-list").sortable({
@@ -19,7 +19,7 @@ $("#my-list").sortable({
 
 `axis`は必須じゃないけど、オプションに渡す場合の例にいいのかなと思って入れた
 
-draggableというウィジェットもあって、これであるオブジェクトをsortableウィジェットにdragで入れられる。
+`draggable`というウィジェットもあって、これであるオブジェクトを`sortable`ウィジェットにドラッグで入れられる。
 
 ```javascript
 $("#my-item").draggable({
@@ -27,7 +27,7 @@ $("#my-item").draggable({
 });
 ```
 
-同じくsortableはsortableと接続して、一つのsortableから、別のsortableに移動ができる。
+同じく`sortable`は`sortable`と接続して、一つの`sortable`から、別の`sortable`に移動ができる。
 
 ```javascript
 $("#my-list").sortable({
@@ -35,7 +35,7 @@ $("#my-list").sortable({
 });
 ```
 
-同じ書き方で、二つのsortableを接続しあうこともできる。これで、オブジェクトを自由にsortableからdragしたり、dropしたり、結構面白いインタフェースができる。
+同じ書き方で、二つの`sortable`を接続しあうこともできる。これで、オブジェクトを自由に`sortable`からドラッグしたり、ドロップしたり、結構面白いインタフェースができる。
 
 ```javascript
 $("#my-list").sortable({
@@ -46,5 +46,3 @@ $("#my-other-list").sortable({
     connectWith: "#my-list",
 });
 ```
-
-[DEMO >>](/assets/demos/files/sortables/index.html){: target="blank"}

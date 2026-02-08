@@ -30,7 +30,7 @@ signed using the developer’s key. The key itself can contain a bit of metadata
 about the company name, timestamps, etc. and this information can be used to
 ensure it is coming from a trusted party before the artifact is executed.
 
-However, there are a number of ways that code signing doesn’t go far enough to
+However, there are a number of ways that code signing doesn't go far enough to
 protect users from malicious artifacts. Software provenance achieves the same
 goals using a similar method but goes farther by tackling the problem of
 verifying software artifacts more directly.

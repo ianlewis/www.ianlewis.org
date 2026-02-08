@@ -121,6 +121,7 @@ rules:
       - "/\\bDeBlasio\\b/g"
       - "/\\bDeacalion\\b/g"
       - "/\\bDicken\\b/g"
+      - "/\\bDinesh\\b/g"
       - "/\\bDougherty\\b/g"
       - "/\\bDuan\\b/g"
       - "/\\bDuberstein\\b/g"
@@ -396,6 +397,7 @@ rules:
       - "/\\bVimeo\\b/g" # Video hosting platform
       - "/\\bWebFaction\\b/g" # Web hosting service
       - "/\\bWindsurf\\b/g" # Windsurf, AI IDE
+      - "/\\bdotCloud\\b/g" # PaaS company (predecessor to Docker)
 
       # Product Names
       ##########################################################################
@@ -458,6 +460,7 @@ rules:
       - "/\\b[Cc]ron\\b/g" # time-based job scheduler
       - "/\\bCygwin\\b/g" # POSIX compatibility layer for Windows
       - "/\\bCython\\b/g" # C-Extensions for Python
+      - "/\\bDocker\\b/g" # Containerization platform
       - "/\\bDvorakJP\\b/g" # Dvorak Japanese Keyboard Layout
       - "/\\bEPWING\\b/g" # Japanese electronic dictionary format
       - "/\\bEUC-JP\\b/g" # Japanese character encoding
@@ -629,6 +632,7 @@ rules:
       - "/\\b[Dd]eclarative(ly)?\\b/g"
       - "/\\b[Dd]enormalize\\b/g" # to convert from normalized form
       - "/\\b[Dd]ev\\b/g" # Development/Developer
+      - "/\\b[Dd]ocstrings?\\b/g" # Python documentation strings
       - "/\\b[Ee]xecutables\\b/g" # plural of executable
       - "/\\b[Ee]xfiltrat((e(s|d)?)|(ing))\\b/g" # To steal data from a system
       - "/\\b[Ff]avicons?\\b/g" # Favorite icons
@@ -703,8 +707,11 @@ rules:
       - "/\\bCTO\\b/g" # Chief Technology Officer
       - "/\\bCVE\\b/g" # Common Vulnerabilities and Exposures
       - "/\\bDAG\\b/g" # Directed Acyclic Graph
+      - "/\\bDM\\b/g" # Direct Message
       - "/\\bDNS\\b/g" # Domain Name System
+      - "/\\bDOM\\b/g" # Document Object Model
       - "/\\bDSL\\b/g" # Domain-Specific Language
+      - "/\\bDTD\\b/g" # Document Type Definition
       - "/\\bEBS\\b/g" # Amazon Elastic Block Store
       - "/\\bEC2\\b/g" # Amazon Elastic Compute Cloud
       - "/\\bFaaS\\b/g" # Function as a Service
@@ -863,33 +870,6 @@ rules:
       # TODO(#285): Handle or fix the following words.
       ##########################################################################
 
-      - "deserialization"
-      - "dialogs"
-      - "didn"
-      - "Dinesh"
-      - "direct_to_pdf"
-      - "dispite"
-      - "disqus-api-client"
-      - "disqus_plugin"
-      - "django"
-      - "DjangoGraphviz"
-      - "DjangoGraphViz"
-      - "djangosnippets"
-      - "dlife"
-      - "DM"
-      - "dockerd"
-      - "DockerFile"
-      - "Docker's"
-      - "docstrings"
-      - "dodads"
-      - "doesn"
-      - "dom"
-      - "DOM"
-      - "dotCloud"
-      - "doxygen"
-      - "draggable"
-      - "dropdown"
-      - "DTD"
       - "ebs"
       - "eco"
       - "EdLbBLvb"

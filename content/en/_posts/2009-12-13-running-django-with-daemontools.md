@@ -21,8 +21,8 @@ daemontools called `setuidgid` to set the user to `www` which is the user we wan
 to run the daemon as.
 
 Finally since we are using `setuidgid` we need to use the `exec` command in Bash
-so that the shell process running as root is replaced with the FastCGI process
-running as `www`.
+so that the shell process running as `root` is fully replaced with the FastCGI
+process running as `www`.
 
 ## `/service/myapp/run`
 

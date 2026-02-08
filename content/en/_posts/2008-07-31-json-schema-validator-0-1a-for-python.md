@@ -19,9 +19,9 @@ The source tarball is ~~`jsonschema-0.1a.tar.gz`~~. The source itself is on
 Bitbucket.
 
 JSON Schema's purpose is to allow validation of JSON documents much like XML
-Schema, DTD. You can use it to define what kind of data should be present in the
-document as well as the structure of the data. You might have some JSON for a
-contact like so:
+Schema or a document type definition (DTD). You can use it to define what kind
+of data should be present in the document as well as the structure of the data.
+You might have some JSON for a contact like so:
 
 ```json
 {
