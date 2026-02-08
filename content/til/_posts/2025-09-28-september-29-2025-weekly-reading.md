@@ -9,8 +9,7 @@ render_with_liquid: false
 
 ## Security
 
-- [From MCP to Shell](https://verialabs.com/blog/from-mcp-to-shell/) -- _Stephen
-  Xu, Cayden Liao, Raymond, Jayden_
+- [From MCP to Shell](https://verialabs.com/blog/from-mcp-to-shell/) -- _Stephen Xu, Cayden Liao, Raymond, Jayden_
 
     Yet another method for exploiting Model Context Protocol (MCP) servers to
     get arbitrary code execution on the local machine. This seems to be mostly
@@ -24,9 +23,7 @@ render_with_liquid: false
     design. Clients like Claude Code will ask users to approve the command but I
     think this is a fairly weak security measure.
 
-- [uv security advisory: ZIP payload
-  obfuscation](https://astral.sh/blog/uv-security-advisory-cve-2025-54368) --
-  _William Woodruff_
+- [uv security advisory: ZIP payload obfuscation](https://astral.sh/blog/uv-security-advisory-cve-2025-54368) -- _William Woodruff_
 
     A security vulnerability (CVE-2025-54368) was found in `uv` that allows
     malicious ZIP files to be crafted in a way that makes different tools
@@ -45,8 +42,7 @@ render_with_liquid: false
     common Big-O notations, and goes over some examples using some simple
     sorting and searching algorithms.
 
-- [Default Methods in Go](https://mcyoung.xyz/2025/08/25/go-default-methods/) --
-  _Miguel Young de la Sota_
+- [Default Methods in Go](https://mcyoung.xyz/2025/08/25/go-default-methods/) -- _Miguel Young de la Sota_
 
     Miguel points out that, due to how Go's interfaces work, it's not easy to
     create default methods for interface types that can be inherited by their

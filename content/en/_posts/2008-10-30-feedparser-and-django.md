@@ -8,7 +8,11 @@ tags: tech programming python django
 render_with_liquid: false
 ---
 
-Over the weekend at Python Onsen I worked on a lifestream web application using Django and [feedparser](http://www.feedparser.org/). I was really impressed with how simple feedparser is to use and how easy it is to get unified results from atom or rss feeds. You simply import feedparser and call feedparser.parse to parse a feed from a url.
+Over the weekend at Python Onsen I worked on a lifestream web application using
+Django and [`feedparser`](http://www.feedparser.org/). I was really impressed
+with how simple `feedparser` is to use and how easy it is to get unified results
+from atom or RSS feeds. You simply import `feedparser` and call
+`feedparser.parse` to parse a feed from a URL.
 
 ```python
 # feeds.py
@@ -31,7 +35,7 @@ problem of how to deal with dates in various formats I turned came across this
 [blog entry](http://www.deadlybloodyserious.com/2007/09/feedparser-v-django/)
 which describes the problem and some possible solutions. The solution I used
 was the simplest and most robust (please skip the comments talking about taking
-a slice of the date string). I used mikael's suggestion from the comments and
+a slice of the date string). I used Mikael's suggestion from the comments and
 used the `dateutil.parser` to parse the date string into a proper `datetime`
 object.
 
@@ -41,7 +45,7 @@ date_published = dateutil.parser.parse(date_published)
 ```
 
 This however leaves timezone info on the timestamp which isn't supported by
-mysql so I hand rolled some code convert the timestamp to utc and remove the
+MySQL so I hand rolled some code convert the timestamp to UTC and remove the
 timezone info.
 
 ```python
@@ -53,6 +57,6 @@ date_published = (date_published - date_published.utcoffset()).replace(tzinfo=No
 I'm not sure this works in all situations yet so I might go with something like
 [how another commenter solved the
 problem](http://intertwingly.net/blog/2007/09/02/Dealing-With-Dates) by
-converting feedparsers parsed date to a utc timestamp before converting to a
-datetime object. I think either way would work but which is cleaner and less
+converting the parsed date to a UTC timestamp before converting to a
+`datetime` object. I think either way would work but which is cleaner and less
 prone to breakage, I'm not sure.

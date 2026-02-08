@@ -10,7 +10,7 @@ render_with_liquid: false
 
 A few days ago [Protocol Buffers](https://protobuf.dev/) was released by Google
 as an open source project. Protocol Buffers is a way to generate code for
-objects that can be serialized to and de-serialized from the Protocol Buffers
+objects that can be serialized to and deserialized from the Protocol Buffers
 binary format. An implementation of the Protocol Buffers compiler which reads a
 `.proto` file and can output Java, Python, and C++ code. Because the format is a
 binary format and the compiler can output in several languages, this would allow
@@ -20,7 +20,7 @@ in the same language.
 I went ahead and created two simple Java and Python applications that test
 Protocol Buffers by simply creating a simple User object, prompting the user for
 a nickname and e-mail and then serializing the result. I also added a command to
-de-serialize the output and show the contents of the reconstituted object. Here
+deserialize the output and show the contents of the reconstituted object. Here
 I ran the Java program to write the Protocol Buffers data to a file and then I
 run the Python program to read it.
 

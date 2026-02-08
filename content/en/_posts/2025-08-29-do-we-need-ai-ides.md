@@ -52,7 +52,7 @@ diff directly for review.
 
 This seems to me to be something that could be easily added into an existing
 editor like VSCode or Neovim. Indeed, many tools like
-[Kilocode](https://kilocode.ai/), [Copilot Chat for
+[Kilo Code](https://kilo.ai/), [Copilot Chat for
 Neovim](https://github.com/CopilotC-Nvim/CopilotChat.nvim), or even the
 [Windsurf extension for
 VSCode](https://marketplace.visualstudio.com/items?itemName=Codeium.codeium)
