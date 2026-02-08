@@ -59,7 +59,7 @@ class MyHandler(BaseHandler):
         )
 ```
 
-On the client site we use JavaScript to connect to the channel.
+On the client side we use JavaScript to connect to the channel.
 
 ```javascript
 var channel = new goog.appengine.Channel("{{ channel_id }}");
@@ -126,7 +126,7 @@ before serving user facing requests. This allows you to load heavy modules
 before serving user facing requests, allowing for a much better experience for
 users.
 
-In order to enable warmup Requests, you need to add `warmup` to your
+In order to enable warmup requests, you need to add `warmup` to your
 `inbound_services` section of your `app.yaml` much like you would for mail or
 XMPP.
 

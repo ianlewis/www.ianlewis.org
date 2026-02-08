@@ -46,15 +46,14 @@ hg update -C mybranch
 ```
 
 This command figures out what changes need to be removed and what needs to be
-added to get you to the `HEAD` of the another branch.
+added to get you to the `HEAD` of the other branch.
 
 Unfortunately, this is where the good things about named branches end. Named
 branches live in the same repository so you can't selectively push or pull
-changes. So if you have a bunch of changes in your main branch that are ready
-for pushing to your shared repo, but you have a named branch full of changes
-that aren't ready to see the light of day, you can't selectively push the stuff
-in your main branch without pushing the stuff in your test branch. This is a big
-problem because it can clutter up your shared repo.
+changes. So if you have some changes in your main branch that you want to push,
+and you have a named branch with changes that aren't ready yet, you can't
+selectively push main branch without pushing the other named branch. This is a
+big problem because it can clutter up your shared repo.
 
 Also, the hgweb and hgwebdir CGI scripts that show you changes to your
 repository in a easy to understand way simply fail to break changes out by named
@@ -63,19 +62,19 @@ I had put in what branch so I had trouble compiling all the changes I wanted to
 for a release. I really wanted to look at the web interface and see the
 `CHANGELOG` for a particular branch but the hgweb interface simply shows all
 changesets in chronological order regardless of what branch you clicked on. It
-also doesn't show what branch a change was committed to so it's impossible to
+also doesn't show what branch a change was committed to. It's impossible to
 find out where a particular change was committed without looking at the parent
 changeset and backtracking to where it was split off from the main branch (this
-is not reasonably achievable.
+is not reasonably achievable).
 
-Named branches are also immutable. Meaning once you figure out all of the
+Named branches also cannot be deleted. Meaning once you figure out all the
 downsides of using them your repository is already full of these named branches
 and you can't delete them. This also exasperates the push problem because you
-might push some changes in a test branch to a shared repo inadvertently but once
-you realize this the damage is already done because you can't delete the branch
-from the shared repo without backing out all of the changes you made, nor can
-you delete them from your local repo and then push, or selectively push only one
-named branch. Basically you're stuck with them forever.
+might push some changes in a test branch to a shared repo inadvertently.
+However, once you realize this the damage is already done because you can't
+delete the branch from the shared repo without backing out all the changes you
+made. Nor can you delete them from your local repo and then push, or selectively
+push only one named branch. Basically you're stuck with them forever.
 
 This is probably why there has been
 [talk](http://www.selenic.com/pipermail/mercurial/2008-February/017024.html)

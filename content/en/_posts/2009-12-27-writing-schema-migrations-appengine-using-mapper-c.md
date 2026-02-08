@@ -11,7 +11,7 @@ render_with_liquid: false
 One thing that many people using App Engine know is that writing schema
 migrations is hard. Improving performance on App Engine often revolves around
 getting objects by key or key name rather than using filters, however altering
-the makeup of an objects key requires pulling all the objects and saving them in
+the makeup of an object's key requires pulling all the objects and saving them in
 the Datastore anew. This also requires modifying the `ReferenceProperties` of
 any objects pointing to your changed object. On top of that, schema migrations
 generally require modifying lots of data and you have limits on the number of
@@ -23,9 +23,9 @@ library](http://code.google.com/appengine/articles/deferred.html). The deferred
 library allows you to set a function to be run by the task queue in the
 background. This coupled with the Mapper class provided in the article make for
 a powerful way to process large amounts of data safely. Unfortunately, there are
-a couple of bugs with in the Mapper class provided in the article. It's missing
-a couple of imports, doesn't save data properly and throws errors when there is
-no data to be processed. I have provided an updated version of the Mapper class
+a couple of bugs within the Mapper class provided in the article. It's missing a
+couple of imports, doesn't save data properly and throws errors when there is no
+data to be processed. I have provided an updated version of the Mapper class
 here.
 
 ```python
@@ -104,7 +104,7 @@ class Mapper(object):
         self.finish()
 ```
 
-The Mapper class processes all object by default but you can add filters using
+The Mapper class processes all objects by default but you can add filters using
 the FILTERS property to only select certain objects. Creating a Mapper class is
 easy, you just implement the map() method (and optionally override the finish
 method) and return a two tuple containing a list of objects to update/create and
@@ -138,9 +138,9 @@ def run_migration():
     deferred.defer(m.run)
 ```
 
-This mapper migrates the data for of the `MyModel` type to using key names
+This mapper migrates the data for the `MyModel` type to using key names
 instead of numeric ids. Of course if any other objects referred to your
 `MyModel` objects you would need to alter those too but this demonstrates some
-of the things you can to with the `Mapper` class. Here you would just need to
+of the things you can do with the `Mapper` class. Here you would just need to
 run the `run_migration()` method and it would add the mapper to the task queue
 to be run in the background.
