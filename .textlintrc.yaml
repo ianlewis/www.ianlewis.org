@@ -140,6 +140,7 @@ rules:
       - "/\\bFumi\\b/g"
       - "/\\bGageot\\b/g"
       - "/\\bGergely\\b/g"
+      - "/\\bGeuter\\b/g"
       - "/\\bGhanan\\b/g"
       - "/\\bGhemawat\\b/g"
       - "/\\bGodbolt\\b/g"
@@ -168,6 +169,7 @@ rules:
       - "/\\bJin\\b/g"
       - "/\\bJohansson\\b/g"
       - "/\\bJxck\\b/g"
+      - "/\\bJürgen\\b/g"
       - "/\\bKaczorowski\\b/g"
       - "/\\bKamaelia\\b/g"
       - "/\\bKaplan\\b/g"
@@ -230,6 +232,7 @@ rules:
       - "/\\bSandeep\\b/g"
       - "/\\bSato\\b/g"
       - "/\\bSanjay\\b/g"
+      - "/\\bShambaugh\\b/g"
       - "/\\bShibata\\b/g"
       - "/\\bShibukawa\\b/g"
       - "/\\bShimizukawa\\b/g"
@@ -276,6 +279,7 @@ rules:
       - "/\\bYosuke\\b/g"
       - "/\\bZach\\b/g"
       - "/\\bZeyliger\\b/g"
+      - "/\\bZhiyanov\\b/g"
       - "/\\bZiadé(?:^|\\s)?/g"
       - "/\\bZvi\\b/g"
       - "/\\bde\\sla\\sSota\\b/g"
@@ -576,7 +580,8 @@ rules:
       ##########################################################################
 
       - "/\\bAjaxian\\b/g" # Ajaxian.com, a web development blog
-      - "/\\b(appengine ja night|AJN)\\b/g" # App Engine Java/Japan Night
+      - "/\\bArs\\sTechnica\\b/g" # Technology news and information website
+      - "/\\b(appengine\\sja\\snight|AJN)\\b/g" # App Engine Java/Japan Night
       - "/\\bBPStudy\\b/g" # BeProud Study
       - "/\\bBPStyle\\b/g" # BeProud internal study
       - "/\\bBarCamp\\b/g"
@@ -685,6 +690,7 @@ rules:
       - "/\\bCC0\\b/g" # Creative Commons Zero
       - "/\\bCFP\\b/g" # Call for Papers/Proposals
       - "/\\bCJK\\b/g" # Chinese, Japanese, and Korean
+      - "/\\bCLs?\\b/g" # Change List (version control)
       - "/\\bCNCF\\b/g" # Cloud Native Computing Foundation
       - "/\\bCNI\\b/g" # Container Network Interface
       - "/\\bCPAN\\b/g" # Comprehensive Perl Archive Network
