@@ -60,7 +60,7 @@ deferredupdate: function() {
 ```
 
 The `deferredupdate` function calls
-[loadJSONDoc](http://www.mochikit.com/doc/html/MochiKit/Async.html#fn-loadjsondoc)
+[`loadJSONDoc`](http://www.mochikit.com/doc/html/MochiKit/Async.html#fn-loadjsondoc)
 which creates a deferred object as well however this deferred object doesn't
 wait for any time it simply does it's work in a separate thread and executes a
 callback when it's done. In this case I set the callback to be the `pageupdate`
@@ -68,11 +68,10 @@ function. The `pageupdate` function does the work of putting the resulting data
 into a table and adding that table to the HTML DOM.
 
 If you are wondering what the
-[bind](http://mochikit.com/doc/html/MochiKit/Base.html#fn-bind) function does,
+[`bind`](http://mochikit.com/doc/html/MochiKit/Base.html#fn-bind) function does,
 it always ensures that the `this` reference works. I'll leave the full
 explanation for another post.
 
 Most people who program in JavaScript already know about MochiKit but if you
 are interested in it check out the
-[screencast](http://mochikit.com/screencasts/MochiKit_Intro-1.mov) at
-http://www.mochikit.com/
+[screencast](http://mochikit.com/screencasts/MochiKit_Intro-1.mov).

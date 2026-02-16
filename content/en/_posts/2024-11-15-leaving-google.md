@@ -48,12 +48,13 @@ worked at a company bigger than ~600 people and Google had about 40k employees
 at the time. Google was basically my dream job.
 
 I was also suddenly working with folks who had masters or PhD degrees from the
-storied halls of MIT, Stanford and other prestigious schools, people who worked
-at Apple in the 90s, folks making 6 figure salaries from the moment they left
-school, and literal celebrities in the software development world. On the other
-hand, by any metric I went to one of the worst colleges in the U.S. and had
-been earning peanuts by comparison up until that point. To say that I didn’t
-feel like I fit in would be a massive understatement.
+storied halls of MIT, Stanford, and other prestigious schools, and people who
+worked at Apple in the nineties. The kind of folks who made 6 figure salaries
+from the moment they left school, and literal celebrities in the software
+development world. On the other hand, by any metric I went to one of the worst
+colleges in the U.S. and had been earning peanuts by comparison up until that
+point. To say that I didn't feel like I fit in would be a massive
+understatement.
 
 The first few years of working at Google were a whirlwind of activity. In the
 first year I held events and gave presentations in
@@ -79,7 +80,7 @@ for GitHub Actions.
 
 ## Challenges
 
-As cool as many of the projects were at Google, it didn’t take long before I
+As cool as many of the projects were at Google, it didn't take long before I
 felt limited by my role in DevRel. DevRel leadership's vision did not match my
 own vision of Developer Advocates as community leaders, advocates for end-user
 developer experience, and project contributors. I resolved to forge my own path

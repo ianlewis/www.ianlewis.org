@@ -33,7 +33,7 @@ details and their relationship with SLSA levels.
 
 Generating attestations is done using the
 [`attest-build-provenance`](https://github.com/actions/attest-build-provenance)
-GitHub action. Github’s blog post does a good job of explaining how it works so
+GitHub action. GitHub’s blog post does a good job of explaining how it works so
 I won’t rehash it fully here. Instead, I’ll summarize the flow and highlight
 some additional information that will be important later.
 
@@ -213,16 +213,17 @@ software.
 One downside of the `attest-build-provenance` action is that it only meets the
 requirements of SLSA Build L2 when used on its own.
 
-The main reason is that, by itself, it doesn’t meet this requirement for [SLSA
-Build L3](https://slsa.dev/spec/v1.0/levels#build-l3-hardened-builds):
+The main reason is that, by itself, it doesn't meet this requirement for
+[SLSA Build L3](https://slsa.dev/spec/v1.0/levels#build-l3-hardened-builds):
 
-_> prevent secret material used to sign the provenance from being accessible to the user-defined build steps._
+_> prevent secret material used to sign the provenance from being accessible to
+the user-defined build steps._
 
 Because GitHub Actions are run in the same job VM with other build steps there
 is a chance that the user-defined build steps could access the secret material,
-namely the certificate’s private key provided by Fulcio, and use it for
-nefarious purposes. Normally an attacker, by compromising the build, might be
-able to use this key material to make up their own provenance for a malicious
+-- specifically the certificate’s private key provided by Fulcio -- and use it
+for nefarious purposes. Normally an attacker, by compromising the build, might
+be able to use this key material to make up their own provenance for a malicious
 artifact and sign it with the key.
 
 However, as we’ll see, this kind of attack is somewhat mitigated by using Sigstore.
@@ -238,7 +239,7 @@ GitHub’s OIDC provider are compromised.
 While the SLSA predicate itself might be modified the certificate OID claims
 cannot. So GitHub can check the OID claims against the expected values to verify
 them even though the user-defined build steps had access to the signing key.
-This is why verification doesn’t rely on the predicate and instead relies on the
+This is why verification doesn't rely on the predicate and instead relies on the
 certificate’s OID claims for verification.
 
 Some folks have colloquially referred to this combination of Sigstore and SLSA
@@ -296,7 +297,7 @@ Given that there are significant security improvements, I think it’s worth it.
 
 Trust in GitHub’s Artifact Attestations trust really lies in the Sigstore
 certificate and its OID claims so the certificate itself effectively functions
-as the provenance. SLSA doesn’t even mandate that provenance be in SLSA format,
+as the provenance. SLSA doesn't even mandate that provenance be in SLSA format,
 but the architecture of Artifact Attestations does make it a bit more
 complicated to reason about the security implications. You shouldn't need to
 trust the build when creating attestations.

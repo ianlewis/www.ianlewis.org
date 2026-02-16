@@ -47,7 +47,7 @@ only one users table.
 
 Generic foreign keys actually consist of two fields, a link to the content type
 and the actual key. But these look like crap in the admin because they are
-rendered separately and are shown as a dropdown for the content type and a
+rendered separately and are shown as a drop-down for the content type and an
 integer field. It would be nicer if you could specify which kinds of models were
 possible as content type targets and provide a better widget for them.
 

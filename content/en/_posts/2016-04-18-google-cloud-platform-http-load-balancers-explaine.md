@@ -24,7 +24,7 @@ page something like this:
 Each of the sections is nicely laid out and allow you to create the load
 balancer all at once. But there are many objects being created under the covers
 here, many of which only vaguely map to the UI. It can be a bit daunting to set
-up via the the Google Cloud CLI.
+up via the Google Cloud CLI.
 
 The
 [HTTP Load Balancer documentation](https://cloud.google.com/compute/docs/load-balancing/http/)
@@ -44,7 +44,7 @@ later.
 
 Since most of the objects depend on one another, we will need to go from “back”
 to “front” starting with health checks and backend services and ending with
-forwarding rules. The health check object doesn’t depend on anything else so we
+forwarding rules. The health check object doesn't depend on anything else so we
 can create it first. Even though we create the object here, it only really
 becomes active after we attach it to a backend service.
 
@@ -57,7 +57,7 @@ gcloud compute http-health-checks create my-healthcheck \
 
 Here we create a health check that will connect to our app via port 80 at the
 `/healthz` URL. Note that creating the health check only tells further
-configuration the port and path to check but doesn’t actually send the health
+configuration the port and path to check but doesn't actually send the health
 checks. The host parameter isn’t actually used as the host to connect to but
 only to set the `Host` header. Some apps check this header so we want them to
 be able to return a successful status. The instances to health check are
@@ -181,7 +181,7 @@ In the UI the URL maps, host rules, and path matchers are specified in the
 
 ![Host & Path Rules](/assets/images/750/host-path-rules.png)
 
-The first row contains the default service which is used when a request doesn’t
+The first row contains the default service which is used when a request doesn't
 match a host rule/path matcher combination. The other rows contain the host
 rule/path matchers.
 

@@ -11,11 +11,11 @@ locale: ja
 
 明日からPython温泉に参加しに行ってきます。課題は下記のとおり
 
-- [django-lifestream](http://bitbucket.org/IanLewis/django-lifestream/)
+- [`django-lifestream`](http://bitbucket.org/IanLewis/django-lifestream/)
   の整理
-- [disqus-api-client](http://bitbucket.org/IanLewis/disqus-api-client/)
+- [`disqus-api-client`](http://bitbucket.org/IanLewis/disqus-api-client/)
   の実装
-- [homepage](http://bitbucket.org/IanLewis/homepage/) のバグを直す
+- [`homepage`](http://bitbucket.org/IanLewis/homepage/) のバグを直す
 - [App Engine](http://code.google.com/intl/ja/appengine/)
   上のコードスニペットのウェブサイトのまとめ
 - Google Analytics をモバイルで使えるライブラリの実装

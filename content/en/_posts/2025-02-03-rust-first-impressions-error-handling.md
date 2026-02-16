@@ -28,16 +28,16 @@ Those three are error handling, the type inference engine, and the ownership &
 borrowing model. I will be writing about each of these in separate blog posts.
 In this post I’ll be focusing on error handling.
 
-## The Result type
+## The `Result` type
 
-Rust returns errors as part of the [Result
-type](https://doc.rust-lang.org/std/result/). Results are implemented as an
-`enum` with a return value XOR a error value and include a number of methods
-like `expect`, `unwrap`, `unwrap_or`, `unwrap_or_default`, and `unwrap_or_else`
-that simplify error handling. Each of these methods are basically an `if`
-statement that does different things in the case that an error is encountered.
-This heavily favors the style in Rust of chaining logic together and using
-closures which can easily get unwieldy.
+Rust returns errors as part of the [`Result`
+type](https://doc.rust-lang.org/std/result/). `Result` objects are implemented
+as an `enum` with a return value XOR an error value and include a number of
+methods like `expect`, `unwrap`, `unwrap_or`, `unwrap_or_default`, and
+`unwrap_or_else` that simplify error handling. Each of these methods are
+basically an `if` statement that does different things in the case that an error
+is encountered. This heavily favors the style in Rust of chaining logic together
+and using closures which can easily get unwieldy.
 
 ```rust
 // Why this?
@@ -61,13 +61,13 @@ if err != nil && errors.Is(err, fs.IsNotExist) {
 }
 ```
 
-In Rust, the fact that the Result can have only one of either a return value or
+In Rust, the fact that the `Result` can have only one of either a return value or
 an error means that there is less of a chance that someone will attempt to use
 the return value when an error is given. In practice, I haven't found this to
 be too much of an issue with Go and in some cases it's useful to have both a
 return value and error but I suppose Rust's approach is a bit safer overall.
 
-One other thing that is nice about the Result type is that it is annotated with
+One other thing that is nice about the `Result` type is that it is annotated with
 the `#[must_use]` attribute which allows the compiler to issue a warning if the
 error isn’t handled. In Go, popular linters will make this check but it’s nice
 that it’s built into the compiler for Rust.
@@ -75,13 +75,13 @@ that it’s built into the compiler for Rust.
 ## Errors are values
 
 Rust’s error handling is probably the easiest to grasp of the three features I
-mention here. Rust joins Go in taking the approach that [errors are
-values](https://go.dev/blog/errors-are-values). Rust doesn’t have exceptions as
-they have gone out of favor due to their tendency to cause jumps to unexpected
-areas of the codebase. Instead of exceptions, recoverable errors are returned
-as return values to be handled by the caller. Unrecoverable errors will
-generally be represented by the program panicking. Both Rust and Go are similar
-in that manner.
+mention here. Rust joins Go in taking the approach that
+[errors are values](https://go.dev/blog/errors-are-values). Rust doesn't have
+exceptions as they have gone out of favor due to their tendency to cause jumps
+to unexpected areas of the codebase. Instead of exceptions, recoverable errors
+are returned as return values to be handled by the caller. Unrecoverable errors
+will generally be represented by the program panicking. Both Rust and Go are
+similar in that manner.
 
 I am personally sympathetic to this given the general lack of ways to help
 programmers handle exceptions in other languages. For languages like
@@ -126,7 +126,7 @@ if ew.err != nil {
 }
 ```
 
-This doesn’t seem to be done as much in Rust as it has opted to have the
+This doesn't seem to be done as much in Rust as it has opted to have the
 built-in question mark for [repetitive error
 propagation](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html#a-shortcut-for-propagating-errors-the--operator).
 So there isn’t as much opportunity to make use of the idea that errors are

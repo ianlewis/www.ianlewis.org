@@ -8,17 +8,17 @@ tags: tech programming python django
 render_with_liquid: false
 ---
 
-For my new project dlife (**Update:** Now
-[django-lifestream](http://bitbucket.org/IanLewis/django-lifestream/)), I went
+For my new project `dlife` (**Update:** Now
+[`django-lifestream`](http://bitbucket.org/IanLewis/django-lifestream/)), I went
 about implementing a simple comments interface that would allow users to make
 comments on imported feed items. I wanted to support this in the admin in the
-typical manner such that when you click on an item in the admin, you can see
-all the comments and edit them from the item's page.
+typical manner such that when you click on an item in the admin, you can see all
+the comments and edit them from the item's page.
 
 I found that you can use [inline
 forms](http://docs.djangoproject.com/en/dev/ref/contrib/admin/#inlinemodeladmin-objects)
 in the admin but it seems to show a bunch of forms (3 by default) even though I
-don't have any comments for the item yet. I'll mess with this a bit more later
+don't have any comments for the item yet. I'll mess with this more a bit later
 to try to get the behavior I want.
 
 ```python
