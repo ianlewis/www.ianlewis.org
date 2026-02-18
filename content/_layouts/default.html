@@ -167,11 +167,11 @@
       {%- if site.plainwhite.navigation -%}
       <nav class="navigation about-footer condensed">
         <ul>
-          {% for link in site.plainwhite.navigation %}
+          {%- for link in site.plainwhite.navigation %}
           <li>
             <a href="{{ link.url }}">{{ link.title }}</a>
           </li>
-          {% endfor %}
+          {%- endfor %}
         </ul>
       </nav>
       {%- endif -%}
@@ -205,7 +205,7 @@
       </div>
       {%- endif -%}
       <p class="about-footer condensed">&copy; {{ "now" | date: "%Y" }} {{ site.plainwhite.name }}</p>
-      {% endcapture %}
+      {%- endcapture %}
         {{ footer }}
       </section>
       <section class="content">
