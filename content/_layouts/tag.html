@@ -9,7 +9,7 @@ layout: default
   <ul class="posts">
     <li class="posts-labelgroup" id="posts-labelgroup">
       <h1 id="posts-label">posts</h1>
-      {% if site.plainwhite.search %}
+      {%- if site.plainwhite.search -%}
         <div class="search-container">
           <div class="search-section">
             <i class="icon-search"></i>
@@ -17,17 +17,12 @@ layout: default
           </div>
           <div class="search-results" id="search-results" data-placeholder="No Results" style="display: none;"></div>
         </div>
-      {% endif %}
+      {%- endif -%}
     </li>
 
     {%- for post in paginator.posts -%}
       {%- if post.tags contains page.tag and post.categories contains page.category -%}
-        <li
-          class="h-entry"
-          {% if post.lang %}
-            lang="{{ post.lang }}"
-          {% endif %}
-        >
+        <li class="h-entry" lang="{{ post.lang | default:"en" }}">
           {%- assign date_format = site.plainwhite.date_format | default: '%b %-d, %Y' -%}
           <a class="post-link" href="{{ post.url | relative_url }}">
             <h2 class="post-title p-name">{{ post.title | escape }}</h2>
@@ -58,32 +53,32 @@ layout: default
                 TODO(#315): Truncating text can cut off html entities
               {%- endcomment -%}
               {{ post.content | strip_html | truncate: 150 | escape }}
-            {% else %}
+            {%- else -%}
               {{ post.content | strip_html | truncate: 250 | escape }}
-            {% endif %}
+            {%- endif -%}
           </div>
         </li>
       {%- endif -%}
     {%- endfor -%}
   </ul>
 
-  {% if paginator.total_pages > 1 %}
+  {%- if paginator.total_pages > 1 -%}
     <ul class="pager">
-      {% if paginator.previous_page %}
+      {%- if paginator.previous_page -%}
         <li class="previous">
           <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"
             >&larr; Newer Posts</a
           >
         </li>
-      {% endif %}
+      {%- endif -%}
 
-      {% if paginator.next_page %}
+      {%- if paginator.next_page -%}
         <li class="next">
           <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
         </li>
-      {% endif %}
+      {%- endif -%}
     </ul>
-  {% endif %}
+  {%- endif -%}
 {%- endif -%}
 {% comment %}
   vim: ft=liquid
