@@ -24,6 +24,12 @@ export default defineConfig({
     // https://html.spec.whatwg.org/multipage/syntax.html#the-doctype
     "doctype-style": "off",
 
+    // Only validate using the definition from the HTML standard.
+    // NOTE: IDs starting with numbers etc. can require intricate escaping if
+    //       used in a selector. However, Kramdown gives little control over how
+    //       it generates IDs or things like footer citations.
+    "valid-id": ["error", { relaxed: true }],
+
     // TODO(#320): Don't use inline style in blog posts.
     "no-inline-style": "off",
 
@@ -31,7 +37,6 @@ export default defineConfig({
     "long-title": "off",
     "no-trailing-whitespace": "off",
     "unique-landmark": "off",
-    "valid-id": "off",
     "void-style": "off",
     "wcag/h30": "off",
     "wcag/h37": "off",
