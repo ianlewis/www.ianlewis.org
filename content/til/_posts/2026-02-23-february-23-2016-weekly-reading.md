@@ -36,6 +36,9 @@ software engineer.
     top priority. I think there are positives and negatives to either approach
     but it's something to keep in mind.
 
+    My notes are on
+    [Readwise](https://readwise.io/reader/shared/01khrv9c9kcs279kry9zz8bqqp).
+
 - [A forty-year career](https://lethain.com/forty-year-career/) -- _Will Larsen_
 
     This post mentions several themes to focus on during your career. The themes
@@ -56,6 +59,9 @@ software engineer.
     on it. In either case, it will be helpful to you no matter what stage in
     your career.
 
+    My notes are on
+    [Readwise](https://readwise.io/reader/shared/01khrv4dwh5yzxez06vec01c24).
+
 - [The Engineer/Manager Pendulum](https://charity.wtf/2017/05/11/the-engineer-manager-pendulum/) -- _Charity Majors_
 
     Charity is the co-founder and CTO of Honeycomb. Here she talks about
@@ -73,6 +79,9 @@ software engineer.
     hard to do that.
 
     Overall, not a huge fan of this post, but it does make some good points.
+
+    My notes are on
+    [Readwise](https://readwise.io/reader/shared/01khz2vt3tgn5vww5cygb7dxka).
 
 - [How to achieve career growth: opportunities, skills & sponsors](https://yenkel.dev/posts/how-to-achieve-career-growth-opportunities-skills-sponsors) -- _Damian Schenkelman_
 
@@ -93,3 +102,6 @@ software engineer.
     In that model you increase available opportunities by improving your visible
     skills and cultivating sponsors. He has a simple, but useful diagram to
     illustrate it.
+
+    My notes are on
+    [Readwise](https://readwise.io/reader/shared/01khyy7snt5qr2ab383wn6w3ct).
