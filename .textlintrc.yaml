@@ -233,6 +233,7 @@ rules:
       - "/\\bSandeep\\b/g"
       - "/\\bSato\\b/g"
       - "/\\bSanjay\\b/g"
+      - "/\\bSchenkelman\\b/g"
       - "/\\bShambaugh\\b/g"
       - "/\\bShibata\\b/g"
       - "/\\bShibukawa\\b/g"
