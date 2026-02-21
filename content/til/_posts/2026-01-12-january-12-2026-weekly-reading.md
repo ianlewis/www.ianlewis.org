@@ -2,7 +2,7 @@
 layout: post
 title: "TIL: January 12, 2026 - Weekly Reading: AI, Career, and the Economy"
 date: "2026-01-12 00:00:00 +0900"
-blog: til, ai
+blog: til
 tags: weekly-reading ai career
 render_with_liquid: false
 ---
