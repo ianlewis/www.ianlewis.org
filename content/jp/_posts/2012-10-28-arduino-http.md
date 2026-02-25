@@ -71,7 +71,7 @@ if __name__ == '__main__':
 
 Arduino の方はこの感じ。ピエゾブザーを出力PIN 8 につながっていて、非常に簡単。
 
-[![arduinoがピエゾブザーと繋がっています](/assets/images/682/2012-10-28_09.41.22_small.jpg)](/assets/images/682/2012-10-28_09.41.22_big.jpg)
+[![Arduinoがピエゾブザーと繋がっています](/assets/images/682/2012-10-28_09.41.22_small.jpg)](/assets/images/682/2012-10-28_09.41.22_big.jpg)
 
 Arduinoのコードは以下の通り。ArduinoのIDEで入力するコードは基本的にC++。２つの整数の８バイト(4バイトずつ)を受け取る。Arduinoが呼び出している`loop()`で`Serial.read()`して、`u_tag`の`union`データの埋めこむ。
 

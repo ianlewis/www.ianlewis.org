@@ -30,7 +30,7 @@ locale: ja
 ![Randy Blythe](/assets/images/683/100px-randy_blythe_fb_thumb.jpg)
 ![Randall Terry](/assets/images/683/100px-randall_terry_2_fb_thumb.jpg)
 ![R. Lee Wrights](/assets/images/683/100px-r._lee_wrights_august_2012_fb_thumb.jpg)
-![RJ Harris](/assets/images/683/100px-r.j._harris_fb_thumb.jpg)
+![R.J. Harris](/assets/images/683/100px-r.j._harris_fb_thumb.jpg)
 ![Peta Lindsay](/assets/images/683/100px-peta_lindsay_fb_thumb.jpg)
 ![Terry Jones](/assets/images/683/100px-pastor_terry_jones_before_the_march_fb_thumb.jpg)
 ![Laurence Kotlikoff](/assets/images/683/100px-kotlikoff_fb_thumb.jpg)

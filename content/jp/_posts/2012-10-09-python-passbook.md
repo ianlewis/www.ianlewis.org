@@ -44,7 +44,7 @@ Pass Type IDs画面で、「New Pass Type ID」ボタンをクリックしてく
 
 その手順が終わったら、Keychain Accessから鍵を`.p12`ファイルとして、エクスポートする(以降、`cert.p12`というファイル名とする)。エクスポートするときに、以前に作った秘密鍵ではなく、「Pass Type ID: ほげほげ」という証明書を選択して、右クリックして、「ほげほげを書き出す」というオプションを選びます。ここにパスワードを指定出来ます。パスワードを後で使いますので、覚えておいてください。
 
-[![AppleのKeyChain Accessアプリでダウンロードされた証明書が表示されています](/assets/images/681/export_cert_small.png)](/assets/images/681/export_cert_big.png)
+[![AppleのKeychain Accessアプリでダウンロードされた証明書が表示されています](/assets/images/681/export_cert_small.png)](/assets/images/681/export_cert_big.png)
 
 次に、「Apple Developer Relations Certification Authority」の証明書を`pem`ファイルとして書きだす。(これ以降、`AppleWWDRCA.pem`のファイル名とする)
 
