@@ -9,9 +9,6 @@ render_with_liquid: false
 locale: ja
 ---
 
-<!-- TODO(#339): Add alt text to images. -->
-<!-- markdownlint-disable MD045 -->
-
 最近、iPhoneのiOS 6でPassbookという機能が出ました。Passbookはイベントのチケットや、飛行機や船の搭乗券や、クーポンや、ポイントカードを管理出来る地味に便利なアプリ。
 
 僕は興味があって、Pythonでどう作るかを調べてみたので、ここで共有しようと思っている。Passbookはパスの更新の仕組みもありますが、とりあえず、パスを作るとところまで説明しようと。まずは、Appleの日本語ドキュメントの[「Passbook プログラミングガイド」](https://developer.apple.com/jp/devcenter/ios/library/japanese.html)をざっと見たほうがいいかもしれない。
@@ -30,24 +27,24 @@ Pass Type IDを要求する。まずは、[iOS Dev Center](https://developer.app
 
 そして、右側の「iOS Provisioning Portal」に移動して、左側の「Pass Type IDs」をクリックする。
 
-[![](/assets/images/681/provisioning_portal_thumbnail.png)](/assets/images/681/provisioning_portal_big.png)
-[![](/assets/images/681/pass_type_ids_thumbnail.png)](/assets/images/681/pass_type_ids_big.png)
+[![iOS Dev CenterのメニューでiOS Provisioning Portalのリンクを表示](/assets/images/681/provisioning_portal_thumbnail.png)](/assets/images/681/provisioning_portal_big.png)
+[![iOS Provisioning PortalのメニューでPass Type IDsが出ます](/assets/images/681/pass_type_ids_thumbnail.png)](/assets/images/681/pass_type_ids_big.png)
 
 Pass Type IDs画面で、「New Pass Type ID」ボタンをクリックしてください。
 
-[![](/assets/images/681/new_pass_type_small.png)](/assets/images/681/new_pass_type_big.png)
+[![New Pass Type IDのボタン](/assets/images/681/new_pass_type_small.png)](/assets/images/681/new_pass_type_big.png)
 
 これで適当なDescription と Identifierを入力してください。Identifierは`pass.<ドメイン名>.<パス名>`という風に設定するのがおすすめ。「Submit」を押したら、ファイルアップロードの画面が出ます。ここに自分が作った公開鍵をアップします。
 
 アップしたら、Apple側でサインした証明書をダウンロードします。このファイルを保存して、ダブルクリックすることで、キーチェーンアシスタントにインポートします。
 
-[![](/assets/images/681/install_cert_small.png)](/assets/images/681/install_cert_big.png)
+[![Download & Install Your Pass Certificate画面。Downloadボタンがある](/assets/images/681/install_cert_small.png)](/assets/images/681/install_cert_big.png)
 
 次は、[Apple のルート証明書](http://developer.apple.com/certificationauthority/AppleWWDRCA.cer)をダウンロードして、キーチェーンアシスタントにインポートします。
 
 その手順が終わったら、Keychain Accessから鍵を`.p12`ファイルとして、エクスポートする(以降、`cert.p12`というファイル名とする)。エクスポートするときに、以前に作った秘密鍵ではなく、「Pass Type ID: ほげほげ」という証明書を選択して、右クリックして、「ほげほげを書き出す」というオプションを選びます。ここにパスワードを指定出来ます。パスワードを後で使いますので、覚えておいてください。
 
-[![](/assets/images/681/export_cert_small.png)](/assets/images/681/export_cert_big.png)
+[![AppleのKeyChain Accessアプリでダウンロードされた証明書が表示されています](/assets/images/681/export_cert_small.png)](/assets/images/681/export_cert_big.png)
 
 次に、「Apple Developer Relations Certification Authority」の証明書を`pem`ファイルとして書きだす。(これ以降、`AppleWWDRCA.pem`のファイル名とする)
 
@@ -189,6 +186,4 @@ response['Content-Disposition'] = 'attachment; filename=pass.pkpass'
 
 これで、zipファイルがダウンロードできて、iPhoneで見れるはず。
 
-![](/assets/images/681/passbook_big.png)
-
-<!-- markdownlint-enable MD045 -->
+![Apple Passbookで航空券のようなカードで、QRコードが表示されています](/assets/images/681/passbook_big.png)

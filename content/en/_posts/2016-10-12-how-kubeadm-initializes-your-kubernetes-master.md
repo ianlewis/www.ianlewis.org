@@ -8,9 +8,6 @@ tags: tech containers kubernetes
 render_with_liquid: false
 ---
 
-<!-- TODO(#339): Add alt text to images. -->
-<!-- markdownlint-disable MD045 -->
-
 `kubeadm` is a new tool that is part of the Kubernetes distribution as of 1.4.0 which helps you to install and set up a Kubernetes cluster. One of the most frequent criticisms of Kubernetes is that it's hard to install. `kubeadm` really makes this easier so I suggest you give it a try.
 
 The [documentation for kubeadm](http://kubernetes.io/docs/getting-started-guides/kubeadm/) outlines how to set up a cluster but as I was doing that I found how `kubeadm` actually sets up the master to be really interesting so I wanted to share that here.
@@ -19,7 +16,7 @@ The [documentation for kubeadm](http://kubernetes.io/docs/getting-started-guides
 
 The Kubernetes control plane consists of the Kubernetes API server (`kube-apiserver`), controller manager (`kube-controller-manager`), and scheduler (`kube-scheduler`). The API server depends on `etcd` so an etcd cluster is also required.
 
-<img class="align-center" src="/assets/images/755/kubernetes-arch.png" />
+![The Kubernetes architecture including control plane components](/assets/images/755/kubernetes-arch.png){: .align-center}
 
 These components need to be installed on your master and can be installed in a number of ways. But there are a number of things you have to think about, like how do you make sure each of them are always running? How do you update the components easily with as little impact to the system as possible? You could install them directly on the host machine by downloading them and running them but if they crash then you'd have to restart them manually.
 
@@ -63,7 +60,7 @@ So our Kubelet was started. But how? The Kubelet will monitor the control plane 
 
 We have a process architecture something like the following. It's important to note that this is not a diagram of the process tree but rather a diagram showing which components start and monitor each other.
 
-<img class="align-center" src="/assets/images/755/arch.png" />
+![systemd initializes the kubelet which starts the control plane components](/assets/images/755/arch.png){: .align-center}
 
 So now we have our Kubelet running our control plane components and it is connected to the API server just like any other Kubelet node. We can verify that:
 
@@ -212,5 +209,3 @@ One of the most important things that `kubeadm` doesn't do yet is set up a multi
 `kubeadm` also doesn't yet install cloud provider integrations so things like [load balancers](http://kubernetes.io/docs/user-guide/load-balancer/) and [persistent volumes](http://kubernetes.io/docs/user-guide/persistent-volumes/walkthrough/) won't work.
 
 Hopefully that gave you an idea of what `kubeadm` is doing. Running the components using the Kubelet is a great practice that ensures the components are running and makes it easier to upgrade them later. When Kubernetes 1.5 comes out we can expect to see relatively painless upgrades for users of `kubeadm`.
-
-<!-- markdownlint-enable MD045 -->

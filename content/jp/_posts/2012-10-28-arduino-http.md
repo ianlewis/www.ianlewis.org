@@ -9,12 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
-<!-- TODO(#339): Add alt text to images. -->
-<!-- markdownlint-disable MD045 -->
-
 今週末のPython温泉で、最近買った、Arduinoを初めて触った。[Arduino+Pythonハッキング勉強会](http://connpass.com/event/1107/)の[資料](http://kitagami.org/Study/arduinopy20120917.html)を見て、何か同じようなもの作れないかと思った。
 
-Starter Kitを買ったので、Arduinoだけじゃなくて、いろなものが付いてきた。そのなかの一つはピエゾバザー。バザーの動作を確認した後に、HTTPでbuzzerを操作できたらいいんじゃないかと思って、簡単なHTTP APIを作った。
+Starter Kitを買ったので、Arduinoだけじゃなくて、いろなものが付いてきた。そのなかの一つはピエゾブザー。ブザーの動作を確認した後に、HTTPでbuzzerを操作できたらいいんじゃないかと思って、簡単なHTTP APIを作った。
 
 サーバーは最近作った[`namake`](http://github.com/IanLewis/namake)ベースで、Arduinoとの通信はPySerialでシリアルUSB。音のピッチと長さ(ms)をHTTP `GET`パラメターで受け取って、Arduinoに流す。
 
@@ -72,9 +69,9 @@ if __name__ == '__main__':
     run_devserver(app)
 ```
 
-Arduino の方はこの感じ。ピエゾバザーを出力PIN 8 につながっていて、非常に簡単。
+Arduino の方はこの感じ。ピエゾブザーを出力PIN 8 につながっていて、非常に簡単。
 
-[![](/assets/images/682/2012-10-28_09.41.22_small.jpg)](/assets/images/682/2012-10-28_09.41.22_big.jpg)
+[![arduinoがピエゾブザーと繋がっています](/assets/images/682/2012-10-28_09.41.22_small.jpg)](/assets/images/682/2012-10-28_09.41.22_big.jpg)
 
 Arduinoのコードは以下の通り。ArduinoのIDEで入力するコードは基本的にC++。２つの整数の８バイト(4バイトずつ)を受け取る。Arduinoが呼び出している`loop()`で`Serial.read()`して、`u_tag`の`union`データの埋めこむ。
 
@@ -148,5 +145,3 @@ void loop() {
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen>
 </iframe>
-
-<!-- markdownlint-enable MD045 -->
