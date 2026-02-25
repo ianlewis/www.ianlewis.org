@@ -35,11 +35,9 @@ export default defineConfig({
 
     // TODO(#315): Enable these rules once the issues are resolved.
     "long-title": "off",
+    // TODO(#577): Remove trailing whitespace from generated HTML.
     "no-trailing-whitespace": "off",
     "unique-landmark": "off",
     "void-style": "off",
-    "wcag/h30": "off",
-    "wcag/h37": "off",
-    "wcag/h67": "off",
   },
 });

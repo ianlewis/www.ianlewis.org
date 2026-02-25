@@ -9,9 +9,6 @@ render_with_liquid: false
 locale: ja
 ---
 
-<!-- TODO(#339): Add alt text to images. -->
-<!-- markdownlint-disable MD045 -->
-
 [`http://ae35notimpressed.ian-test-hr.appspot.com/`](http://ae35notimpressed.ian-test-hr.appspot.com/)
 
 私が作った、上記のアプリはもう見ているかもしれませんが、何で作ったか、どういう意味なのかがわからない人が多くて、ちょっとブログで説明しようかなと思って、書いてみた。
@@ -22,15 +19,13 @@ locale: ja
 
 １１月２４日のPyFesで[Connpass](http://connpass.com/)チームとして[@ae35](http://twitter.com/ae35)と２人で発表しました。発表している時に、Python界のカメラマンがいっぱい写真をとりました。偶然なことではありますがae35の表情は想像してみるとあまり感心してないように見える写真がいくつかとられた。
 
-[![](/assets/images/686/ae351_thumbnail.jpg)](/assets/images/686/ae351.jpg)
-
-[![](/assets/images/686/ae352_thumbnail.jpg)](/assets/images/686/ae352.jpg)
-
-[![](/assets/images/686/ae353_thumbnail.jpg)](/assets/images/686/ae353.jpg)
+[![私とAE35が発表している](/assets/images/686/ae351_thumbnail.jpg)](/assets/images/686/ae351.jpg)
+[![私とAE35が発表している](/assets/images/686/ae352_thumbnail.jpg)](/assets/images/686/ae352.jpg)
+[![私とAE35が発表している](/assets/images/686/ae353_thumbnail.jpg)](/assets/images/686/ae353.jpg)
 
 ## McKayla is Not Impressed
 
-![](/assets/images/686/mckayla_medium.jpg)
+![McKayla Maroney選手は銀メダルを持ちながら、ガッカリの表情をしている](/assets/images/686/mckayla_medium.jpg)
 
 その時に、McKayla Maroneyさんの「[McKayla is Not Impressed](http://knowyourmeme.com/memes/mckayla-is-not-impressed)」というmemeを思い出した。McKaylaさんは、銀メダル獲得した時に、金じゃなかったというがっかり顔の写真が取られた。その写真をPhotoshopして、本当にすごいことに感心しない McKayla さんの画像がいっぱいネット上で広げた。
 
@@ -40,9 +35,9 @@ locale: ja
 
 その後、僕は以下のの2つの画像を作って、Twitterで投稿した。AE35はエレクトロのDJなので、一つは俺が作っている音楽に不関心のような意味を出そうとした。
 
-[![](/assets/images/686/ae35-not-impressed_small.jpg)](/assets/images/686/ae35-not-impressed.jpg)
+[![AE35 is not impressedのmeme画像](/assets/images/686/ae35-not-impressed_small.jpg)](/assets/images/686/ae35-not-impressed.jpg)
 
-[![](/assets/images/686/ian-beat_small.jpg)](/assets/images/686/ian-beat.jpg)
+[![AE35 is not impressedのmeme画像](/assets/images/686/ian-beat_small.jpg)](/assets/images/686/ian-beat.jpg)
 
 ## Moriyoshi がやってきた
 
@@ -62,6 +57,4 @@ locale: ja
 
 新しい meme が生まれた。。
 
-![](/assets/images/686/meme.png)
-
-<!-- markdownlint-enable MD045 -->
+![AE35 is not impressedのmemeテンプレ画像](/assets/images/686/meme.png)

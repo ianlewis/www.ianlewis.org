@@ -9,9 +9,6 @@ render_with_liquid: false
 locale: ja
 ---
 
-<!-- TODO(#339): Add alt text to images. -->
-<!-- markdownlint-disable MD045 -->
-
 ![PyCon JP](/assets/images/661/logo_small.png)
 
 スタッフとして、楽しい楽しいPyCon JP に参加しました。 今回、約200人の Python プログラマーを集めることを成功しました。 本当に
@@ -24,7 +21,7 @@ PyCon JP 2011 で始めて感じていました。海外の方もいらっしゃ
 もっと大きい規模で、もっと国際的、もっと日本人エンジニアの素晴らしさを
 世界に見せるようなイベントができればいいなと思っています。
 
-[![](/assets/images/662/audience_medium.jpg)](/assets/images/662/audience.jpg)
+[![発表部屋でたくさんの参加者が聞いています](/assets/images/662/audience_medium.jpg)](/assets/images/662/audience.jpg)
 
 僕はスタッフとして、努めていましたが、全然偉い人ではありません。 僕はスタッフの偉い人たちのお陰で、皆さんが集まるチャンスができました。
 役に立つイベントは発表者のお陰です。そして、楽しいイベントができたのは 参加者の皆さんのお陰だと思っています。
@@ -46,5 +43,3 @@ PyCon JP 2011 で始めて感じていました。海外の方もいらっしゃ
 私の発表のスライトはこちら: [`http://ianlewis.bitbucket.org/pyconjp_2011_slides/template/index.html`](http://ianlewis.bitbucket.org/pyconjp_2011_slides/template/index.html)
 
 皆さん、どうもありがとうございました！
-
-<!-- markdownlint-enable MD045 -->
