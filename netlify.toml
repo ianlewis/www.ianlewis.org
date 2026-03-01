@@ -54,6 +54,11 @@ command = "make jekyll-build"
   to = "/til/2025/05/19/may-19-2025-weekly-reading"
   status = 301
 
+[[redirects]]
+  from = "/til/2026/02/23/february-23-2016-weekly-reading"
+  to = "/til/2026/02/23/february-23-2026-weekly-reading"
+  status = 301
+
 # Removed posts
 ############################
 

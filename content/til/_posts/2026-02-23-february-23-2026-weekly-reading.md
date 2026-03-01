@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "TIL: February 23, 2016 - Weekly Reading: Staff+ engineer career growth"
+title: "TIL: February 23, 2026 - Weekly Reading: Staff+ engineer career growth"
 date: "2026-02-23 09:00:00 +0900"
 blog: til
 tags: weekly-reading career
