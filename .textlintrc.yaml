@@ -90,6 +90,7 @@ rules:
       - "/\\bAhmet\\b/g"
       - "/\\bAjay\\b/g"
       - "/\\bAmit\\b/g"
+      - "/\\bAmodei\\b/g"
       - "/\\bAndreessen\\b/g"
       - "/\\bAoife\\b/g"
       - "/\\bAndré(?:^|\\s)/g"
@@ -101,6 +102,7 @@ rules:
       - "/\\bAtsushi\\b/g"
       - "/\\bAyer\\b/g"
       - "/\\bBalahan\\b/g"
+      - "/\\bBalaji\\b/g"
       - "/\\bBerryman\\b/g"
       - "/\\bBlauzvern\\b/g"
       - "/\\bBleecher\\b/g"
@@ -503,6 +505,7 @@ rules:
       - "/\\bNunjucks\\b/g" # JavaScript templating engine
       - "/\\bOAuth2?\\b/g" # Open standard for access delegation
       - "/\\bOpenClaw\\b/g" # AI personal assistant (openclaw.ai)
+      - "/\\bOpenSSH\\b/g" # OpenSSH secure shell implementation
       - "/\\bOpenShift\\b/g" # Red Hat's container platform
       - "/\\bOpenSocial\\b/g" # Social networking protocol
       - "/\\bOpenStack\\b/g" # OpenStack cloud computing platform
@@ -584,6 +587,7 @@ rules:
       - "/\\b[Mm]emcached\\b/g"
       - "/\\b[Nn]ginx\\b/g"
       - "/\\b[Ww]i-?[Ff]i\\b/g"
+      - "/\\bXZ\\sUtils\\b/g" # XZ Utils, a data compression software
 
       # Websites/Organizations/Events
       ##########################################################################
@@ -605,6 +609,7 @@ rules:
       - "/\\bNSStudy\\b/g"
       - "/\\bRailsConf\\b/g" # Ruby on Rails Conference
       - "/\\b[Pp]y[Ss]pa\\b/g" # Python Onsen
+      - "/\\bVeritasium\\b/g" # Veritasium YouTube channel
 
       # Tech Terminology/Jargon
       ##########################################################################
@@ -716,6 +721,7 @@ rules:
       - "/\\bDM\\b/g" # Direct Message
       - "/\\bDNS\\b/g" # Domain Name System
       - "/\\bDOM\\b/g" # Document Object Model
+      - "/\\bD[oO][DW]\\b/g" # Department of Defense/War, Day of the Week
       - "/\\bDSL\\b/g" # Domain-Specific Language
       - "/\\bDTD\\b/g" # Document Type Definition
       - "/\\bEBS\\b/g" # Amazon Elastic Block Store
@@ -833,13 +839,16 @@ rules:
       - "/\\b[Dd]umbed-down\\b/g"
       # https://dictionary.cambridge.org/dictionary/english/explainer
       - "/\\b[Ee]xplainer\\b/g" # One who explains
-      # https://www.merriam-webster.com/dictionary/per%20capita
-      - "/\\b[Pp]er\\scapita\\b/g" # per person
-
-      # https://dictionary.cambridge.org/dictionary/english/varyingly
-      - "/\\b[Vv]aryingly\\b/g"
       # https://dictionary.cambridge.org/dictionary/english/incentivize
       - "/\\b[Ii]ncentivized?\\b/g" # Provided with an incentive
+      # https://www.merriam-webster.com/dictionary/per%20capita
+      - "/\\b[Pp]er\\scapita\\b/g" # per person
+      # https://dictionary.cambridge.org/dictionary/english/varyingly
+      - "/\\b[Vv]aryingly\\b/g"
+      # https://en.wiktionary.org/wiki/warfighter
+      - "/\\b[Ww]arfighters?\\b/g"
+      # Plural possessive form of "worker"
+      - "/\\b[Ww]orkers'?\\b/g"
 
       # Internet slang/terms
       # https://www.merriam-webster.com/dictionary/amirite
