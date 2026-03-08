@@ -139,6 +139,7 @@ rules:
       - "/\\bEnamoto\\b/g"
       - "/\\bEno\\b/g"
       - "/\\bFikes\\b/g"
+      - "/\\bFong\\b/g"
       - "/\\bFoppe\\b/g"
       - "/\\bFumi\\b/g"
       - "/\\bGageot\\b/g"
@@ -146,6 +147,7 @@ rules:
       - "/\\bGeuter\\b/g"
       - "/\\bGhanan\\b/g"
       - "/\\bGhemawat\\b/g"
+      - "/\\bGloaguen\\b/g"
       - "/\\bGodbolt\\b/g"
       - "/\\bGowripalan\\b/g"
       - "/\\bGraeme\\b/g"
@@ -188,6 +190,7 @@ rules:
       - "/\\bLacasse\\b/g"
       - "/\\bLal\\b/g" # Data's daughter
       - "/\\bLiao\\b/g"
+      - "/\\bLiles\\b/g"
       - "/\\bLonghui\\b/g"
       - "/\\bLorin\\b/g"
       - "/\\bLifland\\b/g"
@@ -215,6 +218,9 @@ rules:
       - "/\\bMaroney\\b/g"
       - "/\\bMoscone\\b/g"
       - "/\\bMustafa\\b/g"
+      - "/\\bMüller\\b/g"
+      - "/\\bMündler\\b/g"
+      - "/\\bNiels\\b/g"
       - "/\\bNeistat\\b/g" # Casey Neistat
       - "/\\bNaoki\\b/g"
       - "/\\bNghia\\b/g"
@@ -228,6 +234,7 @@ rules:
       - "/\\bPopa\\b/g"
       - "/\\bRaluca\\b/g"
       - "/\\bRami\\b/g"
+      - "/\\bRaychev\\b/g"
       - "/\\bReiko\\b/g"
       - "/\\bRokicki\\b/g"
       - "/\\bRaykar\\b/g"
@@ -262,6 +269,7 @@ rules:
       - "/\\bTarek\\b/g"
       - "/\\bTerada\\b/g"
       - "/\\bTetsuya\\b/g"
+      - "/\\bThibaud\\b/g"
       - "/\\bThiwanka\\b/g"
       - "/\\bTrong\\b/g"
       - "/\\bTsinghua\\b/g"
@@ -276,6 +284,7 @@ rules:
       - "/\\bXinkai\\b/g"
       - "/\\bXu\\b/g"
       - "/\\bVander\\b/g"
+      - "/\\bVechev\\b/g"
       - "/\\bVella\\b/g"
       - "/\\bVoege\\b/g"
       - "/\\bYamaguchi\\b/g"
@@ -406,6 +415,7 @@ rules:
       - "/\\bWebFaction\\b/g" # Web hosting service
       - "/\\bWindsurf\\b/g" # Windsurf, AI IDE
       - "/\\bdotCloud\\b/g" # PaaS company (predecessor to Docker)
+      - "/\\bgrith\\b/g" # grith.ai : AI sandboxing tool
 
       # Product Names
       ##########################################################################
@@ -661,10 +671,12 @@ rules:
       - "/\\b[Pp]aywall(ed)?\\b/g"
       - "/\\b[Pp]ermalinks?\\b/g"
       - "/\\b[Pp]laintext\\b/g"
+      - "/\\b[Pp]ost-mortem\\b/g" # post + mortem (after the fact analysis)
       - "/\\b[Pp]reempt(ible)?\\b/g"
       - "/\\b[Pp]roxied\\b/g" # proxy + -ed
       - "/\\b[Ii]mpactful\\b/g" # impact + -ful
       - "/\\b[Ii]ntegrations\\b/g" # irregular plural-form
+      - "/\\b[Rr]oadmaps?\\b/g"
       - "/\\b[Rr]evsets?\\b/g" # Revision Set (Mercurial)
       - "/\\b[Ss]andboxing\\b/g" # process of isolating
       - "/\\b[Ss]corecarding\\b/g" # Scorecarding (process of evaluating)
@@ -690,6 +702,7 @@ rules:
       - "/\\bACL\\b/g" # Access Control List
       - "/\\bACPI\\b/g" # Advanced Configuration and Power Interface
       - "/\\bADD\\b/g" # Attention Deficit Disorder
+      - "/\\bADRs?\\b/g" # Architecture Decision Record
       - "/\\bALSA\\b/g" # Advanced Linux Sound Architecture
       - "/\\bAPAC\\b/g" # Asia-Pacific
       - "/\\bAPIs?\\b/g" # Application Programming Interface
@@ -704,6 +717,7 @@ rules:
       - "/\\bCBT\\b/g" # Cognitive Behavioral Therapy
       - "/\\bCC0\\b/g" # Creative Commons Zero
       - "/\\bCFP\\b/g" # Call for Papers/Proposals
+      - "/\\bCIRs?\\b/g" # Change Intent Record
       - "/\\bCJK\\b/g" # Chinese, Japanese, and Korean
       - "/\\bCLs?\\b/g" # Change List (version control)
       - "/\\bCNCF\\b/g" # Cloud Native Computing Foundation
@@ -843,6 +857,8 @@ rules:
       - "/\\b[Ii]ncentivized?\\b/g" # Provided with an incentive
       # https://www.merriam-webster.com/dictionary/per%20capita
       - "/\\b[Pp]er\\scapita\\b/g" # per person
+      # https://en.wiktionary.org/wiki/uncurated
+      - "/\\b[Uu]ncurated\\b/g" # not curated
       # https://dictionary.cambridge.org/dictionary/english/varyingly
       - "/\\b[Vv]aryingly\\b/g"
       # https://en.wiktionary.org/wiki/warfighter
