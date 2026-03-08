@@ -17,6 +17,9 @@ base = "."
 publish = "_site/"  # relative to `base` directory
 command = "make jekyll-build"
 
+[dev]
+  command = "make jekyll-serve"
+
 [context.dev]
   command = "make jekyll-build"
 
