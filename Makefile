@@ -195,6 +195,11 @@ bundle-install: Gemfile.lock
 	@# NOTE: Bundler deployment mode is activated.
 	@bundle check || bundle install
 
+.PHONY: jekyll-serve
+jekyll-serve: bundle-install
+	@# bash \
+	bundle exec jekyll serve $(JEKYLL_BUILD_OPTIONS)
+
 .PHONY: jekyll-build
 jekyll-build: bundle-install
 	@# bash \
