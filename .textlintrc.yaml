@@ -64,7 +64,7 @@ rules:
       - "/\\b[Uu]serspace\\b/g"
       - "/\\b[Vv]endored\\b/g"
       - "/\\b[Vv]irtualenv\\b/g"
-      - "/\\b[vr]?[0-9]+\\b/g"
+      - "/\\b[vr]?[0-9]+\\b/g" # version numbers, e.g. v2, r56
       - ":white_check_mark:"
 
       # Common
