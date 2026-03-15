@@ -64,7 +64,7 @@ rules:
       - "/\\b[Uu]serspace\\b/g"
       - "/\\b[Vv]endored\\b/g"
       - "/\\b[Vv]irtualenv\\b/g"
-      - "/\\bv?[0-9]+\\b/g"
+      - "/\\b[vr]?[0-9]+\\b/g"
       - ":white_check_mark:"
 
       # Common
@@ -94,6 +94,7 @@ rules:
       - "/\\bAndreessen\\b/g"
       - "/\\bAoife\\b/g"
       - "/\\bAndré(?:^|\\s)/g"
+      - "/\\bAnkit\\b/g"
       - "/\\bArko\\b/g"
       - "/\\bArmin\\b/g"
       - "/\\bAtamel\\b/g"
@@ -675,6 +676,7 @@ rules:
       - "/\\b[Pp]reempt(ible)?\\b/g"
       - "/\\b[Pp]roxied\\b/g" # proxy + -ed
       - "/\\b[Ii]mpactful\\b/g" # impact + -ful
+      - "/\\b[Ii]nlin(ers?|ing)\\b/g" # something that inlines (e.g. code)
       - "/\\b[Ii]ntegrations\\b/g" # irregular plural-form
       - "/\\b[Rr]oadmaps?\\b/g"
       - "/\\b[Rr]evsets?\\b/g" # Revision Set (Mercurial)
@@ -855,6 +857,9 @@ rules:
       - "/\\b[Ee]xplainer\\b/g" # One who explains
       # https://dictionary.cambridge.org/dictionary/english/incentivize
       - "/\\b[Ii]ncentivized?\\b/g" # Provided with an incentive
+      # https://dictionary.cambridge.org/dictionary/english/modernization
+      # https://en.wiktionary.org/wiki/modernizations#English
+      - "/\\b[Mm]odernizations?\\b/g" # the process of modernizing
       # https://www.merriam-webster.com/dictionary/per%20capita
       - "/\\b[Pp]er\\scapita\\b/g" # per person
       # https://en.wiktionary.org/wiki/uncurated

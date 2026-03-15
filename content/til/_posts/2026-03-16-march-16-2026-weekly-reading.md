@@ -25,7 +25,8 @@ render_with_liquid: false
     code review so we shouldn't do it but instead use them to verify some vague
     acceptance criteria? Humans apparently shouldn't care at all about the code,
     only the "intent", but we're also supposed to be able to handle important
-    areas like auth or modifying database schemas should be handled by humans.
+    areas like authentication or modifying database schemas should be handled by
+    humans.
 
     I think the end result will be that the engineers aren't going to have any
     idea how the system works, there will be huge churn, and things will break
@@ -64,7 +65,7 @@ render_with_liquid: false
     My notes are on
     [Readwise](https://readwise.io/reader/shared/01kkkb814es3damyep24h6c843).
 
-- [AI autocomplete doesn’t just change how you write. It changes how you think](https://www.scientificamerican.com/article/ai-autocomplete-doesnt-just-change-how-you-write-it-changes-how-you-think/) -- _Claire Cameron, Scientific American_
+- [AI autocomplete doesn't just change how you write. It changes how you think](https://www.scientificamerican.com/article/ai-autocomplete-doesnt-just-change-how-you-write-it-changes-how-you-think/) -- _Claire Cameron, Scientific American_
 
     This article cites recent research showing that AI generated text can
     influence how people respond when entering their views in a survey. It's
