@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "TIL: March 16, 2026 - Weekly Reading"
+title: "TIL: March 16, 2026 - Weekly Reading: How AI shapes our thinking and improved go fix tool"
 date: "2026-03-16 09:00:00 +0900"
 blog: til
-tags: weekly-reading
+tags: weekly-reading ai go
 render_with_liquid: false
 ---
 
