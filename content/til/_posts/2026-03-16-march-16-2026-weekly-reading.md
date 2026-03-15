@@ -18,17 +18,17 @@ render_with_liquid: false
 
     Instead, Ankit argues, we should put up "deterministic guardrails" to verify
     that the code being produced is correct. His idea is that these guardrails
-    should come in the form of "acceptance criteria" that takes the form of
+    should come in the form of "acceptance criteria" that take the form of
     English text that agents use to verify the code that was produced.
 
-    I can't tell you how wrong I think this is. Agents are going to be bad a
+    I can't tell you how wrong I think this is. Agents are going to be bad at
     code review so we shouldn't do it but instead use them to verify some vague
     acceptance criteria? Humans apparently shouldn't care at all about the code,
     only the "intent", but we're also supposed to be able to handle important
     areas like auth or modifying database schemas should be handled by humans.
 
     I think the end result will be that the engineers aren't going to have any
-    idea how the system works, there will be huge churn, and thinks will break
+    idea how the system works, there will be huge churn, and things will break
     often due to vague acceptance criteria. Any escalations will be exactly the
     kind of rubber-stamp reviews that Ankit thinks are a waste of time.
 
@@ -37,7 +37,7 @@ render_with_liquid: false
 
 ## How AI Shapes Our Thinking
 
-- [Three more AI psychoses](https://readwise.io/reader/shared/01kkkb814es3damyep24h6c843) -- _Cory Doctorow_
+- [Three more AI psychoses](https://pluralistic.net/2026/03/12/normal-technology/) -- _Cory Doctorow_
 
     Cory Doctorow, as always, does an excellent job of putting the anxiety many
     of us feel about AI into words. He mentions three "AI psychoses" that people
@@ -57,7 +57,7 @@ render_with_liquid: false
 
     [This reaction thread](https://hachyderm.io/@glyph@mastodon.social/116220202809001014)
     by Glyph (author of the [Twisted](https://twisted.org/) Python library) is
-    pretty good. He points out that much of the changes that AI will cause in
+    pretty good. He points out that many of the changes that AI will cause in
     people's thinking will fly under the radar compared to the extreme "AI
     psychosis" delusions people have.
 
@@ -85,7 +85,7 @@ render_with_liquid: false
     new features.
 
     Go 1.26 includes a rewrite of `go fix` using the new [Go analysis
-    framework](https://pkg.go.dev/golang.org/x/tools/go/analysis) with includes
+    framework](https://pkg.go.dev/golang.org/x/tools/go/analysis) which includes
     a full framework for writing reusable analyzers for Go code.
 
     This is a really cool tool and I've noticed that many of the existing
