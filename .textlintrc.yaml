@@ -93,7 +93,7 @@ rules:
       - "/\\bAmodei\\b/g"
       - "/\\bAndreessen\\b/g"
       - "/\\bAoife\\b/g"
-      - "/\\bAndré(?:^|\\s)?/g"
+      - "/\\bAndré/g"
       - "/\\bAnkit\\b/g"
       - "/\\bArko\\b/g"
       - "/\\bArmin\\b/g"
