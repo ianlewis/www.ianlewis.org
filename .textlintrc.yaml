@@ -93,7 +93,7 @@ rules:
       - "/\\bAmodei\\b/g"
       - "/\\bAndreessen\\b/g"
       - "/\\bAoife\\b/g"
-      - "/\\bAndré(?:^|\\s)/g"
+      - "/\\bAndré(?!\\p{L})/g"
       - "/\\bAnkit\\b/g"
       - "/\\bArko\\b/g"
       - "/\\bArmin\\b/g"
@@ -102,6 +102,7 @@ rules:
       - "/\\bAtsuo\\b/g"
       - "/\\bAtsushi\\b/g"
       - "/\\bAyer\\b/g"
+      - "/\\bAytaş(?!\\p{L})/g"
       - "/\\bBalahan\\b/g"
       - "/\\bBalaji\\b/g"
       - "/\\bBerryman\\b/g"
@@ -199,6 +200,7 @@ rules:
       - "/\\bLonelyBob\\b/g"
       - "/\\bMadoff\\b/g"
       - "/\\bMakabi\\b/g"
+      - "/\\bMatheus\\b/g"
       - "/\\bMcCune\\b/g"
       - "/\\bMcKayla\\b/g"
       - "/\\bMaki\\b/g"
@@ -296,10 +298,11 @@ rules:
       - "/\\bYoshi\\b/g"
       - "/\\bYoshiki\\b/g"
       - "/\\bYosuke\\b/g"
+      - "/\\bYusuf\\b/g"
       - "/\\bZach\\b/g"
       - "/\\bZeyliger\\b/g"
       - "/\\bZhiyanov\\b/g"
-      - "/\\bZiadé(?:^|\\s)?/g"
+      - "/\\bZiadé(?!\\p{L})/gu"
       - "/\\bZvi\\b/g"
       - "/\\bde\\sla\\sSota\\b/g"
       - "/\\bvan\\sder\\sGraff\\b/g"
@@ -896,7 +899,7 @@ rules:
       - "/\\b[Rr]efram(e|ed|ing)\\b/g" # To frame again or differently
 
       - "/\\bAdiós\\b/g" # Spanish for "Goodbye"
-      - "/\\bclicé(?:^|\\s)/g" # French for "clicked"
+      - "/\\bclicé(?:\\s|$)/g" # French for "clicked"
 
       - "/\\bFuturama\\b/g" # Animated science fiction sitcom
 
