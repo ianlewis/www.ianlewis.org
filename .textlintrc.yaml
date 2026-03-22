@@ -93,7 +93,7 @@ rules:
       - "/\\bAmodei\\b/g"
       - "/\\bAndreessen\\b/g"
       - "/\\bAoife\\b/g"
-      - "/\\bAndré/g"
+      - "/\\bAndré(?:\\s|$)/g"
       - "/\\bAnkit\\b/g"
       - "/\\bArko\\b/g"
       - "/\\bArmin\\b/g"
@@ -102,7 +102,7 @@ rules:
       - "/\\bAtsuo\\b/g"
       - "/\\bAtsushi\\b/g"
       - "/\\bAyer\\b/g"
-      - "/\\bAytaş(?:^|\\s)?/g"
+      - "/\\bAytaş(?:\\s|$)/g"
       - "/\\bBalahan\\b/g"
       - "/\\bBalaji\\b/g"
       - "/\\bBerryman\\b/g"
@@ -302,7 +302,7 @@ rules:
       - "/\\bZach\\b/g"
       - "/\\bZeyliger\\b/g"
       - "/\\bZhiyanov\\b/g"
-      - "/\\bZiadé(?:^|\\s)?/g"
+      - "/\\bZiadé(?:\\s|$)/g"
       - "/\\bZvi\\b/g"
       - "/\\bde\\sla\\sSota\\b/g"
       - "/\\bvan\\sder\\sGraff\\b/g"
@@ -899,7 +899,7 @@ rules:
       - "/\\b[Rr]efram(e|ed|ing)\\b/g" # To frame again or differently
 
       - "/\\bAdiós\\b/g" # Spanish for "Goodbye"
-      - "/\\bclicé(?:^|\\s)/g" # French for "clicked"
+      - "/\\bclicé(?:\\s|$)/g" # French for "clicked"
 
       - "/\\bFuturama\\b/g" # Animated science fiction sitcom
 
