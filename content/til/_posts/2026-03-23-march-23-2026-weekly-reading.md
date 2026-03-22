@@ -18,7 +18,7 @@ render_with_liquid: false
 
     I've personally more often encountered software that didn't accomplish what
     I wanted or was outright broken than software that I felt was simply too
-    complex. The key is having just the right about of complexity to solve the
+    complex. The key is having just the right amount of complexity to solve the
     problem at hand, while also maintaining enough flexibility to adapt to
     likely future change.
 
@@ -53,6 +53,6 @@ render_with_liquid: false
 
     One thing that the article points out that is often overlooked is how social
     connections can help you maintain motivation to maintain healthy habits. I
-    find that if I only have to worry abut my self-image, then I am more likely
-    to let myself go. If I have a partner or friends that makes me care a bit
+    find that if I only have to worry about my self-image, then I am more likely
+    to let myself go. If I have a partner or friends, that makes me care a bit
     more about how I look and feel.
