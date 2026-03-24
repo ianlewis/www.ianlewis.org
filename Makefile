@@ -238,6 +238,24 @@ serve: node_modules/.installed bundle-install ## Run local development server.
 .PHONY: test
 test: lint ## Run all tests.
 
+## Scripts
+#####################################################################
+
+recent-posts: .venv/.installed ## Print posts published in the last 24 hours.
+	@# bash \
+	$(REPO_ROOT)/.venv/bin/python \
+		$(REPO_ROOT)/scripts/check-recent-posts.py \
+			--hours 24 \
+			 content/en/_posts \
+			 content/jp/_posts \
+			 content/til/_posts
+
+special-date: .venv/.installed ## Print if today is a special date.
+	@# bash \
+	$(REPO_ROOT)/.venv/bin/python \
+		$(REPO_ROOT)/scripts/check-special-dates.py \
+			content/_data/profile.yaml
+
 ## Formatting
 #####################################################################
 
