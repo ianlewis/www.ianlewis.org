@@ -23,7 +23,7 @@
 
             <a href="{{ "/" | relative_url }}">
               <img class="light" src="{{ site.baseurl }}/{{ portfolio_image }}" alt="{{ site.plainwhite.name }}">
-              {%- if site.data.profile.default.dark and site.plainwhite.dark_mode %}
+              {%- if portfolio_image_dark != blank and site.plainwhite.dark_mode %}
                 <img class="dark" src="{{ site.baseurl }}/{{ portfolio_image_dark }}" alt="{{ site.plainwhite.name }}">
               {%- endif %}
             </a>
