@@ -67,7 +67,10 @@ def main() -> None:
     """Check if the current date is a special date."""
     parser = argparse.ArgumentParser(
         prog="check-special-dates",
-        description="Checks for recently published posts.",
+        description=(
+            "Check whether a given date matches any special dates "
+            "defined in profile.yaml."
+        ),
     )
     parser.add_argument(
         "--date",
@@ -80,7 +83,7 @@ def main() -> None:
     parser.add_argument(
         "PATH",
         type=Path,
-        help="Path to the profile.yaml file(s) to check for special dates",
+        help="Path to the profile.yaml file to check for special dates",
     )
 
     args = parser.parse_args()
