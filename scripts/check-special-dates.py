@@ -31,7 +31,7 @@ def get_special_dates(profile_path: Path, current_year: int) -> list[datetime]:
         profile_data = yaml.safe_load(f)
         special_profiles = profile_data.get("special", [])
 
-        special_dates = []
+        special_dates: list[datetime] = []
         for profile in special_profiles:
             # add start and end dates to the list of special dates
             start_date_str = profile.get("start")
@@ -43,19 +43,21 @@ def get_special_dates(profile_path: Path, current_year: int) -> list[datetime]:
             #       lead to incorrect results, due to leap years etc.
             if start_date_str:
                 special_dates.append(
-                    datetime.strptime(f"{current_year}-{start_date_str}", "%Y-%m-%d")
-                    .replace(
+                    datetime.strptime(
+                        f"{current_year}-{start_date_str}",
+                        "%Y-%m-%d",
+                    ).replace(
                         tzinfo=timezone.utc,
-                    )
-                    .date(),
+                    ),
                 )
             if end_date_str:
                 special_dates.append(
-                    datetime.strptime(f"{current_year}-{end_date_str}", "%Y-%m-%d")
-                    .replace(
+                    datetime.strptime(
+                        f"{current_year}-{end_date_str}",
+                        "%Y-%m-%d",
+                    ).replace(
                         tzinfo=timezone.utc,
-                    )
-                    .date(),
+                    ),
                 )
 
         return special_dates
