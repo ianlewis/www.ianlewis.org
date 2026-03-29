@@ -113,6 +113,7 @@ rules:
       - "/\\bBrooker\\b/g"
       - "/\\bCalabro\\b/g"
       - "/\\bCayden\\b/g"
+      - "/\\bCallum\\b/g"
       - "/\\bChameera\\b/g"
       - "/\\bCollison\\b/g"
       - "/\\bColton\\b/g"
@@ -294,6 +295,7 @@ rules:
       - "/\\bYan\\b/g"
       - "/\\bYasushi\\b/g"
       - "/\\bYegge\\b/g"
+      - "/\\bYoneuchi\\b/g"
       - "/\\bYongfook\\b/g"
       - "/\\bYoshi\\b/g"
       - "/\\bYoshiki\\b/g"
@@ -426,15 +428,16 @@ rules:
 
       - "/\\b3GS\\b/g" # iPhone 3GS
       - "/\\bATND\\b/g" # Japanese event platform (atnd.org)
-      - "/\\bAnkiHub\\b/g"
-      - "/\\bBigtable\\b/g"
-      - "/\\bChromeOS\\b/g"
+      - "/\\bAnkiHub\\b/g" # AnkiHub, a platform for sharing Anki flashcards
+      - "/\\bBigtable\\b/g" # Google Bigtable
+      - "/\\bChromeOS\\b/g" # Chrome OS operating system
       - "/\\bCodeMender\\b/g" # AI agent for finding security vulnerabilities
       - "/\\bConnpass\\b/g" # Japanese event platform (connpass.com)
       - "/\\bCowork\\b/g" # Anthropic Claude Cowork
       - "/\\bDOCOMO\\b/g" # Japanese mobile operator NTT DOCOMO
-      - "/\\bDatastore\\b/g"
-      - "/\\bGmail\\b/g"
+      - "/\\bDatastore\\b/g" # App Engine Datastore
+      - "/\\bGmail\\b/g" # Email service by Google
+      - "/\\bGlobalProtect\\b/g" # Palo Alto Networks VPN client
       - "/\\bHT-03A\\b/g" # Android phone model by HTC and NTT Docomo
       - "/\\bJaiku\\b/g" # Old social networking service
       - "/\\bJetBrains\\b/g"
@@ -502,6 +505,7 @@ rules:
       - "/\\bKornShell\\b/g" # Korn Shell (ksh) Unix shell
       - "/\\bKubernetes\\b/g" # Kubernetes container orchestration platform
       - "/\\bLLVM\\b/g" # LLVM compiler infrastructure
+      - "/\\bLiteLLM\\b/g" # LLM library
       - "/\\bLuaLaTeX\\b/g" # Lua-based LaTeX engine
       - "/\\bMP3\\b/g" # MP3 audio format
       - "/\\bMapReduce\\b/g" # Programming model for processing large data sets
@@ -569,6 +573,7 @@ rules:
       - "/\\bTipfy\\b/g" # App Engine Python web framework
       - "/\\bTortoiseHg\\b/g" # Mercurial client
       - "/\\bTortoiseMerge\\b/g" # Merge tool
+      - "/\\bTrivy\\b/g" # Container vulnerability scanner
       - "/\\bVorbis\\b/g" # Ogg Vorbis audio codec
       - "/\\bXeLaTeX\\b/g" # LaTeX engine
       - "/\\bZig\\b/g" # Zig programming language
@@ -824,6 +829,7 @@ rules:
       - "/\\bVPs?\\b/g" # Vice President
       - "/\\bVFAT\\b/g" # Virtual File Allocation Table
       - "/\\bVMs?\\b/g" # Virtual Machine
+      - "/\\bVPNs?\\b/g" # Virtual Private Network
       - "/\\bWASM\\b/g" # WebAssembly
       - "/\\bWSDL\\b/g" # Web Services Description Language
       - "/\\bWSGI\\b/g" # Web Server Gateway Interface
@@ -908,6 +914,12 @@ rules:
       # Extra patterns
       # TODO(#285): Handle or fix the following words.
       ##########################################################################
+
+      # For some reason, textlint-disable is not working for the following words
+      # in the file
+      # content/til/_posts/2026-03-29-march-30-2026-weekly-reading.md
+      - "/\\bpth\\b/g"
+      - "/\\blitellm\\b/g"
 
       - "ebs"
       - "eco"
