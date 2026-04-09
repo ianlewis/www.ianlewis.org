@@ -1,0 +1,7 @@
+Contact: mailto:ian@ianlewis.org
+Expires: 2027-01-01T00:00:00.000Z
+Encryption: https://www.ianlewis.org/ian@ianlewis.org.pem.pub.txt
+Encryption: https://keybase.io/ianlewis/pgp_keys.asc?fingerprint=12c74e538d98b4263669def004ffd4493ada4fc8
+Preferred-Languages: en, ja
+Canonical: https://www.ianlewis.org/.well-known/security.txt
+Policy: https://github.com/ianlewis/www.ianlewis.org/blob/main/SECURITY.md
