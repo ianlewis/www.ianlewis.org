@@ -3,7 +3,7 @@ layout: post
 title: "TIL: March 30, 2026 - Weekly Reading - LiteLLM Supply Chain Compromise"
 date: "2026-03-30 09:00:00 +0900"
 blog: til
-tags: weekly-reading
+tags: weekly-reading security ai
 render_with_liquid: false
 ---
 
@@ -46,7 +46,7 @@ render_with_liquid: false
     My notes are on
     [Readwise](https://readwise.io/reader/shared/01kmvyej2pm3c9ynycwcxvqyhr).
 
-- [<!-- textlint-disable spelling -->Analysis of Python's .pth files as a persistence mechanism<!-- textlint-enable spelling -->](https://dfir.ch/posts/publish_python_pth_extension/)
+- [<!-- textlint-disable spelling -->Analysis of Python's .pth files as a persistence mechanism<!-- textlint-enable spelling -->](https://dfir.ch/posts/publish_python_pth_extension/) -- _Stephan Berger_
 
     Apparently, using a `.pth` file to persistently execute code was also used
     to attack
