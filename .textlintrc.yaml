@@ -405,6 +405,7 @@ rules:
       - "/\\bNasdaq\\b/g" # Nasdaq stock exchange (also stylized as NASDAQ)
       - "/\\bNetlify\\b/g" # Web hosting service
       - "/\\bPalo Alto Networks\\b/g" # Cybersecurity company
+      - "/\\bPortSwigger\\b/g" # Web security company known for Burp Suite
       - "/\\bPlanetScale\\b/g" # PlanetScale database platform
       - "/\\bPromptArmor\\b/g" # Security company
       - "/\\bShopify\\b/g" # E-commerce platform
@@ -661,6 +662,7 @@ rules:
       - "/\\b[Cc]ryptographic(ally)?\\b/g" # relating to cryptography
       - "/\\b[Dd]eclarative(ly)?\\b/g"
       - "/\\b[Dd]enormalize\\b/g" # to convert from normalized form
+      - "/\\b[Dd]esync(hronized?)?\\b/g" # to become unsynchronized
       - "/\\b[Dd]ev\\b/g" # Development/Developer
       - "/\\b[Dd]ocstrings?\\b/g" # Python documentation strings
       - "/\\b[Ee]xecutables\\b/g" # plural of executable
