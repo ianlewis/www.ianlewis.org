@@ -35,7 +35,7 @@ jobs:
           persist-credentials: false
 
       # NOTE: ruby/setup-ruby automatically reads the .ruby-version file.
-      - uses: ruby/setup-ruby@f8d7259c7a66155a7c4a157a1a10ca601f186594 # v1.271.0
+      - uses: ruby/setup-ruby@e65c17d16e57e481586a6a5a0282698790062f92 # v1.300.0
 
       - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
         with:
