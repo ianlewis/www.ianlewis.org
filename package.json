@@ -15,15 +15,18 @@
   "devDependencies": {
     "@commitlint/cli": "20.3.0",
     "@commitlint/config-conventional": "20.3.0",
+    "@csstools/stylelint-formatter-github": "^2.0.0",
     "@netlify/plugin-csp-nonce": "1.6.0",
     "@shopify/prettier-plugin-liquid": "1.10.0",
     "dictionary-en": "4.0.0",
+    "encoding": "0.1.13",
     "eslint": "9.39.4",
     "eslint-plugin-github": "6.0.0",
     "eslint-plugin-prettier": "5.5.4",
     "html-validate": "10.5.0",
     "markdownlint-cli2": "0.20.0",
     "netlify-cli": "26.0.0",
+    "picomatch": "4.0.4",
     "prettier": "3.7.4",
     "renovate": "43.150.0",
     "stylelint": "17.9.1",
@@ -31,8 +34,6 @@
     "stylelint-scss": "7.0.0",
     "textlint": "15.5.0",
     "textlint-filter-rule-comments": "1.2.2",
-    "textlint-rule-spelling": "0.3.0",
-    "encoding": "0.1.13",
-    "picomatch": "4.0.4"
+    "textlint-rule-spelling": "0.3.0"
   }
 }

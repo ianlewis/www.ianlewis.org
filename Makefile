@@ -626,9 +626,11 @@ stylelint: node_modules/.installed ## Runs the stylelint linter.
 				':!:content/_sass/ext' \
 		); \
 		if [ "$(OUTPUT_FORMAT)" == "github" ]; then \
-			./node_modules/.bin/stylelint --formatter github $${files}; \
+			$(REPO_ROOT)/node_modules/.bin/stylelint \
+				--custom-formatter=@csstools/stylelint-formatter-github \
+				$${files}; \
 		else \
-			./node_modules/.bin/stylelint $${files}; \
+			$(REPO_ROOT)/node_modules/.bin/stylelint $${files}; \
 		fi
 
 .PHONY: markdownlint
