@@ -154,8 +154,11 @@ rules:
       - "/\\bGodbolt\\b/g"
       - "/\\bGowripalan\\b/g"
       - "/\\bGraeme\\b/g"
+      - "/\\bGrymes\\b/g"
       - "/\\bHailey\\b/g"
       - "/\\bHansson\\b/g"
+      - "/\\bHanff\\b/g"
+      - "/\\bHashimoto\\b/g"
       - "/\\bHeba\\b/g"
       - "/\\bHeinemeier\\b/g"
       - "/\\bHeelan\\b/g"
@@ -199,6 +202,7 @@ rules:
       - "/\\bLifland\\b/g"
       - "/\\bLitt\\b/g"
       - "/\\bLonelyBob\\b/g"
+      - "/\\bLudwell\\b/g"
       - "/\\bMadoff\\b/g"
       - "/\\bMakabi\\b/g"
       - "/\\bMatheus\\b/g"
@@ -263,6 +267,7 @@ rules:
       - "/\\bStapelberg\\b/g"
       - "/\\bStoep\\b/g"
       - "/\\bSu\\b/g"
+      - "/\\bSudachi\\b/g"
       - "/\\bSuenaga\\b/g"
       - "/\\bSundar\\b/g"
       - "/\\bTamir\\b/g"
@@ -283,6 +288,7 @@ rules:
       - "/\\bWiggum\\b/g"
       - "/\\bWilber\\b/g"
       - "/\\bWillison\\b/g"
+      - "/\\bWilto\\b/g" # nickname
       - "/\\bWoodruff\\b/g"
       - "/\\bXiao\\b/g"
       - "/\\bXinkai\\b/g"
@@ -436,6 +442,7 @@ rules:
       - "/\\bCowork\\b/g" # Anthropic Claude Cowork
       - "/\\bDOCOMO\\b/g" # Japanese mobile operator NTT DOCOMO
       - "/\\bDatastore\\b/g" # App Engine Datastore
+      - "/\\bGemini\\sNano\\b/g" # Google Gemini Nano, a small language model
       - "/\\bGmail\\b/g" # Email service by Google
       - "/\\bGlobalProtect\\b/g" # Palo Alto Networks VPN client
       - "/\\bHT-03A\\b/g" # Android phone model by HTC and NTT Docomo
@@ -444,6 +451,7 @@ rules:
       - "/\\bJupyter\\b/g"
       - "/\\bKilo Code\\b/g" # AI IDE
       - "/\\bMacBook\\b/g"
+      - "/\\bMagicDNS\\b/g" # Tailscale MagicDNS
       - "/\\bOakveil\\b/g" # V Rising in-game location
       - "/\\bOhloh\\b/g" # Software development statistics website
       - "/\\bPhotoshop\\b/g"
@@ -495,6 +503,7 @@ rules:
       - "/\\bFunktion\\b/g"
       - "/\\bGaim\\b/g" # Old name for Pidgin, an instant messaging client
       - "/\\bGenAI\\b/g" # Generative AI
+      - "/\\bGhostty\\b/g" # Ghostty, terminal emulator
       - "/\\bGnuCash\\b/g" # Personal finance software
       - "/\\bGoReleaser\\b/g" # Go release tool
       - "/\\bGeoDjango\\b/g" # Django geographic web framework
@@ -545,6 +554,7 @@ rules:
       - "/\\bSweetcron\\b/g"
       - "/\\bSymposion\\b/g" # Django library for conference management
       - "/\\bStylelint\\b/g"
+      - "/\\b[Tt]ailnet\\b/g" # A Tailscale network
       - "/\\bTensorflow\\b/g"
       - "/\\bTerraform\\b/g"
       - "/\\bTinyMCE\\b/g" # JavaScript WYSIWYG editor
@@ -581,6 +591,7 @@ rules:
       - "/\\bWebapp\\b/g" # App Engine WebApp framework
       - "/\\bWebGL\\b/g" # Web Graphics Library
       - "/\\bWerkzeug\\b/g" # Python WSGI utility library
+      - "/\\bWireGuard\\b/g" # VPN protocol and software
       - "/\\bWyvern\\b/g" # Game name
       - "/\\bb2evolution?\\b/g" # b2evolution blogging software
       - "/\\b[Cc]groups?\\b/g" # control groups
@@ -727,6 +738,7 @@ rules:
       - "/\\bCBT\\b/g" # Cognitive Behavioral Therapy
       - "/\\bCC0\\b/g" # Creative Commons Zero
       - "/\\bCFP\\b/g" # Call for Papers/Proposals
+      - "/\\bCGNAT\\b/g" # Carrier-Grade Network Address Translation
       - "/\\bCIRs?\\b/g" # Change Intent Record
       - "/\\bCJK\\b/g" # Chinese, Japanese, and Korean
       - "/\\bCLs?\\b/g" # Change List (version control)
@@ -773,6 +785,7 @@ rules:
       - "/\\bICs?\\b/g" # Individual Contributor/Integrated Circuit
       - "/\\bIP(s|v4|v6)?\\b/g" # Internet Protocol
       - "/\\bIPC\\b/g" # Inter-Process Communication
+      - "/\\bISPs?\\b/g" # Internet Service Provider
       - "/\\bJLPT\\b/g" # Japanese Language Proficiency Test
       - "/\\bJPE?G\\b/g" # Joint Photographic Experts Group
       - "/\\bJSON\\b/g" # JavaScript Object Notation
