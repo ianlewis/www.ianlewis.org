@@ -95,6 +95,7 @@ rules:
       - "/\\bAoife\\b/g"
       - "/\\bAndré(?!\\p{L})/g"
       - "/\\bAnkit\\b/g"
+      - "/\\bAndrii\\b/g"
       - "/\\bArko\\b/g"
       - "/\\bArmin\\b/g"
       - "/\\bAtamel\\b/g"
@@ -105,6 +106,7 @@ rules:
       - "/\\bAytaş(?!\\p{L})/g"
       - "/\\bBalahan\\b/g"
       - "/\\bBalaji\\b/g"
+      - "/\\bBerezhynskyi\\b/g"
       - "/\\bBerryman\\b/g"
       - "/\\bBlauzvern\\b/g"
       - "/\\bBleecher\\b/g"
@@ -451,8 +453,10 @@ rules:
       - "/\\bJetBrains\\b/g"
       - "/\\bJupyter\\b/g"
       - "/\\bKilo Code\\b/g" # AI IDE
+      - "/\\bM5\\b/g" # Apple M5 chip
       - "/\\bMacBook\\b/g"
       - "/\\bMagicDNS\\b/g" # Tailscale MagicDNS
+      - "/\\bMythos\\b/g" # Mythos, Anthropic AI model
       - "/\\bOakveil\\b/g" # V Rising in-game location
       - "/\\bOhloh\\b/g" # Software development statistics website
       - "/\\bPhotoshop\\b/g"
@@ -481,6 +485,7 @@ rules:
       - "/\\bAppstats\\b/g" # App Engine Appstats
       - "/\\bBeautifulSoup\\b/g"
       - "/\\bBlobstore\\b/g" # App Engine Blobstore
+      - "/\\bBrotli\\b/g" # Brotli compression algorithm
       - "/\\bBudouX\\b/g" # Japanese morphological analyzer
       - "/\\bBuildbot\\b/g" # Python continuous integration tool
       - "/\\bBuildout\\b/g" # Python build system
@@ -799,6 +804,7 @@ rules:
       - "/\\bLLMs?\\b/g" # Large Language Model
       - "/\\bLSP\\b/g" # Language Server Protocol
       - "/\\bMCP\\b/g" # Model Context Protocol
+      - "/\\bMIE\\b/g" # macOS Memory Integrity Enforcement
       - "/\\bMNIST\\b/g" # Modified National Institute of Standards and Technology DB
       - "/\\bMPI\\b/g" # Message Passing Interface
       - "/\\bMQ\\b/g" # Message Queue
