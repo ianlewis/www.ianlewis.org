@@ -31,8 +31,8 @@ render_with_liquid: false
 
     They make use of two vulnerabilities to achieve privilege escalation. I
     wonder if security postures may need to be rethought if AI can find multiple
-    vulnerabilities at once. Building systems target to deal with multiple
-    new vulnerabilities gets very complicated quickly.
+    vulnerabilities at once. Building systems that are resilient to multiple new
+    vulnerabilities gets very complicated quickly.
 
     In the end, I think it's a temporary problem though. AI will increasingly be
     used to find vulnerabilities by the companies themselves and be better
