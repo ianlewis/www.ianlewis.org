@@ -61,7 +61,7 @@ expect ISO-2022-JP or Shift JIS rather than whatever your `DEFAULT_ENCODING` is.
 And changing the `DEFAULT_ENCODING` just because you have to send someone off
 emails is out of the question.
 
-## Can't Filter an Admin List via a `JOIN`. eg. `user__group`
+## Can't Filter an Admin List via a `JOIN`. e.g. `user__group`
 
 It would be cool if you could filter an admin list via a join. Something like:
 

@@ -145,7 +145,7 @@ case it tries to fix module loading. Though recently in Python there has been
 talk about including support for virtualenvs and better packaging support in the
 language thanks to pip's lead. JS needs the features required for loading client
 side code properly built into the browser and JS development environments and
-tools should include support for minimizing (or perhaps bytecode compiling)
+tools should include support for minimizing (or perhaps bytecode compilation)
 JavaScript so that whitespace, comments, and number of modules don't affect
 download and load speed.
 

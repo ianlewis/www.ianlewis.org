@@ -9,10 +9,9 @@ render_with_liquid: false
 locale: ja
 ---
 
-最近 mercurial の mq
-エクステンションを試しに使ってる。mercurialのリビジョンをコミットする前に、変更を管理したい、もしくは、途中で他の作業をやらないといけないので、今の変更をどっかに置かないといけない場合に便利なエクステンションです。
+最近 Mercurial の `mq` エクステンションを試しに使ってる。mercurialのリビジョンをコミットする前に、変更を管理したい、もしくは、途中で他の作業をやらないといけないので、今の変更をどっかに置かないといけない場合に便利なエクステンションです。
 
-mq は標準に入っているので、インストールしなくてもいいだが、エクステンションを.hgrcで有効しないと。
+`mq` は標準に入っているので、インストールしなくてもいいだが、エクステンションを `.hgrc` で有効しないと。
 
 ```text
 [extensions]
@@ -31,8 +30,8 @@ hg qinit
 hg qnew
 ```
 
-もし、qnewを忘れた場合、変更を置かないと。これは面倒くさい。もし、もっといい方法があれば、教えてください。たまに、windows のeol
-と unix の eol が両方 my.diff に入ってしまって、patch がちゃんと適用することが出来ない場合がある。ご注意
+もし、`qnew`を忘れた場合、変更を置かないと。これは面倒くさい。もし、もっといい方法があれば、教えてください。たまに、 Windows の EOL
+と Unix の EOL が両方 my.diff に入ってしまって、patch がちゃんと適用することが出来ない場合がある。ご注意
 
 ```text
 hg diff -U > my.diff
@@ -47,15 +46,15 @@ patch -p1 < my.diff
 hg qnew -f mypatch
 ```
 
-ここで、変更を行って、patch を更新するコマンドはqrefresh. これを実行するのと、hg
-statusを実行すると何もでない。パッチの内容も hg view
+ここで、変更を行って、patch を更新するコマンドは`qrefresh`. これを実行するのと、`hg`
+statusを実行すると何もでない。パッチの内容も `hg view`
 で見れる。
 
 ```text
 hg qrefresh
 ```
 
-コミットするときの、コミットメッセージは分かりにくいだが、 qrefresh で指定する。
+コミットするときの、コミットメッセージは分かりにくいだが、 `qrefresh` で指定する。
 
 ```text
 hg qrefresh -e
@@ -63,7 +62,7 @@ hg qrefresh -e
 
 一回指定すれば、コミットするときに、書いたメッセージを使う。
 
-パッチを置かないといけない場合は、qpop を使う。
+パッチを置かないといけない場合は、`qpop` を使う。
 
 ```text
 hg qpop mypatch
@@ -75,7 +74,7 @@ hg qpop mypatch
 hg qpop -a
 ```
 
-パッチをまた適用する qpush
+パッチをまた適用する `qpush`
 
 ```text
 hg qpush mypatch
@@ -87,7 +86,7 @@ hg qpush mypatch
 hg qpush -a
 ```
 
-パッチをリポジトリにコミットする場合は、qfinish
+パッチをリポジトリにコミットする場合は、`qfinish`
 
 ```text
 hg qfinish mypatch

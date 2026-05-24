@@ -71,9 +71,9 @@ javascript: (function () {
 })();
 ```
 
-Here we have some JavaScript code that is packed. The above code unpacks
-the packed code and evals it. I replaced the above eval with console.log
-and ran the code to output the packed code. Here it is beautified.
+Here we have some JavaScript code that is packed. The above code unpacks the
+packed code and evaluates it (with `eval`). I replaced the above `eval` with
+`console.log` and ran the code to output the packed code. Here it is beautified.
 
 ```javascript
 d = document;

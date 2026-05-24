@@ -131,6 +131,6 @@ it, as well as self heal when apps become unresponsive. They are a better
 solution to what my colleague Kelsey Hightower called
 [12 Fractured Apps](https://medium.com/@kelseyhightower/12-fractured-apps-1080c73d481c).
 With proper health checks in place you can deploy your applications in any order
-without having to worry about dependencies or complicated entrypoint scripts.
+without having to worry about dependencies or complicated entry point scripts.
 And applications will start serving traffic when they are ready so auto-scaling
 and rolling updates work smoothly.

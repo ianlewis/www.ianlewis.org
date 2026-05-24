@@ -8,10 +8,9 @@ tags: tech programming projects
 render_with_liquid: false
 ---
 
-I took a look at the [Gallery 2 plugin for
-WordPress](http://wpg2.galleryembedded.com/) by [ozgreg](http://www.ozgreg.com/)
-to get some ideas on how they had integrated Gallery 2 with the WordPress blog
-engine and how I might be able to bring those features to
+I took a look at the Gallery 2 plugin for WordPress by _ozgreg_ to get some
+ideas on how they had integrated Gallery 2 with the WordPress blog engine and
+how I might be able to bring those features to
 [b2evolution](http://www.b2evolution.net/ "b2evolution"). I felt somewhat bad
 looking at it as I've worked on by own [Gallery 2 integration plugin for
 b2evolution](http://manual.b2evolution.net/Plugins/gallery2_plugin) for about a
@@ -24,9 +23,8 @@ is on the bigger end, in terms of lines of code, for a b2evolution plugin but
 the WordPress Gallery 2 plugin has a few times as much code. This might be seen
 as bloat if it wasn't for the number of features that it offers.
 
-Both of our plugins use the [Gallery image
-chooser](http://g2image.steffensenfamily.com/) (`g2image`) to allow users to add
-images to posts and offer single sign on between the blog and Gallery 2. But
+Both of our plugins use the Gallery image chooser (`g2image`) to allow users to
+add images to posts and offer single sign on between the blog and Gallery 2. But
 there are a number of things that the WordPress plugin either is done better
 than my plugin or isn't present at all in my plugin.
 
@@ -41,10 +39,9 @@ than my plugin or isn't present at all in my plugin.
   generates the sidebar image block itself instead of letting Gallery 2 do it. I
   need to test it but I'm not sure if this works with say, the Gallery 2
   multi-language plugin. I think this kind of maneuvering is what precipitated
-  the need for a [release compatibility
-  matrix](http://wpg2.galleryembedded.com/index.php?title=WPG2:Release_Matrix)
-  which I think might be a pain for users. So I plan to add some more options
-  while sticking as much to the embedded API as possible.
+  the need for a release compatibility matrix which I think might be a pain for
+  users. So I plan to add some more options while sticking as much to the
+  embedded API as possible.
 - The WordPress plugin adds a button to TinyMCE automatically. Currently with my
   plugin you have to [jump through some
   hoops](https://plugins.b2evolution.net/plugins-gallery2-plugin#using-the-gallery2-plugin-with-the-tinymce-plugin).
@@ -70,7 +67,7 @@ WordPress is pretty slick too. The menus are placed in intuitive locations
 within the admin. That's something I might not be able to do in
 [b2evolution](http://www.b2evolution.net/ "b2evolution") given it's rather
 antiquated, plugin interface (essentially a [`Plugin`
-class](http://doc.b2evolution.net/HEAD/plugins/Plugin.html) you extend
+class](https://b2evolution.net/man/creating-plugin) you extend
 overriding any needed "hook" methods).
 
 Anyway, look for some of these improvements in the coming weeks/months.

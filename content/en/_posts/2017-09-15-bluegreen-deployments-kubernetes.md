@@ -10,7 +10,7 @@ render_with_liquid: false
 
 > For those that want to dive right in, I have put up a tutorial and some sample
 > manifests on GitHub. Check it out at
-> [https://github.com/IanLewis/kubernetes-bluegreen-deployment-tutorial](https://github.com/IanLewis/kubernetes-bluegreen-deployment-tutorial)
+> [`https://github.com/IanLewis/kubernetes-bluegreen-deployment-tutorial`](https://github.com/IanLewis/kubernetes-bluegreen-deployment-tutorial)
 
 Kubernetes has a really awesome built-in feature called
 [Deployments](https://github.com/kubernetes/kubernetes/tree/master/pkg/controller/deployment).

@@ -12,14 +12,14 @@ I just set up my e-mail settings with
 [Mercurial](http://www.selenic.com/mercurial/) so that I can e-mail patches via
 my [Gmail](http://www.google.com/mail/) account. I have
 [Debian](http://www.debian.org/) installed on my machine which has
-[exim](http://www.exim.org/) installed by default so it was pretty easy to set
-up. I'm not terribly versed at setting up mailing agents so I basically
-followed [these instructions](http://wiki.debian.org/GmailAndExim4) on the
-[Debian Wiki](http://wiki.debian.org/). After getting that set up it's easy to
-set up Mercurial to use exim4 since it's a drop in replacement for
+[Exim](https://exim.org/) installed by default so it was pretty easy to set up.
+I'm not terribly versed at setting up mailing agents so I basically followed
+[these instructions](http://wiki.debian.org/GmailAndExim4) on the [Debian
+Wiki](http://wiki.debian.org/). After getting that set up it's easy to set up
+Mercurial to use Exim 4 since it's a drop in replacement for
 [sendmail](http://www.sendmail.org/).
 
-To set up Mercurial to use exim I followed the
+To set up Mercurial to use Exim I followed the
 [instructions](http://www.selenic.com/mercurial/wiki/index.cgi/.hgrc?highlight=%28email%29)
 on the Mercurial Wiki:
 
