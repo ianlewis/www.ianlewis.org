@@ -61,7 +61,7 @@ render_with_liquid: false
     Kubernetes can be exploited for remote code execution (RCE) on cluster
     nodes. The reason for this is that it is a somewhat special permission that
     allows users to proxy requests to the kubelet API on nodes. This includes
-    websocket APIs like the `/exec` and `/run` endpoints, which can be used to
+    WebSocket APIs like the `/exec` and `/run` endpoints, which can be used to
     execute commands in a container.
 
     This has been brought up before by Rory McCune in his post [When is

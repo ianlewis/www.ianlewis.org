@@ -154,15 +154,15 @@ configuration.
 ![A diagram of multiple containers showing the flow of adding a new application server backend to a Nginx load balancer.](/assets/images/766/nginx.png){: .align-center }
 
 With Docker the way you would do this is put both nginx and `confd` in a single
-container. Because Docker only has one entrypoint you need to keep both
+container. Because Docker only has one entry point you need to keep both
 processes running with something like `supervisord`. This is not ideal because
-you need to run `supervisord` for every copy of nginx that you run. More
+you need to run `supervisord` for every copy of NGINX that you run. More
 importantly, Docker only "knows" about `supervisord` because that's the
-entrypoint. It doesn't have visibility into each process which means you and
-other tools can't get that info via the Docker API. Nginx might be crashing hard
+entry point. It doesn't have visibility into each process which means you and
+other tools can't get that info via the Docker API. NGINX might be crashing hard
 but Docker would have no idea.
 
-![A diagram of a Docker container running confd and nginx with supervisord. The nginx application is in a Crash-Restart loop, however, Docker views the container as healthy because the supervisord entrypoint is still healthy.](/assets/images/766/supervisord.png){: .align-center }
+![A diagram of a Docker container running confd and nginx with supervisord. The nginx application is in a Crash-Restart loop, however, Docker views the container as healthy because the supervisord entry point is still healthy.](/assets/images/766/supervisord.png){: .align-center }
 
 With pods Kubernetes manages each process and thus has insight into its state.
 That way it can provide info about that state to users via the API and can also

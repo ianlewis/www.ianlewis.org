@@ -85,7 +85,7 @@ Haskell.
 
 Having some kind of cheap way to create processes or threads is critical for
 writing concurrent programs. This could be in the form of green-threads, like
-in Go (goroutine)/Rust (task)/Haskell (threads) or "green-processes" erlang
+in Go (goroutine)/Rust (task)/Haskell (threads) or "green-processes" Erlang
 that don't require a full operating system thread/process. It could be an
 event driven/callback system like Node.js, but the trend seems to be going
 towards green-threads as they can be more easily made to utilize multiple

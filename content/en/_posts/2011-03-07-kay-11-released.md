@@ -153,11 +153,11 @@ and disabled without redeploying your application. You can read the
 [documentation for the AppStats extension
 here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.appstats)
 
-## EReporter
+## `EReporter`
 
 Kay 1.1 adds a new `kay.ext.ereporter` application which will catch and save
 information about errors for later viewing and can send out daily error reports.
-The EReporter application works much like the [EReporter in the App Engine
+The `EReporter` application works much like the [`EReporter` in the App Engine
 SDK](http://code.google.com/intl/en/appengine/articles/python/recording_exceptions_with_ereporter.html)
 but provides a convenient way of viewing the errors via a custom admin page and
 integrates with Kay's `ADMINS` and email related settings.
@@ -168,7 +168,7 @@ integrates with Kay's `ADMINS` and email related settings.
 
 ---
 
-You can read the [documentation for the EReporter extension
+You can read the [documentation for the `EReporter` extension
 here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.ereporter).
 
 ## Conclusion

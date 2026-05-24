@@ -10,7 +10,7 @@ render_with_liquid: false
 
 Reiko and her dog Lala came over and we had a pretty relaxing weekend.
 On Saturday we went to Kita no maru park which is very close to the
-Emporer's palace in Tokyo. I like Kita no Maru because it's fairly open
+Emperor's palace in Tokyo. I like Kita no Maru because it's fairly open
 and generally doesn't have a lot of people around.
 
 There were a number of people there making bubbles. They used two long

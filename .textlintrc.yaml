@@ -356,6 +356,7 @@ rules:
       - "/\\bmiwaza\\b/g"
       - "/\\bmonjudoh\\b/g"
       - "/\\bmoriyoshi\\b/g"
+      - "/\\bozgreg\\b/g"
       - "/\\bshimizukawa\\b/g"
       - "/\\bshin_no_suke\\b/g"
       - "/\\bshin1ogawa\\b/g"
@@ -406,6 +407,7 @@ rules:
       - "/\\bDocomo\\b/g"
       - "/\\bElasticSearch\\b/g"
       - "/\\bEldarion\\b/g"
+      - "/\\bEricsson\\b/g" # Swedish telecommunications company
       - "/\\bFabric8\\b/g" # Kubernetes platform
       - "/\\bFriendFeed\\b/g" # Social networking service (acquired by Facebook)
       - "/\\bGree\\b/g" # Japanese social networking service
@@ -508,6 +510,8 @@ rules:
       - "/\\bDvorakJP\\b/g" # Dvorak Japanese Keyboard Layout
       - "/\\bEPWING\\b/g" # Japanese electronic dictionary format
       - "/\\bEUC-JP\\b/g" # Japanese character encoding
+      - "/\\bExim\\b/g" # Exim mail transfer agent
+      - "/\\bFFmpeg\\b/g" # FFmpeg multimedia framework
       - "/\\bFastCGI\\b/g"
       - "/\\bFreenode\\b/g" # IRC network
       - "/\\bFulcio\\b/g" # Sigstore's Fulcio
@@ -537,6 +541,7 @@ rules:
       - "/\\bMochiKit\\b/g"
       - "/\\bMoltbot\\b/g" # renamed to OpenClaw
       - "/\\bNATS(\\.io)?\\b/g" # NATS.io
+      - "/\\bNGINX\\b/g" # NGINX web server
       - "/\\bNeovim\\b/g"
       - "/\\bNetstack\\b/g" # Go networking stack
       - "/\\bNixOS\\b/g"
@@ -602,6 +607,7 @@ rules:
       - "/\\bZizmor\\b/g" # GitHub Actions linter
       - "/\\bWebapp\\b/g" # App Engine WebApp framework
       - "/\\bWebGL\\b/g" # Web Graphics Library
+      - "/\\bWebSocket\\b/g" # WebSocket protocol
       - "/\\bWerkzeug\\b/g" # Python WSGI utility library
       - "/\\bWireGuard\\b/g" # VPN protocol and software
       - "/\\bWyvern\\b/g" # Game name
@@ -676,6 +682,7 @@ rules:
       - "/\\b[Bb]ackends?\\b/g" # the server side of a client-server system
       - "/\\b[Bb]ackpressure\\b/g" # pressure that opposes the desired flow
       - "/\\b[Bb]alancers?\\b/g" # e.g. load balancer
+      - "/\\b[Bb]ytecode\\b/g" # intermediate code representation
       - "/\\b[Cc]allables?\\b/g" # e.g. functions
       - "/\\b[Cc]hangelists?\\b/g" # sets of changes (version control)
       - "/\\b[Cc]odecs?\\b/g" # coder-decoder
@@ -687,6 +694,7 @@ rules:
       - "/\\b[Dd]esync(hronized?)?\\b/g" # to become unsynchronized
       - "/\\b[Dd]ev\\b/g" # Development/Developer
       - "/\\b[Dd]ocstrings?\\b/g" # Python documentation strings
+      - "/\\b[Ee]ncodings?\\b/g" # Encoding schemes (e.g. UTF-8)
       - "/\\b[Ee]xecutables\\b/g" # plural of executable
       - "/\\b[Ee]xfiltrat((e(s|d)?)|(ing))\\b/g" # To steal data from a system
       - "/\\b[Ff]avicons?\\b/g" # Favorite icons
@@ -775,6 +783,7 @@ rules:
       - "/\\bDTD\\b/g" # Document Type Definition
       - "/\\bEBS\\b/g" # Amazon Elastic Block Store
       - "/\\bEC2\\b/g" # Amazon Elastic Compute Cloud
+      - "/\\bEOL\\b/g" # End of Line
       - "/\\bFaaS\\b/g" # Function as a Service
       - "/\\bFOMA\\b/g" # Freedom of Mobile multimedia Access (DOCOMO)
       - "/\\bGAE\\b/g" # Google App Engine
@@ -933,6 +942,8 @@ rules:
       - "/\\b[Uu]nfixable\\b/g" # Not able to be fixed or repaired
       - "/\\b[Rr]efram(e|ed|ing)\\b/g" # To frame again or differently
 
+      - "/\\b[Ee]co-living\\b/g" # A modern form of communal living
+
       - "/\\bAdiós\\b/g" # Spanish for "Goodbye"
       - "/\\bclicé(?:\\s|$)/g" # French for "clicked"
 
@@ -950,26 +961,6 @@ rules:
       - "/\\bpth\\b/g"
       - "/\\blitellm\\b/g"
 
-      - "ebs"
-      - "eco"
-      - "EdLbBLvb"
-      - "eg"
-      - "emacs"
-      - "Emporer's"
-      - "encodings"
-      - "entrypoint"
-      - "ENTRYPOINT"
-      - "eol"
-      - "EReporter"
-      - "Ericsson"
-      - "erlang"
-      - "EswDAAAKCRAE"
-      - "eval"
-      - "evals"
-      - "everes"
-      - "execc"
-      - "executables"
-      - "exim"
       - "facto"
       - "fastcgi"
       - "Fastcgi"

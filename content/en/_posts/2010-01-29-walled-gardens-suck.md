@@ -40,7 +40,7 @@ himself](http://www.iphonesavior.com/2010/01/steve-moses-jobs-delivers-apples-ho
 Rory acts like Steve Jobs himself made the iPad.
 
 Rory's response is spoken like a true non-programmer. There is a reason
-that vim and emacs have persisted as a programming editors even though
+that vim and Emacs have persisted as a programming editors even though
 there are a plethora of graphical editors out there. It's because those
 editors suck. There is a marginal difference in expertise and
 productivity between the average programmer that uses a tool that is
