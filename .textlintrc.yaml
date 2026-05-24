@@ -96,6 +96,7 @@ rules:
       - "/\\bAndré(?!\\p{L})/g"
       - "/\\bAnkit\\b/g"
       - "/\\bAndrii\\b/g"
+      - "/\\bArges\\b/g"
       - "/\\bArko\\b/g"
       - "/\\bArmin\\b/g"
       - "/\\bAtamel\\b/g"
@@ -197,6 +198,7 @@ rules:
       - "/\\bKrumins\\b/g"
       - "/\\bLacasse\\b/g"
       - "/\\bLal\\b/g" # Data's daughter
+      - "/\\bLawler\\b/g"
       - "/\\bLiao\\b/g"
       - "/\\bLiles\\b/g"
       - "/\\bLonghui\\b/g"
@@ -248,6 +250,7 @@ rules:
       - "/\\bReiko\\b/g"
       - "/\\bRokicki\\b/g"
       - "/\\bRaykar\\b/g"
+      - "/\\bRian\\b/g"
       - "/\\bRisley\\b/g"
       - "/\\bRoemer\\b/g"
       - "/\\bRonacher\\b/g"
@@ -266,6 +269,7 @@ rules:
       - "/\\bShu\\b/g"
       - "/\\bSkoredin\\b/g"
       - "/\\bSlatkin\\b/g"
+      - "/\\bSourov\\b/g"
       - "/\\bStapelberg\\b/g"
       - "/\\bStoep\\b/g"
       - "/\\bSu\\b/g"
@@ -310,6 +314,7 @@ rules:
       - "/\\bYosuke\\b/g"
       - "/\\bYusuf\\b/g"
       - "/\\bZach\\b/g"
+      - "/\\bZaman\\b/g"
       - "/\\bZeyliger\\b/g"
       - "/\\bZhiyanov\\b/g"
       - "/\\bZiadé(?!\\p{L})/gu"
@@ -516,6 +521,7 @@ rules:
       - "/\\bGunicorn\\b/g" # Python WSGI HTTP Server (Green Unicorn)
       - "/\\bJUnit\\b/g" # Java Unit Testing Framework
       - "/\\bJubatus\\b/g" # Distributed machine learning framework
+      - "/\\bJujutsu\\b/g" # Jujutsu, a version control system
       - "/\\bKiro\\b/g" # AI Editor by AWS
       - "/\\bKornShell\\b/g" # Korn Shell (ksh) Unix shell
       - "/\\bKubernetes\\b/g" # Kubernetes container orchestration platform
@@ -803,6 +809,7 @@ rules:
       - "/\\bLDAP\\b/g" # Lightweight Directory Access Protocol
       - "/\\bLLMs?\\b/g" # Large Language Model
       - "/\\bLSP\\b/g" # Language Server Protocol
+      - "/\\bLSMs?\\b/g" # Linux Security Modules
       - "/\\bMCP\\b/g" # Model Context Protocol
       - "/\\bMIE\\b/g" # macOS Memory Integrity Enforcement
       - "/\\bMNIST\\b/g" # Modified National Institute of Standards and Technology DB
@@ -859,6 +866,7 @@ rules:
       - "/\\b(YAML|yaml)\\b/g" # YAML Ain't Markup Language
       - "/\\b[Aa]sync\\b/g" # Asynchronous
       - "/\\b[Dd]evRel\\b/g" # Developer Relations
+      - "/\\beBPF\\b/g" # extended Berkeley Packet Filter
       - "/\\bi18n\\b/g" # Internationalization
       - "/\\bk8s\\b/g" # Kubernetes shorthand
 
