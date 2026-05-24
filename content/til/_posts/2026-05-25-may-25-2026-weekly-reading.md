@@ -3,7 +3,7 @@ layout: post
 title: "TIL: May 25, 2026 - Weekly Reading: Git and Mitigating Linux Kernel Vulnerabilities"
 date: "2026-05-25 09:00:00 +0900"
 blog: til
-tags: weekly-reading
+tags: weekly-reading programming security
 render_with_liquid: false
 ---
 
