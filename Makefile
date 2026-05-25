@@ -443,11 +443,16 @@ sass-format: node_modules/.installed ## Format SASS files.
 .PHONY: shfmt
 shfmt: $(AQUA_ROOT_DIR)/.installed ## Format bash files.
 	@# bash \
-	files=$$(git ls-files ':!:third_party' | xargs file | $(GREP) -e ':.*shell' | cut -d':' -f1); \
-	if [ "$${files}" == "" ]; then \
-		exit 0; \
-	fi; \
-	shfmt --write --simplify --indent 4 $${files}
+	files=(); \
+ 	while IFS= read -r -d '' f; do \
+ 		if [ -f "$${f}" ] && file "$${f}" | $(GREP) -q -e ':.*shell'; then \
+ 			files+=("$${f}"); \
+ 		fi; \
+ 	done < <(git ls-files --deduplicate -z ':!:third_party'); \
+ 	if [ "$${#files[@]}" -eq 0 ]; then \
+ 		exit 0; \
+ 	fi; \
+	shfmt --write --simplify --indent 4 "$${files[@]}"
 
 .PHONY: yaml-format
 yaml-format: node_modules/.installed ## Format YAML files.
