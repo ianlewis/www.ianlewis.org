@@ -646,11 +646,16 @@ SHELLCHECK_ARGS ?= --severity=style --external-sources
 .PHONY: shellcheck
 shellcheck: $(AQUA_ROOT_DIR)/.installed ## Runs the shellcheck linter.
 	@# bash \
-	files=$$(git ls-files ':!:third_party' | xargs file | $(GREP) -e ':.*shell' | cut -d':' -f1); \
-	if [ "$${files}" == "" ]; then \
-		exit 0; \
-	fi; \
-	echo -n "$${files}" | xargs shellcheck $(SHELLCHECK_ARGS)
+	files=(); \
+ 	while IFS= read -r -d '' f; do \
+ 		if [ -f "$${f}" ] && file "$${f}" | $(GREP) -q -e ':.*shell'; then \
+ 			files+=("$${f}"); \
+ 		fi; \
+ 	done < <(git ls-files --deduplicate -z ':!:third_party'); \
+ 	if [ "$${#files[@]}" -eq 0 ]; then \
+ 		exit 0; \
+ 	fi; \
+	shellcheck $(SHELLCHECK_ARGS) "$${files[@]}"
 
 .PHONY: stylelint
 stylelint: node_modules/.installed ## Runs the stylelint linter.
