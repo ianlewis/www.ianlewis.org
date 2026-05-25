@@ -32,6 +32,10 @@ _main() {
             exit 0
             ;;
         --blog)
+            if [[ $# -lt 2 || "$2" == --* ]]; then
+                echo "Error: --blog requires an argument." >&2
+                exit 1
+            fi
             blog="$2"
             shift 2
             ;;
@@ -40,10 +44,18 @@ _main() {
             shift
             ;;
         --title)
+            if [[ $# -lt 2 || "$2" == --* ]]; then
+                echo "Error: --title requires an argument." >&2
+                exit 1
+            fi
             title="$2"
             shift 2
             ;;
         --tag)
+            if [[ $# -lt 2 || "$2" == --* ]]; then
+                echo "Error: --tag requires an argument." >&2
+                exit 1
+            fi
             tags+=("$2")
             shift 2
             ;;
