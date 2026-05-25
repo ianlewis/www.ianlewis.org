@@ -14,6 +14,7 @@ Options:
   --blog <name>   Blog to add the post to (e.g. til, en, jp). Prompted if omitted.
   --title <text>  Title of the post. Prompted if omitted.
   --tag <tag>     Tag for the post. Can be specified multiple times. Prompted if omitted.
+  --slug <slug>   Slug for the permalink and filename. Derived from title if omitted.
   --draft         Save the post as a draft in content/_drafts/.
   --help          Show this help message and exit.
 EOF
@@ -23,6 +24,7 @@ _main() {
     local blog=""
     local draft=false
     local title=""
+    local slug=""
     local tags=()
 
     while [[ $# -gt 0 ]]; do
@@ -57,6 +59,14 @@ _main() {
                 exit 1
             fi
             tags+=("$2")
+            shift 2
+            ;;
+        --slug)
+            if [[ $# -lt 2 || "$2" == --* ]]; then
+                echo "Error: --slug requires an argument." >&2
+                exit 1
+            fi
+            slug="$2"
             shift 2
             ;;
         *)
@@ -101,8 +111,9 @@ _main() {
         read -ra tags <<<"${tags_input}"
     fi
 
-    local slug
-    slug=$(echo "${title}" | iconv -t ascii//TRANSLIT | sed -E -e 's/[^[:alnum:]]+/-/g' -e 's/^-+|-+$//g' | tr '[:upper:]' '[:lower:]')
+    if [[ -z ${slug} ]]; then
+        slug=$(echo "${title}" | iconv -t ascii//TRANSLIT | sed -E -e 's/[^[:alnum:]]+/-/g' -e 's/^-+|-+$//g' | tr '[:upper:]' '[:lower:]')
+    fi
 
     local post_title
     if [[ ${blog} == "til" ]]; then
