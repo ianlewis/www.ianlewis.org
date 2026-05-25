@@ -177,9 +177,20 @@ $(AQUA_ROOT_DIR)/.installed: .aqua.yaml .bin/aqua-$(AQUA_VERSION)/aqua
 ## Content
 #####################################################################
 
+.PHONY: post
+post: ## Start a new blog post.
+	@# bash \
+	$(REPO_ROOT)/scripts/new_content.sh
+
 .PHONY: til
 til: ## Start a new TIL entry.
-	@./til.sh
+	$(REPO_ROOT)/scripts/new_content.sh \
+		--blog til
+
+.PHONY: draft
+draft: ## Start a new draft.
+	$(REPO_ROOT)/scripts/new_content.sh \
+		--draft
 
 ## Build
 #####################################################################
@@ -260,7 +271,7 @@ special-date: .venv/.installed ## Print if today is a special date.
 #####################################################################
 
 .PHONY: format
-format: html-format js-format json-format md-format py-format sass-format yaml-format ## Format all files
+format: html-format js-format json-format md-format py-format sass-format shfmt yaml-format ## Format all files
 
 .PHONY: html-format
 html-format: node_modules/.installed ## Format HTML files.
@@ -429,6 +440,15 @@ sass-format: node_modules/.installed ## Format SASS files.
 		--write \
 		$${files}
 
+.PHONY: shfmt
+shfmt: $(AQUA_ROOT_DIR)/.installed ## Format bash files.
+	@# bash \
+	files=$$(git ls-files ':!:third_party' | xargs file | $(GREP) -e ':.*shell' | cut -d':' -f1); \
+	if [ "$${files}" == "" ]; then \
+		exit 0; \
+	fi; \
+	shfmt --write --simplify --indent 4 $${files}
+
 .PHONY: yaml-format
 yaml-format: node_modules/.installed ## Format YAML files.
 	@# bash \
@@ -455,7 +475,7 @@ yaml-format: node_modules/.installed ## Format YAML files.
 #####################################################################
 
 .PHONY: lint
-lint: actionlint check-redirects checkmake commitlint eslint fixme format-check html-validate markdownlint mypy renovate-config-validator ruff stylelint textlint yamllint zizmor ## Run all linters.
+lint: actionlint check-redirects checkmake commitlint eslint fixme format-check html-validate markdownlint mypy renovate-config-validator ruff shellcheck stylelint textlint yamllint zizmor ## Run all linters.
 
 .PHONY: actionlint
 actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
@@ -615,6 +635,17 @@ format-check: ## Check that files are properly formatted.
 html-validate: build node_modules/.installed ## Runs the html-validate linter.
 	@./node_modules/.bin/html-validate \
 		$(REPO_ROOT)/_site
+
+SHELLCHECK_ARGS ?= --severity=style --external-sources
+
+.PHONY: shellcheck
+shellcheck: $(AQUA_ROOT_DIR)/.installed ## Runs the shellcheck linter.
+	@# bash \
+	files=$$(git ls-files ':!:third_party' | xargs file | $(GREP) -e ':.*shell' | cut -d':' -f1); \
+	if [ "$${files}" == "" ]; then \
+		exit 0; \
+	fi; \
+	echo -n "$${files}" | xargs shellcheck $(SHELLCHECK_ARGS)
 
 .PHONY: stylelint
 stylelint: node_modules/.installed ## Runs the stylelint linter.
