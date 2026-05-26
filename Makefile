@@ -184,11 +184,13 @@ post: ## Start a new blog post.
 
 .PHONY: til
 til: ## Start a new TIL entry.
+	@# bash \
 	$(REPO_ROOT)/scripts/new_content.sh \
 		--blog til
 
 .PHONY: draft
 draft: ## Start a new draft.
+	@# bash \
 	$(REPO_ROOT)/scripts/new_content.sh \
 		--draft
 
