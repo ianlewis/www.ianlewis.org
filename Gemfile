@@ -10,7 +10,7 @@ gem "bigdecimal", "= 3.3.1"
 # gem and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", "= 2.0.6"
-  gem "tzinfo-data", "= 1.2026.1"
+  gem "tzinfo-data", "= 1.2026.2"
 end
 
 # Performance-booster for watching directories on Windows
@@ -21,6 +21,6 @@ gem "wdm", "= 0.2.0", :platforms => [:mingw, :x64_mingw, :mswin]
 gem "http_parser.rb", "= 0.6.0", :platforms => [:jruby]
 
 group :jekyll_plugins do
-  gem "jekyll-seo-tag", "= 2.8.0"
+  gem "jekyll-seo-tag", "= 2.9.0"
   gem "jekyll-paginate-v2", "= 3.0.0"
 end
