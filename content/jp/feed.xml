@@ -1,14 +1,15 @@
 ---
 layout: null
 ---
+{%- assign pub_date = site.mock_time | default: site.time -%}
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
   <title>{{ site.title }} | {{ site.blogs.jp.title }}</title>
   <description>{{ site.description | xml_escape }}</description>
   <link>{{ site.url }}/jp/</link>
-  <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-  <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+  <lastBuildDate>{{ pub_date | date_to_rfc822 }}</lastBuildDate>
+  <pubDate>{{ pub_date | date_to_rfc822 }}</pubDate>
   <ttl>1800</ttl>
 
   {% for post in site.categories.jp %}

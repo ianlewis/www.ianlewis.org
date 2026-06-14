@@ -28,20 +28,107 @@ jobs:
   html-validate:
     name: html-validate
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write # Needed to write a comment to the PR.
     steps:
+      - name: Write comment to PR
+        if: github.event_name == 'pull_request'
+        env:
+          PULL_REQUEST_NUM: ${{ github.event.pull_request.number }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr comment "${PULL_REQUEST_NUM}" -R "${GITHUB_REPOSITORY}" \
+            --create-if-none \
+            --edit-last \
+            --body "### 👷 Build preview processing..."
+
+      # Checkout the PR base ref
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        if: github.event_name == 'pull_request'
         with:
+          path: "base"
+          ref: ${{ github.event.pull_request.base.ref }}
           submodules: true
           persist-credentials: false
 
       # NOTE: ruby/setup-ruby automatically reads the .ruby-version file.
       - uses: ruby/setup-ruby@e65c17d16e57e481586a6a5a0282698790062f92 # v1.300.0
+        if: github.event_name == 'pull_request'
+        with:
+          working-directory: "base"
+          bundler-cache: true
+
+      - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
+        if: github.event_name == 'pull_request'
+        with:
+          node-version-file: "base/.node-version"
+
+      - name: build the base ref
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # NOTE: mock the site.time to ensure consistent diff output.
+          # TODO(#641): Uncomment after merging _config.mock.yml
+          # JEKYLL_BUILD_OPTIONS: --drafts --future --unpublished --config=_config.yml,_config.mock.yml
+        working-directory: "base"
+        run: make build
+
+      # Checkout the PR HEAD ref
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          path: "head"
+          submodules: true
+          persist-credentials: false
+
+      # NOTE: ruby/setup-ruby automatically reads the .ruby-version file.
+      - uses: ruby/setup-ruby@e65c17d16e57e481586a6a5a0282698790062f92 # v1.300.0
+        with:
+          working-directory: "head"
+          bundler-cache: true
 
       - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
         with:
-          node-version-file: ".node-version"
+          node-version-file: "head/.node-version"
+
+      - name: build the head ref
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # NOTE: mock the site.time to ensure consistent diff output.
+          JEKYLL_BUILD_OPTIONS: --drafts --future --unpublished --config=_config.yml,_config.mock.yml
+        working-directory: "head"
+        run: make build
+
+      - name: post diff comment
+        if: github.event_name == 'pull_request'
+        env:
+          PULL_REQUEST_NUM: ${{ github.event.pull_request.number }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          diff --unified=0 --recursive base/_site head/_site > diff.txt || true
+
+          echo "### ✅ Build preview ready
+
+          " > body.txt
+          if [ -s diff.txt ]; then
+            echo "<details>
+
+          \`\`\`diff
+          $(cat diff.txt)
+          \`\`\`
+
+          </details>
+          " >> body.txt
+          else
+            echo "No differences found." >> body.txt
+          fi
+
+          gh pr comment "${PULL_REQUEST_NUM}" -R "${GITHUB_REPOSITORY}" \
+            --create-if-none \
+            --edit-last \
+            --body-file body.txt
 
       - name: html-validate
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: "head"
         run: make html-validate
