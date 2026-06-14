@@ -61,6 +61,9 @@ jobs:
     uses: ./.github/workflows/workflow_call.fixme.yml
 
   html-validate:
+    permissions:
+      contents: read # Needed to check out the repo.
+      pull-requests: write # Needed to write a comment to the PR.
     uses: ./.github/workflows/workflow_call.html-validate.yml
 
   markdownlint:
