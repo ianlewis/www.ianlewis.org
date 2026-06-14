@@ -68,8 +68,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # NOTE: mock the site.time to ensure consistent diff output.
-          # TODO(#641): Uncomment after merging _config.mock.yml
-          # JEKYLL_BUILD_OPTIONS: --drafts --future --unpublished --config=_config.yml,_config.mock.yml
+          JEKYLL_BUILD_OPTIONS: --drafts --future --unpublished --config=_config.yml,_config.mock.yml
         working-directory: "base"
         run: make build
 
