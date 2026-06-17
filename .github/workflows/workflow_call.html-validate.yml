@@ -67,8 +67,9 @@ jobs:
         if: github.event_name == 'pull_request'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CONTEXT: production
           # NOTE: mock the site.time to ensure consistent diff output.
-          JEKYLL_BUILD_OPTIONS: --drafts --future --unpublished --config=_config.yml,_config.mock.yml
+          JEKYLL_BUILD_OPTIONS: --config=_config.yml,_config.mock.yml
         working-directory: "base"
         run: make build
 
@@ -92,8 +93,9 @@ jobs:
       - name: build the head ref
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CONTEXT: production
           # NOTE: mock the site.time to ensure consistent diff output.
-          JEKYLL_BUILD_OPTIONS: --drafts --future --unpublished --config=_config.yml,_config.mock.yml
+          JEKYLL_BUILD_OPTIONS: --config=_config.yml,_config.mock.yml
         working-directory: "head"
         run: make build
 
@@ -128,6 +130,7 @@ jobs:
 
       - name: html-validate
         env:
+          CONTEXT: production
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         working-directory: "head"
         run: make html-validate
