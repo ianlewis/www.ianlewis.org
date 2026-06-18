@@ -749,6 +749,7 @@ textlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textli
 			':!:content/projects.md' \
 			':!:content/.well-known' \
 			':!:content/*.pem.pub.txt' \
+			':!:content/_drafts' \
 			| while IFS='' read -r f; do [ -f "$${f}" ] && echo "$${f}" || true; done \
 	); \
 	if [ "$${files}" == "" ]; then \
