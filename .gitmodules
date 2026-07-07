@@ -7,3 +7,6 @@
 [submodule "third_party/ai-robots-txt/ai.robots.txt"]
 	path = third_party/ai-robots-txt/ai.robots.txt
 	url = https://github.com/ai-robots-txt/ai.robots.txt.git
+[submodule "third_party/aquaproj/aqua-installer"]
+	path = third_party/aquaproj/aqua-installer
+	url = https://github.com/aquaproj/aqua-installer.git
