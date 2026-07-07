@@ -103,13 +103,15 @@ jobs:
         if: github.event_name == 'pull_request'
         env:
           PULL_REQUEST_NUM: ${{ github.event.pull_request.number }}
+          GH_RUN_ID: ${{ github.run_id }}
+          GH_JOB_CHECK_RUN_ID: ${{ job.check_run_id }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           diff --unified=0 --recursive base/_site head/_site > diff.txt || true
 
           echo "### ✅ Build preview ready
 
-          " > body.txt
+          " > header.txt
           if [ -s diff.txt ]; then
             echo "<details>
 
@@ -118,9 +120,28 @@ jobs:
           \`\`\`
 
           </details>
-          " >> body.txt
+          " > subbody.txt
+
+            cat header.txt subbody.txt > body.txt
           else
             echo "No differences found." >> body.txt
+          fi
+
+          # Ensure the body is less than 65536 characters.
+          if [ "$(wc -c < body.txt)" -gt 65536 ]; then
+            cat header.txt > body.txt
+            # NOTE: The step number is hardcoded to 11 and must be updated if
+            #       the step order changes.
+            job_url="https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GH_RUN_ID}/job/${GH_JOB_CHECK_RUN_ID}?pr=${PULL_REQUEST_NUM}#step:11:1"
+            {
+              echo "Diff output is too large to post to GitHub. Please check the logs."
+              echo ""
+              echo "${job_url}"
+            } >> body.txt
+
+            echo "::group::git diff"
+            cat diff.txt
+            echo "::endgroup::"
           fi
 
           gh pr comment "${PULL_REQUEST_NUM}" -R "${GITHUB_REPOSITORY}" \

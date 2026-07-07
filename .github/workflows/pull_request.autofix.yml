@@ -38,6 +38,8 @@ jobs:
         with:
           submodules: true
           persist-credentials: false
+          # NOTE: We must fetch all history for `git log` to work correctly.
+          fetch-depth: 0
 
       - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
@@ -47,10 +49,20 @@ jobs:
         with:
           python-version-file: ".python-version"
 
+      # NOTE: ruby/setup-ruby automatically reads the .ruby-version file.
+      - uses: ruby/setup-ruby@e65c17d16e57e481586a6a5a0282698790062f92 # v1.300.0
+
       - name: update lockfiles
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: make update-lockfiles
+        run: |
+          # NOTE: update the modified time of the Gemfile and Gemfile.lock.
+          #       Git sets the modified time to the current time when checking
+          #       out files, which causes `make update-lockfiles` to skip
+          #       updating Gemfile.lock.
+          touch -d "$(git log -1 --format=%ai "Gemfile")" "Gemfile"
+          touch -d "$(git log -1 --format=%ai "Gemfile.lock")" "Gemfile.lock"
+          make update-lockfiles
 
       - uses: autofix-ci/action@c5b2d67aa2274e7b5a18224e8171550871fc7e4a # v1.3.4
         with:
