@@ -103,6 +103,8 @@ jobs:
         if: github.event_name == 'pull_request'
         env:
           PULL_REQUEST_NUM: ${{ github.event.pull_request.number }}
+          GH_RUN_ID: ${{ github.run_id }}
+          GH_JOB_NAME: ${{ github.job }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           diff --unified=0 --recursive base/_site head/_site > diff.txt || true
@@ -128,7 +130,12 @@ jobs:
           # Ensure the body is less than 65536 characters.
           if [ "$(wc -c < body.txt)" -gt 65536 ]; then
             cat header.txt > body.txt
-            echo "Diff output is too large to post to GitHub. Please check the logs." >> body.txt
+            job_url=$(gh run view "${GH_RUN_ID}" --json jobs --jq ".jobs[] | select(.name == \"${GH_JOB_NAME}\") | .url")
+            {
+              echo "Diff output is too large to post to GitHub. Please check the logs."
+              echo ""
+              echo "${job_url}"
+            } >> body.txt
 
             echo "::group::git diff"
             cat diff.txt
