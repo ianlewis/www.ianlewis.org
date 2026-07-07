@@ -130,7 +130,10 @@ jobs:
           # Ensure the body is less than 65536 characters.
           if [ "$(wc -c < body.txt)" -gt 65536 ]; then
             cat header.txt > body.txt
-            job_url=$(gh run view "${GH_RUN_ID}" --json jobs --jq ".jobs[] | select(.name == \"${GH_JOB_NAME}\") | .url")
+            job_url=$(gh run view -R "${GITHUB_REPOSITORY}" "${GH_RUN_ID}" --json jobs --jq ".jobs[] | select(.name == \"${GH_JOB_NAME}\") | .url")
+            # NOTE: The step number is hardcoded to 11 and must be updated if
+            #       the step order changes.
+            job_url="${job_url}?pr=${PULL_REQUEST_NUM}#step:11:1"
             {
               echo "Diff output is too large to post to GitHub. Please check the logs."
               echo ""
