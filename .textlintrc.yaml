@@ -21,7 +21,7 @@ rules:
   spelling:
     language: "en"
     # Allow accented characters and apostrophes in words
-    wordDefinitionRegexp: "[\\w\u00C0-\u017F']+"
+    wordDefinitionRegexp: "/\\b[\\w\u00C0-\u017F']+\\b/g"
 
     # NOTE: Skip patterns must be enclosed by word boundaries (\b) to avoid
     #       partial matches within other words.
@@ -37,6 +37,7 @@ rules:
       - "/\\bCLI\\b/g"
       - "/\\bCVSS\\b/g"
       - "/\\bDCO\\b/g"
+      - "/\\bOSS\\b/g"
       - "/\\bPRs?\\b/g"
       - "/\\bUI\\b/g"
       - "/\\bYAML\\b/g"
@@ -44,27 +45,34 @@ rules:
       - "/\\bDependabot\\b/g"
       - "/\\bHomebrew\\b/g"
       - "/\\bJavaScript\\b/g"
-      - "/\\bMakefiles?\\b/g"
+      - "/\\bMakefile\\b/g"
       - "/\\bNode.js\\b/g"
       - "/\\bOpenSSF\\b/g"
       - "/\\bTODOs?\\b/g"
+      - "/\\bautofix\\.ci\\b/g"
+      - "/\\baarch64\\b/g"
       - "/\\be2e\\b/g"
       - "/\\bmacOS\\b/g"
       - "/\\bx86-64\\b/g"
+      - "/\\b[Aa]llowlists?\\b/g"
+      - "/\\b[Cc]hecksums?\\b/g"
+      - "/\\b[Cc]odebases?\\b/g"
       - "/\\b[Ff]ormatters?\\b/g"
       - "/\\b[Ll]inters?\\b/g"
+      - "/\\b[Ll]ockfiles?\\b/g"
       - "/\\b[Pp]ositivity\\b/g"
       - "/\\b[Pp]re\\b/g"
       - "/\\b[Rr]ebase\\b/g"
       - "/\\b[Rr]eproducibility\\b/g"
       - "/\\b[Rr]ulesets?\\b/g"
       - "/\\b[Rr]untimes?\\b/g"
+      - "/\\b[Ss]andbox(ed)?\\b/g"
       - "/\\b[Ss]exualized\\b/g"
       - "/\\b[Ss]ocio-economic\\b/g"
       - "/\\b[Uu]serspace\\b/g"
       - "/\\b[Vv]endored\\b/g"
       - "/\\b[Vv]irtualenv\\b/g"
-      - "/\\b[vr]?[0-9]+\\b/g" # version numbers, e.g. v2, r56
+      - "/\\bv?[0-9]+\\b/g"
       - ":white_check_mark:"
 
       # Common

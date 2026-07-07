@@ -6,13 +6,15 @@ node_modules/
 .bin/
 .venv/
 .aqua/
-
-# Python cache
-__pycache__/
-*.pyc
+.uv/
 
 # SARIF files
 *.sarif.json
+
+# Python cache files
+__pycache__/
+*.egg-info/
+*.pyc
 
 # Jekyll build files.
 _site
