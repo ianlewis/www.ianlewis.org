@@ -49,6 +49,11 @@ jobs:
         with:
           python-version-file: ".python-version"
 
+      # NOTE: ruby/setup-ruby automatically reads the .ruby-version file.
+      - uses: ruby/setup-ruby@e65c17d16e57e481586a6a5a0282698790062f92 # v1.300.0
+        with:
+          bundler-cache: true
+
       - name: update lockfiles
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
