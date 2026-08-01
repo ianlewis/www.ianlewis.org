@@ -27,7 +27,7 @@ JEKYLL_BUILD_OPTIONS.production :=
 JEKYLL_BUILD_OPTIONS ?= $(JEKYLL_BUILD_OPTIONS.$(CONTEXT))
 
 # renovate: datasource=github-releases depName=aquaproj/aqua versioning=loose
-AQUA_VERSION ?= v2.60.1
+AQUA_VERSION ?= v2.62.0
 AQUA_REPO := github.com/aquaproj/aqua
 AQUA_CHECKSUM ?= $(AQUA_CHECKSUM.$(kernel).$(arch))
 export AQUA_ROOT_DIR = $(MAKEFILE_ROOT)/.aqua
