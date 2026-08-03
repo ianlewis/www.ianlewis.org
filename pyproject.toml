@@ -15,7 +15,7 @@ include = []
 
 [dependency-groups]
 dev = [
-    "mypy==1.20.1",
+    "mypy==2.3.0",
     "types-PyYAML==6.0.12.20260408",
     "yamllint==1.38.0",
     "zizmor==1.25.2",
