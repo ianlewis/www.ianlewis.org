@@ -43,7 +43,7 @@ jobs:
             --body "### 👷 Build preview processing..."
 
       # Checkout the PR base ref
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         if: github.event_name == 'pull_request'
         with:
           path: "base"
@@ -52,7 +52,7 @@ jobs:
           persist-credentials: false
 
       # NOTE: ruby/setup-ruby automatically reads the .ruby-version file.
-      - uses: ruby/setup-ruby@e65c17d16e57e481586a6a5a0282698790062f92 # v1.300.0
+      - uses: ruby/setup-ruby@003a5c4d8d6321bd302e38f6f0ec593f77f06600 # v1.319.0
         if: github.event_name == 'pull_request'
         with:
           working-directory: "base"
@@ -74,14 +74,14 @@ jobs:
         run: make build
 
       # Checkout the PR HEAD ref
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           path: "head"
           submodules: true
           persist-credentials: false
 
       # NOTE: ruby/setup-ruby automatically reads the .ruby-version file.
-      - uses: ruby/setup-ruby@e65c17d16e57e481586a6a5a0282698790062f92 # v1.300.0
+      - uses: ruby/setup-ruby@003a5c4d8d6321bd302e38f6f0ec593f77f06600 # v1.319.0
         with:
           working-directory: "head"
           bundler-cache: true
