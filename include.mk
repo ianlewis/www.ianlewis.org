@@ -28,9 +28,27 @@ SHELL := bash
 # NOTE: We use recursive assignment to avoid triggering a bug in checkmake.
 .SHELLFLAGS = -ueo pipefail -c
 
+# DEBUG_LOGGING is set to true when debug logging is enabled. It will be
+# automatically set to true when running in GitHub Actions with debug logging
+# enabled. It can also be set manually to enable debug logging when running
+# locally.
+DEBUG_LOGGING ?=
+
+# The GITHUB_ACTIONS environment variable is set to 'true' when running in
+# GitHub Actions.
+# https://docs.github.com/en/actions/reference/workflows-and-actions/variables
 GITHUB_ACTIONS ?=
 
-DEBUG_LOGGING ?=
+# The RUNNER_DEBUG environment variable is set to '1' when debug mode is
+# enabled.
+# https://docs.github.com/en/actions/reference/workflows-and-actions/variables
+RUNNER_DEBUG ?=
+
+# GitHub Actions debug logging environment variables.
+# https://docs.github.com/en/actions/how-tos/monitor-workflows/enable-debug-logging
+ACTIONS_RUNNER_DEBUG ?=
+ACTIONS_STEP_DEBUG ?=
+
 ifeq ($(DEBUG_LOGGING),)
   ifeq ($(GITHUB_ACTIONS),true)
     ifneq ($(RUNNER_DEBUG),)
@@ -72,8 +90,17 @@ kernel.Darwin := darwin
 kernel := $(kernel.$(uname_s))
 
 OUTPUT_FORMAT ?= $(shell if [ "$(GITHUB_ACTIONS)" == "true" ]; then echo "github"; else echo ""; fi)
+REPO_ROOT := $(shell git rev-parse --show-toplevel 2>/dev/null)
+REPO_NAME := $(shell basename "$(REPO_ROOT)")
 MAKEFILE_ROOT := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-ROOT_NAME := $(shell basename "$(MAKEFILE_ROOT)")
+MAKEFILE_NAME := $(shell basename "$(MAKEFILE_ROOT)")
+
+# renovate: datasource=github-releases depName=aquaproj/aqua versioning=loose
+AQUA_VERSION ?= v2.62.0
+export AQUA_ROOT_DIR = $(MAKEFILE_ROOT)/.aqua
+
+# Ensure that aqua and aqua installed tools are in the PATH.
+export PATH := $(AQUA_ROOT_DIR)/bin:$(PATH)
 
 # We want GNU versions of tools so prefer them if present.
 GREP := $(shell command -v ggrep 2>/dev/null || command -v grep 2>/dev/null)
@@ -94,7 +121,7 @@ MKTEMP := $(shell command -v gmktemp 2>/dev/null || command -v mktemp 2>/dev/nul
 
 .PHONY: help
 help: ## Print all Makefile targets (this message).
-	@echo "$(ROOT_NAME) Makefile"
+	@echo "$(MAKEFILE_NAME) Makefile"
 	echo "Usage: $(MAKE) [COMMAND]"
 	echo ""
 	normal="";
@@ -118,3 +145,107 @@ help: ## Print all Makefile targets (this message).
 					}
 				}
 			}'
+
+# Node.js setup
+#####################################################################
+
+$(REPO_ROOT)/package-lock.json: $(REPO_ROOT)/package.json $(AQUA_ROOT_DIR)/.installed
+	@echo "Updating Node.js dependencies..."
+	loglevel="notice"
+	if [ -n "$(DEBUG_LOGGING)" ]; then
+		loglevel="verbose"
+	fi
+	# NOTE: npm install will happily ignore the fact that integrity hashes are
+	# missing in the package-lock.json. We need to check for missing integrity
+	# fields ourselves. If any are missing, then we need to regenerate the
+	# package-lock.json from scratch.
+	nointegrity=""
+	noresolved=""
+	if [ -f "$@" ]; then
+		nointegrity=$$(jq '.packages | del(."") | .[] | select(has("integrity") | not)' < $@)
+		noresolved=$$(jq '.packages | del(."") | .[] | select(has("resolved") | not)' < $@)
+	fi
+	if [ ! -f "$@" ] || [ -n "$${nointegrity}" ] || [ -n "$${noresolved}" ]; then
+		# NOTE: package-lock.json is removed to ensure that npm includes the
+		# integrity field. npm install will not restore this field if
+		# missing in an existing package-lock.json file.
+		rm -f $@
+		# NOTE: We clean the node_modules directory to ensure that npm install
+		#       will not desync between the package.json, package-lock.json
+		#       and the node_modules directory. \
+		$(MAKE) clean-node-modules
+		npm --loglevel="$${loglevel}" install \
+			--no-audit \
+			--no-fund
+	else
+		npm --loglevel="$${loglevel}" install \
+			--package-lock-only \
+			--no-audit \
+			--no-fund
+	fi
+
+$(REPO_ROOT)/node_modules/.installed: $(REPO_ROOT)/package.json
+	@echo "Installing Node.js dependencies..."
+	loglevel="silent"
+	if [ -n "$(DEBUG_LOGGING)" ]; then
+		loglevel="verbose"
+	fi
+	npm --loglevel="$${loglevel}" clean-install
+	npm --loglevel="$${loglevel}" audit signatures
+	touch $@
+
+# Python setup
+#####################################################################
+
+$(REPO_ROOT)/.uv/venv/bin/activate:
+	@echo "Creating Python virtual environment..."
+	mkdir -p $(REPO_ROOT)/.uv
+	python -m venv $(REPO_ROOT)/.uv/venv
+	touch $@
+
+$(REPO_ROOT)/.uv/.installed: $(REPO_ROOT)/requirements-dev.txt $(REPO_ROOT)/.uv/venv/bin/activate
+	@echo "Installing Python dependencies..."
+	$(REPO_ROOT)/.uv/venv/bin/pip install -r $< --require-hashes
+	touch $@
+
+$(REPO_ROOT)/uv.lock: $(REPO_ROOT)/pyproject.toml $(REPO_ROOT)/.uv/.installed
+	@echo "Updating Python dependencies..."
+	$(REPO_ROOT)/.uv/venv/bin/uv lock
+	touch $@
+
+$(REPO_ROOT)/.venv/.installed: $(REPO_ROOT)/pyproject.toml $(REPO_ROOT)/.uv/.installed
+	@echo "Installing Python dependencies..."
+	$(REPO_ROOT)/.uv/venv/bin/uv sync --locked
+	touch $@
+
+# Aqua setup
+#####################################################################
+
+$(AQUA_ROOT_DIR)/.$(AQUA_VERSION).installed:
+	@echo "Installing aqua $(AQUA_VERSION)..."
+	$(REPO_ROOT)/third_party/aquaproj/aqua-installer/aqua-installer -v "$(AQUA_VERSION)"
+	touch $@
+
+$(REPO_ROOT)/.aqua-checksums.json: $(REPO_ROOT)/.aqua.yaml $(AQUA_ROOT_DIR)/.$(AQUA_VERSION).installed
+	@echo "Updating aqua checksums..."
+	loglevel="info"
+	if [ -n "$(DEBUG_LOGGING)" ]; then
+		loglevel="debug"
+	fi
+	$(AQUA_ROOT_DIR)/bin/aqua \
+		--config "$(REPO_ROOT)/.aqua.yaml" \
+		--log-level "$${loglevel}" \
+		update-checksum \
+		--prune
+
+$(AQUA_ROOT_DIR)/.installed: $(REPO_ROOT)/.aqua.yaml $(AQUA_ROOT_DIR)/.$(AQUA_VERSION).installed
+	@echo "Installing aqua tools..."
+	loglevel="info"
+	if [ -n "$(DEBUG_LOGGING)" ]; then
+		loglevel="debug"
+	fi
+	$(AQUA_ROOT_DIR)/bin/aqua \
+		--config "$(REPO_ROOT)/.aqua.yaml" \
+		--log-level "$${loglevel}" \
+		install
+	touch $@

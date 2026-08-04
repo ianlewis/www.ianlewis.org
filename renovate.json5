@@ -76,8 +76,8 @@
   //       See: https://docs.netlify.com/deploy/manage-deploys/manage-deploys-overview/#skip-a-deploy
   packageRules: [
     {
-      matchUpdateTypes: ["minor", "patch"],
       groupName: "aqua",
+      matchUpdateTypes: ["minor", "patch"],
       matchFileNames: [".aqua.yaml", ".aqua-checksums.yaml"],
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
@@ -87,8 +87,8 @@
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
     {
-      matchUpdateTypes: ["minor", "patch"],
       groupName: "makefile",
+      matchUpdateTypes: ["minor", "patch"],
       matchFileNames: ["Makefile"],
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
@@ -98,9 +98,9 @@
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
     {
-      matchManagers: ["github-actions"],
-      matchUpdateTypes: ["minor", "patch"],
       groupName: "github-actions",
+      matchManagers: ["github-actions"],
+      matchUpdateTypes: ["minor", "patch"],
       pinDigests: true,
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
@@ -111,9 +111,9 @@
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
     {
-      matchManagers: ["pep621"],
-      matchUpdateTypes: ["minor", "patch"],
       groupName: "pep621",
+      matchManagers: ["pep621"],
+      matchUpdateTypes: ["minor", "patch"],
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
     {
@@ -122,9 +122,9 @@
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
     {
+      groupName: "python",
       matchManagers: ["pip_requirements"],
       matchUpdateTypes: ["minor", "patch"],
-      groupName: "python",
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
     {
@@ -133,21 +133,28 @@
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
     {
+      groupName: "npm",
       matchManagers: ["npm"],
       matchDepTypes: ["dependencies"],
       matchUpdateTypes: ["minor", "patch"],
-      groupName: "npm",
     },
     {
-      matchManagers: ["npm"],
-      matchDepTypes: ["devDependencies"],
       groupName: "npm dev",
+      matchManagers: ["npm"],
+      matchUpdateTypes: ["minor", "patch"],
+      matchDepTypes: ["devDependencies"],
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
     {
+      matchManagers: ["npm"],
+      matchUpdateTypes: ["major"],
+      matchDepTypes: ["devDependencies"],
+      commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
+    },
+    {
+      groupName: "ruby",
       matchManagers: ["bundler"],
       matchUpdateTypes: ["minor", "patch"],
-      groupName: "ruby",
     },
   ],
 }
