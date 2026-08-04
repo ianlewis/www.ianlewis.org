@@ -28,7 +28,7 @@
     "netlify-cli": "26.2.0",
     "picomatch": "4.0.5",
     "prettier": "3.9.6",
-    "renovate": "43.288.0",
+    "renovate": "44.5.3",
     "stylelint": "17.14.1",
     "stylelint-config-standard-scss": "17.0.0",
     "stylelint-scss": "7.2.0",
