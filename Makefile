@@ -26,91 +26,10 @@ JEKYLL_BUILD_OPTIONS.deploy-preview := --drafts --future
 JEKYLL_BUILD_OPTIONS.production :=
 JEKYLL_BUILD_OPTIONS ?= $(JEKYLL_BUILD_OPTIONS.$(CONTEXT))
 
-# renovate: datasource=github-releases depName=aquaproj/aqua versioning=loose
-AQUA_VERSION ?= v2.62.0
-AQUA_REPO := github.com/aquaproj/aqua
-AQUA_CHECKSUM ?= $(AQUA_CHECKSUM.$(kernel).$(arch))
-export AQUA_ROOT_DIR = $(MAKEFILE_ROOT)/.aqua
-
-# Ensure that aqua and aqua installed tools are in the PATH.
-export PATH := $(AQUA_ROOT_DIR)/bin:$(PATH)
-
-# Node.js setup
-#####################################################################
-
-package-lock.json: package.json $(AQUA_ROOT_DIR)/.installed
-	@echo "Updating Node.js dependencies..."
-	loglevel="notice"
-	if [ -n "$(DEBUG_LOGGING)" ]; then
-		loglevel="verbose"
-	fi
-	# NOTE: npm install will happily ignore the fact that integrity hashes are
-	# missing in the package-lock.json. We need to check for missing integrity
-	# fields ourselves. If any are missing, then we need to regenerate the
-	# package-lock.json from scratch.
-	nointegrity=""
-	noresolved=""
-	if [ -f "$@" ]; then
-		nointegrity=$$(jq '.packages | del(."") | .[] | select(has("integrity") | not)' < $@)
-		noresolved=$$(jq '.packages | del(."") | .[] | select(has("resolved") | not)' < $@)
-	fi
-	if [ ! -f "$@" ] || [ -n "$${nointegrity}" ] || [ -n "$${noresolved}" ]; then
-		# NOTE: package-lock.json is removed to ensure that npm includes the
-		# integrity field. npm install will not restore this field if
-		# missing in an existing package-lock.json file.
-		rm -f $@
-		# NOTE: We clean the node_modules directory to ensure that npm install
-		#       will not desync between the package.json, package-lock.json
-		#       and the node_modules directory. \
-		$(MAKE) clean-node-modules
-		npm --loglevel="$${loglevel}" install \
-			--no-audit \
-			--no-fund
-	else
-		npm --loglevel="$${loglevel}" install \
-			--package-lock-only \
-			--no-audit \
-			--no-fund
-	fi
-
-node_modules/.installed: package.json
-	@echo "Installing Node.js dependencies..."
-	loglevel="silent"
-	if [ -n "$(DEBUG_LOGGING)" ]; then
-		loglevel="verbose"
-	fi
-	npm --loglevel="$${loglevel}" clean-install
-	npm --loglevel="$${loglevel}" audit signatures
-	touch $@
-
-# Python setup
-#####################################################################
-
-.uv/venv/bin/activate:
-	@echo "Creating Python virtual environment..."
-	mkdir -p .uv
-	python -m venv .uv/venv
-	touch $@
-
-.uv/.installed: requirements-dev.txt .uv/venv/bin/activate
-	@echo "Installing Python dependencies..."
-	./.uv/venv/bin/pip install -r $< --require-hashes
-	touch $@
-
-uv.lock: pyproject.toml .uv/.installed
-	@echo "Updating Python dependencies..."
-	./.uv/venv/bin/uv lock
-	touch $@
-
-.venv/.installed: pyproject.toml .uv/.installed
-	@echo "Installing Python dependencies..."
-	./.uv/venv/bin/uv sync --locked
-	touch $@
-
 # Ruby setup
 ######################################################################
 
-Gemfile.lock: Gemfile
+$(REPO_ROOT)/Gemfile.lock: Gemfile
 	@echo "Updating Ruby dependencies..."
 	bundle lock --update
 
@@ -118,38 +37,6 @@ Gemfile.lock: Gemfile
 bundle-install:
 	@echo "Installing Ruby dependencies..."
 	bundle check || bundle install
-
-# Aqua setup
-#####################################################################
-
-$(AQUA_ROOT_DIR)/.$(AQUA_VERSION).installed:
-	@echo "Installing aqua $(AQUA_VERSION)..."
-	./third_party/aquaproj/aqua-installer/aqua-installer -v "$(AQUA_VERSION)"
-	touch $@
-
-.aqua-checksums.json: .aqua.yaml $(AQUA_ROOT_DIR)/.$(AQUA_VERSION).installed
-	@echo "Updating aqua checksums..."
-	loglevel="info"
-	if [ -n "$(DEBUG_LOGGING)" ]; then
-		loglevel="debug"
-	fi
-	$(AQUA_ROOT_DIR)/bin/aqua \
-		--config ".aqua.yaml" \
-		--log-level "$${loglevel}" \
-		update-checksum \
-		--prune
-
-$(AQUA_ROOT_DIR)/.installed: .aqua.yaml $(AQUA_ROOT_DIR)/.$(AQUA_VERSION).installed
-	@echo "Installing aqua tools..."
-	loglevel="info"
-	if [ -n "$(DEBUG_LOGGING)" ]; then
-		loglevel="debug"
-	fi
-	$(AQUA_ROOT_DIR)/bin/aqua \
-		--config ".aqua.yaml" \
-		--log-level "$${loglevel}" \
-		install
-	touch $@
 
 ## Content
 #####################################################################
@@ -188,7 +75,7 @@ jekyll-build: bundle-install
 	bundle exec jekyll build $(JEKYLL_BUILD_OPTIONS)
 
 .PHONY: build
-build: node_modules/.installed ## Build the site.
+build: $(REPO_ROOT)/node_modules/.installed ## Build the site.
 	@echo "Building the site for context $(CONTEXT)..."
 	debug_options=""
 	if [ -n "$(DEBUG_LOGGING)" ]; then
@@ -200,7 +87,7 @@ build: node_modules/.installed ## Build the site.
 		$${debug_options}
 
 .PHONY: serve
-serve: node_modules/.installed bundle-install ## Run local development server.
+serve: bundle-install $(REPO_ROOT)/node_modules/.installed ## Run local development server.
 	@echo "Starting local development server on port $(SERVE_PORT)..."
 	debug_options=""
 	if [ -n "$(DEBUG_LOGGING)" ]; then
@@ -223,16 +110,18 @@ test: lint ## Run all tests.
 ## Scripts
 #####################################################################
 
-recent-posts: .venv/.installed ## Print posts published in the last 24 hours.
-	@./.venv/bin/python \
+recent-posts: $(REPO_ROOT)/.venv/.installed ## Print posts published in the last 24 hours.
+	@echo "Checking for recent posts..."
+	./.venv/bin/python \
 		scripts/check-recent-posts.py \
 			--hours 24 \
 			 content/en/_posts \
 			 content/jp/_posts \
 			 content/til/_posts
 
-special-date: .venv/.installed ## Print if today is a special date.
-	@./.venv/bin/python \
+special-date: $(REPO_ROOT)/.venv/.installed ## Print if today is a special date.
+	@echo "Checking for special dates..."
+	./.venv/bin/python \
 		scripts/check-special-dates.py \
 			content/_data/profile.yaml
 
@@ -243,7 +132,7 @@ special-date: .venv/.installed ## Print if today is a special date.
 format: html-format js-format json-format md-format py-format sass-format shfmt yaml-format ## Format all files
 
 .PHONY: html-format
-html-format: node_modules/.installed ## Format HTML files.
+html-format: $(REPO_ROOT)/node_modules/.installed ## Format HTML files.
 	@echo "Formatting HTML files..."
 	loglevel="log"
 	if [ -n "$(DEBUG_LOGGING)" ]; then
@@ -265,7 +154,7 @@ html-format: node_modules/.installed ## Format HTML files.
 		$${files}
 
 .PHONY: js-format
-js-format: node_modules/.installed ## Format Javascript files.
+js-format: $(REPO_ROOT)/node_modules/.installed ## Format Javascript files.
 	@echo "Formatting Javascript files..."
 	loglevel="log"
 	if [ -n "$(DEBUG_LOGGING)" ]; then
@@ -288,7 +177,7 @@ js-format: node_modules/.installed ## Format Javascript files.
 		$${files}
 
 .PHONY: json-format
-json-format: node_modules/.installed ## Format JSON files.
+json-format: $(REPO_ROOT)/node_modules/.installed ## Format JSON files.
 	@echo "Formatting JSON files..."
 	loglevel="log"
 	if [ -n "$(DEBUG_LOGGING)" ]; then
@@ -351,7 +240,7 @@ license-headers: ## Update license headers.
 	done
 
 .PHONY: md-format
-md-format: node_modules/.installed ## Format Markdown files.
+md-format: $(REPO_ROOT)/node_modules/.installed ## Format Markdown files.
 	@echo "Formatting Markdown files..."
 	loglevel="log"
 	if [ -n "$(DEBUG_LOGGING)" ]; then
@@ -387,7 +276,7 @@ py-format: $(AQUA_ROOT_DIR)/.installed ## Format Python files.
 	ruff format $${files}
 
 .PHONY: sass-format
-sass-format: node_modules/.installed ## Format SASS files.
+sass-format: $(REPO_ROOT)/node_modules/.installed ## Format SASS files.
 	@echo "Formatting SASS files..."
 	loglevel="log"
 	if [ -n "$(DEBUG_LOGGING)" ]; then
@@ -424,7 +313,7 @@ shfmt: $(AQUA_ROOT_DIR)/.installed ## Format bash files.
 	shfmt --write --simplify --indent 4 "$${files[@]}"
 
 .PHONY: yaml-format
-yaml-format: node_modules/.installed ## Format YAML files.
+yaml-format: $(REPO_ROOT)/node_modules/.installed ## Format YAML files.
 	@echo "Formatting YAML files..."
 	loglevel="log"
 	if [ -n "$(DEBUG_LOGGING)" ]; then
@@ -467,7 +356,7 @@ actionlint: $(AQUA_ROOT_DIR)/.installed ## Runs the actionlint linter.
 		$${files}
 
 .PHONY: check-redirects
-check-redirects: .venv/.installed ## Check for redirect loops.
+check-redirects: $(REPO_ROOT)/.venv/.installed ## Check for redirect loops.
 	@echo "Checking for redirect loops..."
 	./.venv/bin/python \
 		scripts/check-redirects.py
@@ -496,7 +385,7 @@ COMMITLINT_FROM_REF ?=
 COMMITLINT_TO_REF ?=
 
 .PHONY: commitlint
-commitlint: node_modules/.installed ## Run commitlint linter.
+commitlint: $(REPO_ROOT)/node_modules/.installed ## Run commitlint linter.
 	@echo "Running commitlint..."
 	commitlint_from=$(COMMITLINT_FROM_REF)
 	commitlint_to=$(COMMITLINT_TO_REF)
@@ -526,7 +415,7 @@ commitlint: node_modules/.installed ## Run commitlint linter.
 		--strict
 
 .PHONY: eslint
-eslint: node_modules/.installed ## Runs eslint.
+eslint: $(REPO_ROOT)/node_modules/.installed ## Runs eslint.
 	@echo "Running eslint..."
 	extraargs=""
 	if [ -n "$(DEBUG_LOGGING)" ]; then
@@ -623,7 +512,7 @@ format-check: ## Check that files are properly formatted.
 	exit "$${exit_code}"
 
 .PHONY: html-validate
-html-validate: build node_modules/.installed ## Runs the html-validate linter.
+html-validate: build $(REPO_ROOT)/node_modules/.installed ## Runs the html-validate linter.
 	@echo "Running html-validate..."
 	./node_modules/.bin/html-validate \
 		--config htmlvalidate.mjs \
@@ -647,7 +536,7 @@ shellcheck: $(AQUA_ROOT_DIR)/.installed ## Runs the shellcheck linter.
 		"$${files[@]}"
 
 .PHONY: stylelint
-stylelint: node_modules/.installed ## Runs the stylelint linter.
+stylelint: $(REPO_ROOT)/node_modules/.installed ## Runs the stylelint linter.
 	@echo "Running stylelint..."
 	files=$$(
 		git ls-files --deduplicate \
@@ -664,7 +553,7 @@ stylelint: node_modules/.installed ## Runs the stylelint linter.
 	fi
 
 .PHONY: markdownlint
-markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the markdownlint linter.
+markdownlint: $(REPO_ROOT)/node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the markdownlint linter.
 	@echo "Running markdownlint..."
 	# NOTE: Issue and PR templates are handled specially so we can disable
 	# MD041/first-line-heading/first-line-h1 without adding an ugly html comment
@@ -680,7 +569,7 @@ markdownlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the ma
 	./node_modules/.bin/markdownlint-cli2 $${files}
 
 .PHONY: mypy
-mypy: .venv/.installed ## Runs the mypy type checker.
+mypy: $(REPO_ROOT)/.venv/.installed ## Runs the mypy type checker.
 	@echo "Running mypy..."
 	files=$$(
 		git ls-files --deduplicate \
@@ -695,7 +584,7 @@ mypy: .venv/.installed ## Runs the mypy type checker.
 		$${files}
 
 .PHONY: renovate-config-validator
-renovate-config-validator: node_modules/.installed ## Validate Renovate configuration.
+renovate-config-validator: $(REPO_ROOT)/node_modules/.installed ## Validate Renovate configuration.
 	@echo "Validating Renovate configuration..."
 	./node_modules/.bin/renovate-config-validator \
 		--strict
@@ -718,7 +607,7 @@ ruff: $(AQUA_ROOT_DIR)/.installed ## Runs the ruff linter.
 	fi
 
 .PHONY: textlint
-textlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textlint linter.
+textlint: $(REPO_ROOT)/node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textlint linter.
 	@echo "Running textlint..."
 	files=$$(
 		git ls-files --deduplicate \
@@ -737,7 +626,7 @@ textlint: node_modules/.installed $(AQUA_ROOT_DIR)/.installed ## Runs the textli
 	./node_modules/.bin/textlint $${files}
 
 .PHONY: yamllint
-yamllint: .venv/.installed ## Runs the yamllint linter.
+yamllint: $(REPO_ROOT)/.venv/.installed ## Runs the yamllint linter.
 	@echo "Running yamllint..."
 	files=$$(
 		git ls-files --deduplicate \
@@ -758,7 +647,7 @@ yamllint: .venv/.installed ## Runs the yamllint linter.
 		$${files}
 
 .PHONY: zizmor
-zizmor: .venv/.installed ## Runs the zizmor linter.
+zizmor: $(REPO_ROOT)/.venv/.installed ## Runs the zizmor linter.
 	@echo "Running zizmor..."
 	# NOTE: On GitHub actions this outputs SARIF format to zizmor.sarif.json
 	#       in addition to outputting errors to the terminal.
@@ -790,7 +679,7 @@ zizmor: .venv/.installed ## Runs the zizmor linter.
 #####################################################################
 
 .PHONY: update-lockfiles
-update-lockfiles: .aqua-checksums.json Gemfile.lock package-lock.json uv.lock ## Update lockfiles.
+update-lockfiles: $(REPO_ROOT)/.aqua-checksums.json $(REPO_ROOT)/package-lock.json $(REPO_ROOT)/uv.lock $(REPO_ROOT)/Gemfile.lock ## Update lockfiles.
 
 .PHONY: todos
 todos: $(AQUA_ROOT_DIR)/.installed ## Print outstanding TODOs.
