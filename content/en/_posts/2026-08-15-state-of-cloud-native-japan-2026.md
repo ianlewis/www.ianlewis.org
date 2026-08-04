@@ -1,22 +1,22 @@
 ---
 layout: post
 title: "Reactions to the CNCF State of Cloud Native in Japan 2026"
+date: 2026-08-15 09:00:00 +0900
+permalink: /en/state-of-cloud-native-japan-2026
 blog: en
 tags:
     - tech
     - programming
     - kubernetes
     - containers
-permalink: /en/state-of-cloud-native-japan-2026
 render_with_liquid: false
 ---
 
 The CNCF recently published the
-[State of Cloud Native in Japan
-2026](/assets/pdf/DN31-JAPAN-State-of-Cloud-Native-Development-1.pdf) report
-where they published information on the state of the community here in Japan. I
-wanted to write some of my reactions to the report and share some of the data
-that I found interesting.
+[State of Cloud Native in Japan 2026](/assets/pdf/state-of-cloud-native-japan/DN31-JAPAN-State-of-Cloud-Native-Development-1.pdf)
+report where they published information on the state of the Cloud Native
+adoption here in Japan. I wanted to write some of my reactions to the report and
+share some of the data that I found interesting.
 
 The report is based on the
 [SlashData™ Developer Nation’s 31st edition](https://research.slashdata.co/reports/68c99072f9eed41a5dadcc8f)
@@ -43,14 +43,16 @@ using cloud native technologies. It shows a large spike from 23% in Q1 2025 to
 
 ![Proportion of Cloud Native Developers in Japan](/assets/images/state-of-cloud-native-japan/proportion-of-cloud-native-developers-in-japan.png){: .align-center}
 
-This is a huge jump in a short period of time. I think this is
-mostly due to the very small sample size. It also seems that the survey
-methodology was changed in Q3 2025 as noted on page 24. This is further
-explained on page 21 as a change that now includes "web developers" as "backend
-developers".
+This is a huge jump in a short period of time. I think this is partly due to the
+very small sample size. It also seems that the survey methodology was changed in
+Q3 2025 as noted on page 24. This is further explained on page 21 as a change
+that now includes "web developers" as "backend developers". Perhaps, a larger
+proportion of web developers in Japan are using cloud native technology relative
+to other countries.
 
-It seems that, perhaps, a larger proportion of web developers in Japan are using
-cloud native technology relative to other countries.
+Even with the change in methodology, the report notes that the increase suggests
+that an improvement in adoption of cloud native technology in Japan when
+compared to Q1 2024.
 
 ## Infrastructure Deployment in Japan
 
@@ -108,13 +110,21 @@ performance, cost efficiency, or cultural reasons. You could achieve similar
 data sovereignty, risk management, and better flexibility with a private cloud
 deployment, but more organizations in Japan are choosing bare metal deployments.
 
-The fact that cloud native adoption is on par with the global rate also
-indicates that the cloud native technology is fairly mature, and isn't suffering
-from a lagging adoption anymore. Cloud is even older, so the low adoption is not
-due to the technology being immature, or due to adoption lag. The low adoption
-is a conscious choice made for other reasons.
+This might be because it's easier to deal directly with the bare metal servers
+than to run a full private cloud deployment like OpenStack. You can use tools
+like [MAAS](https://canonical.com/maas) (Ubuntu) or
+[Ironic](https://ironicbaremetal.org/) (OpenStack) to manage bare metal
+deployments at scale, and use Kubernetes on top of that to give you many of the
+same benefits of a private cloud.
 
-## Japanese Cloud Native Community
+The fact that cloud native adoption is on par with the global rate also
+indicates that the cloud native technology is fairly mature, and is no longer
+suffering from the lagging adoption that often comes with new technology. Cloud
+is even older, so the low adoption is not due to the technology being immature,
+or due to adoption lag. The low adoption is a conscious choice made for other
+reasons.
+
+## The Japanese Cloud Native Community
 
 The Cloud Native community in Japan was started (by myself) with the
 [Kubernetes Meetup Tokyo](https://k8sjp.connpass.com/) in May 2016. At the time
@@ -126,4 +136,15 @@ Eventually the CNCF community broadened to include other cloud native
 technologies, but it's always been a grassroots driven. Many folks are now using
 cloud native tech in their jobs, but I think the grassroots nature of the
 community speaks to its strength. Folks contribute to the community because they
-believe in the technology rather than because of their job.
+believe in the technology rather than because of their job. I think this report
+lends some evidence to that.
+
+## Final Thoughts
+
+The report does a good job of capturing the unique use cases and deployment
+models in Japan. Japan is often seen as making strange technology choices, and
+the language barrier can make it difficult for the global community to
+understand the reasoning behind them.
+
+I hope that in the future they can get larger sample sizes to provide more
+accurate and comparable data from year to year.
