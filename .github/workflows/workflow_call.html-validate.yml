@@ -47,9 +47,9 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           path: "base"
-          ref: ${{ github.event.pull_request.base.ref }}
-          submodules: true
           persist-credentials: false
+          ref: ${{ github.event.pull_request.base.ref }}
+          submodules: recursive
 
       # NOTE: ruby/setup-ruby automatically reads the .ruby-version file.
       - uses: ruby/setup-ruby@003a5c4d8d6321bd302e38f6f0ec593f77f06600 # v1.319.0
@@ -77,8 +77,8 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           path: "head"
-          submodules: true
           persist-credentials: false
+          submodules: recursive
 
       # NOTE: ruby/setup-ruby automatically reads the .ruby-version file.
       - uses: ruby/setup-ruby@003a5c4d8d6321bd302e38f6f0ec593f77f06600 # v1.319.0
