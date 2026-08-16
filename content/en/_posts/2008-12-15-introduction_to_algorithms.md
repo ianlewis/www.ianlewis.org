@@ -8,21 +8,18 @@ tags: tech programming python
 render_with_liquid: false
 ---
 
-<!-- TODO(#339): Add alt text to images. -->
-<!-- markdownlint-disable MD045 -->
-
-![](/assets/images/2008-12-15-introduction_to_algorithms/intro_to_algorithms.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+![The cover of Introduction to Algorithms](/assets/images/2008-12-15-introduction_to_algorithms/intro_to_algorithms.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 
 Today my copy of Introduction to Algorithms came in the mail (a gift from the
-family). I've decided, mostly inspired by [Peteris
-Krumins](http://www.catonmat.net/) to revisit classic algorithms as it's been a
-while since I've taken a look at them.
+family). I've decided, mostly inspired by
+[Peteris Krumins](http://www.catonmat.net/) to revisit classic algorithms as
+it's been a while since I've taken a look at them.
 
 I have decided to also take a look at the MIT Intro to Algorithms course in
 order to revisit algorithms and concepts. I won't provide any lecture notes or
-anything since Peteris did a much better job of of writing [lecture
-notes](http://www.catonmat.net/blog/mit-introduction-to-algorithms-part-one/)
-that I ever could but I did go ahead and create some python implementations of
+anything since Peteris did a much better job of writing
+[lecture notes](http://www.catonmat.net/blog/mit-introduction-to-algorithms-part-one/)
+that I ever could. I did go ahead and create some python implementations of
 the sorting algorithms covered in the first lecture. These haven't been tested
 extensively so there might be bugs but I'm pretty sure they're working. I'd be
 interested to see how well these work with large input data, particularly the
@@ -69,5 +66,3 @@ def merge(array, start, pivot, end):
       array[k] = r[j]
       j += 1
 ```
-
-<!-- markdownlint-enable MD045 -->
