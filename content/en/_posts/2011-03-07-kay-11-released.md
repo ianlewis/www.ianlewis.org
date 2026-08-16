@@ -8,9 +8,6 @@ tags: tech programming python cloud
 render_with_liquid: false
 ---
 
-<!-- TODO(#339): Add alt text to images. -->
-<!-- markdownlint-disable MD045 -->
-
 The Kay team just just released Kay 1.1\! I want to thank Takashi Matsuo,
 Nickolas Daskalou, Tasuku Suenaga, and Yosuke Suzuki for their hard work on this
 release.
@@ -41,8 +38,8 @@ def my_cron_view(request):
     return response
 ```
 
-You can see the [documentation for the `cron_only` decorator
-here](http://kay-docs.shehas.net/decorators.html#kay.utils.decorators.cron_only).
+~~You can see the [documentation for the `cron_only` decorator
+here](http://kay-docs.shehas.net/decorators.html#kay.utils.decorators.cron_only).~~
 
 ## Pagination API
 
@@ -103,8 +100,8 @@ The Pagination API is designed to make as few Datastore RPC calls as possible.
 For instance, if you don't use the `num_pages` or `count` properties, the
 Pagination API will not make a count() RPC call.
 
-You can view the [Pagination API documentation
-here](http://kay-docs.shehas.net/pagination.html).
+~~You can view the [Pagination API documentation
+here](http://kay-docs.shehas.net/pagination.html).~~
 
 ## Live Settings
 
@@ -129,12 +126,12 @@ Or they can be managed via a custom Admin page:
 
 ---
 
-![](/assets/images/652/live_settings.png)
+![The live setting form](/assets/images/652/live_settings.png)
 
 ---
 
 You can read the [Live Settings documentation
-here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.live_settings)
+here](https://code.google.com/archive/p/kay-framework/wikis/LiveSettings.wiki)
 
 ## `AppStatsMiddleware`
 
@@ -149,9 +146,9 @@ MIDDLEWARE_CLASSES = (
 ```
 
 The `AppStatsMiddleware` can work with the Live Settings API and can be enabled
-and disabled without redeploying your application. You can read the
+and disabled without redeploying your application. ~~You can read the
 [documentation for the AppStats extension
-here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.appstats)
+here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.appstats)~~
 
 ## `EReporter`
 
@@ -162,14 +159,10 @@ SDK](http://code.google.com/intl/en/appengine/articles/python/recording_exceptio
 but provides a convenient way of viewing the errors via a custom admin page and
 integrates with Kay's `ADMINS` and email related settings.
 
----
+![The error reporter page showing an import exception](/assets/images/652/ereporter.png)
 
-![image](/assets/images/652/ereporter.png)
-
----
-
-You can read the [documentation for the `EReporter` extension
-here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.ereporter).
+~~You can read the [documentation for the `EReporter` extension
+here](http://kay-docs.shehas.net/extensions.html#module-kay.ext.ereporter).~~
 
 ## Conclusion
 
@@ -185,5 +178,3 @@ are also looking forward to Kay 2.0 so if you have any suggestions about any
 large new features now is the time to let us know!
 
 We look forward to hearing feedback about Kay!
-
-<!-- markdownlint-enable MD045 -->
