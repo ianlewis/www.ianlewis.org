@@ -110,6 +110,8 @@ plainwhite:
       url: /projects
     - title: Today I Learned
       url: /til
+    - title: Talks & Publications
+      url: /publications
 
   analytics_id: "G-1C2E36DTVT"
 

@@ -164,7 +164,7 @@
         <ul>
           {%- for link in site.plainwhite.navigation %}
           <li>
-            <a href="{{ link.url }}">{{ link.title }}</a>
+            <a href="{{ link.url }}">{{ link.title | escape }}</a>
           </li>
           {%- endfor %}
         </ul>
