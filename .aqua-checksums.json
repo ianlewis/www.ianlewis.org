@@ -1,168 +1,33 @@
 {
   "checksums": [
     {
-      "id": "github_release/github.com/astral-sh/ruff/0.15.22/ruff-aarch64-apple-darwin.tar.gz",
-      "checksum": "A2881AF26FD1D19F4932C4DDF1E70B4E0EFCF48513C5DAE082564E03F0B467A3",
+      "id": "github_release/github.com/astral-sh/ruff/0.16.7/ruff-aarch64-apple-darwin.tar.gz",
+      "checksum": "80221A5E0B1AE29262A74496F2AD1380C1AB52B3EDD8CEE13EC76D8ACFF406CA",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/ruff/0.15.22/ruff-aarch64-pc-windows-msvc.zip",
-      "checksum": "76A57FE257602C386499437071A16ABB1EE51FFF68C8B4C28B0BF8A0D9F7AA34",
+      "id": "github_release/github.com/astral-sh/ruff/0.16.7/ruff-aarch64-pc-windows-msvc.zip",
+      "checksum": "34BEFDE8F261AAE96A1EDF8E84EEAFA09E2FFC0DF7E3CCAAE52BCF39D29BD233",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/ruff/0.15.22/ruff-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "88FEB2DC2FAFB92482185201F4D483134FBAAB10370C79512D3DD372F1D3F28B",
+      "id": "github_release/github.com/astral-sh/ruff/0.16.7/ruff-aarch64-unknown-linux-musl.tar.gz",
+      "checksum": "DD669EFE4AC74FFD5842B26147C36CDD6C93B9CF0D10D5E53C12EC5B44F540BD",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/ruff/0.15.22/ruff-x86_64-apple-darwin.tar.gz",
-      "checksum": "687A9CEB88AB85DAB061026D5017218225A481121B1A40862CC8F92B56F18090",
+      "id": "github_release/github.com/astral-sh/ruff/0.16.7/ruff-x86_64-apple-darwin.tar.gz",
+      "checksum": "6F3B98EC349F470B7EFDE5294D44E5171613DDAAC3C251A918A7946B303D3EC2",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/ruff/0.15.22/ruff-x86_64-pc-windows-msvc.zip",
-      "checksum": "6E5419593984941405E9ADD902E89C6EA4AF87D97919AC5EF82E1BC4E43BBD8D",
+      "id": "github_release/github.com/astral-sh/ruff/0.16.7/ruff-x86_64-pc-windows-msvc.zip",
+      "checksum": "A099E761FB841FC33D44031AA37E16A3D154922FD3DA284396E58AE687973E45",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/ruff/0.15.22/ruff-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "853462DF618FB9F156A9F04D9D899D9E5A9E1A43FBFFAEC72DF4BB159348E71B",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/checkmake/checkmake/v0.3.2/checkmake-v0.3.2.darwin.amd64",
-      "checksum": "82942043A4766B9FB3FFE6C77584DF7D6C832BFA00571F234D257799F492FDD7",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/checkmake/checkmake/v0.3.2/checkmake-v0.3.2.darwin.arm64",
-      "checksum": "D5DAB7169D1CB246B380ED5E7FC1E6ADED301D453DB258F858E774422D25961F",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/checkmake/checkmake/v0.3.2/checkmake-v0.3.2.linux.amd64",
-      "checksum": "E2EFFB876913F3EE2CAEF0BA35F6202C5E8A3CD55A077D8D2B9CE2034257B6AF",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/checkmake/checkmake/v0.3.2/checkmake-v0.3.2.linux.arm64",
-      "checksum": "409167C4ABB99407BD232C3BBD351B8A39DF57997FEAFDE5A08BDDFFB0F2DCB4",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/checkmake/checkmake/v0.3.2/checkmake-v0.3.2.windows.amd64.exe",
-      "checksum": "6ADF4BDE2DBFE8001ECF2918ABFE02F7A57191568F1D185537ECCD9C59625DCA",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/checkmake/checkmake/v0.3.2/checkmake-v0.3.2.windows.arm64.exe",
-      "checksum": "571B6440776236A3626C5FC9AEAEF7DA78EEE625683F181AF89439028996C611",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/ianlewis/todos/v0.14.0/todos-darwin-amd64",
-      "checksum": "D7B0CB799DF77B3EA997F1B25D92E049A60F1CEDF24073879EC59AE0569CC59A",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/ianlewis/todos/v0.14.0/todos-darwin-arm64",
-      "checksum": "E6A052362062E2220088C5F5326D88C4545022446923E925496901D724414619",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/ianlewis/todos/v0.14.0/todos-linux-amd64",
-      "checksum": "A45A7237B21A94F072CC9AE79B139761683A7B48CEB5BA2EA53570DB37304FD4",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/ianlewis/todos/v0.14.0/todos-linux-arm64",
-      "checksum": "76BE56822A78ACAC36889B98BD265AD6E0A1CBD3B04B5CA757D0683E45D173E3",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/ianlewis/todos/v0.14.0/todos-windows-amd64.exe",
-      "checksum": "CE5384F10EC3F97F3772FEB508A22E303231F4DE99CF1F52CAE69C8CB918A7E3",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/ianlewis/todos/v0.14.0/todos-windows-arm64.exe",
-      "checksum": "3D2B8C119100B54C8695BA12A98B4A3645549F4869D2C86802EA895C18348424",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/jqlang/jq/jq-1.8.2/jq-linux-amd64",
-      "checksum": "B1C22172DD303F3BE49E935AA56AA48A8B7A46E0BC838B4997D3BB451495870F",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/jqlang/jq/jq-1.8.2/jq-linux-arm64",
-      "checksum": "8B85C817833814DDCA00A144C33705546355AFCCF0CF39B188F3CDB48B852309",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/jqlang/jq/jq-1.8.2/jq-macos-amd64",
-      "checksum": "E94B266E3C26690550006ABE63152B782280F4E14374ACCDF04CBDE844F00BC0",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/jqlang/jq/jq-1.8.2/jq-macos-arm64",
-      "checksum": "2D75340BA57A4B4B4C8708A21C2DC8E958A48AAA8BBA13B27F77F6E4C0ECA07E",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/jqlang/jq/jq-1.8.2/jq-windows-amd64.exe",
-      "checksum": "A6FC67FEDAF9128A3309A1E2EBB8B986AECCF70122EE46D2CB4849E423F0C627",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/koalaman/shellcheck/v0.11.0/shellcheck-v0.11.0.darwin.aarch64.tar.xz",
-      "checksum": "56AFFDD8DE5527894DCA6DC3D7E0A99A873B0F004D7AABC30AE407D3F48B0A79",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/koalaman/shellcheck/v0.11.0/shellcheck-v0.11.0.darwin.x86_64.tar.xz",
-      "checksum": "3C89DB4EDCAB7CF1C27BFF178882E0F6F27F7AFDF54E859FA041FCA10FEBE4C6",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/koalaman/shellcheck/v0.11.0/shellcheck-v0.11.0.linux.aarch64.tar.xz",
-      "checksum": "12B331C1D2DB6B9EB13CFCA64306B1B157A86EB69DB83023E261EAA7E7C14588",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/koalaman/shellcheck/v0.11.0/shellcheck-v0.11.0.linux.x86_64.tar.xz",
-      "checksum": "8C3BE12B05D5C177A04C29E3C78CE89AC86F1595681CAB149B65B97C4E227198",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/koalaman/shellcheck/v0.11.0/shellcheck-v0.11.0.zip",
-      "checksum": "8A4E35AB0B331C85D73567B12F2A444DF187F483E5079CEFFA6BDA1FAA2E740E",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/mvdan/sh/v3.13.1/shfmt_v3.13.1_darwin_amd64",
-      "checksum": "6FEEDAFC72915794163114F512348E2437D080D0047EF8B8FA2EC63B575F12AF",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/mvdan/sh/v3.13.1/shfmt_v3.13.1_darwin_arm64",
-      "checksum": "9680526BE4A66EA1FFE988ED08AF58E1400FE1E4F4AEF5BD88B20BB9B3DA33F8",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/mvdan/sh/v3.13.1/shfmt_v3.13.1_linux_amd64",
-      "checksum": "FB096C5D1AC6BEABBDBAA2874D025BADB03EE07929F0C9FF67563CE8C75398B1",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/mvdan/sh/v3.13.1/shfmt_v3.13.1_linux_arm64",
-      "checksum": "32D92ACAA5CD8ABB29FC49DAC123DC412442D5713967819D8AF2C29F1B3857C7",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/mvdan/sh/v3.13.1/shfmt_v3.13.1_windows_amd64.exe",
-      "checksum": "60CD368533D0AD73FA86D93D5BBF95EF40587245CE684ED138C1B31557B5FE97",
+      "id": "github_release/github.com/astral-sh/ruff/0.16.7/ruff-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "8D28939CF5CABE54A2F8F7CBFAB52C643436D1BC70474198181DB9E48F504411",
       "algorithm": "sha256"
     },
     {
@@ -273,6 +138,31 @@
     {
       "id": "github_release/github.com/koalaman/shellcheck/v0.11.0/shellcheck-v0.11.0.zip",
       "checksum": "8A4E35AB0B331C85D73567B12F2A444DF187F483E5079CEFFA6BDA1FAA2E740E",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/mvdan/sh/v3.14.1/shfmt_v3.14.1_darwin_amd64",
+      "checksum": "D33EEE0DA0F92835B3562E9767A05CEE7E4EAEEF47DAA03BFD09DA17B4B590A6",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/mvdan/sh/v3.14.1/shfmt_v3.14.1_darwin_arm64",
+      "checksum": "B7C872DB63553CCFFC7253ABA3ED7D4885A27D83F1BA567B1138C6315A5847E5",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/mvdan/sh/v3.14.1/shfmt_v3.14.1_linux_amd64",
+      "checksum": "76E77641FAA025814B77F153B29796B8E6FA2FCA03E0C76A691608B86C7EA7BF",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/mvdan/sh/v3.14.1/shfmt_v3.14.1_linux_arm64",
+      "checksum": "5F2DB09DAE91FCA848F7ADBDD014632E921A383863A2AD7E0450AD3ABA0C6489",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/mvdan/sh/v3.14.1/shfmt_v3.14.1_windows_amd64.exe",
+      "checksum": "13629CE28442CA80B6B5A819F7574AB39E1C28C6E26734CA816C9714E04851DF",
       "algorithm": "sha256"
     },
     {
@@ -306,8 +196,8 @@
       "algorithm": "sha256"
     },
     {
-      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.539.0/registry.yaml",
-      "checksum": "E022DF660F01744ABFE3E93FABC7FE17E36885549E447BB2667208D2E5804F4D",
+      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.562.0/registry.yaml",
+      "checksum": "A9A1D91FA2B24F4333883039CA9D7857E886984C2C38475329E2CBA8855F4570",
       "algorithm": "sha256"
     }
   ]
