@@ -78,19 +78,23 @@
     {
       groupName: "aqua",
       matchUpdateTypes: ["minor", "patch"],
-      matchFileNames: [".aqua.yaml", ".aqua-checksums.yaml"],
+      matchFileNames: [".aqua.yaml", ".aqua-checksums.json"],
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
+      automerge: true,
+      platformAutomerge: true,
     },
     {
       matchUpdateTypes: ["major"],
-      matchFileNames: [".aqua.yaml", ".aqua-checksums.yaml"],
+      matchFileNames: [".aqua.yaml", ".aqua-checksums.json"],
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
     },
     {
       groupName: "makefile",
       matchUpdateTypes: ["minor", "patch"],
-      matchFileNames: ["Makefile"],
+      matchFileNames: ["**/Makefile", "**/*.mk"],
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
+      automerge: true,
+      platformAutomerge: true,
     },
     {
       matchUpdateTypes: ["major"],
@@ -103,6 +107,8 @@
       matchUpdateTypes: ["minor", "patch"],
       pinDigests: true,
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
+      automerge: true,
+      platformAutomerge: true,
     },
     {
       matchManagers: ["github-actions"],
@@ -115,6 +121,8 @@
       matchManagers: ["pep621"],
       matchUpdateTypes: ["minor", "patch"],
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
+      automerge: true,
+      platformAutomerge: true,
     },
     {
       matchManagers: ["pep621"],
@@ -126,6 +134,8 @@
       matchManagers: ["pip_requirements"],
       matchUpdateTypes: ["minor", "patch"],
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
+      automerge: true,
+      platformAutomerge: true,
     },
     {
       matchManagers: ["pip_requirements"],
@@ -144,6 +154,8 @@
       matchUpdateTypes: ["minor", "patch"],
       matchDepTypes: ["devDependencies"],
       commitMessageExtra: "to {{#if isPinDigest}}{{{newDigestShort}}}{{else}}{{#if isMajor}}{{prettyNewMajor}}{{else}}{{#if isSingleVersion}}{{prettyNewVersion}}{{else}}{{#if newValue}}{{{newValue}}}{{else}}{{{newDigestShort}}}{{/if}}{{/if}}{{/if}}{{/if}} [skip netlify]",
+      automerge: true,
+      platformAutomerge: true,
     },
     {
       matchManagers: ["npm"],
