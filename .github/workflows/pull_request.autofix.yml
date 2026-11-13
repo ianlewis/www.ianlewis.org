@@ -65,5 +65,40 @@ jobs:
           make update-lockfiles
 
       - uses: autofix-ci/action@c5b2d67aa2274e7b5a18224e8171550871fc7e4a # v1.3.4
+        id: lockfiles
         with:
+          fail-fast: false
           commit-message: "ci(deps): update lockfiles"
+
+      - name: format files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: make format
+
+      - uses: autofix-ci/action@c5b2d67aa2274e7b5a18224e8171550871fc7e4a # v1.3.4
+        id: formatting
+        with:
+          fail-fast: false
+          commit-message: "fix(all): formatting"
+
+      - name: check autofix
+        env:
+          LOCKFILES_AUTOFIXED: "${{ steps.lockfiles.outputs.autofix_started }}"
+          FORMATTING_AUTOFIXED: "${{ steps.formatting.outputs.autofix_started }}"
+        run: |
+          set -euo pipefail
+          # If either autofix was started then fail here.
+          [[ "${LOCKFILES_AUTOFIXED}" != "true" ]]
+          [[ "${FORMATTING_AUTOFIXED}" != "true" ]]
+
+  # Call tests directly after running autofix. We use workflow_call so that the
+  # tests run in the context of the pull_request or push ref. The workflow_run
+  # event could also be used, but it always runs in the context of the main
+  # branch.
+  tests:
+    name: tests
+    needs: autofix
+    permissions:
+      contents: read # Needed to check out private repositories.
+      security-events: write # Needed to upload SARIF results.
+    uses: $/.github/workflows/workflow_call.tests.yml
