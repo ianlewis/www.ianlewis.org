@@ -91,6 +91,10 @@ jobs:
           [[ "${LOCKFILES_AUTOFIXED}" != "true" ]]
           [[ "${FORMATTING_AUTOFIXED}" != "true" ]]
 
+  # Call tests directly after running autofix. We use workflow_call so that the
+  # tests run in the context of the pull_request or push ref. The workflow_run
+  # event could also be used, but it always runs in the context of the main
+  # branch.
   tests:
     name: tests
     needs: autofix
