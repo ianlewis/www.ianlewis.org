@@ -17,6 +17,7 @@
     "@commitlint/config-conventional": "21.2.4",
     "@csstools/stylelint-formatter-github": "2.0.0",
     "@netlify/plugin-csp-nonce": "1.6.5",
+    "@opentelemetry/api": "1.10.0",
     "@shopify/prettier-plugin-liquid": "1.11.4",
     "dictionary-en": "4.0.0",
     "encoding": "0.1.14",
