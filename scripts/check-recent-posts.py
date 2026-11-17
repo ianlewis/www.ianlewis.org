@@ -20,7 +20,7 @@ from __future__ import annotations
 import argparse
 import re
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 # Regex pattern for extracting date from front matter
@@ -60,25 +60,25 @@ def parse_post_date(post_file: Path) -> datetime | None:
                                 dt = datetime.strptime(
                                     date_str,
                                     "%Y-%m-%d %H:%M:%S",
-                                ).replace(tzinfo=timezone.utc)
-                                return dt.replace(tzinfo=timezone.utc)
+                                ).replace(tzinfo=UTC)
+                                return dt.replace(tzinfo=UTC)
                             except ValueError:
                                 try:
                                     # Try date only (assume midnight UTC)
                                     dt = datetime.strptime(
                                         date_str,
                                         "%Y-%m-%d",
-                                    ).replace(tzinfo=timezone.utc)
-                                    return dt.replace(tzinfo=timezone.utc)
+                                    ).replace(tzinfo=UTC)
+                                    return dt.replace(tzinfo=UTC)
                                 except ValueError:
-                                    print(  # noqa: T201
+                                    print(
                                         f"Warning: Could not parse date '{date_str}'"
                                         f"in {post_file}",
                                         file=sys.stderr,
                                     )
                                     return None
     except (FileNotFoundError, PermissionError) as e:
-        print(f"Warning: Error reading {post_file}: {e}", file=sys.stderr)  # noqa: T201
+        print(f"Warning: Error reading {post_file}: {e}", file=sys.stderr)
         return None
 
     return None
@@ -97,7 +97,7 @@ def find_recent_posts(
     Note: Posts with future dates (beyond now) are automatically excluded
     by the upper bound check (post_date <= now).
     """
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     cutoff = now - timedelta(hours=hours)
     recent_posts = []
 
@@ -139,15 +139,15 @@ def main() -> None:
     recent_posts = find_recent_posts(list(set(args.PATH)), args.hours)
 
     if recent_posts:
-        print(  # noqa: T201
+        print(
             f"Found {len(recent_posts)} post(s) with publish date(s) "
             f"within the last {args.hours} hours:",
         )
         for post_file, post_date in sorted(recent_posts, key=lambda x: x[1]):
-            print(f"  - {post_file}: {post_date.isoformat()}")  # noqa: T201
+            print(f"  - {post_file}: {post_date.isoformat()}")
         sys.exit(0)
     else:
-        print(f"No posts found with publish dates within the last {args.hours} hours.")  # noqa: T201
+        print(f"No posts found with publish dates within the last {args.hours} hours.")
         sys.exit(1)
 
 
