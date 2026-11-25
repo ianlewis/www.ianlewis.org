@@ -15,8 +15,6 @@
 
 """Check for chained redirects in netlify.toml."""
 
-# ruff: noqa: T201
-
 from __future__ import annotations
 
 import fnmatch

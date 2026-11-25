@@ -1,33 +1,33 @@
 {
   "checksums": [
     {
-      "id": "github_release/github.com/astral-sh/ruff/0.15.22/ruff-aarch64-apple-darwin.tar.gz",
-      "checksum": "A2881AF26FD1D19F4932C4DDF1E70B4E0EFCF48513C5DAE082564E03F0B467A3",
+      "id": "github_release/github.com/astral-sh/ruff/0.16.10/ruff-aarch64-apple-darwin.tar.gz",
+      "checksum": "F051CD306DE2691262A0574F8857CD1F4D6BFCD448084EA23D61B9C1C37DF510",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/ruff/0.15.22/ruff-aarch64-pc-windows-msvc.zip",
-      "checksum": "76A57FE257602C386499437071A16ABB1EE51FFF68C8B4C28B0BF8A0D9F7AA34",
+      "id": "github_release/github.com/astral-sh/ruff/0.16.10/ruff-aarch64-pc-windows-msvc.zip",
+      "checksum": "CDE60DBDF2697144474E6D87B8B51B73BB1FD218F4C180ACB40ABBD3B659D56F",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/ruff/0.15.22/ruff-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "88FEB2DC2FAFB92482185201F4D483134FBAAB10370C79512D3DD372F1D3F28B",
+      "id": "github_release/github.com/astral-sh/ruff/0.16.10/ruff-aarch64-unknown-linux-musl.tar.gz",
+      "checksum": "38EBC0EC3E0DE538D1C399729CA04E124749211D66AA134C24AD0C1F09A935B9",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/ruff/0.15.22/ruff-x86_64-apple-darwin.tar.gz",
-      "checksum": "687A9CEB88AB85DAB061026D5017218225A481121B1A40862CC8F92B56F18090",
+      "id": "github_release/github.com/astral-sh/ruff/0.16.10/ruff-x86_64-apple-darwin.tar.gz",
+      "checksum": "ACE641DF42926E962CF04BC52C79EB6C50BA1AE6A17B602F081960616ECC1BD1",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/ruff/0.15.22/ruff-x86_64-pc-windows-msvc.zip",
-      "checksum": "6E5419593984941405E9ADD902E89C6EA4AF87D97919AC5EF82E1BC4E43BBD8D",
+      "id": "github_release/github.com/astral-sh/ruff/0.16.10/ruff-x86_64-pc-windows-msvc.zip",
+      "checksum": "6B90457FBD249923DB196044D5F3C26E4F7CEFACC769C26FD52520FA033F736E",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/astral-sh/ruff/0.15.22/ruff-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "853462DF618FB9F156A9F04D9D899D9E5A9E1A43FBFFAEC72DF4BB159348E71B",
+      "id": "github_release/github.com/astral-sh/ruff/0.16.10/ruff-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "AD1B2138407A0C53B936524DF99D87211333F7BC40478D6860F42994597F7FF0",
       "algorithm": "sha256"
     },
     {
@@ -141,28 +141,28 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mvdan/sh/v3.13.1/shfmt_v3.13.1_darwin_amd64",
-      "checksum": "6FEEDAFC72915794163114F512348E2437D080D0047EF8B8FA2EC63B575F12AF",
+      "id": "github_release/github.com/mvdan/sh/v3.14.1/shfmt_v3.14.1_darwin_amd64",
+      "checksum": "D33EEE0DA0F92835B3562E9767A05CEE7E4EAEEF47DAA03BFD09DA17B4B590A6",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mvdan/sh/v3.13.1/shfmt_v3.13.1_darwin_arm64",
-      "checksum": "9680526BE4A66EA1FFE988ED08AF58E1400FE1E4F4AEF5BD88B20BB9B3DA33F8",
+      "id": "github_release/github.com/mvdan/sh/v3.14.1/shfmt_v3.14.1_darwin_arm64",
+      "checksum": "B7C872DB63553CCFFC7253ABA3ED7D4885A27D83F1BA567B1138C6315A5847E5",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mvdan/sh/v3.13.1/shfmt_v3.13.1_linux_amd64",
-      "checksum": "FB096C5D1AC6BEABBDBAA2874D025BADB03EE07929F0C9FF67563CE8C75398B1",
+      "id": "github_release/github.com/mvdan/sh/v3.14.1/shfmt_v3.14.1_linux_amd64",
+      "checksum": "76E77641FAA025814B77F153B29796B8E6FA2FCA03E0C76A691608B86C7EA7BF",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mvdan/sh/v3.13.1/shfmt_v3.13.1_linux_arm64",
-      "checksum": "32D92ACAA5CD8ABB29FC49DAC123DC412442D5713967819D8AF2C29F1B3857C7",
+      "id": "github_release/github.com/mvdan/sh/v3.14.1/shfmt_v3.14.1_linux_arm64",
+      "checksum": "5F2DB09DAE91FCA848F7ADBDD014632E921A383863A2AD7E0450AD3ABA0C6489",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/mvdan/sh/v3.13.1/shfmt_v3.13.1_windows_amd64.exe",
-      "checksum": "60CD368533D0AD73FA86D93D5BBF95EF40587245CE684ED138C1B31557B5FE97",
+      "id": "github_release/github.com/mvdan/sh/v3.14.1/shfmt_v3.14.1_windows_amd64.exe",
+      "checksum": "13629CE28442CA80B6B5A819F7574AB39E1C28C6E26734CA816C9714E04851DF",
       "algorithm": "sha256"
     },
     {
@@ -196,8 +196,8 @@
       "algorithm": "sha256"
     },
     {
-      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.564.0/registry.yaml",
-      "checksum": "91491145B8692C643CA31AEF6412B5BDC5CDAB3B45BBC52AF84A1D8EE34B0E49",
+      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.570.0/registry.yaml",
+      "checksum": "E24B1AE894057DCED65797DFB92184D45588331EC5B0246A6FA794F8D7E237E3",
       "algorithm": "sha256"
     }
   ]

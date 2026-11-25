@@ -708,7 +708,7 @@ clean: clean-node-modules ## Delete temporary files.
 	$(RM) -r .venv
 	$(RM) -r .uv
 	$(RM) *.sarif.json
-	@$(RM) -r _site
-	@$(RM) -r .netlify
-	@$(RM) -r deno.lock
-	@$(RM) -r content/.jekyll-cache
+	$(RM) -r _site
+	$(RM) -r .netlify
+	$(RM) -r deno.lock
+	$(RM) -r content/.jekyll-cache

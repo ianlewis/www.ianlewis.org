@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import yaml
@@ -47,7 +47,7 @@ def get_special_dates(profile_path: Path, current_year: int) -> list[datetime]:
                         f"{current_year}-{start_date_str}",
                         "%Y-%m-%d",
                     ).replace(
-                        tzinfo=timezone.utc,
+                        tzinfo=UTC,
                     ),
                 )
             if end_date_str:
@@ -56,7 +56,7 @@ def get_special_dates(profile_path: Path, current_year: int) -> list[datetime]:
                         f"{current_year}-{end_date_str}",
                         "%Y-%m-%d",
                     ).replace(
-                        tzinfo=timezone.utc,
+                        tzinfo=UTC,
                     ),
                 )
 
@@ -75,9 +75,9 @@ def main() -> None:
     parser.add_argument(
         "--date",
         type=lambda s: datetime.strptime(s, "%Y-%m-%d").replace(
-            tzinfo=timezone.utc,
+            tzinfo=UTC,
         ),
-        default=datetime.now(timezone.utc),
+        default=datetime.now(UTC),
         help="The current date to check against the special dates (default: now)",
     )
     parser.add_argument(
@@ -92,10 +92,10 @@ def main() -> None:
 
     for special_date in special_dates:
         if args.date.month == special_date.month and args.date.day == special_date.day:
-            print(f"Today ({args.date.strftime('%Y-%m-%d')}) is a special date!")  # noqa: T201
+            print(f"Today ({args.date.strftime('%Y-%m-%d')}) is a special date!")
             sys.exit(0)
 
-    print(f"Today ({args.date.strftime('%Y-%m-%d')}) is not a special date.")  # noqa: T201
+    print(f"Today ({args.date.strftime('%Y-%m-%d')}) is not a special date.")
     sys.exit(1)
 
 
